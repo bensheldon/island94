@@ -5,7 +5,7 @@ published: true
 tags: []
 ---
 
-Hey, I’m Ben, the author of GoodJob. Last year at RailsConf I hosted a panel discussion between myself, Solid Queue’s Rosa Gonzalez, Sidekiq’s Mike Perham, and Karafka and Shoryuken’s Maciej Mensfield. You can [watch that video here](https://www.rubyevents.org/talks/panel-the-past-present-and-future-of-background-jobs). 
+Hey, I’m Ben, the author of GoodJob. Last year at RailsConf I hosted a panel discussion between myself, Solid Queue’s Rosa Gonzalez, Sidekiq’s Mike Perham, and Karafka and Shoryuken’s Maciej Mensfield called "The Past Present and Future of Background Jobs". You can [watch that video here](https://www.rubyevents.org/talks/panel-the-past-present-and-future-of-background-jobs). 
 
 In this post, I’m writing my personal perspective on how you, dear developer, might decide what background job backend to choose for Rails and Active Job. But everything in context. And oh boy, it’s all context.
 
@@ -21,9 +21,9 @@ All of this has some flavor of: I want to be different than everyody else, but a
 
 There’s an assumption that the generation of knowledge is _efficient_. Meaning that all possible problems and solutions have been rigorously measured and stress-tested and their upsides and downsides unearthed; that people of equivalent smarts have spent equivalent time running out equivalent unflawed methodologies and sharing the results across equivalent channels. And our work is to place that preexisting knowledge on the platters of a scale and note which way it tips. 
 
-Also true: familiarity breeds contempt. The grass is always greener. And despite things being inherently complex, where the goal should be less "work your way out of the job" and more "don't work yourself into an early grave", your managers—whether actual people or your own intrusive thoughts—will not accept that.
+Also true: familiarity breeds contempt. The grass is always greener. And despite things being inherently difficult, where the goal should be less "work your way out of the job" and more "don't work yourself into an early grave", your managers—whether actual people or your own intrusive thoughts—will not accept that.
 
-Alternatively, I know, from such evergreen classics like Glass’s *Facts and Fallacies of Software Engineering* and Weinberg’s *The Psychology of Computer Programming,* it’s rare to deeply track our own technical and operational bottlenecks, the full business contexts, the skills and resources of the team and the broader talent market, and integrate those details into the decision-making process. Most folks start with the solution they want, and work backwards in their argumentation through whatever technical decision process their engineering organization requires. No one shows their work cause there's no work to show; they read the assignment and the answer just popped out.
+Alternatively, I know, from such evergreen classics like Glass’s *Facts and Fallacies of Software Engineering* and Weinberg’s *The Psychology of Computer Programming,* it’s rare to deeply track our own technical and operational bottlenecks, the full business contexts, the skills and resources of the team and the broader talent market, and integrate those details into the decision-making process. Most folks start with the solution they want, and work backwards in their argumentation through whatever technical decision process their engineering organization requires. No one shows their work cause there's no work to show; they read the math assignment and the answer just popped out.
 
 But not you, of course.
 
@@ -36,7 +36,7 @@ Bringing it back to Rails and Active Job, let’s look at a really big different
 
 ### Omakase
 
-Solid Queue is a default gem in Rails. If you run `rails new` , you get Solid Queue. That’s a strong signal that it will work, and that the Rails team confidently stands behind it as much as anything else in the Rails framework. Solid Queue is Ruby on Rail’s chefs’ choice; it’s omakase.
+Solid Queue is a default gem in Rails. If you run `rails new` , you get Solid Queue. That’s a strong signal that it will work, and that the Rails team confidently stands behind it as much as anything else in the Rails framework. Solid Queue is Ruby on Rail’s chefs’ choice made for you; it’s omakase.
 
 “Eliminate valueless choices” is a powerful principle, as part of the Rails Manifesto. Solid Queue is a good choice, *especially* if you don’t have to choose. This alone is an incredibly powerful reason to Solid Queue. **You probably chose Rails for the lore.** There's a manifesto. And it’s actually good. Conceptual integrity is important. Make the center hold.
 
@@ -46,7 +46,7 @@ More recently 37 Signals has started releasing source code for several of their 
 
 And really, Solid Queue slots into a real sweet spot. It’s both _new_ and it’s the default. Solid Queue can occupy the unicorn stall that's both excitingly cutting edge and boringly conservative all at once. This will be a different discussion 5 years from now even if nothing has changed other than the year on the calendar.
 
-But, maybe you really are different! And we should dig into that.
+But, maybe you do _need_ to order off the menu! And we should dig into that.
 
 ### Incomparables
 
