@@ -5,7 +5,7 @@ published: true
 tags: []
 ---
 
-Hey, I’m Ben, the author of GoodJob. Last year at RailsConf I hosted a panel discussion between myself, Solid Queue’s Rosa Gonzalez, Sidekiq’s Mike Perham, and Karafka and Shoryuken’s Maciej Mensfield called “The Past Present and Future of Background Jobs”. You can [watch that video here](https://www.rubyevents.org/talks/panel-the-past-present-and-future-of-background-jobs). 
+Hey, I’m Ben, the author of GoodJob. Last year at RailsConf I hosted a panel discussion between myself, Solid Queue’s Rosa Gutiérrez, Sidekiq’s Mike Perham, and Karafka and Shoryuken’s Maciej Mensfield called “The Past Present and Future of Background Jobs”. You can [watch that video here](https://www.rubyevents.org/talks/panel-the-past-present-and-future-of-background-jobs). 
 
 In this post, I’m writing my personal perspective on how you, dear developer, might decide what background job backend to choose for Rails and Active Job. But everything in context. And oh boy, it’s all context.
 
