@@ -167,7 +167,7 @@
 
 <p>Also true: familiarity breeds contempt. The grass is always greener. And despite things being inherently complex, where the goal should be less “work your way out of the job” and more “don’t work yourself into an early grave”, your managers—whether actual people or your own intrusive thoughts—will not accept that.</p>
 
-<p>Alternatively, I know, from such evergreen classics like Glass’s <em>Facts and Fallacies of Software Engineering</em> and Weinberg’s <em>The Psychology of Computer Programming,</em> it’s rare to deeply track our own technical and operational bottlenecks, the full business contexts, the skills and resources of the team and the broader talent market, and integrate those details into the decision-making process. Most folks start with the solution they want, and work backwards in their argumentation through whatever technical decision process their engineering organization requires. No one shows their work cause there’s no work to show; they read the assignment and the answer just popped out.</p>
+<p>Alternatively, I know, from such evergreen classics like Glass’s <em>Facts and Fallacies of Software Engineering</em> and Weinberg’s <em>The Psychology of Computer Programming,</em> it’s rare to deeply track our own technical and operational bottlenecks, the full business contexts, the skills and resources of the team and the broader talent market, and integrate those details into the decision-making process. Most folks start with the solution they want, and work backwards in their argumentation through whatever technical decision process their engineering organization requires. No one shows their work ’cause there’s no work to show; they read the assignment and the answer just popped out.</p>
 
 <p>But not you, of course.</p>
 
@@ -182,7 +182,7 @@
 
 <h3 id="omakase">Omakase</h3>
 
-<p>Solid Queue is a default gem in Rails. If you run <code>rails new</code> , you get Solid Queue. That’s a strong signal that it will work, and that the Rails team confidently stands behind it as much as anything else in the Rails framework. Solid Queue is Ruby on Rail’s chefs’ choice made for you; it’s omakase.</p>
+<p>Solid Queue is a default gem in Rails. If you run <code>rails new</code>, you get Solid Queue. That’s a strong signal that it will work, and that the Rails team confidently stands behind it as much as anything else in the Rails framework. Solid Queue is Ruby on Rails’ chefs’ choice made for you; it’s omakase.</p>
 
 <p>“Eliminate valueless choices” is a powerful principle, as part of the Rails Manifesto. Solid Queue is a good choice, <em>especially</em> if you don’t have to choose. This alone is an incredibly powerful reason to Solid Queue. <strong>You probably chose Rails for the lore.</strong> There’s a manifesto. And it’s actually good. Conceptual integrity is important. Make the center hold.</p>
 
@@ -209,7 +209,7 @@
 
 <p>And any one of these can have the DBA who swears by that one deep-cut config and won’t budge. And while there is wisdom in sinking engineer-years into completely rearchitecting your system to sidestep a problematic technical peer—oh, I’ve done it—there’s no way you’re gonna write those words in the justification doc. You’re slapping down “more modern” and your junior (or junior-minded) colleague is tweeting “more modern” and HackerNews will cite that a decade from now.</p>
 
-<p>Knowledge is not efficient. You’ll always find another subfloor and several sheer walls of complexity below and beyond whichever one you just pryed open. This stuff is not enumerable, so any <em>good</em> decision tree you’ll receive will, on its surface, appear to be a gross and useless simplification despite the experience that went into it.</p>
+<p>Knowledge is not efficient. You’ll always find another subfloor and several sheer walls of complexity below and beyond whichever one you just pried open. This stuff is not enumerable, so any <em>good</em> decision tree you’ll receive will, on its surface, appear to be a gross and useless simplification despite the experience that went into it.</p>
 
 <h3 id="in-conclusion">In conclusion</h3>
 
@@ -223,7 +223,7 @@
 <p>If you, dear developer, find yourself in the second bucket, here’s my advice.</p>
 
 <ul>
-  <li><strong>If performance matters, like actually matters, use Sidekiq Enterprise or Karafka.</strong> <em>But it’s complicated</em>, you comment. <em>It costs money. No one uses it anymore. It’s not modern.</em> Shush. Sidekiq Enterprise and Karafka are, hands down the best for performance outside of building it in house (a legit choice we won’t explore here). You can make it complicated by trying to precisely nail down what is meant by “performance” (throughput, latency, resources, spiky, steady, whatever), but if you use the word superlatively–“most performant”–your choice is made.</li>
+  <li><strong>If performance matters, like actually matters, use Sidekiq Enterprise or Karafka.</strong> <em>But it’s complicated</em>, you comment. <em>It costs money. No one uses it anymore. It’s not modern.</em> Shush. Sidekiq Enterprise and Karafka are, hands down the best for performance outside of building it in-house (a legit choice we won’t explore here). You can make it complicated by trying to precisely nail down what is meant by “performance” (throughput, latency, resources, spiky, steady, whatever), but if you use the word superlatively–“most performant”–your choice is made.</li>
   <li><strong>Otherwise:</strong>
     <ul>
       <li><strong>If you’re using MySQL or SQLite, use SolidQueue.</strong> it’s your best option for those databases, and it’s really good in an absolute sense too. And it’s getting even better. it should have GoodJob-esque batches soon. No shade, all love.</li>
@@ -236,11 +236,11 @@
 
 <p>And there is a lot of relational-database arcana that I don’t think GoodJob nor Solid Queue have documented that you <em>could</em> do. Like vacuuming your tuples and stuff like that. I don’t do it, but some people swear by it. Every system falls apart if you run it hot or weird for long enough, and relationsal databases are no different than Redis or Kafka.</p>
 
-<p>I <em>could</em> laundry list any number of downsides and problems people have had with GoodJob… and you probably won’t experience them. Rosa and Mike and Maciej can tell you the same about their own backends. If and when you do experience something bad, it’s likely you’d experience something else bad on any other job backend <em>and then you’d have to work through the problem</em> and it’s likely that problem is unique to you, either because of your unique setup, or a trivial, personal failure to have simply googled it earlier.</p>
+<p>I <em>could</em> laundry-list any number of downsides and problems people have had with GoodJob… and you probably won’t experience them. Rosa and Mike and Maciej can tell you the same about their own backends. If and when you do experience something bad, it’s likely you’d experience something else bad on any other job backend <em>and then you’d have to work through the problem</em> and it’s likely that problem is unique to you, either because of your unique setup, or a trivial, personal failure to have simply googled it earlier.</p>
 
-<p>And to solve that problem, you’ll probably do some reasearch. And ideally you have a strong community of peers that think like you think and work on similar systems to the one you work on and you talk to them and sometimes help solve their problems too. They won’t have <em>your</em> specific answer, but they’ll have some suggestions about what to look at and what to try looking at or googling for you and <em>maybe</em> the change you make is to change your Active Job backend, but probably isn’t.</p>
+<p>And to solve that problem, you’ll probably do some research. And ideally you have a strong community of peers that think like you think, and work on similar systems to the one you work on, and you talk to them and sometimes help solve their problems too. They won’t have <em>your</em> specific answer, but they’ll have some suggestions about what to look at and what to try looking at or googling for you, and <em>maybe</em> the change you make is to change your Active Job backend, but it probably isn’t.</p>
 
-<p>So the takeaway here is that today in 2026 there is a small number of really, really good Active Job backends to choose from and the most important consideration is that you make friends along the way.</p>
+<p>So the takeaway here is that today in 2026 there are a small number of really, really good Active Job backends to choose from, and the most important consideration is that you make friends along the way.</p>
 
   </div>
 </article>
