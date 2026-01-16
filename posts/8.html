@@ -138,6 +138,78 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2023/02/service-object-objects-in-ruby"><p>Service Object Objects in Ruby</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2023-02-14T16:18:00Z" itemprop="datePublished">February 14, 2023</time>
+
+        • Tagged <a href="/posts/tags/ruby">Ruby</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>For anyone that follows me on social media, I’ll sometimes get into a <a href="https://deprogrammaticaipsum.com/james-coplien/">Coplien</a>-esque funk of “I don’t wanna write Classes. I want to write <em>Objects</em>!”. I don’t want to negotiate an industrial-relations policy for instances of Person in the current scope. I want to imagine the joy and misery Alice and Bob will experience working together right now.</p>
+
+<p>I was thinking of that recently when <a href="https://www.reddit.com/r/ruby/comments/10sooyr/comment/j74j5qw/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">commenting on Reddit</a> about Caleb Hearth’s <a href="https://calebhearth.com/decree">“The Decree Design Pattern”</a>. Which ended up in the superset of these two thoughts:</p>
+
+<ul>
+  <li>heck yeah! if it’s globally distinct it should be globally referenceable</li>
+  <li>oh, oh no, I don’t like looking at <em>that</em> particular Ruby code</li>
+</ul>
+
+<p>This was my comment to try to personally come to terms with those thoughts, iteratively:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># a consistent callable</span>
+<span class="n">my_decree</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">do_something</span> <span class="p">}</span>
+
+<span class="c1"># ok, but globally scoped</span>
+<span class="no">MY_DECREE</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">do_something</span> <span class="p">}</span>
+
+<span class="c1"># ok, but without the shouty all-caps</span>
+<span class="k">module</span> <span class="nn">MyDecree</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span> 
+    <span class="n">do_something</span> 
+  <span class="k">end</span> 
+<span class="k">end</span>
+
+<span class="c1"># ok, but what about when it gets really complex</span>
+<span class="k">class</span> <span class="nc">MyDecree</span> 
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+    <span class="n">new</span><span class="p">(</span><span class="n">variable</span><span class="p">).</span><span class="nf">call</span> 
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+    <span class="vi">@variable</span> <span class="o">=</span> <span class="n">variable</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">call</span>
+    <span class="n">do_something</span>
+    <span class="n">do_something_else</span><span class="p">(</span><span class="vi">@variable</span><span class="p">)</span>
+    <span class="n">do_even_more</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">do_even_more</span>
+    <span class="c1"># something really complicated....</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>From the outside, <em>object</em> perspective, these are all have the same interchangeable interface (<code>.call</code>), and except for the first one, accessible everywhere. That’s great, from my perspective! Though I guess it’s a pretty short blog post to say:</p>
+
+<ul>
+  <li>Decrees are globally discrete and call-able objects</li>
+  <li>The implementation is up to you!</li>
+</ul>
+
+<p>Unfortunately, the moment the internals come into play, it gets messy. But I don’t think that should take away from the external perspective.</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2023/02/slop-and-call"><p>Slop and call</p>
 </a>
     </h1>
@@ -703,65 +775,6 @@ something many applications could benefit from.</li>
 <blockquote>
   <p>Contemporary development schemes… require the creation of state spaces where the government can reconfigure the society and economy of those who are to be “developed.” The transformation of peripheral nonstate spaces into state spaces by the modern, developmentalist nation-state is ubiquitous and, for the inhabitants of such spaces, frequently traumatic.</p>
 </blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2022/11/worknotes-november-13-2022"><p>Worknotes: November 13, 2022</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2022-11-13T20:13:00Z" itemprop="datePublished">November 13, 2022</time>
-
-        • Tagged <a href="/posts/tags/weeknotes">weeknotes</a> and <a href="/posts/tags/worknotes">worknotes</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Let’s go!</p>
-
-<h2 id="universe">Universe</h2>
-
-<p>This past week was GitHub Universe. Local SF Hubbers were invited to volunteer and I did: I worked the info booth and the swag shop. It was nice meeting lots of other local Hubbers that don’t regularly frequent the office.</p>
-
-<h2 id="performance-review-season">Performance Review Season</h2>
-
-<p>It’s here again. As a manager, I have a template for how I like to receive self-reflections that I’ve been dragging around with me for the past 15 (?!) years.</p>
-
-<ol>
-  <li>Laundry list all of your projects, contributions, and accomplishments during the time period [if this seems difficult, have some sympathy for your manager]</li>
-  <li>What future growth areas (lined up in phrases from the Career Ladder) would you like to focus on developing?</li>
-  <li>What specific project/work opportunities exist (or you’d like to create) that would help you develop the growth areas you described in the previous question? (or you would really, really want to work on).</li>
-</ol>
-
-<p>And then it’s a matter of trying to shoe-horn those questions into the invariably slightly different organizational template. I wrote up a big document for my reports.</p>
-
-<p>Here’s what I drafted for myself on the opportunities question:</p>
-
-<blockquote>
-
-  <p>Improve predictability of team output. I would like to better develop a proactive ability to predict team output. Two focuses:</p>
-
-  <ul>
-    <li><strong>Tactical Planning</strong>: Improving my short/medium-term project management skills to improve how work is defined, broken down, and scheduled with target dates.</li>
-    <li><strong>Strategic Planning</strong>: Planning and championing high-impact projects that would be engaging for both the team and engineering leadership.</li>
-  </ul>
-
-  <p>The end result of this, in addition to expanding impact, is growing the Ruby Architecture team and ensuring there is sufficient capacity (and buffers) for our core Areas of Responsibility.</p>
-
-  <p><strong>Further develop “out”-ward communication.</strong> Improve my ability to brief and influence across teams and leadership at GitHub. Particularly focused on reinforcing the position and importance of Ruby and Rails within GitHub.</p>
-
-</blockquote>
-
-<h2 id="what-is-platform">What is “Platform”</h2>
-
-<p>In my new department, UI &amp; Monolith Platform, all of my sibling teams are platform, but look very different. We’ve been working on a document to share with the rest of the Engineering team about what we would say we do here. As part of that, I’ve been thinking about Maturity Models as an explanation for why our teams look so different. Some teams are early, where they’re still focused on adoption and “fit”, and other teams, like mine, that are so mature that I think our internal consumers are not always fully aware that they’re using the platform we’ve built with huge intention.</p>
-
-<h2 id="a-universal-playbook">A universal playbook</h2>
-
-<p>The past week at Universe, continually responding to the question “oh, what do you do?”, has helped me reflect on what I’m working towards. And realizing it feels like the same playbook I’ve run at other jobs. Lots more to it than this, but man, write your end-to-end tests people.</p>
 
   </div>
 </article>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GoodJob, Solid Queue, Sidekiq, Active Job, in 2026 | Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-39a1f2f7963cb72fa41194b70f3ff8033d1cbab7fae2f8cb78a801ed41144a6a.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-3e48f1801baf343469811ff2c47889596fb8b7eb6d8fa63c4d81d0b94dc8c16d.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js">
+<link rel="modulepreload" href="/assets/turbo.min-3e48f1801baf343469811ff2c47889596fb8b7eb6d8fa63c4d81d0b94dc8c16d.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2026/01/goodjob-solid-queue-sidekiq-active-job-in-2026"><p>GoodJob, Solid Queue, Sidekiq, Active Job, in 2026</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2026-01-16T15:26:00Z" itemprop="datePublished">January 16, 2026</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Hey, I’m Ben, the author of GoodJob. Last year at RailsConf I hosted a panel discussion between myself, Solid Queue’s Rosa Gonzalez, Sidekiq’s Mike Perham, and Karafka and Shoryuken’s Maciej Mensfield called “The Past Present and Future of Background Jobs”. You can <a href="https://www.rubyevents.org/talks/panel-the-past-present-and-future-of-background-jobs">watch that video here</a>.</p>
+
+<p>In this post, I’m writing my personal perspective on how you, dear developer, might decide what background job backend to choose for Rails and Active Job. But everything in context. And oh boy, it’s all context.</p>
+
+<h3 id="a-sober-look-at-how-technical-decisions-are-actually-made">A sober look at how technical decisions are actually made</h3>
+
+<p>I’ve worked in software engineering a long time and seen a lot of bullshit justifications for… doing stuff.</p>
+
+<ul>
+  <li>It’s “more modern”, meaning newer, I guess.</li>
+  <li>It has more features, or a unique architecture.</li>
+  <li><em>Everybody</em>’s doing it. Or maybe, this particular <em>someone</em> is doing it. Or <em>nobody</em> is doing it, except for the successful ones.</li>
+</ul>
+
+<p>All of this has some flavor of: I want to be different than everyody else, but also the same as the people who are succeeding.</p>
+
+<p>There’s an assumption that the generation of knowledge is <em>efficient</em>. Meaning that all possible problems and solutions have been rigorously measured and stress-tested and their upsides and downsides unearthed; that people of equivalent smarts have spent equivalent time running out equivalent unflawed methodologies and sharing the results across equivalent channels. And our work is to place that preexisting knowledge on the platters of a scale and note which way it tips.</p>
+
+<p>Also true: familiarity breeds contempt. The grass is always greener. And despite things being inherently complex, where the goal should be less “work your way out of the job” and more “don’t work yourself into an early grave”, your managers—whether actual people or your own intrusive thoughts—will not accept that.</p>
+
+<p>Alternatively, I know, from such evergreen classics like Glass’s <em>Facts and Fallacies of Software Engineering</em> and Weinberg’s <em>The Psychology of Computer Programming,</em> it’s rare to deeply track our own technical and operational bottlenecks, the full business contexts, the skills and resources of the team and the broader talent market, and integrate those details into the decision-making process. Most folks start with the solution they want, and work backwards in their argumentation through whatever technical decision process their engineering organization requires. No one shows their work cause there’s no work to show; they read the assignment and the answer just popped out.</p>
+
+<p>But not you, of course.</p>
+
+<p>There’s another dimension to this that I think is really important to note: <strong>Decision making for new projects is vastly different than existing projects.</strong></p>
+
+<ul>
+  <li>With <strong>New Projects</strong>, the decisions don’t really deeply matter cause nobody knows how it’s going to go and everything is speculative. But also because of bikeshedding and the Law of Triviality those decisions become the most forcefully argued over. It’s really hard for a room of technical people to plainly say they just want to do it one way cause they know it, or try something different for the hell of it and then figure out an effective social compromise instead of debating to death some hardboiled technical justification.</li>
+  <li>With <strong>Existing Projects</strong>, you have some data and some context and continuity to base your needs and your decisions on. But there is also an inexorable pressure to <em>do something different</em> and you end up picking a solution-at-hand rather than more deeply digging into a problem area where the solutions are more elusive in the sense of “I’m searching for my keys under the streetlight not because I lost them nearby but because the light is better”.</li>
+</ul>
+
+<p>Bringing it back to Rails and Active Job, let’s look at a really big differentiator.</p>
+
+<h3 id="omakase">Omakase</h3>
+
+<p>Solid Queue is a default gem in Rails. If you run <code>rails new</code> , you get Solid Queue. That’s a strong signal that it will work, and that the Rails team confidently stands behind it as much as anything else in the Rails framework. Solid Queue is Ruby on Rail’s chefs’ choice made for you; it’s omakase.</p>
+
+<p>“Eliminate valueless choices” is a powerful principle, as part of the Rails Manifesto. Solid Queue is a good choice, <em>especially</em> if you don’t have to choose. This alone is an incredibly powerful reason to Solid Queue. <strong>You probably chose Rails for the lore.</strong> There’s a manifesto. And it’s actually good. Conceptual integrity is important. Make the center hold.</p>
+
+<p>But if you’ve been following the Rails discourse for a while, you’ll know not everyone agrees that omakase is <em>best</em>, or best for them. Lots of people quietly (and loudly!) go their own way. <em>Callbacks are the worst,</em> they comment underneath every single Reddit post. <em>Nobody actually uses ActionMailer. Why isn’t there a Services directory?  That pattern encourages methods that are too long! All those Concerns, are you for real? Nobody does it that way anymore. It’s not modern.</em></p>
+
+<p>More recently 37 Signals has started releasing source code for several of their applications, and yes, they’re for real and yes, they do still do it that way. But Rails is a big framework (“Batteries included”) and you don’t have to use everything (“No one paradigm”). You can swap something out and remain lore canon.</p>
+
+<p>And really, Solid Queue slots into a real sweet spot. It’s both <em>new</em> and it’s the default. Solid Queue can occupy the unicorn stall that’s both excitingly cutting edge and boringly conservative all at once. This will be a different discussion 5 years from now even if nothing has changed other than the year on the calendar.</p>
+
+<p>But, maybe you do <em>need</em> to order off the menu! And we should dig into that.</p>
+
+<h3 id="incomparables">Incomparables</h3>
+
+<p>Given the infinite rainbow of the human experience, there has to be someobody who does not collapse their categories. I have yet to meet them.</p>
+
+<p>People want a simple decision tree that starts with “Postgres, MySQL, SQLite or Redis?” It’s not so simple.</p>
+
+<ul>
+  <li>Postgres on Heroku? Digital Ocean? Neon? Fly’s umpteenth attempt at it? Self-managed? How? Co-located?</li>
+  <li>MySQL? MariaDB? Behind Vitess? Planetscale?</li>
+  <li>SQLite? Litestream? Did you apply the <em>good</em> patches? How’s your IO?</li>
+  <li>Redis? HA? How? You didn’t choose “Flex” did you?</li>
+</ul>
+
+<p>And any one of these can have the DBA who swears by that one deep-cut config and won’t budge. And while there is wisdom in sinking engineer-years into completely rearchitecting your system to sidestep a problematic technical peer—oh, I’ve done it—there’s no way you’re gonna write those words in the justification doc. You’re slapping down “more modern” and your junior (or junior-minded) colleague is tweeting “more modern” and HackerNews will cite that a decade from now.</p>
+
+<p>Knowledge is not efficient. You’ll always find another subfloor and several sheer walls of complexity below and beyond whichever one you just pryed open. This stuff is not enumerable, so any <em>good</em> decision tree you’ll receive will, on its surface, appear to be a gross and useless simplification despite the experience that went into it.</p>
+
+<h3 id="in-conclusion">In conclusion</h3>
+
+<p>As we’ve deeply explored together, you find yourself in one of two scenarios regarding background jobs:</p>
+
+<ul>
+  <li>The backend doesn’t matter. Pick whatever, or pick nothing and use the default. Give whatever nonsense justification you want that serves you best. No shame, all respect if you can recognize this for yourself. You can stop reading now (I know, we love the lore).</li>
+  <li>It does actually matter, a lot. And successfully navigating this will be the crowning achievement of your career.</li>
+</ul>
+
+<p>If you, dear developer, find yourself in the second bucket, here’s my advice.</p>
+
+<ul>
+  <li><strong>If performance matters, like actually matters, use Sidekiq Enterprise or Karafka.</strong> <em>But it’s complicated</em>, you comment. <em>It costs money. No one uses it anymore. It’s not modern.</em> Shush. Sidekiq Enterprise and Karafka are, hands down the best for performance outside of building it in house (a legit choice we won’t explore here). You can make it complicated by trying to precisely nail down what is meant by “performance” (throughput, latency, resources, spiky, steady, whatever), but if you use the word superlatively–“most performant”–your choice is made.</li>
+  <li><strong>Otherwise:</strong>
+    <ul>
+      <li><strong>If you’re using MySQL or SQLite, use SolidQueue.</strong> it’s your best option for those databases, and it’s really good in an absolute sense too. And it’s getting even better. it should have GoodJob-esque batches soon. No shade, all love.</li>
+      <li><strong>If you’re using Postgres, use GoodJob.</strong> It’s full featured, and those features are implemented simple-like because they use Postgres-only features; there’s no workaround complexity for other databases. Want to break all the rules of encapsulation and fiddle with the job data? It’s one table. FANG uses GoodJob. It’s modern.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Because I’m close to GoodJob (familiarity!) I know the limitations too. You’ll have to go around PgBouncer. One guy profiled Postgres several years ago and pointed out where in the performance stratosphere Advisory Locks fall apart. It’s all true.</p>
+
+<p>And there is a lot of relational-database arcana that I don’t think GoodJob nor Solid Queue have documented that you <em>could</em> do. Like vacuuming your tuples and stuff like that. I don’t do it, but some people swear by it. Every system falls apart if you run it hot or weird for long enough, and relationsal databases are no different than Redis or Kafka.</p>
+
+<p>I <em>could</em> laundry list any number of downsides and problems people have had with GoodJob… and you probably won’t experience them. Rosa and Mike and Maciej can tell you the same about their own backends. If and when you do experience something bad, it’s likely you’d experience something else bad on any other job backend <em>and then you’d have to work through the problem</em> and it’s likely that problem is unique to you, either because of your unique setup, or a trivial, personal failure to have simply googled it earlier.</p>
+
+<p>And to solve that problem, you’ll probably do some reasearch. And ideally you have a strong community of peers that think like you think and work on similar systems to the one you work on and you talk to them and sometimes help solve their problems too. They won’t have <em>your</em> specific answer, but they’ll have some suggestions about what to look at and what to try looking at or googling for you and <em>maybe</em> the change you make is to change your Active Job backend, but probably isn’t.</p>
+
+<p>So the takeaway here is that today in 2026 there is a small number of really, really good Active Job backends to choose from and the most important consideration is that you make friends along the way.</p>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2026-01-16-goodjob-solid-queue-sidekiq-active-job-in-2026.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+  </div>
+</div>
+
+  </div>
+
+</body>
+</html>

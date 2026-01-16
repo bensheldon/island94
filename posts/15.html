@@ -138,6 +138,54 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/08/goodjob-v1-1-async-and-improved-documentation"><p>GoodJob v1.1: async and improved documentation</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-08-10T03:49:00Z" itemprop="datePublished">August 10, 2020</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> version 1.1 has been released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>.</p>
+
+<p>GoodJob’s v1.1 release contains a new, economical execution mode called “async” to execute jobs within the webserver process with the same reliability as a separate job worker process.</p>
+
+<p>This release also contains more in-depth documentation based on feedback and questions I’ve received since the v1.0 release.</p>
+
+<p>Version 1.1 comes out 3 weeks after GoodJob v1.0. The initial release of GoodJob was featured on <a href="https://rubyweekly.com/issues/511">Ruby Weekly</a>, <a href="https://web.archive.org/web/20200810221115/https://afreshcup.com/home/2020/07/30/double-shot-2651">A Fresh Cup</a></p>
+
+<p>, <a href="https://ruby.libhunt.com/newsletter/219">Awesome Ruby</a>, and was as high as #8 on <a href="https://news.ycombinator.com/item?id=23928891">Hacker News</a>. GoodJob has since received nearly <a href="https://github.com/bensheldon/good_job">500 stars on Github</a>.</p>
+
+<h2 id="async-mode">Async mode</h2>
+<p>In addition to the <code>$ good_job</code> executable, GoodJob now can execute jobs inside the webserver process itself. For light workloads and simple applications, combining web and worker into a single process is very economical, especially when running on Heroku’s free or hobby plans.</p>
+
+<p>GoodJob’s async execution is compatible with Puma, in multithreaded (<code>RAILS_MAX_THREADS</code>), multi-process (<code>WEB_CONCURRENCY</code>), and memory efficient <code>preload_app!</code> configurations. GoodJob is built with Concurrent Ruby which offers excellent thread and process-forking safety guarantees. Read the <a href="https://github.com/bensheldon/good_job#executing-jobs-async--in-process">GoodJob async documentation</a> for more details.</p>
+
+<p>On a personal level, I’m very excited to have this feature in GoodJob. Async execution was <em>the</em> compelling reason I had previously adopted Que, another Postgres-based backend, in multiple projects and I was heartbroken when <a href="https://github.com/que-rb/que/issues/238#issuecomment-480648845">Que dropped support for async execution</a>.</p>
+
+<h2 id="improved-documentation">Improved documentation</h2>
+<p>Since GoodJob was released 3 weeks ago, the documentation has been significantly expanded. It contains more code and examples for ensuring reliability and handling job errors. I’ve had dozens of people ask questions through <a href="https://github.com/bensheldon/good_job/issues">Github Issues</a> and <a href="https://www.rubyonrails.link">Ruby on Rails Link Slack</a>.</p>
+
+<h2 id="upcoming">Upcoming</h2>
+<p>In the next release, v1.2, I plan to simplify the creation of multiple dedicated threadpools within a single process. The goal is to provide an economical solution to congestion when the execution of a number of slow, low-priority jobs (elephants) are being performed and there are no execution resources available for newly introduced fast, high priority jobs (mice) until the currently executing elephants complete.</p>
+
+<p>A proposed configuration, for example:</p>
+
+<p><code>--queues=mice:2,elephants:4</code></p>
+
+<p>…would allocate 2 dedicated threads for jobs enqueued on the mice queue, and 4 threads for the elephants queue. Learn more in the <a href="https://github.com/bensheldon/good_job/issues/45">feature’s Github Issue</a>.</p>
+
+<h2 id="contribute">Contribute</h2>
+<p>GoodJob continues to be enjoyable to develop and build upon Rails’ ActiveJob and Concurrent Ruby. Contributions are welcomed: check out the <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2020/07/introducing-goodjob-1-0"><p>Introducing GoodJob 1.0, a new Postgres-based, multithreaded, ActiveJob backend for Ruby on Rails</p>
 </a>
     </h1>
@@ -617,60 +665,6 @@ The Concrete Sumo”</a></p>
   <li>In what ways, if any, has this reading made you think you would act differently in the future?</li>
 </ul>
 
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2019/11/public-comments-on-sunset-housing"><p>Public comments on Sunset housing</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2019-11-08T01:59:00Z" itemprop="datePublished">November 8, 2019</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <dl>
-  <dt>Today I spoke in public comment before the San Francisco Planning Commission on a proposed 20-unit building in the Outer Sunset at <a href="https://web.archive.org/web/20190615114256/https://socketsite.com/archives/2018/01/plans-for-raising-the-roof-and-density-across-from-outerlands.html">3945 Judah St.</a></dt>
-  <dd></dd>
-</dl>
-
-<blockquote>
-
-  <p>Good afternoon, Commissioners.</p>
-
-  <p>My name is Ben Sheldon. I have been a resident of the Outer Sunset for 8 years.</p>
-
-  <p>I support this project.</p>
-
-  <p>I live 4 blocks away from the proposed project. I live in a 4 story, 12 unit multi-family apartment building.</p>
-
-  <p>My building is vibrant. It is home to senior citizens, families with young children, teachers, and working professionals like myself.</p>
-
-  <p>We shop at local businesses. Eat at local restaurants. Attend local schools. We participate fully in the civic life of our neighborhood.</p>
-
-  <p>Multi-family buildings. Dense. And large. Like my own, and the proposed project, are part of the character of our neighborhood.</p>
-
-  <p>My building was built in 1928. It makes me sad. And at times angry. That a building like my own seemingly could not be built today.</p>
-
-  <p>My building is not enough. It is not modern. It is not accessible for the very old or people with disabilities. It has lead and toxicity issues of concern for very young children.</p>
-
-  <p>The neighborhood needs more buildings like my own. Better ones.</p>
-
-  <p>Multi-family. Dense. Accessible. Modern. Vibrant.</p>
-
-  <p>This project is equally an issue of inclusion as it is of character.</p>
-
-  <p>I support this project.</p>
-
-  <p>I urge you to support this project too.</p>
-
-  <p>Thank you.</p>
-
-</blockquote>
 
   </div>
 </article>

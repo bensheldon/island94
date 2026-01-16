@@ -138,6 +138,44 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2022/05/weeknotes-week-zero"><p>Weeknotes: Week 0</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2022-05-02T02:41:00Z" itemprop="datePublished">May 2, 2022</time>
+
+        • Tagged <a href="/posts/tags/weeknotes">weeknotes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I started a new job midweek this week at GitHub, managing their Ruby Architecture team. I love the team’s mission:</p>
+
+<blockquote>
+  <p>Making it easy for our engineers to create, deliver, and operate best-of-class Ruby and Rails applications, and sharing the best of it with the world.</p>
+</blockquote>
+
+<p>I also took about 2.5 weeks in between leaving Code for America and starting this job, so I’m feeling fresh and ready for several weeks of official onboarding, and several months of growing into the role.</p>
+
+<p><strong>Something I learned</strong></p>
+
+<p>GitHub is heavily into written documentation. <a href="https://ben.balter.com/2014/10/07/expose-process-through-urls/">“If it doesn’t have a URL, it didn’t happen.”</a>. And not just cross-referencing, but emoting and emoji-ing, and being, well, <em>extra</em>. Writing and communication has been reinforced <em>a lot</em> during onboarding, more even than the content itself. Which makes sense: if you understand how the organization communicates, you can seek answers independently.</p>
+
+<p><strong>Something I was inspired by</strong></p>
+
+<p>Despite formal onboarding being my number one focus, I’ve been having casual 1:1s with my team. They’re great! I’ve been inspired by the nuance and understanding they bring to the work. On its own, being a service team is <em>hard</em>, and corporate open source is <em>hard</em>. I’ve found myself heavily nodding along hearing them discuss the challenges of moving people forward. It’s brought to surface a few thoughts and memories:</p>
+
+<ul>
+  <li>Of being a frontend lead at Pantheon and the challenges of getting platform-team resources to build up to the outcome and vision we all agreed on, but that had some uncomfortable zigs and zags to get there. A case of make the change easy (which <em>can be hard</em>), then make the easy change.</li>
+  <li>My falling out of the Drupal ecosystem as it developed more in line with the needs of full-service agencies than of solo devs and configurers like myself. As one of my colleagues admitted this week, our developers aren’t running “rails new” a whole lot and that’s something to be mindful of how it shapes the contributions.</li>
+  <li>“If you’re leading and no one is following, you’re just out for a walk.”</li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2022/04/recoding-gender"><p>Recoding Gender</p>
 </a>
     </h1>
@@ -560,61 +598,6 @@ Phil paused to survey the crowd. “My, it’s cold out here today! You can feel
 <p>By the end, <em>OOP the easy way</em> argued for the need to <em>start</em> seeing if the true paradigm of OOP is actually any good, and that left me back where I started before the book. I wished it had done that work of “asking anybody” already.</p>
 
 <p>Hopes and wishes aside, it was an enjoyable technical read, mainly because it’s dishy, referring and discarding concepts by their progenitors name. This could be criticized as vagueness if one is not invested in learning the personalities involved (for example, a concept is breezily described as “Meyer-ish”), and that kept me moving forward.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2022/03/software-models"><p>Software models</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2022-03-01T01:32:00Z" itemprop="datePublished">March 1, 2022</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2022-02/strict-technical-debt.jpg" alt="Stickynote drawing of a chart in which understanding of the business domain grows, and understanding of the modeling in code sinuisoidally approaches and departs from it." /></p>
-
-<p>Software design has been in my thoughts lately. Particularly <em>agile</em> software design, in which the game is to re-design working software in response to changing business requirements in response to learnings from working software.</p>
-
-<p>1. I was recently talking to a colleague about what I call “Strict” Technical Debt, which is how Ward Cunningham originally defined it (not YAGNI or Skimping <a href="https://ronjeffries.com/articles/019-01ff/iter-yagni-skimp/">according to Ron Jeffries</a>). <a href="https://daverupert.com/2020/11/technical-debt-as-a-lack-of-understanding/">Dave Rupert pulls out</a> the following quote from Ward Cunningham, as “Technical Debt as a lack of understanding”:</p>
-
-<blockquote>
-  <p>“If you develop a program for a long period of time by only adding features but never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer.”</p>
-</blockquote>
-
-<p>2. This sentence from SICPER’s <a href="https://www.sicpers.info/2022/02/aphorism-considered-harmful/">“Aphorism Considered Harmful”</a> about the phrase “Make it work, make it right, make it fast”:</p>
-
-<blockquote>
-
-  <p>So actually it looks like I had the wrong idea all this time: you don’t somehow make working software then correct software then fast software, you make working software and some inputs into that are the abstractions in the interfaces you design and the performance they permit in use.</p>
-
-</blockquote>
-
-<p>Or as I interpret it: make it functional, then make the software design be an appropriate representation and model of the business/problem domain, and then make it appropriate/ergonomic for future developers to use or maintain.</p>
-
-<p>3. I left this comment on Jason Swett’s <a href="https://www.codewithjason.com/duplication-cheaper-wrong-abstraction/">“Why I don’t buy “duplication is cheaper than the wrong abstraction”</a>:</p>
-
-<blockquote>
-
-  <p>…The statement I use is “code duplication is better than the wrong business abstraction”.</p>
-
-  <p>A lot of these statements/concepts come out of Agile, Object-Oriented Programming, and Extreme Programming recognize that there are two things evolving unevenly: the understanding of the business domain, and then laggingly, the development of the code that models the understanding of the business domain.</p>
-
-  <p>A better expansion here as I understand the concept would be “duplication of code is acceptable if the proposed extraction/abstraction does not meaningfully model the current understanding of the business domain”.</p>
-
-  <p>The power of the statement, as I use it (and as I see these things go from Agile/OOPS/XP) is to push someone to get closer to the business domain (and the user) in their thinking/proposals/justifications and as a counterweight to DRY. The problem with these things is when they get imposed as a criticism, rather than the starting place of a conversation.</p>
-
-  <p>I think you give solid advice:</p>
-
-  <blockquote>
-    <p>Don’t try to make one thing act like two things. Instead, separate it into two things. If you feel reluctant to modify someone else’s code, ask why that is.</p>
-  </blockquote>
-
-</blockquote>
 
   </div>
 </article>

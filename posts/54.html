@@ -138,6 +138,38 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/08/drupal-theme-override-for-uploadmodules-attachments-list"><p>Drupal: theme override for Upload.module’s attachments list</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-08-10T00:00:00Z" itemprop="datePublished">August 10, 2008</time>
+
+        • Tagged <a href="/posts/tags/art">art</a>, <a href="/posts/tags/design">design</a>, <a href="/posts/tags/drupal">Drupal</a>, <a href="/posts/tags/intuitive">intuitive</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/snippet">snippet</a>, and <a href="/posts/tags/webdesign">webdesign</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><strong>Update:</strong> this functionality can now be achieved with the <a href="http://drupal.org/project/itweak_upload">iTweak_upload module </a>. <em>Thanks to <a href="http://damoncook.net/">Damon</a> for the tip!</em></p>
+
+<p>I made a custom override for Drupal 6.x’s Upload.module’s attachments table that is displayed at the bottom of a node when you create file attachments. That table is, in my opinion, one of the ugliest common and default presentations in Drupal core. Below is an example of the before and after:</p>
+
+<p><img src="/uploads/2008-08-10-Drupal-theme-override-for-Uploadmodules-attachments-list/shiny_upload-example.png" alt="Example of override" /></p>
+
+<p>To use it, unzip and drop the included folder into your active theme’s directory (e.g. /sites/default/all/garland), it should take effect without any other modifications—though you may have to reset the theme cache (goto admin/build/themes and click save without making any other changes).</p>
+
+<p><a href="/uploads/2008-08-10-Drupal-theme-override-for-Uploadmodules-attachments-list/shiny_upload.zip">Click Here to Download (shiny_upload.zip)</a></p>
+
+<p>Also, I don’t know what the name is for these types of theme overrides: it’s not a module, and it’s not a whole theme. I <a href="http://groups.drupal.org/node/13873">posted this</a> to a Drupal Group that, I think, calls them “ <a href="http://groups.drupal.org/themer-pack-working-group">Themer Packs</a>”.</p>
+
+<p>The icon code is based on the CCK <a href="http://drupal.org/project/filefield">filefield module</a>—but the current 6.0 version is kind’ve clunky and I wanted to port it to the core Upload module. The namespace is “shiny_upload”.</p>
+
+<p>Also, as an aside, the reason island94.org doesn’t currently have this enabled is because it’s still running on Drupal 5.x branch</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2008/08/digital-media-forensics"><p>Digital Media Forensics</p>
 </a>
     </h1>
@@ -426,31 +458,6 @@
 
 <blockquote>
   <p>Participants will bring their own knowledge and experiences to this open discussion of targeted communications strategies. How do generational differences affect the effectiveness of your messages, opportunities and appeals? We’ll discuss everything from Facebook to Phone Trees and PayPal to to Planned Giving.</p>
-</blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2008/06/fluoride-teeth-and-brushing-advice"><p>Fluoride, teeth and brushing advice</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2008-06-26T00:00:00Z" itemprop="datePublished">June 26, 2008</time>
-
-        • Tagged <a href="/posts/tags/health">health</a> and <a href="/posts/tags/hygiene">hygiene</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Ever since Dr. Strangelove I’ve found the fluoride controversy interesting and scary (for many reasons). I can’t verify any of this, but from a Digg article entitled <a href="http://digg.com/health/Fluoride_s_glory_may_be_cresting">Fluoride’s glory may be cresting</a>, here was a comment that seemed to have enough info to worthwhilely put it here:</p>
-
-<blockquote>
-  <p>Fluoride replaces the hydroxyl ion in the naturally occurring calcium hydroxyapatite causing a stronger nuclear bond. In that respect it strengthens the tooth. The problems associated with flouride come from poor understanding of the inherent dangers of ingestion.</p>
-
-  <p>When it comes to toothpaste, I alternate a flouride containing paste with a paste containing sodium-calcium phosphosilicate which adheres to the surface of the tooth enamel creating new calcium hydroxyapatite. It does this by a simple mechanism. The sodium raises the ph of the saliva which causes the calcium and phosphorous to plate out of solution onto the tooth and re nourishing any damaged areas.</p>
-
 </blockquote>
 
   </div>

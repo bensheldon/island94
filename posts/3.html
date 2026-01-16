@@ -138,6 +138,42 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/04/recently-april-7-2025"><p>Recently, April 7, 2025</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-04-08T02:33:00Z" itemprop="datePublished">April 8, 2025</time>
+
+        • Tagged <a href="/posts/tags/weeknotes">weeknotes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <ul>
+  <li>I had my last day at old job. I got locked out of all my GitHub accounts at noon on Friday. At 2pm I did a tour of a coworking space for my new job. We’re looking at several spaces between where I live (SF) and my cofounder (Oakland). Both of us are looking forward to regularly being in the same space with a big whiteboard adjacent to somehere nice to walk around outside.</li>
+  <li>I helped publish the monthly April Newsletter for the Alliance of Civic Technologists. I’ve stepped back mostly to focus on website tasks, though I’m proud that the comms stuff I previously pushed on (“what if we just regularly re-published stuff from the network without committing to a lot of other words?”) seems to have been taken up. I also feel like my involvement has been good training for my conviction of like “the reason we’re doing it this way is because I’m responsible for it.” Not that I expected to defend a a five page website with Jekyll on GitHub pages in 2023 (when I put together with Bill Hunt and Molly McLeod), but the only way some people know how to engage is by aggressively wondering why you didn’t do it differently.</li>
+  <li>I tried not to think about (new) work all weekend. Saturday we got up before 5am to volunteer at a Bay Bridge swim; we worked registration and body marking (TIL some people are immune to sharpie). We took a dip ourselves, cafe for breakfast, then farmer’s market, cleaned up at home, met friends for tea (one of whom I’m trying to recruit to work with me; so it goes now), then to the protest, then a wine bar where we picked up some more friends in civic tech, then a gallery showing for some other friends from the swim club, then scrambled eggs at home for dinner. Saturday! Sunday was more sedate of swim, cafe, walk to Trader Joes, a different wine bar where I found agreement with a neighbor that being run over by a car is one’s most likely fate in SF.</li>
+  <li>I got up a <a href="https://www.linkedin.com/posts/bensheldon_charlotte-weiner-mba-24-opening-the-door-activity-7314062454370496512-xHcP">LinkedIn post</a> about my job change:
+    <blockquote>
+      <p>Today was my last day GitHub. I’m really proud of the last 3 years helping build and support the Rails and Ruby developer community inside of GitHub and beyond.</p>
+
+      <p>I also couldn’t pass on the new opportunity to work again on improving America’s social safety net. It’s been 3 years since I left Code for America and I’m excited about new options that have opened up with tech, telephony, and AI. I’m optimistic that we can fully close the loop in assisting, advocating, and escalating for people throughout their welfare journey and achieve significantly higher approval rates than was possible before. And do so sustainably; that’s the challenge!</p>
+
+      <p>Here’s a nice write-up about <a href="https://www.gsb.stanford.edu/experience/news-history/charlotte-weiner-mba-24-opening-door-billions-unclaimed-public-benefits">what my cofounder and I are hoping to achieve</a>.</p>
+    </blockquote>
+  </li>
+  <li>I participated in totally normal global commerce by ordering a mechanical keyboard (75% Alice brown). It’s currently in Guangzhuo; we shall see what happens now.</li>
+  <li>I finished reading <em>Polostan</em>. It’s better than his last… 4 books, despite containing the phrase “girls’ bottoms in riding breaches” two times too many. I started Naomi Novik’s <em>Spinning Silver</em>.</li>
+  <li>I started playing “The Witcher 3” which is neither cozy nor casual. I don’t know how many of the Witcher books I read previously because all evidence points to it being prior to 2014 when Pantheon’s new-hire perk was a Kindle. Seems like there are more books now.</li>
+  <li>We watched the White Lotus finale 🤷</li>
+  <li>On my first day as CTO, I reviewed all of our seat-based SaaS costs. $8 here, $4 there, $15 jeez 🫠 I’m already annoyed that my former employer charges for Branch Protection rules to block force-pushes on <code>main</code> 🙃</li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/04/recently-april-2-2025"><p>Recently, April 2, 2025</p>
 </a>
     </h1>
@@ -699,117 +735,6 @@ Overall: Is it positive, neutral, or negative?</p>
 </ul>
 
 <p>It’s ok to summarize, extract, translate or sentiment. The only reason it’s ok to zero-shot code is because it’s machine verifiable (you run it). Otherwise, you must verify! Or don’t do it at all.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/12/including-rails-view-helpers-concern"><p>Including Rails View Helpers is a concern</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-12-02T16:01:00Z" itemprop="datePublished">December 2, 2024</time>
-
-        • Tagged <a href="/posts/tags/rails">rails</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>If you’re currently maintaining a Ruby on Rails codebase, I want you to do a quick regex code search in your Editor:</p>
-
-<pre><code>include .*Helper
-</code></pre>
-
-<p>Did you get any hits? Do any of those constants point back to your <code>app/helpers</code> directory? That could be a problem.</p>
-
-<p><strong>Never include a module from <code>app/helpers</code> into anything in your application.</strong> Don’t do it.</p>
-
-<ul>
-  <li>Modules defined in <code>app/helpers</code> should exclusively be View Helpers. Every module in the <code>app/helpers</code> directory is automatically included into Views/Partials, and available within Controllers via the <code>helpers</code> proxy  e.g. <code>helpers.the_method</code> in Controllers or <code>ApplicationController.helpers.the_method</code> anywhere else.</li>
-  <li>Including View Helpers into other files (Controllers, Models, etc.) creates a risk that some methods may <em>not</em>  be safely callable because they depend on View Context that isn’t present. (They’re also hell to type with Sorbet.)</li>
-  <li>If you do have includable mixins (“bucket of methods”) that do make sense to be included into lots of different classes (Controllers, Models, Views, etc.), make them a concern and don’t put them in <code>app/helpers</code>.</li>
-</ul>
-
-<h2 id="some-general-background">Some general background</h2>
-
-<p>Rails has always had View Helpers. Prior to Rails 2 (~2009), only the <code>ApplicationHelper</code> was included into all controller views and other helpers would have to be added manually. Rails 2 changed the defaults via <code>helpers :all</code> and <code>config.action_controller.include_all_helpers</code> to always include <em>all</em> Helpers in <em>all</em> Views.</p>
-
-<p>Rails 4.0 (2012) <a href="https://signalvnoise.com/posts/3372-put-chubby-models-on-a-diet-with-concerns">introduced Concerns</a>, which formalized conventions around extracting shared behaviors into module mix-ins.</p>
-
-<p>Rails 5.0 (2016) introduced the Action Controller <a href="https://github.com/rails/rails/pull/24866"><code>helpers</code> proxy</a>, and clearly summarizes the problem that I’ve observed too:</p>
-
-<blockquote>
-
-  <p>It is a common pattern in the Rails community that when people want to use any kind of helper that is defined inside app/helpers they includes the helper module inside the controller like:</p>
-
-  <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">UserHelper</span>
-  <span class="k">def</span> <span class="nf">my_user_helper</span>
-    <span class="c1"># ...</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-  <span class="kp">include</span> <span class="no">UserHelper</span>
-
-  <span class="k">def</span> <span class="nf">index</span>
-    <span class="n">render</span> <span class="ss">inline: </span><span class="n">my_user_helper</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div>  </div>
-
-  <p>This has problem because the helper can’t access anything that is defined in the view level context class.</p>
-
-  <p>Also all public methods of the helper become available in the controller what can lead to undesirable methods being routed and behaving as actions.</p>
-
-  <p>Also if you helper depends on other helpers or even Action View helpers you need to include each one of these dependencies in your controller otherwise your helper is not going to work.</p>
-
-</blockquote>
-
-<h2 id="some-specific-background">Some specific background</h2>
-
-<p>This has come up as a problem at my day job, GitHub. GitHub has the unique experience of being one of the oldest and largest Ruby on Rails monoliths and it’s full of opportunities to identify friction, waste, and toil.</p>
-
-<p>Disordered usage of View Helpers and the <code>app/views</code> directory became very visible as we’ve been typing our monolith with Sorbet. Typing module mixins in Sorbet is itself <a href="https://sorbet.org/docs/requires-ancestor">inherently difficult</a>, but View Helpers had accumlated a significant amount of <code>T.unsafe</code> escape-hatches and in understanding why… we discovered that explicitly including View Helpers in lots of different types of classes was a cause.</p>
-
-<h2 id="whats-the-alternative">What’s the alternative?</h2>
-
-<p>I analyzed the different types of modules that were being created, and came up with this list:</p>
-
-<ul>
-  <li><strong>Concerns</strong> are shared behaviors that may be optionally included into multiple other classes/objects when that behavior is desired. We can further break down:
-    <ul>
-      <li><strong>Application-level Concerns</strong> are agnostic about the kind of object they are included into (could be a controller, or model, or a job, or a PORO)</li>
-      <li><strong>Component-level Concerns</strong> are intended to only be mixed into a specific kind of object, like a controller with expectations that controller-methods are available to be used in that concern (like an http request object, or other view helpers like path helpers)</li>
-    </ul>
-  </li>
-  <li><strong>Dependencies</strong> are non-shared behaviors that have been extracted into a module from a specific, singular controller to improve behavioral cohesion, and is then included back into that one, specific class or object.</li>
-  <li><strong>View Helpers</strong> are intended to be across Views (or Controllers via the <code>helpers</code> view-proxy method in Controllers or <code>ApplicationController.helpers</code> anywhere else) for formatting and presentation purposes and have access to other view helpers or http request objects. These are the only objects that modules that should go in <code>app/helpers</code>.</li>
-</ul>
-
-<p>And this is what you might do about them:</p>
-
-<ul>
-  <li><strong>Stop and remove <code>include MyHelper</code> from Controllers.</strong>  Instead, you can access any View Helper method in a controller via <code>helpers.the_name_of_the_method</code></li>
-  <li><strong>Move Concerns and Dependencies out of <code>app/helpers</code>.</strong> If what is currently in <code>app/helpers</code> is not a View Helper, move it:
-    <ul>
-      <li>Application-level Concerns should be moved into <code>app/concerns</code></li>
-      <li>Component-level Concerns should be moved into their appropriate <code>app/controllers/concerns</code> or <code>your_package/models/concerns</code>, etc.</li>
-      <li>Dependencies should be moved to an appropriate place in their namespaces hierarchy. e.g. if the module is only included into <code>ApplicationController</code>, it should be named <code>ApplicationController::TheBehavior</code> and live in <code>app/controllers/application_controller/the_behavior.rb</code></li>
-    </ul>
-  </li>
-  <li><strong>Never include a module from <code>app/helpers</code> anywhere.</strong> Don’t do it.</li>
-  <li><strong>Use the Controller <code>helpers</code> proxy or <code>ApplicationController.helpers.the_helper_method</code></strong> to access helpers (like <code>ActionView::Helpers::DateHelper</code>) in Controller or other Object contexts.</li>
-  <li><strong>Invert the relationship between Helpers and Concerns.</strong> If you have behavior that you want available to lots of different kinds of components <em>and</em> views, start by creating a Concern, and then include that Concern <em>into</em> a View Helper or <code>ApplicationHelper</code>.  Don’t go the other direction.</li>
-  <li><strong>Invert the relationship between Views and Controllers.</strong> If you have a private method that is specific to a single controller, and you want to expose that method to the controller’s views, you can expose that method to the views directly using <code>helper_method :the_method_name</code> . Use this sparingly, because it extends singleton View objects which deoptimizes the Ruby VM; but really, don’t twist yourself into knots to avoid it either, that’s what it’s there for.</li>
-  <li><strong>(optional but recommended) Rename the constant too, not just move it, when it’s not a View Helper.</strong> Naming things is hard, but <code>*Helper</code> is… not very descriptive. While it’s the placement in <code>app/helpers</code> that brings the automatic behavior… so it’s not <em>technically</em> a problem to have a <code>SomethingHelper</code> that isn’t a View Helper living in <code>app/controllers/concerns</code> … it is confusing to have non-helpers named <code>SomethingHelper</code>. Some suggestions for renaming Concerns and Dependencies:
-    <ul>
-      <li>Use the “-able” suffix to turn the behavior or capability into an adjective. e.g. <code>SoftDeletable</code></li>
-      <li>Append <code>Dependancy</code> to the end, like <code>AbilityDependency</code></li>
-      <li>If you’re out of ideas, use <code>Methods</code> or <code>Mixin</code>, like <code>UserMethods</code> or <code>UserMixin</code>.</li>
-    </ul>
-  </li>
-</ul>
 
   </div>
 </article>

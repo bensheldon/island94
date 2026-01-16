@@ -138,6 +138,131 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2023/08/how-to-isolate-i18n-configuration-in-a-rails-engine"><p>How to isolate I18n configuration in a Rails Engine</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2023-08-22T13:54:00Z" itemprop="datePublished">August 22, 2023</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a> and <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> is a multithreaded, Postgres-based, Active Job backend for Ruby on Rails.</p>
+
+<p>GoodJob includes an administrative web dashboard that is packaged as a mountable Rails Engine. The dashboard is currently translated into 8 different languages: English, German, Spanish, French, Japanese, Dutch, Russian, Turkish, and Ukrainian (I’d love your help improving these and translating additional languages too). Demo here: <a href="https://goodjob-demo.herokuapp.com/">https://goodjob-demo.herokuapp.com/</a></p>
+
+<p>I have learned quite a lot during the GoodJob development process about internationalizing a Rails Engine. I’ve previously worked on rather large and complicated localized government welfare applications, so I’m familiar with localization in the context of a Rails app. But internationalizing a Rails Engine was new, getting it right was harder than I expected, and I had trouble finding documentation and code examples in other libraries.</p>
+
+<p>Overall, internationalizing a Rails Engine was <em>nearly</em> identical to the process of internationalizing a Rails Application as covered in the <a href="https://guides.rubyonrails.org/i18n.html">Rails Guides</a>: using the <code>I18n</code> library and extracting strings from ERB views into keyed configuration files (e.g. <code>config/locales/en.yml</code>) and replacing them with <code>&lt;%= t(".the.key") %&gt;</code> . Simple.</p>
+
+<p>The difficult part was separating and isolating GoodJob’s <code>I18n</code> configuration from the parent applications.</p>
+
+<h3 id="why-is-it-necessary-to-isolate-i18n">Why is it necessary to isolate <code>I18n</code>?</h3>
+
+<p>As a mountable Rails Engine, GoodJob’s dashboard sits <em>within</em> a parent Rails application. GoodJob should step lightly.</p>
+
+<p>The <code>I18n</code> library provides a number of configuration options:</p>
+
+<ul>
+  <li><code>I18n.current_locale</code></li>
+  <li><code>I18n.default_locale</code></li>
+  <li><code>I18n.available_locales</code></li>
+  <li><code>I18n.enforce_available_locales</code> , which will raise an exception if the locale is switched to one not contained within the set of available locales.</li>
+</ul>
+
+<p>It’s possible that GoodJob’s administrative web dashboard would have different values for these than the parent Rails Application. Imagine: An English and Ukrainian speaking development and operations team administering a French and German language only website. How to do it?</p>
+
+<h3 id="isolating-configuration-values">Isolating configuration values</h3>
+
+<p><code>I18n</code> configuration needs to be thread-local, so that a multithreaded webserver like Puma can serve a web request to the GoodJob Dashboard in Ukrainian (per the previous scenario) while <em>also</em> serving a web request for the parent Rails application in French (or raise an exception if someone tries to access it in Italian).</p>
+
+<p>Unfortunately,  <code>I18n.current_locale</code> is the only configuration value that delegates to a thread-locale variable. All other configuration values are <a href="https://github.com/ruby-i18n/i18n/blob/7cf09474b77fd41e65d979134b0525f67cf371b0/lib/i18n/config.rb#L58">implemented as global <code>@@</code> class variables</a> on <code>I18n.config</code>. This makes sense when thinking of a monolithic application, but not when a Rails application is made up of multiple Engines or components that serve different purposes and audiences (the frontend visitor and the backend administrator). I struggled <em>a lot</em> figuring out a workaround for this, until I discovered that <code>I18n.config</code> is <em>also</em> thread-local.</p>
+
+<p><strong>Swap out the entire <code>I18n.config</code>  value with your Engine’s own <code>I18n::Config</code>-compatible object:</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/good_job/application_controller.rb</span>
+<span class="k">module</span> <span class="nn">GoodJob</span>
+  <span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+    <span class="n">around_action</span> <span class="ss">:use_good_job_locale</span>
+
+    <span class="k">def</span> <span class="nf">use_good_job_locale</span><span class="p">(</span><span class="o">&amp;</span><span class="n">action</span><span class="p">)</span>
+      <span class="vi">@original_i18n_config</span> <span class="o">=</span> <span class="no">I18n</span><span class="p">.</span><span class="nf">config</span>
+      <span class="no">I18n</span><span class="p">.</span><span class="nf">config</span> <span class="o">=</span> <span class="o">::</span><span class="no">GoodJob</span><span class="o">::</span><span class="no">I18nConfig</span><span class="p">.</span><span class="nf">new</span>
+      <span class="no">I18n</span><span class="p">.</span><span class="nf">with_locale</span><span class="p">(</span><span class="n">current_locale</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">action</span><span class="p">)</span>
+    <span class="k">ensure</span>
+      <span class="no">I18n</span><span class="p">.</span><span class="nf">config</span> <span class="o">=</span> <span class="vi">@original_i18n_config</span>
+      <span class="vi">@original_i18n_config</span> <span class="o">=</span> <span class="kp">nil</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># lib/good_job/i18n_config.rb</span>
+<span class="k">module</span> <span class="nn">GoodJob</span>
+  <span class="k">class</span> <span class="nc">I18nConfig</span> <span class="o">&lt;</span> <span class="o">::</span><span class="no">I18n</span><span class="o">::</span><span class="no">Config</span>
+    <span class="no">BACKEND</span> <span class="o">=</span> <span class="no">I18n</span><span class="o">::</span><span class="no">Backend</span><span class="o">::</span><span class="no">Simple</span><span class="p">.</span><span class="nf">new</span>
+    <span class="no">AVAILABLE_LOCALES</span> <span class="o">=</span> <span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"config/locales"</span><span class="p">).</span><span class="nf">glob</span><span class="p">(</span><span class="s2">"*.yml"</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">path</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">".yml"</span><span class="p">).</span><span class="nf">to_sym</span> <span class="p">}.</span><span class="nf">uniq</span>
+    <span class="no">AVAILABLE_LOCALES_SET</span> <span class="o">=</span> <span class="no">AVAILABLE_LOCALES</span><span class="p">.</span><span class="nf">inject</span><span class="p">(</span><span class="no">Set</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">set</span><span class="p">,</span> <span class="n">locale</span><span class="o">|</span> <span class="n">set</span> <span class="o">&lt;&lt;</span> <span class="n">locale</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">&lt;&lt;</span> <span class="n">locale</span><span class="p">.</span><span class="nf">to_sym</span> <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">backend</span>
+      <span class="no">BACKEND</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">available_locales</span>
+      <span class="no">AVAILABLE_LOCALES</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">available_locales_set</span>
+      <span class="no">AVAILABLE_LOCALES_SET</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">default_locale</span>
+      <span class="no">GoodJob</span><span class="p">.</span><span class="nf">configuration</span><span class="p">.</span><span class="nf">dashboard_default_locale</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Here’s the PR with the details that also shows the various complications I had introduced prior to finding this better approach: <a href="https://github.com/bensheldon/good_job/pull/1001">https://github.com/bensheldon/good_job/pull/1001</a></p>
+
+<h3 id="isolating-rails-formatters">Isolating Rails Formatters</h3>
+
+<p>The main reason I implemented GoodJob’s Web Dashboard as a Rails Engine is because I want to take advantage of all of Rail’s developer niceties, like time and duration formatters. These are also necessary to isolate, so that GoodJob’s translations don’t leak into the parent application.</p>
+
+<p>First, time helper translations should be namespaced in the yaml translation files:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/locales/en.yml</span>
+<span class="na">good_job</span><span class="pi">:</span> 
+  <span class="c1"># ...</span>
+  <span class="na">datetime</span><span class="pi">:</span>
+    <span class="na">distance_in_words</span><span class="pi">:</span>
+    <span class="c1"># ...</span>
+  <span class="na">format</span><span class="pi">:</span> 
+    <span class="c1"># ...</span>
+  <span class="c1"># ...</span>
+</code></pre></div></div>
+
+<p>Then, for each helper, here’s how to scope them down:</p>
+
+<ul>
+  <li><code>number_to_human(number, unit: "good_job.number")</code></li>
+  <li><code>time_ago_in_words(timestamp, scope: "good_job.datetime.distance_in_words")</code></li>
+</ul>
+
+<p>By the way, there is a great repository of translations for Rails helpers here: <a href="https://github.com/svenfuchs/rails-i18n/tree/64e3b0e59994cc65fbc47046f9a12cf95737f9eb/rails/locale">https://github.com/svenfuchs/rails-i18n/tree/64e3b0e59994cc65fbc47046f9a12cf95737f9eb/rails/locale</a></p>
+
+<h3 id="closing-thoughts">Closing thoughts</h3>
+
+<p>Whenever I work on internationalization in Rails, I have to give a shoutout for the <a href="https://github.com/glebm/i18n-tasks"><code>i18n-tasks</code> library</a>, which has been invaluable in operationalizing translation workflows: surfacing missing translation, normalizing and linting yaml files, making it easy to export the whole thing to a spreadsheet for review and correction, or using machine translation to quickly turn around a change (I have complicated feelings on that!).</p>
+
+<p>Internationalizing GoodJob has been a fun creative adventure. I hope that by writing this that other Rails Engine developers prioritize internationalization a little higher and have an easier time walking in these footsteps. And maybe we’ll make the ergonomics of it a little easier upstream too.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2023/08/recoding-america"><p>Recoding America, a book review</p>
 </a>
     </h1>
@@ -937,78 +1062,6 @@
   <li>My brother and I have been planning a Celebration of Life for my mom.</li>
   <li>I’m so happy to finally be back on Daylight Savings Time.</li>
 </ul>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2023/02/service-object-objects-in-ruby"><p>Service Object Objects in Ruby</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2023-02-14T16:18:00Z" itemprop="datePublished">February 14, 2023</time>
-
-        • Tagged <a href="/posts/tags/ruby">Ruby</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>For anyone that follows me on social media, I’ll sometimes get into a <a href="https://deprogrammaticaipsum.com/james-coplien/">Coplien</a>-esque funk of “I don’t wanna write Classes. I want to write <em>Objects</em>!”. I don’t want to negotiate an industrial-relations policy for instances of Person in the current scope. I want to imagine the joy and misery Alice and Bob will experience working together right now.</p>
-
-<p>I was thinking of that recently when <a href="https://www.reddit.com/r/ruby/comments/10sooyr/comment/j74j5qw/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">commenting on Reddit</a> about Caleb Hearth’s <a href="https://calebhearth.com/decree">“The Decree Design Pattern”</a>. Which ended up in the superset of these two thoughts:</p>
-
-<ul>
-  <li>heck yeah! if it’s globally distinct it should be globally referenceable</li>
-  <li>oh, oh no, I don’t like looking at <em>that</em> particular Ruby code</li>
-</ul>
-
-<p>This was my comment to try to personally come to terms with those thoughts, iteratively:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># a consistent callable</span>
-<span class="n">my_decree</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">do_something</span> <span class="p">}</span>
-
-<span class="c1"># ok, but globally scoped</span>
-<span class="no">MY_DECREE</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">do_something</span> <span class="p">}</span>
-
-<span class="c1"># ok, but without the shouty all-caps</span>
-<span class="k">module</span> <span class="nn">MyDecree</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span> 
-    <span class="n">do_something</span> 
-  <span class="k">end</span> 
-<span class="k">end</span>
-
-<span class="c1"># ok, but what about when it gets really complex</span>
-<span class="k">class</span> <span class="nc">MyDecree</span> 
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
-    <span class="n">new</span><span class="p">(</span><span class="n">variable</span><span class="p">).</span><span class="nf">call</span> 
-  <span class="k">end</span>
-  
-  <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
-    <span class="vi">@variable</span> <span class="o">=</span> <span class="n">variable</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">call</span>
-    <span class="n">do_something</span>
-    <span class="n">do_something_else</span><span class="p">(</span><span class="vi">@variable</span><span class="p">)</span>
-    <span class="n">do_even_more</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">do_even_more</span>
-    <span class="c1"># something really complicated....</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>From the outside, <em>object</em> perspective, these are all have the same interchangeable interface (<code>.call</code>), and except for the first one, accessible everywhere. That’s great, from my perspective! Though I guess it’s a pretty short blog post to say:</p>
-
-<ul>
-  <li>Decrees are globally discrete and call-able objects</li>
-  <li>The implementation is up to you!</li>
-</ul>
-
-<p>Unfortunately, the moment the internals come into play, it gets messy. But I don’t think that should take away from the external perspective.</p>
-
 
   </div>
 </article>

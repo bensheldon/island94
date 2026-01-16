@@ -138,6 +138,62 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/01/trigger-github-actions-workflows-from-apple-shortcuts"><p>Trigger GitHub Actions workflows with inputs from Apple Shortcuts</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-01-08T23:18:00Z" itemprop="datePublished">January 8, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I’ve been using Apple Shortcuts to invoke GitHub Actions workflows to create webpage bookmarks. It’s been great! (disclosure: I do work at GitHub)</p>
+
+<p>My use case: I’ve been wanting to quit Pinboard.in, so I needed an alternative way to create and host my web bookmarks, some of which date back to ~2005 del.icio.us vintage. It’s been easy enough for me to export of all my bookmarks (<code>settings -&gt; backup -&gt; JSON</code>) and <a href="https://github.com/bensheldon/bookmarks/blob/bc85a68ea61844ad0b11b823bef355a1879b0462/script/import_pinboard.rb#L7-L20">convert them to YAML files</a> to be served by Jekyll and GitHub Pages. But I also needed an easy way to create new bookmarks that would work on all my Apple devices. I ended up with:</p>
+
+<ol>
+  <li>Bookmarks are organized as individual yaml files, in this <a href="https://github.com/bensheldon/island94.org/tree/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/_bookmarks">blog’s repository</a>.</li>
+  <li>A <a href="https://github.com/bensheldon/island94.org/blob/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/scripts/bookmark.rb">Ruby script</a> to take some simple inputs (url, title, notes), generate a new yaml file, and commit it to the repo using Octokit.</li>
+  <li>A GitHub Actions <a href="https://github.com/bensheldon/island94.org/blob/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/.github/workflows/bookmark.yml#L3-L20">workflow that accepts those same inputs</a>  and can be manually triggered, that runs the script. One thing to note is that I echo the inputs to <code>$GITHUB_STEP_SUMMARY</code> early in the workflow in case a later step errors, so I won’t lose the bookmark details and can go back later and manually fix it up.</li>
+  <li>An Apple Shortcut that asks for those inputs (either implicitly via the Share Sheet or via text inputs) and then manually triggers the GitHub Actions workflow via the GitHub API.</li>
+</ol>
+
+<p>The only difficult part for me was getting Apple Shortcuts to work nicely with the GitHub REST API. Here’s what worked for me:</p>
+
+<p>Use <code>Get Contents of URL</code> Action:</p>
+
+<ul>
+  <li>URL: <code>https://api.github.com/repos/USER/REPOSITORY/actions/workflows/WORKFLOW.yml/dispatches</code></li>
+  <li>Method: <code>POST</code></li>
+  <li>Headers:
+    <ul>
+      <li><code>Accept: application/vnd.github.v3+jsonp</code></li>
+      <li><code>Authorization: Bearer GITHUB_ACCESS_TOKEN</code></li>
+    </ul>
+  </li>
+  <li>Request Body: <code>JSON</code>
+    <ul>
+      <li><code>ref: main</code> (or whatever branch you’re using)</li>
+      <li><code>inputs (Dictionary):</code>
+        <ul>
+          <li><code>INPUT: VALUE</code></li>
+          <li>… and your other GitHub Actions workflow inputs</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Here’s what it looks like all together (btw, <a href="https://www.reddit.com/r/shortcuts/comments/zlhva2/dictionaries_broken_in_162/">Dictionary-type inputs were broken in iOS 16 / Mac 13</a> 😨) :</p>
+
+<p><a href="/uploads/2024-01/apple-shortcut.png"><img src="/uploads/2024-01/apple-shortcut.png" alt="Screenshot of Apple Shortcut with the previous configuration" /></a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/01/recently"><p>Recently, January 3, 2023</p>
 </a>
     </h1>
@@ -779,131 +835,6 @@
 </code></pre></div></div>
 
 <p>See, it’s ok to nest <code>Thread.handle_interrupt</code> and likely <em>necessary</em> to achieve the safety and defensiveness you’re expecting.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2023/08/how-to-isolate-i18n-configuration-in-a-rails-engine"><p>How to isolate I18n configuration in a Rails Engine</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2023-08-22T13:54:00Z" itemprop="datePublished">August 22, 2023</time>
-
-        • Tagged <a href="/posts/tags/goodjob">GoodJob</a> and <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> is a multithreaded, Postgres-based, Active Job backend for Ruby on Rails.</p>
-
-<p>GoodJob includes an administrative web dashboard that is packaged as a mountable Rails Engine. The dashboard is currently translated into 8 different languages: English, German, Spanish, French, Japanese, Dutch, Russian, Turkish, and Ukrainian (I’d love your help improving these and translating additional languages too). Demo here: <a href="https://goodjob-demo.herokuapp.com/">https://goodjob-demo.herokuapp.com/</a></p>
-
-<p>I have learned quite a lot during the GoodJob development process about internationalizing a Rails Engine. I’ve previously worked on rather large and complicated localized government welfare applications, so I’m familiar with localization in the context of a Rails app. But internationalizing a Rails Engine was new, getting it right was harder than I expected, and I had trouble finding documentation and code examples in other libraries.</p>
-
-<p>Overall, internationalizing a Rails Engine was <em>nearly</em> identical to the process of internationalizing a Rails Application as covered in the <a href="https://guides.rubyonrails.org/i18n.html">Rails Guides</a>: using the <code>I18n</code> library and extracting strings from ERB views into keyed configuration files (e.g. <code>config/locales/en.yml</code>) and replacing them with <code>&lt;%= t(".the.key") %&gt;</code> . Simple.</p>
-
-<p>The difficult part was separating and isolating GoodJob’s <code>I18n</code> configuration from the parent applications.</p>
-
-<h3 id="why-is-it-necessary-to-isolate-i18n">Why is it necessary to isolate <code>I18n</code>?</h3>
-
-<p>As a mountable Rails Engine, GoodJob’s dashboard sits <em>within</em> a parent Rails application. GoodJob should step lightly.</p>
-
-<p>The <code>I18n</code> library provides a number of configuration options:</p>
-
-<ul>
-  <li><code>I18n.current_locale</code></li>
-  <li><code>I18n.default_locale</code></li>
-  <li><code>I18n.available_locales</code></li>
-  <li><code>I18n.enforce_available_locales</code> , which will raise an exception if the locale is switched to one not contained within the set of available locales.</li>
-</ul>
-
-<p>It’s possible that GoodJob’s administrative web dashboard would have different values for these than the parent Rails Application. Imagine: An English and Ukrainian speaking development and operations team administering a French and German language only website. How to do it?</p>
-
-<h3 id="isolating-configuration-values">Isolating configuration values</h3>
-
-<p><code>I18n</code> configuration needs to be thread-local, so that a multithreaded webserver like Puma can serve a web request to the GoodJob Dashboard in Ukrainian (per the previous scenario) while <em>also</em> serving a web request for the parent Rails application in French (or raise an exception if someone tries to access it in Italian).</p>
-
-<p>Unfortunately,  <code>I18n.current_locale</code> is the only configuration value that delegates to a thread-locale variable. All other configuration values are <a href="https://github.com/ruby-i18n/i18n/blob/7cf09474b77fd41e65d979134b0525f67cf371b0/lib/i18n/config.rb#L58">implemented as global <code>@@</code> class variables</a> on <code>I18n.config</code>. This makes sense when thinking of a monolithic application, but not when a Rails application is made up of multiple Engines or components that serve different purposes and audiences (the frontend visitor and the backend administrator). I struggled <em>a lot</em> figuring out a workaround for this, until I discovered that <code>I18n.config</code> is <em>also</em> thread-local.</p>
-
-<p><strong>Swap out the entire <code>I18n.config</code>  value with your Engine’s own <code>I18n::Config</code>-compatible object:</strong></p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/good_job/application_controller.rb</span>
-<span class="k">module</span> <span class="nn">GoodJob</span>
-  <span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
-    <span class="n">around_action</span> <span class="ss">:use_good_job_locale</span>
-
-    <span class="k">def</span> <span class="nf">use_good_job_locale</span><span class="p">(</span><span class="o">&amp;</span><span class="n">action</span><span class="p">)</span>
-      <span class="vi">@original_i18n_config</span> <span class="o">=</span> <span class="no">I18n</span><span class="p">.</span><span class="nf">config</span>
-      <span class="no">I18n</span><span class="p">.</span><span class="nf">config</span> <span class="o">=</span> <span class="o">::</span><span class="no">GoodJob</span><span class="o">::</span><span class="no">I18nConfig</span><span class="p">.</span><span class="nf">new</span>
-      <span class="no">I18n</span><span class="p">.</span><span class="nf">with_locale</span><span class="p">(</span><span class="n">current_locale</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">action</span><span class="p">)</span>
-    <span class="k">ensure</span>
-      <span class="no">I18n</span><span class="p">.</span><span class="nf">config</span> <span class="o">=</span> <span class="vi">@original_i18n_config</span>
-      <span class="vi">@original_i18n_config</span> <span class="o">=</span> <span class="kp">nil</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="c1"># lib/good_job/i18n_config.rb</span>
-<span class="k">module</span> <span class="nn">GoodJob</span>
-  <span class="k">class</span> <span class="nc">I18nConfig</span> <span class="o">&lt;</span> <span class="o">::</span><span class="no">I18n</span><span class="o">::</span><span class="no">Config</span>
-    <span class="no">BACKEND</span> <span class="o">=</span> <span class="no">I18n</span><span class="o">::</span><span class="no">Backend</span><span class="o">::</span><span class="no">Simple</span><span class="p">.</span><span class="nf">new</span>
-    <span class="no">AVAILABLE_LOCALES</span> <span class="o">=</span> <span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"config/locales"</span><span class="p">).</span><span class="nf">glob</span><span class="p">(</span><span class="s2">"*.yml"</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">path</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">".yml"</span><span class="p">).</span><span class="nf">to_sym</span> <span class="p">}.</span><span class="nf">uniq</span>
-    <span class="no">AVAILABLE_LOCALES_SET</span> <span class="o">=</span> <span class="no">AVAILABLE_LOCALES</span><span class="p">.</span><span class="nf">inject</span><span class="p">(</span><span class="no">Set</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">set</span><span class="p">,</span> <span class="n">locale</span><span class="o">|</span> <span class="n">set</span> <span class="o">&lt;&lt;</span> <span class="n">locale</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">&lt;&lt;</span> <span class="n">locale</span><span class="p">.</span><span class="nf">to_sym</span> <span class="p">}</span>
-
-    <span class="k">def</span> <span class="nf">backend</span>
-      <span class="no">BACKEND</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">available_locales</span>
-      <span class="no">AVAILABLE_LOCALES</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">available_locales_set</span>
-      <span class="no">AVAILABLE_LOCALES_SET</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">default_locale</span>
-      <span class="no">GoodJob</span><span class="p">.</span><span class="nf">configuration</span><span class="p">.</span><span class="nf">dashboard_default_locale</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Here’s the PR with the details that also shows the various complications I had introduced prior to finding this better approach: <a href="https://github.com/bensheldon/good_job/pull/1001">https://github.com/bensheldon/good_job/pull/1001</a></p>
-
-<h3 id="isolating-rails-formatters">Isolating Rails Formatters</h3>
-
-<p>The main reason I implemented GoodJob’s Web Dashboard as a Rails Engine is because I want to take advantage of all of Rail’s developer niceties, like time and duration formatters. These are also necessary to isolate, so that GoodJob’s translations don’t leak into the parent application.</p>
-
-<p>First, time helper translations should be namespaced in the yaml translation files:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/locales/en.yml</span>
-<span class="na">good_job</span><span class="pi">:</span> 
-  <span class="c1"># ...</span>
-  <span class="na">datetime</span><span class="pi">:</span>
-    <span class="na">distance_in_words</span><span class="pi">:</span>
-    <span class="c1"># ...</span>
-  <span class="na">format</span><span class="pi">:</span> 
-    <span class="c1"># ...</span>
-  <span class="c1"># ...</span>
-</code></pre></div></div>
-
-<p>Then, for each helper, here’s how to scope them down:</p>
-
-<ul>
-  <li><code>number_to_human(number, unit: "good_job.number")</code></li>
-  <li><code>time_ago_in_words(timestamp, scope: "good_job.datetime.distance_in_words")</code></li>
-</ul>
-
-<p>By the way, there is a great repository of translations for Rails helpers here: <a href="https://github.com/svenfuchs/rails-i18n/tree/64e3b0e59994cc65fbc47046f9a12cf95737f9eb/rails/locale">https://github.com/svenfuchs/rails-i18n/tree/64e3b0e59994cc65fbc47046f9a12cf95737f9eb/rails/locale</a></p>
-
-<h3 id="closing-thoughts">Closing thoughts</h3>
-
-<p>Whenever I work on internationalization in Rails, I have to give a shoutout for the <a href="https://github.com/glebm/i18n-tasks"><code>i18n-tasks</code> library</a>, which has been invaluable in operationalizing translation workflows: surfacing missing translation, normalizing and linting yaml files, making it easy to export the whole thing to a spreadsheet for review and correction, or using machine translation to quickly turn around a change (I have complicated feelings on that!).</p>
-
-<p>Internationalizing GoodJob has been a fun creative adventure. I hope that by writing this that other Rails Engine developers prioritize internationalization a little higher and have an easier time walking in these footsteps. And maybe we’ll make the ergonomics of it a little easier upstream too.</p>
 
   </div>
 </article>

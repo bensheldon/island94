@@ -138,6 +138,62 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/07/consider-thruster-with-puma-on-heroku"><p>Consider Thruster with Puma on Heroku</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-07-25T18:18:00Z" itemprop="datePublished">July 25, 2025</time>
+
+        • Tagged <a href="/posts/tags/rails">Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>To briefly catch you up to speed if you haven’t been minutely tracking Ruby on Rails performance errata: the Puma webserver has some mildly surprising behavior with the order in which it processes and prioritizes requests that are pipelined through keepalive connections; under load, it can lead to unexpected latency.</p>
+
+<p>Heroku wrote <a href="https://www.heroku.com/blog/pumas-routers-keepalives-ohmy/">~3,000 words about this Puma thing</a>, and <a href="https://github.com/puma/puma/issues/3487">very smart people</a> are <a href="https://github.com/puma/puma/pull/3506">working on it</a>. All of this became mildly important because: Heroku upgraded their network router (“Router 2.0”), which <em>does</em> support connection keepalive, which has the potential to reduce a little bit of latency by reducing the number of TCP handshakes going over Heroku’s internal network between their router and your application dyno. People want it.</p>
+
+<p>When you read the Heroku blog post (all several thousand words of it), it will suggest working around this with Puma configuration like (1) disabling connection keepalive in Puma or (2) disabling a Puma setting called <code>max_fast_inline</code>, though I’m pretty sure this has the same effect in Puma as disabling connection keepalives too (last I checked there wasn’t consensus in Puma as to what parts of the related behavior were intended but surprising, and what was unintended bugs in the logic).</p>
+
+<p>Anyways, there’s a 3rd option: <strong>use Thruster</strong>.</p>
+
+<ul>
+  <li>Requests on the Heroku network between the Heroku router and Thruster running in your application dyno can use connection keepalives (sidenote: I’m 98% confident Thruster supports keepalives because <a href="https://github.com/basecamp/thruster/blob/10e33f6f5a2476231c00a59be209f7a58e98dc1a/internal/server.go#L9">Go <code>net/http</code></a> enables keepalives by default and Thruster doesn’t appear to explicitly disable them)</li>
+  <li>Requests <em>locally</em> within your application dyno between Thruster and Puma can disable connection keepalive and there shouldn’t be any network latency for the TCP handshake because it’s all happening locally in the dyno.</li>
+</ul>
+
+<p>No one else seems to be blogging about this—a fact pointed out when I suggested this in the Rails Performance Slack. So here ya go.</p>
+
+<ol>
+  <li>Add the <code>thruster</code> <a href="https://github.com/basecamp/thruster">gem</a></li>
+  <li>Update your Procfile: <code>web: HTTP_PORT=$PORT TARGET_PORT=3001 bundle exec thrust bin/rails server</code></li>
+  <li>Disable Puma’s keepalives: <code>enable_keep_alives false</code></li>
+</ol>
+
+<p>I was already using Thruster with Puma on Heroku because of the benefits of x-sendfile support. If you’re worried about resource usage (because Thruster is yet another process) it’s been pretty minimal. I looked just now on one app and 13MB for Thruster next to 200MB for the Rails app running in Puma; seems tiny to me.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>heroku ps:exec <span class="nt">-a</span> APPNAME
+<span class="c"># ....</span>
+<span class="nv">$ </span>ps <span class="nt">-eo</span> rss,pss,cmd
+  RSS   PSS CMD
+    4     0 ps-run
+11324 12792 /app/vendor/bundle/ruby/3.4.0/gems/thruster-0.1.14-x86_64-linux/exe/
+ 2960  1095 sshd: /usr/sbin/sshd <span class="nt">-f</span> /app/.ssh/sshd_config <span class="nt">-o</span> Port 1092 <span class="o">[</span>listener
+ 2220   407 /bin/bash <span class="nt">-l</span> <span class="nt">-c</span> <span class="nv">HTTP_PORT</span><span class="o">=</span><span class="nv">$PORT</span> <span class="nv">TARGET_PORT</span><span class="o">=</span>3001 bundle <span class="nb">exec </span>thrust
+199336 187215 puma 6.6.0 <span class="o">(</span>tcp://0.0.0.0:3001<span class="o">)</span> <span class="o">[</span>app]
+ 8316  1821 ssh <span class="nt">-o</span> <span class="nv">ServerAliveInterval</span><span class="o">=</span>30 <span class="nt">-o</span> <span class="nv">ServerAliveCountMax</span><span class="o">=</span>3 <span class="nt">-o</span> HostKeyAlg
+ 9172  6346 skylightd
+ 8244  1367 sshd: u16321 <span class="o">[</span>priv]
+ 5548  1296 sshd: u16321@pts/0
+ 4444  1178 <span class="nt">-bash</span>
+ 4036  1964 ps <span class="nt">-eo</span> rss,pss,cmd
+</code></pre></div></div>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/07/customize-rails-i18n-key-suffixes-like-md-for-markdown"><p>How to customize Rails I18n key suffixes like <code>_md</code> for Markdown</p>
 </a>
     </h1>
@@ -739,42 +795,6 @@ export default class extends Controller {
 <hr />
 
 <p>I’m still reading <em>Spinning Silver</em>; it’s good <em>and</em> long! I have not played Witcher 3 since writing about it last time, or really anything.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/04/recently-april-7-2025"><p>Recently, April 7, 2025</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-04-08T02:33:00Z" itemprop="datePublished">April 8, 2025</time>
-
-        • Tagged <a href="/posts/tags/weeknotes">weeknotes</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <ul>
-  <li>I had my last day at old job. I got locked out of all my GitHub accounts at noon on Friday. At 2pm I did a tour of a coworking space for my new job. We’re looking at several spaces between where I live (SF) and my cofounder (Oakland). Both of us are looking forward to regularly being in the same space with a big whiteboard adjacent to somehere nice to walk around outside.</li>
-  <li>I helped publish the monthly April Newsletter for the Alliance of Civic Technologists. I’ve stepped back mostly to focus on website tasks, though I’m proud that the comms stuff I previously pushed on (“what if we just regularly re-published stuff from the network without committing to a lot of other words?”) seems to have been taken up. I also feel like my involvement has been good training for my conviction of like “the reason we’re doing it this way is because I’m responsible for it.” Not that I expected to defend a a five page website with Jekyll on GitHub pages in 2023 (when I put together with Bill Hunt and Molly McLeod), but the only way some people know how to engage is by aggressively wondering why you didn’t do it differently.</li>
-  <li>I tried not to think about (new) work all weekend. Saturday we got up before 5am to volunteer at a Bay Bridge swim; we worked registration and body marking (TIL some people are immune to sharpie). We took a dip ourselves, cafe for breakfast, then farmer’s market, cleaned up at home, met friends for tea (one of whom I’m trying to recruit to work with me; so it goes now), then to the protest, then a wine bar where we picked up some more friends in civic tech, then a gallery showing for some other friends from the swim club, then scrambled eggs at home for dinner. Saturday! Sunday was more sedate of swim, cafe, walk to Trader Joes, a different wine bar where I found agreement with a neighbor that being run over by a car is one’s most likely fate in SF.</li>
-  <li>I got up a <a href="https://www.linkedin.com/posts/bensheldon_charlotte-weiner-mba-24-opening-the-door-activity-7314062454370496512-xHcP">LinkedIn post</a> about my job change:
-    <blockquote>
-      <p>Today was my last day GitHub. I’m really proud of the last 3 years helping build and support the Rails and Ruby developer community inside of GitHub and beyond.</p>
-
-      <p>I also couldn’t pass on the new opportunity to work again on improving America’s social safety net. It’s been 3 years since I left Code for America and I’m excited about new options that have opened up with tech, telephony, and AI. I’m optimistic that we can fully close the loop in assisting, advocating, and escalating for people throughout their welfare journey and achieve significantly higher approval rates than was possible before. And do so sustainably; that’s the challenge!</p>
-
-      <p>Here’s a nice write-up about <a href="https://www.gsb.stanford.edu/experience/news-history/charlotte-weiner-mba-24-opening-door-billions-unclaimed-public-benefits">what my cofounder and I are hoping to achieve</a>.</p>
-    </blockquote>
-  </li>
-  <li>I participated in totally normal global commerce by ordering a mechanical keyboard (75% Alice brown). It’s currently in Guangzhuo; we shall see what happens now.</li>
-  <li>I finished reading <em>Polostan</em>. It’s better than his last… 4 books, despite containing the phrase “girls’ bottoms in riding breaches” two times too many. I started Naomi Novik’s <em>Spinning Silver</em>.</li>
-  <li>I started playing “The Witcher 3” which is neither cozy nor casual. I don’t know how many of the Witcher books I read previously because all evidence points to it being prior to 2014 when Pantheon’s new-hire perk was a Kindle. Seems like there are more books now.</li>
-  <li>We watched the White Lotus finale 🤷</li>
-  <li>On my first day as CTO, I reviewed all of our seat-based SaaS costs. $8 here, $4 there, $15 jeez 🫠 I’m already annoyed that my former employer charges for Branch Protection rules to block force-pushes on <code>main</code> 🙃</li>
-</ul>
 
   </div>
 </article>

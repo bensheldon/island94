@@ -138,6 +138,34 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/06/rails-strict-locals-local_assigns-and-reserved-keywords"><p>Rails Strict Locals, undefined <code>local_assigns</code>, and reserved keywords</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-06-19T22:21:00Z" itemprop="datePublished">June 19, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><strong>Update: This has been mostly fixed upstream in Rails (Rails 8.0, I think) and <a href="https://github.com/rails/rails/pull/52209">documented in the Rails Guides</a>.</strong></p>
+
+<p><em>Huge thank you to Vojta Drbohlav in the <a href="https://www.railsspeed.com/">Rails Performance Slack</a> for helping me figure this out! 🙇</em></p>
+
+<p>Things I learned today about a new-to-me Ruby on Rails feature:</p>
+
+<ul>
+  <li>Rail 7.1 added a feature called <a href="https://blog.kiprosh.com/allow-template-to-set-strict-locals/">“Strict Locals”</a> that uses a magic comment in ERB templates to declare required and optional local variables. It looks like this: <code>&lt;%# locals: (shirts:, class: nil) %&gt;</code> which in this example means when rendering the partial, it must be provided a <code>shirts</code> parameter and optional <code>class</code> parameter. Having ERB templates act more like callable functions with explicit signatures is a nice feature.</li>
+  <li>When using Rails Strict Locals, the <code>local_assigns</code> variable <a href="https://github.com/rails/rails/blob/4bb73233413f30fd7217bd7f08af44963f5832b1/actionview/lib/action_view/template.rb#L439-L444"><em>is not defined</em></a>. You can’t use <code>local_assigns</code>. You’ll see an error that looks like <code>ActionView::Template::Error (undefined local variable or method 'local_assigns' for an instance of #&lt;Class:0x0000000130536cc8&gt;)</code>. <strong>This has been <a href="https://github.com/rails/rails/pull/52209">fixed</a> 🎉 though <code>local_assigns</code> doesn’t expose default values.</strong></li>
+  <li>This is a problem if your template has locals that are also Ruby reserved keywords like <code>class</code> or <code>if</code>, which can be accessed with <code>local_assigns[:class]</code> <em>unless you start using Strict Locals</em>.<br />
+To access local variables named with reserved keywords in your ERB template when using Strict Locals, you can use <code>binding.local_variable_get(:the_variable_name)</code>, e.g., <code>binding.local_variable_get(:class)</code> or <code>binding.local_variable_get(:if)</code>. <strong>This is still necessary if you want to access reserved keywords <em>with defaults</em> because the defaults don’t show up in <code>local_assigns</code>.</strong></li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/06/recently-june-2024"><p>Recently, June, 2024</p>
 </a>
     </h1>
@@ -1237,62 +1265,6 @@ diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_di
 <p><em>I realize that’s all a big technical mouthful, but the takeaway should be: <a href="https://github.com/jhawthorn/sheap">Sheap</a> is a really great tool, and exploring your Ruby heap can be very satisfying.</em></p>
 
 <p><strong>Update:</strong> Jean Boussier pointed me to the fix in Ruby 3.3 for <a href="https://bugs.ruby-lang.org/issues/19436">call Cache for singleton methods can lead to “memory leaks”</a> 🎉 And suggested looking at <a href="https://github.com/csfrancis/harb"><code>harb</code></a> too as a Sheap-like.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/01/trigger-github-actions-workflows-from-apple-shortcuts"><p>Trigger GitHub Actions workflows with inputs from Apple Shortcuts</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-01-08T23:18:00Z" itemprop="datePublished">January 8, 2024</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I’ve been using Apple Shortcuts to invoke GitHub Actions workflows to create webpage bookmarks. It’s been great! (disclosure: I do work at GitHub)</p>
-
-<p>My use case: I’ve been wanting to quit Pinboard.in, so I needed an alternative way to create and host my web bookmarks, some of which date back to ~2005 del.icio.us vintage. It’s been easy enough for me to export of all my bookmarks (<code>settings -&gt; backup -&gt; JSON</code>) and <a href="https://github.com/bensheldon/bookmarks/blob/bc85a68ea61844ad0b11b823bef355a1879b0462/script/import_pinboard.rb#L7-L20">convert them to YAML files</a> to be served by Jekyll and GitHub Pages. But I also needed an easy way to create new bookmarks that would work on all my Apple devices. I ended up with:</p>
-
-<ol>
-  <li>Bookmarks are organized as individual yaml files, in this <a href="https://github.com/bensheldon/island94.org/tree/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/_bookmarks">blog’s repository</a>.</li>
-  <li>A <a href="https://github.com/bensheldon/island94.org/blob/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/scripts/bookmark.rb">Ruby script</a> to take some simple inputs (url, title, notes), generate a new yaml file, and commit it to the repo using Octokit.</li>
-  <li>A GitHub Actions <a href="https://github.com/bensheldon/island94.org/blob/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/.github/workflows/bookmark.yml#L3-L20">workflow that accepts those same inputs</a>  and can be manually triggered, that runs the script. One thing to note is that I echo the inputs to <code>$GITHUB_STEP_SUMMARY</code> early in the workflow in case a later step errors, so I won’t lose the bookmark details and can go back later and manually fix it up.</li>
-  <li>An Apple Shortcut that asks for those inputs (either implicitly via the Share Sheet or via text inputs) and then manually triggers the GitHub Actions workflow via the GitHub API.</li>
-</ol>
-
-<p>The only difficult part for me was getting Apple Shortcuts to work nicely with the GitHub REST API. Here’s what worked for me:</p>
-
-<p>Use <code>Get Contents of URL</code> Action:</p>
-
-<ul>
-  <li>URL: <code>https://api.github.com/repos/USER/REPOSITORY/actions/workflows/WORKFLOW.yml/dispatches</code></li>
-  <li>Method: <code>POST</code></li>
-  <li>Headers:
-    <ul>
-      <li><code>Accept: application/vnd.github.v3+jsonp</code></li>
-      <li><code>Authorization: Bearer GITHUB_ACCESS_TOKEN</code></li>
-    </ul>
-  </li>
-  <li>Request Body: <code>JSON</code>
-    <ul>
-      <li><code>ref: main</code> (or whatever branch you’re using)</li>
-      <li><code>inputs (Dictionary):</code>
-        <ul>
-          <li><code>INPUT: VALUE</code></li>
-          <li>… and your other GitHub Actions workflow inputs</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p>Here’s what it looks like all together (btw, <a href="https://www.reddit.com/r/shortcuts/comments/zlhva2/dictionaries_broken_in_162/">Dictionary-type inputs were broken in iOS 16 / Mac 13</a> 😨) :</p>
-
-<p><a href="/uploads/2024-01/apple-shortcut.png"><img src="/uploads/2024-01/apple-shortcut.png" alt="Screenshot of Apple Shortcut with the previous configuration" /></a></p>
 
   </div>
 </article>

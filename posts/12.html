@@ -138,6 +138,61 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2022/03/software-models"><p>Software models</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2022-03-01T01:32:00Z" itemprop="datePublished">March 1, 2022</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2022-02/strict-technical-debt.jpg" alt="Stickynote drawing of a chart in which understanding of the business domain grows, and understanding of the modeling in code sinuisoidally approaches and departs from it." /></p>
+
+<p>Software design has been in my thoughts lately. Particularly <em>agile</em> software design, in which the game is to re-design working software in response to changing business requirements in response to learnings from working software.</p>
+
+<p>1. I was recently talking to a colleague about what I call “Strict” Technical Debt, which is how Ward Cunningham originally defined it (not YAGNI or Skimping <a href="https://ronjeffries.com/articles/019-01ff/iter-yagni-skimp/">according to Ron Jeffries</a>). <a href="https://daverupert.com/2020/11/technical-debt-as-a-lack-of-understanding/">Dave Rupert pulls out</a> the following quote from Ward Cunningham, as “Technical Debt as a lack of understanding”:</p>
+
+<blockquote>
+  <p>“If you develop a program for a long period of time by only adding features but never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer.”</p>
+</blockquote>
+
+<p>2. This sentence from SICPER’s <a href="https://www.sicpers.info/2022/02/aphorism-considered-harmful/">“Aphorism Considered Harmful”</a> about the phrase “Make it work, make it right, make it fast”:</p>
+
+<blockquote>
+
+  <p>So actually it looks like I had the wrong idea all this time: you don’t somehow make working software then correct software then fast software, you make working software and some inputs into that are the abstractions in the interfaces you design and the performance they permit in use.</p>
+
+</blockquote>
+
+<p>Or as I interpret it: make it functional, then make the software design be an appropriate representation and model of the business/problem domain, and then make it appropriate/ergonomic for future developers to use or maintain.</p>
+
+<p>3. I left this comment on Jason Swett’s <a href="https://www.codewithjason.com/duplication-cheaper-wrong-abstraction/">“Why I don’t buy “duplication is cheaper than the wrong abstraction”</a>:</p>
+
+<blockquote>
+
+  <p>…The statement I use is “code duplication is better than the wrong business abstraction”.</p>
+
+  <p>A lot of these statements/concepts come out of Agile, Object-Oriented Programming, and Extreme Programming recognize that there are two things evolving unevenly: the understanding of the business domain, and then laggingly, the development of the code that models the understanding of the business domain.</p>
+
+  <p>A better expansion here as I understand the concept would be “duplication of code is acceptable if the proposed extraction/abstraction does not meaningfully model the current understanding of the business domain”.</p>
+
+  <p>The power of the statement, as I use it (and as I see these things go from Agile/OOPS/XP) is to push someone to get closer to the business domain (and the user) in their thinking/proposals/justifications and as a counterweight to DRY. The problem with these things is when they get imposed as a criticism, rather than the starting place of a conversation.</p>
+
+  <p>I think you give solid advice:</p>
+
+  <blockquote>
+    <p>Don’t try to make one thing act like two things. Instead, separate it into two things. If you feel reluctant to modify someone else’s code, ask why that is.</p>
+  </blockquote>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2022/02/it-asks-you-to-be-interactive"><p>It asks you to be interactive</p>
 </a>
     </h1>
@@ -538,42 +593,6 @@ TRANSACTION (0.1ms)  ROLLBACK
   <p>Ethically speaking, being free to write whatever you want does not mean being free of consequences from what you wrote. If you include recognizable details about real people in your published writing, fictional or otherwise, if you disclose confidential information about them (like mental health diagnoses), assume that somebody will connect the dots, and assume that the people you wrote about will eventually feel some kind of way about it. They may not have grounds to sue you, but they might think you are a bad person or a lazy artist, and they might tell their own stories where you are not the hero.</p>
 </blockquote>
 
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2021/09/home-buyer-letter"><p>Home buyer letter</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2021-09-14T19:02:00Z" itemprop="datePublished">September 14, 2021</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Having now successfully purchased a home in San Francisco, I have had friends asked me for resources. This was the letter we sent to the seller, which is <em>very</em> SF, but also the energy to bring. I also learned that these letters are waning because they are biased af.</p>
-
-<blockquote>
-
-  <p>Dear [seller],</p>
-
-  <p>Your home at [street address] is the right fit for us, our two cats, and (hopefully) our future family. We love the long layout, high ceilings (we’re both tall) and sunny patio, and look forward to hosting friends for Sunday brunch someday.</p>
-
-  <p>We’re rooted in the city through the South End Rowing Club, St. Francis Lutheran Church, supporting the YMCA, kickstarting local businesses like Andytown coffee, and working at tech companies and nonprofits. Ben worked for three years just around the corner at California and Grant, and Angelina has worked at numerous tech companies around Union Square and SOMA. We love the quiet contrast of Nob Hill against the rest of downtown San Francisco.</p>
-
-  <p>We see SF as a long term home and [street address] as a homebase for work and play: swimming and rowing on the SF Bay, and wine trips up to Napa and Sonoma too. Your home would have the perfect commute for Ben, walking down the hill to his nonprofit job at [organization] where he builds technology to help people apply for food stamps, remove marijuana convictions from criminal records, and improve how government delivers services to those who need them most. And it’s a short walk for Angelina to the [company] Shuttle or Downtown SF [company] office where she does business development for maps and location technology in use around the world.</p>
-
-  <p>Your home would provide the greatest fit for us as we aim to continue to contribute to the fabric of the city, where we hope to raise a family and be active in the community. We aim to take great care of an already-loved property while advocating for a neighborhood that supports all members throughout the growth of our city.</p>
-
-  <p>Our offer is fair given the condition, amenities and comparable sales, and we aim for being the best buyer to steward this home and the neighborhood. We look forward to your consideration of our offer for [street address].</p>
-
-  <p>Sincerely,<br />
-Ben and Angelina</p>
-
-</blockquote>
 
   </div>
 </article>
