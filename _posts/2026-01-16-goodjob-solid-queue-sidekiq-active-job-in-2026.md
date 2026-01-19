@@ -79,7 +79,7 @@ If you, dear developer, find yourself in the second bucket, here’s my advice.
 
 Because I’m close to GoodJob (familiarity!) I know the limitations too. You’ll have to go around PgBouncer. One guy profiled Postgres several years ago and pointed out where in the performance stratosphere Advisory Locks fall apart. It’s all true. 
 
-And there is a lot of relational-database arcana that I don’t think GoodJob nor Solid Queue have documented that you *could* do. Like vacuuming your tuples and stuff like that. I don’t do it, but some people swear by it. Every system falls apart if you run it hot or weird for long enough, and relationsal databases are no different than Redis or Kafka.
+And there is a lot of relational-database arcana that I don’t think GoodJob nor Solid Queue have documented that you *could* do. Like vacuuming your tuples and stuff like that. I don’t do it, but some people swear by it. Every system falls apart if you run it hot or weird for long enough, and relational databases are no different than Redis or Kafka.
 
 I _could_ laundry-list any number of downsides and problems people have had with GoodJob… and you probably won’t experience them. Rosa and Mike and Maciej can tell you the same about their own backends. If and when you do experience something bad, it’s likely you’d experience something else bad on any other job backend _and then you’d have to work through the problem_ and it’s likely that problem is unique to you, either because of your unique setup, or a trivial, personal failure to have simply googled it earlier.
 
