@@ -138,6 +138,137 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2023/08/appropriately-using-rubys-thread-handle_interrupt"><p>Appropriately using Ruby’s Thread.handle_interrupt</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2023-08-31T00:41:00Z" itemprop="datePublished">August 31, 2023</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Working on <a href="https://github.com/bensheldon/good_job">GoodJob</a>, I spend a lot of time thinking about multithreaded behavior in Ruby. One piece of Ruby functionality that I don’t see written about very often is <code>Thread.handle_interrupt</code>. <em>Big thanks to John Bachir and Matthew Draper for talking through its usage with me.</em></p>
+
+<p><strong>Some background about interrupts:</strong> In Ruby, exceptions can be raised anywhere and at anytime in a thread by other threads (including the main thread, that’s how <code>timeout</code> works). Even <code>rescue</code> and  <code>ensure</code> blocks can be interrupted. Everywhere. Most of the time this isn’t something you need to think about (unless you’re <a href="https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts">using Timeout</a> or <code>rack-timeout</code> or doing explicit multithreaded code). But if you are, it’s important to think and code defensively.</p>
+
+<p>Starting with an example:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+  <span class="n">open_work</span>
+  <span class="n">do_work</span>
+<span class="k">ensure</span>
+  <span class="n">close_work</span>
+<span class="k">end</span>
+
+<span class="c1"># wait some time</span>
+<span class="n">thread</span><span class="p">.</span><span class="nf">kill</span> <span class="c1"># or thread.raise</span>
+</code></pre></div></div>
+
+<p>In this example, it’s possible that the exception raised by <code>thread.kill</code> will interrupt the middle of the <code>ensure</code> block. That’s bad! And can leave that work in an inconsistent state.</p>
+
+<p>Ruby’s <code>Thread.handle_interrupt</code> is the defensive tool to use. It allows for modifying when those interrupting exceptions are raised:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># :immediate is the default and will interrupt immediately</span>
+<span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediate</span><span class="p">)</span> <span class="p">{</span> <span class="n">close_work</span> <span class="p">}</span>
+
+<span class="c1"># :on_blocking interrupts only when the GVL is released </span>
+<span class="c1"># e.g. IO outside Ruby</span>
+<span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="p">{</span> <span class="n">close_work</span> <span class="p">}</span>
+
+<span class="c1"># :never will never interrupt during that block</span>
+<span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="p">{</span> <span class="n">close_work</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code>Thread.handle_interrupt</code> will modify behavior for the duration of the block, and it will then raise the interrupt after the block exits. It can be nested too:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">ruby_stuff</span>
+  
+  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
+   <span class="n">really_important_work</span>
+  <span class="k">end</span>
+  
+  <span class="n">file_io</span> <span class="c1"># &lt;= this can be interrupted</span>
+<span class="k">end</span>  
+</code></pre></div></div>
+
+<p><strong>FYI BE AWARE:</strong> Remember, the interrupt behavior is only affected <em>within</em> the <code>handle_interrupt</code> block. The following code <strong>has a problem</strong>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+  <span class="n">open_work</span>
+  <span class="n">do_work</span>
+<span class="k">ensure</span>
+  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">close_work</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Can you spot it? It’s right here:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ensure</span>
+  <span class="c1"># &lt;- Interrupts can happen right here</span>
+  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
+</code></pre></div></div>
+
+<p>There’s a “seam” right there between the <code>ensure</code> and the <code>Thread.handle_interrupt</code> where interrupts <em>can happen!</em> Sure, it’s probably rare that an interrupt would hit right then and there, but if you went to the trouble to guard against it, it’s likely very bad if it did happen. And it happens!  <a href="https://itnext.io/why-puma-workers-constantly-hung-and-how-we-fixed-by-discovering-the-bug-of-ruby-v2-5-8-and-v2-6-6-7fa0fd0a1958">“Why puma workers constantly hung, and how we fixed by discovering the bug of Ruby v2.5.8 and v2.6.6”</a></p>
+
+<p><strong>HOW TO USE IT APPROPRIATELY:</strong> This is the pattern you likely want:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediately</span><span class="p">)</span> <span class="k">do</span>
+      <span class="n">open_work</span>
+      <span class="n">do_work</span>
+    <span class="k">end</span>
+  <span class="k">ensure</span>
+    <span class="n">close_work</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>That’s right: have the <code>ensure</code> block nested within the outer <code>Thread.handle_interrupt(Exception: :never)</code> so that interrupts cannot happen in the <code>ensure</code>, and then use a second <code>Thread.handle_interrupt(Exception: :immediately)</code> to allow the interrupts to take place in the code <em>before</em> the <code>ensure</code> block.</p>
+
+<p>There’s another pattern you might also be able to use with <code>:on_blocking</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">open_work</span>
+    <span class="n">do_work</span>
+  <span class="k">ensure</span>
+    <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
+      <span class="n">close_work</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Doesn’t that have the problematic seam? Nope, because when under <code>:on_blocking</code> there isn’t an operation taking place right there would release the GVL (e.g. no IO).</p>
+
+<p>But it does get tricky if, for example, the <code>do_work</code> is some Ruby calculation that is unbounded (I dunno, maybe a problematic regex or someone accidentally decided to calculate prime numbers or something). Then the Ruby code will not be interrupted at all and your thread will hang. That’s bad too. So you’d then need to do something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">open_work</span>
+    <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediately</span><span class="p">)</span> <span class="k">do</span>
+      <span class="n">do_work</span>
+    <span class="k">end</span>
+  <span class="k">ensure</span>
+    <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
+      <span class="n">close_work</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>See, it’s ok to nest <code>Thread.handle_interrupt</code> and likely <em>necessary</em> to achieve the safety and defensiveness you’re expecting.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2023/08/how-to-isolate-i18n-configuration-in-a-rails-engine"><p>How to isolate I18n configuration in a Rails Engine</p>
 </a>
     </h1>
@@ -1036,32 +1167,6 @@
 <p>I’ll admit, serving frontend assets using <code>render file:</code> is boring, but I experienced a thrill the first time I wired up the importmaps and <em>it just worked</em>. Writing small Javascript modules and using <code>import</code> directives is really nice. I recently added Stimulus and I’m feeling optimistic that I could reliably implement Turbo in my gem’s Rails Engine fully decoupled from the parent application.</p>
 
 <p>I hope this post about GoodJob inspires you to build full-featured web frontends for your own gems and libraries.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2023/03/recently-march-12-2023"><p>Recently, March 12, 2023</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2023-03-13T00:26:00Z" itemprop="datePublished">March 13, 2023</time>
-
-        • Tagged <a href="/posts/tags/weeknotes">weeknotes</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <ul>
-  <li>Work has been complicated, recently. <a href="https://techcrunch.com/2023/02/09/github-lays-off-10-and-goes-fully-remote/">Layoffs, as a general idea</a>, were announced a month ago; it was the same week I came down with a bad cold. I’ve been fairly low energy since and have had trouble differentiating the two. I’m supremely proud and confident that my team is doing the most important work possible. We’ll see!</li>
-  <li>The week prior to all of this, my dad came to visit and stay with us. Having an easier time hosting family was one of our goals in getting a 2nd bedroom. Success.</li>
-  <li>Wow, it’s nearly been a year since I left my last job. I’ve had a number of former colleagues asking for help in leaving, in addition to talking with folks being pushed out: I was surprised to see Code for America finally kill Brigades, and really <a href="https://statescoop.com/code-for-america-local-brigades-ending/">twist the knife too</a> by forcing groups to rename themselves.</li>
-  <li>GoodJob is great! I’ve been thinking about <a href="https://github.com/bensheldon/good_job/discussions/831">replacing Advisory Locks</a> with a lock strategy that’s more compatible with PgBouncer. But that will probably be a 2-year project at least of incrementally crabwalking towards that goal while avoiding breaking changes. <a href="https://github.com/rubygems/rubygems.org/pull/3533">Rubygems.org just adopted GoodJob</a>; I am humbled.</li>
-  <li>On other projects, I’ve been trying to lower costs. My S3 data-transfer bill went from $10 to $50 a month, which I’m not happy about; scrapers are the worst 🤷‍♀️ I’ve also been experimenting with Dokku for packing some smaller projects (paying $15 once rather than $12 per app), though the VM locked up once on a Saturday night and I had to reboot it and this is exactly why I don’t want to manage my own servers.</li>
-  <li>My brother and I have been planning a Celebration of Life for my mom.</li>
-  <li>I’m so happy to finally be back on Daylight Savings Time.</li>
-</ul>
 
   </div>
 </article>

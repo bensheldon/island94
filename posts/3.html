@@ -138,6 +138,72 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/04/recently-april-14-2025"><p>Recently, April 14, 2025</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-04-15T02:02:00Z" itemprop="datePublished">April 15, 2025</time>
+
+        • Tagged <a href="/posts/tags/weeknotes">weeknotes</a> and <a href="/posts/tags/recently">recently</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Last week I tried out a lot of coworking spaces: Canopy, Tandem, Temescal Works. We’re trying to find a space between Oakland and SF with nice outdoor walks.</p>
+
+<hr />
+
+<p>I’m having a great time being a technical cofounder to my (everything else!) cofounder.  It’s fun explaining what I am doing. And we have fun shouting “Monolith!” and “Skateboard [MVP]” all day long.</p>
+
+<p>An example of an explanation I gave: one of our client advocate tools is a Twilio-powered Voice Conference Bridge where we can dial in any number of participants which helps shadow and assist our clients in their welfare application journey. We wanted to add DTMF tones for dialing extensions and navigating IVR systems. Unfortunately, the Twilio API that I used initially (<em>Create a Conference Bridge, then create a Participant Call</em>) doesn’t support DTMF tones so I had to flip the logic to a different API (<em>Create a Call, then add it to a Conference Bridge as a Participant)</em>. Figuring that out was a couple hours of reading docs and SDK code, feeling confident I wasn’t overlooking something, creating a runner script to bench test it, and finally putting the pieces into their production-ready places which was only like 20 lines of code at the end. That’s where the time goes.</p>
+
+<hr />
+
+<p>I had several conversations about <a href="https://x.com/tobi/article/1909251946235437514">“the AI memo”</a>. I’ll paste the two themes I talked about, in the words I put into the Rails Perf Slack:</p>
+
+<blockquote>
+  <p>I don’t know what Shopify’s culture is, but I imagine the pronouncement itself could be useful, for Tobi.</p>
+
+  <p>As a leader, you say “everyone must… unless you get an exception from me” to learn by forcing exceptions to roll up to you directly. It’s a shitty way to learn, but power is shitty. (I mean “learn” in the very personal sense). It’s a tactic. The flip side is then as a leader you debug the need for the exceptions and that leads to a better policy.</p>
+
+  <p>GitHub’s CEO said (not published) something similar (internally) 2 weeks before I left. I sweated it for a day, then DMed him and said “as a manager, I’m not aware of any LLM api that is approved for my use for internal admin stuff?” and he pointed me to the GitHub Models product that is totally unreferenced on any of the internal docs about staff AI tools. I poked that enablement team to add it, and I dunno if the CEO actually followed up with anyone to debug the low awareness (the story of my DM got retold at a different meeting as one about security, but it was really my complete unawareness and its absence on any of the tool lists that were intended to be the starting place for staff to integrate AI into their work).</p>
+
+  <p>TLDR: in a culture of opennness (safety to DM the CEO about the policy) and learning (the policy is the start not the end of discussion). I could see the pronouncement to be catalytic.</p>
+</blockquote>
+
+<p>And</p>
+
+<blockquote>
+  <p>I appreciate that FOMO hype (“don’t be left behind”) has been largely absent [in this Slack community], though I find it elsewhere and a huge distraction.</p>
+
+  <p>I think a lot in this thread could have the word “AI” replaced with “Rubymine” and it would be an equally familiar discussion between folks who use it, folks who are curious, and folks who are happy with their current code editor and wish others would stop pushing Rubymine cause it’s slow and costs money and makes developers lazy, analogously.</p>
+
+  <p>I share that because I don’t think it’s a new experience to be like: “both of us are producing software but our moment-to-moment experience is wildly materially different” (eg “here is my elaborate process for naming and organizing methods so I can find them later” vs “I cmd-click on it and I go there”). … and then people debate whether that difference matters or not in the end.</p>
+
+  <p>When I think of my own experience in The Editor Wars I think the only meaningful thing is to go pair with somebody and observe their material experience producing software in situ, fumbles and all.</p>
+</blockquote>
+
+<p>I did my first Deep Research this week; it was good <a href="https://www.snopes.com/fact-check/ai-education-linda-mcmahon/">A1</a>.</p>
+
+<hr />
+
+<p>Week one of my startup journey and I already made <a href="https://github.com/rails/rails/pull/54895">a successful Rails PR</a> with a bug fix. I didn’t think it was a big deal but it got backported too 💪</p>
+
+<hr />
+
+<p>On Saturday I did what I’m trying to make my standard 10-mile hike: Stinson Beach to Muir Woods loop (Steep Ravine up, Bootjack down, Ben Johnson up, Dipsea back down). Shandy and fries at the end.</p>
+
+<p>Sunday was a swim (the Bay was a balmy 57F/14C !) and the treat of a Warriors day game with Angelina’s geospatial colleagues, and dinner and ice cream and showing them all our favorite park walks.</p>
+
+<hr />
+
+<p>I’m still reading <em>Spinning Silver</em>; it’s good <em>and</em> long! I have not played Witcher 3 since writing about it last time, or really anything.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/04/recently-april-7-2025"><p>Recently, April 7, 2025</p>
 </a>
     </h1>
@@ -589,152 +655,6 @@
 <h3 id="in-conclusion">In conclusion</h3>
 
 <p>Here’s <a href="https://web.archive.org/web/20250131105413/https://github.com/bensheldon/island94.org/blob/main/Parkfile">this blog’s Parkfile</a>. I did a little bit of convenience monkeypatching of things I intend to contribute upstream to Parklife. I dunno, maybe you’ll like the Parklife too.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/01/how-im-thinking-about-ai-llms"><p>How I’m thinking about AI (LLMs)</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-01-05T22:49:00Z" itemprop="datePublished">January 5, 2025</time>
-
-        • Tagged <a href="/posts/tags/ai">ai</a> and <a href="/posts/tags/opinions">opinions</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>With AI, in my context we’re talking about LLMs (Large Language Models), which I simplify down to “text generator”: they take text as input, and they output text.</p>
-
-<p>I wrote this to share with some folks I’m collaborating with on building AI-augmented workflows. I’ve struggled to find something that is both condensed and whose opinionations match my own. So I wrote it myself.</p>
-
-<p>The following explanation is intended to be accurate, but not particularly precise.  For example, there is ChatGPT the product, there is an LLM at the bottom, and then in the middle there are other functions and capabilities. Or Claude or AWS Nova or Llama. These things are more than <em>*just*</em> LLMs, but they are also <em>not much</em> more than an LLM. Some of these tools can also interpret images and documents and audio and video. To do so, they’re passing those documents through specialized functions like OCR (optical character recognition), voice-recognition and image-recognition tools and then those results are turned into more text input. And some of them can take “Actions” with “Agents” which is still based on text output, just being structured and fed into something else. It’s text text text.</p>
-
-<p>(also, if something is particularly wrong, let me know please)</p>
-
-<h3 id="a-little-about-llms">A little about LLMs</h3>
-
-<p>The language around LLMs and “AI” is fucked up with hype and inappropriate metaphors. But the general idea is there is two key phases to keep track of:</p>
-
-<ol>
-  <li>Training: Baking the model. At which point it’s done. I don’t know anyone who is actually building models Everyone is using something like OpenAI or Claude or Llama. And even while these things can be “fine tuned” I don’t know anyone doing it; operating at the model level requires input data on the order of tens of thousands of inputs/examples.</li>
-  <li>Prompting: Using the model, giving input and getting output. This is everything the vast majority of developers are doing.</li>
-</ol>
-
-<p>That’s it. Those are the only two buckets you need to think about.</p>
-
-<h4 id="1-training">1. Training</h4>
-
-<p>The way AI models get made is to first collect trillions of pages of written text (an example is <a href="https://commoncrawl.org/">Common Crawl</a> which scrapes the Internet). Then use machine learning to identify probabilistic patterns that can be represented by only several billion variables (floating point numbers). This is called <strong>“Pre Training”</strong>. At this point, you can say “Based on the input data, it’s probabilistically likely that the word after “eeny meany miney” is “moe”.</p>
-
-<p>Then there is the phase of <strong>“Fine Tuning”</strong> which makes sure that longer strings of text input are completed in ways that are intended (never right or wrong, just intended or expected). For example, if the text input is “Write me a Haiku about frogs” you expect a short haiku about frogs and not a treatise on the magic of the written word or amphibians. Fine tuning is largely accomplished by tens of thousands of workers in Africa and South Asia reading examples of inputs and outputs and clicking 👍 or 👎 on their screen. This is then fed back into machine learning models to say, of the billion variables, which variables should get a little more or less oomph when they’re calculating the output. Fine Tuning requires tens of thousands of these scored examples; again, this is probabilistic-scale stuff. This can also be called <strong>RLHF (Reinforcement Learning from Human Feedback)</strong>, though that sometimes also refers to few-shot prompting, which is Prompt-phase (“Learning” is a nonsense word in the AI domain; it has zero salience without clarifying which phase you’re talking about). A lot of the interesting fine-tuning, imo, comes from getting these text generators to:</p>
-
-<ul>
-  <li>Read like a human chatting with you, rather than textual diarrhea</li>
-  <li>Getting structured output, like valid JSON, rather than textual diarrhea</li>
-</ul>
-
-<p>Note: You can mentally slot in words like “parameters”, “dimensions”, “weights” and “layers” into all this. Also whenever someone says “we don’t really know how they work” what they really mean is “there’s a lot of variables and I didn’t specifically look at them all”. But that’s no different than being given an Excel spreadsheet with several VLOOKUPS and functions and saying “sure, that looks ok” and copy-pasting the report on to your boss; I mean, you <em>could</em> figure it all out, but it seems to work and you’re a busy person.</p>
-
-<p>Ok, now we’re done with training. The model at this point is baked and no further modification takes place: no memory, no storage, no “learning” in the sense of a biological process. From this point further they operate as a function: input in, output out, no side effects.</p>
-
-<p>Here’s how AWS Bedrock, which is how I imagine lots of companies are using AI in their product, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html">describes all this</a>:</p>
-
-<blockquote>
-  <p>After delivery of a model from a model provider [Anthropic, OpenAI, Meta] to AWS, Amazon Bedrock will perform a deep copy of a model provider’s inference and training software into those accounts for deployment. Because the model providers don’t have access to those accounts, they don’t have access to Amazon Bedrock logs or to customer prompts and completions.</p>
-</blockquote>
-
-<p>See! It’s all just dead artifacts uploaded into S3, that are then loaded onto EC2 on-demand. A fancy lambda! Nothing more.</p>
-
-<h4 id="2-prompting">2. Prompting</h4>
-
-<p>Prompting is when we give the model input, and then it gives back some output. That’s it. Unless we are specifically collecting trillions of documents, or doing fine-tuning against thousands of examples (which we are NOT!), we are simply writing a prompt, and having the model generate some text based on it. It riffs. The output can be called “completions” because they’re just that: More words.</p>
-
-<p>(Fun fact: how to get the LLM to <em>stop</em> writing words is a hard problem to solve)</p>
-
-<p>Note: You might sometimes see prompting called model “testing” (as opposed to model building or training). That’s because you’re powering up the artifact to put some words through it. Testing testing is called “Evaluations” (“Evals” for short) and like all test test regimes the lukewarm debate I hear from everybody is “we aren’t but should we?”</p>
-
-<h3 id="writing-prompts">Writing prompts</h3>
-
-<p>This is the work! Unfortunately the language used to describe all of this is truly and totally fucked. By which I mean that words like “learning” and “thought” and “memory” and even “training” is reused again.</p>
-
-<p>It’s all about simply writing a prompt that boops the resulting text generator output into the shape you want. It’s all snoot-booping, all the time.</p>
-
-<p>Going back to the Training data, let’s make some conceptual distinctions:</p>
-
-<ul>
-  <li>Content: specific facts, statements and assertions that were (possibly) encoded into those billions of probabilities from the training data</li>
-  <li>Structure: the overall probability that a string of words (really fragments of words) comes out again looking like something we expect, which has been adjusted via Fine Tuning</li>
-</ul>
-
-<p>Remember, this is just a probabilistic text generator. So there is probabilistic facts, and probabilistic structure. And that probabilistic part is why we have words like “hallucination” and “slop” and “safety”. There’s no there there. It’s just probabilities. There’s no guarantee that a particular fact has been captured in those billions of variables. It’s just a text generator. And it’s been trained on a lot of dumb shit people write. It’s <em>just</em> a text generator. Don’t trust it.</p>
-
-<p>So on to some prompting strategies:</p>
-
-<ul>
-  <li><strong>Zero-Shot Prompting:</strong> This just means to ask something open-ended and the AI returns something that probabilistical follows:
-    <blockquote>
-      <p>Classify the sentiment of the following review as positive, neutral, or negative: “The quality is amazing, and it exceeded my expectations”</p>
-    </blockquote>
-  </li>
-  <li><strong>Few-Shot (or one-shot/multi-shot) Prompting</strong>: This just means to provide one or more examples of “expected” completions in the prompt (remember, this is all prompt, not fine-tuning) to try to narrow down what could probabilistically follow:
-    <blockquote>
-      <p>Task: Classify the sentiment of the following reviews as positive, neutral, or negative.<br />
-Examples:</p>
-      <ol>
-        <li>“I absolutely adore this product. It’s fantastic!” - positive</li>
-        <li>“It’s okay, not the best I’ve used.” - neutral</li>
-        <li>“This is terrible. I regret buying it.” - negative<br />
-Now classify this review:</li>
-        <li>“The quality is amazing, and it exceed my expectations” - [it’s blank, for the model to finish]</li>
-      </ol>
-    </blockquote>
-  </li>
-</ul>
-
-<p><em>Note: Zero/One/Few/Multi-Shot is sometimes called “Learning” instead of “Prompting”. This is a terrible name, because there is no learning (the models are dead!) but is one of those things where the most assume-good-intent explanation is that over the course of the prompt and its incrementally generated completion that the output assumes the desired shape.</em></p>
-
-<ul>
-  <li><strong>Chain of Thought Prompting</strong>: The idea here is that the prompt includes a description of how a human might explain what they were doing to complete the prompt. And that boops the completion into filling out those steps, and arriving at a more expected answer:
-    <blockquote>
-      <p>Classify the sentiment of the following review as positive, neutral, or negative.<br />
-“I absolutely adore this product. It’s fantastic!”<br />
-Analysis 1: How does it describe the product?<br />
-Analysis 2: How does it describe the functionality of the product?<br />
-Analysis 3: How does it describe their relationship with the product?<br />
-Analysis 4: How does it describe how friends, family, or others relate to the product?<br />
-Overall: Is it positive, neutral, or negative?</p>
-    </blockquote>
-  </li>
-</ul>
-
-<p><em>Note: again, there is no “thought” happening. The point of the prompt is to boop the text completion into giving a more expected answer. There are some new models (as of late 2024) that are supposed to do Chain-of-Thought implicitly; afaik there is just a hidden/unshown prompt that says “break this down into steps” and an intermediate output that takes the output of that and feeds it into another hidden/unshown prompt and then the output of that is shown to you. That’s why they costs more, cause it’s invoking the the LLM twice on your behalf.</em></p>
-
-<ul>
-  <li><strong>Chain Prompting</strong>: This simply means that you take the output of one prompt, and then feed that into a new prompt. This can be useful to isolate a specific prompt and output. It might also be necessary because of the length: LLMs can only operate on so many words, so if you need to summarize a long document in a prompt, you’d need to first break it down into smaller chunks, use the LLM to summarize each chunk, and then combine the summaries into a new prompt for the LLM summarize that.</li>
-  <li><strong>RAG (Retrieval Augmented Generation) Prompting</strong>: This means that you look up some info in a database, and then insert that into the prompt before handing it to the LLM. Everything is prompt, there is only prompt.</li>
-</ul>
-
-<p><em>Note: <strong>“Embeddings”</strong> are a way of search indexing your text. LLMs take all those trillions of documents and probabilistically boils them down to several billion variables. Embeddings boil down further to a couple thousand variables (floating point numbers). Creating an embedding means providing a piece of text, and you get back the values of those thousand floating point numbers that probabilistically describe that text (big brain idea: it is the document’s location in a thousand-dimensional space). That lets you compute across multiple documents “given this document within the n-dimensional space, what are its closest neighboring documents semantically/probabilistically?” Embeddings are useful when you want to do RAG Prompting to pull out relevant documents and insert their text into your prompt before it’s fed to the LLM to generate output.</em></p>
-
-<ul>
-  <li><strong>Cues and Nudges</strong> There are <a href="https://web.archive.org/web/20241112140504/https://news.ycombinator.com/item?id=40474716">certain phrases</a>, like “no yapping” or <a href="https://arstechnica.com/information-technology/2023/09/telling-ai-model-to-take-a-deep-breath-causes-math-scores-to-soar-in-study/">“take a deep breath”</a> that change the output. I don’t think there is anything delightful about this; it’s simply trying to boop up the variables you want in your output and words are the only inputs you have. I’m sure there will someday be better ways to do it, but whatever works.</li>
-</ul>
-
-<h3 id="a-strong-opinion-about-zero-shot-prompting">A strong opinion about zero-shot prompting</h3>
-
-<p>Don’t do it! I think it’s totally fine if you just want to ask a question and try to intuit the extent that the model has been trained or tuned on the particular domain you’re curious about. But you should put ZERO stock in the answer as something factual.</p>
-
-<p>If you need facts, you must provide the facts as part of your prompt. That means:</p>
-
-<ul>
-  <li>Providing a giant pile of text as content, or breaking it down (like via embeddings) and injecting smaller chunks via RAG</li>
-  <li>Providing any and all input you ever expect to get out of the output</li>
-</ul>
-
-<p>It’s ok to summarize, extract, translate or sentiment. The only reason it’s ok to zero-shot code is because it’s machine verifiable (you run it). Otherwise, you must verify! Or don’t do it at all.</p>
 
   </div>
 </article>

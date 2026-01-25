@@ -138,6 +138,177 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory"><p>The answer is in your heap: debugging a big memory increase in Ruby on Rails</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-01-16T22:41:00Z" itemprop="datePublished">January 16, 2024</time>
+
+        • Tagged <a href="/posts/tags/ruby">ruby</a> and <a href="/posts/tags/rails">rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently participated in an <a href="https://github.com/sciencehistory/scihist_digicoll/issues/2449">interesting series of debugging sessions</a> tracking down the source of a large increase in memory when upgrading a Rails application. We ultimately tracked down the cause using John Hawthorn’s <a href="https://github.com/jhawthorn/sheap">Sheap heap analyzer</a> and successfully submitted a <a href="https://github.com/rails/rails/pull/50298">patch to Rails</a>. I thought it was interesting enough to write up because maybe the general approach to debugging memory issues would be helpful (and this is the kind of stuff that I very quickly forget unless I write it down).</p>
+
+<h3 id="how-it-started-reddit">How it started: Reddit</h3>
+
+<p>Lots of people ask for help on r/rails, and it can be difficult to debug at a distance. <a href="https://www.reddit.com/r/rails/comments/185b2wr/comment/kb1toyp/">This time it was a little different</a>. I recognized the username’s owner, <a href="https://bibwild.wordpress.com">Jonathan Rochkind</a>, because he’s been a familiar and helpful face in GoodJob’s discussions and I’ve sponsored his aggregator <a href="https://rubyland.news/">Rubyland News</a>. The observed problem was that after upgrading from Rails 7.0 to Rails 7.1, their application’s memory footprint increased by about 25%. Weird!</p>
+
+<h3 id="working-the-problem">Working the problem</h3>
+
+<p>We worked through a bunch of questions:</p>
+
+<ul>
+  <li>Was the memory increase at startup or over time? Not at boot, but memory increased very quickly.</li>
+  <li>Did anything change with Puma configuration?  Nope.</li>
+  <li>
+    <p>Get set up with <a href="https://github.com/zombocom/derailed_benchmarks"><code>derailed_benchmarks</code></a>, and create a <code>bin/profile</code> Rails binstub to make it easy to boot into a production-like configuration for profiling. Here’s what my very polished one looks like:</p>
+
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+
+<span class="c1"># This file is a wrapper around the rails and derailed executables</span>
+<span class="c1"># to make it easier to boot in PRODUCTION mode.</span>
+<span class="c1">#</span>
+<span class="c1"># Usage: bin/profile [rails|derailed] [command]</span>
+
+<span class="no">ENV</span><span class="p">[</span><span class="s2">"RAILS_ENV"</span><span class="p">]</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"RAILS_ENV"</span><span class="p">,</span> <span class="s2">"production"</span><span class="p">)</span>
+<span class="no">ENV</span><span class="p">[</span><span class="s2">"RACK_ENV"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"production"</span>
+<span class="no">ENV</span><span class="p">[</span><span class="s2">"RAILS_LOG_TO_STDOUT"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"true"</span>
+<span class="no">ENV</span><span class="p">[</span><span class="s2">"RAILS_SERVE_STATIC_FILES"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"true"</span>
+<span class="no">ENV</span><span class="p">[</span><span class="s2">"FORCE_SSL"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"false"</span>
+<span class="c1">## ^^ Put ENV to boot in production mode here ^^</span>
+
+<span class="n">executable</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>
+<span class="k">if</span> <span class="n">executable</span> <span class="o">==</span> <span class="s2">"rails"</span>
+  <span class="nb">load</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">),</span> <span class="s2">"rails"</span><span class="p">)</span>
+<span class="k">elsif</span> <span class="n">executable</span> <span class="o">==</span> <span class="s2">"derailed"</span>
+  <span class="nb">require</span> <span class="s1">'bundler/setup'</span>
+  <span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s1">'derailed_benchmarks'</span><span class="p">,</span> <span class="s1">'derailed'</span><span class="p">)</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"ERROR: '</span><span class="si">#{</span><span class="n">executable</span><span class="si">}</span><span class="s2">' is not a valid command."</span>
+  <span class="nb">puts</span> <span class="s2">"Usage: bin/profile [rails|derailed]"</span>
+  <span class="nb">exit</span> <span class="mi">1</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>We flailed around with Derailed Benchmarks, as well as John Hawthorn’s <a href="https://github.com/jhawthorn/vernier?tab=readme-ov-file#retained-memory">Vernier profiler’s memory mode</a> (aside: John Hawthorn is doing amazing stuff with Ruby).</p>
+
+<p>At this point, we had a general understanding of the application memory footprint, which involved a large number of model instances (<code>Work</code>), many of which contained a big blob of json. For some reason they were sticking around longer than a single web request, but we weren’t able to find any smoking guns of like, memoized class instance variables that were holding onto references. So we kept digging.</p>
+
+<p>You can read along to all of this here: https://github.com/sciencehistory/scihist_digicoll/issues/2449</p>
+
+<h3 id="analyzing-memory-with-sheap">Analyzing memory with Sheap</h3>
+
+<p>I used Derailed Benchmark’s <a href="https://github.com/zombocom/derailed_benchmarks/blob/main/README.md#i-want-more-heap-dumps"><code>perf:heap</code></a> to generate heap dumps (also possible using <a href="https://github.com/tmm1/rbtrace"><code>rbtrace --heapdump</code></a>), and then plugged those into Sheap. Sheap is a relatively new tool, and where it shines is being <em>interactive</em>. Instead of outputting a static report, Sheap allows for exploring a heap dump (or diff: to identify retained objects), and ask questions of the dump. In our case: <em>what objects are referencing this object and why is it being retained?</em></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $ irb</span>
+<span class="nb">require</span> <span class="s1">'./lib/sheap.rb
+
+diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_digicoll/tmp/2023-12-07T13:24:15-08:00-heap-1.ndjson", "/Users/bensheldon/Repositories/sciencehistory/scihist_digicoll/tmp/2023-12-07T13:24:15-08:00-heap-2.ndjson")
+
+# Find one of the Work records that'</span><span class="n">s</span> <span class="n">been</span> <span class="n">retained</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">class_named</span><span class="p">(</span><span class="s2">"Work"</span><span class="p">).</span><span class="nf">first</span><span class="p">.</span><span class="nf">instances</span><span class="p">[</span><span class="mi">200</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x117cf5c98</span> <span class="no">Work</span> <span class="p">(</span><span class="mi">4</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span>
+
+<span class="c1"># Find the path to the (default) root</span>
+<span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">find_path</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="o">=&gt;</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="no">ROOT</span> <span class="n">vm</span> <span class="p">(</span><span class="mi">2984</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="no">IMEMO</span> <span class="mh">0x126c9ab68</span> <span class="n">callcache</span> <span class="p">(</span><span class="mi">1</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="no">IMEMO</span> <span class="mh">0x126c9acf8</span> <span class="n">ment</span> <span class="p">(</span><span class="mi">4</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="no">CLASS</span> <span class="mh">0x12197c080</span> <span class="p">(</span><span class="n">anonymous</span><span class="p">)</span> <span class="p">(</span><span class="mi">15</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x122ddba08</span> <span class="p">(</span><span class="mh">0x12197c080</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x117cfc458</span> <span class="no">WorksController</span> <span class="p">(</span><span class="mi">13</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x117cf7318</span> <span class="no">WorkImageShowComponent</span> <span class="p">(</span><span class="mi">15</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x117cf5c98</span> <span class="no">Work</span> <span class="p">(</span><span class="mi">4</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">]</span>
+
+<span class="c1"># What is that initial callcache being referenced by the ROOT?</span>
+<span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="s2">"0x126c9ab68"</span><span class="p">).</span><span class="nf">data</span>
+<span class="o">=&gt;</span>
+<span class="p">{</span><span class="s2">"address"</span><span class="o">=&gt;</span><span class="s2">"0x126c9ab68"</span><span class="p">,</span>
+ <span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"IMEMO"</span><span class="p">,</span>
+ <span class="s2">"shape_id"</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
+ <span class="s2">"slot_size"</span><span class="o">=&gt;</span><span class="mi">40</span><span class="p">,</span>
+ <span class="s2">"imemo_type"</span><span class="o">=&gt;</span><span class="s2">"callcache"</span><span class="p">,</span>
+ <span class="s2">"references"</span><span class="o">=&gt;</span><span class="p">[</span><span class="s2">"0x126c9acf8"</span><span class="p">],</span>
+ <span class="s2">"file"</span><span class="o">=&gt;</span><span class="s2">"/Users/bensheldon/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.2/lib/action_dispatch/routing/routes_proxy.rb"</span><span class="p">,</span>
+ <span class="s2">"line"</span><span class="o">=&gt;</span><span class="mi">48</span><span class="p">,</span>
+ <span class="s2">"method"</span><span class="o">=&gt;</span><span class="s2">"public_send"</span><span class="p">,</span>
+ <span class="s2">"generation"</span><span class="o">=&gt;</span><span class="mi">288</span><span class="p">,</span>
+ <span class="s2">"memsize"</span><span class="o">=&gt;</span><span class="mi">40</span><span class="p">,</span>
+ <span class="s2">"flags"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"wb_protected"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"old"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"uncollectible"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"marked"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">}}</span>
+
+<span class="c1"># And then a method entry</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">015</span><span class="o">&gt;</span> <span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="s2">"0x126c9acf8"</span><span class="p">).</span><span class="nf">data</span>
+<span class="o">=&gt;</span>
+<span class="p">{</span><span class="s2">"address"</span><span class="o">=&gt;</span><span class="s2">"0x126c9acf8"</span><span class="p">,</span>
+ <span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"IMEMO"</span><span class="p">,</span>
+ <span class="s2">"shape_id"</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
+ <span class="s2">"slot_size"</span><span class="o">=&gt;</span><span class="mi">40</span><span class="p">,</span>
+ <span class="s2">"imemo_type"</span><span class="o">=&gt;</span><span class="s2">"ment"</span><span class="p">,</span>
+ <span class="s2">"references"</span><span class="o">=&gt;</span><span class="p">[</span><span class="s2">"0x12197c080"</span><span class="p">,</span> <span class="s2">"0x12197c080"</span><span class="p">,</span> <span class="s2">"0x126c9ade8"</span><span class="p">,</span> <span class="s2">"0x126c9b4a0"</span><span class="p">],</span>
+ <span class="s2">"file"</span><span class="o">=&gt;</span>
+  <span class="s2">"/Users/bensheldon/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.2/lib/action_dispatch/routing/routes_proxy.rb"</span><span class="p">,</span>
+ <span class="s2">"line"</span><span class="o">=&gt;</span><span class="mi">33</span><span class="p">,</span>
+ <span class="s2">"method"</span><span class="o">=&gt;</span><span class="s2">"method_missing"</span><span class="p">,</span>
+ <span class="s2">"generation"</span><span class="o">=&gt;</span><span class="mi">288</span><span class="p">,</span>
+ <span class="s2">"memsize"</span><span class="o">=&gt;</span><span class="mi">48</span><span class="p">,</span>
+ <span class="s2">"flags"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"wb_protected"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"old"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"uncollectible"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"marked"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">}}</span>
+
+<span class="c1"># Aha, and a singleton for RoutesProxy!</span>
+<span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="s2">"0x12197c080"</span><span class="p">).</span><span class="nf">data</span>
+<span class="o">=&gt;</span>
+<span class="p">{</span><span class="s2">"address"</span><span class="o">=&gt;</span><span class="s2">"0x12197c080"</span><span class="p">,</span>
+ <span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"CLASS"</span><span class="p">,</span>
+ <span class="s2">"shape_id"</span><span class="o">=&gt;</span><span class="mi">14</span><span class="p">,</span>
+ <span class="s2">"slot_size"</span><span class="o">=&gt;</span><span class="mi">160</span><span class="p">,</span>
+ <span class="s2">"class"</span><span class="o">=&gt;</span><span class="s2">"0x12211c308"</span><span class="p">,</span>
+ <span class="s2">"variation_count"</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
+ <span class="s2">"superclass"</span><span class="o">=&gt;</span><span class="s2">"0x12211c3a8"</span><span class="p">,</span>
+ <span class="s2">"real_class_name"</span><span class="o">=&gt;</span><span class="s2">"ActionDispatch::Routing::RoutesProxy"</span><span class="p">,</span>
+ <span class="s2">"singleton"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span>
+ <span class="s2">"references"</span><span class="o">=&gt;</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+ <span class="s2">"file"</span><span class="o">=&gt;</span>
+  <span class="s2">"/Users/bensheldon/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.2/lib/action_dispatch/routing/routes_proxy.rb"</span><span class="p">,</span>
+ <span class="s2">"line"</span><span class="o">=&gt;</span><span class="mi">33</span><span class="p">,</span>
+ <span class="s2">"method"</span><span class="o">=&gt;</span><span class="s2">"method_missing"</span><span class="p">,</span>
+ <span class="s2">"generation"</span><span class="o">=&gt;</span><span class="mi">288</span><span class="p">,</span>
+ <span class="s2">"memsize"</span><span class="o">=&gt;</span><span class="mi">656</span><span class="p">,</span>
+ <span class="s2">"flags"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"wb_protected"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"old"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"uncollectible"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"marked"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">}}</span>
+
+<span class="c1"># I expect the next object to be the RoutesProxy instance</span>
+<span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="s2">"0x122ddba08"</span><span class="p">).</span><span class="nf">klass</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s2">"real_class_name"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"ActionDispatch::Routing::RoutesProxy"</span>
+</code></pre></div></div>
+
+<p>Sheap is pretty great! In the above example, we were able to find a <code>Work</code> model instance in the heap, and then using <code>find_path</code> identify what was referencing it all the way back to the heap’s root, which is what causes the object to be “retained”; if there was no path to the root, the object would be garbage collected.</p>
+
+<p>(I have the huge benefit of having John as a colleague at GitHub and he helped me out <em>a lot</em> with this. Thank you, John!)</p>
+
+<p>What we’re looking at is something in Rails’ <code>RoutesProxy</code> holding onto a reference to that <code>Work</code> object, via a callcache, a method entry (<a href="https://tenderlovemaking.com/2018/01/23/reducing-memory-usage-in-ruby.html"><code>ment</code></a>), a singleton class, a RouteSet, and then a Controller. What the heck?!</p>
+
+<h3 id="the-explanation">The explanation</h3>
+
+<p>Using Rails’ git history, we were able to find that a <a href="https://github.com/rails/rails/pull/46974">change</a> had been made to the <code>RoutesProxy</code> ’s behavior of dynamically creating a new method: a <code>class_eval</code>  had been changed to an <code>instance_eval</code>.</p>
+
+<p>Calling <code>instance_eval "def method...."</code> is what introduced a new singleton class, because that new method is only defined on that one object instance. Singleton classes can be cached by the Ruby VM (they’ll be purged when the cache fills up), and that’s what, through that chain of objects, was causing the model instances to stick around longer than expected and bloat up the memory! It’s not that <code>instance_eval</code>ing new methods is itself inherently problematic, but when those singleton methods are defined on an object that references an instance of an Action Controller, which has many instance variables that contained big Active Record objects…. that’s a problem.</p>
+
+<p>(Big props, again, to John Hawthorn who connected these dots.)</p>
+
+<p>Having tracked down the problem, we submitted a <a href="https://github.com/rails/rails/pull/50298">patch to Rails</a> to change the behavior and remove the <code>instance_eval</code> -defined methods. It’s been accepted and <del>it should be released in the next Rails patch (probably v7.1.3); the project temporarily <a href="https://github.com/sciencehistory/scihist_digicoll/pull/2466">monkey-patched in that change</a> too</del> has been released <a href="https://github.com/rails/rails/blob/36c1591bcb5e0ee3084759c7f42a706fe5bb7ca7/actionpack/lib/action_dispatch/routing/routes_proxy.rb#L30-L47">as part of Rails 7.1.3</a>.</p>
+
+<p><em>I realize that’s all a big technical mouthful, but the takeaway should be: <a href="https://github.com/jhawthorn/sheap">Sheap</a> is a really great tool, and exploring your Ruby heap can be very satisfying.</em></p>
+
+<p><strong>Update:</strong> Jean Boussier pointed me to the fix in Ruby 3.3 for <a href="https://bugs.ruby-lang.org/issues/19436">call Cache for singleton methods can lead to “memory leaks”</a> 🎉 And suggested looking at <a href="https://github.com/csfrancis/harb"><code>harb</code></a> too as a Sheap-like.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/01/trigger-github-actions-workflows-from-apple-shortcuts"><p>Trigger GitHub Actions workflows with inputs from Apple Shortcuts</p>
 </a>
     </h1>
@@ -704,137 +875,6 @@
 
 <p>It’s basic but you can also add in other kinds of engagement and weigh them differently or whatever. It’s all good. Then you have massive success and hire a real datascience team.</p>
 
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2023/08/appropriately-using-rubys-thread-handle_interrupt"><p>Appropriately using Ruby’s Thread.handle_interrupt</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2023-08-31T00:41:00Z" itemprop="datePublished">August 31, 2023</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Working on <a href="https://github.com/bensheldon/good_job">GoodJob</a>, I spend a lot of time thinking about multithreaded behavior in Ruby. One piece of Ruby functionality that I don’t see written about very often is <code>Thread.handle_interrupt</code>. <em>Big thanks to John Bachir and Matthew Draper for talking through its usage with me.</em></p>
-
-<p><strong>Some background about interrupts:</strong> In Ruby, exceptions can be raised anywhere and at anytime in a thread by other threads (including the main thread, that’s how <code>timeout</code> works). Even <code>rescue</code> and  <code>ensure</code> blocks can be interrupted. Everywhere. Most of the time this isn’t something you need to think about (unless you’re <a href="https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts">using Timeout</a> or <code>rack-timeout</code> or doing explicit multithreaded code). But if you are, it’s important to think and code defensively.</p>
-
-<p>Starting with an example:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
-  <span class="n">open_work</span>
-  <span class="n">do_work</span>
-<span class="k">ensure</span>
-  <span class="n">close_work</span>
-<span class="k">end</span>
-
-<span class="c1"># wait some time</span>
-<span class="n">thread</span><span class="p">.</span><span class="nf">kill</span> <span class="c1"># or thread.raise</span>
-</code></pre></div></div>
-
-<p>In this example, it’s possible that the exception raised by <code>thread.kill</code> will interrupt the middle of the <code>ensure</code> block. That’s bad! And can leave that work in an inconsistent state.</p>
-
-<p>Ruby’s <code>Thread.handle_interrupt</code> is the defensive tool to use. It allows for modifying when those interrupting exceptions are raised:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># :immediate is the default and will interrupt immediately</span>
-<span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediate</span><span class="p">)</span> <span class="p">{</span> <span class="n">close_work</span> <span class="p">}</span>
-
-<span class="c1"># :on_blocking interrupts only when the GVL is released </span>
-<span class="c1"># e.g. IO outside Ruby</span>
-<span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="p">{</span> <span class="n">close_work</span> <span class="p">}</span>
-
-<span class="c1"># :never will never interrupt during that block</span>
-<span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="p">{</span> <span class="n">close_work</span> <span class="p">}</span>
-</code></pre></div></div>
-
-<p><code>Thread.handle_interrupt</code> will modify behavior for the duration of the block, and it will then raise the interrupt after the block exits. It can be nested too:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
-  <span class="n">ruby_stuff</span>
-  
-  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
-   <span class="n">really_important_work</span>
-  <span class="k">end</span>
-  
-  <span class="n">file_io</span> <span class="c1"># &lt;= this can be interrupted</span>
-<span class="k">end</span>  
-</code></pre></div></div>
-
-<p><strong>FYI BE AWARE:</strong> Remember, the interrupt behavior is only affected <em>within</em> the <code>handle_interrupt</code> block. The following code <strong>has a problem</strong>:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
-  <span class="n">open_work</span>
-  <span class="n">do_work</span>
-<span class="k">ensure</span>
-  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">close_work</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Can you spot it? It’s right here:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ensure</span>
-  <span class="c1"># &lt;- Interrupts can happen right here</span>
-  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
-</code></pre></div></div>
-
-<p>There’s a “seam” right there between the <code>ensure</code> and the <code>Thread.handle_interrupt</code> where interrupts <em>can happen!</em> Sure, it’s probably rare that an interrupt would hit right then and there, but if you went to the trouble to guard against it, it’s likely very bad if it did happen. And it happens!  <a href="https://itnext.io/why-puma-workers-constantly-hung-and-how-we-fixed-by-discovering-the-bug-of-ruby-v2-5-8-and-v2-6-6-7fa0fd0a1958">“Why puma workers constantly hung, and how we fixed by discovering the bug of Ruby v2.5.8 and v2.6.6”</a></p>
-
-<p><strong>HOW TO USE IT APPROPRIATELY:</strong> This is the pattern you likely want:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
-  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
-    <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediately</span><span class="p">)</span> <span class="k">do</span>
-      <span class="n">open_work</span>
-      <span class="n">do_work</span>
-    <span class="k">end</span>
-  <span class="k">ensure</span>
-    <span class="n">close_work</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>That’s right: have the <code>ensure</code> block nested within the outer <code>Thread.handle_interrupt(Exception: :never)</code> so that interrupts cannot happen in the <code>ensure</code>, and then use a second <code>Thread.handle_interrupt(Exception: :immediately)</code> to allow the interrupts to take place in the code <em>before</em> the <code>ensure</code> block.</p>
-
-<p>There’s another pattern you might also be able to use with <code>:on_blocking</code>:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
-  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">open_work</span>
-    <span class="n">do_work</span>
-  <span class="k">ensure</span>
-    <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
-      <span class="n">close_work</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Doesn’t that have the problematic seam? Nope, because when under <code>:on_blocking</code> there isn’t an operation taking place right there would release the GVL (e.g. no IO).</p>
-
-<p>But it does get tricky if, for example, the <code>do_work</code> is some Ruby calculation that is unbounded (I dunno, maybe a problematic regex or someone accidentally decided to calculate prime numbers or something). Then the Ruby code will not be interrupted at all and your thread will hang. That’s bad too. So you’d then need to do something like this:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
-  <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">open_work</span>
-    <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediately</span><span class="p">)</span> <span class="k">do</span>
-      <span class="n">do_work</span>
-    <span class="k">end</span>
-  <span class="k">ensure</span>
-    <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
-      <span class="n">close_work</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>See, it’s ok to nest <code>Thread.handle_interrupt</code> and likely <em>necessary</em> to achieve the safety and defensiveness you’re expecting.</p>
 
   </div>
 </article>

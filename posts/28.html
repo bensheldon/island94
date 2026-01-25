@@ -138,6 +138,50 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/01/adding-class-to-wordpress-linked-images"><p>Adding class to Wordpress linked images</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-01-23T00:00:00Z" itemprop="datePublished">January 23, 2011</time>
+
+        • Tagged <a href="/posts/tags/code">code</a>, <a href="/posts/tags/css">css</a>, <a href="/posts/tags/php">php</a>, <a href="/posts/tags/theming">theming</a>, and <a href="/posts/tags/wordpress">wordpress</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>An <a href="http://wordpress.org/support/topic/how-can-i-set-the-class-of-anchors">enduring issue</a> with linked images ( <code>&lt;a href=""&gt;&lt;img src="" /&gt;&lt;/a&gt;</code> ), is targeting the anchor link for theming—especially for disabling borders and highlighting that look great on text links but odd for images. CSS doesn’t have a parent selector ( <code>a &gt; img:parent</code> ), and javascript feels like overkill. The simple solution is to add a <code>class</code> to the parent anchor (<code>&lt;a href="" class="img"&gt;)</code>, but that can get repetitive, especially when Wordpress is supposed to automate those sorts of things.</p>
+
+<p>Adding the following code to your Wordpress theme’s <code>functions.php</code> file will automatically add a class to the anchor link when you insert linked images through Wordpress’s Media Library interface. It won’t fix posts you’ve already written, but should make things better moving forward.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/**
+ * Attach a class to linked images' parent anchors
+ * e.g. a img =&gt; a.img img
+ */</span>
+<span class="k">function</span> <span class="n">give_linked_images_class</span><span class="p">(</span><span class="nv">$html</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$caption</span><span class="p">,</span> <span class="nv">$title</span><span class="p">,</span> <span class="nv">$align</span><span class="p">,</span> <span class="nv">$url</span><span class="p">,</span> <span class="nv">$size</span><span class="p">,</span> <span class="nv">$alt</span> <span class="o">=</span> <span class="s1">''</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Separate classes with spaces, e.g. 'img image-link'</span>
+  <span class="nv">$classes</span> <span class="o">=</span> <span class="s1">'img'</span><span class="p">;</span>
+
+  <span class="c1">// check if there are already classes assigned to the anchor</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nb">preg_match</span><span class="p">(</span><span class="s1">'/&lt;a.*? class=".*?"&gt;/'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$html</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/(&lt;a.*? class=".*?)(".\?&gt;)/'</span><span class="p">,</span> <span class="s1">'$1 '</span> <span class="mf">.</span> <span class="nv">$classes</span> <span class="mf">.</span> <span class="s1">'$2'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$html</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/(&lt;a.*?)&gt;/'</span><span class="p">,</span> <span class="s1">'$1 class="'</span> <span class="mf">.</span> <span class="nv">$classes</span> <span class="mf">.</span> <span class="s1">'" &gt;'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nv">$html</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">add_filter</span><span class="p">(</span><span class="s1">'image_send_to_editor'</span><span class="p">,</span> <span class="s1">'give_linked_images_class'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The if/else could probably be done with a single regular expression, but I’m not <em>that</em> smart.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2011/01/the-benefits-of-age"><p>The benefits of age</p>
 </a>
     </h1>
@@ -397,26 +441,6 @@ Which is really a <a href="http://en.wikipedia.org/wiki/Strauss_and_Howe">defini
 </blockquote>
 
 <p>And of course, don’t forget the background context of rising inequity, a lapsed estate tax, and the models of individually-determined giving versus democratically-determined (ostensibly) government grants and earmarks.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2010/12/blue-ribbon-commissions-in-print"><p>Blue Ribbon Commissions in Print</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2010-12-03T00:00:00Z" itemprop="datePublished">December 3, 2010</time>
-
-        • Tagged <a href="/posts/tags/authority">authority</a>, <a href="/posts/tags/language">language</a>, <a href="/posts/tags/power">power</a>, and <a href="/posts/tags/search">search</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><a href="/uploads/2010-12-03-Blue-Ribbon-Commissions-in-Print/blue-ribbon-commission.png"> <img src="/uploads/2010-12-03-Blue-Ribbon-Commissions-in-Print/blue-ribbon-commission-500x90.png" alt="" title="blue ribbon commission" /> </a></p>
-
-<p>I was annoyed by my <a href="http://www.island94.org/2010/12/proposals-to-change-the-tax-deductibility-of-donations/">previous post</a> quoting the New York Times’ usage of “blue ribbon panel” (and the numerous appeals to authority in that entire article) that I looked it up using Google Search’s timeline: <em><a href="http://www.google.com/search?tbs=tl:1&amp;q=site:nytimes.com+[%22blue+ribbon+panel%22+OR+%22blue+ribbon+commission%22]">site:nytimes.com [“blue ribbon panel” OR “blue ribbon commission”]</a>.</em> There were 621 results.</p>
 
   </div>
 </article>

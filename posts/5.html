@@ -138,6 +138,63 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/07/introducing-goodjob-v4"><p>Introducing GoodJob v4</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-07-07T04:44:00Z" itemprop="datePublished">July 7, 2024</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a> and <a href="/posts/tags/rails">Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>GoodJob version 4.0 has been released! 🎉 GoodJob v4 has breaking changes that should be addressed through a transitionary v3.99 release, but if you’ve kept up with v3.x releases and migrations, you’re likely ready to upgrade 🚀</p>
+
+<p>The <a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#upgrading-v3-to-v4">README has an upgrade guide</a>. If you’d like to leave feedback about this release, please comment on the <a href="https://github.com/bensheldon/good_job/discussions/1396">GitHub Discussions post 📣</a></p>
+
+<p>If you’re not familiar with GoodJob, you can read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a> from four years ago. We’ve come pretty far.</p>
+
+<h3 id="breaking-changes-to-job-schema">Breaking changes to job schema</h3>
+
+<p>GoodJob v4 changes how job and job execution records are stored in the database; moving from job and executions being commingled in the <code>good_jobs</code> table to Jobs (still in <code>good_jobs</code>) having many discrete Execution records in the <code>good_job_executions</code> table.</p>
+
+<p>To safely upgrade, all unfinished jobs must use the new schema relationship, tracked in the <code>good_jobs.is_discrete</code> column. This change was transparently introduced in GoodJob <a href="https://github.com/bensheldon/good_job/releases/tag/v3.15.4">v3.15.4 (April 2023)</a>, so your application is likely ready-to-upgrade already if you have kept up with GoodJob updates and migrations. You can check by running <code>v3.99</code>’s <code>GoodJob.v4_ready?</code> in production or run the following SQL query on the production database and check it returns zero: <code>SELECT COUNT(*) FROM "good_jobs" WHERE finished_at IS NULL AND is_discrete IS NOT TRUE</code>. If not all unfinished jobs are stored in the new format, either wait to upgrade until those jobs finish or discard them. If you upgrade prematurely to v4 without allowing those jobs to finish, they may never be performed.</p>
+
+<h3 id="other-notable-changes">Other notable changes</h3>
+
+<p>GoodJob v4:</p>
+
+<ul>
+  <li>Only supports Rails 6.1+, CRuby 3.0+ and JRuby 9.4+, Postgres 12+. Rails 6.0 is no longer supported. CRuby 2.6 and 2.7 are no longer supported. JRuby 9.3 is no longer supported.</li>
+  <li>Changes job priority to give smaller numbers higher priority (default: 0), in accordance with Active Job’s definition of priority.</li>
+  <li>Enqueues and executes jobs via the <code>GoodJob::Job</code> model instead of <code>GoodJob::Execution</code></li>
+  <li>Changes the behavior of <code>config.good_job.cleanup_interval_jobs</code>, <code>GOOD_JOB_CLEANUP_INTERVAL_JOBS</code>, <code>config.good_job.cleanup_interval_seconds</code>, or <code>GOOD_JOB_CLEANUP_INTERVAL_SECONDS</code> set to <code>nil</code> or <code>” </code> to no longer disable count- or time-based cleanups. Instead, now set to <code>false</code> to disable, or <code>-1</code> to run a cleanup after every job execution.</li>
+</ul>
+
+<h3 id="new-features">New Features</h3>
+
+<p>GoodJob v4 does not introduce any new features on its own. In the 110 releases since GoodJob v3.0 was released (June, 2022), these new features and improvements have been introduced:</p>
+
+<ul>
+  <li><a href="https://github.com/bensheldon/good_job#batches">Batches</a></li>
+  <li>Bulk enqueueing including support for Active Job’s <code>perform_all_later</code>.</li>
+  <li><a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#labelled-jobs">Labelled jobs</a></li>
+  <li>Throttling added to <a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#concurrency-controls">Concurrency Controls</a></li>
+  <li>Improvements to the <a href="https://goodjob-demo.herokuapp.com/good_job/jobs">Web Dashboard</a>, including Dark Mode, performance dashboard, and improved UI,  and customizable templates.</li>
+  <li>Storage of error backtraces. Improved handling of job error conditions, including signal interruptions. Added <code>GoodJob.current_thread_running?</code> and <code>GoodJob.current_thread_shutting_down?</code> to support job iteration.</li>
+  <li><a href="https://github.com/bensheldon/good_job/pull/665">Ordered Queues</a>, <a href="https://github.com/bensheldon/good_job/pull/727"><code>queue_select_limit</code></a> and further options for configuring queue order and performance.</li>
+  <li>Improvements to Cron / Repeating Jobs.</li>
+  <li>Operational improvements including <code>systemd</code> integration, improved health checks.</li>
+</ul>
+
+<p><strong>A huge thank you to 88 (!) GoodJob v3.x contributors 🙇🏻</strong> @afn, @ain2108, @aisayo, @Ajmal, @aki77, @alec-c4, @AndersGM, @andyatkinson, @andynu, @arnaudlevy, @baka-san, @benoittgt, @bforma, @BilalBudhani, @binarygit, @bkeepers, @blafri, @blumhardts, @ckdake, @cmcinnes-mdsol, @coreyaus, @DanielHeath, @defkode, @dixpac, @Earlopain, @eric-christian, @erick-tmr, @esasse, @francois-ferrandis, @frans-k, @gap777, @grncdr, @hahwul, @hidenba, @hss-mateus, @Intrepidd, @isaac, @jgrau, @jklina, @jmarsh24, @jpcamara, @jrochkind, @julienanne, @julik, @LucasKendi, @luizkowalski, @maestromac, @marckohlbrugge, @maxim, @mec, @metalelf0, @michaelglass, @mitchellhenke, @mkrfowler, @morgoth, @Mr0grog, @mthadley, @namiwang, @nickcampbell18, @padde, @patriciomacadden, @paul, @Pauloparakleto, @pgvsalamander, @remy727, @rrunyon, @saksham-jain, @sam1el, @sasha-id, @SebouChu, @segiddins, @SemihCag, @shouichi, @simi, @sparshalc, @stas, @steveroot, @TAGraves, @tagrudev, @thepry, @ur5us, @WailanTirajoh, @yenshirak, @ylansegal, @yshmarov, @zarqman</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/06/rails-strict-locals-local_assigns-and-reserved-keywords"><p>Rails Strict Locals, undefined <code>local_assigns</code>, and reserved keywords</p>
 </a>
     </h1>
@@ -1094,177 +1151,6 @@ window.Confetti = function () {
 <p>(I mean sure, share context and adapt, but allow yourself no doubt that you’ve’ clearly and consistently communicated what your top priorities are before they get dumped in with everyone else’s.)</p>
 
 <p>(But also, if you’re an engineer and you can and no one is breathing down your neck, simply get it done and celebrate. The PM doesn’t have to lead everything. You can do it! 👍)</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory"><p>The answer is in your heap: debugging a big memory increase in Ruby on Rails</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-01-16T22:41:00Z" itemprop="datePublished">January 16, 2024</time>
-
-        • Tagged <a href="/posts/tags/ruby">ruby</a> and <a href="/posts/tags/rails">rails</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I recently participated in an <a href="https://github.com/sciencehistory/scihist_digicoll/issues/2449">interesting series of debugging sessions</a> tracking down the source of a large increase in memory when upgrading a Rails application. We ultimately tracked down the cause using John Hawthorn’s <a href="https://github.com/jhawthorn/sheap">Sheap heap analyzer</a> and successfully submitted a <a href="https://github.com/rails/rails/pull/50298">patch to Rails</a>. I thought it was interesting enough to write up because maybe the general approach to debugging memory issues would be helpful (and this is the kind of stuff that I very quickly forget unless I write it down).</p>
-
-<h3 id="how-it-started-reddit">How it started: Reddit</h3>
-
-<p>Lots of people ask for help on r/rails, and it can be difficult to debug at a distance. <a href="https://www.reddit.com/r/rails/comments/185b2wr/comment/kb1toyp/">This time it was a little different</a>. I recognized the username’s owner, <a href="https://bibwild.wordpress.com">Jonathan Rochkind</a>, because he’s been a familiar and helpful face in GoodJob’s discussions and I’ve sponsored his aggregator <a href="https://rubyland.news/">Rubyland News</a>. The observed problem was that after upgrading from Rails 7.0 to Rails 7.1, their application’s memory footprint increased by about 25%. Weird!</p>
-
-<h3 id="working-the-problem">Working the problem</h3>
-
-<p>We worked through a bunch of questions:</p>
-
-<ul>
-  <li>Was the memory increase at startup or over time? Not at boot, but memory increased very quickly.</li>
-  <li>Did anything change with Puma configuration?  Nope.</li>
-  <li>
-    <p>Get set up with <a href="https://github.com/zombocom/derailed_benchmarks"><code>derailed_benchmarks</code></a>, and create a <code>bin/profile</code> Rails binstub to make it easy to boot into a production-like configuration for profiling. Here’s what my very polished one looks like:</p>
-
-    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
-
-<span class="c1"># This file is a wrapper around the rails and derailed executables</span>
-<span class="c1"># to make it easier to boot in PRODUCTION mode.</span>
-<span class="c1">#</span>
-<span class="c1"># Usage: bin/profile [rails|derailed] [command]</span>
-
-<span class="no">ENV</span><span class="p">[</span><span class="s2">"RAILS_ENV"</span><span class="p">]</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"RAILS_ENV"</span><span class="p">,</span> <span class="s2">"production"</span><span class="p">)</span>
-<span class="no">ENV</span><span class="p">[</span><span class="s2">"RACK_ENV"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"production"</span>
-<span class="no">ENV</span><span class="p">[</span><span class="s2">"RAILS_LOG_TO_STDOUT"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"true"</span>
-<span class="no">ENV</span><span class="p">[</span><span class="s2">"RAILS_SERVE_STATIC_FILES"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"true"</span>
-<span class="no">ENV</span><span class="p">[</span><span class="s2">"FORCE_SSL"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"false"</span>
-<span class="c1">## ^^ Put ENV to boot in production mode here ^^</span>
-
-<span class="n">executable</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>
-<span class="k">if</span> <span class="n">executable</span> <span class="o">==</span> <span class="s2">"rails"</span>
-  <span class="nb">load</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">),</span> <span class="s2">"rails"</span><span class="p">)</span>
-<span class="k">elsif</span> <span class="n">executable</span> <span class="o">==</span> <span class="s2">"derailed"</span>
-  <span class="nb">require</span> <span class="s1">'bundler/setup'</span>
-  <span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s1">'derailed_benchmarks'</span><span class="p">,</span> <span class="s1">'derailed'</span><span class="p">)</span>
-<span class="k">else</span>
-  <span class="nb">puts</span> <span class="s2">"ERROR: '</span><span class="si">#{</span><span class="n">executable</span><span class="si">}</span><span class="s2">' is not a valid command."</span>
-  <span class="nb">puts</span> <span class="s2">"Usage: bin/profile [rails|derailed]"</span>
-  <span class="nb">exit</span> <span class="mi">1</span>
-<span class="k">end</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p>We flailed around with Derailed Benchmarks, as well as John Hawthorn’s <a href="https://github.com/jhawthorn/vernier?tab=readme-ov-file#retained-memory">Vernier profiler’s memory mode</a> (aside: John Hawthorn is doing amazing stuff with Ruby).</p>
-
-<p>At this point, we had a general understanding of the application memory footprint, which involved a large number of model instances (<code>Work</code>), many of which contained a big blob of json. For some reason they were sticking around longer than a single web request, but we weren’t able to find any smoking guns of like, memoized class instance variables that were holding onto references. So we kept digging.</p>
-
-<p>You can read along to all of this here: https://github.com/sciencehistory/scihist_digicoll/issues/2449</p>
-
-<h3 id="analyzing-memory-with-sheap">Analyzing memory with Sheap</h3>
-
-<p>I used Derailed Benchmark’s <a href="https://github.com/zombocom/derailed_benchmarks/blob/main/README.md#i-want-more-heap-dumps"><code>perf:heap</code></a> to generate heap dumps (also possible using <a href="https://github.com/tmm1/rbtrace"><code>rbtrace --heapdump</code></a>), and then plugged those into Sheap. Sheap is a relatively new tool, and where it shines is being <em>interactive</em>. Instead of outputting a static report, Sheap allows for exploring a heap dump (or diff: to identify retained objects), and ask questions of the dump. In our case: <em>what objects are referencing this object and why is it being retained?</em></p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $ irb</span>
-<span class="nb">require</span> <span class="s1">'./lib/sheap.rb
-
-diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_digicoll/tmp/2023-12-07T13:24:15-08:00-heap-1.ndjson", "/Users/bensheldon/Repositories/sciencehistory/scihist_digicoll/tmp/2023-12-07T13:24:15-08:00-heap-2.ndjson")
-
-# Find one of the Work records that'</span><span class="n">s</span> <span class="n">been</span> <span class="n">retained</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">class_named</span><span class="p">(</span><span class="s2">"Work"</span><span class="p">).</span><span class="nf">first</span><span class="p">.</span><span class="nf">instances</span><span class="p">[</span><span class="mi">200</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x117cf5c98</span> <span class="no">Work</span> <span class="p">(</span><span class="mi">4</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span>
-
-<span class="c1"># Find the path to the (default) root</span>
-<span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">find_path</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-<span class="o">=&gt;</span>
-<span class="p">[</span><span class="o">&lt;</span><span class="no">ROOT</span> <span class="n">vm</span> <span class="p">(</span><span class="mi">2984</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
- <span class="o">&lt;</span><span class="no">IMEMO</span> <span class="mh">0x126c9ab68</span> <span class="n">callcache</span> <span class="p">(</span><span class="mi">1</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
- <span class="o">&lt;</span><span class="no">IMEMO</span> <span class="mh">0x126c9acf8</span> <span class="n">ment</span> <span class="p">(</span><span class="mi">4</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
- <span class="o">&lt;</span><span class="no">CLASS</span> <span class="mh">0x12197c080</span> <span class="p">(</span><span class="n">anonymous</span><span class="p">)</span> <span class="p">(</span><span class="mi">15</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
- <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x122ddba08</span> <span class="p">(</span><span class="mh">0x12197c080</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
- <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x117cfc458</span> <span class="no">WorksController</span> <span class="p">(</span><span class="mi">13</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
- <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x117cf7318</span> <span class="no">WorkImageShowComponent</span> <span class="p">(</span><span class="mi">15</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
- <span class="o">&lt;</span><span class="no">OBJECT</span> <span class="mh">0x117cf5c98</span> <span class="no">Work</span> <span class="p">(</span><span class="mi">4</span> <span class="n">refs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">]</span>
-
-<span class="c1"># What is that initial callcache being referenced by the ROOT?</span>
-<span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="s2">"0x126c9ab68"</span><span class="p">).</span><span class="nf">data</span>
-<span class="o">=&gt;</span>
-<span class="p">{</span><span class="s2">"address"</span><span class="o">=&gt;</span><span class="s2">"0x126c9ab68"</span><span class="p">,</span>
- <span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"IMEMO"</span><span class="p">,</span>
- <span class="s2">"shape_id"</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
- <span class="s2">"slot_size"</span><span class="o">=&gt;</span><span class="mi">40</span><span class="p">,</span>
- <span class="s2">"imemo_type"</span><span class="o">=&gt;</span><span class="s2">"callcache"</span><span class="p">,</span>
- <span class="s2">"references"</span><span class="o">=&gt;</span><span class="p">[</span><span class="s2">"0x126c9acf8"</span><span class="p">],</span>
- <span class="s2">"file"</span><span class="o">=&gt;</span><span class="s2">"/Users/bensheldon/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.2/lib/action_dispatch/routing/routes_proxy.rb"</span><span class="p">,</span>
- <span class="s2">"line"</span><span class="o">=&gt;</span><span class="mi">48</span><span class="p">,</span>
- <span class="s2">"method"</span><span class="o">=&gt;</span><span class="s2">"public_send"</span><span class="p">,</span>
- <span class="s2">"generation"</span><span class="o">=&gt;</span><span class="mi">288</span><span class="p">,</span>
- <span class="s2">"memsize"</span><span class="o">=&gt;</span><span class="mi">40</span><span class="p">,</span>
- <span class="s2">"flags"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"wb_protected"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"old"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"uncollectible"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"marked"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">}}</span>
-
-<span class="c1"># And then a method entry</span>
-<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">015</span><span class="o">&gt;</span> <span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="s2">"0x126c9acf8"</span><span class="p">).</span><span class="nf">data</span>
-<span class="o">=&gt;</span>
-<span class="p">{</span><span class="s2">"address"</span><span class="o">=&gt;</span><span class="s2">"0x126c9acf8"</span><span class="p">,</span>
- <span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"IMEMO"</span><span class="p">,</span>
- <span class="s2">"shape_id"</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
- <span class="s2">"slot_size"</span><span class="o">=&gt;</span><span class="mi">40</span><span class="p">,</span>
- <span class="s2">"imemo_type"</span><span class="o">=&gt;</span><span class="s2">"ment"</span><span class="p">,</span>
- <span class="s2">"references"</span><span class="o">=&gt;</span><span class="p">[</span><span class="s2">"0x12197c080"</span><span class="p">,</span> <span class="s2">"0x12197c080"</span><span class="p">,</span> <span class="s2">"0x126c9ade8"</span><span class="p">,</span> <span class="s2">"0x126c9b4a0"</span><span class="p">],</span>
- <span class="s2">"file"</span><span class="o">=&gt;</span>
-  <span class="s2">"/Users/bensheldon/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.2/lib/action_dispatch/routing/routes_proxy.rb"</span><span class="p">,</span>
- <span class="s2">"line"</span><span class="o">=&gt;</span><span class="mi">33</span><span class="p">,</span>
- <span class="s2">"method"</span><span class="o">=&gt;</span><span class="s2">"method_missing"</span><span class="p">,</span>
- <span class="s2">"generation"</span><span class="o">=&gt;</span><span class="mi">288</span><span class="p">,</span>
- <span class="s2">"memsize"</span><span class="o">=&gt;</span><span class="mi">48</span><span class="p">,</span>
- <span class="s2">"flags"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"wb_protected"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"old"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"uncollectible"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"marked"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">}}</span>
-
-<span class="c1"># Aha, and a singleton for RoutesProxy!</span>
-<span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="s2">"0x12197c080"</span><span class="p">).</span><span class="nf">data</span>
-<span class="o">=&gt;</span>
-<span class="p">{</span><span class="s2">"address"</span><span class="o">=&gt;</span><span class="s2">"0x12197c080"</span><span class="p">,</span>
- <span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"CLASS"</span><span class="p">,</span>
- <span class="s2">"shape_id"</span><span class="o">=&gt;</span><span class="mi">14</span><span class="p">,</span>
- <span class="s2">"slot_size"</span><span class="o">=&gt;</span><span class="mi">160</span><span class="p">,</span>
- <span class="s2">"class"</span><span class="o">=&gt;</span><span class="s2">"0x12211c308"</span><span class="p">,</span>
- <span class="s2">"variation_count"</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
- <span class="s2">"superclass"</span><span class="o">=&gt;</span><span class="s2">"0x12211c3a8"</span><span class="p">,</span>
- <span class="s2">"real_class_name"</span><span class="o">=&gt;</span><span class="s2">"ActionDispatch::Routing::RoutesProxy"</span><span class="p">,</span>
- <span class="s2">"singleton"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span>
- <span class="s2">"references"</span><span class="o">=&gt;</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
- <span class="s2">"file"</span><span class="o">=&gt;</span>
-  <span class="s2">"/Users/bensheldon/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.2/lib/action_dispatch/routing/routes_proxy.rb"</span><span class="p">,</span>
- <span class="s2">"line"</span><span class="o">=&gt;</span><span class="mi">33</span><span class="p">,</span>
- <span class="s2">"method"</span><span class="o">=&gt;</span><span class="s2">"method_missing"</span><span class="p">,</span>
- <span class="s2">"generation"</span><span class="o">=&gt;</span><span class="mi">288</span><span class="p">,</span>
- <span class="s2">"memsize"</span><span class="o">=&gt;</span><span class="mi">656</span><span class="p">,</span>
- <span class="s2">"flags"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"wb_protected"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"old"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"uncollectible"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"marked"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">}}</span>
-
-<span class="c1"># I expect the next object to be the RoutesProxy instance</span>
-<span class="n">diff</span><span class="p">.</span><span class="nf">after</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="s2">"0x122ddba08"</span><span class="p">).</span><span class="nf">klass</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s2">"real_class_name"</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="s2">"ActionDispatch::Routing::RoutesProxy"</span>
-</code></pre></div></div>
-
-<p>Sheap is pretty great! In the above example, we were able to find a <code>Work</code> model instance in the heap, and then using <code>find_path</code> identify what was referencing it all the way back to the heap’s root, which is what causes the object to be “retained”; if there was no path to the root, the object would be garbage collected.</p>
-
-<p>(I have the huge benefit of having John as a colleague at GitHub and he helped me out <em>a lot</em> with this. Thank you, John!)</p>
-
-<p>What we’re looking at is something in Rails’ <code>RoutesProxy</code> holding onto a reference to that <code>Work</code> object, via a callcache, a method entry (<a href="https://tenderlovemaking.com/2018/01/23/reducing-memory-usage-in-ruby.html"><code>ment</code></a>), a singleton class, a RouteSet, and then a Controller. What the heck?!</p>
-
-<h3 id="the-explanation">The explanation</h3>
-
-<p>Using Rails’ git history, we were able to find that a <a href="https://github.com/rails/rails/pull/46974">change</a> had been made to the <code>RoutesProxy</code> ’s behavior of dynamically creating a new method: a <code>class_eval</code>  had been changed to an <code>instance_eval</code>.</p>
-
-<p>Calling <code>instance_eval "def method...."</code> is what introduced a new singleton class, because that new method is only defined on that one object instance. Singleton classes can be cached by the Ruby VM (they’ll be purged when the cache fills up), and that’s what, through that chain of objects, was causing the model instances to stick around longer than expected and bloat up the memory! It’s not that <code>instance_eval</code>ing new methods is itself inherently problematic, but when those singleton methods are defined on an object that references an instance of an Action Controller, which has many instance variables that contained big Active Record objects…. that’s a problem.</p>
-
-<p>(Big props, again, to John Hawthorn who connected these dots.)</p>
-
-<p>Having tracked down the problem, we submitted a <a href="https://github.com/rails/rails/pull/50298">patch to Rails</a> to change the behavior and remove the <code>instance_eval</code> -defined methods. It’s been accepted and <del>it should be released in the next Rails patch (probably v7.1.3); the project temporarily <a href="https://github.com/sciencehistory/scihist_digicoll/pull/2466">monkey-patched in that change</a> too</del> has been released <a href="https://github.com/rails/rails/blob/36c1591bcb5e0ee3084759c7f42a706fe5bb7ca7/actionpack/lib/action_dispatch/routing/routes_proxy.rb#L30-L47">as part of Rails 7.1.3</a>.</p>
-
-<p><em>I realize that’s all a big technical mouthful, but the takeaway should be: <a href="https://github.com/jhawthorn/sheap">Sheap</a> is a really great tool, and exploring your Ruby heap can be very satisfying.</em></p>
-
-<p><strong>Update:</strong> Jean Boussier pointed me to the fix in Ruby 3.3 for <a href="https://bugs.ruby-lang.org/issues/19436">call Cache for singleton methods can lead to “memory leaks”</a> 🎉 And suggested looking at <a href="https://github.com/csfrancis/harb"><code>harb</code></a> too as a Sheap-like.</p>
 
   </div>
 </article>

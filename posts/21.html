@@ -138,6 +138,42 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2013/09/testing"><p>testing</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2013-09-30T00:00:00Z" itemprop="datePublished">September 30, 2013</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>http://www.reddit.com/r/rails/comments/1mligj/how_to_organize_rspec/ccakk4u</p>
+
+<blockquote>
+  <p>I think you have 2 separate questions:</p>
+
+  <ol>
+    <li>How to write good, clear tests.</li>
+    <li>How to make writing tests something that improves your development process and outcome.</li>
+  </ol>
+
+  <p>As for the first thing, I think that’s googleable and I’d start with somethign like  <a href="http://railscasts.com/episodes/275-how-i-test">Railscasts</a> or  <a href="http://everydayrails.com/2012/03/12/testing-series-intro.html">Everyday Rails</a>. Also <a href="http://blog.bandzarewicz.com/slides/krug-the-perfect-rspec/">The Perfect Rspec</a> (it nearly made me weep when I first read it):  … and after that, read the somewhat disagreeing  <a href="http://betterspecs.org/">http://betterspecs.org</a></p>
+
+  <p>As for the second thing, I would recommend you:</p>
+
+  <ul>
+    <li>Install  <a href="https://github.com/guard/guard">Guard</a> to constantly run your tests as you develop…which makes a TDD process effortless and becomes a great harness for inspecting objects without cracking open rails console, just  <code>put *.inspect</code>  in your test and guard will dump the object to the console just by saving the file. Install  <a href="https://github.com/jonleighton/spring">Spring</a> to run them even faster.</li>
+    <li>Have your tests run with a continous integration service like Travis (free for open source) or CircleCI. For bonus points, have them continuously deploy your app to staging/production too if the tests pass. They also integrate with Github and will show whether tests on pull requests are passing before you merge. This makes the outcome of your tests more visible and not something you forget to do in development.</li>
+    <li>Sign up for a test coverage service like  <a href="http://coveralls.io/">Coveralls</a>  (you can run simplecov locally, but these services can integrate really nicely with travis/circle and github). This will help you find holes in your code coverage and makes writing tests more like like a game and less like a big time sink.</li>
+  </ul>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2013/09/now-exhale"><p>Now exhale</p>
 </a>
     </h1>
@@ -566,40 +602,6 @@
 <p>…or maybe people just don’t like bamboo.</p>
 
 <p><img src="/uploads/2012-08/civicsgarden-result-600x408.png" alt="" title="civicsgarden-result" /></p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2012/07/hard-data-on-the-status-of-open311"><p>Hard data on the status of Open311</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2012-07-27T00:00:00Z" itemprop="datePublished">July 27, 2012</time>
-
-        • Tagged <a href="/posts/tags/analytics">analytics</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/navigation">navigation</a>, and <a href="/posts/tags/portfolio">portfolio</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2012-07/open311status.herokuapp-2-600x369.png" alt="" title="open311status.herokuapp-2" /></p>
-
-<p>With the recent announcement of <a href="http://codeforamerica.org/2012/07/12/hello-311-labs/">311 Labs</a> and Code for America’s recent <a href="http://codeforamerica.org/2012/07/23/open311-reality-check-how-usable-is-the-api-for-developers/">podcast featuring me</a> talking about my perspective on Open311, this write-up about <a href="http://open311status.herokuapp.com">Open311Status</a> is probably long overdue.</p>
-
-<p><a href="http://open311status.herokuapp.com">Open311Status</a>—still a work in progress–polls Open311 servers in 30 cities and aggregates configuration, performance and utilization statistics about those Open311 endpoints. I built Open311Status for two reasons: first, to provide a high-level view of how different endpoints are performing as a developer sanity check (“is my app broken or the server?”); and second, to provide some hard data to the anecdotes and experiences I’ve used in <a href="http://codeforamerica.org/2012-partners/chicago/">advising the City of Chicago</a> and others in how to improve Open311’s potential for positive impact in their cities and beyond.</p>
-
-<p>In designing Open311Status I took advantage of the huge benefit of the Open311: interoperability. By adopting the Open311 API for exposing civic data, cities are enabling civic developers like myself to build reusable tools and apps. To access data from 30 cities, Open311Status doesn’t need an adapter for each individual city, <a href="https://github.com/codeforamerica/open311status/blob/master/lib/endpoints.json">only a server URL</a> that it can expect to interact and deliver data in the same way as described by the <a href="http://wiki.open311.org/GeoReport_v2">Open311 API documentation</a>. Sure, there are some minor interoperability issues (for example, <a href="http://tracker.open311.org/ticket/95">Toronto doesn’t like datetimes submitted with milliseconds</a>), but these have been minor speed bumps for development, not major deal breakers.</p>
-
-<p>A major limiting factor in the utility of Open311 isn’t these minor technical issues, but in how the Open311 servers are configured. If Open311 is supposed to provide a rich API for developers to interact with there should be a broad number of categories (“types”) of requests that can be submitted, as well as a comprehensive listing of previously submitted requests that can be analyzed or dashboarded. Compare the Boston and Washington, D.C. Open311 implementations: Washington, D.C. currently provides 83 categories of service requests (from “Tree Inspection” to “Roadway Marking Maintenance”) while Boston only provides six. Washington, D.C. provides access to all requests regardless of whether they were entered via Open311, the 311 call center, or city work crews or departments; Boston only displays service requests made via the Open311 API. These configuration decisions have a huge impact on the comprehensiveness of the data and thus the potential applications third party developers can build on top of the Open311.</p>
-
-<p>If server configuration determines the potential for an innovative application, server performance determines whether such an app will be useable. Because a potential Open311 application will be heavily reliant upon a city’s Open311 server, the speed and robustness of that server will determine the responsiveness of the application. At the obvious extreme, if the server goes down, that app will probably be useless. If the server is functioning yet takes several seconds to respond to every request, the application and its users will experience significant slow-downs and frustration. As I’ve witnessed through Open311Status, usually about 10 percent of the servers take longer than one second to respond at any given time. That’s not a stable infrastructure for third party developers to build upon.</p>
-
-<p>Open311Status helps measure the distance between the potential of Open311 and the current reality. It’s cause to celebrate that here are 30 cities (and more to add to Open311Status) who have adopted both open data and open standards; this is hugely important progress! But there is still a lot of work to be done beyond the specification for Open311 to enable a rich and robust third party application developer ecosystem.</p>
-
-<p>Some technical details: <a href="http://open311status.herokuapp.com">Open311Status</a> is built on <a href="http://nodejs.org/">Node.js</a> with the <a href="http://expressjs.com/">Express</a> web framework and aggregates data in <a href="http://www.mongodb.org/">MongoDB</a> through the <a href="http://mongoosejs.com/">Mongoose</a> ORM. The application is single process and uses cron and async modules to poll the cities’ Open311 servers every five minutes. A fun/dumb feature is that individual service requests are streamed to the browser using <a href="http://socket.io/">Socket.io</a>, but because many servers publish service requests an hour (or more!) after they’ve been submitted, Open311Status streams the previous day’s service requests in “real time” as if they were today’s (or rather, “real time minus one day”). Tests are done with <a href="http://visionmedia.github.com/mocha/">Mocha</a> in BDD style with <a href="https://github.com/visionmedia/should.js">Should</a> using <a href="http://sinonjs.org/">Sinon</a> for mocks and stubs (though coverage could–always–be better). Open311Status is hosted on <a href="http://www.heroku.com/">Heroku</a>.</p>
-
-<p><em>This post is cross-posted from the <a href="http://codeforamerica.org/2012/07/27/hard-data-on-the-status-of-open311/">Code for America blog</a>.</em></p>
 
   </div>
 </article>

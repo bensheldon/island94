@@ -138,6 +138,48 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/11/maimonides-levels-of-charity"><p>Maimonides’ levels of charity</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-11-04T00:01:00Z" itemprop="datePublished">November 4, 2020</time>
+
+        • Tagged <a href="/posts/tags/charity">charity</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>This has been kicking around in my “to blog” bucket since July, 2008 when I had many more posts on Charity. I originally copied this from <a href="http://judaism.about.com/od/beliefs/a/charity_nine.htm">judaism.about.com</a>, and <a href="https://en.wikipedia.org/wiki/Tzedakah">Wikipedia</a> has a version of these too.</em></p>
+
+<p>Maimonides organized the different levels of tzedakah (charity) into a list from the least to the most honorable.</p>
+
+<blockquote>
+
+  <p>8. When donations are given grudgingly.</p>
+
+  <p>7. When one gives less than he should, but does so cheerfully.</p>
+
+  <p>6. When one gives directly to the poor upon being asked.</p>
+
+  <p>5. When one gives directly to the poor without being asked.</p>
+
+  <p>4. When the recipient is aware of the donor’s identity, but the donor does not know the identity of the recipient.</p>
+
+  <p>3. When the donor is aware of the recipient’s identity, but the recipient is unaware of the source.</p>
+
+  <p>2. When the donor and recipient are unknown to each other.</p>
+
+  <p>1. The highest form of charity is to help sustain a person before they become impoverished by offering a substantial gift in a dignified manner, or by extending a suitable loan, or by helping them find employment or establish themselves in business so as to make it unnecessary for them to become dependent on others.</p>
+
+</blockquote>
+
+<p>To be critical, 8 and 1 are most meaningful to me, and the gradations between the others aren’t particularly strong, though I think 4 and 3 could swap places.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2020/11/if-you-can-hook-them-for-a-day-you-can-hook-them-for-two"><p>If you can hook them for a day, you can hook them for two</p>
 </a>
     </h1>
@@ -463,67 +505,6 @@
 <p>This survey response led to the vendor’s account executive making a frantic and fearful call to our leadership team. The blowback of that led to my coworkers’ termination. (This was not my colleague’s first warning; my team and I were also targets of their trolling and bullying.)</p>
 
 <p>This is a funny story to reflect on. And it’s terribly toxic the multitude of things engineers will despise, wear on their sleeve, and eagerly share at the slightest opportunity, myself included.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2020/08/goodjob-v1-2-multithreaded-queue-isolation-and-listen-notify"><p>GoodJob v1.2: Multithreaded queue isolation and LISTEN/NOTIFY</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2020-08-20T03:51:00Z" itemprop="datePublished">August 20, 2020</time>
-
-        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> version 1.2 has been released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>.</p>
-
-<p>GoodJob’s v1.2 release adds  multithreaded queue isolation for easier congestion management, and usage of Postgres LISTEN/NOTIFY to greatly reduce queue latency.</p>
-
-<p>Version 1.2 comes out 2 weeks after GoodJob v1.1, and 5 weeks after GoodJob’s initial v1.0 release.</p>
-
-<h2 id="multithreaded-queue-isolation">Multithreaded queue isolation</h2>
-
-<p>GoodJob v1.2 adds multithreaded queue isolation for easier congestion management. Queue isolation ensures that slow, long-running jobs do not block the execution of higher priority jobs.</p>
-
-<p>Achieving queue isolation has always been possible by running multiple processes, but GoodJob v1.2 makes it easy to configure multiple isolated thread-pools within a single process.</p>
-
-<p>For example, to create a pool of 2 threads working from the <code>mice</code> queue, and 1 thread working from the <code>elephants</code> queue:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>good_job <span class="nt">--queues</span><span class="o">=</span><span class="s2">"mice:2;elephants:1"</span>
-</code></pre></div></div>
-
-<p>Or via an environment variable:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ GOOD_JOB_QUEUS</span><span class="o">=</span><span class="s2">"mice:2;elephants:1"</span> bundle <span class="nb">exec </span>good_job
-</code></pre></div></div>
-
-<p>Additional examples and syntax:</p>
-
-<ul>
-  <li><code>--queues=*:2;mice,sparrows:1</code> will create two thread-pools, one running jobs on any queue, and another dedicated to <code>mice</code> and <code>sparrows</code> queued jobs.</li>
-  <li><code>--queues=-elephants,whales:2;elephants,whales:1</code> will create two thread-pools, one running jobs from any queue <em>except</em> the <code>elephants</code> or <code>whales</code>, and another dedicated to <code>elephants</code> and <code>whales</code> queued jobs.</li>
-</ul>
-
-<h2 id="listennotify">LISTEN/NOTIFY</h2>
-
-<p>GoodJob now uses Postgres LISTEN/NOTIFY to push newly enqueued jobs for immediate execution.  LISTEN/NOTIFY greatly reduces queue latency, the time between when a job is enqueued and execution begins.</p>
-
-<p>LISTEN/NOTIFY works alongside GoodJob’s polling mechanism.  Together, jobs queued for immediate execution (<code>ExampleJob.perform_later</code>) are executed immediately, while future scheduled jobs (<code>ExampleJob.set(wait: 1.hour).perform_later</code>) are executed at (or near) their set time.</p>
-
-<h2 id="upcoming">Upcoming</h2>
-
-<p>In the next release, v1.3, I plan to include a simple web dashboard for inspecting job execution performance, and focus on improving GoodJob’s documentation.</p>
-
-<h2 id="contribute">Contribute</h2>
-
-<p>Code, documentation, and curiousity-based contributions are welcome! Check out the <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request.</p>
-
-<p>I’ve also set up a <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a> if you’re able to support me and GoodJob monetarily. It helps me stay in touch and send you project updates too.</p>
 
   </div>
 </article>

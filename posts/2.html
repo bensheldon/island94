@@ -138,6 +138,109 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/08/everything-i-know-about-ai-learned-by-reading-the-aws-bedrock-client-ruby-sdk-code"><p>Everything I know about AI, I learned by reading the AWS Bedrock Client Ruby SDK code</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-08-09T21:28:00Z" itemprop="datePublished">August 9, 2025</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a> and <a href="/posts/tags/ai">AI</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>This essay is a little bit about me and how I solve problems, and a little bit about AI from the perspective of a software developer building AI-powered features into their product.</em></p>
+
+<p>The past week at my startup has been a little different. I spent the week writing a grant application <a href="https://www.publicbenefitinnovationfund.org/summer-2025-open-call.html">for</a> “non-dilutive funding to accelerate AI-enabled solutions that help governments respond to recent federal policy changes and funding constraints in safety net programs.” It wasn’t particurly difficult, as we’re already deep into doing the work 💅 …but it was an interesting experience breaking that work down into discrete 250-word responses, all 17 (!) of them on the grant application.</p>
+
+<p>One of my friends is a reviewer panelist (she’ll recuse herself from our proposal), and I was explaining my struggle to find an appropriate level of detail. Comparing an answer like:</p>
+
+<blockquote>
+  <p>…we use AWS Bedrock models which are SOC, HIPAA, and Fedramp compatible, and integrated via its SDK which has robust guardrail functions like contextual grounding and output filters that we’re using to ensure accuracy and safety when producing inferenced text output…</p>
+</blockquote>
+
+<p>And:</p>
+
+<blockquote>
+  <p>…we have robust controls for ensuring the safety and accuracy of AI-powered features…</p>
+</blockquote>
+
+<p>That all might sounds like word salad anyways, so I compared it analogously to saying, in the context of web design:</p>
+
+<blockquote>
+  <p>… we’re designing our application using contemporary HTML and CSS features like media queries, and minimal Javascript via progress enhancement, to be usable and accessible across web browsers on devices from mobile phones to desktop computers….</p>
+</blockquote>
+
+<p>And:</p>
+
+<blockquote>
+  <p>….mobile, responsive web design…</p>
+</blockquote>
+
+<p>Working and communicating at the correct level of complexity <em>is the work</em>. While I’m developing software, I tend to be reductive; as the meme goes: <em>I’m not here to talk. Just put my <a href="https://knowyourmeme.com/editorials/guides/whats-the-just-put-my-fries-in-the-bag-bro-meme-the-viral-catchphrase-and-its-memes-on-tiktok-explained"><del>fries</del></a> http in the bag, bro. My DOM goes in the bag. Just put my Browser Security Model</em> in the bag.</p>
+
+<p>I guess I have the benefit of perspective, working in this field for 20+ years. While things have gotten to layer-upon-layer complexity, I can remember what simple looks and feels likes. It’s also <em>never</em> been simple.</p>
+
+<p>For example, in the civic tech space, there’s been lots of times where on one side someone wants to talk about civic platforms and government vending machines and unleashing innovation, and on the other side is a small room with vendor representative that is existentially opposed to adding a reference field to a data specification without which the whole system is irreconcilably unusable. The expansive vision and the tangible work.</p>
+
+<p>I believe, at the core of all of this IT (Information Technology (or ICT, Information and Communications Technology as it’s known globally), we’re doing <a href="https://knowyourmeme.com/memes/push-it-somewhere-else-patrick">pushing Patrick</a>: take information from one place, <em>and we push it somewhere else</em>.</p>
+
+<p><img src="/uploads/2025/push-it-patrick.gif" alt="Push it Patrick GIF" /></p>
+
+<p>Take that information from a person via a form, from a sensor, from a data feed, from a process, <em>and push it somewhere else</em>. Sure, we may enrich and transform it and present it differently, and obviously figuring out what is useful and valuable and useable is <em>the work</em>. From the backend to the frontend, and the frontend to the backend. From client to server, from server to server, protocol to protocol, over, under, you get the idea. The work is <em>pushing information somewhere else</em>.</p>
+
+<p><strong>Anyways, about that AI…</strong></p>
+
+<p>From Brian Merchant’s Blood in the Machine newsletter, describing going to an <a href="https://www.bloodinthemachine.com/p/ai-disagreements">AI retreat thing</a>:</p>
+
+<blockquote>
+  <p>I admittedly had a hard time with all this, and just a couple hours in, I began to feel pretty uncomfortable—not because I was concerned with what the rationalists were saying about AGI, but because my apparent inability to occupy the same plane of reality was so profound. In none of these talks did I hear any concrete mechanism described through which an AI might become capable of usurping power and enacting mass destruction, or a particularly plausible process through which a system might develop to “decide” to orchestrate mass destruction, or the ways it would navigate and/or commandeer the necessary physical hardware to wreak its carnage via a worldwide hodgepodge of different interfaces and coding languages of varying degrees of obsolescence and systems that already frequently break down while communicating with each other.</p>
+</blockquote>
+
+<p>I mean… exactly. Like what even.</p>
+
+<p>From my own experience of writing that grant application I mentioned at the beginning of this post, and enumerating all of the AI-powered features that we’ve built already, are prototyping, or confidently believe we can deliver in the near-term future… it’s quite a lot. And it’s not that different from anything that’s come before: building concrete stuff that concretely works. I wrote <a href="https://island94.org/2025/01/how-im-thinking-about-ai-llms">something similar</a> back in January too, so maybe this feeling is here to stay.</p>
+
+<p>The places where I struggled most to write about was in how many places, about trust and safety and risk and capacity… was explaining how we’re using functions that are quite simply exposed via the SDK. AWS Bedrock is how Amazon Web Services provides AI models as a billable resource developers can use. The SDK is how you invoke those AI models from your application.  <em>Just put the method signature in the bag.</em>  It’s all documented: the <code>#converse_stream</code> method, pretty much the only method to use: no joke, has <a href="https://github.com/aws/aws-sdk-ruby/blob/208a24482111145a209ff0a4a8fedf7a802b6993/gems/aws-sdk-bedrockruntime/lib/aws-sdk-bedrockruntime/client.rb#L1583-L2587">1003 lines of documentation above it describing all of the options to pass, and and all of the data that gets returned</a>:</p>
+
+<ul>
+  <li>Providing an inference prompt</li>
+  <li>Attaching documents</li>
+  <li>Tool usage, which is how models can coerced to produce structured output</li>
+  <li>Contextual grounding, to coerce the model to use context from the input rather than its foundational training sources.</li>
+  <li>Guardrails and safety filters, to do additional checks on the output, sometimes by other models.</li>
+  <li>…and all of the limitations and constraints that are very <em>real</em> and <em>tangible</em>. By which I mean  the maximum number of items one can send in an array or the maximum number of bytes that can be sent as a base64-encoded string.</li>
+</ul>
+
+<p>Every option is very concretely about passing a simple hash of data in, and getting a hash of data out. <em>Just put the Ruby Hash in the bag.</em></p>
+
+<p>To analogously compare this to one of the oldest and boringest AWS services, the Simple Storage Service, there is, with one hand, waving about how “the capability to store and retrieve an unlimited amount of data will change the world” and, and then with the other hand precisely “overriding the Content-Type of an S3 file upload”. Reading the method signature is the latter.</p>
+
+<p>And I don’t mean to imply everything in that 1003 line docblock is all you need to know. But you might wonder, say “When might I want to get a <code>resp.output.message.content[0].citations_content.citations #=&gt; Array</code>?” and then you google it and go down a rabbit hole to learn that citations are just another form of tool usage and <em><a href="https://repost.aws/questions/QUKwoMWVdCRQ6Y_drrZNXZPg/how-to-have-a-bedrock-agent-reliably-include-knowledge-base-citations-in-the-final-response-of-invokeagent-for-agents-for-amazon-bedrock-runtime">sometimes the model won’t do it</a></em> which if you keep digging down that rabbit hole everything becomes evident that these are, at heart, still probabilistic text generators that are useful and interesting <em>in the same way S3 is useful and interesting, and also isn’t.</em>  It’s a totally different conversation.</p>
+
+<p>So, if there’s any takeways to be had here:</p>
+
+<ul>
+  <li>This stuff is as boringly useful as any other AWS service is or isn’t, if you’re familiar with the vast number of AWS services.</li>
+  <li>It’s maybe embarrassing to write about in tangible form because it’s already been boringly commodified as a service through AWS.</li>
+  <li>…and also there are tangible, useful things to be built. And a lot of intellectual joy in breaking down how some high-level feature is built on top of these low-level services.</li>
+</ul>
+
+<p>My self-serving interest here is that I’d love to talk to other folks who are building stuff in Ruby on Rails using AI and LLMs and inference about the boring stuff involved in <em>taking information from one place, and pushing it somewhere else.</em></p>
+
+<p>For example, yesterday I posted in the <a href="https://www.rubyonrails.link/">Ruby on Rails Link Slack</a> <code>#ai-lounge</code> channel:</p>
+
+<blockquote>
+  <p>Anyone building AI-powered features into their application? I’ve got an interface for translating a text field into another language, and I was curious if anyone has a pattern they like with Turbo/ActionCable/Stimulus for streaming responses to a particular form for a single client (e.g. there’s not yet a model record that can be broadcasted from). This is what I’m doing (hopefully it makes sense 😅) …</p>
+</blockquote>
+
+<p>…and I’m waiting for a response.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/07/consider-thruster-with-puma-on-heroku"><p>Consider Thruster with Puma on Heroku</p>
 </a>
     </h1>
@@ -729,72 +832,6 @@ export default class extends Controller {
 <hr />
 
 <p>I had to go to the shipping warehouse to pick up my new <a href="https://island94.org/2025/04/recently-april-7-2025">mechanical keyboard</a> because I kept missing the delivery person, but it otherwise arrived no problem.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/04/recently-april-14-2025"><p>Recently, April 14, 2025</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-04-15T02:02:00Z" itemprop="datePublished">April 15, 2025</time>
-
-        • Tagged <a href="/posts/tags/weeknotes">weeknotes</a> and <a href="/posts/tags/recently">recently</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Last week I tried out a lot of coworking spaces: Canopy, Tandem, Temescal Works. We’re trying to find a space between Oakland and SF with nice outdoor walks.</p>
-
-<hr />
-
-<p>I’m having a great time being a technical cofounder to my (everything else!) cofounder.  It’s fun explaining what I am doing. And we have fun shouting “Monolith!” and “Skateboard [MVP]” all day long.</p>
-
-<p>An example of an explanation I gave: one of our client advocate tools is a Twilio-powered Voice Conference Bridge where we can dial in any number of participants which helps shadow and assist our clients in their welfare application journey. We wanted to add DTMF tones for dialing extensions and navigating IVR systems. Unfortunately, the Twilio API that I used initially (<em>Create a Conference Bridge, then create a Participant Call</em>) doesn’t support DTMF tones so I had to flip the logic to a different API (<em>Create a Call, then add it to a Conference Bridge as a Participant)</em>. Figuring that out was a couple hours of reading docs and SDK code, feeling confident I wasn’t overlooking something, creating a runner script to bench test it, and finally putting the pieces into their production-ready places which was only like 20 lines of code at the end. That’s where the time goes.</p>
-
-<hr />
-
-<p>I had several conversations about <a href="https://x.com/tobi/article/1909251946235437514">“the AI memo”</a>. I’ll paste the two themes I talked about, in the words I put into the Rails Perf Slack:</p>
-
-<blockquote>
-  <p>I don’t know what Shopify’s culture is, but I imagine the pronouncement itself could be useful, for Tobi.</p>
-
-  <p>As a leader, you say “everyone must… unless you get an exception from me” to learn by forcing exceptions to roll up to you directly. It’s a shitty way to learn, but power is shitty. (I mean “learn” in the very personal sense). It’s a tactic. The flip side is then as a leader you debug the need for the exceptions and that leads to a better policy.</p>
-
-  <p>GitHub’s CEO said (not published) something similar (internally) 2 weeks before I left. I sweated it for a day, then DMed him and said “as a manager, I’m not aware of any LLM api that is approved for my use for internal admin stuff?” and he pointed me to the GitHub Models product that is totally unreferenced on any of the internal docs about staff AI tools. I poked that enablement team to add it, and I dunno if the CEO actually followed up with anyone to debug the low awareness (the story of my DM got retold at a different meeting as one about security, but it was really my complete unawareness and its absence on any of the tool lists that were intended to be the starting place for staff to integrate AI into their work).</p>
-
-  <p>TLDR: in a culture of opennness (safety to DM the CEO about the policy) and learning (the policy is the start not the end of discussion). I could see the pronouncement to be catalytic.</p>
-</blockquote>
-
-<p>And</p>
-
-<blockquote>
-  <p>I appreciate that FOMO hype (“don’t be left behind”) has been largely absent [in this Slack community], though I find it elsewhere and a huge distraction.</p>
-
-  <p>I think a lot in this thread could have the word “AI” replaced with “Rubymine” and it would be an equally familiar discussion between folks who use it, folks who are curious, and folks who are happy with their current code editor and wish others would stop pushing Rubymine cause it’s slow and costs money and makes developers lazy, analogously.</p>
-
-  <p>I share that because I don’t think it’s a new experience to be like: “both of us are producing software but our moment-to-moment experience is wildly materially different” (eg “here is my elaborate process for naming and organizing methods so I can find them later” vs “I cmd-click on it and I go there”). … and then people debate whether that difference matters or not in the end.</p>
-
-  <p>When I think of my own experience in The Editor Wars I think the only meaningful thing is to go pair with somebody and observe their material experience producing software in situ, fumbles and all.</p>
-</blockquote>
-
-<p>I did my first Deep Research this week; it was good <a href="https://www.snopes.com/fact-check/ai-education-linda-mcmahon/">A1</a>.</p>
-
-<hr />
-
-<p>Week one of my startup journey and I already made <a href="https://github.com/rails/rails/pull/54895">a successful Rails PR</a> with a bug fix. I didn’t think it was a big deal but it got backported too 💪</p>
-
-<hr />
-
-<p>On Saturday I did what I’m trying to make my standard 10-mile hike: Stinson Beach to Muir Woods loop (Steep Ravine up, Bootjack down, Ben Johnson up, Dipsea back down). Shandy and fries at the end.</p>
-
-<p>Sunday was a swim (the Bay was a balmy 57F/14C !) and the treat of a Warriors day game with Angelina’s geospatial colleagues, and dinner and ice cream and showing them all our favorite park walks.</p>
-
-<hr />
-
-<p>I’m still reading <em>Spinning Silver</em>; it’s good <em>and</em> long! I have not played Witcher 3 since writing about it last time, or really anything.</p>
 
   </div>
 </article>

@@ -137,6 +137,33 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2026/01/frontier-novelty"><p>Frontier novelty</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2026-01-25T20:08:00Z" itemprop="datePublished">January 25, 2026</time>
+
+        • Tagged <a href="/posts/tags/quotes">quotes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From Benji Edward’s <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">“10 things I learned from burning myself out with AI coding agents”</a> describing the challenge of maintaining novelty during AI coding:</p>
+
+<blockquote>
+  <p>Due to what might poetically be called “preconceived notions” baked into a coding model’s neural network (more technically, statistical semantic associations), it can be difficult to get AI agents to create truly novel things, even if you carefully spell out what you want.<br />
+For example, I spent four days trying to get Claude Code to create an Atari 800 version of my HTML game <em>Violent Checkers</em>, but it had trouble because in the game’s design, the squares on the checkerboard don’t matter beyond their starting positions. No matter how many times I told the agent (and made notes in my Claude project files), it would come back to trying to center the pieces to the squares, snap them within squares, or use the squares as a logical basis of the game’s calculations when they should really just form a background image.</p>
+
+  <p>To get around this in the Atari 800 version, I started over and told Claude that I was creating a game with a UFO (instead of a circular checker piece) flying over a field of adjacent squares—never once mentioning the words “checker,” “checkerboard,” or “checkers.” With that approach, I got the results I wanted.</p>
+</blockquote>
+
+<p>I’ve experienced something similar in my own AI-assisted game design. In my case, it’s my perennial desire to have a Simcity-like city builder that operates on “parcels” rather than tiles or zones and, oh boy, the LLM really chafes at it. Is it weird <em>enough</em> to work?</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2026/01/goodjob-solid-queue-sidekiq-active-job-in-2026"><p>GoodJob, Solid Queue, Sidekiq, Active Job, in 2026</p>
 </a>
     </h1>
@@ -1223,109 +1250,6 @@ party gems.</li>
 <p>…but not the one set by <code>GZip#mtime=</code>. I cannot find any evidence anywhere that value, <em>in the contents of the gzip file</em> matters. Nada. All it does is make the gzip file’s <em>contents</em> be different, because of that one tiny value being included. I can’t imagine anything cares about the original mtime when it’s unzipped, that wasn’t already transmitted via the Last-Modified HTTP header. What am I missing?</p>
 
 <p>Of the evidence I have, it seems like developers set <code>GZip#mtime=</code>… because it’s an option? I couldn’t find a reason <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in the Sprockets history</a>. I noticed that Rack::Deflater does the same for reasons I haven’t figured out <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in their history</a> either.  This behavior probably is not busting <em>a lot</em> of content-based caches unnecessarily, but it probably does some. So maybe don’t do it unless you need to.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/08/everything-i-know-about-ai-learned-by-reading-the-aws-bedrock-client-ruby-sdk-code"><p>Everything I know about AI, I learned by reading the AWS Bedrock Client Ruby SDK code</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-08-09T21:28:00Z" itemprop="datePublished">August 9, 2025</time>
-
-        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a> and <a href="/posts/tags/ai">AI</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><em>This essay is a little bit about me and how I solve problems, and a little bit about AI from the perspective of a software developer building AI-powered features into their product.</em></p>
-
-<p>The past week at my startup has been a little different. I spent the week writing a grant application <a href="https://www.publicbenefitinnovationfund.org/summer-2025-open-call.html">for</a> “non-dilutive funding to accelerate AI-enabled solutions that help governments respond to recent federal policy changes and funding constraints in safety net programs.” It wasn’t particurly difficult, as we’re already deep into doing the work 💅 …but it was an interesting experience breaking that work down into discrete 250-word responses, all 17 (!) of them on the grant application.</p>
-
-<p>One of my friends is a reviewer panelist (she’ll recuse herself from our proposal), and I was explaining my struggle to find an appropriate level of detail. Comparing an answer like:</p>
-
-<blockquote>
-  <p>…we use AWS Bedrock models which are SOC, HIPAA, and Fedramp compatible, and integrated via its SDK which has robust guardrail functions like contextual grounding and output filters that we’re using to ensure accuracy and safety when producing inferenced text output…</p>
-</blockquote>
-
-<p>And:</p>
-
-<blockquote>
-  <p>…we have robust controls for ensuring the safety and accuracy of AI-powered features…</p>
-</blockquote>
-
-<p>That all might sounds like word salad anyways, so I compared it analogously to saying, in the context of web design:</p>
-
-<blockquote>
-  <p>… we’re designing our application using contemporary HTML and CSS features like media queries, and minimal Javascript via progress enhancement, to be usable and accessible across web browsers on devices from mobile phones to desktop computers….</p>
-</blockquote>
-
-<p>And:</p>
-
-<blockquote>
-  <p>….mobile, responsive web design…</p>
-</blockquote>
-
-<p>Working and communicating at the correct level of complexity <em>is the work</em>. While I’m developing software, I tend to be reductive; as the meme goes: <em>I’m not here to talk. Just put my <a href="https://knowyourmeme.com/editorials/guides/whats-the-just-put-my-fries-in-the-bag-bro-meme-the-viral-catchphrase-and-its-memes-on-tiktok-explained"><del>fries</del></a> http in the bag, bro. My DOM goes in the bag. Just put my Browser Security Model</em> in the bag.</p>
-
-<p>I guess I have the benefit of perspective, working in this field for 20+ years. While things have gotten to layer-upon-layer complexity, I can remember what simple looks and feels likes. It’s also <em>never</em> been simple.</p>
-
-<p>For example, in the civic tech space, there’s been lots of times where on one side someone wants to talk about civic platforms and government vending machines and unleashing innovation, and on the other side is a small room with vendor representative that is existentially opposed to adding a reference field to a data specification without which the whole system is irreconcilably unusable. The expansive vision and the tangible work.</p>
-
-<p>I believe, at the core of all of this IT (Information Technology (or ICT, Information and Communications Technology as it’s known globally), we’re doing <a href="https://knowyourmeme.com/memes/push-it-somewhere-else-patrick">pushing Patrick</a>: take information from one place, <em>and we push it somewhere else</em>.</p>
-
-<p><img src="/uploads/2025/push-it-patrick.gif" alt="Push it Patrick GIF" /></p>
-
-<p>Take that information from a person via a form, from a sensor, from a data feed, from a process, <em>and push it somewhere else</em>. Sure, we may enrich and transform it and present it differently, and obviously figuring out what is useful and valuable and useable is <em>the work</em>. From the backend to the frontend, and the frontend to the backend. From client to server, from server to server, protocol to protocol, over, under, you get the idea. The work is <em>pushing information somewhere else</em>.</p>
-
-<p><strong>Anyways, about that AI…</strong></p>
-
-<p>From Brian Merchant’s Blood in the Machine newsletter, describing going to an <a href="https://www.bloodinthemachine.com/p/ai-disagreements">AI retreat thing</a>:</p>
-
-<blockquote>
-  <p>I admittedly had a hard time with all this, and just a couple hours in, I began to feel pretty uncomfortable—not because I was concerned with what the rationalists were saying about AGI, but because my apparent inability to occupy the same plane of reality was so profound. In none of these talks did I hear any concrete mechanism described through which an AI might become capable of usurping power and enacting mass destruction, or a particularly plausible process through which a system might develop to “decide” to orchestrate mass destruction, or the ways it would navigate and/or commandeer the necessary physical hardware to wreak its carnage via a worldwide hodgepodge of different interfaces and coding languages of varying degrees of obsolescence and systems that already frequently break down while communicating with each other.</p>
-</blockquote>
-
-<p>I mean… exactly. Like what even.</p>
-
-<p>From my own experience of writing that grant application I mentioned at the beginning of this post, and enumerating all of the AI-powered features that we’ve built already, are prototyping, or confidently believe we can deliver in the near-term future… it’s quite a lot. And it’s not that different from anything that’s come before: building concrete stuff that concretely works. I wrote <a href="https://island94.org/2025/01/how-im-thinking-about-ai-llms">something similar</a> back in January too, so maybe this feeling is here to stay.</p>
-
-<p>The places where I struggled most to write about was in how many places, about trust and safety and risk and capacity… was explaining how we’re using functions that are quite simply exposed via the SDK. AWS Bedrock is how Amazon Web Services provides AI models as a billable resource developers can use. The SDK is how you invoke those AI models from your application.  <em>Just put the method signature in the bag.</em>  It’s all documented: the <code>#converse_stream</code> method, pretty much the only method to use: no joke, has <a href="https://github.com/aws/aws-sdk-ruby/blob/208a24482111145a209ff0a4a8fedf7a802b6993/gems/aws-sdk-bedrockruntime/lib/aws-sdk-bedrockruntime/client.rb#L1583-L2587">1003 lines of documentation above it describing all of the options to pass, and and all of the data that gets returned</a>:</p>
-
-<ul>
-  <li>Providing an inference prompt</li>
-  <li>Attaching documents</li>
-  <li>Tool usage, which is how models can coerced to produce structured output</li>
-  <li>Contextual grounding, to coerce the model to use context from the input rather than its foundational training sources.</li>
-  <li>Guardrails and safety filters, to do additional checks on the output, sometimes by other models.</li>
-  <li>…and all of the limitations and constraints that are very <em>real</em> and <em>tangible</em>. By which I mean  the maximum number of items one can send in an array or the maximum number of bytes that can be sent as a base64-encoded string.</li>
-</ul>
-
-<p>Every option is very concretely about passing a simple hash of data in, and getting a hash of data out. <em>Just put the Ruby Hash in the bag.</em></p>
-
-<p>To analogously compare this to one of the oldest and boringest AWS services, the Simple Storage Service, there is, with one hand, waving about how “the capability to store and retrieve an unlimited amount of data will change the world” and, and then with the other hand precisely “overriding the Content-Type of an S3 file upload”. Reading the method signature is the latter.</p>
-
-<p>And I don’t mean to imply everything in that 1003 line docblock is all you need to know. But you might wonder, say “When might I want to get a <code>resp.output.message.content[0].citations_content.citations #=&gt; Array</code>?” and then you google it and go down a rabbit hole to learn that citations are just another form of tool usage and <em><a href="https://repost.aws/questions/QUKwoMWVdCRQ6Y_drrZNXZPg/how-to-have-a-bedrock-agent-reliably-include-knowledge-base-citations-in-the-final-response-of-invokeagent-for-agents-for-amazon-bedrock-runtime">sometimes the model won’t do it</a></em> which if you keep digging down that rabbit hole everything becomes evident that these are, at heart, still probabilistic text generators that are useful and interesting <em>in the same way S3 is useful and interesting, and also isn’t.</em>  It’s a totally different conversation.</p>
-
-<p>So, if there’s any takeways to be had here:</p>
-
-<ul>
-  <li>This stuff is as boringly useful as any other AWS service is or isn’t, if you’re familiar with the vast number of AWS services.</li>
-  <li>It’s maybe embarrassing to write about in tangible form because it’s already been boringly commodified as a service through AWS.</li>
-  <li>…and also there are tangible, useful things to be built. And a lot of intellectual joy in breaking down how some high-level feature is built on top of these low-level services.</li>
-</ul>
-
-<p>My self-serving interest here is that I’d love to talk to other folks who are building stuff in Ruby on Rails using AI and LLMs and inference about the boring stuff involved in <em>taking information from one place, and pushing it somewhere else.</em></p>
-
-<p>For example, yesterday I posted in the <a href="https://www.rubyonrails.link/">Ruby on Rails Link Slack</a> <code>#ai-lounge</code> channel:</p>
-
-<blockquote>
-  <p>Anyone building AI-powered features into their application? I’ve got an interface for translating a text field into another language, and I was curious if anyone has a pattern they like with Turbo/ActionCable/Stimulus for streaming responses to a particular form for a single client (e.g. there’s not yet a model record that can be broadcasted from). This is what I’m doing (hopefully it makes sense 😅) …</p>
-</blockquote>
-
-<p>…and I’m waiting for a response.</p>
 
   </div>
 </article>

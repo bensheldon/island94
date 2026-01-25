@@ -138,6 +138,61 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2022/03/oop-the-easy-way"><p>OOP the easy way</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2022-03-05T17:18:00Z" itemprop="datePublished">March 5, 2022</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I came to this book with certain hopes that were left unfulfilled, but I read it in a few hours and enjoyed it.</p>
+
+<p>Fulfilled: cuts to the core that Object Oriented Programming conceptually starts with sending messages to objects, and the internals of how those objects <em>respond</em> (methods, delegation, class hierarchies, etc.) is an implementation detail best deferred/ignored as long as possible. This was something I already agreed with in a sort of stubborn System 2 Thought Process (“no brain, think about it the other way”) when designing code, and it was lovely to have that reinforced as a thing to do.</p>
+
+<p>Unfulfilled: The human ergonomic benefits and <em>how to think</em> about objects in a deeper way than arguing the importance of the left part of the sentence (message sending) over the right (object/language implementation). This hope (for a better mental bicycle than “no brain…” ) came from the introduction:</p>
+
+<blockquote>
+  <p>Because OOP is supposed to be a paradigm, a pattern of thought, and if we want to adopt that paradigm then we have to see how different tools or techniques support, damage, or modify our thoughts.</p>
+</blockquote>
+
+<p>And the hope was reinforced by enjoyable ripostes like this:</p>
+
+<blockquote>
+  <p>A contributor to this objects-as-data approach seems to have been the attempt to square object-oriented programming with “Software Engineering”, a field of interest launched in 1968 that aimed to bring product design and construction skills to computer scientists by having very clever computer scientists think about what product design and construction might be like and not ask anybody.</p>
+</blockquote>
+
+<p>Yeah!</p>
+
+<p>An argument that I wanted explored more is that the aligning the way we think about the user-machine interface with the way we think about the programmer-implementation interface is ergonomic (building the muscles, deepening the mental groove):</p>
+
+<blockquote>
+  <p>It means relinquishing the traditional process-centered paradigm with the programmer-machine relationship at the center of the software universe in favor of a product-centered paradigm with the producer-consumer relationship at the center.</p>
+</blockquote>
+
+<p>And…</p>
+
+<blockquote>
+  <p>Behaviour-Driven Development marries the technical process of Test-Driven Development with the design concept of the ubiquitous language, by encouraging developers to collaborate with the rest of their team on defining statements of desired behaviour in the ubiquitous language and using those to drive the design and implementation of the objects in the solution domain. In that way, the statement of what the Goal Donor needs is also the statement of sufficiency and correctness - i.e. the description of the problem that needs solving is also the description of a working solution. This ends up looking tautological enough not to be surprising.</p>
+
+  <p>… The theme running through the above is that sufficiency is sufficient. When an object has been identified as part of the solution to a problem, and contributes to that solution to the extent needed (even if for now that extent is “demonstrate that a solution is viable”), then it is ready to use. There is no <em>need</em> to situate the object in a taxonomy of inherited classes - but if that helps to solve the problem, then by all means do it. There is no <em>need</em> to show that various objects demonstrate a strict subtype relationship and can be used interchangeably, unless solving your problem requires that they be used interchangeably. There is no <em>need</em> for an object to make its data available to the rest of the program, unless the problem can be better solved (or cheaper solved, or some other desirable property) by doing so.</p>
+
+  <p>… Some amount of planning is always helpful, whether or not the plan turns out to be. The goal at every turn should be to understand how we get to <em>what we now want</em> from <em>what we have now</em>, not to <em>already have</em> that which <em>we will probably want sometime</em>. Maybe the easiest thing to do is to start afresh: so do that.</p>
+</blockquote>
+
+<p>I agree with a “just get on with it” argument <em>and</em> I’m seeking a deeper practice of metacognition than powering through.</p>
+
+<p>By the end, <em>OOP the easy way</em> argued for the need to <em>start</em> seeing if the true paradigm of OOP is actually any good, and that left me back where I started before the book. I wished it had done that work of “asking anybody” already.</p>
+
+<p>Hopes and wishes aside, it was an enjoyable technical read, mainly because it’s dishy, referring and discarding concepts by their progenitors name. This could be criticized as vagueness if one is not invested in learning the personalities involved (for example, a concept is breezily described as “Meyer-ish”), and that kept me moving forward.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2022/03/software-models"><p>Software models</p>
 </a>
     </h1>
@@ -554,44 +609,6 @@ TRANSACTION (0.1ms)  ROLLBACK
 </code></pre></div></div>
 
 <p>This works because the methods <code>ensure</code> block will always be called, even if <code>#some_method</code> returns early. That was a novel implementation for me.</p>
-
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2021/10/behaving-like-the-character-in-a-story"><p>Behaving like the character in a story</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2021-10-11T19:14:00Z" itemprop="datePublished">October 11, 2021</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I enjoyed reading Robert Kolker’s <a href="https://www.nytimes.com/2021/10/05/magazine/dorland-v-larson.html">“Who Is the Bad Art Friend?”</a>, specifically about the non-symmetric relationships of fiction and inspiration.</p>
-
-<blockquote>
-  <p>Larson’s biggest frustration with Dorland’s accusations was that they stole attention away from everything she’d been trying to accomplish with this story. “You haven’t asked me one question about the source of inspiration in my story that has to do with alcoholism, that has to do with the Chinese American experience. It’s extremely selective and untrue to pin a source of a story on just one thing. And this is what fiction writers know.” To ask if her story is about Dorland is, Larson argues, not only completely beside the point, but ridiculous. “I have no idea what Dawn is thinking. I don’t, and that’s not my job to know. All I can tell you about is how it prompted my imagination.”</p>
-
-  <p>…</p>
-
-  <p>When Larson discusses “The Kindest” now, the idea that it’s about a kidney donation at all seems almost irrelevant. If that hadn’t formed the story’s pretext, she believes, it would have been something else. “It’s like saying that ‘Moby-Dick’ is a book about whales,” she said. As for owing Dorland a heads-up about the use of that donation, Larson becomes more indignant, stating that no artist has any such responsibility. “If I walk past my neighbor and he’s planting petunias in the garden, and I think, Oh, it would be really interesting to include a character in my story who is planting petunias in the garden, do I have to go inform him because he’s my neighbor, especially if I’m still trying to figure out what it is I want to say in the story? I just couldn’t disagree more.”</p>
-
-  <p>…</p>
-
-  <p>“[Dorland] might behave like the character in my story,” [Larsen] said. “But that doesn’t mean that the character in my story is behaving like [Dorland].”</p>
-</blockquote>
-
-<p><a href="https://captainawkward.com/2021/10/11/1351-can-i-use-my-exs-pseudonym-in-my-novel/">Captain Awkward</a> also had memorable advice:</p>
-
-<blockquote>
-  <p>Creatively speaking, I think you can generally write whatever you want about whoever you want. You do not owe people flattering portrayals in your fiction and you don’t owe the world a fair hearing of both sides. Even if you’re writing memoir, the expectation is that you’ll write the truth about your own experiences and recollections of events. So, when it’s just you and a blank page that nobody else will see? Name names. Settle scores. Spill some beans. Layer in all the carefully hoarded observations and details you’ve been saving up. You don’t have to solve publishing problems right this second, so feed the fire in your belly with your ex’s pet name for himself if that’s what gets it done; spite is motivating. You can always pull up a name generator later when you need to.</p>
-
-  <p>Ethically speaking, being free to write whatever you want does not mean being free of consequences from what you wrote. If you include recognizable details about real people in your published writing, fictional or otherwise, if you disclose confidential information about them (like mental health diagnoses), assume that somebody will connect the dots, and assume that the people you wrote about will eventually feel some kind of way about it. They may not have grounds to sue you, but they might think you are a bad person or a lazy artist, and they might tell their own stories where you are not the hero.</p>
-</blockquote>
 
 
   </div>

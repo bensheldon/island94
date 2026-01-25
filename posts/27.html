@@ -138,6 +138,42 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/04/apparently-im-nonprofitly-conservative"><p>Apparently I’m nonprofitly conservative</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-04-12T00:00:00Z" itemprop="datePublished">April 12, 2011</time>
+
+        • Tagged <a href="/posts/tags/education">education</a>, <a href="/posts/tags/nonprofits">nonprofits</a>, <a href="/posts/tags/policy">policy</a>, and <a href="/posts/tags/reform">reform</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>It’s kind’ve funny how in some contexts I’m a shut-up-and-go radical and in others I’m a hold-your-horses conservative. In response to <a href="http://nonprofiteer.net/2011/01/19/the-rich-get-richer-once-more/">this article on the Nonprofiteer</a>:</p>
+
+<blockquote>
+  <p>If institutions of higher learning want to maintain their tax-favored status, they should abolish legacy preferences. If they don’t—if they go on practicing white people’s affirmative action—they deserve to be knocked off the comfortable perch on which they now sit.</p>
+</blockquote>
+
+<p>… I left this <a href="http://nonprofiteer.net/2011/01/19/the-rich-get-richer-once-more/#comment-5207">comment</a></p>
+
+<blockquote>
+  <p>I’m sympathetic to the overall sentiment, but I’m always worried when an organization’s activities are judged against an arbitrary measure of “nonprofitness”. The strength of the sector—hard fought over 150 years of legislation and case law—is the breadth of allowable activity. The danger of reform is codifying subjective and contemporary distaste as unlawful behavior, thus limiting the ability of truly transformative organizations to form or function. How might Howard University, for example, find egalitarian social benefit in favoring legacy students?</p>
+
+  <p>When an organization’s status as a “nonprofit” is the basis for allegations of hypocrisy I find that the outcome usually furthers the goals of those who wish to do away with the nonprofit sector by doing away with taxes entirely (and by extension their social and redistributive benefits). Which is not to dismiss all nonprofit reform (I am quite in support of transparency and reporting), but the real issue here is not “How can we get more poor kids into Harvard?” but “Harvard should not be your only or best option.”</p>
+</blockquote>
+
+<p>And I agree with the response I received back from the Nonprofiteer—which goes to the strength of dialogue as tool for <a href="http://www.island94.org/2008/12/the-nonprofit-between-scylla-and-charydbis/">navigating between two extremes</a>:</p>
+
+<blockquote>
+  <p>Fair point–and I may have overstated my own (so new?). I certainly am not part of the group you describe which opposes taxes–far from it. But the nonprofit community has long regarded itself as above criticism, and I think the portions of it which foster inequality should be called to account. Perhaps depriving those institutions of their nonprofit status is using a sledgehammer where a scalpel would be preferable–I’m certainly open to that possibility. But that there is an ailment to be addressed strikes me as indisputable.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2011/04/that-national-interest-thing"><p>That national interest thing</p>
 </a>
     </h1>
@@ -424,50 +460,6 @@
 </blockquote>
 
 <p>Richard Todd’s <em>The Thing Itself - On the Search for Authenticity</em>, other than being first-person non-fiction, stayed closer to treating authenticity as straight-forward provenance—with all the other stuff just being vigorous capitalism.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/01/adding-class-to-wordpress-linked-images"><p>Adding class to Wordpress linked images</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-01-23T00:00:00Z" itemprop="datePublished">January 23, 2011</time>
-
-        • Tagged <a href="/posts/tags/code">code</a>, <a href="/posts/tags/css">css</a>, <a href="/posts/tags/php">php</a>, <a href="/posts/tags/theming">theming</a>, and <a href="/posts/tags/wordpress">wordpress</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>An <a href="http://wordpress.org/support/topic/how-can-i-set-the-class-of-anchors">enduring issue</a> with linked images ( <code>&lt;a href=""&gt;&lt;img src="" /&gt;&lt;/a&gt;</code> ), is targeting the anchor link for theming—especially for disabling borders and highlighting that look great on text links but odd for images. CSS doesn’t have a parent selector ( <code>a &gt; img:parent</code> ), and javascript feels like overkill. The simple solution is to add a <code>class</code> to the parent anchor (<code>&lt;a href="" class="img"&gt;)</code>, but that can get repetitive, especially when Wordpress is supposed to automate those sorts of things.</p>
-
-<p>Adding the following code to your Wordpress theme’s <code>functions.php</code> file will automatically add a class to the anchor link when you insert linked images through Wordpress’s Media Library interface. It won’t fix posts you’ve already written, but should make things better moving forward.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/**
- * Attach a class to linked images' parent anchors
- * e.g. a img =&gt; a.img img
- */</span>
-<span class="k">function</span> <span class="n">give_linked_images_class</span><span class="p">(</span><span class="nv">$html</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$caption</span><span class="p">,</span> <span class="nv">$title</span><span class="p">,</span> <span class="nv">$align</span><span class="p">,</span> <span class="nv">$url</span><span class="p">,</span> <span class="nv">$size</span><span class="p">,</span> <span class="nv">$alt</span> <span class="o">=</span> <span class="s1">''</span> <span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Separate classes with spaces, e.g. 'img image-link'</span>
-  <span class="nv">$classes</span> <span class="o">=</span> <span class="s1">'img'</span><span class="p">;</span>
-
-  <span class="c1">// check if there are already classes assigned to the anchor</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="nb">preg_match</span><span class="p">(</span><span class="s1">'/&lt;a.*? class=".*?"&gt;/'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$html</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/(&lt;a.*? class=".*?)(".\?&gt;)/'</span><span class="p">,</span> <span class="s1">'$1 '</span> <span class="mf">.</span> <span class="nv">$classes</span> <span class="mf">.</span> <span class="s1">'$2'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">else</span> <span class="p">{</span>
-    <span class="nv">$html</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/(&lt;a.*?)&gt;/'</span><span class="p">,</span> <span class="s1">'$1 class="'</span> <span class="mf">.</span> <span class="nv">$classes</span> <span class="mf">.</span> <span class="s1">'" &gt;'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nv">$html</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nf">add_filter</span><span class="p">(</span><span class="s1">'image_send_to_editor'</span><span class="p">,</span> <span class="s1">'give_linked_images_class'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>The if/else could probably be done with a single regular expression, but I’m not <em>that</em> smart.</p>
 
   </div>
 </article>

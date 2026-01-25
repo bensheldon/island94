@@ -138,6 +138,32 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2023/03/recently-march-12-2023"><p>Recently, March 12, 2023</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2023-03-13T00:26:00Z" itemprop="datePublished">March 13, 2023</time>
+
+        • Tagged <a href="/posts/tags/weeknotes">weeknotes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <ul>
+  <li>Work has been complicated, recently. <a href="https://techcrunch.com/2023/02/09/github-lays-off-10-and-goes-fully-remote/">Layoffs, as a general idea</a>, were announced a month ago; it was the same week I came down with a bad cold. I’ve been fairly low energy since and have had trouble differentiating the two. I’m supremely proud and confident that my team is doing the most important work possible. We’ll see!</li>
+  <li>The week prior to all of this, my dad came to visit and stay with us. Having an easier time hosting family was one of our goals in getting a 2nd bedroom. Success.</li>
+  <li>Wow, it’s nearly been a year since I left my last job. I’ve had a number of former colleagues asking for help in leaving, in addition to talking with folks being pushed out: I was surprised to see Code for America finally kill Brigades, and really <a href="https://statescoop.com/code-for-america-local-brigades-ending/">twist the knife too</a> by forcing groups to rename themselves.</li>
+  <li>GoodJob is great! I’ve been thinking about <a href="https://github.com/bensheldon/good_job/discussions/831">replacing Advisory Locks</a> with a lock strategy that’s more compatible with PgBouncer. But that will probably be a 2-year project at least of incrementally crabwalking towards that goal while avoiding breaking changes. <a href="https://github.com/rubygems/rubygems.org/pull/3533">Rubygems.org just adopted GoodJob</a>; I am humbled.</li>
+  <li>On other projects, I’ve been trying to lower costs. My S3 data-transfer bill went from $10 to $50 a month, which I’m not happy about; scrapers are the worst 🤷‍♀️ I’ve also been experimenting with Dokku for packing some smaller projects (paying $15 once rather than $12 per app), though the VM locked up once on a Saturday night and I had to reboot it and this is exactly why I don’t want to manage my own servers.</li>
+  <li>My brother and I have been planning a Celebration of Life for my mom.</li>
+  <li>I’m so happy to finally be back on Daylight Savings Time.</li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2023/02/service-object-objects-in-ruby"><p>Service Object Objects in Ruby</p>
 </a>
     </h1>
@@ -675,105 +701,6 @@ something many applications could benefit from.</li>
 
 <blockquote>
   <p>… everyone deserves help when they reach out for it. …the collapse of Conflict and Abuse is partly the result of a punitive standard in which people are made desperate, yet ineligible, for compassion. … people who have suffered in the past, or find themselves implicated in situations in which they are afraid to be accountable, fear that within their group acknowledging some responsibility will mean being denied their need to be heard and cared for.</p>
-</blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2022/11/environment-at-work"><p>Environment, at work</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2022-11-16T20:14:00Z" itemprop="datePublished">November 16, 2022</time>
-
-        • Tagged <a href="/posts/tags/terroir">terroir</a> and <a href="/posts/tags/work">work</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2022-11/simearth-daisyworld.png" alt="Screenshot of Sim Earth's Daisyworld" /></p>
-
-<h2 id="gaia">Gaia</h2>
-
-<p>I played a lot of Sim Earth as a kid. It had a mode called Daisyworld based on the <a href="https://en.wikipedia.org/wiki/Gaia_hypothesis">“Gaia Hypothesis”</a>:</p>
-
-<blockquote>
-  <p>proposes that living organisms interact with their inorganic surroundings on  Earth to form a synergistic and self-regulating, complex system that helps to maintain and perpetuate the conditions for life on the planet.</p>
-</blockquote>
-
-<p>In Sim Earth’s Daisyworld, that was simulated by populating the Earth with different shades of flower. Darker flowers survived at lower temperatures and absorbed sunlight, warming their immediate environment; lighter flowers survived at warmer temperatures and reflecting sunlight, cooling their immediate environment. Running the simulation would, eventually, usually, lead to a dynamically changing, but still steady-state environment; in <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Examples_of_patterns">Conway terminoloy</a>: still lifes and oscillators.</p>
-
-<p>Usually your Earth found a steady state, unless:</p>
-
-<ul>
-  <li>geographical barriers prevented regulating changes from spreading, like mountain ranges or island archipelagos; or</li>
-  <li>disasters like volcanoes or meteors significantly disrupted the environment before the flowers could adapt and moderate it; or</li>
-  <li>you plopped some bunnies or herbivores that ate the flowers, because the Gaia mode didn’t lock-out the other Sim Earth tools. Sandboxes!</li>
-</ul>
-
-<p>Usually your Earth found and could recover a steady state! That’s <a href="https://en.wikipedia.org/wiki/Homeostasis">homeostasis</a>:</p>
-
-<blockquote>
-  <p>Homeostasis is brought about by a natural resistance to change when already in the optimal conditions, and equilibrium is maintained by many regulatory mechanisms: it is thought to be the central motivation for all organic action.</p>
-</blockquote>
-
-<h2 id="terroir">Terroir</h2>
-<p>From Vicki Boykis’s  <a href="https://vicki.substack.com/p/the-art-of-the-long-goodbye">“The Art of the Long Goodbye”</a> :</p>
-
-<blockquote>
-  <p>A few years ago, I read the Southern Reach trilogy, by Jeff Van Der Meer….</p>
-
-  <p>One of the main concepts of the books is the idea of a terroir, a self-contained natural environment that shapes everything inside of it. Usually when we talk about a terroir we’re referring to wine: a wine from a given region tastes like wine from that given region should taste because of the grapes and the soil and the way the sunlight hits that particular spot. Since I left my last job, I’ve been thinking a lot about the idea of terroir as it relates to the workplace.</p>
-
-  <p>Every workplace, like every Tolstoyan family, is unique in its own way. When we start a job, we enter that terroir with the intent to shape it. But in turn, we are also shaped by it.</p>
-</blockquote>
-
-<h2 id="landrace">Landrace</h2>
-
-<p>A <a href="https://en.wikipedia.org/wiki/Landrace">landrace</a> is:</p>
-
-<blockquote>
-  <p>a domesticated, locally adapted, traditional variety of a species of animal or plant that has developed over time, through adaptation to its natural and cultural environment of agriculture and pastoralism, and due to isolation from other populations of the species.</p>
-</blockquote>
-
-<p>As I’m now in the land of big companies, it’s very common to hear someone described as “from Amazon” or “from Microsoft” and like, I know what they mean!</p>
-
-<p>One of my challenges as an engineering leader during the pandemic was this: how much do we adapt our values and practices to be inclusive to the current fucked-all-over situation while preserving what made us, as an engineering organization, us. I think my results were mixed.</p>
-
-<p>An example: pair programming. We were a lot of people from Pivotal labs (there it is!) with a strong belief in Extreme Programming: shared ownership, an active-closeness to the users of our software, and closeness to each other through frequent pair programming. And we went from largely in-person pairing, to remote pairing. I find pair programming to be exhausting in the best of circumstances, and the ongoing pandemic didn’t help. So we adapted our values and practices, and de-emphasized pairing and went from an expectation of “most of the time” to “a tool that’s available some of the time”. It was a stretch (aside: it wasn’t just pairing that got stretched either, the whole XP thing)</p>
-
-<p>A team is never static. People were leaving, we were hiring, teams were forming and reforming. It was tenuous for everyone, to test out the limits of inclusion and identity. And as an engineering leader, it led to a lot of tough conversations about  <em>how… we… work… together</em>. It was hard; I think we lost that cultivar.</p>
-
-<h2 id="oasis">Oasis</h2>
-
-<p>Will Larson writes about this idea of a <a href="https://lethain.com/values-oasis/">“Values Oasis”</a>:</p>
-
-<blockquote>
-  <p>A few years ago, I heard an apocryphal story about Sheryl Sandberg’s departure from Google to Facebook. In the story she apologizes to her team at Google because she’d sheltered them too much from Google’s politics and hadn’t prepared them to succeed once she stopped running interference. The story ends with her entire team struggling and eventually leaving after her departure. I don’t know if the story is true, but it’s an excellent summary of the Values Oasis trap, where a leader uses their personal capital to create a non-conforming environment within an wider organization.</p>
-</blockquote>
-
-<h2 id="garden">Garden</h2>
-
-<p>The relationship between people and environment is a problematic metaphor.</p>
-
-<p>I was a member of the Boston Pubic Garden’s Rose Brigade for number of years, taking care of the roses. The Boston Public Garden’s style is Western, specimen, ornamental: large, well-spaced bushes with well-defined blooms. They’re gorgeous. And.</p>
-
-<p>There’s a lot of waste. Trimming, dead-heading, opening up, clearing leaf drops. A lot of waste.</p>
-
-<p>There is a trope, <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/Cincinnatus">Cincinnatus</a>, in which the tyrant/general/magnate retires (or desires to retire, after the present crisis, of course) to tend garden. I think it usually appears to soften them: <em>see they can be gentle too.</em> But I dunno, gardens aren’t gentle. There’s a lot of centering the gardener, and a lot of will to be exercised in a garden. Other people aren’t plants, don’t take it too far.</p>
-
-<p>I’m reminded of Nirgal’s (spoiler!) fated ecopoetic basin in KSR’s <a href="https://www.goodreads.com/book/show/77504.Blue_Mars"><em>Blue Mars</em></a>:</p>
-
-<blockquote>
-  <p>Nirgal wandered the basin after storms, looking to see what had blown in. Usually it was only a load of icy dust, but once he found an unplanted clutch of pale blue Jacob’s ladders, tucked between the splits in a breadloaf rock. Check the botanicals to see how it might interact with what was already there. Ten percent of introduced species survived, then ten percent of those became pests; that was invasion biology’s ten-ten rule, Yoshi said, almost the first rule of the discipline. “Ten meaning five to twenty of course.”</p>
-</blockquote>
-
-<p>And close on it out with a quote from <a href="https://www.goodreads.com/book/show/20186.Seeing_Like_a_State"><em>Seeing like a State</em></a>:</p>
-
-<blockquote>
-  <p>Contemporary development schemes… require the creation of state spaces where the government can reconfigure the society and economy of those who are to be “developed.” The transformation of peripheral nonstate spaces into state spaces by the modern, developmentalist nation-state is ubiquitous and, for the inhabitants of such spaces, frequently traumatic.</p>
 </blockquote>
 
   </div>
