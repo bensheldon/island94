@@ -16,7 +16,7 @@ gem "bootstrap"
 gem "front_matter_parser"
 gem "importmap-rails"
 gem "kramdown-parser-gfm"
-gem "metainspector", "~> 5.15" # for fetching bookmarks
+gem "metainspector", "~> 5.17" # for fetching bookmarks
 gem "puma"
 gem "rake"
 gem "rouge"
