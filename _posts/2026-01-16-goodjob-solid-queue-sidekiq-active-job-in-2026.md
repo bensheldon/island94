@@ -50,7 +50,7 @@ But, maybe you do _need_ to order off the menu! And we should dig into that.
 
 ### Incomparables
 
-Given the infinite rainbow of the human experience, there has to be someobody who does not collapse their categories. I have yet to meet them.
+Given the infinite rainbow of the human experience, there has to be somebody who does not collapse their categories. I have yet to meet them.
 
 People want a simple decision tree that starts with “Postgres, MySQL, SQLite or Redis?” It’s not so simple. 
 
