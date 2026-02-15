@@ -62,7 +62,7 @@ Live and die by the [Browser Page Lifecycle API](https://developer.chrome.com/do
 
 Even with `data-turbo-permanent`, Stimulus controllers and `turbo-cable-streams` JavaScript get disconnected and reconnected. Notice that there is a lot of use of nextTick/nextFrame to try to smooth over it. 
 
-- `hotwired/turbo`: [<turbo-stream-source> does not work as permanent](https://github.com/hotwired/turbo/issues/868#issuecomment-1419631586)
+- `hotwired/turbo`: [turbo-stream-source does not work as permanent](https://github.com/hotwired/turbo/issues/868#issuecomment-1419631586)
 - Miles Woodroffe: [“Out of body experience with turbo”](https://mileswoodroffe.com/articles/out-of-body-experience-with-turbo) about DOM connect/disconnects during Turbo Drive
 
 And general nits that otherwise would necessitate less delicate coding.
