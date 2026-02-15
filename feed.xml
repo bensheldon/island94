@@ -797,7 +797,7 @@ party gems.</li>
 <p>Even with <code>data-turbo-permanent</code>, Stimulus controllers and <code>turbo-cable-streams</code> JavaScript get disconnected and reconnected. Notice that there is a lot of use of nextTick/nextFrame to try to smooth over it.</p>
 
 <ul>
-  <li><code>hotwired/turbo</code>: [<turbo-stream-source> does not work as permanent](https://github.com/hotwired/turbo/issues/868#issuecomment-1419631586)</turbo-stream-source></li>
+  <li><code>hotwired/turbo</code>: <a href="https://github.com/hotwired/turbo/issues/868#issuecomment-1419631586">turbo-stream-source does not work as permanent</a></li>
   <li>Miles Woodroffe: <a href="https://mileswoodroffe.com/articles/out-of-body-experience-with-turbo">“Out of body experience with turbo”</a> about DOM connect/disconnects during Turbo Drive</li>
 </ul>
 
