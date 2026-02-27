@@ -138,6 +138,58 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2019/04/quantitative-usability-assistive-technology-and-the-right-to-privacy"><p>Quantitative usability, assistive technology, and the right to privacy</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2019-04-25T14:39:00Z" itemprop="datePublished">April 25, 2019</time>
+
+        • Tagged <a href="/posts/tags/assistive-technology">assistive technology</a> and <a href="/posts/tags/lighthouse-labs">lighthouse labs</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>You have a <em>legal obligation</em> to produce an accessible website; these are some thoughts about what comes next.</p>
+
+<p>At <a href="https://lighthouse-sf.org/lighthouse-labs/">Lighthouse Labs</a><br />
+ this month, there was a lively discussion on “Detecting accessibility events, a debate on the ethics and implications of this new feature from Apple” [<a href="https://www.applevis.com/blog/apple-assistive-technology-ios-macos-news/apple-shares-information-its-new-accessibility-events">article</a>]. I offered this in the pre-discussion email thread:</p>
+
+<blockquote>
+  <p>I wanted to share some perspective as a web developer: I would like to have aggregated analytics about what screen-readers are using my website (how many and which ones). Here’s why:</p>
+
+  <p>Within an agile process, once we achieve the baseline of WCAG/valid/passable/usable, the question becomes how do we make it even better and where do we start? Being able to point to analytics is useful for prioritization discussions about bottlenecks/friction. For example, on GetCalFresh.org, which has helped 700k people apply for food stamps, we can identify completion differences between, for example, English and Spanish-language users on particular parts of an application flow, and prioritize improvements based on frequency and severity. I don’t have the data to do that kind of prioritization for screen-readers, but I would like to.</p>
+</blockquote>
+
+<p>The Lighthouse Labs discussion brought up several dimensions of the issues:</p>
+
+<ul>
+  <li>People with disabilities are legally protected from discrimination, and have legal rights to privacy of their conditions and freedom from discrimination.</li>
+  <li>If the lived experience is a spectrum of “discrimination - inaccessibility - accommodation - accessibility - usability” (these are my words, imprecise), the majority of experience lives towards the left of that spectrum. Everyone has a story of being identified as a <em>low value / low priority</em> user.</li>
+  <li>Some people would like to be fully and accessibly served; others would like to remain apart; everyone wants individual agency in that decision. An example of this was some people saying “I want websites to be completely accessible” and others saying “I’m fine not experiencing advertising and junk”. This came up as “ghettoization”, but I have been thinking about it as the difference between exclusion and seclusion.</li>
+  <li>Differentiating between <em>accessibility</em>, <em>accommodation</em> and <em>discrimination</em> in digital products is important yet slippery. An example: Twitter’s native iOS client generally works with Voiceover (accessible), but used a separated streamlined UI for composing a tweet when the app detected that VoiceOver was in use (accommodation); when Twitter changed to 280 characters, they failed to update that sheet in a timely manner (discrimination). [<a href="https://theoutline.com/post/2458/there-are-still-some-people-on-twitter-who-don-t-have-280-characters?zd=1&amp;zi=zktxaedi">article</a>]</li>
+</ul>
+
+<p>When discussing this with a my data science coworker, she shared <a href="https://reallifemag.com/counting-the-countless/">“Counting the Countless: Why data science is a profound threat for queer people”</a> by Os Keyes:</p>
+
+<blockquote>
+  <p>So: trans existences are built around fluidity, contextuality, and autonomy, and administrative systems are fundamentally opposed to that. Attempts to negotiate and compromise with those systems (and the state that oversees them) tend to just legitimize the state, while leaving the most vulnerable among us out in the cold. This is important to keep in mind as we veer toward data science, because in many respects data science can be seen as an extension of those administrative logics: It’s gussied-up statistics, after all — the “science of the state.”</p>
+
+  <p>…perhaps a more accurate definition of data science would be:<em>The inhumane reduction of humanity down to what can be counted.</em></p>
+</blockquote>
+
+<p>Within the context of assistive technology, it is not a far leap between tracking screenreader usage and creating an implication of <em>a</em> disability and the segmentation that comes with it.</p>
+
+<p>These discussions have made me think a lot more about my own digital footprints. I frequently use VoiceOver to explore websites and mobile apps and I now wonder about the impact/risks of being tracked and weigh them against the benefits to my own design practice and discernment, of which quantitative analysis is a tool.</p>
+
+<p>_If you have thoughts about this post, quantitative usability testing and advanced product management for assistive technology and disabilities, I’d love to chat. Tweet me at <a href="https://web.archive.org/web/20200723181116/https://twitter.com/bensheldon">@bensheldon</a></p>
+
+<p>or email me at <a href="mailto:bensheldon@gmail.com">bensheldon@gmail.com</a>._</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2019/04/weeknotes-for-april-7-2019"><p>Weeknotes for April 7, 2019</p>
 </a>
     </h1>
@@ -593,39 +645,6 @@ And of course, as I live my life by lists, I made a list, and updated it when I 
   <p>One member says, “I think we should pursue proposal A,” provoking another member to say, “Well, I think we should pursue proposal B.” Someone else lobbies for C, yet another person wants A with a slight modification, and before you know it, everyone is trying to get their opinion heard.</p>
 
   <p>Inquiry, on the other hand, would entail one of the members saying, “Wait a minute. I’d like to hear you explain why you support proposal A, because I want to understand your rationale. After all, if it makes sense, I could go along with it.” Okay, that might be just a little too idealistic, but you get the point.</p>
-</blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2018/11/market-perils-and-political-exclusion"><p>Market perils and political exclusion</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2018-11-03T19:04:00Z" itemprop="datePublished">November 3, 2018</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>From Pietra Rivoli’s <em>The Travels of a T-Shirt in the Global Economy: An Economist Examines the Markets, Power, and Politics of World Trade</em>:</p>
-
-<blockquote>
-  <p>So, what do I say to the young woman on the steps at Georgetown University who was so concerned about the evils of the race to the bottom, so concerned about where and how her T-shirt was produced? I would tell her to appreciate what markets and trade have accomplished for all of the sisters in time who have been liberated by life in a sweatshop, and that she should be careful about dooming anyone to life on the farm. <strong>I would tell her that the poor suffer more from exclusion from politics than from the perils of the market, and that if she has activist energy left over it should be focused on including people in politics rather than shielding them from markets.</strong> And I would tell her about the shoulders she stands on, about her own sisters and brothers in time and the noble family tree of activists, and the difference they have made in a day’s life at work all over the world. I would tell her that, in just a few short years, I have seen the difference her own generation has made, and that someday people will stand on her shoulders, too. I would tell her that Nike, Adidas, and GAP need her to keep watching, and so do Wal-Mart and the Chinese government. I would tell her that I have met dozens of seamstresses in Chinese factories who need her, and that future generations of sweatshop workers and cotton farmers need her as well. I would tell her to look both ways, but to march on.</p>
-</blockquote>
-
-<p>Specifically:</p>
-
-<blockquote>
-  <p>My T-shirt’s story, then, is not a tale of Adam Smith’s market forces, but is instead a tale of Karl Polanyi’s double movement, in which market forces on the one hand meet demands for protection on the other.</p>
-</blockquote>
-
-<p>I also like this on boring meetings as a sign of progress:</p>
-
-<blockquote>
-  <p>With a long historical perspective, it seems clear that when the meetings get boring, we have taken a step forward. Boring meetings mean that the radical has become mainstream, and that the establishment has changed its mind about the very nature of right and wrong. The struggles for bans on child labor, or for fire exits or minimum wage or factory codes of conduct, are never boring. But when the fight is won, the meetings get boring. While the battle rages for and against, it is interesting. But when the battle is over and the fight is no longer about whether to have fire exits but where to put them, not whether to have a minimum wage, but how to administer it, not whether to disclose factory locations but by what means and how often—when the establishment has changed its mind and we are just working out the details in (yet another) early morning committee meeting—it gets boring.</p>
 </blockquote>
 
   </div>

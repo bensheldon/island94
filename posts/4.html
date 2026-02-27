@@ -138,6 +138,91 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/01/living-parklife-with-rails-coming-from-jekyll"><p>Living Parklife with Rails, coming from Jekyll</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-01-06T00:12:00Z" itemprop="datePublished">January 6, 2025</time>
+
+        • Tagged <a href="/posts/tags/meta">meta</a>, <a href="/posts/tags/jekyll">jekyll</a>, and <a href="/posts/tags/rails">rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently migrated this blog from Jekyll to <a href="https://parklife.dev/">Ben Pickles’s Parklife</a> and Ruby on Rails, still hosted as a static website on GitHub Pages. I’m pretty happy with the experience.</p>
+
+<p>I’m writing this not because I feel any sense of advocacy (do what you want!) but to write down the reasons for myself. Maybe they’ll rhyme for you.</p>
+
+<p>Here’s this blog’s repo if you want to see: <a href="https://github.com/bensheldon/island94.org">https://github.com/bensheldon/island94.org</a></p>
+
+<h3 id="background">Background</h3>
+
+<p>I’ve been blogging here for 20 years and this blog has been through it all: Drupal, Wordpress, Middleman, Jekyll, and now Parklife+Rails.</p>
+
+<p>For the past decade the blog has largely been in markdown files, which I don’t intend to change. Over the past 2 years I also exported 15 years of pinboard/del.icio.us bookmarks, and my Kindle book highlights into markdown-managed files too. I’ve also dialed in some <a href="https://island94.org/2024/1/trigger-github-actions-workflows-from-apple-shortcuts">GitHub Action and Apple Shortcut powered integrations</a>. I’m really happy with Markdown files in a git repo, scripted with Ruby.</p>
+
+<p>…but there’s more than <em>just</em> Ruby.</p>
+<h3 id="mastery">Mastery</h3>
+
+<p>I’m heavily invested in the Ruby on Rails ecosystem. I think it’s fair to say I have mastery in Rails: I’m comfortable building applications with it, navigating and extending the framework code, intuiting the conceptual vision of the core team, and being involved in the life of the comunity where I’ve earned some positive social capital to spend as needed.</p>
+
+<p>I don’t have that in Jekyll. I am definitely handy in Jekyll. I’ve built plugins, I’ve done some wild stuff with liquid. But I’m not involved with Jekyll in the everyday sense like I am with Rails. I <em>feel</em> that when I go to make changes to my blog. There’s a little bit of friction mentally switching over to liquid, and Jekyll’s particular utilities that are <em>similar to but not the same</em> as Action View and Active Support. Jekyll is great; it’s me and the complexity of my website that’s changed.</p>
+
+<p>(I do still maintain some other Jekyll websites; no complaints elsewhere.)</p>
+
+<h3 id="parklife-with-ruby-on-rails">Parklife with Ruby on Rails</h3>
+
+<p>I hope I’m not diminishing <a href="https://parklife.dev/">Parklife</a> by writing that it isn’t functionally <em>much</em> more  than <code>wget</code>. It’s in Ruby and mounts+crawls a Rack-based web application, does a little bit to rewrite the base URLs, and spits out a directory of static HTML files. That’s it! It’s great!</p>
+
+<p>It was pretty easy for me to make a lightweight Ruby on Rails app, that loaded up all my markdown-formatted content and frontmatter, and spat them out again as Controllers and ERB Views.</p>
+
+<p>This blog is about 7k pages. For a complete website artifact:</p>
+
+<ul>
+  <li>Jekyll: takes about 20 seconds to build</li>
+  <li>Parklife with Rails: takes about 20 seconds to build</li>
+</ul>
+
+<p>In addition to the productivity win for me of being able to work with the ERB and Action View helpers I’m familiar with, I also find my development loop with Parklife and Rails is <em>faster</em> than Jekyll: I don’t have to rebuild the entire application to see the result of a single code or template change. I use the Rails development server to develop, not involving Parklife at all. On my M1 MBP a cold boot of Rails takes less than a second, a code reload is less than 100ms, and most pages render in under 10ms.</p>
+
+<p>With Jekyll, even with <code>--incremental</code>, most development changes required a 10+ second rebuild. Not my favorite.</p>
+
+<h3 id="the-technically-novel-bits">The technically novel bits</h3>
+
+<ol>
+  <li>
+    <p>if you want to trigger Rails code reload with any arbitrary set of files, like a directory of markdown files, you use <code>ActiveSupport::FileUpdateChecker</code> (which has a kind of complicated set of arguments):</p>
+
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/application.rb</span>
+<span class="nb">self</span><span class="p">.</span><span class="nf">reloaders</span> <span class="o">&lt;&lt;</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">FileUpdateChecker</span><span class="p">.</span><span class="nf">new</span><span class="p">([],</span> <span class="p">{</span>
+  <span class="s2">"_posts"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"md"</span><span class="p">,</span> <span class="s2">"markdown"</span><span class="p">],</span>
+  <span class="s2">"_bookmarks"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"md"</span><span class="p">,</span> <span class="s2">"markdown"</span><span class="p">],</span>
+<span class="p">})</span> <span class="k">do</span>
+  <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">reload_routes!</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Each of my blog posts has a list of historical redirects stored in their frontmatter (a legacy of so many framework changes). I had to think about how to do a catch-all route to render a static meta-refresh template:</p>
+
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/routes.rb</span>
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+  <span class="n">get</span> <span class="s2">"*path"</span><span class="p">,</span> <span class="ss">to: </span><span class="s2">"redirects#show"</span><span class="p">,</span> <span class="ss">constraints: </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="p">{</span> <span class="no">Redirect</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">key?</span> <span class="n">req</span><span class="p">.</span><span class="nf">path</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sr">%r{</span><span class="se">\A</span><span class="sr">/}</span><span class="p">,</span> <span class="s2">""</span><span class="p">).</span><span class="nf">sub</span><span class="p">(</span><span class="sr">%r{/</span><span class="se">\z</span><span class="sr">}</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span> <span class="p">}</span>
+  <span class="c1"># ...all the other routes</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="in-conclusion">In conclusion</h3>
+
+<p>Here’s <a href="https://web.archive.org/web/20250131105413/https://github.com/bensheldon/island94.org/blob/main/Parkfile">this blog’s Parkfile</a>. I did a little bit of convenience monkeypatching of things I intend to contribute upstream to Parklife. I dunno, maybe you’ll like the Parklife too.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/01/how-im-thinking-about-ai-llms"><p>How I’m thinking about AI (LLMs)</p>
 </a>
     </h1>
@@ -1018,132 +1103,6 @@ from code loaded at boot.
                                          /Users/bensheldon/.rbenv/versions/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.4/lib/active_record/base.rb:15:in `&lt;main&gt;'
                                          .....
 </code></pre>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/07/notes-from-carrierwave-to-active-storage"><p>Notes from Carrierwave to Active Storage</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-07-09T10:30:00Z" itemprop="datePublished">July 9, 2024</time>
-
-        • Tagged <a href="/posts/tags/rails">Rails</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I recently migrated <a href="https://dayoftheshirt.com">Day of the Shirt</a>, my graphic t-shirt sale aggregator, from storing image attachments with Carrierwave to Active Storage. It went ok! 👍</p>
-
-<p>There were a couple of things driving this migration, though Carrierwave had served me very well for nearly a decade:</p>
-
-<ul>
-  <li>For budgetary reasons, I was moving the storage service from S3 to Digital Ocean Spaces. I knew I’d be doing some sort of data migration regardless.</li>
-  <li>I was using some monkeypatches of Carrierwave v2 that weren’t compatible with Carrierwave v3. So I knew I’d have to dig into the internals anyways if I wanted to stay up to date.</li>
-  <li>I generally trust Rails, and by extension Active Storage, to be reliable stewards when I take them on as a dependency.</li>
-</ul>
-
-<p>And I had a couple of requirements to work though, largely motivated because images in Day of the Shirt <em>are the content</em> with dozens or hundreds displayed on a single page:</p>
-
-<ul>
-  <li>For budget (slash performance), I need to link directly to image assets. No proxying or redirecting through the Rails app.</li>
-  <li>For SEO, I need to customize the image filenames so they are relevant to the content.</li>
-  <li>For performance (slash availability), I need to pre-process image transformations (convert, scale, crop) before they are published. Dozens of new designs can go up on the homepage at once.</li>
-  <li>For availability, I need to validate that the images are (1) transformable and (2) actually transformed before they are published; invalid or missing images are unacceptable.</li>
-</ul>
-
-<p>How’d it go? Great! 🎉 I am now fully switched over to Active Storage. It’s working really well and I was able to meet all of my requirements. Active Storage is very nice, as nice as Carrierwave.</p>
-
-<p>But the errata? Yes, that’s why I’m writing the blog post, and probably why you’re reading. To document all of the stuff I did that wasn’t in the <a href="https://edgeguides.rubyonrails.org/active_storage_overview.html">very excellent Active Storage Rails Guide.</a> Let’s go through it:</p>
-
-<p><strong>Direct Linking to images</strong> is possible via the method described in this excellent post from Florin Lipan: <a href="https://lipanski.com/posts/activestorage-cdn-rails-direct-route">“Serving Active Storage uploads through a CDN with Rails direct routes”</a>.</p>
-
-<p><strong>Customizing Active Storage filenames</strong> is possible with a monkeypatch (maybe <a href="https://github.com/rails/rails/pull/41004">someday it will be possible directly</a>). The patch simply adds the specified filename to the end of what otherwise would be a random string; and it seems durable through variants such that the variant extensions will be updated properly when the format is transformed (e.g. from a <code>.png</code> to a <code>.jpg</code>):</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/active_storage.rb</span>
-<span class="k">module</span> <span class="nn">MonkeypatchBlobKey</span>
-  <span class="k">def</span> <span class="nf">key</span>
-    <span class="nb">self</span><span class="p">[</span><span class="ss">:key</span><span class="p">]</span> <span class="o">||=</span> <span class="k">begin</span>
-      <span class="c1"># ActiveStorage::Filename doesn't provide an easy nil-check</span>
-      <span class="n">filename_string</span> <span class="o">=</span> <span class="k">begin</span>
-        <span class="n">filename</span><span class="p">.</span><span class="nf">to_s</span>
-      <span class="k">rescue</span> <span class="no">StandardError</span>
-        <span class="kp">nil</span>
-      <span class="k">end</span>
-
-      <span class="n">unique_token</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">generate_unique_secure_token</span><span class="p">(</span><span class="ss">length: </span><span class="no">ActiveStorage</span><span class="o">::</span><span class="no">Blob</span><span class="o">::</span><span class="no">MINIMUM_TOKEN_LENGTH</span><span class="p">)</span>
-      <span class="k">if</span> <span class="n">filename_string</span>
-        <span class="c1"># "xyz1234/foobar.jpg"</span>
-        <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">unique_token</span><span class="p">,</span> <span class="n">filename_string</span><span class="p">)</span>
-      <span class="k">else</span>
-        <span class="c1"># "xyz1234"</span>
-        <span class="n">unique_token</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:active_storage_blob</span><span class="p">)</span> <span class="k">do</span>
-  <span class="no">ActiveStorage</span><span class="o">::</span><span class="no">Blob</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">MonkeypatchBlobKey</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p><strong>Preprocessing variants</strong> required tapping into some private methods to get the variant names back out of the system. Here’s an example of processing all of the variants when the attachment changes. Beware: attachments happen in an <code>after_commit</code>, <a href="https://www.youtube.com/live/78HzHhMnhHY">which is good</a>, but means that I had to introduce a <code>published</code> state to the record to ensure it was not visible until the variants were processed (there is a <a href="https://github.com/rails/rails/pull/47473"><code>preprocessed:</code></a> option to process individual variants async in a background job but that, unfortunately, doesn’t meet my needs for synchronizing them all at once):</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">class</span> <span class="nc">Shirt</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
-  <span class="n">has_one_attached</span> <span class="ss">:graphic</span> <span class="k">do</span> <span class="o">|</span><span class="n">attachable</span><span class="o">|</span>
-    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:full</span><span class="p">,</span> <span class="ss">format: :jpg</span>
-    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:large</span><span class="p">,</span> <span class="ss">resize_to_limit: </span><span class="p">[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span> <span class="ss">format: :jpg</span>
-    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:square</span><span class="p">,</span> <span class="ss">resize_to_fill: </span><span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="ss">format: :jpg</span>
-    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:thumb</span><span class="p">,</span> <span class="ss">resize_to_fill: </span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="ss">format: :jpg</span>
-  <span class="k">end</span>
-
-  <span class="n">after_commit</span> <span class="ss">:process_graphic_variants_and_publish</span><span class="p">,</span> <span class="ss">if: </span><span class="o">-&gt;</span> <span class="p">(</span><span class="n">shirt</span><span class="p">){</span> <span class="n">shirt</span><span class="p">.</span><span class="nf">graphic</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">blob</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">saved_changes?</span> <span class="p">},</span> <span class="ss">on: </span><span class="p">[</span><span class="ss">:create</span><span class="p">,</span> <span class="ss">:update</span><span class="p">]</span>
-
-  <span class="k">def</span> <span class="nf">process_graphic_variants</span>
-    <span class="n">attachment_variants</span><span class="p">(</span><span class="ss">:graphic</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">variant</span><span class="o">|</span>
-      <span class="n">graphic</span><span class="p">.</span><span class="nf">variant</span><span class="p">(</span><span class="n">variant</span><span class="p">).</span><span class="nf">processed</span>
-    <span class="k">end</span>
-    <span class="n">update</span><span class="p">(</span><span class="ss">published: </span><span class="kp">true</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="c1"># All of the named variants for an attachment</span>
-  <span class="c1"># @param attachment [Symbol] the name of the attachment</span>
-  <span class="c1"># @return Array[Symbol] the names of the variants</span>
-  <span class="k">def</span> <span class="nf">attachment_variants</span><span class="p">(</span><span class="n">attachment</span><span class="p">)</span>
-    <span class="nb">send</span><span class="p">(</span><span class="n">attachment</span><span class="p">).</span><span class="nf">attachment</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:named_variants</span><span class="p">).</span><span class="nf">keys</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p><strong>Validating variants</strong> was easy with a very nice and well-named gem: <a href="https://github.com/igorkasyanchuk/active_storage_validations"><code>active_storage_validations</code></a>. It <a href="https://github.com/igorkasyanchuk/active_storage_validations/blob/ab27760ecee7498e8fcb2a6434157c8cdd81038d/lib/active_storage_validations/metadata.rb#L122">works really well</a>.</p>
-
-<p><strong>You will have N+1s</strong>, where you forget to add <code>with_attached_*</code> scopes to some queries. Unfortunately Active Storage’s schema is laid out in a way that it will emit queries to the same model/table <em>even when it’s loading correctly</em>, so you may get <a href="https://github.com/flyerhzm/bullet/issues/474">detection false positives</a> too. You can see that clearly in the next example with the doubly-nested <code>blob</code> association.</p>
-
-<p><strong>Active Storage’s schema is a beast</strong>. I get that it’s gone through a lot of changes, and Named Variants are an amazing hack when you see how they’ve been implemented. And it’s wild. You can see that by how the <a href="https://github.com/rails/rails/blob/9f178ada796a89c01f952fc05810b58b6f8682fc/activestorage/lib/active_storage/attached/model.rb#L129-L137">scope for <code>with_attached_*</code></a> is generated:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">includes</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">_attachment"</span><span class="p">:</span> <span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span>
-  <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">},</span>
-  <span class="ss">preview_image_attachment: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span> <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
-<span class="p">}</span> <span class="p">})</span>
-</code></pre></div></div>
-
-<p>I originally thought that when eager-loading through an association (e.g. <code>Merchant.includes(:shirts)</code>) I’d have to do something like this (🫠):</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Merchant</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">shirts: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span>
-  <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">},</span>
-  <span class="ss">preview_image_attachment: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span> <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">}</span> <span class="p">}</span> <span class="p">})</span>
-</code></pre></div></div>
-
-<p>…but fortunately this seems to work too (💅):</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Merchant</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:shirts</span><span class="p">).</span><span class="nf">merge</span><span class="p">(</span><span class="no">Shirt</span><span class="p">.</span><span class="nf">with_attached_graphic</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>That’s everything. All in all I’m very happy with the migration 🌅</p>
 
   </div>
 </article>

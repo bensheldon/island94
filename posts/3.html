@@ -138,6 +138,95 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/04/recently-april-20-2025"><p>Recently, April 20, 2025</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-04-21T00:19:00Z" itemprop="datePublished">April 21, 2025</time>
+
+        • Tagged <a href="/posts/tags/recently">recently</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Angelina caught a cold, so the past week has been largely laying low and sleeping 9+ hours a night trying not to catch it myself. Not the worst life.</p>
+
+<hr />
+
+<p>Elevating this to top fish recipe: <a href="https://www.seaforager.com/recipes/rockfish-garlic-shallots-tomatoes-amp-and-a-lotta-herbs">Rockfish, Garlic, Shallots, Tomatoes &amp; and a lotta Herbs</a>.</p>
+
+<hr />
+
+<p>Using ChatGPT’s Web Search is ok. “Find me articles, marketing posts, and conference talks about [something]”. I have to follow up several times slightly differently (“anything else? What about lightning talks?”) and copy resulting links into a separate doc to organize to have something approaching comprehensive….  But pretty good and better than what I can get out of either Kagi or Google. I ignore the summaries and chatty nonsense and just copy the links and read them myself. Sorry climate and future generations.</p>
+
+<hr />
+
+<p>I cut ~30 seconds from my GitHub Actions build times by replacing my <code>apt-get install</code> step with an action that caches using <a href="https://github.com/awalsh128/cache-apt-pkgs-action">awalsh128/cache-apg-pkgs-action</a>; there’s a couple options but this one had the most stars in the marketplace:</p>
+
+<pre><code># Before
+- name: "Install packages"  
+  run: |
+  sudo apt-get -yqq update
+  sudo apt-get -yqq install libvips-dev
+
+# After
+- name: "Install packages" 
+  uses: awalsh128/cache-apt-pkgs-action@7ca5f46d061ad9aa95863cd9b214dd48edef361d
+  with:
+  packages: libvips-dev
+  version: 1 # cache version, change to manually invalidate cache
+</code></pre>
+
+<hr />
+
+<p>Turbo/hotwire stuff: I’ve been gradually replacing more granular broadcasts of like prepend/update/remove with page refresh events for their simplicity. The challenge I have is that if there is a form + refreshable content on the same page (sometimes with the form in the middle or multiple forms). If the content refreshes, I don’t want to refresh the form. But I do want the form to refresh itself when submitted (show validation messages, reset, etc.). I can wrap the form in a data-turbo-permanent for the first part, but then the form doesn’t update when it’s submitted.</p>
+
+<p>My workaround to that is a stimulus controller that wraps the form and removes the <code>data-turbo-permanent</code> when the form is submitted, inspired by <a href="https://www.reddit.com/r/rails/comments/1d8fu0v/clever_new_hotwire_hack/">this</a>. Is there a better way to do it?</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">import</span> <span class="p">{</span> <span class="no">Controller</span> <span class="p">}</span> <span class="n">from</span> <span class="s2">"@hotwired/stimulus"</span>
+
+<span class="sr">//</span> <span class="no">To</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">wrap</span> <span class="n">a</span> <span class="n">form</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">the</span> <span class="n">form</span> <span class="n">to</span> <span class="n">be</span> <span class="n">permanent</span> <span class="n">during</span>
+<span class="sr">//</span> <span class="no">Turbo</span> <span class="no">Stream</span> <span class="n">refresh</span> <span class="n">events</span> <span class="n">but</span> <span class="n">to</span> <span class="n">update</span> <span class="n">normally</span> <span class="k">when</span> <span class="n">submitting</span> <span class="n">the</span> <span class="n">form</span><span class="p">.</span>
+<span class="nf">/</span><span class="o">/</span> <span class="no">Example</span><span class="p">:</span>
+<span class="sr">//</span>  <span class="o">&lt;</span><span class="n">div</span> <span class="n">data</span><span class="o">-</span><span class="n">turbo</span><span class="o">-</span><span class="n">permanent</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"&lt;%= dom_id(@phone, :message_form) %&gt;"</span> <span class="n">data</span><span class="o">-</span><span class="n">controller</span><span class="o">=</span><span class="s2">"permanent-form"</span><span class="o">&gt;</span>
+<span class="sr">//</span>    <span class="o">&lt;</span><span class="sx">%= form_with ...
+//  &lt;/div&gt;
+
+export default class extends Controller {
+  connect() {
+    this.submitHandler =</span> <span class="n">this</span><span class="p">.</span><span class="nf">submitForm</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+    <span class="n">this</span><span class="p">.</span><span class="nf">element</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="s2">"submit"</span><span class="p">,</span> <span class="n">this</span><span class="p">.</span><span class="nf">submitHandler</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">disconnect</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">this</span><span class="p">.</span><span class="nf">element</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="s2">"submit"</span><span class="p">,</span> <span class="n">this</span><span class="p">.</span><span class="nf">submitHandler</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">submitForm</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="nf">target</span><span class="p">.</span><span class="nf">matches</span><span class="p">(</span><span class="s2">"form"</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">this</span><span class="p">.</span><span class="nf">element</span><span class="p">.</span><span class="nf">removeAttribute</span><span class="p">(</span><span class="s2">"data-turbo-permanent"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>I finished <em>Spinning Silver</em>. Now reading <em>The Space Between Worlds</em>.</p>
+
+<p>I bought <a href="https://javascriptforrails.com/"><em>Javascript for Rails Developers</em></a>, largely because I like <a href="https://railsdesigner.com/articles/">the posts on Rails Designer</a>.</p>
+
+<p>I started the demo for Unbeatable (“where music is illegal and you do crimes”); I like the art style, but <em>is it fun?</em> I dunno.</p>
+
+<hr />
+
+<p>I had to go to the shipping warehouse to pick up my new <a href="https://island94.org/2025/04/recently-april-7-2025">mechanical keyboard</a> because I kept missing the delivery person, but it otherwise arrived no problem.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/04/recently-april-14-2025"><p>Recently, April 14, 2025</p>
 </a>
     </h1>
@@ -570,91 +659,6 @@
 </ol>
 
 <p>That’s the worse case in this simple scenario with only two threads. With more threads of different workloads, you have the potential to have even more of a problem. Ivo Anjo also <a href="https://ivoanjo.me/blog/2023/02/11/ruby-unexpected-io-vs-cpu-unfairness/">wrote about this too</a>. You could speed this up by lowering overall thread quantum, or by reducing the priority of the CPU-bound thread (which lowers the thread quantum). This would cause the CPU-bound thread to be more finely sliced, but because the minimum slice is governed by the tick (10ms) you’d never get below a theoretical maximum of 100ms for the IO-bound thread; 10x more than optimal.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/01/living-parklife-with-rails-coming-from-jekyll"><p>Living Parklife with Rails, coming from Jekyll</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-01-06T00:12:00Z" itemprop="datePublished">January 6, 2025</time>
-
-        • Tagged <a href="/posts/tags/meta">meta</a>, <a href="/posts/tags/jekyll">jekyll</a>, and <a href="/posts/tags/rails">rails</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I recently migrated this blog from Jekyll to <a href="https://parklife.dev/">Ben Pickles’s Parklife</a> and Ruby on Rails, still hosted as a static website on GitHub Pages. I’m pretty happy with the experience.</p>
-
-<p>I’m writing this not because I feel any sense of advocacy (do what you want!) but to write down the reasons for myself. Maybe they’ll rhyme for you.</p>
-
-<p>Here’s this blog’s repo if you want to see: <a href="https://github.com/bensheldon/island94.org">https://github.com/bensheldon/island94.org</a></p>
-
-<h3 id="background">Background</h3>
-
-<p>I’ve been blogging here for 20 years and this blog has been through it all: Drupal, Wordpress, Middleman, Jekyll, and now Parklife+Rails.</p>
-
-<p>For the past decade the blog has largely been in markdown files, which I don’t intend to change. Over the past 2 years I also exported 15 years of pinboard/del.icio.us bookmarks, and my Kindle book highlights into markdown-managed files too. I’ve also dialed in some <a href="https://island94.org/2024/1/trigger-github-actions-workflows-from-apple-shortcuts">GitHub Action and Apple Shortcut powered integrations</a>. I’m really happy with Markdown files in a git repo, scripted with Ruby.</p>
-
-<p>…but there’s more than <em>just</em> Ruby.</p>
-<h3 id="mastery">Mastery</h3>
-
-<p>I’m heavily invested in the Ruby on Rails ecosystem. I think it’s fair to say I have mastery in Rails: I’m comfortable building applications with it, navigating and extending the framework code, intuiting the conceptual vision of the core team, and being involved in the life of the comunity where I’ve earned some positive social capital to spend as needed.</p>
-
-<p>I don’t have that in Jekyll. I am definitely handy in Jekyll. I’ve built plugins, I’ve done some wild stuff with liquid. But I’m not involved with Jekyll in the everyday sense like I am with Rails. I <em>feel</em> that when I go to make changes to my blog. There’s a little bit of friction mentally switching over to liquid, and Jekyll’s particular utilities that are <em>similar to but not the same</em> as Action View and Active Support. Jekyll is great; it’s me and the complexity of my website that’s changed.</p>
-
-<p>(I do still maintain some other Jekyll websites; no complaints elsewhere.)</p>
-
-<h3 id="parklife-with-ruby-on-rails">Parklife with Ruby on Rails</h3>
-
-<p>I hope I’m not diminishing <a href="https://parklife.dev/">Parklife</a> by writing that it isn’t functionally <em>much</em> more  than <code>wget</code>. It’s in Ruby and mounts+crawls a Rack-based web application, does a little bit to rewrite the base URLs, and spits out a directory of static HTML files. That’s it! It’s great!</p>
-
-<p>It was pretty easy for me to make a lightweight Ruby on Rails app, that loaded up all my markdown-formatted content and frontmatter, and spat them out again as Controllers and ERB Views.</p>
-
-<p>This blog is about 7k pages. For a complete website artifact:</p>
-
-<ul>
-  <li>Jekyll: takes about 20 seconds to build</li>
-  <li>Parklife with Rails: takes about 20 seconds to build</li>
-</ul>
-
-<p>In addition to the productivity win for me of being able to work with the ERB and Action View helpers I’m familiar with, I also find my development loop with Parklife and Rails is <em>faster</em> than Jekyll: I don’t have to rebuild the entire application to see the result of a single code or template change. I use the Rails development server to develop, not involving Parklife at all. On my M1 MBP a cold boot of Rails takes less than a second, a code reload is less than 100ms, and most pages render in under 10ms.</p>
-
-<p>With Jekyll, even with <code>--incremental</code>, most development changes required a 10+ second rebuild. Not my favorite.</p>
-
-<h3 id="the-technically-novel-bits">The technically novel bits</h3>
-
-<ol>
-  <li>
-    <p>if you want to trigger Rails code reload with any arbitrary set of files, like a directory of markdown files, you use <code>ActiveSupport::FileUpdateChecker</code> (which has a kind of complicated set of arguments):</p>
-
-    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/application.rb</span>
-<span class="nb">self</span><span class="p">.</span><span class="nf">reloaders</span> <span class="o">&lt;&lt;</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">FileUpdateChecker</span><span class="p">.</span><span class="nf">new</span><span class="p">([],</span> <span class="p">{</span>
-  <span class="s2">"_posts"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"md"</span><span class="p">,</span> <span class="s2">"markdown"</span><span class="p">],</span>
-  <span class="s2">"_bookmarks"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"md"</span><span class="p">,</span> <span class="s2">"markdown"</span><span class="p">],</span>
-<span class="p">})</span> <span class="k">do</span>
-  <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">reload_routes!</span>
-<span class="k">end</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Each of my blog posts has a list of historical redirects stored in their frontmatter (a legacy of so many framework changes). I had to think about how to do a catch-all route to render a static meta-refresh template:</p>
-
-    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/routes.rb</span>
-<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
-  <span class="n">get</span> <span class="s2">"*path"</span><span class="p">,</span> <span class="ss">to: </span><span class="s2">"redirects#show"</span><span class="p">,</span> <span class="ss">constraints: </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="p">{</span> <span class="no">Redirect</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">key?</span> <span class="n">req</span><span class="p">.</span><span class="nf">path</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sr">%r{</span><span class="se">\A</span><span class="sr">/}</span><span class="p">,</span> <span class="s2">""</span><span class="p">).</span><span class="nf">sub</span><span class="p">(</span><span class="sr">%r{/</span><span class="se">\z</span><span class="sr">}</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span> <span class="p">}</span>
-  <span class="c1"># ...all the other routes</span>
-<span class="k">end</span>
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h3 id="in-conclusion">In conclusion</h3>
-
-<p>Here’s <a href="https://web.archive.org/web/20250131105413/https://github.com/bensheldon/island94.org/blob/main/Parkfile">this blog’s Parkfile</a>. I did a little bit of convenience monkeypatching of things I intend to contribute upstream to Parklife. I dunno, maybe you’ll like the Parklife too.</p>
 
   </div>
 </article>

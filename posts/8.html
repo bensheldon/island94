@@ -138,6 +138,155 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2023/03/how-goodjob-s-mountable-rails-engine-delivers-javascript-importmaps-and-frontend-assets"><p>How GoodJob’s mountable Rails Engine delivers Javascript importmaps and frontend assets</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2023-03-20T15:27:00Z" itemprop="datePublished">March 20, 2023</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> is a multithreaded, Postgres-based ActiveJob backend for Ruby on Rails.</p>
+
+<p>GoodJob includes a full-featured (though optional) web dashboard to monitor and administer background jobs. The web dashboard is included in the <code>good_job</code> gem as a mountable Rails Engine.</p>
+
+<p>As the maintainer of GoodJob, I want to make gem development easier for myself by innovating as little as possible. That’s why GoodJob builds on top of Active Record and Concurrent::Ruby.</p>
+
+<p>But, the frontend can be a beast. When thinking about how to build a full-featured web dashboard <em>packaged within a Rails Engine within a gem</em>, I had three goals:</p>
+
+<ol>
+  <li><strong>Be asset pipeline agnostic with zero dependencies.</strong> As of Rails ~7.0, a Rails developer can choose between several different asset pipeline tools (Sprockets, Webpacker/Shakapacker, esbuild/jsbundling, etc.). That’s too many! I want to ensure what I package with GoodJob is compatible with all of them. I also don’t want to affect the parent application at all; everything must be independent and self-contained.</li>
+  <li><strong>Allow easy patching/debugging.</strong> I want the GoodJob web dashboard to work when using the Git repo directly in a project’s Gemfile or simply <code>bundle open good_job</code> to debug a problem.</li>
+  <li><strong>Write contemporary frontend code.</strong> I want to use Bootstrap UI, Stimulus, Rails UJS, and write modular JavaScript with imports. Maybe even Turbo!</li>
+</ol>
+
+<p>And of course, I want GoodJob to be secure, performant, and a joy to develop and use for myself and the developer community.</p>
+
+<p>Read on for how I achieved it all (mostly!) with GoodJob.</p>
+
+<h2 id="what-i-didnt-do">What I didn’t do</h2>
+
+<p>Here’s all the things I considered, but decided not to do:</p>
+
+<ul>
+  <li><strong>Nope: Manually construct/inline a small number of javascript files</strong>: I did not want to manually build a javascript file, copy-pasting various various 3rd-party libraries into a single file, and then writing my code at the bottom. This seemed laborious and prone to error, especially when I would need to update a library; and my IDE doesn’t work well with large files so writing my own code would be difficult.</li>
+  <li><strong>Nope: Precompile javascript in the repository or on gem build:</strong> I did not want to force a pre-commit step to build javascript, or to only package built javascript into the gem because that would make patching and debugging difficult. Over my career I’ve struggled contributing to a number of otherwise fantastic gems that use this workflow pattern.</li>
+  <li><strong>Nope: Compile javascript in the application:</strong> Rails has too many different asset pipeline patterns right now for me to consider supporting them all. I consider this more a result of a highly fragmented frontend ecosystem than an indictment of Rails. I can’t imagine supporting all of the different options and whatever else shows up in the future at the same time. (I’m in awe of the gems that do; nice work <code>rails_admin</code>!)</li>
+</ul>
+
+<h2 id="what-i-did-do">What I did do</h2>
+
+<p>As I wrote earlier: “innovate as little as possible”:</p>
+
+<p><strong>Serve vanilla JS and CSS out of vanilla Routes/Controller</strong></p>
+
+<p>GoodJob has explicit routes for frontend assets that wire up to a controller that serves those assets statically with <code>render :file</code>. Let’s break that down…</p>
+
+<p>In my Rails Engine’s router, I define a namescape, <code>frontend</code>, and two <code>get</code> routes. The first route, <code>modules</code> , is for Javascript modules that will go into the importmap. The second route, <code>static</code> , is for Javascript and CSS that I’ll link/script directly in the HTML head.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/routes.rb</span>
+<span class="n">scope</span> <span class="ss">:frontend</span><span class="p">,</span> <span class="ss">controller: :frontends</span> <span class="k">do</span>
+  <span class="n">get</span> <span class="s2">"modules/:name"</span><span class="p">,</span> <span class="ss">action: :module</span><span class="p">,</span> <span class="ss">as: :frontend_module</span><span class="p">,</span> <span class="ss">constraints: </span><span class="p">{</span> <span class="ss">format: </span><span class="s1">'js'</span> <span class="p">}</span>
+  <span class="n">get</span> <span class="s2">"static/:name"</span><span class="p">,</span> <span class="ss">action: :static</span><span class="p">,</span> <span class="ss">as: :frontend_static</span><span class="p">,</span> <span class="ss">constraints: </span><span class="p">{</span> <span class="ss">format: </span><span class="sx">%w[css js]</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>In the matching controller, I create static constants that define hashes of files that are matched and served, which I store in a <code>app/frontend</code> directory in my Rails Engine. <em>I want paths to be explicit for security reasons because passing any sort of dynamic file path through the URL could be a path traversal vulnerability.</em> All of the frontend assets are stored in  <code>app/frontend</code> and served out of this controller:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/good_job/frontends_controller.rb</span>
+
+<span class="k">module</span> <span class="nn">GoodJob</span>
+  <span class="k">class</span> <span class="nc">FrontendsController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span> <span class="c1"># rubocop:disable Rails/ApplicationController</span>
+    <span class="no">STATIC_ASSETS</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="ss">css: </span><span class="p">{</span>
+        <span class="ss">bootstrap: </span><span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"vendor"</span><span class="p">,</span> <span class="s2">"bootstrap"</span><span class="p">,</span> <span class="s2">"bootstrap.min.css"</span><span class="p">),</span>
+        <span class="ss">style: </span><span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"style.css"</span><span class="p">),</span>
+      <span class="p">},</span>
+      <span class="ss">js: </span><span class="p">{</span>
+        <span class="ss">bootstrap: </span><span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"vendor"</span><span class="p">,</span> <span class="s2">"bootstrap"</span><span class="p">,</span> <span class="s2">"bootstrap.bundle.min.js"</span><span class="p">),</span>
+        <span class="ss">chartjs: </span><span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"vendor"</span><span class="p">,</span> <span class="s2">"chartjs"</span><span class="p">,</span> <span class="s2">"chart.min.js"</span><span class="p">),</span>
+        <span class="ss">es_module_shims: </span><span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"vendor"</span><span class="p">,</span> <span class="s2">"es_module_shims.js"</span><span class="p">),</span>
+        <span class="ss">rails_ujs: </span><span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"vendor"</span><span class="p">,</span> <span class="s2">"rails_ujs.js"</span><span class="p">),</span>
+      <span class="p">},</span>
+    <span class="p">}.</span><span class="nf">freeze</span>
+
+		<span class="c1"># Additional JS modules that don't live in app/frontend/good_job/modules</span>
+    <span class="no">MODULE_OVERRIDES</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="ss">application: </span><span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"application.js"</span><span class="p">),</span>
+      <span class="ss">stimulus: </span><span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"vendor"</span><span class="p">,</span> <span class="s2">"stimulus.js"</span><span class="p">),</span>
+    <span class="p">}.</span><span class="nf">freeze</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">js_modules</span>
+      <span class="vi">@_js_modules</span> <span class="o">||=</span> <span class="no">GoodJob</span><span class="o">::</span><span class="no">Engine</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="s2">"frontend"</span><span class="p">,</span> <span class="s2">"good_job"</span><span class="p">,</span> <span class="s2">"modules"</span><span class="p">).</span><span class="nf">children</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:file?</span><span class="p">).</span><span class="nf">each_with_object</span><span class="p">({})</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="p">,</span> <span class="n">modules</span><span class="o">|</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="nf">basename</span><span class="p">.</span><span class="nf">to_s</span><span class="p">,</span> <span class="s2">".js"</span><span class="p">).</span><span class="nf">to_sym</span>
+        <span class="n">modules</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">file</span>
+      <span class="k">end</span><span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="no">MODULE_OVERRIDES</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Necessarly to serve Javascript to the browser</span>
+		<span class="n">skip_after_action</span> <span class="ss">:verify_same_origin_request</span><span class="p">,</span> <span class="ss">raise: </span><span class="kp">false</span>
+    <span class="n">before_action</span> <span class="p">{</span> <span class="n">expires_in</span> <span class="mi">1</span><span class="p">.</span><span class="nf">year</span><span class="p">,</span> <span class="ss">public: </span><span class="kp">true</span> <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">static</span>
+      <span class="n">render</span> <span class="ss">file: </span><span class="no">STATIC_ASSETS</span><span class="p">.</span><span class="nf">dig</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:format</span><span class="p">].</span><span class="nf">to_sym</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="ss">:name</span><span class="p">].</span><span class="nf">to_sym</span><span class="p">)</span> <span class="o">||</span> <span class="k">raise</span><span class="p">(</span><span class="no">ActionController</span><span class="o">::</span><span class="no">RoutingError</span><span class="p">,</span> <span class="s1">'Not Found'</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">module</span>
+      <span class="k">raise</span><span class="p">(</span><span class="no">ActionController</span><span class="o">::</span><span class="no">RoutingError</span><span class="p">,</span> <span class="s1">'Not Found'</span><span class="p">)</span> <span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="ss">:format</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">"js"</span>
+
+      <span class="n">render</span> <span class="ss">file: </span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">js_modules</span><span class="p">[</span><span class="n">params</span><span class="p">[</span><span class="ss">:name</span><span class="p">].</span><span class="nf">to_sym</span><span class="p">]</span> <span class="o">||</span> <span class="k">raise</span><span class="p">(</span><span class="no">ActionController</span><span class="o">::</span><span class="no">RoutingError</span><span class="p">,</span> <span class="s1">'Not Found'</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>One downside of this is that I’m unable to use Sass or Typescript or anything that isn’t vanilla CSS or Javascript. So far I haven’t missed that too much; Bootstrap brings a very comprehensive design system and Rubymine is pretty good at hinting Javscript on its own.</p>
+
+<p>Another downside is that I package several hundred kilobytes of frontend code within my gem. This increases the gem size, which is a real bummer if an application isn’t mounting the dashboard. I’ve considered separating the optional dashboard into a separate gem, but I’m deferring that until anyone notices that it’s problematic (so far so good!).</p>
+
+<p><strong>Manually link assets and construct a JS importmaps in my Engine’s layout <code>&lt;head&gt;</code></strong></p>
+
+<p>Having created the routes and controller actions, I can simply link the static files in the layout html header:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- app/views/layouts/good_job/application.html.erg --&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="c">&lt;!-- ... --&gt;</span>
+  <span class="nt">&lt;</span><span class="err">%</span><span class="na">#</span> <span class="na">Note:</span> <span class="na">Do</span> <span class="na">not</span> <span class="na">use</span> <span class="na">asset</span> <span class="na">tag</span> <span class="na">helpers</span> <span class="na">to</span> <span class="na">avoid</span> <span class="na">paths</span> <span class="na">being</span> <span class="na">overriden</span> <span class="na">by</span> <span class="na">config.asset_host</span> <span class="err">%</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.link</span> <span class="na">rel:</span> <span class="err">"</span><span class="na">stylesheet</span><span class="err">",</span> <span class="na">href:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:bootstrap</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:css</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.link</span> <span class="na">rel:</span> <span class="err">"</span><span class="na">stylesheet</span><span class="err">",</span> <span class="na">href:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:style</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:css</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
+	
+  <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span> <span class="err">"",</span> <span class="na">src:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:bootstrap</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:js</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span> <span class="err">"",</span> <span class="na">src:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:chartjs</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:js</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span> <span class="err">"",</span> <span class="na">src:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:rails_ujs</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:js</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Beneath this, I manually construct the JSON the browser expects for importmaps:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Link es_module_shims --&gt;</span>
+<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span> <span class="err">"",</span> <span class="na">src:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:es_module_shims</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:js</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">async:</span> <span class="na">true</span><span class="err">,</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Construct the importmaps JSON object --&gt;</span>
+<span class="nt">&lt;</span><span class="err">%</span> <span class="na">importmaps = </span><span class="s">GoodJob::FrontendsController.js_modules.keys.index_with</span> <span class="err">{</span> <span class="err">|</span><span class="na">module_name</span><span class="err">|</span> <span class="na">frontend_module_path</span><span class="err">(</span><span class="na">module_name</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:js</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">)</span> <span class="err">}</span> <span class="err">%</span><span class="nt">&gt;</span>
+<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span><span class="err">({</span> <span class="na">imports:</span> <span class="na">importmaps</span> <span class="err">}.</span><span class="na">to_json.html_safe</span><span class="err">,</span> <span class="na">type:</span> <span class="err">"</span><span class="na">importmap</span><span class="err">",</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span><span class="err">)</span> <span class="err">%</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Import the entrypoint: application.js --&gt;</span>
+<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span> <span class="err">"",</span> <span class="na">type:</span> <span class="err">"</span><span class="na">module</span><span class="err">",</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="na">do</span> <span class="err">%</span><span class="nt">&gt;</span> import "application"; <span class="nt">&lt;</span><span class="err">%</span> <span class="na">end</span> <span class="err">%</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="thats-it">That’s it!</h3>
+
+<p>I’ll admit, serving frontend assets using <code>render file:</code> is boring, but I experienced a thrill the first time I wired up the importmaps and <em>it just worked</em>. Writing small Javascript modules and using <code>import</code> directives is really nice. I recently added Stimulus and I’m feeling optimistic that I could reliably implement Turbo in my gem’s Rails Engine fully decoupled from the parent application.</p>
+
+<p>I hope this post about GoodJob inspires you to build full-featured web frontends for your own gems and libraries.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2023/03/recently-march-12-2023"><p>Recently, March 12, 2023</p>
 </a>
     </h1>
@@ -651,57 +800,6 @@ something many applications could benefit from.</li>
   <li>Work: Started at GitHub after five years at Code for America. Still feels a bit like a dream that I get to continue to do what I want technically (Ruby and Rails) while also working with good people. I’ve continued to work with my leadership coach, which has been nice continuity.</li>
   <li>Projects &amp; Consulting: It’s now been 10 years since I registered as a small business in SF, which I did when I first started earning money with Day of the Shirt and doing various consulting jobs. GoodJob is floating along, and become a small source of GitHub Sponsors funds. The other constellation of projects continued in maintenance: Brompt, Panlexicon, etc.</li>
 </ul>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2022/12/liberatory-accountability"><p>Liberatory accountability</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2022-12-01T01:50:00Z" itemprop="datePublished">December 1, 2022</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>From Lee Shevek’s <a href="https://theanarchistlibrary.org/library/lee-shevek-is-punishment-carceral-logic">“Is Punishment ‘Carceral Logic’?”</a>:</p>
-
-<blockquote>
-
-  <p>…the difference between carceral logic and liberatory accountability is not the presence/lack of punishment. Rather, the difference lies in how much power the person who has done harm has. Carceral logic aims to strip them of their personal power, while liberatory accountability processes require that they take ownership of that power. That is, ultimately, what accountability is: taking responsibility for your power as well as for the consequences of your use of it. Recognizing your own agency in having made a choice that resulted in harm, facing the people you hurt, giving them answers and apologies, and claiming your ability to do differently. This is what the carceral system does not allow. It strips people entirely of their agency, requires of them no meaningful repair process, and locks them in a cell where they are ritualistically abused by the State. This is a process that heals no one, nor was it ever even intended for healing or repair. It is a system only of control.</p>
-
-  <p>Liberatory accountability processes, on the other hand, demand something incredibly difficult for people who do harm: acknowledgement of their own power, their own responsibility to the harm they do with that power and their obligation to use that same power to make amends. Taking that responsibility also means acknowledging and respecting the consequences for the harm they do. If I truly take a harm I’ve done seriously, if I genuinely see it as harm, then I also will respect that the person I harmed may need to put more boundaries up between us to feel safe again. If the harm is more extreme, I will see the steps the surrounding community takes (closing my access to certain spaces, demanding my participation in ongoing accountability processes, etc.) as important responses to re-establish safety where my actions ruptured it, even if those responses are painful or uncomfortable to me. Absent of these consequences, the people most adept at doing harm while maintaining community support have free reign to continue perpetuating cycles of harm that will reverberate through years (often generations) to come, and survivors flee into solitude because there are no communal norms in place to provide them any real or trustworthy sense of safety. This is, in fact, the status quo of the world we live in now.</p>
-
-  <p>The real distinction between carceral logic and liberatory accountability is that one process violently strips someone of their humanity and agency, while the other demands that people who do harm take full command of their humanity and agency to atone for that harm and become better members of the community in the process. The carceral system says: “You are a criminal and you deserve to be subject to constant harm and control because of it.” Liberatory accountability says: “You are a person who chose to do harm, we believe in your capacity to choose to face the consequences of that harm and do what you can to repair it.”</p>
-
-</blockquote>
-
-<p>This reminded me of SorryWatch’s <a href="https://sorrywatch.com/how-to-apologize-a-short-checklist/">“How to apologize: a short checklist”</a>:</p>
-
-<blockquote>
-
-  <p>APOLOGIZE – Say “I’m sorry” or “I apologize.” Take responsibility. Talk about what you did, not just “what happened.” Avoid “if,” “regret,” and “it’s unfortunate.” Try “I shouldn’t have done that,” “That was rude of me,” or “It was wrong.”</p>
-
-  <p>TO THEM – Not just to the twitmosphere, but to the person harmed.</p>
-
-  <p>FOR WHAT YOU DID – Be specific. Not “hurting you” but, for example, “calling you a slimy swivel-eyed creep.”</p>
-
-  <p>ACKNOWLEDGE THE EFFECT – If you know it. “I embarrassed you by calling you a slimy swivel-eyed creep in front of everybody at our dinner table, and at the nearby tables.”</p>
-
-  <p>EXPLAIN, BUT DON’T EXCUSE – “I called you a slimy swivel-eyed creep to try to make you be quiet because I didn’t want to be thrown out before dessert came. I was a jerk.”</p>
-
-  <p>STOP TALKING AND LET THEM HAVE THEIR SAY – “I wasn’t upset that you called me a slimy swivel-eyed creep. I was upset that you interrupted my song. It made me feel like you don’t respect me as an artist.”</p>
-
-</blockquote>
-
-<p>And accountability (giving an account) fits into themes in Sarah Schulman’s <em>Conflict is Not Abuse</em>, which I’ll <a href="https://island94.org/2022/02/it-asks-you-to-be-interactive">requote</a>:</p>
-
-<blockquote>
-  <p>… everyone deserves help when they reach out for it. …the collapse of Conflict and Abuse is partly the result of a punitive standard in which people are made desperate, yet ineligible, for compassion. … people who have suffered in the past, or find themselves implicated in situations in which they are afraid to be accountable, fear that within their group acknowledging some responsibility will mean being denied their need to be heard and cared for.</p>
-</blockquote>
 
   </div>
 </article>

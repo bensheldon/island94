@@ -138,6 +138,132 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/07/notes-from-carrierwave-to-active-storage"><p>Notes from Carrierwave to Active Storage</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-07-09T10:30:00Z" itemprop="datePublished">July 9, 2024</time>
+
+        • Tagged <a href="/posts/tags/rails">Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently migrated <a href="https://dayoftheshirt.com">Day of the Shirt</a>, my graphic t-shirt sale aggregator, from storing image attachments with Carrierwave to Active Storage. It went ok! 👍</p>
+
+<p>There were a couple of things driving this migration, though Carrierwave had served me very well for nearly a decade:</p>
+
+<ul>
+  <li>For budgetary reasons, I was moving the storage service from S3 to Digital Ocean Spaces. I knew I’d be doing some sort of data migration regardless.</li>
+  <li>I was using some monkeypatches of Carrierwave v2 that weren’t compatible with Carrierwave v3. So I knew I’d have to dig into the internals anyways if I wanted to stay up to date.</li>
+  <li>I generally trust Rails, and by extension Active Storage, to be reliable stewards when I take them on as a dependency.</li>
+</ul>
+
+<p>And I had a couple of requirements to work though, largely motivated because images in Day of the Shirt <em>are the content</em> with dozens or hundreds displayed on a single page:</p>
+
+<ul>
+  <li>For budget (slash performance), I need to link directly to image assets. No proxying or redirecting through the Rails app.</li>
+  <li>For SEO, I need to customize the image filenames so they are relevant to the content.</li>
+  <li>For performance (slash availability), I need to pre-process image transformations (convert, scale, crop) before they are published. Dozens of new designs can go up on the homepage at once.</li>
+  <li>For availability, I need to validate that the images are (1) transformable and (2) actually transformed before they are published; invalid or missing images are unacceptable.</li>
+</ul>
+
+<p>How’d it go? Great! 🎉 I am now fully switched over to Active Storage. It’s working really well and I was able to meet all of my requirements. Active Storage is very nice, as nice as Carrierwave.</p>
+
+<p>But the errata? Yes, that’s why I’m writing the blog post, and probably why you’re reading. To document all of the stuff I did that wasn’t in the <a href="https://edgeguides.rubyonrails.org/active_storage_overview.html">very excellent Active Storage Rails Guide.</a> Let’s go through it:</p>
+
+<p><strong>Direct Linking to images</strong> is possible via the method described in this excellent post from Florin Lipan: <a href="https://lipanski.com/posts/activestorage-cdn-rails-direct-route">“Serving Active Storage uploads through a CDN with Rails direct routes”</a>.</p>
+
+<p><strong>Customizing Active Storage filenames</strong> is possible with a monkeypatch (maybe <a href="https://github.com/rails/rails/pull/41004">someday it will be possible directly</a>). The patch simply adds the specified filename to the end of what otherwise would be a random string; and it seems durable through variants such that the variant extensions will be updated properly when the format is transformed (e.g. from a <code>.png</code> to a <code>.jpg</code>):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/active_storage.rb</span>
+<span class="k">module</span> <span class="nn">MonkeypatchBlobKey</span>
+  <span class="k">def</span> <span class="nf">key</span>
+    <span class="nb">self</span><span class="p">[</span><span class="ss">:key</span><span class="p">]</span> <span class="o">||=</span> <span class="k">begin</span>
+      <span class="c1"># ActiveStorage::Filename doesn't provide an easy nil-check</span>
+      <span class="n">filename_string</span> <span class="o">=</span> <span class="k">begin</span>
+        <span class="n">filename</span><span class="p">.</span><span class="nf">to_s</span>
+      <span class="k">rescue</span> <span class="no">StandardError</span>
+        <span class="kp">nil</span>
+      <span class="k">end</span>
+
+      <span class="n">unique_token</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">generate_unique_secure_token</span><span class="p">(</span><span class="ss">length: </span><span class="no">ActiveStorage</span><span class="o">::</span><span class="no">Blob</span><span class="o">::</span><span class="no">MINIMUM_TOKEN_LENGTH</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">filename_string</span>
+        <span class="c1"># "xyz1234/foobar.jpg"</span>
+        <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">unique_token</span><span class="p">,</span> <span class="n">filename_string</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="c1"># "xyz1234"</span>
+        <span class="n">unique_token</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:active_storage_blob</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">ActiveStorage</span><span class="o">::</span><span class="no">Blob</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">MonkeypatchBlobKey</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Preprocessing variants</strong> required tapping into some private methods to get the variant names back out of the system. Here’s an example of processing all of the variants when the attachment changes. Beware: attachments happen in an <code>after_commit</code>, <a href="https://www.youtube.com/live/78HzHhMnhHY">which is good</a>, but means that I had to introduce a <code>published</code> state to the record to ensure it was not visible until the variants were processed (there is a <a href="https://github.com/rails/rails/pull/47473"><code>preprocessed:</code></a> option to process individual variants async in a background job but that, unfortunately, doesn’t meet my needs for synchronizing them all at once):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">Shirt</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">has_one_attached</span> <span class="ss">:graphic</span> <span class="k">do</span> <span class="o">|</span><span class="n">attachable</span><span class="o">|</span>
+    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:full</span><span class="p">,</span> <span class="ss">format: :jpg</span>
+    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:large</span><span class="p">,</span> <span class="ss">resize_to_limit: </span><span class="p">[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span> <span class="ss">format: :jpg</span>
+    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:square</span><span class="p">,</span> <span class="ss">resize_to_fill: </span><span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="ss">format: :jpg</span>
+    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:thumb</span><span class="p">,</span> <span class="ss">resize_to_fill: </span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="ss">format: :jpg</span>
+  <span class="k">end</span>
+
+  <span class="n">after_commit</span> <span class="ss">:process_graphic_variants_and_publish</span><span class="p">,</span> <span class="ss">if: </span><span class="o">-&gt;</span> <span class="p">(</span><span class="n">shirt</span><span class="p">){</span> <span class="n">shirt</span><span class="p">.</span><span class="nf">graphic</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">blob</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">saved_changes?</span> <span class="p">},</span> <span class="ss">on: </span><span class="p">[</span><span class="ss">:create</span><span class="p">,</span> <span class="ss">:update</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">process_graphic_variants</span>
+    <span class="n">attachment_variants</span><span class="p">(</span><span class="ss">:graphic</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">variant</span><span class="o">|</span>
+      <span class="n">graphic</span><span class="p">.</span><span class="nf">variant</span><span class="p">(</span><span class="n">variant</span><span class="p">).</span><span class="nf">processed</span>
+    <span class="k">end</span>
+    <span class="n">update</span><span class="p">(</span><span class="ss">published: </span><span class="kp">true</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1"># All of the named variants for an attachment</span>
+  <span class="c1"># @param attachment [Symbol] the name of the attachment</span>
+  <span class="c1"># @return Array[Symbol] the names of the variants</span>
+  <span class="k">def</span> <span class="nf">attachment_variants</span><span class="p">(</span><span class="n">attachment</span><span class="p">)</span>
+    <span class="nb">send</span><span class="p">(</span><span class="n">attachment</span><span class="p">).</span><span class="nf">attachment</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:named_variants</span><span class="p">).</span><span class="nf">keys</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Validating variants</strong> was easy with a very nice and well-named gem: <a href="https://github.com/igorkasyanchuk/active_storage_validations"><code>active_storage_validations</code></a>. It <a href="https://github.com/igorkasyanchuk/active_storage_validations/blob/ab27760ecee7498e8fcb2a6434157c8cdd81038d/lib/active_storage_validations/metadata.rb#L122">works really well</a>.</p>
+
+<p><strong>You will have N+1s</strong>, where you forget to add <code>with_attached_*</code> scopes to some queries. Unfortunately Active Storage’s schema is laid out in a way that it will emit queries to the same model/table <em>even when it’s loading correctly</em>, so you may get <a href="https://github.com/flyerhzm/bullet/issues/474">detection false positives</a> too. You can see that clearly in the next example with the doubly-nested <code>blob</code> association.</p>
+
+<p><strong>Active Storage’s schema is a beast</strong>. I get that it’s gone through a lot of changes, and Named Variants are an amazing hack when you see how they’ve been implemented. And it’s wild. You can see that by how the <a href="https://github.com/rails/rails/blob/9f178ada796a89c01f952fc05810b58b6f8682fc/activestorage/lib/active_storage/attached/model.rb#L129-L137">scope for <code>with_attached_*</code></a> is generated:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">includes</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">_attachment"</span><span class="p">:</span> <span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span>
+  <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">},</span>
+  <span class="ss">preview_image_attachment: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span> <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>I originally thought that when eager-loading through an association (e.g. <code>Merchant.includes(:shirts)</code>) I’d have to do something like this (🫠):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Merchant</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">shirts: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span>
+  <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">},</span>
+  <span class="ss">preview_image_attachment: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span> <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">}</span> <span class="p">}</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>…but fortunately this seems to work too (💅):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Merchant</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:shirts</span><span class="p">).</span><span class="nf">merge</span><span class="p">(</span><span class="no">Shirt</span><span class="p">.</span><span class="nf">with_attached_graphic</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>That’s everything. All in all I’m very happy with the migration 🌅</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/07/introducing-goodjob-v4"><p>Introducing GoodJob v4</p>
 </a>
     </h1>
@@ -1057,100 +1183,6 @@ window.Confetti = function () {
 
 <p>That was all the interesting bits for me. I also learned quite a bit poking around Dave Kimura’s <a href="https://github.com/kobaltz/action_auth">ActionAuth</a> (thank you!), and am thankful for the many years of service I’ve gotten from Devise.</p>
 
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/01/two-stories-about-technical-debt-i-guess"><p>Two stories about technical debt, I guess</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-01-18T17:37:00Z" itemprop="datePublished">January 18, 2024</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>One activity I don’t enjoy very much: griping about “technical debt”; that label just never seems descriptive enough. And the things people gripe about seem to mostly fall into:</p>
-
-<ul>
-  <li>Deferred maintenance: we haven’t updated to the latest version of X, or it’s written in A language/framework but now everyone is much more familiar with B, or we know M raises an exception at N when they O while P</li>
-  <li>Just not the quality we expect, <a href="https://cutlefish.substack.com/p/tbm-267-debt-and-bridge-building">because <em>reasons</em></a>. It’s ok, we’re all winging it.</li>
-</ul>
-
-<p>…and those categories crowds out the real sweaty palms stuff, the “we did do a good job but we know more now” that I think is the real deal. I can talk about that.</p>
-
-<p>I’ve never found the particular post/video/talk? again (I’ve looked!), but it described technical debt as like: the distance between the current understanding of the business domain and the technical implementation’s modeling of the business domain. It had a chart that has stuck in my mind; it looked something like this:</p>
-
-<p><a href="/uploads/2024-01/technical-debt.png"><img src="/uploads/2024-01/technical-debt.png" alt="A chart that shows the coming together and divergence of business and technical domain knowledge" /></a></p>
-
-<p>That definition of “technical debt” clicked for me. For myself and the high performing teams I’ve worked with, we’re most productive, pushing value, when we’re asking ourselves: does this make sense? Given what we know now, and what we know about where we’re going, do the objects and their interactions conceptually map to how the business is being talked about by the non-technical people? Are we adapting <a href="https://codeforamerica.org/news/engineering-principles-at-code-for-america/#:~:text=Optimize%20for%20speed%20of%20learning">at the same rate we’re learning</a>? If yes, we’re golden; if sorta with some tweaks that’s good; when no… that’s bad, disordered, schismatic: carrying a burden of always translating between the language and models in the technical system and the language and concepts in the business domain. That sucks!</p>
-
-<p>Aside: There’s a funny/terrifying/random thing this makes me think of: <a href="https://www.vulture.com/article/an-oral-history-of-disney-the-emperors-new-groove.html">“We’ll Never Make That Kind of Movie Again”: An oral history of The Emperor’s New Groove, a raucous Disney animated film that almost never happened</a>. One of the screenwriters describes the process of making an animated film:</p>
-
-<blockquote>
-  <p>In a normal four-year process, you’ve got meetings, you’ve got development people going, “What if the girl was a boy? What if the bird was a flower?” And then you have to run all those ideas.</p>
-</blockquote>
-
-<p>The software projects I’ve worked on are a conveyor belt of “What if the bird was a flower?” decision making and idea running. Extend that object, repurpose this method, bolt on that, change this, swap that, rename this, better leave a comment on that. When it’s going well, it doesn’t matter that it was a bird yesterday and a flower today… as long as it’s not retaining so much birdliness that it compromises its flowerability. It’s when you’re having to remember and callback “hey, well, um, it <em>was</em> once a bird, fyi, that’s why it’s so much trouble to do this flower stuff”, then you’re sunk.</p>
-
-<p>It’s a bad sign when forward development requires telling stories about the past.</p>
-
-<p>Here’s two stories…</p>
-
-<h3 id="the-isolated-component">The isolated component</h3>
-
-<p>When I was working at a website hosting startup, we had one component that I could just never get the support to integrate into the larger application. It was the form that would create a new website project for the user.  When the startup began, the original technical architecture was a bunch of interlinked but separated components: User Registration, User Account Management, Website Creation, Website Management, Organization Management, Agency/Reseller Management, etc. It made sense early as the business was figuring out what worked as a business, and then during my tenure we brought those components together into a unified application. Well, almost all of them.</p>
-
-<p>There was a lot of give and take in the product integration; sometimes me and the other engineers would just <em>do it</em> and other times we’d defer it until there was a particular feature that necessitated it, and then we’d include that extra work in our estimates. It frequently took a <a href="https://speakerdeck.com/bensheldon/real-world-dashboard">couple passes</a> of <a href="https://speakerdeck.com/bensheldon/dashboard-performance-brownbag">code cleanup</a> and bringing it onto the design system, and that was ok. That’s the job!</p>
-
-<p>That last, last, last component of Website Creation eluded us though, and it was outside our control. At that point, development was transitioning from “engineering led” to “product management and design led” and I had been instructed that engineering couldn’t make any product changes unless they were connected to an active PRD (Product Requirements Document) controlled by the PMs.</p>
-
-<p>There was plenty of demand to make changes to Website Creation: smooth out the first-time account registration flow into creating a website; allow the user to do some activities in parallel while the website was spinning up like inviting team members or perusing billing levels; decouple the concept of “a website is a marketing strategy” from “upload your code and have some containers and a load balancer provisioned” so that non-developers could still <em>plan</em> a website without invoking all the technical bits.</p>
-
-<p>But not enough appetite to get it done.</p>
-
-<p>Of “technical debt”: everyone except our little engineering team maintaining the frontend didn’t think anything special of Website Creation. It wasn’t obvious unless you carefully watched for the hard-browser refresh, or noticed the navigation bar change slightly. Conceptually it was a unified product (heck, I even remember a product launch called “One”), but the work hadn’t yet been done on the application side and we engineers carried the burden.</p>
-
-<p>It was funny because every time a product change that touched Website creation was discussed, the same thing happened:</p>
-
-<p><strong>PM:</strong> Your effort estimate seems really high. What’s going on?<br />
-<br /><strong>Me:</strong> Well, this involves Website Creation and it’s still its own component and can’t access any of those other systems that are necessary to build the feature. We’d need to bring it into the rest of the application. It’s definitely possible! There’s a few open questions with product and design implications, so we’d need to work together on that.<br />
-<br /><strong>PM:</strong> Oh, well, huh, I didn’t expect that. Hmm, we don’t have the bandwidth for all that. Let’s pass on it for now.</p>
-
-<p>This happened multiple times! It was weird too because the particular project being planned would be spiked, and then the engineering team would have to wait around while a new project was spun up and that likely took just as long as it would have taken to do the work on the Website Creation component. If I hadn’t been explicitly told to sit on my hands otherwise, I would have probably just done this as off-the-books, shucks-I-didn’t-think-it-would-be-a-big-deal, shadow-work.</p>
-
-<p>It never got done during my tenure; I think they later decided the problem was that the whole thing wasn’t written in React 🤷</p>
-
-<h3 id="the-campaign-message">The campaign message</h3>
-
-<p>When I was a developer on GetCalFresh, the functionality with perpetually unexpected estimations was “Campaign Messages”.</p>
-
-<p>GetCalFresh would help people apply for their initial food stamp application, at which point it would be sent to the applicant’s county for processing. Over the next 14 to 28 days the county would schedule an in-person or telephone interview, and request various documents like pay stubs and rental leases, and the applicant would have to navigate all of that. (The administrative state <a href="https://daveguarino.substack.com/p/state-snap-agencies-are-overloaded">suuuuucks</a>!) To help, GetCalFresh would send a sequence of email and/or SMS messages to the applicant over this time period explaining what was needed and what to expect next. A messaging campaign, y’know, of “campaign messages”</p>
-
-<p>When GetCalFresh was first laid down in code, there were two “types” of campaign messages: <code>General</code> and <code>Expedited</code>. Under a couple of different circumstances, if an applicant is homeless or at risk of being homeless, or has no cash-on-hand to purchase food, their application is eligible for expedited processing and thus we’d send them a message sequence over ~14 days; everyone else would receive a message sequence over ~28 days. We were sending the same messages, just on a different schedule.</p>
-
-<p>So when we engineers were then asked to customize a message, like “if the applicant is a student, add this description about their special eligibility”… we just <code>if/elsed</code> it on in there. Oh, now this county is piloting a special process, let’s make a little carve out for them too and swap this message. Still, same sequence, just tweaks, right? Well, all those small tweaks and carve-outs build up, and all of a sudden we’re having to ask “ok, so you want us to rewrite this one itty bitty message, well we also need you to specify what it should be for students, who do and don’t qualify for County X’s special process too”. It got twistier and twistier. And when requests like “don’t send that message in this special circumstance” or “add a totally new message but just as this one-off” came in, we’d be like “totally possible! and that’s gonna take more work than you think!”</p>
-
-<p>GetCalFresh had the best Product Managers I have ever worked with in my life, and we still got locked into a similar loop as the last story: we’d do our estimation with the PMs, it exposed the fruit hung more high than low, and the change would be deprioritized. I think the PMs got it, but the challenge was that the other folks, client support and the folks coordinating with the counties and the datascience team, would be like “we heard that Engineering doesn’t want to build it.” So weird! Not engineering’s call! (Aside: I spent so much time coaching non-technical stakeholders on how to work in a PM-led system, but always more coaching to do.)</p>
-
-<p>I remember making a Google Doc to analyze why and explain how the system we initially designed for (same sequence of messages with different schedules) didn’t match our understanding of the problem today. The doc listed out all of the different reasons we knew of why we might customize the message. It was at least 10 bullet points. And there were a lot of other learnings too: initially we designed around customizing for just 3 major county systems (State Automated Welfare Systems - SAWS), but later found ourselves doing county-by-county customizations (California has 58 counties). I advocated for configuring each county in its own object despite the <em>scale</em> brainworms demanding a singular and infinitely abstracted model (I call these things “spreadsheet problems” when you can simply list the entire domain in a spreadsheet).</p>
-
-<p>Of “technical debt”, I still can replay in my brain the deliberate mental spatial shift of imagining the campaign model as a 2-column array (General and Expedited) with 10+ rows of logic shifts and then flopping it onto its side to make a change. All that mental context has a huge carrying cost that all of us had to budget for when making a change.</p>
-
-<p>During my tenure, we never did the significant reworking to how campaign messages were implemented, though some bold colleagues did their best to make changes as safe and simple as possible with DSLs and test macros. Thank you! 🙏</p>
-
-<h3 id="thats-it">That’s it</h3>
-
-<p>Sorry, no great lessons here. Just stories to share (<a href="https://island94.org/2024/01/recently#:~:text=try%20to%20see%20it%20as%20a%20funny%20story">“ideally you’d try to see it as a funny story you can tell friends rather than a hurtful snub that needs to bother you”</a>) I mentioned coaching folks on working with PMs, and I think the frequent advice I gave non-technical folks probably holds true for engineers too when asking:</p>
-
-<p><em>Always have your top 3 ranked work items ready to go when talking to decision makers (the PM?). Don’t bring new stuff unless it changes those top 3.</em></p>
-
-<p>(I mean sure, share context and adapt, but allow yourself no doubt that you’ve’ clearly and consistently communicated what your top priorities are before they get dumped in with everyone else’s.)</p>
-
-<p>(But also, if you’re an engineer and you can and no one is breathing down your neck, simply get it done and celebrate. The PM doesn’t have to lead everything. You can do it! 👍)</p>
 
   </div>
 </article>

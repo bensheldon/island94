@@ -4410,4 +4410,10 @@
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
     </url>
+     <url>
+      <loc>https://island94.org/2026/02/post-your-prompts</loc>
+      <lastmod>2026-02-27</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+    </url>
 </urlset>

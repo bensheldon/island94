@@ -138,6 +138,100 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/01/two-stories-about-technical-debt-i-guess"><p>Two stories about technical debt, I guess</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-01-18T17:37:00Z" itemprop="datePublished">January 18, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>One activity I don’t enjoy very much: griping about “technical debt”; that label just never seems descriptive enough. And the things people gripe about seem to mostly fall into:</p>
+
+<ul>
+  <li>Deferred maintenance: we haven’t updated to the latest version of X, or it’s written in A language/framework but now everyone is much more familiar with B, or we know M raises an exception at N when they O while P</li>
+  <li>Just not the quality we expect, <a href="https://cutlefish.substack.com/p/tbm-267-debt-and-bridge-building">because <em>reasons</em></a>. It’s ok, we’re all winging it.</li>
+</ul>
+
+<p>…and those categories crowds out the real sweaty palms stuff, the “we did do a good job but we know more now” that I think is the real deal. I can talk about that.</p>
+
+<p>I’ve never found the particular post/video/talk? again (I’ve looked!), but it described technical debt as like: the distance between the current understanding of the business domain and the technical implementation’s modeling of the business domain. It had a chart that has stuck in my mind; it looked something like this:</p>
+
+<p><a href="/uploads/2024-01/technical-debt.png"><img src="/uploads/2024-01/technical-debt.png" alt="A chart that shows the coming together and divergence of business and technical domain knowledge" /></a></p>
+
+<p>That definition of “technical debt” clicked for me. For myself and the high performing teams I’ve worked with, we’re most productive, pushing value, when we’re asking ourselves: does this make sense? Given what we know now, and what we know about where we’re going, do the objects and their interactions conceptually map to how the business is being talked about by the non-technical people? Are we adapting <a href="https://codeforamerica.org/news/engineering-principles-at-code-for-america/#:~:text=Optimize%20for%20speed%20of%20learning">at the same rate we’re learning</a>? If yes, we’re golden; if sorta with some tweaks that’s good; when no… that’s bad, disordered, schismatic: carrying a burden of always translating between the language and models in the technical system and the language and concepts in the business domain. That sucks!</p>
+
+<p>Aside: There’s a funny/terrifying/random thing this makes me think of: <a href="https://www.vulture.com/article/an-oral-history-of-disney-the-emperors-new-groove.html">“We’ll Never Make That Kind of Movie Again”: An oral history of The Emperor’s New Groove, a raucous Disney animated film that almost never happened</a>. One of the screenwriters describes the process of making an animated film:</p>
+
+<blockquote>
+  <p>In a normal four-year process, you’ve got meetings, you’ve got development people going, “What if the girl was a boy? What if the bird was a flower?” And then you have to run all those ideas.</p>
+</blockquote>
+
+<p>The software projects I’ve worked on are a conveyor belt of “What if the bird was a flower?” decision making and idea running. Extend that object, repurpose this method, bolt on that, change this, swap that, rename this, better leave a comment on that. When it’s going well, it doesn’t matter that it was a bird yesterday and a flower today… as long as it’s not retaining so much birdliness that it compromises its flowerability. It’s when you’re having to remember and callback “hey, well, um, it <em>was</em> once a bird, fyi, that’s why it’s so much trouble to do this flower stuff”, then you’re sunk.</p>
+
+<p>It’s a bad sign when forward development requires telling stories about the past.</p>
+
+<p>Here’s two stories…</p>
+
+<h3 id="the-isolated-component">The isolated component</h3>
+
+<p>When I was working at a website hosting startup, we had one component that I could just never get the support to integrate into the larger application. It was the form that would create a new website project for the user.  When the startup began, the original technical architecture was a bunch of interlinked but separated components: User Registration, User Account Management, Website Creation, Website Management, Organization Management, Agency/Reseller Management, etc. It made sense early as the business was figuring out what worked as a business, and then during my tenure we brought those components together into a unified application. Well, almost all of them.</p>
+
+<p>There was a lot of give and take in the product integration; sometimes me and the other engineers would just <em>do it</em> and other times we’d defer it until there was a particular feature that necessitated it, and then we’d include that extra work in our estimates. It frequently took a <a href="https://speakerdeck.com/bensheldon/real-world-dashboard">couple passes</a> of <a href="https://speakerdeck.com/bensheldon/dashboard-performance-brownbag">code cleanup</a> and bringing it onto the design system, and that was ok. That’s the job!</p>
+
+<p>That last, last, last component of Website Creation eluded us though, and it was outside our control. At that point, development was transitioning from “engineering led” to “product management and design led” and I had been instructed that engineering couldn’t make any product changes unless they were connected to an active PRD (Product Requirements Document) controlled by the PMs.</p>
+
+<p>There was plenty of demand to make changes to Website Creation: smooth out the first-time account registration flow into creating a website; allow the user to do some activities in parallel while the website was spinning up like inviting team members or perusing billing levels; decouple the concept of “a website is a marketing strategy” from “upload your code and have some containers and a load balancer provisioned” so that non-developers could still <em>plan</em> a website without invoking all the technical bits.</p>
+
+<p>But not enough appetite to get it done.</p>
+
+<p>Of “technical debt”: everyone except our little engineering team maintaining the frontend didn’t think anything special of Website Creation. It wasn’t obvious unless you carefully watched for the hard-browser refresh, or noticed the navigation bar change slightly. Conceptually it was a unified product (heck, I even remember a product launch called “One”), but the work hadn’t yet been done on the application side and we engineers carried the burden.</p>
+
+<p>It was funny because every time a product change that touched Website creation was discussed, the same thing happened:</p>
+
+<p><strong>PM:</strong> Your effort estimate seems really high. What’s going on?<br />
+<br /><strong>Me:</strong> Well, this involves Website Creation and it’s still its own component and can’t access any of those other systems that are necessary to build the feature. We’d need to bring it into the rest of the application. It’s definitely possible! There’s a few open questions with product and design implications, so we’d need to work together on that.<br />
+<br /><strong>PM:</strong> Oh, well, huh, I didn’t expect that. Hmm, we don’t have the bandwidth for all that. Let’s pass on it for now.</p>
+
+<p>This happened multiple times! It was weird too because the particular project being planned would be spiked, and then the engineering team would have to wait around while a new project was spun up and that likely took just as long as it would have taken to do the work on the Website Creation component. If I hadn’t been explicitly told to sit on my hands otherwise, I would have probably just done this as off-the-books, shucks-I-didn’t-think-it-would-be-a-big-deal, shadow-work.</p>
+
+<p>It never got done during my tenure; I think they later decided the problem was that the whole thing wasn’t written in React 🤷</p>
+
+<h3 id="the-campaign-message">The campaign message</h3>
+
+<p>When I was a developer on GetCalFresh, the functionality with perpetually unexpected estimations was “Campaign Messages”.</p>
+
+<p>GetCalFresh would help people apply for their initial food stamp application, at which point it would be sent to the applicant’s county for processing. Over the next 14 to 28 days the county would schedule an in-person or telephone interview, and request various documents like pay stubs and rental leases, and the applicant would have to navigate all of that. (The administrative state <a href="https://daveguarino.substack.com/p/state-snap-agencies-are-overloaded">suuuuucks</a>!) To help, GetCalFresh would send a sequence of email and/or SMS messages to the applicant over this time period explaining what was needed and what to expect next. A messaging campaign, y’know, of “campaign messages”</p>
+
+<p>When GetCalFresh was first laid down in code, there were two “types” of campaign messages: <code>General</code> and <code>Expedited</code>. Under a couple of different circumstances, if an applicant is homeless or at risk of being homeless, or has no cash-on-hand to purchase food, their application is eligible for expedited processing and thus we’d send them a message sequence over ~14 days; everyone else would receive a message sequence over ~28 days. We were sending the same messages, just on a different schedule.</p>
+
+<p>So when we engineers were then asked to customize a message, like “if the applicant is a student, add this description about their special eligibility”… we just <code>if/elsed</code> it on in there. Oh, now this county is piloting a special process, let’s make a little carve out for them too and swap this message. Still, same sequence, just tweaks, right? Well, all those small tweaks and carve-outs build up, and all of a sudden we’re having to ask “ok, so you want us to rewrite this one itty bitty message, well we also need you to specify what it should be for students, who do and don’t qualify for County X’s special process too”. It got twistier and twistier. And when requests like “don’t send that message in this special circumstance” or “add a totally new message but just as this one-off” came in, we’d be like “totally possible! and that’s gonna take more work than you think!”</p>
+
+<p>GetCalFresh had the best Product Managers I have ever worked with in my life, and we still got locked into a similar loop as the last story: we’d do our estimation with the PMs, it exposed the fruit hung more high than low, and the change would be deprioritized. I think the PMs got it, but the challenge was that the other folks, client support and the folks coordinating with the counties and the datascience team, would be like “we heard that Engineering doesn’t want to build it.” So weird! Not engineering’s call! (Aside: I spent so much time coaching non-technical stakeholders on how to work in a PM-led system, but always more coaching to do.)</p>
+
+<p>I remember making a Google Doc to analyze why and explain how the system we initially designed for (same sequence of messages with different schedules) didn’t match our understanding of the problem today. The doc listed out all of the different reasons we knew of why we might customize the message. It was at least 10 bullet points. And there were a lot of other learnings too: initially we designed around customizing for just 3 major county systems (State Automated Welfare Systems - SAWS), but later found ourselves doing county-by-county customizations (California has 58 counties). I advocated for configuring each county in its own object despite the <em>scale</em> brainworms demanding a singular and infinitely abstracted model (I call these things “spreadsheet problems” when you can simply list the entire domain in a spreadsheet).</p>
+
+<p>Of “technical debt”, I still can replay in my brain the deliberate mental spatial shift of imagining the campaign model as a 2-column array (General and Expedited) with 10+ rows of logic shifts and then flopping it onto its side to make a change. All that mental context has a huge carrying cost that all of us had to budget for when making a change.</p>
+
+<p>During my tenure, we never did the significant reworking to how campaign messages were implemented, though some bold colleagues did their best to make changes as safe and simple as possible with DSLs and test macros. Thank you! 🙏</p>
+
+<h3 id="thats-it">That’s it</h3>
+
+<p>Sorry, no great lessons here. Just stories to share (<a href="https://island94.org/2024/01/recently#:~:text=try%20to%20see%20it%20as%20a%20funny%20story">“ideally you’d try to see it as a funny story you can tell friends rather than a hurtful snub that needs to bother you”</a>) I mentioned coaching folks on working with PMs, and I think the frequent advice I gave non-technical folks probably holds true for engineers too when asking:</p>
+
+<p><em>Always have your top 3 ranked work items ready to go when talking to decision makers (the PM?). Don’t bring new stuff unless it changes those top 3.</em></p>
+
+<p>(I mean sure, share context and adapt, but allow yourself no doubt that you’ve’ clearly and consistently communicated what your top priorities are before they get dumped in with everyone else’s.)</p>
+
+<p>(But also, if you’re an engineer and you can and no one is breathing down your neck, simply get it done and celebrate. The PM doesn’t have to lead everything. You can do it! 👍)</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory"><p>The answer is in your heap: debugging a big memory increase in Ruby on Rails</p>
 </a>
     </h1>
@@ -802,79 +896,6 @@ diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_di
 <p><em>The Institute for Cultural Affairs has <a href="https://www.top-training.net/w/schedule/">lots of trainings</a>  on consensus-based facilitation. The <a href="https://strategicfacilitation.com">Center for Strategic Facilitation</a> is the Bay Area’s local trainer and service provider, but there are trainers and service providers all over the globe.</em></p>
 
 <p><em>There is a system known as <a href="https://en.wikipedia.org/wiki/Formal_consensus">“Formal Consensus”</a> which gained some notability during the <a href="https://en.wikipedia.org/wiki/1999_Seattle_WTO_protests">1999 “Battle of Seattle” WTO protests</a> as a means of empowering small groups, particularly indigenous representatives, by providing a limited and fixed number of “blocks” during deliberations to stop actions proposed by far larger groups. Also how my buddy organized <a href="https://github.com/freegeekchicago/fgc-docs/blob/4dc37cbb76eaf766274f30fcb1f9df9d5bc199df/constitution.md#governance">FreeGeek Chicago</a>. I have <strong>never</strong> heard anyone in Bay Area tech reference any of this in regards to what they mean by consensus.</em></p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2023/08/fake-the-algorithm-til-you-make-it"><p>Fake the algorithm til you make it</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2023-08-30T22:50:00Z" itemprop="datePublished">August 30, 2023</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Almost exactly a decade ago I worked at OkCupid Labs where small teams (~2 engineers, a designer, and a fractional PM) would build zero-to-one applications. It was great fun and I worked mainly on <a href="https://island94.org/2013/07/Meet-Ravel.html">Ravel!</a> though bopped around quite a bit too.</p>
-
-<p>With small teams and quick timelines, I learned a lot about where to invest time in early social apps (onboarding and core loop) and where not to (matchmaking algorithms). The following is lightly adapted from a bunch of comments I wrote on an r/webdev post a few years ago, asking for <a href="https://www.reddit.com/r/webdev/comments/pey1p7/comment/%2Chb4gik2%2C/">“Surprisingly simple web apps?”</a>. My response was <a href="https://www.reddit.com/r/webdev/comments/pey1p7/comment/hb4gpxy/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">described</a> as “one of the more interesting things I’ve read on reddit in 5 years”:</p>
-
-<p>If you’re looking for inspiration, what is successful today is likely more complex than it was when it was originally launched. Twitter, Tinder, Facebook all likely launched with simple CRUD and associations, and only later did they get fancy algorithms. Also, Nextdoor, Grindr, Yelp [this was 2013].</p>
-
-<p>I used to work on social and dating apps and it is all “fake it till you make it”. The “secret sauce” is bucket by distance intervals, then order by random using the user-id as a seed so it’s determinist, but still just random sort. Smoke and mirrors and marketing bluster.</p>
-
-<p>You see this “Secret Sauce” marketing a lot. An app will imply that they have some secret, complex algorithm that no other competitor has. The software equivalent of “you can get a hamburger from anywhere, but ours has our secret sauce that makes it taste best”. But that can be bluster and market positioning rather than actually complexity. In truth, it’s secretly mayo, ketchup and relish. Or as I’ve encountered building apps, deterministic random.</p>
-
-<p>Imagine you have a dating/social app and you want to have a match-making algorithm. You tell your users that you have the only astrologist datascience team building complex machine-learning models that can map every astronomical body in the known universe to individual personality traits and precisely calculate true love to the 9th decimal.</p>
-
-<p>In truth, you:</p>
-
-<ul>
-  <li>For the current user, bucket other users by distance: a bucket of users that are less than 5km away; less than 25km; less than 100km; and everyone else. Early social app stuff is hard because you have a small userbase but you need to appear to be really popular, so you may need to adjust those numbers; also a reason to launch in a focused market.</li>
-  <li>Within each distance bucket, simply sort the users by random, seeded by the user id of the current user (Postgres <code>setseed</code>). That way the other people will always appear in the same order to the current user.</li>
-</ul>
-
-<p>It works on people’s confirmation bias: if you confidently tell someone that they are a match, they are likely to generate their own evidence to support that impression. You don’t even have to do the location bucketing either, but likely you want to give people something that is actionable for your core loop.</p>
-
-<p>And remember, this is really about priorities in the early life of a product. It’s not difficult to do something complex, but it takes time and engaged users to dial it in; so that’s why you don’t launch with a real algorithm.</p>
-
-<p>This is all really easy to do with just a relational database <em>in the database</em>, no in-memory descent models or whatever. Here’s a simple recommendation strategy for t-shirts (from my <a href="https://dayoftheshirt.com">Day of the Shirt</a>), in SQL for Ruby on Rails:</p>
-
-<p>For a given user, find all of the t-shirts they have favorited, then find all of the users that have also favorited those t-shirts and strength them based on who has favorited the most t-shirts in common with the initial user, and then find all of the t-shirts those users have favorited, multiply through the counts and strengths, sum and order them. There’s your recommended t-shirts:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Shirts</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
-  <span class="c1"># ...</span>
-  <span class="n">scope</span> <span class="ss">:order_by_recommended</span><span class="p">,</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
-    <span class="n">joins</span><span class="p">(</span><span class="o">&lt;&lt;~</span><span class="no">SQL</span><span class="p">.</span><span class="nf">squish</span><span class="p">).</span><span class="nf">order</span><span class="p">(</span><span class="s1">'strength DESC NULLS LAST'</span><span class="p">)</span><span class="sh">
-      LEFT JOIN (
-        WITH recommended_users AS (
-          SELECT user_id, count(*) AS strength
-          FROM favorite_shirts_users
-          WHERE
-            shirt_id IN (
-              SELECT shirt_id
-              FROM favorite_shirts_users
-              WHERE </span><span class="si">#{</span><span class="n">sanitize_sql_for_conditions</span><span class="p">([</span><span class="s1">'user_id = ?'</span><span class="p">,</span> <span class="n">user</span><span class="p">.</span><span class="nf">id</span><span class="p">])</span><span class="si">}</span><span class="sh">
-            )
-          GROUP BY user_id
-        )
-        SELECT shirt_id, SUM(strength) AS strength
-        FROM favorite_shirts_users
-        LEFT JOIN recommended_users ON recommended_users.user_id = favorite_shirts_users.user_id
-        GROUP BY shirt_id
-      ) AS recommended_shirts ON recommended_shirts.shirt_id = shirts.id
-</span><span class="no">    SQL</span>
-  <span class="p">}</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>That’s a relatively lightweight strategy, that you can run in real-time and if there is enough engagement can appear effective. And if you don’t have enough engagement, again, enrich it with some deterministically random results.</p>
-
-<p>It’s basic but you can also add in other kinds of engagement and weigh them differently or whatever. It’s all good. Then you have massive success and hire a real datascience team.</p>
-
 
   </div>
 </article>

@@ -138,6 +138,45 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/10/til:-detecting-block-returns-in-ruby-"><p>TIL: Detecting block returns in Ruby</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-10-11T19:01:00Z" itemprop="datePublished">October 11, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I was doing some research on introspecting Ruby on Rails database transactions for a <a href="https://www.reddit.com/r/ruby/comments/q54515/comment/hg9dzdc/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">Reddit thread</a>, and came across this <a href="https://github.com/rails/rails/pull/29333">Rails PR</a> that had some new Ruby behavior for me: detecting an early <code>return</code> from a block.</p>
+
+<p>Some background: A Ruby language feature, that can frequently surprise people, is that using <code>return</code> within a Ruby block will return not only from the block itself, but also from the block’s caller too. Using <code>next</code> is really the only truly safe way to interrupt a block early; even <code>break</code> can be troublesome if the block is called by an enumerator. Also, <code>next</code> can take a return value too, just like <code>return</code> e.g. <code>next my_value</code>.</p>
+
+<p>I found the Rails PR interesting, because it has a method for detecting and warning on an early return. Here’s a simplified example:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+  <span class="n">block</span><span class="p">.</span><span class="nf">call</span>
+  <span class="n">completed</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># won't be called if the block returns early</span>
+<span class="k">ensure</span>
+  <span class="k">if</span> <span class="n">completed</span>
+    <span class="nb">puts</span> <span class="s2">"ok"</span>
+  <span class="k">else</span>
+    <span class="nb">puts</span> <span class="s2">"returned early"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">some_method</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1"># =&gt; "returned early"</span>
+<span class="n">some_method</span> <span class="p">{</span> <span class="k">next</span> <span class="p">}</span> <span class="c1"># =&gt; "ok"</span>
+</code></pre></div></div>
+
+<p>This works because the methods <code>ensure</code> block will always be called, even if <code>#some_method</code> returns early. That was a novel implementation for me.</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2021/10/behaving-like-the-character-in-a-story"><p>Behaving like the character in a story</p>
 </a>
     </h1>
@@ -553,61 +592,6 @@ Ben and Angelina</p>
   <p>I would like to tell about the triangular way of eating. So, you have to make sure it is in triangular order. This is good practice in learning know how to eat a balanced meal by yourself. I think you can arrange this as square, pentagon and so on. Please go ahead add a salad or a side dish. As time goes by, if I have meat or fish, I automatically want to eat rice, then I start to want to eat vegetables. Isn’t it nice?</p>
 
   <p>Also, triangular way could be give you rhythm and let your mouth reset. You can imagine wine and cheese. It is work well for harmony too.</p>
-
-</blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2020/11/the-five-ideals-explained"><p>The five ideals explained</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2020-11-03T19:38:00Z" itemprop="datePublished">November 3, 2020</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I previously posted the <a href="https://island94.org/2017/12/the-three-ways-explained">The Three Ways</a> from <em>The Phoenix Project</em>. Here are <a href="https://itrevolution.com/five-ideals-of-devops/">the Five Ideals from <em>The Unicorn Project</em></a>, by way of Gene Kim’s <em>IT Revolution</em> blog:</p>
-
-<blockquote>
-
-  <p>The First Ideal: Locality and Simplicity</p>
-
-  <p>We need to design things so that we have locality in our systems and the organizations that build them. We need simplicity in everything we do. This ideal relates to the degree to which a development team can make local code changes in a single location without impacting various teams. The last place we want complexity is internally, whether it’s in our code, in our organization, or in our processes.</p>
-
-  <p>The Second Ideal: Focus, Flow, and Joy</p>
-
-  <p>The Second Ideal is all about how our daily work feels. Is our work marked by boredom and waiting for other people to get things done on our behalf? Do we blindly work on small pieces of the whole, only seeing the outcomes of our work during deployment when everything blows up, leading to firefighting, punishment, and burnout? Or do we work in small batches, ideally single-piece flow, getting fast and continual feedback on our work? These are the conditions that allow for focus and flow, challenge, learning, discovery, mastering our domain, and even joy. This is what being a developer means.</p>
-
-  <p>The Third Ideal: Improvement of Daily Work</p>
-
-  <p>The Third Ideal addresses paying down technical debt and improving architecture. When technical debt is treated as a priority and paid down and architecture is continuously improved and modernized, teams can work with flow, delivering better value sooner, safer, and happier. And the business ultimately wins when developers can deliver on enterprise performance goals.</p>
-
-  <p>The Fourth Ideal: Psychological Safety</p>
-
-  <p>Psychological safety is one of the top predictors of team performance. When team members feel safe to talk about problems, problems can not only be fixed but prevented. Solving problems requires honesty, and honesty requires an absence of fear. In knowledge work, psychological safety should be treated with the same importance as physical safety is in manufacturing.</p>
-
-  <p>The Fifth Ideal: Customer Focus</p>
-
-  <p>Customer focus relates to the difference between core and context as defined by Geoffrey Moore. Core is what customers are willing and able to pay for, the bread and butter of your business. Context is what they don’t care about, what it took to get them that product, including all the backend systems of an organization like HR and marketing and development. It’s critical to look at these Context systems as essential, as mission critical, and fund them appropriately. Context should never kill core.</p>
-
-</blockquote>
-
-<p>And a shorter version that’s less engineer focused from <a href="https://itrevolution.com/devops-a-primer/">“DevOps: A Primer For The Business Leader”</a>:</p>
-
-<blockquote>
-
-  <ul>
-    <li>Locality and Simplicity: alleviate dependencies between teams and components.</li>
-    <li>Focus, Flow, and Joy: the smooth flow of work that enables focus and joy.</li>
-    <li>Improvement of Daily Work: continuously improve and pay down technical debt.</li>
-    <li>Psychological Safety: a top predictor of team performance; enables improvement.</li>
-    <li>Customer Focus: optimize for customer value, not for a role-based silo.</li>
-  </ul>
 
 </blockquote>
 

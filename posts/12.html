@@ -138,6 +138,46 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2022/03/bullshit-jobs"><p>Bullshit Jobs</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2022-03-10T22:20:00Z" itemprop="datePublished">March 10, 2022</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Recommended by Rob, and part of a milieu that also included <em>The Real World of Technology</em> and <em>Breaking Stuff at Work</em> with a synthesis along the lines of “technology squeezes the lower-middle manager roles (sergeant/foreman), not the upper managers”. But that’s not what Bullshit Jobs is about.</p>
+
+<p>Apart from the essay, the best part for me was a description of how we haven’t replaced the feudal system, just layered onto it.</p>
+
+<p>It has some critical bits about open source being the fun bits done for free, and the paid job is unsatisfying duct taping it together. Which doesn’t track for my immediate experience (at least not what is blame on <em>open source</em> specifically), but the lines between “analyst/integrator” and “engineer” is real mushy sometimes.</p>
+
+<p>It’s a quick read, and I think is good contemporary cannon (aside: I wonder what Rushkoff is up to?). Besides briefly and self-consciously touching on UBI, it left me with an anxious “Yep!” that maybe didn’t need 350 pages to achieve.</p>
+
+<blockquote>
+  <p>This is a powerful argument for human freedom. Most of us like to talk about freedom in the abstract, even claim that it’s the most important thing for anyone to fight or die for, but we don’t think a lot about what being free or practicing freedom might actually mean. The main point of this book was not to propose concrete policy prescriptions, but to start us thinking and arguing about what a genuine free society might actually be like.</p>
+</blockquote>
+
+<p>There was quite a bit about feminization of work:</p>
+
+<blockquote>
+  <p>One might say that men will always take for themselves the kind of jobs one can tell stories about afterward, and try to assign women the kind you tell stories during.</p>
+</blockquote>
+
+<p>And distinctions between Michel Foucault’s power and domination (or Sarah Schulman’s conflict and abuse):</p>
+
+<blockquote>
+  <p>…unlike actual BDSM play, where there’s always a safe-word, when “normal” people fall into the same dynamic, there’s never such an easy way out. “You can’t say ‘orange’ to your boss.” It’s always occurred to me this insight is important and could even become the basis for a theory of social liberation.</p>
+</blockquote>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2022/03/oop-the-easy-way"><p>OOP the easy way</p>
 </a>
     </h1>
@@ -571,45 +611,6 @@ TRANSACTION (0.1ms)  ROLLBACK
 </blockquote>
 
 <p>Lastly, <a href="https://komoroske.com/slime-mold/">Alex Komoroske’s deck on Slime Molds</a> is good.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2021/10/til:-detecting-block-returns-in-ruby-"><p>TIL: Detecting block returns in Ruby</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2021-10-11T19:01:00Z" itemprop="datePublished">October 11, 2021</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I was doing some research on introspecting Ruby on Rails database transactions for a <a href="https://www.reddit.com/r/ruby/comments/q54515/comment/hg9dzdc/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">Reddit thread</a>, and came across this <a href="https://github.com/rails/rails/pull/29333">Rails PR</a> that had some new Ruby behavior for me: detecting an early <code>return</code> from a block.</p>
-
-<p>Some background: A Ruby language feature, that can frequently surprise people, is that using <code>return</code> within a Ruby block will return not only from the block itself, but also from the block’s caller too. Using <code>next</code> is really the only truly safe way to interrupt a block early; even <code>break</code> can be troublesome if the block is called by an enumerator. Also, <code>next</code> can take a return value too, just like <code>return</code> e.g. <code>next my_value</code>.</p>
-
-<p>I found the Rails PR interesting, because it has a method for detecting and warning on an early return. Here’s a simplified example:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-  <span class="n">block</span><span class="p">.</span><span class="nf">call</span>
-  <span class="n">completed</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># won't be called if the block returns early</span>
-<span class="k">ensure</span>
-  <span class="k">if</span> <span class="n">completed</span>
-    <span class="nb">puts</span> <span class="s2">"ok"</span>
-  <span class="k">else</span>
-    <span class="nb">puts</span> <span class="s2">"returned early"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">some_method</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1"># =&gt; "returned early"</span>
-<span class="n">some_method</span> <span class="p">{</span> <span class="k">next</span> <span class="p">}</span> <span class="c1"># =&gt; "ok"</span>
-</code></pre></div></div>
-
-<p>This works because the methods <code>ensure</code> block will always be called, even if <code>#some_method</code> returns early. That was a novel implementation for me.</p>
-
 
   </div>
 </article>

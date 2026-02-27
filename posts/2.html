@@ -138,6 +138,118 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/08/building-deterministic-reproducible-assets-with-sprockets"><p>Building deterministic, reproducible assets with Sprockets</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-08-26T03:03:00Z" itemprop="datePublished">August 26, 2025</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a> and <a href="/posts/tags/ruby">Ruby</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>This is a story that begins with airplane wifi, and ends with the recognition that everything is related in web development.</p>
+
+<p>While on slow airplane wifi, I was syncing this blog’s git repo, and it was taking forever. That was surprising because this blog is mostly text, which I expected shouldn’t require many bits to transfer for Git. Looking more deeply into it (I had a 4-hour flight), I discovered that the vast majority of the bits were in the git branch of built assets that gets deployed to GitHub Pages (<code>gh-pages</code>) when I build my Rails app into a static site <a href="https://island94.org/2025/01/living-parklife-with-rails-coming-from-jekyll">with Parklife</a>. And the bits in that branch were assets (css, javascript, and a few icons and fonts) built by Sprockets, whose contents were changing every time the blog was built and published. What changed?</p>
+
+<ul>
+  <li>Sprockets creates a file manifest that is randomly named <code>".sprockets-manifest-#{SecureRandom.hex(16)}.json"</code>.</li>
+  <li>Within the file manifest, there is an entry for every file built by Sprockets, that includes that original asset’s <code>mtime</code>—when the file on the filesystem was last touched, even if the contents didn’t change.</li>
+  <li>By default, Sprockets generates gzipped <code>.gz</code> copies of compressible assets, and it includes the uncompressed file’s <code>mtime</code> in the gzipped file’s header, producing different binary content even though the compressed payloads’ contents didn’t change.</li>
+</ul>
+
+<p>Do I need that? Let’s go through it.</p>
+
+<h3 id="the-sprockets-manifest">The Sprockets Manifest</h3>
+
+<p>The Sprockets Manifest is pretty cool (I mean <code>public/assets/.sprockets-manifest-*.json</code>, not <code>app/assets/config/manifest.js</code> which is different). The manifest is how Sprockets is able to add unique cache-breaking digests to each file while still remembering what the file was originally named. When building assets on a server with a persisted filesystem, Sprockets also uses the manifest to keep <em>old</em> versions of files around: <code>bin/rails assets:clean</code> will keep the last 3 versions of built assets, which is helpful for blue-green deployments. Heroku also has a <a href="https://devcenter.heroku.com/articles/rails-4-asset-pipeline#multiple-versions">bunch of custom stuff</a> powered by this too to make deployments seamless.</p>
+
+<p>But none of that is applicable to me and this blog, which gets built from scratch and committed to Git. Or for that matter, when I build some of my other Rails apps with Docker; not unnecessarily busting my cached file layers would be nice 💅</p>
+
+<p>The following is a monkeypatch, which works with Sprockets <em>right now</em> but I’m hoping to ultimately propose as a configuration option upstream (as others <a href="https://github.com/rails/sprockets/issues/707">have proposed</a>).</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/sprockets.rb</span>
+<span class="k">module</span> <span class="nn">SprocketsManifestExt</span>
+  <span class="k">def</span> <span class="nf">generate_manifest_path</span>
+    <span class="c1"># Always generate the same filename</span>
+    <span class="s2">".sprockets-manifest-</span><span class="si">#{</span><span class="s1">'0'</span> <span class="o">*</span> <span class="mi">32</span><span class="si">}</span><span class="s2">.json"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">save</span>
+    <span class="c1"># Use the epoch as the mtime for everything</span>
+    <span class="n">zero_time</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">utc</span>
+    <span class="vi">@data</span><span class="p">[</span><span class="s2">"files"</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="p">(</span><span class="n">_path</span><span class="p">,</span> <span class="n">asset</span><span class="p">)</span><span class="o">|</span>
+      <span class="n">asset</span><span class="p">[</span><span class="s2">"mtime"</span><span class="p">]</span> <span class="o">=</span> <span class="n">zero_time</span>
+    <span class="k">end</span>
+
+    <span class="k">super</span>
+  <span class="k">end</span>
+
+  <span class="no">Sprockets</span><span class="o">::</span><span class="no">Manifest</span><span class="p">.</span><span class="nf">prepend</span> <span class="nb">self</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Now, if you’re like me (on a plane), you might be curious about why the obsessive tracking of <code>mtime</code>. I have worked alongside several people in my career with content-addressable storage obsessions. The idea being: focus on the contents, not the container. And <code>mtime</code> is very much a concern of the <em>container</em>. But Sprockets <a href="https://github.com/rails/sprockets/blob/58759051635c3d660421908702b6ade729dd4ab8/README.md#cache">makes the case</a> that “Compiling assets is slow” so I can see it’s useful to quickly check when the file was modified, in a lot of cases… but not mine.</p>
+
+<p>Let’s move on.</p>
+
+<h3 id="gzip-but-maybe-you-dont-need-it">GZip, but maybe you don’t need it</h3>
+
+<p>So… everything in web development is connected. While wondering why new copies of every <code>.gz</code> file were being committed on every build, I remembered what my buddy Rob recently did in Rails: <a href="https://github.com/rails/rails/pull/55382"><code>MakeActiveSupport::Gzip.compress</code>￼deterministic</a>.</p>
+
+<blockquote>
+  <p>I have some tests of code that uses <code>ActiveSupport::Gzip.compress</code> that have been flaky for a long time, and recently discovered this is because the output of that method includes the timestamp of when it was compressed. If two calls with the same input happen during different seconds, then you get different output (so, in my flaky tests, they fail to compare correctly).</p>
+</blockquote>
+
+<p>GZip takes a parameter called <code>mtime</code>, which is stored and changes the timestamp of the compressed file(s) <em>when they are uncompressed</em>. It changes the <em>content</em> of the gzipped file, because it stores the timestamp in the contents of the file, but doesn’t affect the mtime of the gzipped file <em>container</em>.</p>
+
+<p>So in the case of Sprockets, if the modification date of the uncompressed asset changes, regardless of whether its contents have changed, a new and different (according to git or Docker) gzipped file will be generated. This was <em>really</em> bloating up my git repo.</p>
+
+<p>Props to Rack maintainer Richard Schneeman who <a href="https://github.com/rails/sprockets/pull/197#issuecomment-162954641">dug further down this hole previously</a>, admirably asking the zlib group themselves for advice. The commentary made a mention of nginx docs, which I assume is for <a href="https://nginx.org/en/docs/http/ngx_http_gzip_static_module.html"><code>ngx_http_gzip_static_module</code></a> which says:</p>
+
+<blockquote>
+  <p>The files can be compressed using the gzip command, or any other compatible one. It is recommended that the modification date and time of the original and compressed files be the same.</p>
+</blockquote>
+
+<p>But that’s not <code>GZip#mtime</code> value stored inside the contents of the gzip file, that’s the mtime of the <code>.gz</code> file container. Sprockets <em>also</em> sets that, with <a href="https://github.com/rails/sprockets/blob/4dff018b9271c37b09889e829f8926d1c5379731/lib/sprockets/utils/gzip.rb#L19C11-L19C22"><code>File.utime</code></a>.</p>
+
+<p>It’s easy enough to patch the mtime to the “unknown” value of <code>0</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/sprockets.rb</span>
+<span class="k">module</span> <span class="nn">SprocketsGzipExt</span>
+  <span class="k">def</span> <span class="nf">compress</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">_target</span><span class="p">)</span>
+    <span class="n">archiver</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="kp">nil</span>
+  <span class="k">end</span>
+
+  <span class="no">Sprockets</span><span class="o">::</span><span class="no">Utils</span><span class="o">::</span><span class="no">Gzip</span><span class="p">.</span><span class="nf">prepend</span> <span class="nb">self</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>…though if you’re in my shoes, you might not even need these gzipped assets. afaict only Nginx makes use of them with the non-default <code>ngx_http_gzip_static_module</code> module; Apache requires some complicated RewriteRules; Puma doesn’t serve them, CDNs don’t request them. Maybe turn them off? 🤷</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/sprockets.rb</span>
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">gzip</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Fun fact: <a href="https://github.com/rails/sprockets-rails/pull/551">that configuration was undocumented</a></p>
+
+<h3 id="maybe-please-dont-even-pass-mtime-to-gzip-for-web-assets">Maybe please don’t even pass <code>mtime</code> to gzip for web assets</h3>
+
+<p>All of this stuff about file modification dates reminded me of <em>another</em> thing I had once previously rabbit-holed on, which was <a href="https://github.com/feedbin/feedbin/issues/726">poorly behaved conditional requests in RSS Readers</a>. The bad behavior involved inappropriately caching web requests whose Last-Modified HTTP header changed, but their contents didn’t. And how do webservers generate their Last-Modified header value? That’s right, file <code>mtime</code>, the one that can be set by <code>File.utime</code>!</p>
+
+<p>…but not the one set by <code>GZip#mtime=</code>. I cannot find any evidence anywhere that value, <em>in the contents of the gzip file</em> matters. Nada. All it does is make the gzip file’s <em>contents</em> be different, because of that one tiny value being included. I can’t imagine anything cares about the original mtime when it’s unzipped, that wasn’t already transmitted via the Last-Modified HTTP header. What am I missing?</p>
+
+<p>Of the evidence I have, it seems like developers set <code>GZip#mtime=</code>… because it’s an option? I couldn’t find a reason <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in the Sprockets history</a>. I noticed that Rack::Deflater does the same for reasons I haven’t figured out <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in their history</a> either.  This behavior probably is not busting <em>a lot</em> of content-based caches unnecessarily, but it probably does some. So maybe don’t do it unless you need to.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/08/everything-i-know-about-ai-learned-by-reading-the-aws-bedrock-client-ruby-sdk-code"><p>Everything I know about AI, I learned by reading the AWS Bedrock Client Ruby SDK code</p>
 </a>
     </h1>
@@ -743,95 +855,6 @@ David</p>
 <hr />
 
 <p>Fuck, <a href="https://www.reddit.com/r/AmeriCorps/comments/1k8oh2r/hello_all_starting_a_thread_to_express_fears_and/">AmeriCorps is gone</a>.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/04/recently-april-20-2025"><p>Recently, April 20, 2025</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-04-21T00:19:00Z" itemprop="datePublished">April 21, 2025</time>
-
-        • Tagged <a href="/posts/tags/recently">recently</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Angelina caught a cold, so the past week has been largely laying low and sleeping 9+ hours a night trying not to catch it myself. Not the worst life.</p>
-
-<hr />
-
-<p>Elevating this to top fish recipe: <a href="https://www.seaforager.com/recipes/rockfish-garlic-shallots-tomatoes-amp-and-a-lotta-herbs">Rockfish, Garlic, Shallots, Tomatoes &amp; and a lotta Herbs</a>.</p>
-
-<hr />
-
-<p>Using ChatGPT’s Web Search is ok. “Find me articles, marketing posts, and conference talks about [something]”. I have to follow up several times slightly differently (“anything else? What about lightning talks?”) and copy resulting links into a separate doc to organize to have something approaching comprehensive….  But pretty good and better than what I can get out of either Kagi or Google. I ignore the summaries and chatty nonsense and just copy the links and read them myself. Sorry climate and future generations.</p>
-
-<hr />
-
-<p>I cut ~30 seconds from my GitHub Actions build times by replacing my <code>apt-get install</code> step with an action that caches using <a href="https://github.com/awalsh128/cache-apt-pkgs-action">awalsh128/cache-apg-pkgs-action</a>; there’s a couple options but this one had the most stars in the marketplace:</p>
-
-<pre><code># Before
-- name: "Install packages"  
-  run: |
-  sudo apt-get -yqq update
-  sudo apt-get -yqq install libvips-dev
-
-# After
-- name: "Install packages" 
-  uses: awalsh128/cache-apt-pkgs-action@7ca5f46d061ad9aa95863cd9b214dd48edef361d
-  with:
-  packages: libvips-dev
-  version: 1 # cache version, change to manually invalidate cache
-</code></pre>
-
-<hr />
-
-<p>Turbo/hotwire stuff: I’ve been gradually replacing more granular broadcasts of like prepend/update/remove with page refresh events for their simplicity. The challenge I have is that if there is a form + refreshable content on the same page (sometimes with the form in the middle or multiple forms). If the content refreshes, I don’t want to refresh the form. But I do want the form to refresh itself when submitted (show validation messages, reset, etc.). I can wrap the form in a data-turbo-permanent for the first part, but then the form doesn’t update when it’s submitted.</p>
-
-<p>My workaround to that is a stimulus controller that wraps the form and removes the <code>data-turbo-permanent</code> when the form is submitted, inspired by <a href="https://www.reddit.com/r/rails/comments/1d8fu0v/clever_new_hotwire_hack/">this</a>. Is there a better way to do it?</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">import</span> <span class="p">{</span> <span class="no">Controller</span> <span class="p">}</span> <span class="n">from</span> <span class="s2">"@hotwired/stimulus"</span>
-
-<span class="sr">//</span> <span class="no">To</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">wrap</span> <span class="n">a</span> <span class="n">form</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">the</span> <span class="n">form</span> <span class="n">to</span> <span class="n">be</span> <span class="n">permanent</span> <span class="n">during</span>
-<span class="sr">//</span> <span class="no">Turbo</span> <span class="no">Stream</span> <span class="n">refresh</span> <span class="n">events</span> <span class="n">but</span> <span class="n">to</span> <span class="n">update</span> <span class="n">normally</span> <span class="k">when</span> <span class="n">submitting</span> <span class="n">the</span> <span class="n">form</span><span class="p">.</span>
-<span class="nf">/</span><span class="o">/</span> <span class="no">Example</span><span class="p">:</span>
-<span class="sr">//</span>  <span class="o">&lt;</span><span class="n">div</span> <span class="n">data</span><span class="o">-</span><span class="n">turbo</span><span class="o">-</span><span class="n">permanent</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"&lt;%= dom_id(@phone, :message_form) %&gt;"</span> <span class="n">data</span><span class="o">-</span><span class="n">controller</span><span class="o">=</span><span class="s2">"permanent-form"</span><span class="o">&gt;</span>
-<span class="sr">//</span>    <span class="o">&lt;</span><span class="sx">%= form_with ...
-//  &lt;/div&gt;
-
-export default class extends Controller {
-  connect() {
-    this.submitHandler =</span> <span class="n">this</span><span class="p">.</span><span class="nf">submitForm</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
-    <span class="n">this</span><span class="p">.</span><span class="nf">element</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="s2">"submit"</span><span class="p">,</span> <span class="n">this</span><span class="p">.</span><span class="nf">submitHandler</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="n">disconnect</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">this</span><span class="p">.</span><span class="nf">element</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="s2">"submit"</span><span class="p">,</span> <span class="n">this</span><span class="p">.</span><span class="nf">submitHandler</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="n">submitForm</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="nf">target</span><span class="p">.</span><span class="nf">matches</span><span class="p">(</span><span class="s2">"form"</span><span class="p">))</span> <span class="p">{</span>
-      <span class="n">this</span><span class="p">.</span><span class="nf">element</span><span class="p">.</span><span class="nf">removeAttribute</span><span class="p">(</span><span class="s2">"data-turbo-permanent"</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<hr />
-
-<p>I finished <em>Spinning Silver</em>. Now reading <em>The Space Between Worlds</em>.</p>
-
-<p>I bought <a href="https://javascriptforrails.com/"><em>Javascript for Rails Developers</em></a>, largely because I like <a href="https://railsdesigner.com/articles/">the posts on Rails Designer</a>.</p>
-
-<p>I started the demo for Unbeatable (“where music is illegal and you do crimes”); I like the art style, but <em>is it fun?</em> I dunno.</p>
-
-<hr />
-
-<p>I had to go to the shipping warehouse to pick up my new <a href="https://island94.org/2025/04/recently-april-7-2025">mechanical keyboard</a> because I kept missing the delivery person, but it otherwise arrived no problem.</p>
 
   </div>
 </article>
