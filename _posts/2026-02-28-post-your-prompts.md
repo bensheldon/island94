@@ -20,7 +20,8 @@ These abstracts statements are more “I want to tell you about …” and less 
 The form doesn’t matter _to the want_. The da-dum da-dum rhythm of heading and sentences and commas that results is just how I’ve come to spit out my written words. Don’t worry about that. Post your want.
 
 What I mean to say is: this is working for me; I recommend you try it.
-## Becoming aware
+
+### Becoming aware
 
 I guess this is a post about writing. When you want to become a better writer, you get told to read more. I don’t think that’s quite right, or not the point I’d emphasize. Instead I’d say: When you want to write better, you should pay more attention when you’re reading to whether what you’re reading works for you and then pause a beat, and become aware of that feeling and, momentarily or however long you want, try to figure out why. …or why not.
 
@@ -32,7 +33,7 @@ That sort of awareness can be hard because the vast majority of what shows up in
 
 Mildly good itself is a totally reasonable target. I should be so lucky to be surrounded by and produce myself mildly good writing. Mildly good!
 
-## My answer for mildly good
+### My answer for mildly good
 
 So, the entire previous section was me recommending that you develop your own personal sense of awareness and taste for writing that works for you.
 
@@ -55,7 +56,7 @@ Detail, detail, detail, and a joke at the end. It’s arguably a shaggy dog stor
 
 ![](/uploads/2026/whitehorse.jpg)
 
-## Back to the prompt
+### Back to the prompt
 
 I want to read what is personally meaningful to you. At a minimum I’m curious, and more often, *I care.* I wouldn’t bother reading it otherwise.
 
