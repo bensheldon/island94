@@ -60,6 +60,6 @@ Detail, detail, detail, and a joke at the end. It’s arguably a shaggy dog stor
 
 I want to read what is personally meaningful to you. At a minimum I’m curious, and more often, *I care.* I wouldn’t bother reading it otherwise.
 
-So don’t fuck around having an LLM wrap what you intend to say in meaninglesless and next-token statistical noise. [Go at it with a ruthless knife.](https://island94.org/2010/06/fierce-editing) Tell me what you want to say. Write it down.
+So don’t fuck around having an LLM wrap what you intend to say in meaninglesless and next-token statistical noise. [Go at it with a ruthless knife.](https://island94.org/2010/06/fierce-editing) Say what you want to say. Write it down. Tell me. I'll put it in my RSS reader. 
 
 And thank you Jon for writing the [much longer, more thoughtful piece](https://jonsully.net/blog/generative-ai-tech-writing-disclose) that inspired this, and the discussion in the Ruby on Rails Performance Slack where I mostly spat all this out already.
