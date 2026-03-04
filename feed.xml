@@ -5,8 +5,54 @@
     <description>A Lost and Found</description>
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Feb 2026 12:00:00 +0000</pubDate>
+    <pubDate>Wed, 04 Mar 2026 15:18:00 +0000</pubDate>
     <generator>Ruby on Rails</generator>
+      <item>
+        <title>War</title>
+        <description>
+          <![CDATA[
+          <p>The second Iraq War started during Spring Break of my sophomore year of university. It was coming. The one international relations class I have ever taken, an honors seminar on US interventionism, had wrapped up several weeks prematurely. The classes’s teacher, Ambassador Barbara Bodine, had been recalled to Washington.</p>
+
+<p>I spent that Spring Break week on campus alone with my thoughts, as any romantic 19-year old I imagine would. The woman I had just begun dating, who I had met in that same university class, was traveling in Germany. That relationship would last another three years; the Iraq war would last eight.</p>
+
+<p>I did not sign up. My best friend had been exercising with the ROTC cadets. I remember him explaining that the army’s current slogan “Army of ONE” was terrible. He not sign his paperwork. He lives in Germany now.</p>
+
+<p>Another member of our same high school friend group did serve. While on leave later that year, he would kill a man outside his hotel, presumed to have been caught stealing from his car, and then would kill himself.</p>
+
+<p>My grandfather served in the Army, in Alaska, during World War 2. The family lore is that while courting my grandmother, he briefly snuck off base for a date. My grandfather being the model of a loyal, hardworking, reliable private, caused the base commander to exclaim: “AWOL? Not Jerome!”</p>
+
+<p>My other grandfather served during the last days of World War One in his native Hungary, before Trianon. He would go to Spain as an American communist to report on the civil war against fascism. He came back a liberal anti-communist and <a href="https://americancommissar.wordpress.com/">wrote a book about it</a>. The US government would later prevent him from returning to Hungary to cover the revolution against the Soviets for Newsweek.</p>
+
+<p>My dad fell off a cable car as a teenager and messed up his knees. That led to a draft deferment. His knees still cause him pain.</p>
+
+<p>My uncle was drafted and served in Vietnam. We don’t talk about it.</p>
+
+<p>I can check online to see that yes, I did register for Selective Service a week after my 18th birthday.</p>
+
+<p>My father-in-law served in the US Army in Germany after Korea and before Vietnam, paving the way for his US citizenship. His father served in the Chaco War, which would kill 2% of the population of his home nation, Bolivia.</p>
+
+<p>When I was 5, we hosted a family from the Soviet Union through MEND, Mothers Embracing Nuclear Disarmament. One of their gifts was a matryoshka nesting doll. It sits on my piano today.</p>
+
+<p>During my last year working at UMass Boston’s College of Public and Community Service, 2011-ish, I started taking my lunch on a newly-installed bench overlooking Dorchester Bay. The bench had a plaque remembering a US soldier killed in Kandahar Province, Afghanistan.</p>
+
+<p>In the acknowledgements of Spencer Ackerman’s book, <em>Reign of Terror</em>, he writes:</p>
+
+<blockquote>
+  <p>Yes, I know this book is incomplete.</p>
+
+  <p>There’s not enough in <em>Reign</em> about the pivotal role of the media in manufacturing consent for the War on Terror. There’s nowhere <em>near</em> enough about the economic forces driving the war, both specific and structural. Ultimately, I found that attempting either analysis swallowed the actual narrative events of the war and <em>still</em> felt superficial. These subjects require books in their own right—particularly one I’m tossing around in my head called <em>Capitalism and Terrorism.</em> (That book is the forum to go into the U.S.–Saudi relationship and its place in all this, I found . . . after failing to get it into <em>Reign</em> satisfactorily.) I chose to attempt to do one thing well instead of three things badly.</p>
+
+  <p>That leads to the second way <em>Reign</em> is incomplete. I had to make a lot of cuts. They were a function of <em>Reign</em>’s particular critique, as well as the unavoidable reality that I have a twenty-year palette of events and a contractually stipulated word limit. (Someone have me on their podcast to talk about Michelle Malkin bullying Dunkin’ Donuts because she was mad Rachael Ray appeared in a commercial wearing a scarf that looked kind of like a kaffiyeh.) Even after all those cuts, at all times writing this book, a voice in my head objects that I’m presenting the “We Didn’t Start the Fire” version of the Forever War. So if I didn’t dwell long enough on events you think are crucial, know that I tried, and please research and write your own versions that outdo mine.</p>
+
+  <p>The third way <em>Reign</em> is incomplete is that much of what I write about remains an official secret. The façade of the War on Terror has been cracked, but we won’t know what the war truly was for decades. I frankly don’t think anything we discover will undermine the critique of <em>Reign</em>. I expect what we learn to reinforce my critique. Consider that at least eighteen hundred photographs of military torture have been barred from public release after a yearslong legal battle. Not even Dan Jones’s torture report could tell the story of CIA renditions, operations that we know applied to more people than the CIA directly jailed and tortured. Some aspects of the War on Terror are likely lost to history forever.</p>
+</blockquote>
+
+          ]]>
+        </description>
+        <link>https://island94.org/2026/03/war</link>
+        <guid isPermaLink="true">https://island94.org/2026/03/war</guid>
+        <pubDate>Wed, 04 Mar 2026 15:18:00 +0000</pubDate>
+      </item>
       <item>
         <title>Post your Prompts</title>
         <description>
@@ -908,134 +954,6 @@ party gems.</li>
         <link>https://island94.org/2025/10/notes-from-building-a-who-is-doing-what-right-now-on-our-website-presence-feature-with-action-cable</link>
         <guid isPermaLink="true">https://island94.org/2025/10/notes-from-building-a-who-is-doing-what-right-now-on-our-website-presence-feature-with-action-cable</guid>
         <pubDate>Mon, 06 Oct 2025 14:59:00 +0000</pubDate>
-      </item>
-      <item>
-        <title>Serializing ViewComponent for Active Job and Turbo broadcast later</title>
-        <description>
-          <![CDATA[
-          <p>I recently started using ViewComponent. I’ve been gradually removing non-omikase libraries from my Rails applications over the past decade, but ViewComponent is alright. I was strongly motivated by Boring Rails’ <a href="https://boringrails.com/articles/self-updating-components/">“Hotwire components that refresh themselves”</a>, cause matching up all the dom ids and stream targets between views/partials and …. wherever you put your Stream and Broadcast renderers is a pain.</p>
-
-<p>You might be familiar with me as the GoodJob author. So of course I wanted to have my Hotwire components refresh themselves <em>later</em> and move stream broadcast rendering into a background job. I simply call <code>MessagesComponent.add_message(message)</code> and broadcasts an update <em>later</em> to the correct stream and target that are all nice and local when defined inside the View Component:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MessageListComponent</span> <span class="o">&lt;</span> <span class="no">ApplicationComponent</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">user</span>
-    <span class="no">Turbo</span><span class="o">::</span><span class="no">StreamsChannel</span><span class="p">.</span><span class="nf">broadcast_action_later_to</span><span class="p">(</span>
-      <span class="n">user</span><span class="p">,</span> <span class="ss">:message_list</span><span class="p">,</span>
-      <span class="ss">action: :append</span><span class="p">,</span>
-      <span class="ss">target: </span><span class="no">ActionView</span><span class="o">::</span><span class="no">RecordIdentifier</span><span class="p">.</span><span class="nf">dom_id</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="ss">:message_list</span><span class="p">),</span>
-      <span class="ss">renderable: </span><span class="no">MessageComponent</span><span class="p">.</span><span class="nf">serializable</span><span class="p">(</span><span class="ss">message: </span><span class="n">message</span><span class="p">),</span> <span class="c1"># &lt;- that right there</span>
-      <span class="ss">layout: </span><span class="kp">false</span>
-    <span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">user</span><span class="p">:,</span> <span class="n">messages</span><span class="p">:)</span>
-    <span class="vi">@user</span> <span class="o">=</span> <span class="n">user</span>
-    <span class="vi">@messages</span> <span class="o">=</span> <span class="n">messages</span>
-  <span class="k">end</span>
-
-  <span class="n">erb_template</span> <span class="o">&lt;&lt;~</span><span class="no">HTML</span><span class="sh">
-    &lt;%= helpers.turbo_stream_from @user, :message_list %&gt;
-    &lt;div id="&lt;%= dom_id(@user, :message_list) %&gt;"&gt;
-      &lt;%= render MessageComponent.with_collection @messages %&gt;
-    &lt;/div&gt;
-</span><span class="no">  HTML</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>That’s a simple example.</p>
-
-<h3 id="making-a-renderable-work-later">Making a renderable work <em>later</em></h3>
-
-<p>The ViewComponent team can be really proud of <a href="https://github.com/rails/rails/pull/37919">adding first-class support to Rails</a> for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a <code>renderable</code>  .</p>
-
-<p>For ViewComponent to be compatible with Turbo Broadcasting <em>later</em>, those View Components need to be serializable by Active Job. That’s because Turbo Rail’s <code>broadcast_*_later_to</code> takes the arguments it was passed and serializes them into a job so they can be run elsewhere better/faster/stronger.</p>
-
-<p>To serialize a ViewComponent, we need to collect its initialization arguments so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its  <code>initialize</code> method. To patch into that, there are a couple of different strategies I thought of taking:</p>
-
-<ul>
-  <li>
-    <p>Make the developer figure out which properties of an existing ViewComponent (ivars, attributes) should be grabbed and how to do that.</p>
-  </li>
-  <li>
-    <p><code>prepend</code> a module method in front of <code>ViewComponent#initialize</code>. Our module would always have to be at the top of the ancestors hierarchy, because subclasses might overload <code>initialize</code> themselves, so we’d have to have an <code>inherited</code> callback that would prepend the module (again) every time that happened</p>
-  </li>
-  <li>
-    <p>Simply initialize the ViewComponent via another, more easily interceptable method, when you want it to be serializable.</p>
-  </li>
-</ul>
-
-<p>I respect that ViewComponent maintainers really want a ViewComponent to be <em>just like any other Ruby object</em> that you create with <code>new</code> and <code>initialize</code> , but it makes this particular goal, serialization, rather difficult. You can maybe see the ViewComponent maintainers ran into a few problems with initialization themselves: a collection of ViewComponents can optionally have each member initialized with an iteration number, but to do that <a href="https://github.com/ViewComponent/view_component/blob/1ed16e33ad70e45ffc08de3b68760a83d08e912e/lib/view_component/base.rb#L667-L712">ViewComponent has to introspect the <code>initialize</code> parameters</a>  to determine if the object implements the iteration parameter to decide whether to send it 🫠 That parameter introspection also means that we can’t simply prepend a redefined generic <code>initialize(*args, **kwargs)</code> because that would break the collection feature. Not great 💛</p>
-
-<p>So, given the compromises I’m willing to make between ergonomics and complexity and performance, given my abilities, and my experience, and what I know at this time…. I decided to simply make a new initializing class method, named <code>serializable</code>. If I want my ViewComponent to be serializable, I initialize it with <code>MyComponent.serializable(foo, bar:)</code>.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/view_component.rb</span>
-<span class="c1">#</span>
-<span class="c1"># Instantiate a ViewComponents that is (optionally) serializable by Active Job</span>
-<span class="c1"># but otherwise behaves like a normal ViewComponent. This allows it to be passed</span>
-<span class="c1"># as a renderable into `broadcast_action_later_to`.</span>
-<span class="c1">#</span>
-<span class="c1"># To use, include the `ViewComponent::Serializable` concern:</span>
-<span class="c1">#</span>
-<span class="c1">#  class ApplicationComponent &lt; ViewComponent::Base</span>
-<span class="c1">#    include ViewComponent::Serializable</span>
-<span class="c1">#  end</span>
-<span class="c1">#</span>
-<span class="c1"># And then call `serializable` instead of `new` when instantiating:</span>
-<span class="c1">#</span>
-<span class="c1">#   Turbo::StreamsChannel.broadcast_action_later_to(</span>
-<span class="c1">#     :admin, user, :messages,</span>
-<span class="c1">#     action: :update,</span>
-<span class="c1">#     target: ActionView::RecordIdentifier.dom_id(user, :messages),</span>
-<span class="c1">#     renderable: MessageComponent.serializable(message: message)</span>
-<span class="c1">#   )</span>
-<span class="c1">#</span>
-<span class="k">module</span> <span class="nn">ViewComponent</span>
-  <span class="k">module</span> <span class="nn">Serializable</span>
-    <span class="kp">extend</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Concern</span>
-
-    <span class="n">included</span> <span class="k">do</span>
-      <span class="nb">attr_reader</span> <span class="ss">:serializable_args</span>
-    <span class="k">end</span>
-
-    <span class="n">class_methods</span> <span class="k">do</span>
-      <span class="k">def</span> <span class="nf">serializable</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-        <span class="n">new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
-          <span class="n">instance</span><span class="p">.</span><span class="nf">instance_variable_set</span><span class="p">(</span><span class="ss">:@serializable_args</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
-        <span class="k">end</span>
-      <span class="k">end</span>
-      <span class="n">ruby2_keywords</span><span class="p">(</span><span class="ss">:serializable</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">ViewComponentSerializer</span> <span class="o">&lt;</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Serializers</span><span class="o">::</span><span class="no">ObjectSerializer</span>
-  <span class="k">def</span> <span class="nf">serialize?</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
-    <span class="n">argument</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">ViewComponent</span><span class="o">::</span><span class="no">Base</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">argument</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:serializable_args</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">view_component</span><span class="p">)</span>
-    <span class="k">super</span><span class="p">(</span>
-      <span class="s2">"component"</span> <span class="o">=&gt;</span> <span class="n">view_component</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="p">,</span>
-      <span class="s2">"arguments"</span> <span class="o">=&gt;</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Arguments</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="n">view_component</span><span class="p">.</span><span class="nf">serializable_args</span><span class="p">),</span>
-    <span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
-    <span class="nb">hash</span><span class="p">[</span><span class="s2">"component"</span><span class="p">].</span><span class="nf">safe_constantize</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="o">*</span><span class="no">ActiveJob</span><span class="o">::</span><span class="no">Arguments</span><span class="p">.</span><span class="nf">deserialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">[</span><span class="s2">"arguments"</span><span class="p">]))</span>
-  <span class="k">end</span>
-
-  <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Serializers</span><span class="p">.</span><span class="nf">add_serializers</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p><strong>Real talk:</strong> I haven’t packaged this into a gem. I didn’t want to maintain it for everyone, and there are some View Component features (like collections) it doesn’t handle yet because I haven’t used them (yet). I think this sort of thing is first-class behavior for the current state of Rails and Active Job and Turbo, and I’d rather the library maintainers figure out what the best balance of ergonomics, complexity, and performance is for them. I’ve been gently poking them about it in their Slack; they’re great 💖</p>
-
-          ]]>
-        </description>
-        <link>https://island94.org/2025/09/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later</link>
-        <guid isPermaLink="true">https://island94.org/2025/09/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later</guid>
-        <pubDate>Sun, 14 Sep 2025 14:17:00 +0000</pubDate>
       </item>
   </channel>
 </rss>

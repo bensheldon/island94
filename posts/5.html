@@ -138,6 +138,81 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/07/on-the-importance-of-rails-code-reloading"><p>On the importance of Rails code reloading and autoloading</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-07-07T14:44:00Z" itemprop="datePublished">July 7, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I’ve elevated to “strongly held belief” that <a href="https://island94.org/2024/04/a-ruby-meetup-and-3-podcasts">code reloading and autoloading is <em>the</em> most important design constraint</a> when designing or architecting for Ruby on Rails.</p>
+
+<ul>
+  <li>Code reloading is what powers the “make a code change, refresh the browser, see the result” development loop.</li>
+  <li>Code autoloading is what allows Rails to boot in milliseconds (if you’ve designed for it!) to run generators and application scripts and a single targeted test for tight test-driven-development loops.</li>
+</ul>
+
+<p>When <a href="https://guides.rubyonrails.org/autoloading_and_reloading_constants.html">autoloading and reloading</a> just works, it probably isn’t something you think about. When code autoloading and reloading doesn’t work or works poorly, as it has on numerous apps across my career and consulting, it can be maddening:</p>
+
+<ul>
+  <li>Spending hours “debugging” some code only to realize that your changes were never being run at all.</li>
+  <li>Waiting tens of excruciatingly boring seconds to run a simple test or watching the browser churn away while it slowly waits for a response from the development server.</li>
+  <li>Feeling like you can write the code yourself each time faster than running a scaffold/template generator, repetitively over and over again.</li>
+</ul>
+
+<p>Code reloading and autoloading not working correctly is a huge pain. It’s not great, at all!</p>
+
+<p>The history of code reloading and autoloading came up recently in the <a href="https://www.railsspeed.com">Rails Performance Slack</a>. A  developer working on an old Rails application asked what Spork was (a forking preloader), and whether it was necessary (not necessarily). As a Rails Developer who is increasingly aware of my <del>age</del> experience (I started working with Rails in 2012, long after it first launched in 2004, but it’s still been a minute), I realized I had something to share.</p>
+
+<p>Over history, various strategies have been taken to make the development loop faster because that’s so important. Those strategies usually boil down to:</p>
+
+<ul>
+  <li>Separating the (static) framework code from the (changing, developed) application code and only loading, just in time, what’s needed for the part of the application that’s currently running.</li>
+  <li>Loading/booting the framework code that is unlikely to change, and then only (re-)load the application code when invoking a command or running a test.</li>
+</ul>
+
+<p>There have been various approaches to doing this:</p>
+
+<ul>
+  <li>Forking Preloaders (Spork, though Spring is the more contemporary version): load up the framework code in a process once, then fork into a subprocess when you invoke a command and reload just the application code. Sometimes, things can get out of sync (some application code or state pollutes the primary process), and things get weird/confusing. This is why you’ll hear of people hating on Spring or complaining, “I wasted all day on a development bug, and it turns out I just needed to restart Spring” (the analogous “it was DNS all along” of the Rails world).</li>
+  <li>Bootsnap, though operating on a cache strategy rather than a process-forker, serves a similar purpose of trying to speed up an application’s code loading time. The adoption of Bootsnap, and much, much faster CPUs in general, has largely replaced the usage of Spring in applications (though it’s still okay!).</li>
+  <li>Zeitwerk autoloader also plays a role in this history because it, too, is trying to “solve” the necessity of separating the framework code (which changes infrequently) from the application code during development (which is actively being changed) to produce faster development feedback cycles. Zeitwerk replaced the previous autoloader built into Rails, whose lineage seems to date all the way back to <a href="https://github.com/bensheldon/rails/commit/ee014ef95ae9746b4228f3bc7c85ac0df28ba1df">Rails 2.0 circa 2005</a>. Tell me the history / raison d’être of the original autoloader if you know it!</li>
+</ul>
+
+<p>Look, a lot of labor has gone into this stuff. It’s important! And it’s easy to get wrong and produce a slow and disordered application where development is a pain. It happens! A lot!</p>
+
+<p>I wish I could easily leave this post with some kind of <em>nugget</em> of something actionable to do, but it’s really more like: <strong>please take care</strong>. Some rules of thumb:</p>
+
+<ul>
+  <li>Don’t reference, don’t access, don’t use or touch any constants in <code>app/</code>, or allow them to be referenced (looking at you, custom Rack Middleware) unless you’re doing so from another constant in <code>app/</code> (or somewhere that you <em>know</em> is <a href="https://island94.org/2023/05/whatever-you-do-don-t-autoload-rails-lib">autoloaded</a>).</li>
+  <li>Take care with <code>config/initializers/</code> and ensure you’re making the most of <code>ActiveSupport.on_load</code> hooks. Rails may even be missing <a href="https://guides.rubyonrails.org/engines.html#available-load-hooks">some load hooks</a>, so make an upstream PR if you need to configure an autoloaded object and you can’t. It’s super common to run into trouble; in writing this blog post alone, I discovered a <a href="https://github.com/textacular/textacular/pull/159">problem with a gem I use</a>.</li>
+  <li>If you’re writing library code, become familiar with the configuration-class-initializer-attribute-pattern dance (my name for it), which is how you’ll get something like <code>config.action_view.something = :the_thing</code> lifted and constantized into <code>ActionView::Base.something #=&gt; TheThing</code></li>
+</ul>
+
+<p>You might find luck with this <a href="https://gist.github.com/bensheldon/ba6532c4216c11dd9ba03487c5a06ee4">bin/autoload-check script</a>, that I adapted from something <a href="https://www.johnhawthorn.com/">John Hawthorn</a> originally wrote, giving output like:</p>
+
+<pre><code class="language-text">❌ Autoloaded constants were referenced during during boot.
+These files/constants were autoloaded during the boot process,
+which will result in inconsistent behavior and will slow down and
+may break development mode. Remove references to these constants
+from code loaded at boot.
+
+🚨 ActionView::Base (action_view) referenced by config/initializers/field_error.rb:3:in `&lt;main&gt;'
+🚨 ActiveJob::Base (active_job)   referenced by config/initializers/good_job.rb:7:in `block in &lt;main&gt;'
+🚨 ActiveRecord::Base (active_record)
+                                         /Users/bensheldon/.rbenv/versions/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.4/lib/active_record/base.rb:338:in `&lt;module:ActiveRecord&gt;'
+                                         /Users/bensheldon/.rbenv/versions/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.4/lib/active_record/base.rb:15:in `&lt;main&gt;'
+                                         .....
+</code></pre>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/07/notes-from-carrierwave-to-active-storage"><p>Notes from Carrierwave to Active Storage</p>
 </a>
     </h1>
@@ -897,291 +972,6 @@ window.Confetti = function () {
   }
 };
 </script>
-
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/01/replacing-devise-with-rails-has_secure_password-and-friends"><p>Replacing Devise with Rails <code>has_secure_password</code> and friends</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-01-27T15:43:00Z" itemprop="datePublished">January 27, 2024</time>
-
-        • Tagged <a href="/posts/tags/rails">rails</a> and <a href="/posts/tags/ruby">ruby</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I love the <a href="https://github.com/heartcombo/devise">Devise user-authentication gem</a>. I’ve used it for years, and I recently moved off of it in one of my personal apps and replaced it with Rails’s built-in <code>has_secure_password</code> and <code>generates_secure_token</code> and a whole bunch of custom controllers and helpers and code that I now maintain myself. <strong>I do not recommend this! User authentication is hard! Security is hard!</strong></p>
-
-<p><strong>And…</strong> maybe you need to walk the same path too. So I want to share what I learned through the process.</p>
-
-<p>Ok, so to back up, why did I do this?</p>
-<ul>
-  <li>Greater compatibility with Rails <code>main</code>. My <a href="https://github.blog/2023-04-06-building-github-with-ruby-and-rails/">day job runs Rails <code>main</code></a>, and I’m more frequently contributing to Rails development; I’d like to run my personal projects on Rails <code>main</code> too. When I looked back on upgrade-blocking gems, Devise (and its dependencies, like Responders) topped my list.</li>
-  <li>More creative onboarding flows. I’ve twisted Devise quite a bit (it’s great!) to handle the different ways I want users to be able to register (elaborate onboarding flows, email-only subscriptions, optional passwords, magic logins). I’ve already customized or overloaded nearly every Devise controller and many model methods, so it didn’t seem like such a big change anyway.</li>
-  <li>Hubris. I’ve built enterprise auth systems from scratch, managed the Bug Bounty program, and worked with security researchers. I have seen and caused and fixed some shit. (Fun fact: I have been paid for reporting auth vulnerabilities on the bug bounty platforms themselves.) I know that even if it’s not a bad idea <em>for me</em>, it’s not a great idea either. Go read <a href="https://github.com/advisories?query=devise+ecosystem%3Arubygems">all of the Devise-related CVEs</a>; seriously, it’s a responsibility.</li>
-</ul>
-
-<p>That last bit is why this blog post will not be like, “Here’s everything you need to know and do to ditch Devise.” Don’t do it! Instead, here’s some stuff I learned that I want to remember for the next app I work on.</p>
-
-<h3 id="a-test-regime">A test regime</h3>
-
-<p>I went back through all of my system tests for auth, and here is a cleaned-up, though not exhaustive list of my scenarios and assertions. It seems like a lot. It is! There are also unit tests for models and controllers and mailers and separate API tests for the iOS and Android apps. Don’t take this lightly! (Remember, many of these are specific to my custom onboarding flows).</p>
-
-<ul>
-  <li>When a new user signs up for an account
-    <ul>
-      <li>Their email is valid, present and stored; password is nil.</li>
-      <li>They are not confirmed</li>
-      <li>They receive a confirmation email</li>
-      <li>If not confirmed, registering again with the same email resends the confirmation email but does not leak account presence</li>
-      <li>If the email associated account already exists and is confirmed, sends a “you already have an account” email and does not leak account presence.</li>
-      <li>Following the link in the confirmation email confirms the new account and redirects to the account setup page.</li>
-    </ul>
-  </li>
-  <li>When a user sets up their account
-    <ul>
-      <li>They can assign a username and password</li>
-      <li>A password cannot be assigned if a password already exists</li>
-      <li>A username cannot be assigned if a username already exists</li>
-      <li>If a username and password already exist, the setup page redirects to the account update page</li>
-      <li>The account update page redirects to the setup page if a username or password does not yet exist</li>
-      <li>Signing in with an unsetup account redirects to setup page</li>
-      <li>Resetting password with an unsetup account redirects to setup page</li>
-      <li>Adding a password invalidates reset-password links.</li>
-    </ul>
-  </li>
-  <li>When a user updates their account
-    <ul>
-      <li>The current password is required to update email, username, or password.</li>
-      <li>When the email address is changed, a new confirmation email is sent out to that email address.</li>
-      <li>An email change confirmation can be confirmed with or without an active session.</li>
-      <li>If the email address is already confirmed by a different account, send the “you already have an account” email and do not leak account presence.</li>
-      <li>Multiple accounts can have the same unconfirmed email address.</li>
-    </ul>
-  </li>
-  <li>When a user performs a password reset
-    <ul>
-      <li>Can’t be accessed with an active session</li>
-      <li>Link is invalidated after 20 minutes, or when email, or password changes.</li>
-      <li>Can be performed on an unsetup account</li>
-      <li>Confirms an email but not an email change</li>
-      <li>Signs in the user</li>
-      <li>Does not leak account presence</li>
-      <li>Is throttled to only send once a minute.</li>
-    </ul>
-  </li>
-  <li>When a user performs or resends an email confirmation
-    <ul>
-      <li>Can be accessed with an active session.</li>
-      <li>Cannot resend confirmation of an email change without an active session.</li>
-      <li>Link is invalidated after 20 minutes, or when email, unconfirmed email, confirmed at, or password changes.</li>
-      <li>Signs in the user</li>
-      <li>Does not leak account presence</li>
-      <li>Is throttled to only send once a minute.</li>
-      <li>When user is already confirmed, send them an email with a link to reset their password</li>
-    </ul>
-  </li>
-  <li>When a user signs into a session
-    <ul>
-      <li>Requires a valid email or username, and password</li>
-      <li>Cannot sign in with a nil, blank, or absent password param (unsetup account)</li>
-      <li>Session is invalidated when email or password changes.</li>
-      <li>Does not leak account presence with missing or invalid credentials</li>
-      <li>Redirects to the <code>session[:return_to]</code> path if present, otherwise the root path.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="using-has_secure_password">Using <code>has_secure_password</code></h3>
-
-<p>This was a fairly simple change. I had to explicitly add <code>bcrypt</code> to the gemfile, and then add to my <code>User</code> model:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># models/user.rb</span>
-<span class="n">alias_attribute</span> <span class="ss">:password_digest</span><span class="p">,</span> <span class="ss">:encrypted_password</span>
-<span class="n">has_secure_password</span> <span class="ss">:password</span>
-</code></pre></div></div>
-
-<p>I’ll eventually rename the database column, but this was a zero-migration change.</p>
-
-<p>Also, you might need to use <code>validations: false</code>  on <code>has_secure_password</code> and implement your own validations if you have custom onboarding flows like me. Read <a href="https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html">the docs</a> and the <a href="https://github.com/rails/rails/blob/68eade83c87ae309191add6dfa4959d7d7e07464/activemodel/lib/active_model/secure_password.rb#L114">Rails code</a>.</p>
-
-<p>When authenticating on sign in, you’ll want to use <code>User.authenticate_by(email:, password:)</code>, which is intended to avoid timing attacks.</p>
-
-<h3 id="using-generates_token_for">Using <code>generates_token_for</code></h3>
-
-<p>The <code>generates_token_for</code> methods are new in Rails 7.1 and <a href="https://github.com/rails/rails/pull/44189">really nice</a>. They create a signed token containing the user id and additional matching attributes and it doesn’t need to be stored in the database:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># models/user.rb</span>
-<span class="n">generates_token_for</span> <span class="ss">:email_confirmation</span><span class="p">,</span> <span class="ss">expires_in: </span><span class="mi">30</span><span class="p">.</span><span class="nf">minutes</span> <span class="k">do</span>
-  <span class="p">[</span><span class="n">confirmed_at</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">unconfirmed_email</span><span class="p">,</span> <span class="n">password_salt</span><span class="p">]</span>
-<span class="k">end</span>
-
-<span class="n">generates_token_for</span> <span class="ss">:password_reset</span><span class="p">,</span> <span class="ss">expires_in: </span><span class="mi">30</span><span class="p">.</span><span class="nf">minutes</span> <span class="k">do</span>
-  <span class="p">[</span><span class="n">email</span><span class="p">,</span> <span class="n">password_salt</span><span class="p">]</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>I’ll explain that <code>password_salt</code> in a bit.</p>
-
-<p>To verify this, you want to do use something like this: <code>User.find_by_token_for(:email_confirmation, value_from_the_link)</code>.</p>
-
-<p>btw security: when you put a link in an email message, you can only use a <code>GET</code> , because emails can’t reliably submit web forms (some clients can, but it’s weird and unreliable). So your link is going to look like <code>https://example.com/account/reset_password?token=blahblahblahblahblah</code>. If there is any links to 3rd party resources like script tags or off-domain images, you will <a href="https://portswigger.net/kb/issues/00500400_cross-domain-referer-leakage">leak the token through the <code>referrer</code></a>  when the page is loaded with the <code>?token=</code> in the URL. <a href="https://github.com/heartcombo/devise/pull/4366">Devise never fixed it (😱)</a> . What you should do is take value out of the query param and put it in the session and redirect back to the same page without the query parameter and use the session value instead. (Fun fact: this is a bug bounty that got me paid.)</p>
-<h3 id="authenticatable-salts">Authenticatable salts</h3>
-
-<p>Here’s where I explain that <code>password_salt</code> value.</p>
-
-<p>There’s several places I’ve mentioned where tokens and sessions should be invalidated when the account password changes. When <code>bcrypt</code> stores the password digest in the database, it also generates and includes a random “salt” value that changes every time the password changes. Comparing that salt is a proxy for “did the password change?” and it’s safer to embed that random salt in cookies and tokens instead of the user’s hashed password.</p>
-
-<p><a href="https://github.com/heartcombo/devise/blob/e2242a95f3bb2e68ec0e9a064238ff7af6429545/lib/devise/models/database_authenticatable.rb#L15C6-L158C1">Devise uses the first 29 characters</a> of the encrypted password (which is technically the <a href="https://en.wikipedia.org/wiki/Bcrypt#Description">algorithm, cost and salt</a>):</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># models/user.rb</span>
-<span class="k">def</span> <span class="nf">authenticatable_salt</span>
-  <span class="n">encrypted_password</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span> <span class="k">if</span> <span class="n">encrypted_password</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>But it’s also possible to simply get the salt. I dunno if the difference matters (tell me!):</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># models/user.rb</span>
-<span class="k">def</span> <span class="nf">password_salt</span>
-  <span class="no">BCrypt</span><span class="o">::</span><span class="no">Password</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">password_digest</span><span class="p">).</span><span class="nf">salt</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="o">..</span><span class="p">]</span> <span class="k">if</span> <span class="n">password_digest</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h3 id="a-nice-session">A nice session</h3>
-
-<p>There’s a lot to write about creating sessions and remember-me cookies, that I won’t be writing here. The main thing to note is that I’m storing and verifying both the user id <em>and</em> their password salt in the session; that means all of their session are invalidated when they change their password:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/application_controller.rb</span>
-<span class="no">UNASSIGNED</span> <span class="o">=</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span>
-<span class="no">USER_SESSION_KEY</span> <span class="o">=</span> <span class="s2">"_yoursite_user"</span><span class="p">.</span><span class="nf">freeze</span>
-
-<span class="k">def</span> <span class="nf">initialize</span>
-  <span class="k">super</span>
-  <span class="vi">@_current_user</span> <span class="o">=</span> <span class="no">UNASSIGNED</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">sign_in</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
-  <span class="n">session</span><span class="p">[</span><span class="no">USER_SESSION_KEY</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="p">.</span><span class="nf">id</span><span class="p">,</span> <span class="n">user</span><span class="p">.</span><span class="nf">password_salt</span><span class="p">]</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">current_user</span>
-  <span class="k">return</span> <span class="vi">@_current_user</span> <span class="k">unless</span> <span class="vi">@_current_user</span> <span class="o">==</span> <span class="no">UNASSIGNED</span>
-
-  <span class="c1"># Check if the user was already loaded by route helpers</span>
-  <span class="vi">@_current_user</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"current_user"</span><span class="p">)</span>
-                     <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"current_user"</span><span class="p">]</span>
-                   <span class="k">else</span>
-                     <span class="n">user_id</span><span class="p">,</span> <span class="n">password_salt</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="no">USER_SESSION_KEY</span><span class="p">]</span>
-                     <span class="no">User</span><span class="p">.</span><span class="nf">find_by_id_and_password_salt</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">password_salt</span><span class="p">)</span> <span class="k">if</span> <span class="n">user_id</span> <span class="o">&amp;&amp;</span> <span class="n">password_salt</span>
-                   <span class="k">end</span>
-<span class="k">end</span>
-
-</code></pre></div></div>
-
-<p>In doing this project I learned that Rail’s cookies will magically serialize/deserialize arrays and hashes. I’ve been manually and laboriously converting them into JSON strings <em>for years</em> 🥵</p>
-
-<p>btw, if that <code>UNASSIGNED</code> stuff is new to you, go read my <a href="https://island94.org/2023/10/writing-object-shape-friendly-code-in-ruby">Writing Object Shape friendly code in Ruby</a>.</p>
-
-<h3 id="rotating-active-sessions">Rotating active sessions</h3>
-
-<p>This is a little <em>extra</em> but I wanted the switchover to be transparent to users. To do so, I read from Devise’s active sessions and then create a session cookie using the new format. It looks something like this:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># controllers/application_controller.rb</span>
-<span class="n">before_action</span> <span class="ss">:upgrade_devise_session</span>
-
-<span class="k">def</span> <span class="nf">upgrade_devise_session</span>
-  <span class="c1"># Devise session structure: [[USER_ID],"AUTHENTICATABLE_SALT"]</span>
-  <span class="k">if</span> <span class="n">session</span><span class="p">[</span><span class="s2">"warden.user.user.key"</span><span class="p">].</span><span class="nf">present?</span>
-    <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s2">"warden.user.user.key"</span><span class="p">].</span><span class="nf">dig</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="n">user_salt</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s2">"warden.user.user.key"</span><span class="p">].</span><span class="nf">dig</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-  <span class="k">elsif</span> <span class="n">cookies</span><span class="p">.</span><span class="nf">signed</span><span class="p">[</span><span class="s2">"remember_user_token"</span><span class="p">].</span><span class="nf">present?</span>
-    <span class="n">user_id</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">.</span><span class="nf">signed</span><span class="p">[</span><span class="s2">"remember_user_token"</span><span class="p">].</span><span class="nf">dig</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="n">user_salt</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">.</span><span class="nf">signed</span><span class="p">[</span><span class="s2">"remember_user_token"</span><span class="p">].</span><span class="nf">dig</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-  <span class="k">end</span>
-  <span class="k">return</span> <span class="k">unless</span> <span class="n">user_id</span><span class="p">.</span><span class="nf">present?</span> <span class="o">&amp;&amp;</span> <span class="n">user_salt</span><span class="p">.</span><span class="nf">present?</span>
-
-  <span class="c1"># Depending on your deploy/rollout strategy ,</span>
-  <span class="c1"># you may want need to retain and dual-write both</span>
-  <span class="c1"># Devise and new user session values instead of this.</span>
-  <span class="n">session</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"warden.user.user.key"</span><span class="p">)</span>
-  <span class="n">cookies</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"remember_user_token"</span><span class="p">)</span>
-
-  <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by</span><span class="p">(</span><span class="ss">id: </span><span class="n">user_id</span><span class="p">)</span>
-  <span class="n">sign_in</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="k">if</span> <span class="n">user</span> <span class="o">&amp;&amp;</span> <span class="n">user</span><span class="p">.</span><span class="nf">devise_authenticatable_salt</span> <span class="o">==</span> <span class="n">user_salt</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h3 id="route-helpers">Route helpers</h3>
-
-<p>Devise mixes some nice helper methods into Rails’s routing DSL like <code>authenticated</code>; they’re even <em>necessary</em> if you need to authenticate Rails Engines that can’t easily access the app’s ApplicationController methods. Here’s how to recreate them using <a href="https://guides.rubyonrails.org/routing.html#advanced-constraints">Route Constraints</a> and monkeypatching <code>ActionDispatch::Routing::Mapper</code> (that’s <a href="https://github.com/heartcombo/devise/blob/e2242a95f3bb2e68ec0e9a064238ff7af6429545/lib/devise/rails/routes.rb#L28">how Devise does it</a>)</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/constraints/current_user_constraint.rb</span>
-<span class="k">class</span> <span class="nc">CurrentUserConstraint</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">matches?</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-    <span class="n">new</span><span class="p">.</span><span class="nf">matches?</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-    <span class="vi">@block</span> <span class="o">=</span> <span class="n">block</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">matches?</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-    <span class="n">current_user</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"current_user"</span><span class="p">)</span>
-                      <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"current_user"</span><span class="p">]</span>
-                    <span class="k">else</span>
-                      <span class="n">user_id</span><span class="p">,</span> <span class="n">password_salt</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="nf">session</span><span class="p">[</span><span class="no">USER_SESSION_KEY</span><span class="p">]</span>
-                      <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"current_user"</span><span class="p">]</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_id_and_password_salt</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">password_salt</span><span class="p">)</span> <span class="k">if</span> <span class="n">user_id</span> <span class="o">&amp;&amp;</span> <span class="n">password_salt</span>
-                   <span class="k">end</span>
-
-    <span class="k">if</span> <span class="vi">@block</span>
-      <span class="vi">@block</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">current_user</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
-    <span class="k">else</span>
-      <span class="n">current_user</span><span class="p">.</span><span class="nf">present?</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-
-<span class="c1"># config/routes.rb</span>
-<span class="k">module</span> <span class="nn">ActionDispatch</span>
-  <span class="k">module</span> <span class="nn">Routing</span>
-    <span class="k">class</span> <span class="nc">Mapper</span>
-      <span class="k">def</span> <span class="nf">authenticated</span><span class="p">(</span><span class="o">&amp;</span><span class="p">)</span>
-        <span class="n">scope</span><span class="p">(</span><span class="ss">constraints: </span><span class="no">CurrentUserConstraint</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">)</span>
-      <span class="k">end</span>
-
-      <span class="k">def</span> <span class="nf">unauthenticated</span><span class="p">(</span><span class="o">&amp;</span><span class="p">)</span>
-        <span class="n">scope</span><span class="p">(</span><span class="ss">constraints: </span><span class="no">CurrentUserConstraint</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span> <span class="n">user</span><span class="p">.</span><span class="nf">blank?</span> <span class="p">},</span> <span class="o">&amp;</span><span class="p">)</span>
-      <span class="k">end</span>
-
-      <span class="k">def</span> <span class="nf">admin_only</span><span class="p">(</span><span class="o">&amp;</span><span class="p">)</span>
-        <span class="n">scope</span><span class="p">(</span><span class="ss">constraints: </span><span class="no">CurrentUserConstraint</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span> <span class="n">user</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">admin?</span> <span class="p">},</span> <span class="o">&amp;</span><span class="p">)</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
-  <span class="c1"># ...</span>
-  <span class="n">authenticated</span> <span class="k">do</span>
-    <span class="n">resources</span> <span class="ss">:special_somethings</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Because routing happens <em>before</em> a controller is initialized, the current user is put into <code>request.env</code> so that the controller won’t have to query it a second time from the database. This could also be done in a custom Rack Middleware.</p>
-
-<p>If you want to put stuff into not-the-session cookies, those cookies can be accessed via <code>request.cookie_jar,</code> e.g., <code>request.cookie_jar.permanent.encrypted["_my_cookie"]</code>.</p>
-
-<h3 id="closing-thoughts">Closing thoughts</h3>
-
-<p>That was all the interesting bits for me. I also learned quite a bit poking around Dave Kimura’s <a href="https://github.com/kobaltz/action_auth">ActionAuth</a> (thank you!), and am thankful for the many years of service I’ve gotten from Devise.</p>
 
 
   </div>

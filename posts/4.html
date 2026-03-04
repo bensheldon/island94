@@ -138,6 +138,90 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/01/ruby-thread-contention-simply-gvl-queuing"><p>Ruby “Thread Contention” is simply GVL Queuing</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-01-30T22:43:00Z" itemprop="datePublished">January 30, 2025</time>
+
+        • Tagged <a href="/posts/tags/ruby">Ruby</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>There’s been a ton of fantastic posts from Jean Boussier recently explaining <a href="https://byroot.github.io/ruby/performance/2025/01/23/the-mythical-io-bound-rails-app.html">application shapes</a>, <a href="https://byroot.github.io/ruby/performance/2025/01/23/the-mythical-io-bound-rails-app.html">instrumenting the GVL (Global VM Lock)</a>, and <a href="https://byroot.github.io/ruby/performance/2025/01/29/so-you-want-to-remove-the-gvl.html">thoughts on removing the GVL</a>. They’re great reads!</p>
+
+<p>For the longest time, I’ve misunderstood the phrase “thread contention”. It’s a little embarrassing that given I’m the author of GoodJob (👍) and a maintainer of Concurrent Ruby and have been doing Ruby and Rails stuff for more than a decade. But true.</p>
+
+<p>I’ve been reading about thread contention for quite a while.</p>
+<ul>
+  <li>I was probably initially introduced to thread contention in Nate Berkopec’s <a href="https://www.speedshop.co/2020/05/11/the-ruby-gvl-and-scaling.html">Speedshop blog</a>.</li>
+  <li>Thread contention came to the front of my mind from Maciej Mensfeld’s post about the <a href="https://mensfeld.pl/2022/01/reduce-your-method-calls-by-99-9-by-replacing-threadpass-with-queuepop/">problems with Thread.pass</a></li>
+  <li>The hot discussion about Rail’s <a href="https://github.com/rails/rails/issues/50450">default puma thread count</a>.</li>
+  <li>Ivo Anjo did a <a href="https://ivoanjo.me/blog/2023/07/23/understanding-the-ruby-global-vm-lock-by-observing-it/">fantastic deep dive into the GVL</a>.</li>
+</ul>
+
+<p>Through all of this, I perceived thread contention as <em>contention</em>: a struggle, a bunch of threads all elbowing each other to run and stomping all over each other in a an inefficient, disagreeable, disorganized dogpile. But that’s not what happens at all!</p>
+
+<p>Instead: when you have any number of threads in Ruby, each thread waits in an orderly queue to be handed the Ruby GVL, then they gently hold the GVL until they graciously give it up or it’s politely taken from them, and then the thread goes to the back of the queue, where they patiently wait again.</p>
+
+<p>That’s what “thread contention” is in Ruby: in-order queuing for the GVL. It’s not that wild.</p>
+
+<h3 id="lets-go-deeper">Let’s go deeper</h3>
+
+<p>I came to this realization when <a href="https://github.com/bensheldon/good_job/issues/1554">researching whether I should reduce GoodJob’s thread priority</a> (I did). This came up after some exploration at GitHub, my day job, where we have a maintenance background thread that would occasionally blow out our performance target for a particular web request if the background thread happened to run at the same time that the web server (Unicorn) was responding to the web request.</p>
+
+<p>Ruby threads are OS (operating system) threads. And OS threads are preemptive, meaning the OS is responsible for switching CPU execution among active threads. But, Ruby controls its GVL. Ruby itself takes a strong role in determining which threads are active for the OS by choosing which Ruby thread to hand the GVL to and when to take it back.</p>
+
+<p>(Aside: Ruby 3.3 introduced M:N threads which decouples how Ruby threads map to OS threads, but ignore that wrinkle here.)</p>
+
+<p>There’s a very good C-level explanation of what happens inside the Ruby VM in <a href="https://ruby-hacking-guide.github.io/thread.html">The Ruby Hacking Guide</a>. But I’ll do my best to explain briefly here:</p>
+
+<p>When you create a Ruby thread (<code>Thread.new</code>), that thread goes into the back of a queue in the Ruby VM. The thread waits until the threads ahead of it in the queue have their chance to use the GVL.</p>
+
+<p>When the thread gets to the front of the queue and gets the GVL, the thread will start running its Ruby code until it gives up the GVL. That can happen for one of two reasons:</p>
+
+<ul>
+  <li>When the thread goes from executing Ruby to doing IO, it releases the GVL (usually; it’s mostly considered a bug in the IO library if it doesn’t). When the thread is done with its IO operation, the Thread goes to the back of the queue.</li>
+  <li>When the thread has been executing for longer than the length of the thread “quantum”, the Ruby VM takes back the GVL and the thread steps to the back of the queue again.  The Ruby thread quantum default is 100ms (this is configurable via <code>Thread#priority</code> or <a href="https://bugs.ruby-lang.org/issues/20861">directly as of Ruby 3.4</a>).</li>
+</ul>
+
+<p>That second scenario is rather interesting. When a Ruby thread starts running, the Ruby VM uses yet another background thread (at the VM level) that sleeps for 10ms (the “tick”) and then checks how long the Ruby thread has been running for. If the thread has been running for longer then the length of the quantum, the Ruby VM takes back the GVL from the active thread (“preemption”) and gives the GVL to the next thread waiting in the GVL queue. The thread that was previously executing now goes to the back of the queue. In other words: the thread quantum determines how quickly threads shuffle through the queue and no less/faster than the tick.</p>
+
+<p>That’s it! That’s what happens with Ruby thread contention. It’s all very orderly, it just might take longer than expected or desired.</p>
+
+<h3 id="whats-the-problem">What’s the problem</h3>
+
+<p>The dreaded “Tail Latency” of multithreaded behavior can happen, related to the Ruby Thread Quantum, when you have what might otherwise be a very short request, for example:</p>
+
+<ul>
+  <li>A request that could be 10ms because it’s making ten 1ms calls to Memcached/Redis to fetch some cached values and then returns them (IO-bound Thread)</li>
+</ul>
+
+<p>⠀…but when it’s running in a thread next to:</p>
+
+<ul>
+  <li>A request that takes 1,000ms and largely spends its time doing string manipulation, for example a background thread that is taking a bunch of complex hashes and arrays and serializing them into a payload to send to a metrics server. Or rendering slow/big/complex views for Turbo Broadcasts (CPU-bound Thread)</li>
+</ul>
+
+<p>In this scenario, the CPU-bound thread will be very greedy with holding the GVL and it will look like this:</p>
+
+<ol>
+  <li>IO-bound Thread: Starts 1ms network request and releases GVL</li>
+  <li>CPU-bound Thread: Does 100ms of work on the CPU before the GVL is taken back</li>
+  <li>IO-bound Thread: Gets GVL again and starts next 1ms network request and releases GVL</li>
+  <li>CPU-bound Thread: Does 100ms of work on the CPU before the GVL is taken back</li>
+  <li>Repeat … 8 more times…</li>
+  <li>Now 1,000 ms later, the IO-bound Thread, which ideally would have taken 10ms is finally done. That’s not good!</li>
+</ol>
+
+<p>That’s the worse case in this simple scenario with only two threads. With more threads of different workloads, you have the potential to have even more of a problem. Ivo Anjo also <a href="https://ivoanjo.me/blog/2023/02/11/ruby-unexpected-io-vs-cpu-unfairness/">wrote about this too</a>. You could speed this up by lowering overall thread quantum, or by reducing the priority of the CPU-bound thread (which lowers the thread quantum). This would cause the CPU-bound thread to be more finely sliced, but because the minimum slice is governed by the tick (10ms) you’d never get below a theoretical maximum of 100ms for the IO-bound thread; 10x more than optimal.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/01/living-parklife-with-rails-coming-from-jekyll"><p>Living Parklife with Rails, coming from Jekyll</p>
 </a>
     </h1>
@@ -1028,81 +1112,6 @@ Overall: Is it positive, neutral, or negative?</p>
 
 </blockquote>
 
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/07/on-the-importance-of-rails-code-reloading"><p>On the importance of Rails code reloading and autoloading</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-07-07T14:44:00Z" itemprop="datePublished">July 7, 2024</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I’ve elevated to “strongly held belief” that <a href="https://island94.org/2024/04/a-ruby-meetup-and-3-podcasts">code reloading and autoloading is <em>the</em> most important design constraint</a> when designing or architecting for Ruby on Rails.</p>
-
-<ul>
-  <li>Code reloading is what powers the “make a code change, refresh the browser, see the result” development loop.</li>
-  <li>Code autoloading is what allows Rails to boot in milliseconds (if you’ve designed for it!) to run generators and application scripts and a single targeted test for tight test-driven-development loops.</li>
-</ul>
-
-<p>When <a href="https://guides.rubyonrails.org/autoloading_and_reloading_constants.html">autoloading and reloading</a> just works, it probably isn’t something you think about. When code autoloading and reloading doesn’t work or works poorly, as it has on numerous apps across my career and consulting, it can be maddening:</p>
-
-<ul>
-  <li>Spending hours “debugging” some code only to realize that your changes were never being run at all.</li>
-  <li>Waiting tens of excruciatingly boring seconds to run a simple test or watching the browser churn away while it slowly waits for a response from the development server.</li>
-  <li>Feeling like you can write the code yourself each time faster than running a scaffold/template generator, repetitively over and over again.</li>
-</ul>
-
-<p>Code reloading and autoloading not working correctly is a huge pain. It’s not great, at all!</p>
-
-<p>The history of code reloading and autoloading came up recently in the <a href="https://www.railsspeed.com">Rails Performance Slack</a>. A  developer working on an old Rails application asked what Spork was (a forking preloader), and whether it was necessary (not necessarily). As a Rails Developer who is increasingly aware of my <del>age</del> experience (I started working with Rails in 2012, long after it first launched in 2004, but it’s still been a minute), I realized I had something to share.</p>
-
-<p>Over history, various strategies have been taken to make the development loop faster because that’s so important. Those strategies usually boil down to:</p>
-
-<ul>
-  <li>Separating the (static) framework code from the (changing, developed) application code and only loading, just in time, what’s needed for the part of the application that’s currently running.</li>
-  <li>Loading/booting the framework code that is unlikely to change, and then only (re-)load the application code when invoking a command or running a test.</li>
-</ul>
-
-<p>There have been various approaches to doing this:</p>
-
-<ul>
-  <li>Forking Preloaders (Spork, though Spring is the more contemporary version): load up the framework code in a process once, then fork into a subprocess when you invoke a command and reload just the application code. Sometimes, things can get out of sync (some application code or state pollutes the primary process), and things get weird/confusing. This is why you’ll hear of people hating on Spring or complaining, “I wasted all day on a development bug, and it turns out I just needed to restart Spring” (the analogous “it was DNS all along” of the Rails world).</li>
-  <li>Bootsnap, though operating on a cache strategy rather than a process-forker, serves a similar purpose of trying to speed up an application’s code loading time. The adoption of Bootsnap, and much, much faster CPUs in general, has largely replaced the usage of Spring in applications (though it’s still okay!).</li>
-  <li>Zeitwerk autoloader also plays a role in this history because it, too, is trying to “solve” the necessity of separating the framework code (which changes infrequently) from the application code during development (which is actively being changed) to produce faster development feedback cycles. Zeitwerk replaced the previous autoloader built into Rails, whose lineage seems to date all the way back to <a href="https://github.com/bensheldon/rails/commit/ee014ef95ae9746b4228f3bc7c85ac0df28ba1df">Rails 2.0 circa 2005</a>. Tell me the history / raison d’être of the original autoloader if you know it!</li>
-</ul>
-
-<p>Look, a lot of labor has gone into this stuff. It’s important! And it’s easy to get wrong and produce a slow and disordered application where development is a pain. It happens! A lot!</p>
-
-<p>I wish I could easily leave this post with some kind of <em>nugget</em> of something actionable to do, but it’s really more like: <strong>please take care</strong>. Some rules of thumb:</p>
-
-<ul>
-  <li>Don’t reference, don’t access, don’t use or touch any constants in <code>app/</code>, or allow them to be referenced (looking at you, custom Rack Middleware) unless you’re doing so from another constant in <code>app/</code> (or somewhere that you <em>know</em> is <a href="https://island94.org/2023/05/whatever-you-do-don-t-autoload-rails-lib">autoloaded</a>).</li>
-  <li>Take care with <code>config/initializers/</code> and ensure you’re making the most of <code>ActiveSupport.on_load</code> hooks. Rails may even be missing <a href="https://guides.rubyonrails.org/engines.html#available-load-hooks">some load hooks</a>, so make an upstream PR if you need to configure an autoloaded object and you can’t. It’s super common to run into trouble; in writing this blog post alone, I discovered a <a href="https://github.com/textacular/textacular/pull/159">problem with a gem I use</a>.</li>
-  <li>If you’re writing library code, become familiar with the configuration-class-initializer-attribute-pattern dance (my name for it), which is how you’ll get something like <code>config.action_view.something = :the_thing</code> lifted and constantized into <code>ActionView::Base.something #=&gt; TheThing</code></li>
-</ul>
-
-<p>You might find luck with this <a href="https://gist.github.com/bensheldon/ba6532c4216c11dd9ba03487c5a06ee4">bin/autoload-check script</a>, that I adapted from something <a href="https://www.johnhawthorn.com/">John Hawthorn</a> originally wrote, giving output like:</p>
-
-<pre><code class="language-text">❌ Autoloaded constants were referenced during during boot.
-These files/constants were autoloaded during the boot process,
-which will result in inconsistent behavior and will slow down and
-may break development mode. Remove references to these constants
-from code loaded at boot.
-
-🚨 ActionView::Base (action_view) referenced by config/initializers/field_error.rb:3:in `&lt;main&gt;'
-🚨 ActiveJob::Base (active_job)   referenced by config/initializers/good_job.rb:7:in `block in &lt;main&gt;'
-🚨 ActiveRecord::Base (active_record)
-                                         /Users/bensheldon/.rbenv/versions/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.4/lib/active_record/base.rb:338:in `&lt;module:ActiveRecord&gt;'
-                                         /Users/bensheldon/.rbenv/versions/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.4/lib/active_record/base.rb:15:in `&lt;main&gt;'
-                                         .....
-</code></pre>
 
   </div>
 </article>

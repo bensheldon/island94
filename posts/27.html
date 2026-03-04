@@ -138,6 +138,44 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/04/shirt-sales-scraped-daily"><p>Shirt sales, scraped daily</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-04-15T00:00:00Z" itemprop="datePublished">April 15, 2011</time>
+
+        • Tagged <a href="/posts/tags/consumerism">consumerism</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/scraping">scraping</a>, and <a href="/posts/tags/webdesign">webdesign</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://dayoftheshirt.com"> <img src="/uploads/2011-04/daily-t-shirt-sales-600x397.png" alt="" title="daily t-shirt sales" /> </a></p>
+
+<p>I am remiss to finally get around to blogging <a href="http://dayoftheshirt.com">Day of the Shirt</a>, which I launched back in October, 2010. It’s a straightforward and (hopefully) aesthetically-pleasing t-shirt aggregator.</p>
+
+<p>What’s nifty about Day of the Shirt is that it’s built entirely with  <a href="http://simplehtmldom.sourceforge.net/">PHP Simple HTML DOM Parser</a>. And when I say entirely, I mean <em>entirely</em>: there is no database backend, everything is scraped, including itself. Day of the Shirt…</p>
+
+<ol>
+  <li>
+    <p>scrapes t-shirt vendors to get names, links and thumbnails (which are cropped and cached);</p>
+  </li>
+  <li>
+    <p>scrapes, parses and rewrites its own DOM when new shirts are added (we’re serving completely static html);</p>
+  </li>
+  <li>
+    <p>and scrapes itself to compose its <a href="http://twitter.com/dayoftheshirt">daily tweets</a>.</p>
+  </li>
+</ol>
+
+<p>That last step is a little extravagant, but I wanted to separate the early-morning website update from the mid-morning tweeting—otherwise only the early birds would ever see the tweet. Of course, I re-used the <a href="http://www.island94.org/2010/08/p-np-and-panlexicon/">tweet-composing algorithm</a> from <a href="http://panlexicon.com">Panlexicon</a>.</p>
+
+<p>Now the unfortunate part of this project was that I did a fair amount of competition research prior to building this website—but it wasn’t until about a week after I launched that I discovered an equivalent service: <a href="http://www.teemagnet.com/">Tee Magnet</a>. <em>C’est la vie.</em></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2011/04/social-media-community-architect-and-manager"><p>Social Media Community Architect and Manager</p>
 </a>
     </h1>
@@ -465,34 +503,6 @@
 <p>Tonight I watched the movie musical <em>How to Succeed in Business Without Really Trying</em>. I was shocked, though not surprised, to discover that all of the office furniture from this 1967 film is the same furniture I have in my office at UMass Boston. The scene above is more representative—the desk and shelving are the same (and I used to have that typewriter stand)—but the orange chair in the scene below is mine.</p>
 
 <p><img src="/uploads/2011-03-02-How-to-decorate-your-office-without-really-trying/succeed-at-business-2-600x256.png" alt="" title="succeed at business 2" /></p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/01/notes-from-the-city-of-bostons-open311-citizens-connect-api-developer-meeting"><p>Notes from the City of Boston’s Open311 / Citizens Connect API Developer Meeting</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-01-31T00:00:00Z" itemprop="datePublished">January 31, 2011</time>
-
-        • Tagged <a href="/posts/tags/boston">Boston</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/govdata">govdata</a>, <a href="/posts/tags/government">government</a>, and <a href="/posts/tags/meeting">meeting</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Today I attended a developer meeting at Boston City Hall for their <a href="http://www.cityofboston.gov/doit/apps/citizensconnect.asp">Citizen Connect API</a>, a to-be-launched <a href="http://open311.org/">Open311</a> implementation. The city currently has official <a href="http://itunes.apple.com/us/app/boston-citizens-connect/id330894558">iPhone</a> and <a href="http://www.androidzoom.com/android_applications/tools/boston-citizens-connect_najk.html">Android</a> apps that allow community members to submit broken streetlights, potholes, graffiti and snow removal, but the intent of the “open” part is to allow unaffiliated developers to integrate the system into their own applications. The other developers attending were the 7-person Boston <a href="http://codeforamerica.org/boston/">Code for America</a> crew (who just arrived a few days before), <a href="http://www.seeclickfix.com/">SeeClickFix</a> and a university researcher (the latter 2 via teleconference).</p>
-
-<p>The City of Boston uses a <a href="http://www.lagan.com/">Lagan CRM</a> system to create and track tickets and cases. To feed that ticketing system the city offers <a href="http://www.cityofboston.gov/mayor/24/">constituent services</a> in person, via telephone (the meeting was held next to the call center which had ~10 agents active at the time), via the web, and through the smartphone apps. The Lagan system tracks 150-170 types of tickets, but Boston currently exposes only 6 of them through Open311 API (streetlights, potholes, graffiti, 2 types of snow removal, and other); this decision was explained as being driven by the UI needs of the official smartphone apps. The Open311 system is only a data bridge into the Lagan CRM and thus won’t support any additional metadata or external decisioning (this dismissed a Code for America fellow’s suggestion of voting on tickets).</p>
-
-<p>The API is not currently available. The city estimates 2 - 3 weeks until they have a test server up, and from there they will evaluate whether to give applications access to the live system. The test server will be a sandbox that is either refreshed every 24 hours, has new data streamed to it, or may simulate workflows (e.g. submit, review, comment, close)—it was still in discussion.</p>
-
-<p>In addition to the Open311 API, the city also offers data dumps of its entire ticketing system, offset by 24 hours. Unfortunately, those data dumps don’t include the channel through which they were inputted, e.g. it’s not recorded whether the ticket came thru Open311, telephone, web or in person. This is allegedly through the city’s <a href="http://hubmaps1.cityofboston.gov/datahub/">Data Hub</a> / <a href="http://www.cityofboston.gov/doit/databoston/app/data.aspx">Data Dashboard</a>, but I can’t find it.</p>
-
-<p>The City of Boston is taking a more deliberate and restrictive approach than <a href="http://www.eot.state.ma.us/developers/">MassDOT/MBTA</a> in opening up their data, though CRM tickets are clearly different than bus/train route and dispatch data. The university researcher’s (Ben Clark) use case for the data was spot-on: determining who is utilizing these smartphone tools, and importantly who isn’t. Time will tell how the influence of outside software developers will push the city’s implementation—and how will it effect less-technology focused solutions.</p>
-
-<p>I was really excited to meet the Code for America crew as they are bringing a lot of excitement and energy to the gov data scene. I did get the impression that they were unprepared for managing institutional forces: there was a question about why the city couldn’t devote more IT resources to the project that were answered with some allusions to Dilbert (without acknowledging that the current capital budget was probably set 14 months ago). Open311 doesn’t seem like CfA’s <a href="http://codeforamerica.org/boston/">primary focus</a> in Boston, but if this was their first City of Boston meeting, I think they learned a lot.</p>
 
   </div>
 </article>

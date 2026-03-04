@@ -138,6 +138,291 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/01/replacing-devise-with-rails-has_secure_password-and-friends"><p>Replacing Devise with Rails <code>has_secure_password</code> and friends</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-01-27T15:43:00Z" itemprop="datePublished">January 27, 2024</time>
+
+        • Tagged <a href="/posts/tags/rails">rails</a> and <a href="/posts/tags/ruby">ruby</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I love the <a href="https://github.com/heartcombo/devise">Devise user-authentication gem</a>. I’ve used it for years, and I recently moved off of it in one of my personal apps and replaced it with Rails’s built-in <code>has_secure_password</code> and <code>generates_secure_token</code> and a whole bunch of custom controllers and helpers and code that I now maintain myself. <strong>I do not recommend this! User authentication is hard! Security is hard!</strong></p>
+
+<p><strong>And…</strong> maybe you need to walk the same path too. So I want to share what I learned through the process.</p>
+
+<p>Ok, so to back up, why did I do this?</p>
+<ul>
+  <li>Greater compatibility with Rails <code>main</code>. My <a href="https://github.blog/2023-04-06-building-github-with-ruby-and-rails/">day job runs Rails <code>main</code></a>, and I’m more frequently contributing to Rails development; I’d like to run my personal projects on Rails <code>main</code> too. When I looked back on upgrade-blocking gems, Devise (and its dependencies, like Responders) topped my list.</li>
+  <li>More creative onboarding flows. I’ve twisted Devise quite a bit (it’s great!) to handle the different ways I want users to be able to register (elaborate onboarding flows, email-only subscriptions, optional passwords, magic logins). I’ve already customized or overloaded nearly every Devise controller and many model methods, so it didn’t seem like such a big change anyway.</li>
+  <li>Hubris. I’ve built enterprise auth systems from scratch, managed the Bug Bounty program, and worked with security researchers. I have seen and caused and fixed some shit. (Fun fact: I have been paid for reporting auth vulnerabilities on the bug bounty platforms themselves.) I know that even if it’s not a bad idea <em>for me</em>, it’s not a great idea either. Go read <a href="https://github.com/advisories?query=devise+ecosystem%3Arubygems">all of the Devise-related CVEs</a>; seriously, it’s a responsibility.</li>
+</ul>
+
+<p>That last bit is why this blog post will not be like, “Here’s everything you need to know and do to ditch Devise.” Don’t do it! Instead, here’s some stuff I learned that I want to remember for the next app I work on.</p>
+
+<h3 id="a-test-regime">A test regime</h3>
+
+<p>I went back through all of my system tests for auth, and here is a cleaned-up, though not exhaustive list of my scenarios and assertions. It seems like a lot. It is! There are also unit tests for models and controllers and mailers and separate API tests for the iOS and Android apps. Don’t take this lightly! (Remember, many of these are specific to my custom onboarding flows).</p>
+
+<ul>
+  <li>When a new user signs up for an account
+    <ul>
+      <li>Their email is valid, present and stored; password is nil.</li>
+      <li>They are not confirmed</li>
+      <li>They receive a confirmation email</li>
+      <li>If not confirmed, registering again with the same email resends the confirmation email but does not leak account presence</li>
+      <li>If the email associated account already exists and is confirmed, sends a “you already have an account” email and does not leak account presence.</li>
+      <li>Following the link in the confirmation email confirms the new account and redirects to the account setup page.</li>
+    </ul>
+  </li>
+  <li>When a user sets up their account
+    <ul>
+      <li>They can assign a username and password</li>
+      <li>A password cannot be assigned if a password already exists</li>
+      <li>A username cannot be assigned if a username already exists</li>
+      <li>If a username and password already exist, the setup page redirects to the account update page</li>
+      <li>The account update page redirects to the setup page if a username or password does not yet exist</li>
+      <li>Signing in with an unsetup account redirects to setup page</li>
+      <li>Resetting password with an unsetup account redirects to setup page</li>
+      <li>Adding a password invalidates reset-password links.</li>
+    </ul>
+  </li>
+  <li>When a user updates their account
+    <ul>
+      <li>The current password is required to update email, username, or password.</li>
+      <li>When the email address is changed, a new confirmation email is sent out to that email address.</li>
+      <li>An email change confirmation can be confirmed with or without an active session.</li>
+      <li>If the email address is already confirmed by a different account, send the “you already have an account” email and do not leak account presence.</li>
+      <li>Multiple accounts can have the same unconfirmed email address.</li>
+    </ul>
+  </li>
+  <li>When a user performs a password reset
+    <ul>
+      <li>Can’t be accessed with an active session</li>
+      <li>Link is invalidated after 20 minutes, or when email, or password changes.</li>
+      <li>Can be performed on an unsetup account</li>
+      <li>Confirms an email but not an email change</li>
+      <li>Signs in the user</li>
+      <li>Does not leak account presence</li>
+      <li>Is throttled to only send once a minute.</li>
+    </ul>
+  </li>
+  <li>When a user performs or resends an email confirmation
+    <ul>
+      <li>Can be accessed with an active session.</li>
+      <li>Cannot resend confirmation of an email change without an active session.</li>
+      <li>Link is invalidated after 20 minutes, or when email, unconfirmed email, confirmed at, or password changes.</li>
+      <li>Signs in the user</li>
+      <li>Does not leak account presence</li>
+      <li>Is throttled to only send once a minute.</li>
+      <li>When user is already confirmed, send them an email with a link to reset their password</li>
+    </ul>
+  </li>
+  <li>When a user signs into a session
+    <ul>
+      <li>Requires a valid email or username, and password</li>
+      <li>Cannot sign in with a nil, blank, or absent password param (unsetup account)</li>
+      <li>Session is invalidated when email or password changes.</li>
+      <li>Does not leak account presence with missing or invalid credentials</li>
+      <li>Redirects to the <code>session[:return_to]</code> path if present, otherwise the root path.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="using-has_secure_password">Using <code>has_secure_password</code></h3>
+
+<p>This was a fairly simple change. I had to explicitly add <code>bcrypt</code> to the gemfile, and then add to my <code>User</code> model:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># models/user.rb</span>
+<span class="n">alias_attribute</span> <span class="ss">:password_digest</span><span class="p">,</span> <span class="ss">:encrypted_password</span>
+<span class="n">has_secure_password</span> <span class="ss">:password</span>
+</code></pre></div></div>
+
+<p>I’ll eventually rename the database column, but this was a zero-migration change.</p>
+
+<p>Also, you might need to use <code>validations: false</code>  on <code>has_secure_password</code> and implement your own validations if you have custom onboarding flows like me. Read <a href="https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html">the docs</a> and the <a href="https://github.com/rails/rails/blob/68eade83c87ae309191add6dfa4959d7d7e07464/activemodel/lib/active_model/secure_password.rb#L114">Rails code</a>.</p>
+
+<p>When authenticating on sign in, you’ll want to use <code>User.authenticate_by(email:, password:)</code>, which is intended to avoid timing attacks.</p>
+
+<h3 id="using-generates_token_for">Using <code>generates_token_for</code></h3>
+
+<p>The <code>generates_token_for</code> methods are new in Rails 7.1 and <a href="https://github.com/rails/rails/pull/44189">really nice</a>. They create a signed token containing the user id and additional matching attributes and it doesn’t need to be stored in the database:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># models/user.rb</span>
+<span class="n">generates_token_for</span> <span class="ss">:email_confirmation</span><span class="p">,</span> <span class="ss">expires_in: </span><span class="mi">30</span><span class="p">.</span><span class="nf">minutes</span> <span class="k">do</span>
+  <span class="p">[</span><span class="n">confirmed_at</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">unconfirmed_email</span><span class="p">,</span> <span class="n">password_salt</span><span class="p">]</span>
+<span class="k">end</span>
+
+<span class="n">generates_token_for</span> <span class="ss">:password_reset</span><span class="p">,</span> <span class="ss">expires_in: </span><span class="mi">30</span><span class="p">.</span><span class="nf">minutes</span> <span class="k">do</span>
+  <span class="p">[</span><span class="n">email</span><span class="p">,</span> <span class="n">password_salt</span><span class="p">]</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>I’ll explain that <code>password_salt</code> in a bit.</p>
+
+<p>To verify this, you want to do use something like this: <code>User.find_by_token_for(:email_confirmation, value_from_the_link)</code>.</p>
+
+<p>btw security: when you put a link in an email message, you can only use a <code>GET</code> , because emails can’t reliably submit web forms (some clients can, but it’s weird and unreliable). So your link is going to look like <code>https://example.com/account/reset_password?token=blahblahblahblahblah</code>. If there is any links to 3rd party resources like script tags or off-domain images, you will <a href="https://portswigger.net/kb/issues/00500400_cross-domain-referer-leakage">leak the token through the <code>referrer</code></a>  when the page is loaded with the <code>?token=</code> in the URL. <a href="https://github.com/heartcombo/devise/pull/4366">Devise never fixed it (😱)</a> . What you should do is take value out of the query param and put it in the session and redirect back to the same page without the query parameter and use the session value instead. (Fun fact: this is a bug bounty that got me paid.)</p>
+<h3 id="authenticatable-salts">Authenticatable salts</h3>
+
+<p>Here’s where I explain that <code>password_salt</code> value.</p>
+
+<p>There’s several places I’ve mentioned where tokens and sessions should be invalidated when the account password changes. When <code>bcrypt</code> stores the password digest in the database, it also generates and includes a random “salt” value that changes every time the password changes. Comparing that salt is a proxy for “did the password change?” and it’s safer to embed that random salt in cookies and tokens instead of the user’s hashed password.</p>
+
+<p><a href="https://github.com/heartcombo/devise/blob/e2242a95f3bb2e68ec0e9a064238ff7af6429545/lib/devise/models/database_authenticatable.rb#L15C6-L158C1">Devise uses the first 29 characters</a> of the encrypted password (which is technically the <a href="https://en.wikipedia.org/wiki/Bcrypt#Description">algorithm, cost and salt</a>):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># models/user.rb</span>
+<span class="k">def</span> <span class="nf">authenticatable_salt</span>
+  <span class="n">encrypted_password</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span> <span class="k">if</span> <span class="n">encrypted_password</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>But it’s also possible to simply get the salt. I dunno if the difference matters (tell me!):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># models/user.rb</span>
+<span class="k">def</span> <span class="nf">password_salt</span>
+  <span class="no">BCrypt</span><span class="o">::</span><span class="no">Password</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">password_digest</span><span class="p">).</span><span class="nf">salt</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="o">..</span><span class="p">]</span> <span class="k">if</span> <span class="n">password_digest</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="a-nice-session">A nice session</h3>
+
+<p>There’s a lot to write about creating sessions and remember-me cookies, that I won’t be writing here. The main thing to note is that I’m storing and verifying both the user id <em>and</em> their password salt in the session; that means all of their session are invalidated when they change their password:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/application_controller.rb</span>
+<span class="no">UNASSIGNED</span> <span class="o">=</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">USER_SESSION_KEY</span> <span class="o">=</span> <span class="s2">"_yoursite_user"</span><span class="p">.</span><span class="nf">freeze</span>
+
+<span class="k">def</span> <span class="nf">initialize</span>
+  <span class="k">super</span>
+  <span class="vi">@_current_user</span> <span class="o">=</span> <span class="no">UNASSIGNED</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">sign_in</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+  <span class="n">session</span><span class="p">[</span><span class="no">USER_SESSION_KEY</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="p">.</span><span class="nf">id</span><span class="p">,</span> <span class="n">user</span><span class="p">.</span><span class="nf">password_salt</span><span class="p">]</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">current_user</span>
+  <span class="k">return</span> <span class="vi">@_current_user</span> <span class="k">unless</span> <span class="vi">@_current_user</span> <span class="o">==</span> <span class="no">UNASSIGNED</span>
+
+  <span class="c1"># Check if the user was already loaded by route helpers</span>
+  <span class="vi">@_current_user</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"current_user"</span><span class="p">)</span>
+                     <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"current_user"</span><span class="p">]</span>
+                   <span class="k">else</span>
+                     <span class="n">user_id</span><span class="p">,</span> <span class="n">password_salt</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="no">USER_SESSION_KEY</span><span class="p">]</span>
+                     <span class="no">User</span><span class="p">.</span><span class="nf">find_by_id_and_password_salt</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">password_salt</span><span class="p">)</span> <span class="k">if</span> <span class="n">user_id</span> <span class="o">&amp;&amp;</span> <span class="n">password_salt</span>
+                   <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>In doing this project I learned that Rail’s cookies will magically serialize/deserialize arrays and hashes. I’ve been manually and laboriously converting them into JSON strings <em>for years</em> 🥵</p>
+
+<p>btw, if that <code>UNASSIGNED</code> stuff is new to you, go read my <a href="https://island94.org/2023/10/writing-object-shape-friendly-code-in-ruby">Writing Object Shape friendly code in Ruby</a>.</p>
+
+<h3 id="rotating-active-sessions">Rotating active sessions</h3>
+
+<p>This is a little <em>extra</em> but I wanted the switchover to be transparent to users. To do so, I read from Devise’s active sessions and then create a session cookie using the new format. It looks something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># controllers/application_controller.rb</span>
+<span class="n">before_action</span> <span class="ss">:upgrade_devise_session</span>
+
+<span class="k">def</span> <span class="nf">upgrade_devise_session</span>
+  <span class="c1"># Devise session structure: [[USER_ID],"AUTHENTICATABLE_SALT"]</span>
+  <span class="k">if</span> <span class="n">session</span><span class="p">[</span><span class="s2">"warden.user.user.key"</span><span class="p">].</span><span class="nf">present?</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s2">"warden.user.user.key"</span><span class="p">].</span><span class="nf">dig</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">user_salt</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s2">"warden.user.user.key"</span><span class="p">].</span><span class="nf">dig</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">elsif</span> <span class="n">cookies</span><span class="p">.</span><span class="nf">signed</span><span class="p">[</span><span class="s2">"remember_user_token"</span><span class="p">].</span><span class="nf">present?</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">.</span><span class="nf">signed</span><span class="p">[</span><span class="s2">"remember_user_token"</span><span class="p">].</span><span class="nf">dig</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">user_salt</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">.</span><span class="nf">signed</span><span class="p">[</span><span class="s2">"remember_user_token"</span><span class="p">].</span><span class="nf">dig</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="k">return</span> <span class="k">unless</span> <span class="n">user_id</span><span class="p">.</span><span class="nf">present?</span> <span class="o">&amp;&amp;</span> <span class="n">user_salt</span><span class="p">.</span><span class="nf">present?</span>
+
+  <span class="c1"># Depending on your deploy/rollout strategy ,</span>
+  <span class="c1"># you may want need to retain and dual-write both</span>
+  <span class="c1"># Devise and new user session values instead of this.</span>
+  <span class="n">session</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"warden.user.user.key"</span><span class="p">)</span>
+  <span class="n">cookies</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"remember_user_token"</span><span class="p">)</span>
+
+  <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by</span><span class="p">(</span><span class="ss">id: </span><span class="n">user_id</span><span class="p">)</span>
+  <span class="n">sign_in</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="k">if</span> <span class="n">user</span> <span class="o">&amp;&amp;</span> <span class="n">user</span><span class="p">.</span><span class="nf">devise_authenticatable_salt</span> <span class="o">==</span> <span class="n">user_salt</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="route-helpers">Route helpers</h3>
+
+<p>Devise mixes some nice helper methods into Rails’s routing DSL like <code>authenticated</code>; they’re even <em>necessary</em> if you need to authenticate Rails Engines that can’t easily access the app’s ApplicationController methods. Here’s how to recreate them using <a href="https://guides.rubyonrails.org/routing.html#advanced-constraints">Route Constraints</a> and monkeypatching <code>ActionDispatch::Routing::Mapper</code> (that’s <a href="https://github.com/heartcombo/devise/blob/e2242a95f3bb2e68ec0e9a064238ff7af6429545/lib/devise/rails/routes.rb#L28">how Devise does it</a>)</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/constraints/current_user_constraint.rb</span>
+<span class="k">class</span> <span class="nc">CurrentUserConstraint</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">matches?</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">new</span><span class="p">.</span><span class="nf">matches?</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="vi">@block</span> <span class="o">=</span> <span class="n">block</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">matches?</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">current_user</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"current_user"</span><span class="p">)</span>
+                      <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"current_user"</span><span class="p">]</span>
+                    <span class="k">else</span>
+                      <span class="n">user_id</span><span class="p">,</span> <span class="n">password_salt</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="nf">session</span><span class="p">[</span><span class="no">USER_SESSION_KEY</span><span class="p">]</span>
+                      <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"current_user"</span><span class="p">]</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_id_and_password_salt</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">password_salt</span><span class="p">)</span> <span class="k">if</span> <span class="n">user_id</span> <span class="o">&amp;&amp;</span> <span class="n">password_salt</span>
+                   <span class="k">end</span>
+
+    <span class="k">if</span> <span class="vi">@block</span>
+      <span class="vi">@block</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">current_user</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
+    <span class="k">else</span>
+      <span class="n">current_user</span><span class="p">.</span><span class="nf">present?</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="c1"># config/routes.rb</span>
+<span class="k">module</span> <span class="nn">ActionDispatch</span>
+  <span class="k">module</span> <span class="nn">Routing</span>
+    <span class="k">class</span> <span class="nc">Mapper</span>
+      <span class="k">def</span> <span class="nf">authenticated</span><span class="p">(</span><span class="o">&amp;</span><span class="p">)</span>
+        <span class="n">scope</span><span class="p">(</span><span class="ss">constraints: </span><span class="no">CurrentUserConstraint</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">)</span>
+      <span class="k">end</span>
+
+      <span class="k">def</span> <span class="nf">unauthenticated</span><span class="p">(</span><span class="o">&amp;</span><span class="p">)</span>
+        <span class="n">scope</span><span class="p">(</span><span class="ss">constraints: </span><span class="no">CurrentUserConstraint</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span> <span class="n">user</span><span class="p">.</span><span class="nf">blank?</span> <span class="p">},</span> <span class="o">&amp;</span><span class="p">)</span>
+      <span class="k">end</span>
+
+      <span class="k">def</span> <span class="nf">admin_only</span><span class="p">(</span><span class="o">&amp;</span><span class="p">)</span>
+        <span class="n">scope</span><span class="p">(</span><span class="ss">constraints: </span><span class="no">CurrentUserConstraint</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span> <span class="n">user</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">admin?</span> <span class="p">},</span> <span class="o">&amp;</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+  <span class="c1"># ...</span>
+  <span class="n">authenticated</span> <span class="k">do</span>
+    <span class="n">resources</span> <span class="ss">:special_somethings</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Because routing happens <em>before</em> a controller is initialized, the current user is put into <code>request.env</code> so that the controller won’t have to query it a second time from the database. This could also be done in a custom Rack Middleware.</p>
+
+<p>If you want to put stuff into not-the-session cookies, those cookies can be accessed via <code>request.cookie_jar,</code> e.g., <code>request.cookie_jar.permanent.encrypted["_my_cookie"]</code>.</p>
+
+<h3 id="closing-thoughts">Closing thoughts</h3>
+
+<p>That was all the interesting bits for me. I also learned quite a bit poking around Dave Kimura’s <a href="https://github.com/kobaltz/action_auth">ActionAuth</a> (thank you!), and am thankful for the many years of service I’ve gotten from Devise.</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/01/two-stories-about-technical-debt-i-guess"><p>Two stories about technical debt, I guess</p>
 </a>
     </h1>
@@ -846,56 +1131,6 @@ diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_di
 <p>Creating Object Shape friendly code is not very complicated!</p>
 
 <p>Please reach out if there’s other patterns I’m missing: bensheldon@gmail.com / <a href="https://twitter.com/bensheldon">twitter.com/@bensheldon</a> / <a href="https://ruby.social/@bensheldon">ruby.social/@bensheldon</a></p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2023/09/in-defense-of-consensus"><p>In defense of consensus</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2023-09-18T02:30:00Z" itemprop="datePublished">September 18, 2023</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>There’s a style of reactionary meme that takes a photo of like, empty store-shelves or a trash-strewn street, and applies the image macro “This is what Communism looks like”. But upon closer inspection (and social media lampooning), it’s a photo of America, capitalist America, very much not under communism. We’ll come back to this.</p>
-
-<p>Let’s talk about “consensus”. Not a week goes by in my Bay Area tech worklife where I don’t read or hear someone dragging consensus. Consensus is pilloried: weak, indecisive, lowest-common denominator, unclear, drawn out… consensus is bad, they say.</p>
-
-<p>Working in tech for a decade, I have to admit this struck me as strange the first time I heard a coworker complain about that bogeyman “consensus”. I’ve been a facilitator of consensus-based practice for <a href="https://island94.org/2010/04/I-am-now-a-Technology-of-Participation-facilitator-.html">13 years</a>. These practices, taught to me through the <a href="https://www.ica-usa.org">Institute for Cultural Affair’s ToP (“Technology of Participation”)</a> series, served me well when I was doing nonprofit and community work, serving on boards and facilitating offsites. And consensus-based practices have served me well in tech and business too: using its methods to do discovery, lead meetings, get feedback, and drive decision-making and action. I do strategic planning consultation too.</p>
-
-<p>The consensus-based practices I’ve learned take a group through a process: beginning with a prompt or need, then collecting facts and inputs, understanding people’s reactions to them, their interpretations and implications, and ultimately describing a series of actions and commitments to take. This can be a simple conversation, or a multi-day event that builds fractally on itself: a preceding session’s final actions could be deciding on what will be the following session’s initial inputs. When I’m working with leaders to design the process, we’ll discuss what responsibilities we want to delegate to the group, and what decisions will be retained among leadership. Leadership remains <em>accountable</em>, in the sense that there is a legible decision-making process, which is a strong benefit of deliberative practice. That’s “consensus”.</p>
-
-<p>Alternatively, the Bay Area tech process, not “consensus”, oh no, seems to follow these recipes:</p>
-
-<ul>
-  <li>Plan and socialize</li>
-  <li>Disagree and commit</li>
-</ul>
-
-<p>I was introduced to “plan and socialize” in my second tech job, being mentored by the Director of Engineering. To “socialize” is more than informing people, it’s having conversations and helping them understand how a plan or proposal will affect their work, and getting feedback that might lead to adjustments or compensatory actions. It’s also somewhat vague: asking people to leave comments in a google doc, attend an office hours, or a loosely moderated feedback session. Decisions, once made, are also socialized: explained, defended, adjusted, or white-knuckled through.</p>
-
-<p>Depending on their power level, leaders may then ask people to “disagree and commit” meaning that the (negative) feedback has been heard but those underlings must commit to carrying the plan out regardless. Suck it up, professionally, so to speak. Sometimes this is used as performance feedback: “I’m aware you’ve been sharing your dislike of the plan with coworkers. That lack of trust is undermining the business. I need you to disagree and commit”… and keep your thoughts to yourself.</p>
-
-<p>Under the spotlight, these approaches look less like bold and steely decision-making, and more like mumbly plan shifting backed by blusterful threats. Like the “this is what communism looks like”-meme, the scary-othered threat is not “consensus” but simply the current reality: confused, inadequate, probationary, triangulating, embarrassing, shameful.</p>
-
-<p>There’s a joke in civic tech: government tech projects may say they can’t do incremental development, but that’s exactly what happens after their big-bang waterfall launch crashes-and-burns and they end up having to fix it one piece at a time. Clay Shirky captures it in <a href="https://www.politico.com/magazine/story/2013/11/the-willful-ignorance-that-doomed-healthcaregov-100290/">“How Willful Ignorance Doomed HealthCare.gov”</a>:</p>
-
-<blockquote>
-  <p>It is hard for policy people to imagine that HealthCare.gov could have had a phased rollout, <em>even while it is having one</em>. At launch, on Oct. 1, only a tiny fraction of potential users could actually try the service. They generated errors. Those errors were handed to a team whose job was to improve the site, already public but only partially working. The resulting improvements are incremental and put in place over a period of months. That <em>is</em> a phased rollout, just one conducted in the worst possible way.</p>
-</blockquote>
-
-<p>Bay Area tech has the same relationship to decisions and consensus: by “socializing” plans and decisions, leaders are trying to craft a deliberativeu process for information sharing, feedback gathering, and alignment building. They’re simply doing it <em>after</em> they’ve already written and decided on an insufficient course of action and are grasping for a fix. Ultimately they are reaching for consensus, just consensus conducted in the worst possible way.</p>
-
-<p>Please think of this the next time you hear (or say) something bad about consensus. Consensus is pretty great, and even better when used from the start.</p>
-
-<p><em>The Institute for Cultural Affairs has <a href="https://www.top-training.net/w/schedule/">lots of trainings</a>  on consensus-based facilitation. The <a href="https://strategicfacilitation.com">Center for Strategic Facilitation</a> is the Bay Area’s local trainer and service provider, but there are trainers and service providers all over the globe.</em></p>
-
-<p><em>There is a system known as <a href="https://en.wikipedia.org/wiki/Formal_consensus">“Formal Consensus”</a> which gained some notability during the <a href="https://en.wikipedia.org/wiki/1999_Seattle_WTO_protests">1999 “Battle of Seattle” WTO protests</a> as a means of empowering small groups, particularly indigenous representatives, by providing a limited and fixed number of “blocks” during deliberations to stop actions proposed by far larger groups. Also how my buddy organized <a href="https://github.com/freegeekchicago/fgc-docs/blob/4dc37cbb76eaf766274f30fcb1f9df9d5bc199df/constitution.md#governance">FreeGeek Chicago</a>. I have <strong>never</strong> heard anyone in Bay Area tech reference any of this in regards to what they mean by consensus.</em></p>
 
   </div>
 </article>

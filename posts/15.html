@@ -138,6 +138,59 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/10/performance-facilitators-not-supervisors"><p>Performance facilitators not supervisors</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-10-02T23:56:00Z" itemprop="datePublished">October 2, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Doublespeak from Pro-Publica’s <a href="https://www.propublica.org/article/meet-the-customer-service-reps-for-disney-and-airbnb-who-have-to-pay-to-talk-to-you">“Meet the Customer Service Reps for Disney and Airbnb Who Have to Pay to Talk to You”</a>, via Pluralistic’s <a href="https://pluralistic.net/2020/10/02/chickenized-by-arise/#arise">ongoing chickenization coverage</a>:</p>
+
+<blockquote>
+
+  <p>Arise carefully monitors the language agents use to reinforce that it does not have an employment relationship with them. Stung by lawsuits that claimed Arise had actually employed agents but didn’t pay them fairly, Arise’s legal department has become a kind of word police, one former staffer told ProPublica.</p>
+
+  <p>“You don’t schedule ‘hours,’ you schedule ‘intervals,’” the former staffer said. Agents were not to be addressed as “you,” but “your business.” They were not “working,” they were “servicing.” There were no “supervisors,” only “performance facilitators.” Agents were not “coached.” Rather, their services were “enhanced.”</p>
+
+  <p>Once, an Arise manager, testifying in an arbitration hearing, was asked about meetings that performance facilitators have with agents. “They’re not meetings,” he said. “They’re informational sessions, or hosts.”</p>
+
+  <p>In an internal announcement in 2012, Arise listed “new terminology” for eight terms to avoid “the misconception” that agents are Arise employees. The corporate link between Arise and the agents went from being called Virtual Services Corporations to Independent Businesses. Service Fees became Service Revenue. Central Operations became Support Operations.</p>
+
+  <p>Arise seems particularly unable to settle on a term for the agents. Early on, the company called each a CyberAgent. Later came Arise Certified Professional. In 2012, that was changed to Client Support Professional. Nowadays, Arise’s website calls agents “onshore brand advocates or Service Partners.”</p>
+
+  <p>“Arise-speak,” as one opposing attorney called it in legal proceedings, could be a wonder to behold. Client Support Professionals (CSPs) would work with Quality Assurance Performance Facilitators (QAPFs) in a Performance Enhancement Session (PES), or they might reach out to Chat Performance Facilitators or Escalation Performance Facilitators, and none would be an Arise employee, all would be independent contractors.</p>
+
+</blockquote>
+
+<p>And a disturbing exchange:</p>
+
+<blockquote>
+
+  <p>Rice said he worked out of his bedroom, in his mother’s home, helping customers for Arise’s clients, including Barnes &amp; Noble, Disney and Sears. While testifying, Rice referred to performance facilitators in the Arise network as supervisors. This elicited a challenge from a lawyer for Arise.</p>
+
+  <p>“Where’d you get that term from, supervisor?” the lawyer asked.</p>
+
+  <p>“Growing up in America,” Rice said. “That’s the term people use for people that are above you.”</p>
+
+  <p>“… You never referred to them as supervisors while you were providing services, did you?”</p>
+
+  <p>“Well, yeah,” Rice said.</p>
+
+  <p>“You did? To who?”</p>
+
+  <p>“Well, obviously I’m on the phone with a customer, I’m not going to say, ‘OK, let me go check my chat performance facilitator.’ Usually I just said, you know, ‘Let me just talk to my supervisor.’”</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2020/09/respect-our-vendors"><p>Respect our vendors</p>
 </a>
     </h1>
@@ -532,91 +585,6 @@
 <blockquote>
   <p>“Abandon all hope,” I’d written on a Post-it note, and I watched it move gently beneath the heat duct. I read it in some book. The idea was that hope misses the point: it’s either going to happen or not. You can’t make a new reality, only fashion something real from the one that you’ve got.</p>
 </blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2019/11/deterministic-test-data-with-faker-factorybot-and-rspec"><p>Deterministic test data with Faker, FactoryBot, and RSpec</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2019-11-30T19:33:00Z" itemprop="datePublished">November 30, 2019</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I get a lot of joy from using <a href="https://github.com/faker-ruby/faker">Faker</a> and <a href="https://github.com/thoughtbot/factory_bot">FactoryBot</a> to efficiently generate real-world test data, but its randomness can be a liability when trying to debug complicated specs or when setting up systems that require repeatable data across RSpec test runs like <a href="https://percy.io/">Percy’s visual diffs</a>.</p>
-
-<p>Without deterministic test data, generating three new users with <code>3.times { puts Faker::Name.first_name }</code> would result in <code>Danny, Solomon, Fabian</code> when run once, then <code>Jordon, Shawn, Asa</code> when run a second time, then <code>Bruce, Leonor, Paulette</code> when run a third time.</p>
-
-<p>With deterministic test data, I expect to always generate the same set of names no matter how many times the code is run.  Faker has <a href="https://github.com/faker-ruby/faker#deterministic-random">documented</a> how to configure and seed the random number generator and this can be achieved with:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">3</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> 
-  <span class="no">Faker</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">random</span> <span class="o">=</span> <span class="no">Random</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Name</span><span class="p">.</span><span class="nf">first_name</span> 
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>This script outputs <code>Zachery, Dawna, Desmond</code> every single time it is run, meaning that it’s deterministic.</p>
-
-<p>Faker’s deterministic configuration can be combined with a FactoryBot <a href="https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#sequences"><code>sequence</code></a> to always get the same data every time a new factory instance is created. For example, here’s what a deterministic <code>User</code> factory could look like:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># spec/factories/users.rb</span>
-
-<span class="no">FactoryBot</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span>
-  <span class="n">factory</span> <span class="ss">:user</span> <span class="k">do</span>
-    <span class="n">sequence</span><span class="p">(</span><span class="ss">:first_name</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span>
-      <span class="no">Faker</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">random</span> <span class="o">=</span> <span class="no">Random</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-      <span class="no">Faker</span><span class="o">::</span><span class="no">Name</span><span class="p">.</span><span class="nf">first_name</span>
-    <span class="k">end</span>
-
-    <span class="n">sequence</span><span class="p">(</span><span class="ss">:last_name</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span>
-      <span class="no">Faker</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">random</span> <span class="o">=</span> <span class="no">Random</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-      <span class="no">Faker</span><span class="o">::</span><span class="no">Name</span><span class="p">.</span><span class="nf">last_name</span>
-    <span class="k">end</span>
-
-    <span class="n">email</span> <span class="p">{</span> <span class="s2">"</span><span class="si">#{</span><span class="n">first_name</span><span class="p">.</span><span class="nf">parameterize</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">last_name</span><span class="p">.</span><span class="nf">parameterize</span><span class="si">}</span><span class="s2">@example.com"</span> <span class="p">}</span>
-    <span class="n">password</span> <span class="p">{</span> <span class="s1">'password123'</span> <span class="p">}</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Within every sequence, the Faker random number generator is  seeded with <code>Faker::Config.random = Random.new(n)</code> , where <code>n</code> is the integer generated by the sequence.</p>
-
-<p>Unfortunately, just using a sequence isn’t completely sufficient when running tests in random order, or inserting new tests or rearranging the tests, as one would expect in an active codebase. FactoryBot sequences are global, meaning that they don’t reset by default between each and every test; a FactoryBot instance during one test run might use a different sequence number than a previous test run.</p>
-
-<p>Therefore, it’s also necessary to rewind FactoryBot sequences after each RSpec example. Place this in your <code>spec/rails_helper.rb</code> or <code>spec/support</code> directory:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># spec/support/factory_bot.rb</span>
-
-<span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">after</span> <span class="k">do</span>
-    <span class="no">FactoryBot</span><span class="p">.</span><span class="nf">rewind_sequences</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>That’s all you need to combine Faker and FactoryBot to get deterministic test data in your RSpec tests. Have fun!</p>
-
-<h3 id="update-october-2025">Update October 2025</h3>
-
-<p>I’m now doing it like this in tests, no sequencing required:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># spec/support/deterministic.rb</span>
-
-<span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">include</span> <span class="no">FactoryBot</span><span class="o">::</span><span class="no">Syntax</span><span class="o">::</span><span class="no">Methods</span>
-
-  <span class="n">config</span><span class="p">.</span><span class="nf">prepend_before</span> <span class="k">do</span>
-    <span class="no">Faker</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">random</span> <span class="o">=</span> <span class="no">Random</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># &lt;-- just reset it globally every test</span>
-    <span class="no">Faker</span><span class="o">::</span><span class="no">UniqueGenerator</span><span class="p">.</span><span class="nf">clear</span>
-    <span class="no">FactoryBot</span><span class="p">.</span><span class="nf">rewind_sequences</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
 
   </div>
 </article>

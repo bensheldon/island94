@@ -138,6 +138,42 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/02/good-enough-data"><p>Good enough data</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-02-22T00:00:00Z" itemprop="datePublished">February 22, 2010</time>
+
+        • Tagged <a href="/posts/tags/ability">ability</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/parsing">parsing</a>, <a href="/posts/tags/portfolio">portfolio</a>, and <a href="/posts/tags/yawn">yawn</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2010-02-22-Good-enough-data/btop-map-combined-500x462.png" alt="" title="btop-map-combined" /></p>
+
+<p>I’ve been spending some time at work scraping data. Long story short: government transparency is not transparent when the only access they give you is a pile of poorly structured html. That’s better than government opacity but not past the level of frosted glass: titillating but unsatisfying. If your expected audience is pencil pushers, please release your data in a spreadsheet. <a href="http://transmissionproject.org/current/2009/11/ntia-broadband-access-data">That’s what I did</a>.</p>
+
+<p>Notes for nerds:</p>
+
+<p>**Regular Expressions vs. Parsing Engines: **I wrote a the first parser in Python with Regular Expressions, then rewrote it in BeautifulSoup (a Python parser). It took me about 2 hours to write it the first time with RegExp. It took me about 2 days to do it with BeautifulSoup. It’s slightly easier to maintain now, but you tell me which one is more semantically correct:</p>
+
+<p><code>project_title = re.search('&lt;tr&gt;&lt;td&gt;&lt;b&gt;Project&amp;nbsp;title&lt;/b&gt;&lt;/td&gt;&lt;td&gt;(.+)&lt;/td&gt;&lt;/tr&gt;', line)</code></p>
+
+<p>versus</p>
+
+<p><code>project_title = app.find(text="Project&amp;nbsp;title").parent.parent.nextSibling.string</code></p>
+
+<p>Yep, it’s written in 2-column tables with each row being a different data-set: the first column holds a key (if there is a key; sometimes there isn’t) and the second column being the data . With RegExp, I know exactly what I’m looking for. With the parser, I have to find the element in the tree, then traverse up, over and down (if there isn’t a key, I have to go up, up, over, over, over, down, over, down). The data itself is a big set of applications (about 2000+ total) and each application has about 15 different data-sets (some with keys, some just follow a consistent-ish pattern).</p>
+
+<p>Fortunately, I have an <a href="http://www.media-democracy.net/">appreciative audience</a> for my troubles and it lets me <a href="http://transmissionproject.org/current/2010/2/btop-applications-and-awards-by-state">draw pretty maps</a> like the ones above. Also  <a href="http://flowingdata.com/2009/11/12/how-to-make-a-us-county-thematic-map-using-free-tools/">done with Python</a> by parsing an SVG vector image.</p>
+
+<p><strong>Michigan boaters beware</strong>: there is now an isthmus between Mackinaw City and St. Ignace. Rather than rewrite the process for grouped-shapes—Michigan being in 2 parts—it was good enough to make Michigan 1. Hawaii somehow endured.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2010/02/cleaving-the-visual-experience"><p>Cleaving the visual experience</p>
 </a>
     </h1>
@@ -494,24 +530,6 @@
 
   <div class="post-content" itemprop="articleBody">
     <p><img src="/uploads/2010-01-28-Hippostrophe/hippostrophe-500x500.png" alt="" title="hippostrophe" /></p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2010/01/amperlamb"><p>Amperlamb</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2010-01-28T00:00:00Z" itemprop="datePublished">January 28, 2010</time>
-
-        • Tagged <a href="/posts/tags/animal">animal</a>, <a href="/posts/tags/art">art</a>, <a href="/posts/tags/hippostrophe">hippostrophe</a>, and <a href="/posts/tags/punctuation">punctuation</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2010-01-28-Amperlamb/amperlamb-500x500.png" alt="" title="amperlamb" /></p>
 
   </div>
 </article>

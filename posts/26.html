@@ -138,6 +138,38 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/05/nailed-that-response"><p>Nailed that response</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-05-25T00:00:00Z" itemprop="datePublished">May 25, 2011</time>
+
+        • Tagged <a href="/posts/tags/nonprofits">nonprofits</a>, <a href="/posts/tags/response">response</a>, <a href="/posts/tags/service">service</a>, and <a href="/posts/tags/technology">technology</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2011-05-25-Nailed-that-response/3collage-600x202.png" alt="" title="3collage" /></p>
+
+<p>Google just <a href="http://googleblog.blogspot.com/2011/05/bringing-tech-knowledge-to-nonprofits.html">announced</a> a new national technology service corps, in partnership with the HandsOn Network and AmeriCorps*VISTA—not unlike the Digital Arts Service Corps I have managed for the past 4.5 years and will be shutting down this August as our funding expires. Google describes their program thusly:</p>
+
+<blockquote>
+  <p>These AmeriCorps*VISTA members will work full-time for one year developing introductory seminars and involved in-person trainings for smaller nonprofits that are working to lift people out of poverty. The Tech Corps will start in September with a one-week training at our campus in Mountain View, learning about both our nonprofit tools and cloud-based offerings from other technology companies like Salesforce.com and LinkedIn. Once they are armed with tech know-how, they’ll spend the rest of the year in three-person teams serving nonprofits in the Bay Area, Atlanta, Chicago, Detroit, New York City, Pittsburgh and Seattle.</p>
+</blockquote>
+
+<p>Our <a href="http://transmissionproject.org/current/2011/5/google-announces-launch-of-technology-corps">response</a>:</p>
+
+<blockquote>
+  <p>Google’s commitment is certainly a step in the right direction. However, we wish Google and HandsOn would place the particular needs of organizations at the forefront of their new initiative. Google mentions that its Tech Corps members will be trained in its own nonprofit tools. Although familiarity with these tools may prove helpful to some, the solutions its Corps will be able to offer organizations after this kind of training are still highly prescriptive and techno-centric. Nonprofits need and deserve to have a voice in determining the nature of the project that will presumably transform their organizations. For Corps members, much more important than technology skills are the skills to collaborate with organization staff and work toward a solution. For organizations, a technology solution that is well planned-for and has the support of staff is more valuable than a predetermined set of technology practices. Rather than prescribing specific practices, the Transmission Project serves as adviser during the project design process, so that organizations are prepared to maximize the impact that the addition of a Digital Arts Service Corps member makes.</p>
+</blockquote>
+
+<p>The above was written by Howie Fisher and the top collage created by <a href="http://b.illbrown.com">Billy Brown</a>—both Digital Arts Service Corps members serving with the Transmission Project whose value far exceeds any training seminars they can deliver.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2011/05/describe-the-basis-for-your-approach-to-this-project-how-did-you-determine-the-need-for-this-project-now-and-who-was-included-in-its-design"><p>“Describe the basis for your approach to this project. How did you determine the need for this project now and who was included in its design?”</p>
 </a>
     </h1>
@@ -499,44 +531,6 @@ In the end we are left with the challenge of evaluating the Progressive legacy f
 </blockquote>
 
 <p>And just in minor regards to Objectivism, I inadvertently dabbled in it when I was about 14 but fortunately quickly outgrew it.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/04/shirt-sales-scraped-daily"><p>Shirt sales, scraped daily</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-04-15T00:00:00Z" itemprop="datePublished">April 15, 2011</time>
-
-        • Tagged <a href="/posts/tags/consumerism">consumerism</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/scraping">scraping</a>, and <a href="/posts/tags/webdesign">webdesign</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><a href="http://dayoftheshirt.com"> <img src="/uploads/2011-04/daily-t-shirt-sales-600x397.png" alt="" title="daily t-shirt sales" /> </a></p>
-
-<p>I am remiss to finally get around to blogging <a href="http://dayoftheshirt.com">Day of the Shirt</a>, which I launched back in October, 2010. It’s a straightforward and (hopefully) aesthetically-pleasing t-shirt aggregator.</p>
-
-<p>What’s nifty about Day of the Shirt is that it’s built entirely with  <a href="http://simplehtmldom.sourceforge.net/">PHP Simple HTML DOM Parser</a>. And when I say entirely, I mean <em>entirely</em>: there is no database backend, everything is scraped, including itself. Day of the Shirt…</p>
-
-<ol>
-  <li>
-    <p>scrapes t-shirt vendors to get names, links and thumbnails (which are cropped and cached);</p>
-  </li>
-  <li>
-    <p>scrapes, parses and rewrites its own DOM when new shirts are added (we’re serving completely static html);</p>
-  </li>
-  <li>
-    <p>and scrapes itself to compose its <a href="http://twitter.com/dayoftheshirt">daily tweets</a>.</p>
-  </li>
-</ol>
-
-<p>That last step is a little extravagant, but I wanted to separate the early-morning website update from the mid-morning tweeting—otherwise only the early birds would ever see the tweet. Of course, I re-used the <a href="http://www.island94.org/2010/08/p-np-and-panlexicon/">tweet-composing algorithm</a> from <a href="http://panlexicon.com">Panlexicon</a>.</p>
-
-<p>Now the unfortunate part of this project was that I did a fair amount of competition research prior to building this website—but it wasn’t until about a week after I launched that I discovered an equivalent service: <a href="http://www.teemagnet.com/">Tee Magnet</a>. <em>C’est la vie.</em></p>
 
   </div>
 </article>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>War | Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-8d6255fe3bc710d2c17698728974e59379d92388dca4b67a6acdc6bd9d03be3d.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3f5446dc6e97c9688ec7afa6695204306f885d628cd7bcb2d08295662d0978b4.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-b86d83036ff04169e5bf3ebbc82e0ad528456259e47091b448f41a3cadabdb40.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3f5446dc6e97c9688ec7afa6695204306f885d628cd7bcb2d08295662d0978b4.js">
+<link rel="modulepreload" href="/assets/turbo.min-b86d83036ff04169e5bf3ebbc82e0ad528456259e47091b448f41a3cadabdb40.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2026/03/war"><p>War</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2026-03-04T15:18:00Z" itemprop="datePublished">March 4, 2026</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The second Iraq War started during Spring Break of my sophomore year of university. It was coming. The one international relations class I have ever taken, an honors seminar on US interventionism, had wrapped up several weeks prematurely. The classes’s teacher, Ambassador Barbara Bodine, had been recalled to Washington.</p>
+
+<p>I spent that Spring Break week on campus alone with my thoughts, as any romantic 19-year old I imagine would. The woman I had just begun dating, who I had met in that same university class, was traveling in Germany. That relationship would last another three years; the Iraq war would last eight.</p>
+
+<p>I did not sign up. My best friend had been exercising with the ROTC cadets. I remember him explaining that the army’s current slogan “Army of ONE” was terrible. He not sign his paperwork. He lives in Germany now.</p>
+
+<p>Another member of our same high school friend group did serve. While on leave later that year, he would kill a man outside his hotel, presumed to have been caught stealing from his car, and then would kill himself.</p>
+
+<p>My grandfather served in the Army, in Alaska, during World War 2. The family lore is that while courting my grandmother, he briefly snuck off base for a date. My grandfather being the model of a loyal, hardworking, reliable private, caused the base commander to exclaim: “AWOL? Not Jerome!”</p>
+
+<p>My other grandfather served during the last days of World War One in his native Hungary, before Trianon. He would go to Spain as an American communist to report on the civil war against fascism. He came back a liberal anti-communist and <a href="https://americancommissar.wordpress.com/">wrote a book about it</a>. The US government would later prevent him from returning to Hungary to cover the revolution against the Soviets for Newsweek.</p>
+
+<p>My dad fell off a cable car as a teenager and messed up his knees. That led to a draft deferment. His knees still cause him pain.</p>
+
+<p>My uncle was drafted and served in Vietnam. We don’t talk about it.</p>
+
+<p>I can check online to see that yes, I did register for Selective Service a week after my 18th birthday.</p>
+
+<p>My father-in-law served in the US Army in Germany after Korea and before Vietnam, paving the way for his US citizenship. His father served in the Chaco War, which would kill 2% of the population of his home nation, Bolivia.</p>
+
+<p>When I was 5, we hosted a family from the Soviet Union through MEND, Mothers Embracing Nuclear Disarmament. One of their gifts was a matryoshka nesting doll. It sits on my piano today.</p>
+
+<p>During my last year working at UMass Boston’s College of Public and Community Service, 2011-ish, I started taking my lunch on a newly-installed bench overlooking Dorchester Bay. The bench had a plaque remembering a US soldier killed in Kandahar Province, Afghanistan.</p>
+
+<p>In the acknowledgements of Spencer Ackerman’s book, <em>Reign of Terror</em>, he writes:</p>
+
+<blockquote>
+  <p>Yes, I know this book is incomplete.</p>
+
+  <p>There’s not enough in <em>Reign</em> about the pivotal role of the media in manufacturing consent for the War on Terror. There’s nowhere <em>near</em> enough about the economic forces driving the war, both specific and structural. Ultimately, I found that attempting either analysis swallowed the actual narrative events of the war and <em>still</em> felt superficial. These subjects require books in their own right—particularly one I’m tossing around in my head called <em>Capitalism and Terrorism.</em> (That book is the forum to go into the U.S.–Saudi relationship and its place in all this, I found . . . after failing to get it into <em>Reign</em> satisfactorily.) I chose to attempt to do one thing well instead of three things badly.</p>
+
+  <p>That leads to the second way <em>Reign</em> is incomplete. I had to make a lot of cuts. They were a function of <em>Reign</em>’s particular critique, as well as the unavoidable reality that I have a twenty-year palette of events and a contractually stipulated word limit. (Someone have me on their podcast to talk about Michelle Malkin bullying Dunkin’ Donuts because she was mad Rachael Ray appeared in a commercial wearing a scarf that looked kind of like a kaffiyeh.) Even after all those cuts, at all times writing this book, a voice in my head objects that I’m presenting the “We Didn’t Start the Fire” version of the Forever War. So if I didn’t dwell long enough on events you think are crucial, know that I tried, and please research and write your own versions that outdo mine.</p>
+
+  <p>The third way <em>Reign</em> is incomplete is that much of what I write about remains an official secret. The façade of the War on Terror has been cracked, but we won’t know what the war truly was for decades. I frankly don’t think anything we discover will undermine the critique of <em>Reign</em>. I expect what we learn to reinforce my critique. Consider that at least eighteen hundred photographs of military torture have been barred from public release after a yearslong legal battle. Not even Dan Jones’s torture report could tell the story of CIA renditions, operations that we know applied to more people than the CIA directly jailed and tortured. Some aspects of the War on Terror are likely lost to history forever.</p>
+</blockquote>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2026-03-04-war.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+  </div>
+</div>
+
+  </div>
+
+</body>
+</html>
