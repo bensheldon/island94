@@ -138,6 +138,40 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/08/more-thoughts-on-an-interesting-thesaurus"><p>More thoughts on an interesting thesaurus</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-08-22T00:00:00Z" itemprop="datePublished">August 22, 2007</time>
+
+        • Tagged <a href="/posts/tags/analysis">analysis</a>, <a href="/posts/tags/language">language</a>, <a href="/posts/tags/mathematics">mathematics</a>, <a href="/posts/tags/panlexicon">panlexicon</a>, and <a href="/posts/tags/thesaurus">thesaurus</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>My associate, <a href="http://circuitous.org">Rebecca</a>, and I have been starting to think critically about <a href="http://panlexicon.com">Panlexicon.com</a>, the unique, tag-cloud based thesaurus I’ve written about <a href="http://island94.org/node/128">previously</a>. We’re hoping to put some more time and effort into the project and in the process, learn some more about what’s happening with the language and the underlying structure of the thesaurus taxonomy.</p>
+
+<p><a href="http://www.flickr.com/photos/bensheldon/1178070872/" title="Photo Sharing"> <img src="http://farm2.static.flickr.com/1214/1178070872_b43fabb5f9_b.jpg" alt="Panlexicon.com - Thesaurus Visualization" /> </a></p>
+
+<p>The thesaurus data we’re working with is the <a href="http://www.gutenberg.org/etext/3202">Moby Thesaurus</a> from the <a href="http://www.gutenberg.org/">Project Gutenburg</a> library of free electronic texts. Like many thesauruses, it’s structure in an interesting way. Every word is assigned to one or more groups based on it’s general meaning or idea. Each group has a keyword, also known as a headword, that is a general encapsulation that idea—this is why, for example in Roget’s, you must first look up a word in the index to acquire its keywords. Each group has only one keyword, but a keyword can exist in other groups (but as an ordinary word).</p>
+
+<p>This thesaurus structure allows us to do some easy simplifications and analysis on the data. For many functions, we can treat the groups as supernodes, performing operations and storing connections upon them in place of the words themselves. For example, when determining relatedness between words, we only have compare the groups they are a part of; while there are approximately 100,000 words in our database, there are only 30,000 groups, which greatly diminishes the size and complexity of the data set we’re working on.</p>
+
+<p><a href="http://www.flickr.com/photos/bensheldon/1178070558/" title="Photo Sharing"> <img src="http://farm2.static.flickr.com/1297/1178070558_757312a092.jpg" alt="Panlexicon.com - Correspondence Weighting" /> </a></p>
+
+<p>Currently Panlexicon works by comparing the overlap between groups of words. When typing in a search term, Panlexicon looks up all of the groups that word is a member of. It then returns a list of words that are also in those groups. The weight of each word (or size in our word cloud model) is calculated according to how many groups—-of those groups that include the search term—that word is a member of. A property of this is that no other returned word will have a heavier weight than the search term. When searching multiple terms, Panlexicon creates a set of groups such that all search terms are a member. In the case when there exists no groups that contain all the search terms, Panlexicon returns nothing.</p>
+
+<p>Already we’re digging into some interesting relations that turn up in the thesaurus data. For example, one of my favorite linguistic <a href="http://en.wikipedia.org/wiki/Eskimo_words_for_snow">myths</a> is that Eskimos have 50 different words for snow. The supposed lesson was that eskimos had a different conception of snow than us (the non-Eskimos). I always wondered, “Well, is 50 a lot?” The largest group in our thesaurus has the keyword <em>cut</em> with 1448 related words or synonyms. This is followed by <em>set</em> (1152), <em>turn</em> (1108), <em>run</em> (1025), and <em>color</em> (1007). That’s quite a bit.</p>
+
+<p>Also, interestingly in our dataset, are the most versatile words. These words are members of the most groups. The list shares four out five of the same words as those of the most synonyms, beginning with <em>cut</em>, being a member of 1120 distinct groups. This is followed by <em>set</em> (928), <em>run</em> (750), <em>turn</em> (715), and <em>check</em> (699).</p>
+
+<p>Right now, we’re investigating paths between words. This will allow us to play the Kevin Bacon game, making connections between words that may not share the same group. It will be interesting to determine what words are connected (even through a medium) and which ones are disconnected. Lastly on our list of things to do is determine the eigenvectors of our groups in relation to how their connected to other groups. This will allow us to determine—without using fancy words like Markov chains—which words are probably <em>used</em> the most. I say probably because we’re analyzing a taxonomic work, rather than actual speech. Who knows if they match up; we’ll find out.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2007/08/two-stories-on-a-theme"><p>Two stories on a theme</p>
 </a>
     </h1>
@@ -979,45 +1013,6 @@ function cambridge_mediamap_map() {
 <p>There are few parts of my CV I enjoy more than my extensive knowledge of and experience in effectively hitting things. The wall gave way in a burst of gypsum and lead paint. Between the mangled wooden strips of plaster-backing, I spotted a glint of something.</p>
 
 <p>I reached through the hole, gave my sliding scale one last tap, and retrieved her ring. Needless to say, she was satisfied. And cleaning up is never a part of my job description.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/04/introducing-panlexiconcom"><p>Introducing Panlexicon.com</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2007-04-14T00:00:00Z" itemprop="datePublished">April 14, 2007</time>
-
-        • Tagged <a href="/posts/tags/development">development</a>, <a href="/posts/tags/launch">launch</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/synonyms">synonyms</a>, <a href="/posts/tags/thesaurus">thesaurus</a>, <a href="/posts/tags/webdesign">webdesign</a>, and <a href="/posts/tags/website">website</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><a href="http://www.flickr.com/photos/bensheldon/459184378/" title="Photo Sharing"> <img src="http://farm1.static.flickr.com/178/459184378_b3538d860c.jpg" alt="Panlexicon.com" /> </a></p>
-
-<p>I’m very proud to be officially launching ** <a href="http://panlexicon.com">Panlexicon.com</a>: a unique thesaurus<strong>. Using intuitive **“tag clouds”</strong> to represent synonyms, <a href="http://panlexicon.com">Panlexicon</a> makes discovering the word you want quick, easy and explorational.</p>
-
-<p>Panlexicon’s current functions allow you to:</p>
-
-<ul>
-  <li>
-    <p><strong>First</strong>, perform a lookup on a single word and receive a weighted cloud of synonyms.</p>
-  </li>
-  <li>
-    <p><strong>Second</strong>, view synonyms that overlap across multiple words either by entering the words manually, or clicking on words already in the cloud to further refine your search.</p>
-  </li>
-</ul>
-
-<p><strong>For example</strong>, performing a search on “ <a href="http://panlexicon.com/?query=cool">cool</a>” provides a wide variety of synonyms from “chilly”, to “unimpassioned”, to “groovy”. Refining the search using <a href="http://panlexicon.com/?query=cool,nifty">cool <em>and</em> nifty</a> provides more refined synonyms.</p>
-
-<p>By varying the size of the typeface, like tag clouds do, the most relevant terms <strong>pop out at you</strong> allowing you to quickly scan through large lists of words. Also, because the algorithm is a little fuzzy, you may run across related words that provide better context.</p>
-
-<p>Panlexicon was developed jointly with <a href="http://circuitous.org">Rebecca</a> who originally proposed the project and did much of the research on thesauri and helped develop the word relevance algorithms.</p>
-
-<p>The word lists come from the <a href="http://www.gutenberg.org/etext/3202">Moby Thesaurus</a> as part of <a href="http://www.gutenberg.org/">Project Gutenburg’s</a> library of free electronic texts. <a href="http://drupal.org">Drupal</a> is used as a simple framework for core functions such as database abstraction and page callbacks and to simplify future feature developments. Google AdSense is activated on the site, but that is due more to curiosity over the interplay of contextual advertising and the word lists than on any current revenue model.</p>
 
   </div>
 </article>

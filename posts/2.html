@@ -138,6 +138,117 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/10/notes-from-building-a-who-is-doing-what-right-now-on-our-website-presence-feature-with-action-cable"><p>Notes from building a “who is doing what right now on our website?” presence feature with Action Cable</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-10-06T14:59:00Z" itemprop="datePublished">October 6, 2025</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2025/presence-screenshot.jpg" alt="A screenshot of my application with little presence indicators decorating content" /></p>
+
+<p>I recently was heads down building a “presence” feature for the case and communications management part of my startup’s admin dashboard. The idea being that our internal staff can see what their colleagues are working on, better collaboarate together as a team of overlapping responsibility, and reduce duplicative work.</p>
+
+<p>The follow is more my notes than a cohesive narrative. But maybe you’ll get something out of it.</p>
+
+<h3 id="big-props">Big props</h3>
+
+<p>In building this feature, I got a lot of value from:</p>
+<ul>
+  <li><a href="https://github.com/basecamp/once-campfire">Basecamp’s Campfire</a> app, recently open sourced, which has a sorta similar feature.</li>
+  <li>Rob Race’s <a href="https://robrace.dev/blog/turbo-morphs-presence-channels-and-typing-indicators/#presence-channel">Developer Notes about building a Presence Feature</a></li>
+  <li>AI slop, largely Jetbrains Junie agent. Not because it contributed code to the final feature, but because I had the agent try to implement from scratch 3 different times, and while none of them fully worked (let alone met my quality standards or covered all edges), it helped sharpen the outlines and common shapes and surfaced some API methods to click into that I wasn’t aware of. And made the difference between undirected poking around vs being like “ok, this is gonna require no more than 5 objects in various places working together; let’s go!”</li>
+</ul>
+
+<h3 id="the-big-idea">The big idea</h3>
+
+<p>The feature I wanted to build would track multiple presence keys at the same time. So if someone is on a deep page (<code>/admin/clients/1/messages</code>) they’d be present for that specific client, any client, as well as the dashboard a whole.</p>
+
+<p>I also wanted to keep separate “track my presence” and “display everyone’s presence”.</p>
+
+<p>What I ended up with was:</p>
+
+<ol>
+  <li>Client in the browser subscribes to the <code>PresenceChannel</code> with a <code>key</code> param. It also sets up a setInterval heartbeat to send down a <code>touch</code> message every 30 seconds. This is a Stimulus controller that uses the Turbo cable connection, cause it’s there.</li>
+  <li>On the server, the PresenceChannel has <code>connected</code>, <code>disconnected</code>, and <code>touch</code> actions and stores the <code>key</code> passed during connect. It writes to an Active Record model UserPresence and calls <code>increment</code>, <code>decrement</code>, and <code>touch</code> respectively.</li>
+  <li>The Active Record model persists all these things atomically (Postgres!) and then triggers vanilla Turbo Stream Broadcast Laters (GoodJob!).</li>
+  <li>The frontend visually is all done with vanilla Turbo Stream Broadcasts over the vanilla Turbo::StreamsChannel appending to and removing unique dom elements that are avatars of the present users.</li>
+</ol>
+
+<p>It works! I’m happy with it.</p>
+
+<p>Ok, let’s get some grumbles out.</p>
+
+<h3 id="action-cable-could-have-a-bit-more-conceptual-integrity">Action Cable could have a bit more conceptual integrity</h3>
+
+<p>I once built some Action Cable powered features <a href="https://github.com/bensheldon/open311status/pull/59">about 7 years ago</a>, before Turbo Broadcast Streams, and it wasn’t my favorite. Since then, Turbo Broadcast Streams totally redeemed my feelings about Action Cable… and then I had to go real deep again on Action Cable to build this Presence feature.</p>
+
+<p>At first I thought it was me, “why am I not just getting this?”, but as I became more familiar I came to the conclusion: nah, there’s just a lot of conceptual… noise… in the interface. I get it, it’s complicated.</p>
+
+<p>In the browser/client: You have a Connection, a Connection “opens” and “closes”, but also “reconnects” (reopens?). Then you create a Subscription on the Connection by Subscribing to a named Channel (which is a backend/server concept); Subscriptions have a “connected” callback when <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscription.js#L9">“subscription has been successfully completed”</a> (subscribed?) and “disconnected” <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscription.js#L13">“when the client has disconnected with the server”</a> (a Connection disconnect). If the Connection closes, reconnects, and reopens, then the Channel’s disconnected and reconnected callbacks are triggered again. Subscriptions can also be <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscriptions.js#L50">“rejected”</a>. You can see some of this drift too in the <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/internal.js#L2-L8">message types key/value constants</a> .</p>
+
+<p>…as a concrete example: you don’t <code>connection.subscribe(channelName, ...)</code> you <code>consumer.subscriptions.create(channelName, ...)</code> (oh jeez, it’s called Consumer). Turbo Rails tries to clean up some of this as you can call <code>cable.subscribeTo(channelName, ...)</code>to subscribe to a Channel using Turbo Stream Broadcasts’ existing connection. But even that is compromised because you don’t <code>subscribeTo</code> a channel, you <code>subscribeTo</code> by passing an object of <code>{ channel: channelName, params: paramsforChannelSubscribe }</code> .  Here’s an <a href="https://github.com/basecamp/once-campfire/blob/3d0a10dbdd6d24941f22595072c2021f0c2dca10/app/javascript/controllers/presence_controller.js#L13">example from Campfire.</a></p>
+
+<p>On the server, I have accepted that the Connection/Channel/Streams challenges me, which is probably because of the inherent complexity of multiplexing Streams (no, not Turbo “Streams”, Action Cable “Streams”) over Channels that are themselves multiplexed over connection(s), and it makes my head spin. . That Channels connect Streams, and one Broadcasts on Streams, and one can also <code>transmit</code> on a channel to a specific client in a Channel, and often one does <code>broadcast(channel, payload)</code> but <code>channel</code> may be the name of a Stream. My intuition is that Streams were bolted onto Action Cable’s Channel implementation rather part of the initial conception though it all <a href="https://github.com/rails/rails/pull/22586">landed in Rails at once</a>.</p>
+
+<p>I’m a pedantic person, and it’s tiring for me to write about this stuff with precision. Active Storage named variants—with its record-blob-variant-blob-record—has as an analogous vibe of “I guess it works and I have a hard time looking directly at it”.</p>
+
+<p>I have immense compassion and sympathy and empathy for trying to wrangle something as complex as Action Cable. And also fyi, it <em>is</em> a lot.</p>
+
+<h3 id="testing">Testing</h3>
+
+<ul>
+  <li>You’ll need to isolate and reset Action Cable after individual tests to prevent queries from being made after the transaction rollback, or changing of pinned database connection:<code>ActionCable.server.restart</code></li>
+  <li>If you see deadlocks, <code>pg.exec</code> freezes or AR gives you <code>undefined method 'count' for nil</code> inside of Active Record <a href="https://github.com/rails/rails/blob/b0c813bc7b61c71dd21ee3a6c6210f6d14030f71/activerecord/lib/active_record/connection_adapters/postgresql/database_statements.rb#L167">because the query result object is <code>nil</code></a>, that’s a sign that the database connection is being read out-of-order/unsafely asynchronously/all whack.</li>
+</ul>
+
+<h3 id="page-lifecycle">Page lifecycle</h3>
+
+<p>Live and die by the <a href="https://developer.chrome.com/docs/web-platform/page-lifecycle-api">Browser Page Lifecycle API</a>.</p>
+
+<p>Even with <code>data-turbo-permanent</code>, Stimulus controllers and <code>turbo-cable-streams</code> JavaScript get disconnected and reconnected. Notice that there is a lot of use of nextTick/nextFrame to try to smooth over it.</p>
+
+<ul>
+  <li><code>hotwired/turbo</code>: <a href="https://github.com/hotwired/turbo/issues/868#issuecomment-1419631586">turbo-stream-source does not work as permanent</a></li>
+  <li>Miles Woodroffe: <a href="https://mileswoodroffe.com/articles/out-of-body-experience-with-turbo">“Out of body experience with turbo”</a> about DOM connect/disconnects during Turbo Drive</li>
+</ul>
+
+<p>And general nits that otherwise would necessitate less delicate coding.</p>
+
+<ul>
+  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/50039">Add ability to detect a half-open connection</a> by adding a client <code>pong</code> to the existing server <code>ping</code>. Action Cable currently <a href="https://github.com/rails/rails/blob/4b494a53e1e10f0c523266c38d4f7f22b40fa021/actioncable/app/javascript/action_cable/connection.js#L142-L143">filters out ping messages</a>, so not possible to do a pong or heartbeat without a change or patch.</li>
+  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/44653">ActionCable: Subscribe uniquely</a> about weird behavior when  subscriptions with duplicated identifiers happen</li>
+  <li><code>hotwired/turbo-rails</code>: <a href="https://github.com/hotwired/turbo-rails/issues/559">“Duplicate requests from repeated turbo-cable-stream-source signed-stream-name values”</a></li>
+  <li><code>hotwired/stimulus</code> <a href="https://github.com/hotwired/stimulus/issues/698">How to know when every stimulus controllers are connected ?</a></li>
+</ul>
+
+<p>I ended up making a whole new custom element <code>data-permanent-cable-stream-source</code>. All that to wait a tick before actually unsubscribing the channel in case the element is reconnected to the page again by <code>data-turbo-permanent</code>. What does that mean for unload events? Beats me for now.</p>
+
+<h3 id="what-am-i-doing-about-it">What am I doing about it?</h3>
+
+<p>All this work did generate some upstream issues and PRs. I mostly worked around them in my own app, but maybe we’ll roll the rock uphill a little bit:</p>
+
+<ul>
+  <li><code>hotwired/turbo-rails</code>: <a href="https://github.com/hotwired/turbo-rails/pull/756">Allow <code>turbo-cable-stream-source</code> to be compatible with <code>data-turbo-permanent</code></a></li>
+  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/55825">Fix Action Cable <code>after_subscribe</code> callback to call after deferred subscription confirmation transmit</a></li>
+  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/55824">Add <code>success_callback</code> to Action Cable’s <code>stream_from</code> and <code>stream_to</code></a></li>
+  <li><code>reclaim-the-stack/actioncable-enhanced-postgresql-adapter</code>: <a href="https://github.com/reclaim-the-stack/actioncable-enhanced-postgresql-adapter/pull/6">Fix incorrect escaping of large payloads</a></li>
+</ul>
+
+<h3 id="notes-right">Notes, right?</h3>
+
+<p>Yep, these are my notes. Maybe they’re helpful. No big denouement. The feature works, I’m happy with it, my teammates are happy, and I probably wouldn’t have attempted it at all if I didn’t have such positive thoughts about Action Cable going in, even if the work itself got deeply into the weeds.</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/09/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later"><p>Serializing ViewComponent for Active Job and Turbo broadcast later</p>
 </a>
     </h1>
@@ -893,42 +1004,6 @@
 
 <p>I beat the game <a href="https://en.wikipedia.org/wiki/Yoku%27s_Island_Express">Yoku’s Island Express</a>, which was a delightful experience on my desired theme of nice metroidvania (recommendations please). I also just started <a href="https://play.date/games/seasons/two/">Season 2 of Playdate</a>, which was a reason to find and charge it. On the theme of small handhelds, I ordered an <a href="https://www.adafruit.com/product/6323">Adafruit USB C Resistor Fixer</a> (say that 5 times fast) for the RGB30 that was collecting dust until I discovered some Pico 8 games I’d like to play.</p>
 
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/06/a-nice-email-for-subscribers"><p>A nice email for subscribers</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-06-04T20:13:00Z" itemprop="datePublished">June 4, 2025</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I got this nice email from Defector, an online publication I pay for (along with <a href="https://deprogrammaticaipsum.com/issues">De Programmatica Ipsum</a>, <a href="https://www.garbageday.email/">Garbage Day</a>, and <a href="https://www.todayintabs.com/">Today in Tabs</a>. I think that’s it, though I guess I can include <a href="https://rubyland.news/">Rubyland.news</a> and <a href="https://newsletter.shortruby.com/">Short Ruby Newsletter</a> too). I yearn to share something like this for everyone who actively, if not always monetarily, supports my own work. The feeling is there, though not words this nice.</p>
-
-<blockquote>
-
-  <p>Subject: Thank you for supporting Defector</p>
-
-  <p>I like when people ask me how Defector is doing. Thanks to subscribers like you, I get to say that not only that Defector is doing well, but that I love my work.</p>
-
-  <p>I spent most of my life as a writer in jobs that were always and obviously impermanent. Roughly every 20 months, the people running things—people I never saw, and who had no interest in the work we did—would get bored, or nervous, or fall for some dippy executive fad, and <a href="https://defector.com/three-newsrooms-imploded-around-me-in-under-a-year">pivot some number of us out of our jobs</a>. Basically every innovation in media over the last few decades has been some version of this: an attempt by executive types to see how much less they can do, and how long they can get away with making everything <a href="https://defector.com/henry-blodget-invents-hires-sexually-harasses-blogs-about-nonexistent-ai-subordinate">smaller</a>, <a href="https://defector.com/the-familiarity-and-sadness-of-watching-the-washington-post-go-to-hell">sadder</a>, and <a href="https://defector.com/horny-sports-blogging-makes-a-bewildering-return-to-sports-illustrated">worse</a>.</p>
-
-  <p>The most fundamental benefit of owning your workplace, as we do at Defector, is that we just don’t have to worry about that. Instead, we’re trying to solve the opposite problem: how to make the site <a href="https://defector.com/saquon-barkley-lured-me-to-an-arena-where-i-learned-passive-income-is-holy">better</a> and <a href="https://defector.com/what-did-she-see-at-the-end">broader</a> and <a href="https://defector.com/confessions-of-a-spelling-bee-pronouncer">more surprising</a> and <a href="https://defector.com/dave-mckenna-insists-they-have-ham-trucks-in-france">more fun</a>, tinkering towards the right balance of <a href="https://defector.com/for-sale-the-end-and-the-means-to-wait-for-it">smart</a> and <a href="https://defector.com/is-jon-heyman-paying-too-much-for-blueberries">stupid</a>. If you replace mystified Executive Maneuvers with the less abstract challenge of “writing good blogs for people who like to read,” this turns out to be both a good job and a viable business.</p>
-
-  <p>But even after filtering out the noise from upstairs, there are plenty of other things to worry about. Chief among them is making sure that those good blogs reliably get in front of both existing subscribers like you and new ones we’d like to bring into the fold. All of those bad, previous jobs happened on an internet that worked better than our current one. Then as now, the people in charge were craven and nasty and dumb, but it was easier to find things, and there were notably more non-toxic places in which to talk about it all.</p>
-
-  <p>So: thanks again for reading our blogs, and thanks especially for sharing them with people you think should know about Defector. (Here I’ll remind you that subscribers get an unlimited number of gift links each month to facilitate sharing.) Thanks also for making this the best job I’ve ever had. I’m very lucky to be able to keep doing this, with my friends and for such an engaged community of readers. None of it would exist without you.</p>
-
-  <p>Be well,
-David</p>
-
-</blockquote>
 
   </div>
 </article>

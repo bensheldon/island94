@@ -137,6 +137,121 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2026/03/a-bulletproof-wait_for_turbo-test-helper"><p>A bulletproof <code>wait_for_turbo</code> test helper</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2026-03-06T00:18:00Z" itemprop="datePublished">March 6, 2026</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I like Hotwired Turbo like I liked UJS (Unobtrusive Javascript): it adds a few small but helpful tricks to my application’s toolbox. One problem though with adding any javascript is that because the webpage is more dynamic, writing full-browser system tests becomes harder because we need to make sure the webpage is in <em>just the right state</em> to interact with it in tests. It’s annoying to write tests super defensively to avoid flakey tests.</p>
+
+<h3 id="enumerating-states-turbo-can-be-in">Enumerating states Turbo can be in</h3>
+
+<p>Turbo adds some attributes to the webpage DOM that we can look for in our tests to ensure that things are in the right state. But it’s tricky. Let’s start with the trickiest thing first.</p>
+
+<p>Turbo sets <code>aria-busy</code>  when navigation is happening:</p>
+
+<ul>
+  <li>Turbo Drive sets <code>html[aria-busy]</code> when navigating</li>
+  <li>Turbo Frames set <code>turbo-frame[aria-busy]</code> when navigating</li>
+  <li>Turbo forms set <code>form[aria-busy]</code> when submitting</li>
+</ul>
+
+<p>…but when doing a very typical Submit-a-Form-and-Redirect operation, Turbo drops the <code>[aria-busy]</code> for a brief moment after the form submit returns a redirect response but before navigating to the redirected page sets the <code>[aria-busy]</code> again. That sucks.</p>
+
+<p>The other things we need to be aware of and wait for are more pedestrian:</p>
+
+<ul>
+  <li>The first time a page is loaded and Turbo hasn’t been loaded at all yet. This probably wouldn’t matter because, of course, we’re all using progressive enhancement so nothing is functionally inaccessible when javascript isn’t loaded. But our tests should be deterministic. And we have the non-browser Rack Test driver to cover the non-javascript scenario (which are super fast too). To handle this scenario, we’ll add an attribute to our server-rendered HTML layout, and then remove it after Turbo has loaded.</li>
+  <li>Turbo Previews. Which is like a weird cached version of the page Turbo will show, but might get yanked away when the <em>actual</em> response finishes and Turbo swaps them. Fortunately turbo adds a <code>data-turbo-preview</code> attribute we can test for.</li>
+</ul>
+
+<h3 id="doing-the-simplest-thing-about-it">Doing the simplest thing about it</h3>
+
+<p>Let’s start with the test helper, and then we’ll wire up the pieces:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">wait_for_turbo</span>
+  <span class="k">return</span> <span class="k">unless</span> <span class="no">Capybara</span><span class="p">.</span><span class="nf">current_driver</span> <span class="o">!=</span> <span class="ss">:rack_test</span>
+
+  <span class="n">page</span><span class="p">.</span><span class="nf">assert_no_selector</span> <span class="s2">"html[aria-busy], form[aria-busy], turbo-frame[aria-busy], html[data-turbo-not-loaded], html[data-turbo-loading], html[data-turbo-preview]"</span><span class="p">,</span> <span class="ss">visible: :all</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Not bad! It simply waits, because <code>assert_no_selector</code> uses Capybara’s async timeout, until the page doesn’t have any of the “I’m loading” attributes on it. Easy.</p>
+
+<p>To handle the <code>turbo-not-loaded</code> attribute, add something like this to your layout(s):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!--</span> <span class="n">app</span><span class="o">/</span><span class="n">views</span><span class="o">/</span><span class="n">layouts</span><span class="o">/</span><span class="n">application</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">data</span><span class="o">-</span><span class="n">turbo</span><span class="o">-</span><span class="ow">not</span><span class="o">-</span><span class="n">loaded</span><span class="o">=</span><span class="s2">"1"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>And then in your javascript, at the very bottom after you’ve loaded Turbo and everything else:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// app/javascript/application.js</span>
+
+<span class="k">import</span> <span class="dl">"</span><span class="s2">@hotwired/turbo-rails</span><span class="dl">"</span>
+<span class="c1">// ...</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">turbo:load</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nf">removeAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">data-turbo-not-loaded</span><span class="dl">"</span><span class="p">)</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nf">removeAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">data-turbo-loading</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">turbo:submit-start</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">closest</span><span class="p">(</span><span class="dl">"</span><span class="s2">turbo-frame</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">data-turbo-loading</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+<span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">turbo:submit-end</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">fetchResponse</span><span class="p">?.</span><span class="nx">redirected</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nf">removeAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">data-turbo-loading</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>The carve-out logic for setting <code>data-turbo-loading</code> on <code>turbo:submit-start</code> and removing it on <code>turbo:submit-end</code> is a bit complicated:</p>
+
+<ul>
+  <li>We don’t want to set <code>data-turbo-loading</code> on Turbo Frames because Turbo Frames don’t emit <code>turbo:load</code> events so the attribute would never be removed. More importantly and fortunately, Turbo Frames don’t suffer from an <code>aria-busy</code> gap.</li>
+  <li>And we don’t want to remove <code>data-turbo-loading</code> if it’s a redirect, to bridge the <code>aria-busy</code> gap mentioned earlier. We’ll wait for the subsequent <code>turbo:load</code> to clean it up.</li>
+</ul>
+
+<p>There it is. Now you just need to put <code>wait_for_turbo</code> before any action that could potentially engage Turbo e.g.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ...</span>
+<span class="n">click_on</span> <span class="s2">"Do something"</span>
+<span class="n">wait_for_turbo</span>
+<span class="n">click_on</span> <span class="s2">"The result"</span>
+<span class="c1">#...</span>
+</code></pre></div></div>
+
+<h3 id="i-hate-it">I hate it</h3>
+
+<p>Yeah, that’s awful. We want our system tests to invoke declarative behavior, not be littered with “wait for it….”. So… we’re going to patch Capybara. Here we go…:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">SystemTurboClick</span>
+  <span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="k">unless</span> <span class="n">session</span><span class="p">.</span><span class="nf">driver</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Capybara</span><span class="o">::</span><span class="no">RackTest</span><span class="o">::</span><span class="no">Driver</span><span class="p">)</span>
+      <span class="n">assert_no_ancestor</span><span class="p">(</span><span class="s2">"[aria-busy], html[data-turbo-not-loaded], html[data-turbo-loading], html[data-turbo-preview]"</span><span class="p">,</span> <span class="ss">visible: :all</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="k">super</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Capybara</span><span class="o">::</span><span class="no">Node</span><span class="o">::</span><span class="no">Element</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">SystemTurboClick</span>
+</code></pre></div></div>
+
+<p>Now anytime that Capybara does a click event, it will first wait for Turbo to do its thing.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2026/03/war"><p>War</p>
 </a>
     </h1>
@@ -1023,117 +1138,6 @@ party gems.</li>
 </code></pre></div></div>
 
 <p><strong>Real talk:</strong> I haven’t packaged this into a gem. I didn’t want to maintain it for everyone, and there’s some View Component features (like collections) it doesn’t handle yet because I haven’t used them (yet). I think this sort of thing is first class behavior for the current state of Rails and Active Job and Turbo, and I’d rather the library maintainers figure out what the best balance of ergonomics, complexity, and performance is for them. I’ve been gently poking them about it in their Slack; they’re great and I believe we can arrive at something even better than this patch I’m running with myself for now 💖</p>
-
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/10/notes-from-building-a-who-is-doing-what-right-now-on-our-website-presence-feature-with-action-cable"><p>Notes from building a “who is doing what right now on our website?” presence feature with Action Cable</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-10-06T14:59:00Z" itemprop="datePublished">October 6, 2025</time>
-
-        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2025/presence-screenshot.jpg" alt="A screenshot of my application with little presence indicators decorating content" /></p>
-
-<p>I recently was heads down building a “presence” feature for the case and communications management part of my startup’s admin dashboard. The idea being that our internal staff can see what their colleagues are working on, better collaboarate together as a team of overlapping responsibility, and reduce duplicative work.</p>
-
-<p>The follow is more my notes than a cohesive narrative. But maybe you’ll get something out of it.</p>
-
-<h3 id="big-props">Big props</h3>
-
-<p>In building this feature, I got a lot of value from:</p>
-<ul>
-  <li><a href="https://github.com/basecamp/once-campfire">Basecamp’s Campfire</a> app, recently open sourced, which has a sorta similar feature.</li>
-  <li>Rob Race’s <a href="https://robrace.dev/blog/turbo-morphs-presence-channels-and-typing-indicators/#presence-channel">Developer Notes about building a Presence Feature</a></li>
-  <li>AI slop, largely Jetbrains Junie agent. Not because it contributed code to the final feature, but because I had the agent try to implement from scratch 3 different times, and while none of them fully worked (let alone met my quality standards or covered all edges), it helped sharpen the outlines and common shapes and surfaced some API methods to click into that I wasn’t aware of. And made the difference between undirected poking around vs being like “ok, this is gonna require no more than 5 objects in various places working together; let’s go!”</li>
-</ul>
-
-<h3 id="the-big-idea">The big idea</h3>
-
-<p>The feature I wanted to build would track multiple presence keys at the same time. So if someone is on a deep page (<code>/admin/clients/1/messages</code>) they’d be present for that specific client, any client, as well as the dashboard a whole.</p>
-
-<p>I also wanted to keep separate “track my presence” and “display everyone’s presence”.</p>
-
-<p>What I ended up with was:</p>
-
-<ol>
-  <li>Client in the browser subscribes to the <code>PresenceChannel</code> with a <code>key</code> param. It also sets up a setInterval heartbeat to send down a <code>touch</code> message every 30 seconds. This is a Stimulus controller that uses the Turbo cable connection, cause it’s there.</li>
-  <li>On the server, the PresenceChannel has <code>connected</code>, <code>disconnected</code>, and <code>touch</code> actions and stores the <code>key</code> passed during connect. It writes to an Active Record model UserPresence and calls <code>increment</code>, <code>decrement</code>, and <code>touch</code> respectively.</li>
-  <li>The Active Record model persists all these things atomically (Postgres!) and then triggers vanilla Turbo Stream Broadcast Laters (GoodJob!).</li>
-  <li>The frontend visually is all done with vanilla Turbo Stream Broadcasts over the vanilla Turbo::StreamsChannel appending to and removing unique dom elements that are avatars of the present users.</li>
-</ol>
-
-<p>It works! I’m happy with it.</p>
-
-<p>Ok, let’s get some grumbles out.</p>
-
-<h3 id="action-cable-could-have-a-bit-more-conceptual-integrity">Action Cable could have a bit more conceptual integrity</h3>
-
-<p>I once built some Action Cable powered features <a href="https://github.com/bensheldon/open311status/pull/59">about 7 years ago</a>, before Turbo Broadcast Streams, and it wasn’t my favorite. Since then, Turbo Broadcast Streams totally redeemed my feelings about Action Cable… and then I had to go real deep again on Action Cable to build this Presence feature.</p>
-
-<p>At first I thought it was me, “why am I not just getting this?”, but as I became more familiar I came to the conclusion: nah, there’s just a lot of conceptual… noise… in the interface. I get it, it’s complicated.</p>
-
-<p>In the browser/client: You have a Connection, a Connection “opens” and “closes”, but also “reconnects” (reopens?). Then you create a Subscription on the Connection by Subscribing to a named Channel (which is a backend/server concept); Subscriptions have a “connected” callback when <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscription.js#L9">“subscription has been successfully completed”</a> (subscribed?) and “disconnected” <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscription.js#L13">“when the client has disconnected with the server”</a> (a Connection disconnect). If the Connection closes, reconnects, and reopens, then the Channel’s disconnected and reconnected callbacks are triggered again. Subscriptions can also be <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscriptions.js#L50">“rejected”</a>. You can see some of this drift too in the <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/internal.js#L2-L8">message types key/value constants</a> .</p>
-
-<p>…as a concrete example: you don’t <code>connection.subscribe(channelName, ...)</code> you <code>consumer.subscriptions.create(channelName, ...)</code> (oh jeez, it’s called Consumer). Turbo Rails tries to clean up some of this as you can call <code>cable.subscribeTo(channelName, ...)</code>to subscribe to a Channel using Turbo Stream Broadcasts’ existing connection. But even that is compromised because you don’t <code>subscribeTo</code> a channel, you <code>subscribeTo</code> by passing an object of <code>{ channel: channelName, params: paramsforChannelSubscribe }</code> .  Here’s an <a href="https://github.com/basecamp/once-campfire/blob/3d0a10dbdd6d24941f22595072c2021f0c2dca10/app/javascript/controllers/presence_controller.js#L13">example from Campfire.</a></p>
-
-<p>On the server, I have accepted that the Connection/Channel/Streams challenges me, which is probably because of the inherent complexity of multiplexing Streams (no, not Turbo “Streams”, Action Cable “Streams”) over Channels that are themselves multiplexed over connection(s), and it makes my head spin. . That Channels connect Streams, and one Broadcasts on Streams, and one can also <code>transmit</code> on a channel to a specific client in a Channel, and often one does <code>broadcast(channel, payload)</code> but <code>channel</code> may be the name of a Stream. My intuition is that Streams were bolted onto Action Cable’s Channel implementation rather part of the initial conception though it all <a href="https://github.com/rails/rails/pull/22586">landed in Rails at once</a>.</p>
-
-<p>I’m a pedantic person, and it’s tiring for me to write about this stuff with precision. Active Storage named variants—with its record-blob-variant-blob-record—has as an analogous vibe of “I guess it works and I have a hard time looking directly at it”.</p>
-
-<p>I have immense compassion and sympathy and empathy for trying to wrangle something as complex as Action Cable. And also fyi, it <em>is</em> a lot.</p>
-
-<h3 id="testing">Testing</h3>
-
-<ul>
-  <li>You’ll need to isolate and reset Action Cable after individual tests to prevent queries from being made after the transaction rollback, or changing of pinned database connection:<code>ActionCable.server.restart</code></li>
-  <li>If you see deadlocks, <code>pg.exec</code> freezes or AR gives you <code>undefined method 'count' for nil</code> inside of Active Record <a href="https://github.com/rails/rails/blob/b0c813bc7b61c71dd21ee3a6c6210f6d14030f71/activerecord/lib/active_record/connection_adapters/postgresql/database_statements.rb#L167">because the query result object is <code>nil</code></a>, that’s a sign that the database connection is being read out-of-order/unsafely asynchronously/all whack.</li>
-</ul>
-
-<h3 id="page-lifecycle">Page lifecycle</h3>
-
-<p>Live and die by the <a href="https://developer.chrome.com/docs/web-platform/page-lifecycle-api">Browser Page Lifecycle API</a>.</p>
-
-<p>Even with <code>data-turbo-permanent</code>, Stimulus controllers and <code>turbo-cable-streams</code> JavaScript get disconnected and reconnected. Notice that there is a lot of use of nextTick/nextFrame to try to smooth over it.</p>
-
-<ul>
-  <li><code>hotwired/turbo</code>: <a href="https://github.com/hotwired/turbo/issues/868#issuecomment-1419631586">turbo-stream-source does not work as permanent</a></li>
-  <li>Miles Woodroffe: <a href="https://mileswoodroffe.com/articles/out-of-body-experience-with-turbo">“Out of body experience with turbo”</a> about DOM connect/disconnects during Turbo Drive</li>
-</ul>
-
-<p>And general nits that otherwise would necessitate less delicate coding.</p>
-
-<ul>
-  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/50039">Add ability to detect a half-open connection</a> by adding a client <code>pong</code> to the existing server <code>ping</code>. Action Cable currently <a href="https://github.com/rails/rails/blob/4b494a53e1e10f0c523266c38d4f7f22b40fa021/actioncable/app/javascript/action_cable/connection.js#L142-L143">filters out ping messages</a>, so not possible to do a pong or heartbeat without a change or patch.</li>
-  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/44653">ActionCable: Subscribe uniquely</a> about weird behavior when  subscriptions with duplicated identifiers happen</li>
-  <li><code>hotwired/turbo-rails</code>: <a href="https://github.com/hotwired/turbo-rails/issues/559">“Duplicate requests from repeated turbo-cable-stream-source signed-stream-name values”</a></li>
-  <li><code>hotwired/stimulus</code> <a href="https://github.com/hotwired/stimulus/issues/698">How to know when every stimulus controllers are connected ?</a></li>
-</ul>
-
-<p>I ended up making a whole new custom element <code>data-permanent-cable-stream-source</code>. All that to wait a tick before actually unsubscribing the channel in case the element is reconnected to the page again by <code>data-turbo-permanent</code>. What does that mean for unload events? Beats me for now.</p>
-
-<h3 id="what-am-i-doing-about-it">What am I doing about it?</h3>
-
-<p>All this work did generate some upstream issues and PRs. I mostly worked around them in my own app, but maybe we’ll roll the rock uphill a little bit:</p>
-
-<ul>
-  <li><code>hotwired/turbo-rails</code>: <a href="https://github.com/hotwired/turbo-rails/pull/756">Allow <code>turbo-cable-stream-source</code> to be compatible with <code>data-turbo-permanent</code></a></li>
-  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/55825">Fix Action Cable <code>after_subscribe</code> callback to call after deferred subscription confirmation transmit</a></li>
-  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/55824">Add <code>success_callback</code> to Action Cable’s <code>stream_from</code> and <code>stream_to</code></a></li>
-  <li><code>reclaim-the-stack/actioncable-enhanced-postgresql-adapter</code>: <a href="https://github.com/reclaim-the-stack/actioncable-enhanced-postgresql-adapter/pull/6">Fix incorrect escaping of large payloads</a></li>
-</ul>
-
-<h3 id="notes-right">Notes, right?</h3>
-
-<p>Yep, these are my notes. Maybe they’re helpful. No big denouement. The feature works, I’m happy with it, my teammates are happy, and I probably wouldn’t have attempted it at all if I didn’t have such positive thoughts about Action Cable going in, even if the work itself got deeply into the weeds.</p>
 
 
   </div>

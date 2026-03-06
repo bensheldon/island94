@@ -138,6 +138,34 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/06/data-driven-content-first-design"><p>Data-driven, content-first design</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-06-04T00:00:00Z" itemprop="datePublished">June 4, 2011</time>
+
+        • Tagged <a href="/posts/tags/contest">contest</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/design">design</a>, <a href="/posts/tags/development">development</a>, and <a href="/posts/tags/layout">layout</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2011-06-04-Data-driven-content-first-design/pdfpulltabs-600x342.png"><img src="/uploads/2011-06-04-Data-driven-content-first-design/pdfpulltabs-600x342.png" alt="" title="pdfpulltabs" /></a></p>
+
+<p>I’m working on an app for the  <a href="http://www.donorschoose.org/hacking-education">DonorChoose.org Hacking Education Contest</a>. DonorsChoose works by having teachers submit classroom project/supply needs that people can then donate to pay for through the internet. Right now the only way to “share” those projects is through the usual email, Facebook and Twitter; my idea for am app is to create custom printable 4-up (quartersheet) flyers for handing out, and pull-tab sheets for posting-up. Despite the “power of teh internets”, I think consideration of local resources and capacity is an important value to recognize—and helping teachers and allies advertise their needs (and the positive outcomes they hope to create) more easily within their physical communities would go far towards advancing DonorsChoose.org’s mission.</p>
+
+<p>This project has the typical technical difficulties: my goal is to use the DonorsChoose API to fetch a particular project and then populate an HTML+CSS preview—allowing the teacher to then live-edit the text (both for layout and because writing for a local audience is different than an internet one)—and then use <a href="http://code.google.com/p/dompdf/">dompdf</a> to convert that HTML+CSS to a printable PDF. The dompdf library is nifty: it supports CSS 2d transformations, custom fonts, images (necessary for QR code hotness), light positioning (no floats, so tables it is), and media-queries  (@media screen and @media print) to fix all the little layout and typography issues in translating from the web to print, as well as dompdf’s own myriad quirks. Basically it’s everything I need to make a not-too-ugly flyer and pull-tab sheet; the image at the top of this post is the ugly proof-of-concept.</p>
+
+<p>But the biggest challenge is designing a layout scheme that is flexible to the wide range of DonorsChoose project content. Designing for an 8.5 x 11” sheet of paper is way different than designing for the web: creating a balanced—or at least aesthetically-acceptable—design is no easy matter when there is no such thing as overflow. I hope to get around some issues by providing a live-preview so that teachers can fix any egregious text over-/under- runs, but the goal is to get teachers to Click-Print-Post as quickly as possible.</p>
+
+<p>Fortunately I have a designer (the awesome  <a href="http://b.illbrown.com">Billy Brown</a>) helping with the layout, but I need to give him some idea of what to expect. Fortunately DonorsChoose made available project data for ~296,000 projects. So I parsed through the lengths for the 4 main pieces of content I want to use in order to get the distribution of lengths. Sure, saying “Design for a title that is 10-50 characters” doesn’t have the highest specificity, but it’s a whole lot more useful than the alternative of blind experimentation. The data below is charts of those lengths—I probably will have to limit my data to just the past year or so since DonorsChoose has changed their requirements/text-fields over time, but its interesting so far to see the full distributions.</p>
+
+<p><a href="/uploads/2011-06-04-Data-driven-content-first-design/DonorsChoose-TextLengths.png"> <img src="/uploads/2011-06-04-Data-driven-content-first-design/DonorsChoose-TextLengths-600x503.png" alt="" title="DonorsChoose-TextLengths" /> </a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2011/05/nailed-that-response"><p>Nailed that response</p>
 </a>
     </h1>
@@ -497,40 +525,6 @@ In the end we are left with the challenge of evaluating the Progressive legacy f
 <blockquote>
   <p>“To understand your country, you must love it. To love it, you must, in a sense, accept it. To accept it as how it is, however is to betray it. To accept your country without betraying it, you must love it for that in it which shows what it might become. America—this monument to the genius of ordinary men and women, this place where hope becomes capacity, this long, halting turn of the no into the yes—needs citizens who love it enough to reimagine and remake it.”</p>
 </blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/04/belief-based-design"><p>Belief-based design</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-04-28T00:00:00Z" itemprop="datePublished">April 28, 2011</time>
-
-        • Tagged <a href="/posts/tags/beliefs">beliefs</a>, <a href="/posts/tags/design">design</a>, and <a href="/posts/tags/values">values</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Matt Webb posted <a href="http://interconnected.org/home/2011/03/11/inbox_hero">“Inbox Hero”</a> about a month back (via <a href="http://www.ajmcguire.com/">AJ</a>):</p>
-
-<blockquote>
-  <p>Rand: The question isn’t who is going to let me; it’s who is going to stop me.</p>
-
-  <p>Anyway, I’ve been thinking about an email app built on a principle of Objectivism. At the moment, my email client defaults to doing nothing, and I must intervene to create action (ie, write a reply).</p>
-
-  <p>But if I had an Objectivist email app, it would automatically respond to all emails with stock enabling and forceful replies after a period of (say) 15 minutes, and I would have to intervene if I wanted it to not do that.</p>
-</blockquote>
-
-<p>I shared it in Google Reader and Tom Wolf (who I’ve <a href="http://www.island94.org/2009/10/teaching-through-breakage/">quoted before</a>) replied:</p>
-
-<blockquote>
-  <p>This is a neat way to think about building applications. Rather than starting from “let’s solve a problem”, start from “given this solution, how should it behave assuming I hold X as my primary belief framework?” I’m not sure it’s a <em>practical</em> way to build apps for the masses, but it’s pretty cool nonetheless :)</p>
-</blockquote>
-
-<p>And just in minor regards to Objectivism, I inadvertently dabbled in it when I was about 14 but fortunately quickly outgrew it.</p>
 
   </div>
 </article>
