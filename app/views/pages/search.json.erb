@@ -1,12 +1,15 @@
 <%
-  posts_hash = Post.all.sort_by(&:published_at).reverse.each_with_object({}) do |post, hash|
-    hash[post_path(post).delete_prefix('/').parameterize] = {
-      title: post.title,
-      published: post.published_at.strftime("%B %-d, %Y"),
-      tags: post.tags,
-      content: strip_tags(post.content),
-      url: post_path(post),
-    }
+  posts_hash = Post.all.sort_by(&:published_at).reverse.to_h do |post|
+    [
+      post_path(post).delete_prefix('/').parameterize,
+      {
+        title: post.title,
+        published: post.published_at.strftime("%B %-d, %Y"),
+        tags: post.tags,
+        content: strip_tags(post.content),
+        url: post_path(post),
+      },
+    ]
   end
 %>
 <%== posts_hash.to_json %>
