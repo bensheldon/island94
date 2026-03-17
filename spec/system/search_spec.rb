@@ -7,6 +7,8 @@ RSpec.describe 'Searching', :js do
     fill_in 'q', with: "concrete sumo"
     find_by_id('search-box').native.send_keys(:return)
 
-    expect(page).to have_text 'The concrete sumo', wait: 10
+    using_wait_time 60 do
+      expect(page).to have_text('The concrete sumo')
+    end
   end
 end

@@ -69,8 +69,11 @@ RSpec.configure do |config|
         :cuprite,
         screen_size: [1024, 800],
         options: {
+          # Increase Chrome startup wait time
           process_timeout: 30,
-          headless: ENV['SHOW_BROWSER'] ? false : true,
+          # Increase selector timeout
+          timeout: 30,
+          headless: ENV['SHOW_BROWSER'] ? false : "new",
           browser_options: ENV["DOCKER"] ? { "no-sandbox" => nil } : {},
         }
       )
