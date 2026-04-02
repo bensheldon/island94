@@ -223,9 +223,6 @@
     <entry key="config">
       <value>file://$MODULE_DIR$/config</value>
     </entry>
-    <entry key="config/cable">
-      <value>file://$MODULE_DIR$/config/cable.yml</value>
-    </entry>
     <entry key="config/database">
       <value>file://$MODULE_DIR$/config/database.yml</value>
     </entry>
@@ -246,9 +243,6 @@
     </entry>
     <entry key="config/routes.rb">
       <value>file://$MODULE_DIR$/config/routes.rb</value>
-    </entry>
-    <entry key="config/secrets">
-      <value>file://$MODULE_DIR$/config</value>
     </entry>
     <entry key="db">
       <value>file://$MODULE_DIR$/db</value>
@@ -282,6 +276,9 @@
     </entry>
     <entry key="public/stylesheets">
       <value>file://$MODULE_DIR$/public/stylesheets</value>
+    </entry>
+    <entry key="test/mailers/previews">
+      <value>file://$MODULE_DIR$/test/mailers/previews</value>
     </entry>
     <entry key="tmp">
       <value>file://$MODULE_DIR$/tmp</value>
