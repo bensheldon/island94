@@ -131,13 +131,13 @@
   <div class="post-content" itemprop="articleBody">
     <p>My associate, <a href="http://circuitous.org">Rebecca</a>, and I have been starting to think critically about <a href="http://panlexicon.com">Panlexicon.com</a>, the unique, tag-cloud based thesaurus I’ve written about <a href="http://island94.org/node/128">previously</a>. We’re hoping to put some more time and effort into the project and in the process, learn some more about what’s happening with the language and the underlying structure of the thesaurus taxonomy.</p>
 
-<p><a href="http://www.flickr.com/photos/bensheldon/1178070872/" title="Photo Sharing"> <img src="http://farm2.static.flickr.com/1214/1178070872_b43fabb5f9_b.jpg" alt="Panlexicon.com - Thesaurus Visualization" /> </a></p>
+<p><img src="/uploads/2007/more-thoughts-on-an-interesting-thesaurus-1.jpg" alt="Panlexicon.com - Thesaurus Visualization" /></p>
 
 <p>The thesaurus data we’re working with is the <a href="http://www.gutenberg.org/etext/3202">Moby Thesaurus</a> from the <a href="http://www.gutenberg.org/">Project Gutenburg</a> library of free electronic texts. Like many thesauruses, it’s structure in an interesting way. Every word is assigned to one or more groups based on it’s general meaning or idea. Each group has a keyword, also known as a headword, that is a general encapsulation that idea—this is why, for example in Roget’s, you must first look up a word in the index to acquire its keywords. Each group has only one keyword, but a keyword can exist in other groups (but as an ordinary word).</p>
 
 <p>This thesaurus structure allows us to do some easy simplifications and analysis on the data. For many functions, we can treat the groups as supernodes, performing operations and storing connections upon them in place of the words themselves. For example, when determining relatedness between words, we only have compare the groups they are a part of; while there are approximately 100,000 words in our database, there are only 30,000 groups, which greatly diminishes the size and complexity of the data set we’re working on.</p>
 
-<p><a href="http://www.flickr.com/photos/bensheldon/1178070558/" title="Photo Sharing"> <img src="http://farm2.static.flickr.com/1297/1178070558_757312a092.jpg" alt="Panlexicon.com - Correspondence Weighting" /> </a></p>
+<p><img src="/uploads/2007/more-thoughts-on-an-interesting-thesaurus-2.jpg" alt="Panlexicon.com - Correspondence Weighting" /></p>
 
 <p>Currently Panlexicon works by comparing the overlap between groups of words. When typing in a search term, Panlexicon looks up all of the groups that word is a member of. It then returns a list of words that are also in those groups. The weight of each word (or size in our word cloud model) is calculated according to how many groups—-of those groups that include the search term—that word is a member of. A property of this is that no other returned word will have a heavier weight than the search term. When searching multiple terms, Panlexicon creates a set of groups such that all search terms are a member. In the case when there exists no groups that contain all the search terms, Panlexicon returns nothing.</p>
 
@@ -758,7 +758,7 @@ function cambridge_mediamap_map() {
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p><a href="http://www.flickr.com/photos/bensheldon/819325062/" title="Photo Sharing"> <img src="http://farm2.static.flickr.com/1327/819325062_64e6660ffa_m.jpg" alt="Frog" /> </a> <a href="http://www.flickr.com/photos/bensheldon/818413293/" title="Photo Sharing"> <img src="http://farm2.static.flickr.com/1054/818413293_f3c656f1ce_m.jpg" alt="Helen sees something" /> </a></p>
+    <p><img src="/uploads/2007/walkabout-trail-ri-1.jpg" alt="Frog" /> <img src="/uploads/2007/walkabout-trail-ri-2.jpg" alt="Helen sees something" /></p>
 
 <p>A few weeks ago I hiked the <a href="http://www.google.com/maps?q=Providence,+RI,+USA&amp;ie=UTF8&amp;ll=41.92353,-71.75776&amp;spn=0.00372,0.009388&amp;t=h&amp;z=17&amp;om=1">Walkabout Trail</a> in Northwestern Rhode Island with my friend <a href="http://flickr.com/photos/helenday/">Helen</a>. The trail was gorgeously green and mossy with many fun frogs, toads and critters. We hiked the eight miles (which cuts for shorter walks) in a little over three hours, which was a great pace leading up to a cooling swim in the adjoining pond afterwards.</p>
 
@@ -879,11 +879,11 @@ function cambridge_mediamap_map() {
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p><a href="http://www.flickr.com/photos/bensheldon/530395402/" title="Photo Sharing"> <img src="http://farm2.static.flickr.com/1285/530395402_2567dc64cd.jpg" alt="Goslings" /> </a></p>
+    <p><img src="/uploads/2007/small-things-of-spring-1.jpg" alt="Goslings" /></p>
 
-<p><a href="http://www.flickr.com/photos/bensheldon/530535995/" title="Photo Sharing"> <img src="http://farm2.static.flickr.com/1220/530535995_82b282cda5.jpg" alt="Ladybug in the Garden" /> </a></p>
+<p><img src="/uploads/2007/small-things-of-spring-2.jpg" alt="Ladybug in the Garden" /></p>
 
-<p><a href="http://www.flickr.com/photos/bensheldon/513475262/" title="Photo Sharing"> <img src="http://farm1.static.flickr.com/207/513475262_e9fb4f340d.jpg" alt="Early Grapes" /> </a></p>
+<p><img src="/uploads/2007/small-things-of-spring-3.jpg" alt="Early Grapes" /></p>
 
 
   </div>
@@ -902,11 +902,11 @@ function cambridge_mediamap_map() {
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p><a href="http://www.flickr.com/photos/bensheldon/448506773/" title="Photo Sharing"> <img src="http://farm1.static.flickr.com/218/448506773_55049ea73c.jpg" alt="CIMG2509.JPG" /> </a></p>
+    <p><img src="/uploads/2007/spring-arrives-1.jpg" alt="CIMG2509.JPG" /></p>
 
 <p>Spring came a lot earlier to Washington, DC than it did to New England, but the mercury is topping 80 today in Boston. Above, I’m at the Cherry Blossom Festival in Washington, DC last month. Below is the one of the multitudinous dandelions that have sprung up around UMass Boston.</p>
 
-<p><a href="http://www.flickr.com/photos/bensheldon/489864761/" title="Photo Sharing"> <img src="http://farm1.static.flickr.com/194/489864761_ffcbfa0a22.jpg" alt="Dandelions at UMass Boston" /> </a></p>
+<p><img src="/uploads/2007/spring-arrives-2.jpg" alt="Dandelions at UMass Boston" /></p>
 
   </div>
 </article>
