@@ -16,8 +16,5 @@ redirect_from:
 - "?p=114"
 ---
 
-[![](http://blip.tv/file/get/Bensheldon-HappyHolidays2006530.flv.jpg "Click To Play") ](http://blip.tv/file/get/Bensheldon-HappyHolidays2006530.flv)
-[Click To Play](http://blip.tv/file/get/Bensheldon-HappyHolidays2006530.flv)
-
-If you have problems with the flash video above, [try this](http://blip.tv/file/get/Bensheldon-HappyHolidays2006530.mp4) (mp4).
+<video src="/uploads/videos/bensheldon-happyholidays2006530.mp4" poster="/uploads/videos/bensheldon-happyholidays2006530.jpg" controls></video>
 

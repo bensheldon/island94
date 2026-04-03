@@ -13,8 +13,7 @@ redirect_from:
 - "?p=57"
 ---
 
-  [![](http://blip.tv/uploadedFiles/Bensheldon-2MinutesForPaulAndLiz154.jpeg) ](http://blip.tv/file/get/Bensheldon-2MinutesForPaulAndLiz310.mp4?source=3)
-[Watch the Video](http://blip.tv/file/get/Bensheldon-2MinutesForPaulAndLiz310.mp4?source=3)
+<video src="/uploads/videos/bensheldon-2minutesforpaulandliz310.mp4" poster="/uploads/videos/bensheldon-2minutesforpaulandliz310.jpg" controls></video>
 
 A wedding tribute for Paul and Elizabeth Hansen. With all that was going on at their wedding, they maybe didn't have time to enjoy all the little pieces. Here is one of them.
 

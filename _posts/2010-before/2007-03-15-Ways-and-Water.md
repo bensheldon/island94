@@ -20,7 +20,6 @@ redirect_from:
 - "?p=122"
 ---
 
-[![](http://blip.tv/file/get/Bensheldon-WaysAndWater899.flv.jpg "Click To Play") ](http://blip.tv/file/get/Bensheldon-WaysAndWater899.flv)
-[Click To Play](http://blip.tv/file/get/Bensheldon-WaysAndWater899.flv)
+<video src="/uploads/videos/bensheldon-waysandwater798.mp4" poster="/uploads/videos/bensheldon-waysandwater798.jpg" controls></video>
 
 Drove downtown to eat lunch with an old high school friend. Then jammed my camera between the dash and the windshield and drove up I-5 to Swami's, my old surfing spot in Encinitas.
