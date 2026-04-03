@@ -11,4 +11,7 @@ storage/
 log/
 
 build/
+node_modules/
 public/assets
+public/assets/vite*
+public/pagefind

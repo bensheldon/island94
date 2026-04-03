@@ -1,0 +1,18 @@
+{
+  "all": {
+    "sourceCodeDir": "app/javascript",
+    "publicOutputDir": "assets/vite",
+    "watchAdditionalPaths": []
+  },
+  "development": {
+    "autoBuild": true,
+    "publicOutputDir": "assets/vite-dev",
+    "host": "127.0.0.1",
+    "port": 3036
+  },
+  "test": {
+    "autoBuild": false,
+    "publicOutputDir": "assets/vite-test",
+    "port": 3037
+  }
+}
