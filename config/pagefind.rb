@@ -1,23 +1,24 @@
 # frozen_string_literal: true
 require "open3"
-require "digest"
 
 class Pagefind
-  OUTPUT_PATH = Rails.public_path.join('pagefind').freeze
-  HASH_FILE   = Rails.root.join("tmp/pagefind.hash").freeze
+  OUTPUT_PATH      = Rails.public_path.join('pagefind').freeze
+  HASH_FILE        = Rails.root.join("tmp/pagefind.hash").freeze
+  WATCHED_PATTERNS = [ "_posts/*.md" ].freeze
 
   def self.build
     new.build
   end
 
   def build
-    json = search_json
-    hash = Digest::SHA256.hexdigest(json)
+    cache_key = mtime_cache_key
 
-    if File.exist?(HASH_FILE) && File.read(HASH_FILE) == hash && File.exist?(OUTPUT_PATH)
+    if File.exist?(HASH_FILE) && File.read(HASH_FILE) == cache_key && File.exist?(OUTPUT_PATH.join("pagefind.js"))
       Rails.logger.debug "Pagefind index up to date, skipping build"
       return
     end
+
+    json = search_json
 
     script = <<~JS
       import * as pagefind from "pagefind";
@@ -51,10 +52,14 @@ class Pagefind
     Rails.logger.debug output
     raise "Pagefind build failed" unless status.success?
 
-    File.write(HASH_FILE, hash)
+    File.write(HASH_FILE, cache_key)
   end
 
   private
+
+  def mtime_cache_key
+    WATCHED_PATTERNS.flat_map { |pattern| Dir[Rails.root.join(pattern)] }.filter_map { |f| File.mtime(f).to_i }.sort.join(",")
+  end
 
   def search_json
     helpers = ActionController::Base.helpers
