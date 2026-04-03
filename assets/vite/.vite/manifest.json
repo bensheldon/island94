@@ -1,0 +1,38 @@
+{
+  "../../node_modules/@rails/actioncable/src/index-legacy.js": {
+    "file": "assets/src-legacy-BYQV_3PN.js",
+    "name": "src",
+    "src": "../../node_modules/@rails/actioncable/src/index-legacy.js",
+    "isDynamicEntry": true
+  },
+  "../../vite/legacy-polyfills-legacy": {
+    "file": "assets/polyfills-legacy-Dh5MP7ax.js",
+    "name": "polyfills",
+    "src": "../../vite/legacy-polyfills-legacy",
+    "isEntry": true
+  },
+  "entrypoints/application-legacy.js": {
+    "file": "assets/application-legacy-BSioX4-5.js",
+    "name": "entrypoints/application.js",
+    "src": "entrypoints/application-legacy.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "../../node_modules/@rails/actioncable/src/index-legacy.js"
+    ]
+  },
+  "../../node_modules/@rails/actioncable/src/index.js": {
+    "file": "assets/src-2XEGO5Wl.js",
+    "name": "src",
+    "src": "../../node_modules/@rails/actioncable/src/index.js",
+    "isDynamicEntry": true
+  },
+  "entrypoints/application.js": {
+    "file": "assets/application-BVswkaE7.js",
+    "name": "entrypoints/application.js",
+    "src": "entrypoints/application.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "../../node_modules/@rails/actioncable/src/index.js"
+    ]
+  }
+}
