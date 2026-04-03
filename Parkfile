@@ -3,6 +3,7 @@ ENV["RACK_ENV"] = "production"
 
 require 'parklife/rails'
 require_relative 'config/environment'
+require_relative 'config/pagefind'
 
 Parklife.application.config.on_404 = :warn
 Parklife.application.config.nested_index = false
@@ -36,6 +37,8 @@ Parklife::Application.prepend(Module.new do
     FileUtils.mv(Rails.application.root.join("public/assets"), Rails.application.root.join("build/assets"))
     FileUtils.cp_r(Rails.application.root.join("_uploads/."), Rails.application.root.join("build/uploads"))
     FileUtils.cp(Rails.application.root.join("CNAME"), Rails.application.root.join("build/CNAME"))
+
+    FileUtils.cp_r(Rails.application.root.join("public/pagefind/."), Rails.application.root.join("build/pagefind"))
 
     duration = Time.now - start
     pages_built = crawler.instance_variable_get(:@visited).size

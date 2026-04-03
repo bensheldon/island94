@@ -14,7 +14,8 @@ gem "rails", "~> 8.1.1"
 gem "bootsnap", require: false
 gem "bootstrap"
 gem "front_matter_parser"
-gem "importmap-rails"
+gem "vite_rails"
+gem "vite_plugin_legacy"
 gem "kramdown-parser-gfm"
 gem "metainspector", "~> 5.17" # for fetching bookmarks
 gem "puma"
@@ -22,7 +23,6 @@ gem "rake"
 gem "rouge"
 gem "sassc-rails"
 gem "sprockets-rails"
-gem "stimulus-rails"
 gem "turbo-rails", "~> 2.0"
 gem "vernier"
 

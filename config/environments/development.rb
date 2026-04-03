@@ -15,9 +15,17 @@ Rails.application.configure do
   # Reload when markdown files change
   reloaders << ActiveSupport::FileUpdateChecker.new([], {
                                                       "_posts" => ["md", "markdown"],
-    "_bookmarks" => ["md", "markdown"],
+                                                      "_bookmarks" => ["md", "markdown"],
                                                     }) do
     Rails.application.reload_routes!
+  end
+
+  require_relative "../pagefind"
+  reloaders << ActiveSupport::FileUpdateChecker.new([], {
+                                                      "_posts" => ["md", "markdown"],
+                                                      "_bookmarks" => ["md", "markdown"],
+                                                    }) do
+    Pagefind.build
   end
 
   # Show full error reports.
