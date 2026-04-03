@@ -27,7 +27,7 @@ jobs:
       - name: "Node: Setup"
         uses: actions/setup-node@v4
         with:
-          node-version: '23'
+          node-version-file: '.node-version'
           cache: 'npm'
       - name: "Node: Install dependencies"
         run: npm clean-install
