@@ -11,6 +11,6 @@ redirect_from:
 - "?p=2071"
 ---
 
-[ ![](/uploads/2010/straightforward-project-satisfaction-and-fulfillment-1.png "success-venn") ](/uploads/2010/straightforward-project-satisfaction-and-fulfillment-1.png)
+[ ![](/uploads/2010-06-13-Straightforward-Project-Satisfaction-and-Fulfillment/success-venn.png "success-venn") ](/uploads/2010-06-13-Straightforward-Project-Satisfaction-and-Fulfillment/success-venn.png)
 
 Another sketch from my notebook.

@@ -11,6 +11,6 @@ redirect_from:
 - "?p=2025"
 ---
 
-[ ![](/uploads/2010/forces-of-organizational-entry-1.png "organizational entry") ](/uploads/2010/forces-of-organizational-entry-1.png)
+[ ![](/uploads/2010-06-08-Forces-of-Organizational-Entry/organizational-entry.png "organizational entry") ](/uploads/2010-06-08-Forces-of-Organizational-Entry/organizational-entry.png)
 
 I've been kicking this idea around my notebook for a while; I hope it requires no further explanation.

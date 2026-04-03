@@ -24,6 +24,6 @@ This is actually pretty clear, and considering this was proposed in the mid-70s,
 
 With this illuminating graphic:
 
-![Double Loop](/uploads/2009/double-loop-learning-1.png "Double Loop") 
+![Double Loop](/uploads/2009-03-05-Double-Loop-Learning/doubleloop-500x143.png "Double Loop") 
 
 This is very applicable to a lot of the work I do with Capacity Building because it demonstrates a very clear difference between what I would call **_Technical Assistance_** (Single-Loop) and true **_Capacity Building_** (Double-Loop).  Sometimes all you need is Technical Assistance (like a snazzy new CMS), but often times once you have it, you realize that it's not being used because your governing culture and values don't align with the needs of the project (no one in your organization cares about non-targeted external communications); so you have a larger problem.

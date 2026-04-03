@@ -11,7 +11,7 @@ redirect_from:
 - "?p=2268"
 ---
 
-![](/uploads/2010/stop-being-a-weenie-and-just-go-make-something-1.png "weenie")
+![](/uploads/2010-10-19-Stop-being-a-weenie-and-just-go-make-something/weenie-500x502.png "weenie")
 
 From a Frank Chimero jam: ["How to Have an Idea"](http://www.frankchimero.com/idea/):
 

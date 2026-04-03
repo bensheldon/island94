@@ -14,7 +14,7 @@ redirect_from:
 - "?p=2167"
 ---
 
-![](/uploads/2010/find-fresh-perspectives-at-nonprofitmillennialsorg-1.png "nonprofitmillennials-screenshot-top")
+![](/uploads/2010-09-01-Find-fresh-perspectives-at-NonprofitMillennialsorg/nonprofitmillennials-screenshot-top-500x420.png "nonprofitmillennials-screenshot-top")
 
 Myself and the [Nonprofit Millennial Blogger Alliance](http://nonprofitmillennials.org) are proud to announce the launch of a new website: [NonprofitMillennials.org](http://nonprofitmillennials.org): "We blog about the millennial generation and nonprofits!"
 
@@ -28,4 +28,4 @@ I led the technical development and design on the website and am very proud of t
 
 So if you're a millennial blogger writing about social change or the nonprofit sector, please consider [joining us](http://nonprofitmillennials.org/#contact). And don't forget that "millennial" has 2 N's (I do, all the time).
 
-![](/uploads/2010/find-fresh-perspectives-at-nonprofitmillennialsorg-2.png "typewriter")
+![](/uploads/2010-09-01-Find-fresh-perspectives-at-NonprofitMillennialsorg/typewriter-3.png "typewriter")

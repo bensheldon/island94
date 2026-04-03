@@ -11,7 +11,7 @@ redirect_from:
 - "?p=2644"
 ---
 
-![](/uploads/2011/reductionist-function-and-practice-1.jpeg "remote")
+![](/uploads/2011-05-09-Reductionist-function-and-practice/remote.jpeg "remote")
 
 Rob Haitani on Palm OS from _[Designing Interactions](http://www.designinginteractions.com/chapters/3)_:
 

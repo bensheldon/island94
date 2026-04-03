@@ -25,11 +25,11 @@ redirect_from:
 
 I made a custom override for Drupal 6.x's Upload.module's attachments table that is displayed at the bottom of a node when you create file attachments. That table is, in my opinion, one of the ugliest common and default presentations in Drupal core. Below is an example of the before and after:
 
-![Example of override](/uploads/2008/drupal-theme-override-for-uploadmodules-attachments-list-1.png)
+![Example of override](/uploads/2008-08-10-Drupal-theme-override-for-Uploadmodules-attachments-list/shiny_upload-example.png)
 
 To use it, unzip and drop the included folder into your active theme's directory (e.g. /sites/default/all/garland), it should take effect without any other modifications---though you may have to reset the theme cache (goto admin/build/themes and click save without making any other changes).
 
-[Click Here to Download (shiny\_upload.zip)](/uploads/2008/drupal-theme-override-for-uploadmodules-attachments-list-2.zip)
+[Click Here to Download (shiny\_upload.zip)](/uploads/2008-08-10-Drupal-theme-override-for-Uploadmodules-attachments-list/shiny_upload.zip)
 
 Also, I don't know what the name is for these types of theme overrides: it's not a module, and it's not a whole theme. I [posted this](http://groups.drupal.org/node/13873) to a Drupal Group that, I think, calls them " [Themer Packs](http://groups.drupal.org/themer-pack-working-group)".
 

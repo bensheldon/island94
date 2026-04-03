@@ -15,8 +15,8 @@ redirect_from:
 ---
 
 [
-  ![Example cover letter with explanation](/uploads/2008/how-to-write-a-cover-letter-for-a-job-application-1.png) <br /> Download this as a PDF
-](/uploads/2008/how-to-write-a-cover-letter-for-a-job-application-2.pdf)
+  ![Example cover letter with explanation](/uploads/2008-12-01-How-to-write-a-cover-letter-for-a-job-application/coverletter.png) <br /> Download this as a PDF
+](/uploads/2008-12-01-How-to-write-a-cover-letter-for-a-job-application/coverletter.pdf)
 
 I have now had a couple friends ask me to help them prepare job applications, so I pulled together some personal advice on what I feel is the most important part of applying for a job: the cover letter.
 

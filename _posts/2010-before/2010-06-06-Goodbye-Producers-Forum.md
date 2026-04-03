@@ -16,7 +16,7 @@ redirect_from:
 - "?p=1999"
 ---
 
-![Goodbye Producers Forum](/uploads/2010/goodbye-producers-forum-1.png)
+![Goodbye Producers Forum](/uploads/2010-06-06-Goodbye-Producers-Forum/Goodbye-Producers-Forum-500x324.png)
 
 I launched ProducersForum.org 4 years ago. At the time there was a need for a "Yahoo Groups"-functionality that offered:
 
@@ -30,14 +30,14 @@ It seems rather quaint now, but there was a need for this for community media gr
 
 _Memories..._
 
-[![Presentation Slide](/uploads/2010/goodbye-producers-forum-2.jpg)](/uploads/2010/goodbye-producers-forum-2.jpg)
+[![Presentation Slide](/uploads/2010-06-06-Goodbye-Producers-Forum/presentation_slide.jpg)](/uploads/2010-06-06-Goodbye-Producers-Forum/presentation_slide.jpg)
 
-[![Producers' Forum - collaboration tools for media creators_1243800159999](/uploads/2010/goodbye-producers-forum-3.png)](/uploads/2010/goodbye-producers-forum-4.png)
+[![Producers' Forum - collaboration tools for media creators_1243800159999](/uploads/2010-06-06-Goodbye-Producers-Forum/Producers-Forum-collaboration-tools-for-media-creators_1243800159999-500x379.png)](/uploads/2010-06-06-Goodbye-Producers-Forum/Producers-Forum-collaboration-tools-for-media-creators_1243800159999.png)
 
-[![About the Producer's Forum - Producers' Forum_1243800321575](/uploads/2010/goodbye-producers-forum-5.png)](/uploads/2010/goodbye-producers-forum-6.png)
+[![About the Producer's Forum - Producers' Forum_1243800321575](/uploads/2010-06-06-Goodbye-Producers-Forum/About-the-Producers-Forum-Producers-Forum_1243800321575-500x332.png)](/uploads/2010-06-06-Goodbye-Producers-Forum/About-the-Producers-Forum-Producers-Forum_1243800321575.png)
 
-[![Youth Media - Producers' Forum_1243800428293](/uploads/2010/goodbye-producers-forum-7.png)](/uploads/2010/goodbye-producers-forum-8.png)
+[![Youth Media - Producers' Forum_1243800428293](/uploads/2010-06-06-Goodbye-Producers-Forum/Youth-Media-Producers-Forum_1243800428293-500x524.png)](/uploads/2010-06-06-Goodbye-Producers-Forum/Youth-Media-Producers-Forum_1243800428293.png)
 
-[![Youth Media - Producers' Forum_1243800433509](/uploads/2010/goodbye-producers-forum-9.png)](/uploads/2010/goodbye-producers-forum-10.png)
+[![Youth Media - Producers' Forum_1243800433509](/uploads/2010-06-06-Goodbye-Producers-Forum/Youth-Media-Producers-Forum_1243800433509-500x524.png)](/uploads/2010-06-06-Goodbye-Producers-Forum/Youth-Media-Producers-Forum_1243800433509.png)
 
-[![Submit wikipage - Producers' Forum_1243800483059](/uploads/2010/goodbye-producers-forum-11.png)](/uploads/2010/goodbye-producers-forum-12.png)
+[![Submit wikipage - Producers' Forum_1243800483059](/uploads/2010-06-06-Goodbye-Producers-Forum/Submit-wikipage-Producers-Forum_1243800483059-500x527.png)](/uploads/2010-06-06-Goodbye-Producers-Forum/Submit-wikipage-Producers-Forum_1243800483059.png)

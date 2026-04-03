@@ -22,11 +22,11 @@ From a social change perspective, in brief, that's pretty fucked. And to be clea
 
 This is Forrester's ladder:
 
-[ ![](/uploads/2010/broken-ladders-1.gif "Ladder_3") ](/uploads/2010/broken-ladders-1.gif)
+[ ![](/uploads/2010-04-08-Broken-ladders/Ladder_3.gif "Ladder_3") ](/uploads/2010-04-08-Broken-ladders/Ladder_3.gif)
 
 Compare that to another ladder [I really like](http://www.island94.org/2009/10/we-participate-they-profit/): Sherry Arnstein's Ladder of Citizen Participation (it came out in 1969 so be considerate of its lack of shinyness):
 
-![](/uploads/2010/broken-ladders-2.gif "Ladder of Civic Participation")
+![](/uploads/2010-04-08-Broken-ladders/ladder-of-citizen-participation.gif "Ladder of Civic Participation")
 
 There is no practice in the Social Technographics report that I would put above the level of Placation (and that's being generous).
 

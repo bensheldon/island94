@@ -13,7 +13,7 @@ redirect_from:
 - "?p=1529"
 ---
 
-[ ![Three Story Intellect](/uploads/2009/three-story-intellect-model-1.png "Three Story Intellect") ](/uploads/2009/three-story-intellect-model-2.png)I netflixed _[Rosencrantz & Guildenstern Are Dead](http://en.wikipedia.org/wiki/Rosencrantz_%26_Guildenstern_Are_Dead_%28film%29)_ this weekend, so I'm in a mood of rhetoric and reason. Above is from my Critical Thinking reading ("Teacher Behaviors that Enable Student Thinking", Arthur L Costa_)_. The terms are a nice way to evaluate the complexity of test questions, and is comparable to Bloom's Taxonomy. Apparently the metaphor is derived from an Oliver Wendell Holmes poem:
+[ ![Three Story Intellect](/uploads/2009-11-29-Three-Story-Intellect-Model/three-story1-500x564.png "Three Story Intellect") ](/uploads/2009-11-29-Three-Story-Intellect-Model/three-story1.png)I netflixed _[Rosencrantz & Guildenstern Are Dead](http://en.wikipedia.org/wiki/Rosencrantz_%26_Guildenstern_Are_Dead_%28film%29)_ this weekend, so I'm in a mood of rhetoric and reason. Above is from my Critical Thinking reading ("Teacher Behaviors that Enable Student Thinking", Arthur L Costa_)_. The terms are a nice way to evaluate the complexity of test questions, and is comparable to Bloom's Taxonomy. Apparently the metaphor is derived from an Oliver Wendell Holmes poem:
 
 > **The Three Story Intellect**
 >

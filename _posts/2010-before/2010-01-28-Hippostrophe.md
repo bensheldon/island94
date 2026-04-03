@@ -12,4 +12,4 @@ redirect_from:
 - "?p=1738"
 ---
 
-![](/uploads/2010/hippostrophe-1.png "hippostrophe")
+![](/uploads/2010-01-28-Hippostrophe/hippostrophe-500x500.png "hippostrophe")

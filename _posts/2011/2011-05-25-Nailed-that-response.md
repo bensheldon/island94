@@ -12,7 +12,7 @@ redirect_from:
 - "?p=2671"
 ---
 
-![](/uploads/2011/nailed-that-response-1.png "3collage")
+![](/uploads/2011-05-25-Nailed-that-response/3collage-600x202.png "3collage")
 
 Google just [announced](http://googleblog.blogspot.com/2011/05/bringing-tech-knowledge-to-nonprofits.html) a new national technology service corps, in partnership with the HandsOn Network and AmeriCorps\*VISTA---not unlike the Digital Arts Service Corps I have managed for the past 4.5 years and will be shutting down this August as our funding expires. Google describes their program thusly:
 

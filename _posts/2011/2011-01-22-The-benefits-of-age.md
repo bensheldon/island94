@@ -14,7 +14,7 @@ redirect_from:
 - "?p=2434"
 ---
 
-[ ![](/uploads/2011/the-benefits-of-age-1.jpg "boom1") ](/uploads/2011/the-benefits-of-age-2.jpeg)
+[ ![](/uploads/2011-01-22-The-benefits-of-age/boom1-500x241.jpg "boom1") ](/uploads/2011-01-22-The-benefits-of-age/boom1.jpeg)
 
 Havard Business Review's Dan Pallota [quoted from Julia Moulden's book, _RIPE: Rich, Rewarding Work After 50_](http://blogs.hbr.org/pallotta/2011/01/the-wisdom-years-the-value-of.html): >
 - I can tell the difference between a customer who has a legitimate gripe with my company and one who is an alcoholic or has anger-management issues. At 25, I thought it was all and always about me.

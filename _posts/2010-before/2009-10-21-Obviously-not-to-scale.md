@@ -19,7 +19,7 @@ redirect_from:
 - "?p=850"
 ---
 
-![OmegaPoint](/uploads/2009/obviously-not-to-scale-1.png "OmegaPoint")
+![OmegaPoint](/uploads/2009-10-21-Obviously-not-to-scale/OmegaPoint-500x783.png "OmegaPoint")
 
 Following up on som graphics from [the free book pile](http://www.island94.org/2009/10/janets-spiral-periodic-table/) at the university, above is a graphic from Pierre Teilhard de Chardin's _The Phenomenon of Man_. There are only 4 plates in this book (it's the 1975) edition, but each one takes on a very plant-like appearance. (I think this plate is superior to the [current reprint](http://books.google.com/books?id=vTi7de7vv5wC&lpg=PR8&ots=08hB1BRmc-&dq=%22the%20development%20of%20the%20human%20layer%22&pg=PA131#v=onepage&q=&f=false) because mine uses stipple points rather than hash-lines to show contrast; it's also typeset in Arial, but that's just being picky).
 

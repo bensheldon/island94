@@ -14,7 +14,7 @@ redirect_from:
 - "?p=1776"
 ---
 
-![](/uploads/2010/good-enough-data-1.png "btop-map-combined")
+![](/uploads/2010-02-22-Good-enough-data/btop-map-combined-500x462.png "btop-map-combined")
 
 I've been spending some time at work scraping data. Long story short: government transparency is not transparent when the only access they give you is a pile of poorly structured html. That's better than government opacity but not past the level of frosted glass: titillating but unsatisfying. If your expected audience is pencil pushers, please release your data in a spreadsheet. [That's what I did](http://transmissionproject.org/current/2009/11/ntia-broadband-access-data).
 

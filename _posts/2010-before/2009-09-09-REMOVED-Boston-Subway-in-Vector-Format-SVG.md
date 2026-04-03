@@ -10,7 +10,7 @@ redirect_from:
 
  
 
-[ ![](/uploads/2009/removed-boston-subway-in-vector-format-svg-1.png "MBTA-removed") ](/uploads/2009/removed-boston-subway-in-vector-format-svg-2.png)
+[ ![](/uploads/2009-09-09-REMOVED-Boston-Subway-in-Vector-Format-SVG/MBTA-removed-600x626.png "MBTA-removed") ](/uploads/2009-09-09-REMOVED-Boston-Subway-in-Vector-Format-SVG/MBTA-removed.png)
 
 I've started working on my Christmas gifts for this year. Last year it was [buttons](http://www.flickr.com/photos/bensheldon/3195197386/), this year it will be t-shirts. I'm going contemporary, so one of the elements I needed was a nice map of the Boston subway. Unfortunately, I couldn't find much other than the poor-quality images from the MBTA and perhaps a smidgen of inspiration from _[Boston Magazine](http://www.cartogrammar.com/blog/magazine-cover-subway-map-awesome/)_.
 

@@ -13,7 +13,7 @@ redirect_from:
 - "?p=2236"
 ---
 
-![](/uploads/2010/when-all-you-have-is-a-hammer-1.png "blocBEST-small")
+![](/uploads/2010-10-17-When-all-you-have-is-a-hammer/blocBEST-small-500x772.png "blocBEST-small")
 
 _Build, learn, organize, subvert_
 

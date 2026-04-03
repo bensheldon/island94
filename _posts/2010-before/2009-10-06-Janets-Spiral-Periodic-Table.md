@@ -8,7 +8,7 @@ redirect_from:
 - "?p=763"
 ---
 
-  [ ![Janets Spiral Periodic Table](/uploads/2009/janets-spiral-periodic-table-1.png "Janets Spiral Periodic Table") ](/uploads/2009/janets-spiral-periodic-table-2.png)
+  [ ![Janets Spiral Periodic Table](/uploads/2009-10-06-Janets-Spiral-Periodic-Table/Janets-Spiral-Periodic-Table-499x448.png "Janets Spiral Periodic Table") ](/uploads/2009-10-06-Janets-Spiral-Periodic-Table/Janets-Spiral-Periodic-Table.png)
 
 My office bookshelf fell off the wall today; to lighten the load I decided to read something on it: working in an environment of higher education, I pickup a lot of junk books:
 
@@ -26,5 +26,5 @@ _ Having just printed off and built the paper template included in the patent ap
 
 Below is from the [patent](http://www.google.com/patents?id=ynliAAAAEBAJ&zoom=4&dq=%233581409&pg=PA1#v=onepage&q=%233581409&f=false):
 
-[ ![Alexander Periodic 1](/uploads/2009/janets-spiral-periodic-table-3.png "Alexander Periodic 1") ](/uploads/2009/janets-spiral-periodic-table-3.png) [ ![Alexander Periodic 2](/uploads/2009/janets-spiral-periodic-table-4.png "Alexander Periodic 2") ](/uploads/2009/janets-spiral-periodic-table-4.png)
+[ ![Alexander Periodic 1](/uploads/2009-10-06-Janets-Spiral-Periodic-Table/Alexander-Periodic-1.png "Alexander Periodic 1") ](/uploads/2009-10-06-Janets-Spiral-Periodic-Table/Alexander-Periodic-1.png) [ ![Alexander Periodic 2](/uploads/2009-10-06-Janets-Spiral-Periodic-Table/Alexander-Periodic-2.png "Alexander Periodic 2") ](/uploads/2009-10-06-Janets-Spiral-Periodic-Table/Alexander-Periodic-2.png)
 

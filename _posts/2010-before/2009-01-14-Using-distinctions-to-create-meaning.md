@@ -20,7 +20,7 @@ The book builds upon the idea of "knowing how we know" and argues from the basic
 
 I found that to be an incredibly interesting way of breaking down understanding.  Building upon the core idea of Unity, I wanted to propose some additional building blocks of meaning that are commonly used in conversation, rhetoric and didactics (and easily found elsewhere on this blog).
 
-![Making Meaning](/uploads/2009/using-distinctions-to-create-meaning-1.png "Making Meaning")
+![Making Meaning](/uploads/2009-01-14-Using-distinctions-to-create-meaning/making-meaning-500x756.png "Making Meaning")
 
 A **Dichotomy** is choosing between two unities that are mutually exclusive.  Dichotomies (and false dichotomies) are easily used and abused in arguments and rhetoric---some go so far as to say the West is an [Argument Culture ](http://www.amazon.com/Argument-Culture-Stopping-Americas-Words/dp/0345407512?tag=particculturf-20)where middle alternatives are ignored.
 

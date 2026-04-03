@@ -12,4 +12,4 @@ redirect_from:
 - "?p=1733"
 ---
 
-![](/uploads/2010/amperlamb-1.png "amperlamb")
+![](/uploads/2010-01-28-Amperlamb/amperlamb-500x500.png "amperlamb")

@@ -32,6 +32,6 @@ Listen to the program below
 
 [Click to play](http://blip.tv/file/get/Bensheldon-ThinkingOutLoud152.mp3)
 
-Click here to [download the mp3](/uploads/2008/radio-ga-ga-2-the-role-of-nonprofits-in-constructing-a-better-world-4.mp3).
+Click here to [download the mp3](/uploads/2008-08-29-Radio-Ga-Ga-2-The-role-of-nonprofits-in-constructing-a-better-world/Ben-on-WUML-20080829.mp3).
 
 If you find this type of talk interesting, you would probably enjoy the book [The Revolution Will Not be Funded](http://www.amazon.com/Revolution-Will-Not-Funded-Non-Profit/dp/0896087662?tag=particculturf-20).

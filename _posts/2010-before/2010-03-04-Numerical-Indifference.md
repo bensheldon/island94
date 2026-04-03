@@ -27,7 +27,7 @@ The problem with people is that [we can only remember 3 or 4 things at a time](h
 
 To show this, I made up 2 different surveys and sent them to my friends on Facebook and whoever happens to follow me on [Twitter](http://twitter.com/bensheldon). In the first survey I asked people to place someone who makes $1 Million/year and someone who makes $1 Billion/year on a 10 point scale of Poor to Rich. Nearly all responses placed $1 Million/year between 7 and 10; and placed $1 Billion/year between 8 and 10; both very Rich. Nearly half of the responses placed both incomes as equivalent at a 10: the mostest richest.
 
-![](/uploads/2010/numerical-indifference-1.png "richpoor-survey")
+![](/uploads/2010-03-04-Numerical-Indifference/richpoor-survey-499x373.png "richpoor-survey")
 
 I admit that many of my friends are Americorps alums, nonprofitty folks and other liberal ilk, but the point I want to make is that there isn't a whole lot of difference, within the context of rich and poor, between someone who makes $1 Million/year and someone who makes $1 Billion/year. Myself, I split incomes into about 5 different levels:
 
@@ -47,7 +47,7 @@ So on to the 2nd survey: I asked people where the number 1 Million would fall on
 
 So what's the answer? On a 10 point scale, the answer is actually **zero**, but since that wasn't an option in my survey, the most correct answer was 1.
 
-![](/uploads/2010/numerical-indifference-2.png "millionbillion-survey")
+![](/uploads/2010-03-04-Numerical-Indifference/millionbillion-survey-500x307.png "millionbillion-survey")
 
 **The number 1 Billion is 1,000 times larger than the number 1 Million**: and 1,000 still is a big number (hilariously, large numbers are made up of many zeros). Compared to 1 Billion, the number 1 Million is rather pale and insignificant....
 

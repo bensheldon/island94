@@ -22,8 +22,8 @@ A big issue if you're having regular users enter information into your website i
 
 So I whipped up a simple module that checks everytime a new station is submitted to see if the address was properly geocoded. If not, it displays a message with some tips on how to correct the issue.
 
-![Geocode Warning Message](/uploads/2009/drupal-adding-a-geocoding-failure-message-to-location-module-1.png "Geocode Warning Message")
+![Geocode Warning Message](/uploads/2009-08-13-Drupal-Adding-a-geocoding-failure-message-to-Location-Module/Picture-3-500x136.png "Geocode Warning Message")
 
-You can download the module for Drupal 6.x by [**clicking here**](/uploads/2009/drupal-adding-a-geocoding-failure-message-to-location-module-2.zip)**.**
+You can download the module for Drupal 6.x by [**clicking here**](/uploads/2009-08-13-Drupal-Adding-a-geocoding-failure-message-to-Location-Module/geocode_warn.zip)**.**
 
 To be nitpicky, I'd rather the message show up during the validation stage---before the node is submitted---with the option to say "Please edit the address or press submit again to publish with the understanding that it will not show up on the map." Unfortunately, in Drupal 6 you [can't make changes to node form during the validation stage](http://drupal.org/node/241364)---which I would use to set a flag in a hidden form element so that the validation message only gets triggered once. The current implementation calls a drupal\_set\_message in hook\_nodeapi's insert/update operations. It can be enabled on a per-content-type basis (on the Content Type Configuration screen).

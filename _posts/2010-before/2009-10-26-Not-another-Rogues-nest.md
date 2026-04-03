@@ -15,7 +15,7 @@ redirect_from:
 - "?p=890"
 ---
 
-[ ![navigator-p161](/uploads/2009/not-another-rogues-nest-1.jpg "navigator-p161") ](/uploads/2009/not-another-rogues-nest-2.jpeg)
+[ ![navigator-p161](/uploads/2009-10-26-Not-another-Rogues-nest/navigator-p161-500x851.jpg "navigator-p161") ](/uploads/2009-10-26-Not-another-Rogues-nest/navigator-p161.jpeg)
 
 The following is from the [1824 edition](http://digital.library.pitt.edu/cgi-bin/t/text/pageviewer-idx?c=pitttext;cc=pitttext;rgn=full%20text;idno=00aft2763m;didno=00aft2763m;view=image;seq=162;node=00aft2763m%3A16;page=root;size=s;frm=frameset; ) of Zadok Cramer’s _The Navigator_ on Island 94:
 
@@ -31,4 +31,4 @@ The following is from the [1824 edition](http://digital.library.pitt.edu/cgi-bin
 
 I love the slant rhyme humor: "This bar may grow into another Crow's but it is to be hoped not into another _Rogue's_ nest." The print is below.
 
-[ ![navigator-p160](/uploads/2009/not-another-rogues-nest-3.jpg "navigator-p160") ](/uploads/2009/not-another-rogues-nest-4.jpeg)
+[ ![navigator-p160](/uploads/2009-10-26-Not-another-Rogues-nest/navigator-p160-500x851.jpg "navigator-p160") ](/uploads/2009-10-26-Not-another-Rogues-nest/navigator-p160.jpeg)

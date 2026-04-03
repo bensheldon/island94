@@ -15,7 +15,7 @@ redirect_from:
 - "?p=2365"
 ---
 
-[ ![](/uploads/2010/boston-bike-crash-map-in-the-news-1.jpg "Metro_bike-crash-map") ](/uploads/2010/boston-bike-crash-map-in-the-news-2.jpeg)
+[ ![](/uploads/2010-12-07-Boston-Bike-Crash-Map-in-the-News/Metro_bike-crash-map-500x667.jpg "Metro_bike-crash-map") ](/uploads/2010-12-07-Boston-Bike-Crash-Map-in-the-News/Metro_bike-crash-map.jpeg)
 
 Boston's _Metro_ newspaper ran a [page 2 article](http://www.metro.us/boston/local/article/712124--bike-map-offers-crash-warnings) on the [Boston Bike Crash Map](http://bostoncyclistsunion.org/resources/crash-map/) the Boston Cyclists Union and I [created](http://www.island94.org/2010/11/boston-bike-crash-map/). Also in the news:
 

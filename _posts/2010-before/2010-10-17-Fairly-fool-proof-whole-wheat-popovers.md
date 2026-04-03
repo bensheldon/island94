@@ -14,7 +14,7 @@ redirect_from:
 - "?p=2243"
 ---
 
-![](/uploads/2010/fairly-fool-proof-whole-wheat-popovers-1.jpg "popovers")
+![](/uploads/2010-10-17-Fairly-fool-proof-whole-wheat-popovers/popovers-500x373.jpg "popovers")
 
 If your popover fails, it still makes a delicious hockey puck. I also love popovers because they are relatively quick to throw together (about an hour to mix and bake), use 4 basic ingredients (milk, butter, flour, eggs), and are mostly healthy: they won't induce the same carb coma as pancakes and have fairly little butter baked in (so you can spread a lot on top).
 
