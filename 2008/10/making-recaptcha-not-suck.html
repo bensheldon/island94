@@ -129,7 +129,7 @@
   <div class="post-content" itemprop="articleBody">
     <p>I really like using the Drupal <a href="http://drupal.org/project/captcha">CAPTCHA</a> system with <a href="http://drupal.org/project/recaptcha">ReCAPTCHA</a> (the one that helps <a href="http://recaptcha.net/">scan in books</a>). Both of them suck in the standard “Drupal makes everything ugly and hard to use by default, but it’s still easier than building something from scratch”.</p>
 
-<p>One of ReCaptcha’s problems is that the words are sometimes hard to read. To deal with that, I used this tip from a Stumbleupon developer in the comments of this post entitled <a href="http://a.wholelottanothing.org/2008/03/27/recaptchas-quality-is-going-down/">ReCAPTCHA’s quality is going down? </a>: putting a link to reload—Recaptcha.reload()—the CAPTCHA in the explanation. To do that, I pasted this into the Challenge Description setting on the CAPTCHA admin page:</p>
+<p>One of ReCaptcha’s problems is that the words are sometimes hard to read. To deal with that, I used this tip from a Stumbleupon developer in the comments of this post entitled <a href="http://a.wholelottanothing.org/2008/03/27/recaptchas-quality-is-going-down/">ReCAPTCHA’s quality is going down?</a>: putting a link to reload—Recaptcha.reload()—the CAPTCHA in the explanation. To do that, I pasted this into the Challenge Description setting on the CAPTCHA admin page:</p>
 
 <p>`<br />
 To prevent spam, please type the two words you see below separated by a space. <a href="javascript:Recaptcha.reload();" title="Get a new set of words">Can’t read the words?</a><br />

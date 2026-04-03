@@ -423,7 +423,7 @@ from code loaded at boot.
   <li>Only supports Rails 6.1+, CRuby 3.0+ and JRuby 9.4+, Postgres 12+. Rails 6.0 is no longer supported. CRuby 2.6 and 2.7 are no longer supported. JRuby 9.3 is no longer supported.</li>
   <li>Changes job priority to give smaller numbers higher priority (default: 0), in accordance with Active Job’s definition of priority.</li>
   <li>Enqueues and executes jobs via the <code>GoodJob::Job</code> model instead of <code>GoodJob::Execution</code></li>
-  <li>Changes the behavior of <code>config.good_job.cleanup_interval_jobs</code>, <code>GOOD_JOB_CLEANUP_INTERVAL_JOBS</code>, <code>config.good_job.cleanup_interval_seconds</code>, or <code>GOOD_JOB_CLEANUP_INTERVAL_SECONDS</code> set to <code>nil</code> or <code>” </code> to no longer disable count- or time-based cleanups. Instead, now set to <code>false</code> to disable, or <code>-1</code> to run a cleanup after every job execution.</li>
+  <li>Changes the behavior of <code>config.good_job.cleanup_interval_jobs</code>, <code>GOOD_JOB_CLEANUP_INTERVAL_JOBS</code>, <code>config.good_job.cleanup_interval_seconds</code>, or <code>GOOD_JOB_CLEANUP_INTERVAL_SECONDS</code> set to <code>nil</code> or <code>””</code> to no longer disable count- or time-based cleanups. Instead, now set to <code>false</code> to disable, or <code>-1</code> to run a cleanup after every job execution.</li>
 </ul>
 
 <h3 id="new-features">New Features</h3>
