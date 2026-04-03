@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 module Flock
   DEFAULT_DIR = Rails.root.join('tmp').freeze
-  LockTimeout = Class.new(StandardError)
+  class LockTimeout < StandardError
+  end
   SLEEP_INTERVAL = 0.01
 
   # Takes a file-based lock; the lockfile will not be removed afterwards.

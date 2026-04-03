@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Only enable rules relevant to inline formatting issues in blog posts.
 # Run via: bin/lint
 rule "MD011" # Reversed link syntax: (text)[url] instead of [text](url)
