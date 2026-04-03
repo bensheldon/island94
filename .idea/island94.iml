@@ -50,6 +50,7 @@
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.3.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v4.0.9, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="TEST" name="capybara (v3.40.0, mise: 4.0.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="chef-utils (v19.2.12, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="colorator (v1.1.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.3.6, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="connection_pool (v3.0.2, mise: 4.0.2) [gem]" level="application" />
@@ -101,10 +102,14 @@
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.9.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.1.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="matrix (v0.4.3, mise: 4.0.2) [gem]" level="application" />
+    <orderEntry type="library" scope="TEST" name="mdl (v0.15.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mercenary (v0.4.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="metainspector (v5.17.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v6.0.3, mise: 4.0.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mixlib-cli (v2.1.8, mise: 4.0.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mixlib-config (v3.0.27, mise: 4.0.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mixlib-shellout (v3.4.10, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.8.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mutex_m (v0.3.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nesty (v1.0.2, mise: 4.0.2) [gem]" level="application" />
@@ -176,6 +181,7 @@
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.5.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.7.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.6.1, mise: 4.0.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tomlrb (v2.0.4, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tsort (v0.2.0, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v2.0.23, mise: 4.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, mise: 4.0.2) [gem]" level="application" />
