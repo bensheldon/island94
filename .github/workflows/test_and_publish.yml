@@ -29,6 +29,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'npm'
+      - name: "Node: Update npm"
+        run: npm install -g npm@11
       - name: "Node: Install dependencies"
         run: npm clean-install
       - name: Precompile assets
