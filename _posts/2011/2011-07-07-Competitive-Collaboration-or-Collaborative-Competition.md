@@ -32,4 +32,4 @@ On the other hand, while public collaboration may be difficult to organize, priv
 
 I could also go into how these contests may (briefly) fulfill many of the human and social needs that current technology careers lack, but that's [another blog post](http://www.island94.org/2007/11/close-to-the-machine/).
 
-**Update: **My boss Belinda suggested I note that the Knight Foundation has [previously funded DonorsChoose ](http://www.knightfoundation.org/grants/20093379/)(she received a DonorsChoose GivingCard at a Knight conference).
+**Update: **My boss Belinda suggested I note that the Knight Foundation has [previously funded DonorsChoose](http://www.knightfoundation.org/grants/20093379/)(she received a DonorsChoose GivingCard at a Knight conference).

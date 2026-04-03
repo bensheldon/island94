@@ -17,6 +17,6 @@ redirect_from:
 - "?p=12"
 ---
 
-[ ![](2005-11-24-23rd-BirthdayThanksgiving-Spectacular-Part-1/23bdaytg_1_thumb.png) ](https://island94.org/2005-11-24-23rd-BirthdayThanksgiving-Spectacular-Part-1/23bdaytg_1.mp4)
+[![](2005-11-24-23rd-BirthdayThanksgiving-Spectacular-Part-1/23bdaytg_1_thumb.png) ](https://island94.org/2005-11-24-23rd-BirthdayThanksgiving-Spectacular-Part-1/23bdaytg_1.mp4)
 
 This is the first installment of the day when both my 23rd birthday and Thanksgiving coincide. There are a couple problems with the camera work, lighting, script (there is none) and such, but hopefully you will enjoy it, or at least be able to take part in my day, even though you aren’t here.

@@ -19,4 +19,4 @@ I really don't understand the appeal of crime maps. Trulia, a housing search too
 
 Below is [McArthur's Universal Corrective Map of the World](http://www.odt.org/southupmaps.htm). Think about it.
 
-[ ![](/uploads/2011-06-07-Uncrime-Mapping/mcarthur-large-600x401.jpg "mcarthur-large") ](/uploads/2011-06-07-Uncrime-Mapping/mcarthur-large.jpeg)
+[![](/uploads/2011-06-07-Uncrime-Mapping/mcarthur-large-600x401.jpg "mcarthur-large") ](/uploads/2011-06-07-Uncrime-Mapping/mcarthur-large.jpeg)

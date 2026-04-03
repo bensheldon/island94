@@ -27,4 +27,4 @@ redirect_from:
 
 Yesterday a subset of _the gang_ skipped the blustery weather to bake and decorate Halloween cookies in Danielle's inviting kitchen. Other than the predictable headache and infirmity from massive sugar intake, we had good times.
 
-  [ ![](2006-10-30-Spooky-baking/halloween_cooke_tableau.png) ](http://flickr.com/photos/bensheldon/sets/72157594351008275/)
+  [![](2006-10-30-Spooky-baking/halloween_cooke_tableau.png) ](http://flickr.com/photos/bensheldon/sets/72157594351008275/)

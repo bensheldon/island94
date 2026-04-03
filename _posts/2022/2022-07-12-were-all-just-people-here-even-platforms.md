@@ -9,7 +9,7 @@ In [my presentation of how my small engineering team helped deliver food stamps 
 
 And I've become become aware of that pathology affecting how engineers perceive the labor of _other people_: they don't, not the people part. And that's bad.
 
-To be fair, not seeing the people isn't just an engineering pathology. We talk about products, and services, and value, and how[ capitalist corporations are simply slow AI](https://www.buzzfeednews.com/article/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway#.spxyjARZP). And I've been working with a leadership coach and spending a fair bit of time contemplating what it means to do something larger than myself but within the realm of human endeavour.  So please go with me here.
+To be fair, not seeing the people isn't just an engineering pathology. We talk about products, and services, and value, and how[capitalist corporations are simply slow AI](https://www.buzzfeednews.com/article/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway#.spxyjARZP). And I've been working with a leadership coach and spending a fair bit of time contemplating what it means to do something larger than myself but within the realm of human endeavour.  So please go with me here.
 
 Platforms.  I've spent a lot of my career working on X-as-a-Platform. Which is the idea that it's a _good thing_ if the things in our lives become analogous to vending machines, or FedEx status pages: we press the button on the machine, and we get what we want, and if not now, then the machine will tell us exactly when.
 

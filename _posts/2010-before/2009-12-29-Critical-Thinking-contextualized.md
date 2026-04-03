@@ -36,7 +36,7 @@ The 3 major approaches to Critical Thinking are:
 >
 > Costa (included because his quote is the inspiration for this paper) – Habits of mind
 >
-> **The understanding approach**: the ability to locate a concept in the context of other concepts or implement a concept within another context. “Thinking is not a pure activity but activity with knowledge; and when this knowledge is understood, thinking activity is more generative (creates better solutions, decisions and ideas). Understanding therefore, is not (only) a product of good thinking but (also) its source.” [ [Harpaz](http://www.tcrecord.org/Content.asp?ContentID=12260)]
+> **The understanding approach**: the ability to locate a concept in the context of other concepts or implement a concept within another context. “Thinking is not a pure activity but activity with knowledge; and when this knowledge is understood, thinking activity is more generative (creates better solutions, decisions and ideas). Understanding therefore, is not (only) a product of good thinking but (also) its source.” [[Harpaz](http://www.tcrecord.org/Content.asp?ContentID=12260)]
 >
 > Lipman (Philosophy) – Philosophy for Children
 >

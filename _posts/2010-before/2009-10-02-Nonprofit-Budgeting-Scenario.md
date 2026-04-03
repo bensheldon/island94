@@ -77,6 +77,6 @@ I pasted the text of the  scenario below, though you can download the whole thi
 >
 > **Budget Worksheet:** _this can be downloaded in the [attached Word Document](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/Nonprofit-Realities-Budgeting-Scenario.doc)._
 >
-> [ ![np-budget-worksheet](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/np-budget-worksheet-500x594.png "np-budget-worksheet") ](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/np-budget-worksheet.png)
+> [![np-budget-worksheet](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/np-budget-worksheet-500x594.png "np-budget-worksheet") ](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/np-budget-worksheet.png)
 >
 >

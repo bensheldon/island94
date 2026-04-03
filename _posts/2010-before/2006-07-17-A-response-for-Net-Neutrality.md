@@ -23,7 +23,7 @@ Yes, there is wide support for Net Neutrality and for good reason. I run several
 
 _"Never mind that was no evidence that any ISP was blocking access"_
 
-A Canadian Telco has [blocked access](http://www.edmontonsun.com/News/Canada/2005/07/24/1145417-sun.html). AT&T's CEO is [threatening to do so ](http://www.ft.com/cms/s/3ced445e-91c5-11da-bab9-0000779e2340.html).
+A Canadian Telco has [blocked access](http://www.edmontonsun.com/News/Canada/2005/07/24/1145417-sun.html). AT&T's CEO is [threatening to do so](http://www.ft.com/cms/s/3ced445e-91c5-11da-bab9-0000779e2340.html).
 
 _"What? You say that your voice telephone service, which uses the PacketCable specifications designed by CableLabs, gives better quality of service control than the versions offered by Skype or Vonage? That's prohibited. Too bad!"_
 

@@ -14,4 +14,4 @@ redirect_from:
 - "?p=2020"
 ---
 
-[ ![](/uploads/2010-06-06-Get-your-own/cat-in-a-box-500x666.jpg "cat in a box") ](/uploads/2010-06-06-Get-your-own/cat-in-a-box.jpeg)
+[![](/uploads/2010-06-06-Get-your-own/cat-in-a-box-500x666.jpg "cat in a box") ](/uploads/2010-06-06-Get-your-own/cat-in-a-box.jpeg)

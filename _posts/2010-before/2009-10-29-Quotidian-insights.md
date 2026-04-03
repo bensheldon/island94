@@ -8,7 +8,7 @@ redirect_from:
 - "?p=905"
 ---
 
-[ ![china-hw](/uploads/2009-10-29-Quotidian-insights/china-hw.jpg "china-hw") ](/uploads/2009-10-29-Quotidian-insights/china-hw.jpg)
+[![china-hw](/uploads/2009-10-29-Quotidian-insights/china-hw.jpg "china-hw") ](/uploads/2009-10-29-Quotidian-insights/china-hw.jpg)
 
 I hate to repost ironic internet memes, but [this from reddit](http://www.reddit.com/r/pics/comments/9ycx7/you_are_to_assume_the_role_of_a_chinese_immigrant/) touches upon pedagogy and (attempts at) representing other perspectives. From the comments:
 

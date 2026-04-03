@@ -57,7 +57,7 @@ So what can you do when you're able to quickly serve hundreds/thousands of simul
 
 Example of all 3: visualizing traffic going through a Node.js load-balancer by geolocating the requesting IP address and sending them to a map  in the web browser in real-time via Socket.io: [http://vimeo.com/48470307](http://vimeo.com/48470307)
 
-[ ![maptail](/uploads/2012-12/maptail-600x330.png) ](http://vimeo.com/48470307)
+[![maptail](/uploads/2012-12/maptail-600x330.png) ](http://vimeo.com/48470307)
 
 Alternatives to Node.js: EventMachine (Ruby) or Twisted (Python). Unfortunately, the majority of Ruby/Python libraries aren't written to be evented/asynchronous, which means you can't use those libraries in an asynchronous environment (because they will lock it up). Whereas the majority of Node.js/Javascript code \*is\* written to be evented/asynchronous.
 
