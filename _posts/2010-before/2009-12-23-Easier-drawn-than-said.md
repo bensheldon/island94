@@ -14,4 +14,4 @@ redirect_from:
 - "?p=1620"
 ---
 
-![](/uploads/2009-12-23-Easier-drawn-than-said/difficulty-curve-500x337.png "difficulty curve") Visualizing the demand curve is left as an exercise for the reader.
+![](/uploads/2009/easier-drawn-than-said-1.png "difficulty curve") Visualizing the demand curve is left as an exercise for the reader.

@@ -13,7 +13,7 @@ redirect_from:
 - "?p=2739"
 ---
 
-[ ![](/uploads/2011-07-05-Planning-is-timeless/Operation-High-Hopes-600x675.png "Operation High Hopes") ](/uploads/2011-07-05-Planning-is-timeless/Operation-High-Hopes.png)
+[ ![](/uploads/2011/planning-is-timeless-1.png "Operation High Hopes") ](/uploads/2011/planning-is-timeless-2.png)
 
 From the [John F. Kennedy Presidential Library & Museum](http://www.jfklibrary.org/):
 
@@ -59,4 +59,4 @@ From the [John F. Kennedy Presidential Library & Museum](http://www.jfklibrary.o
 >
 > 7. If a supporter wants to give more than $1 or $2 have him make out a check to Washington D. C. KENNEDY FOR PRESIDENT COMMITTEE, and send it to this address.
 
-[ ![](/uploads/2011-07-05-Planning-is-timeless/Photo-Jul-04-1-00-42-PM-600x448.jpg "Photo Jul 04, 1 00 42 PM") ](/uploads/2011-07-05-Planning-is-timeless/Photo-Jul-04-1-00-42-PM.jpeg)
+[ ![](/uploads/2011/planning-is-timeless-3.jpg "Photo Jul 04, 1 00 42 PM") ](/uploads/2011/planning-is-timeless-4.jpeg)

@@ -14,6 +14,6 @@ redirect_from:
 - "?p=27"
 ---
 
-[ ![](http://farm1.static.flickr.com/34/91590209_5c74999e39.jpg) ](https://www.flickr.com/photos/atomicworkshop/91590209/)
+![](/uploads/2006/ghost-train-1.jpg)
 
 I commute by train to work every morning. Normally in Lowell the siderails are filled with boxcars. This morning they had left, but not without leaving evidence.

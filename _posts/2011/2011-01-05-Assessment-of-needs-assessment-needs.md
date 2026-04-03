@@ -13,7 +13,7 @@ redirect_from:
 - "?p=2404"
 ---
 
-![](/uploads/2011-01-05-Assessment-of-needs-assessment-needs/staff-development-activities-600x684.jpg "staff-development-activities")
+![](/uploads/2011/assessment-of-needs-assessment-needs-1.jpg "staff-development-activities")
 
 One of my AmeriCorps members asked for resources on technology needs-assessment surveys and I came across some varied approaches. Above is from the US Department of Education hosted _[An Educator's Guide to Evaluating the Use of Technology in Schools and Classrooms](http://www2.ed.gov/pubs/EdTechGuide/appc-5.html)_. Below is from the National Center for Technology Planning's " [Perceived Educational Technology Needs Survey](http://www.nctp.com/downloads/assess.pdf)" [PDF] (the Center appears to be more a guy then a center). Both appear rather aged, though I like the latter one better.
 

@@ -14,7 +14,7 @@ redirect_from:
 
 DonorsChoose announced the [winners for their Hacking Education contest](http://www.donorschoose.org/hacking-education-winners) today and unfortunately [Print & Share](http://printandshare.com), the app I developed with my coworker Billy, didn't win. The consolation prize is all of the positive feedback I've received from teachers who are using Print & Share:
 
-[ ![](/uploads/2011-07-13-DonorsChoose-Contest-Update-Consolation-Prize-Edition/Donorschoose-Feedback.png "Donorschoose Feedback") ](/uploads/2011-07-13-DonorsChoose-Contest-Update-Consolation-Prize-Edition/Donorschoose-Feedback.png)Now this is probably just sour-grapes writing, but I am disappointed by the nature of the applications that won: most of them are based around automated referrals:
+[ ![](/uploads/2011/donorschoose-contest-update-consolation-prize-edition-1.png "Donorschoose Feedback") ](/uploads/2011/donorschoose-contest-update-consolation-prize-edition-1.png)Now this is probably just sour-grapes writing, but I am disappointed by the nature of the applications that won: most of them are based around automated referrals:
 
 - a Wordpress plugin, and TwitterAPI app that use geographic location to suggest DonorsChoose projects,
 
@@ -28,4 +28,4 @@ My criticism of those automated referral tools is that they all require an advoc
 
 The fact that these tools seem in search of an audience is what disappoints me most. As attributed to thinker Seth Godin by  [Richard Millington](http://www.feverbee.com/2011/07/startups.html): "Find products for your audience, not audiences for your products." We built Print & Share as a tool for teachers to better promote their own projects---because teachers are the audience that cares most about their projects' success-- which is why the tweet I just received while writing this post cracks me up:
 
-[ ![](/uploads/2011-07-13-DonorsChoose-Contest-Update-Consolation-Prize-Edition/Donorschoose-Feedback-category.png "Donorschoose Feedback category") ](/uploads/2011-07-13-DonorsChoose-Contest-Update-Consolation-Prize-Edition/Donorschoose-Feedback-category.png)
+[ ![](/uploads/2011/donorschoose-contest-update-consolation-prize-edition-2.png "Donorschoose Feedback category") ](/uploads/2011/donorschoose-contest-update-consolation-prize-edition-2.png)

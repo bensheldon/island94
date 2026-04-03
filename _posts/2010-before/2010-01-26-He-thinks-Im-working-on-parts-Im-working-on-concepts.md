@@ -21,13 +21,13 @@ The following quote is from _Zen and the Art of Motorcycle Maintenance_ by Rober
 >
 > I was talking about these concepts yesterday when I said that a motorcycle can be divided according to its components and according to its functions. When I said that suddenly I created a set of boxes with the following arrangement:
 >
-> ![](/uploads/2010-01-26-He-thinks-Im-working-on-parts-Im-working-on-concepts/zen-more-500x144.png "zen-more")
+> ![](/uploads/2010/he-thinks-im-working-on-parts-im-working-on-concepts-1.png "zen-more")
 >
 > And when I said the components may be subdivided into a power assembly and a running assembly, suddenly appear some more little boxes:
 >
 >
 >
-> ![](/uploads/2010-01-26-He-thinks-Im-working-on-parts-Im-working-on-concepts/zen-500x183.png "zen")
+> ![](/uploads/2010/he-thinks-im-working-on-parts-im-working-on-concepts-2.png "zen")
 >
 > And you see that every time I made a further division, up came more boxes based on these divisions until I had a huge pyramid of boxes. Finally you see that while I was splitting the cycle up into ﬁner and ﬁner pieces, I was also building a structure.
 >

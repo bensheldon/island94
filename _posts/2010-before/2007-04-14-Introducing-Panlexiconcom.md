@@ -18,7 +18,7 @@ redirect_from:
 - "?p=128"
 ---
 
-[ ![Panlexicon.com](http://farm1.static.flickr.com/178/459184378_b3538d860c.jpg) ](http://www.flickr.com/photos/bensheldon/459184378/ "Photo Sharing")
+![Panlexicon.com](/uploads/2007/introducing-panlexiconcom-1.jpg)
 
 I'm very proud to be officially launching ** [Panlexicon.com](http://panlexicon.com): a unique thesaurus**. Using intuitive **"tag clouds"** to represent synonyms, [Panlexicon](http://panlexicon.com) makes discovering the word you want quick, easy and explorational.
 

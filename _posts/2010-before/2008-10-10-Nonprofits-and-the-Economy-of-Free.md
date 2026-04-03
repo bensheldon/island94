@@ -20,11 +20,11 @@ My RSS feeds of late have been delivering to me many interesting posts by Chris 
 
 Chris Anderson's graphic of the same thing is below (C is Consumer, P is Producer, A is Advertiser):
 
-![Advertising Model](/uploads/2008-10-10-Nonprofits-and-the-Economy-of-Free/anderson-ad-free.png)
+![Advertising Model](/uploads/2008/nonprofits-and-the-economy-of-free-1.png)
 
 This model of Free is very similar to the standard nonprofit model of giving: Foundations/Donors (D) provide support to Nonprofit Organizations (NP) which then provide free services to Clients/Constituents (C):
 
-![Nonprofit Donor Model](/uploads/2008-10-10-Nonprofits-and-the-Economy-of-Free/nonprofit-free.png)
+![Nonprofit Donor Model](/uploads/2008/nonprofits-and-the-economy-of-free-2.png)
 
 That all being said, the nonprofit model doesn't quite have the same symmetry. In fact, it's missing a piece that, at least in my experience, very rarely is talked about: what is the relationship of Foundations/Donors to the Clients/Constituents?
 
@@ -34,6 +34,6 @@ Putting those in context of clients/constituents, the actual people being served
 
 One way to look at this (and there are many), is to think of the Clients/Constituents as just one part of the larger Society (S):
 
-![Nonprofit Donor Model with Society](/uploads/2008-10-10-Nonprofits-and-the-Economy-of-Free/nonprofit-society-free.png)
+![Nonprofit Donor Model with Society](/uploads/2008/nonprofits-and-the-economy-of-free-3.png)
 
 In this case, what is being transferred between Foundations/Donors and Society in general: reputation, legitimacy, restitution, validation....? That's an interesting question.

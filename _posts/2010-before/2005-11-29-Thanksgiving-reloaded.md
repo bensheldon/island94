@@ -20,7 +20,7 @@ redirect_from:
 
 > I have been writing blog postings offline on my commute to and from work but just forget to post them when I get home. Sorry for any delays.
 
-[ ![](http://static.flickr.com/20/68517300_e2619db2fd_m.jpg) ](https://www.flickr.com/photos/atomicworkshop/68517300/)
+![](/uploads/2005/thanksgiving-reloaded-1.jpg)
 
 This last Sunday, Jessica and I headed over to one of my coworker’s homes up in Sommerville to nosh on another turkey (squash lasagna for vegetarian Jessica), and all the fixins’ meal. It was delicious.
 

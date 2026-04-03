@@ -17,7 +17,7 @@ redirect_from:
 - "?p=69"
 ---
 
-[ ![Breakfast Smoothie](http://static.flickr.com/47/190127749_5f9878185a_m.jpg) ](https://web.archive.org/web/20170508165244/https://www.flickr.com/photos/bensheldon/190127749/ "Photo Sharing")
+![Breakfast Smoothie](/uploads/2006/breakfast-smoothie-1.jpg)
 
 My roommate, Sarah, and I woke up early this morning to whip up some cool, Strawberry-Banana goodness.
 

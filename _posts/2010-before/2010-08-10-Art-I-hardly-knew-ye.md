@@ -14,7 +14,7 @@ redirect_from:
 - "?p=2125"
 ---
 
-[ ![](/uploads/2010-08-10-Art-I-hardly-knew-ye/spiegelman-500x453.jpg "Spiegelman") ](/uploads/2010-08-10-Art-I-hardly-knew-ye/spiegelman.jpeg)
+[ ![](/uploads/2010/art-i-hardly-knew-ye-1.jpg "Spiegelman") ](/uploads/2010/art-i-hardly-knew-ye-2.jpeg)
 
   [Viktor Shlovsky](http://en.wikipedia.org/wiki/Defamiliarization) on art, via Art Spiegelman's "Portrait of the Artist as a Young %@?\*! " in _The Best American Comics, 2009_:
 

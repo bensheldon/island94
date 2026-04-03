@@ -18,7 +18,7 @@ redirect_from:
 - "?p=631"
 ---
 
-![norman rockwell - moving day](/uploads/2009-07-12-Moving-Day/norman-rockwell-moving-day-500x311.png "norman rockwell - moving day")
+![norman rockwell - moving day](/uploads/2009/moving-day-1.png "norman rockwell - moving day")
 
 Visiting Western Massachussetts this weekend---Angelina sang at Tanglewood---we visited the [Norman Rockwell Museum](http://www.nrm.org/). It was beautiful in the Berkshires and while I can't speak to the comprehensiveness of the collection, it was just what I wanted. Norman Rockwell is one of my favorite americana motifs to wallow in.
 

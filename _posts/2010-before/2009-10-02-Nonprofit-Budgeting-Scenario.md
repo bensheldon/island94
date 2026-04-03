@@ -18,7 +18,7 @@ redirect_from:
 
 While cleaning up some files, I came across this awesome scenario I wrote for our AmeriCorps\*VISTA orientation last summer. I wrote it to give our new service members an idea of what it's like to enter a small community nonprofit organization in contemporary times: under-staffed, under-resourced, broadly missioned, lacking in a comprehensive strategic plan. Most importantly, the nonprofit in this scenario lacks a well-prepared board... which is the role _you_ play in this scenario.
 
-I pasted the text of the  scenario below, though you can download the whole thing along with the budget worksheet in a [word document(.doc)](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/Nonprofit-Realities-Budgeting-Scenario.doc).
+I pasted the text of the  scenario below, though you can download the whole thing along with the budget worksheet in a [word document(.doc)](/uploads/2009/nonprofit-budgeting-scenario-1.doc).
 
 > **Nonprofit Board of Directors Roleplay:**
 >
@@ -75,8 +75,8 @@ I pasted the text of the  scenario below, though you can download the whole thi
 >
 > Stop providing Health Insurance - Staff can apply for individual coverage (a de facto pay-cut)
 >
-> **Budget Worksheet:** _this can be downloaded in the [attached Word Document](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/Nonprofit-Realities-Budgeting-Scenario.doc)._
+> **Budget Worksheet:** _this can be downloaded in the [attached Word Document](/uploads/2009/nonprofit-budgeting-scenario-1.doc)._
 >
-> [ ![np-budget-worksheet](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/np-budget-worksheet-500x594.png "np-budget-worksheet") ](/uploads/2009-10-02-Nonprofit-Budgeting-Scenario/np-budget-worksheet.png)
+> [ ![np-budget-worksheet](/uploads/2009/nonprofit-budgeting-scenario-2.png "np-budget-worksheet") ](/uploads/2009/nonprofit-budgeting-scenario-3.png)
 >
 >

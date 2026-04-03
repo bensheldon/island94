@@ -17,7 +17,7 @@ redirect_from:
 - "?p=218"
 ---
 
-[ ![Boston Vegetable Planting Chart](http://farm3.static.flickr.com/2300/2447776678_9cd6dc2a71.jpg) ](http://www.flickr.com/photos/bensheldon/2447776678/ "Boston Vegetable Planting Chart by bensheldon, on Flickr")
+![Boston Vegetable Planting Chart](/uploads/2008/boston-vegetable-planting-chart-1.jpg)
 
 I made a simple chart of approximate seed planting times for Boston (USDA Zone 6). You can [download a printable PDF of the planting chart](http://island94.org/files/island94.org/Boston%20Vegetable%20Planting%20Chart.pdf).
 

@@ -12,7 +12,7 @@ redirect_from:
 - "?p=1668"
 ---
 
-![](/uploads/2010-01-09-Notes-of-the-first-water/navigator-stack-island-500x136.png "The Navigator: Stack Island Text")
+![](/uploads/2010/notes-of-the-first-water-1.png "The Navigator: Stack Island Text")
 
 Above is from the addendum of Zadok Cramer’s _The Navigator_ from which I have [quoted](http://www.island94.org/2009/10/an-ample-account/) [previously](http://www.island94.org/2009/10/not-another-rogues-nest/). Written buoyantly, it  makes jokes of specie ('new notes of the "first water"' refers to the breadth of bank notes available at the time) and law ("club law" is the lynch mob). The text:
 

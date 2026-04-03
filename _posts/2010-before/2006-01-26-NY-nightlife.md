@@ -14,5 +14,5 @@ redirect_from:
 - "?p=28"
 ---
 
-[ ![](http://static.flickr.com/35/91590114_6bdb10871a_m.jpg) ](https://www.flickr.com/photos/atomicworkshop/91590114/)
+![](/uploads/2006/ny-nightlife-1.jpg)
 I was in New York a few weeks ago for work/pleasure and stayed at my old roommate Greg’s place near 47th and Lexington. I snapped this one while coming back from B&H Photo where I talked on a panel about digital media distribution.

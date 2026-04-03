@@ -8,4 +8,4 @@ redirect_from:
 - "?p=353"
 ---
 
-![Obama Painting](/uploads/2009-01-22-Obama-Painting/picture-3.png "Obama Painting")
+![Obama Painting](/uploads/2009/obama-painting-1.png "Obama Painting")

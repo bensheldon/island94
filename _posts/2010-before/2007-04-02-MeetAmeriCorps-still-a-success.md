@@ -15,7 +15,7 @@ redirect_from:
 - "?p=126"
 ---
 
-[ ![The Faces of MeetAmeriCorps.com](http://farm1.static.flickr.com/235/444085635_15a71d43c8.jpg) ](http://www.flickr.com/photos/bensheldon/444085635/ "Photo Sharing")
+![The Faces of MeetAmeriCorps.com](/uploads/2007/meetamericorps-still-a-success-1.jpg)
 
 I just got back from some extended travel in California where I met with some fellow AmeriCorps\*VISTAs and, among other things, discussed how we could get our [AmeriCorps social networking website](http://meetamericorps.com) growing even faster. Right now the site has over 300 registered users, which is pretty good for a six month old baby.
 

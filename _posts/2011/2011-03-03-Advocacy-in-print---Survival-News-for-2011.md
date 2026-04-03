@@ -14,7 +14,7 @@ redirect_from:
 - "?p=2537"
 ---
 
-![](/uploads/2011-03-03-Advocacy-in-print---Survival-News-for-2011/foodTimer-600x600.png "foodTimer")
+![](/uploads/2011/advocacy-in-print---survival-news-for-2011-1.png "foodTimer")
 
 Today I sent another issue of _Survival News_---"the voices of low-income women"---to the printers; this is my second year as layout artist for the newspaper. At 40 broadsheets (11"x17"), the newspaper is the same size as [last year](http://www.island94.org/2010/02/laying-out-latest-layout/). Published by [Survivors, Inc.](http://survivorsinc.org), _Survival News_ is the official newspaper of the [National Welfare Rights Union](http://www.nationalwru.org/) and provides news, stories, advocacy information and 20 pages of Survival Tips---explanations and contact information to help in navigating the complex and crumbling web of social services and support systems---in English and Spanish, and excerpts in Vietnamese.
 
@@ -28,4 +28,4 @@ It's a great group with which to volunteer and the stories and information that'
 
 The artwork above was contributed by coworker [Billy Brown](http://robobilly.com). And I'm still trying to convince them to work on their website.
 
-![](/uploads/2011-03-03-Advocacy-in-print---Survival-News-for-2011/survival-news-600x413.png "survival news")
+![](/uploads/2011/advocacy-in-print---survival-news-for-2011-2.png "survival news")

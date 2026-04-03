@@ -21,7 +21,7 @@ redirect_from:
 - "?p=108"
 ---
 
-[ ![Jeans: New and Old (front)](http://static.flickr.com/115/289433430_3b1f91be4b_m.jpg) ](http://www.flickr.com/photos/bensheldon/289433430/ "Photo Sharing") [ ![Jeans: New and Old (back)](http://static.flickr.com/115/289435524_59b72d9967_m.jpg) ](http://www.flickr.com/photos/bensheldon/289435524/ "Photo Sharing")
+![Jeans: New and Old (front)](/uploads/2006/denim-flashback-1.jpg) ![Jeans: New and Old (back)](/uploads/2006/denim-flashback-2.jpg)
 
 _Click on the photos to see explanations of the wear marks_
 
@@ -31,5 +31,5 @@ Buying pants is always exciting for me; I never even owned a pair until I was 13
 
 In side note, it was pouring rain last Saturday when I went out to Southie to buy the jeans. Jonesies is far up on East Broadway; and while I caught the #9 bus there, I walked/swam back.
 
-[ ![Pouring rain in southie](http://static.flickr.com/102/289691891_d270cfb954_m.jpg) ](http://www.flickr.com/photos/bensheldon/289691891/ "Photo Sharing") [ ![Don't open that window](http://static.flickr.com/100/289693095_341411dd75_m.jpg) ](http://www.flickr.com/photos/bensheldon/289693095/ "Photo Sharing")
+![Pouring rain in southie](/uploads/2006/denim-flashback-3.jpg) ![Don't open that window](/uploads/2006/denim-flashback-4.jpg)
 

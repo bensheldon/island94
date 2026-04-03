@@ -12,7 +12,7 @@ redirect_from:
 - "?p=2283"
 ---
 
-![](/uploads/2010-11-02-Metaphors-and-diversity/filter-disintermediation-500x329.jpg "filter-disintermediation")
+![](/uploads/2010/metaphors-and-diversity-1.jpg "filter-disintermediation")
 
 Interactions between people with diverse backgrounds leads to richer and more effective experiences.
 

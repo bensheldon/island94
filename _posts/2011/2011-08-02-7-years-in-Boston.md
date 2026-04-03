@@ -12,7 +12,7 @@ redirect_from:
 - "?p=2804"
 ---
 
-![](/uploads/2011-08-02-7-years-in-Boston/7-years-in-boston.png "7-years-in-boston")
+![](/uploads/2011/7-years-in-boston-1.png "7-years-in-boston")
 
 This August marks the completion of my 7th year in Boston, with the loose exceptions of the 1 month I commuted into Boston from Ashland, and the 1 year I commuted out of Boston to Lowell.
 

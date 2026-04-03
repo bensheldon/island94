@@ -15,6 +15,6 @@ redirect_from:
 - "?p=83"
 ---
 
-  [ ![Harvard Square at Night](http://static.flickr.com/64/206559327_51d2fcc536.jpg) ](https://www.flickr.com/photos/bensheldon/206559327/ "Photo Sharing")
+  ![Harvard Square at Night](/uploads/2006/night-scenes-1.jpg)
 My primary digital camera broke about two weeks ago. I pull my old one out of storage; it's clunky as all heck, but the old camera has a lot more manual settings than my sleek, sexy and recently broken one did. To make lemonade out of a bitter situation, I've been taking a lot of more night scenes and abnormal exposures because, well, I can.
-  [ ![Sullivan Square](http://static.flickr.com/81/210371310_a7789381d0.jpg) ](https://www.flickr.com/photos/bensheldon/210371310/ "Photo Sharing")
+  ![Sullivan Square](/uploads/2006/night-scenes-2.jpg)

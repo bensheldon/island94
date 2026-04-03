@@ -12,7 +12,7 @@ redirect_from:
 - "?p=2275"
 ---
 
-![Humboldt's Isotherms](/uploads/2010-10-31-Life-before-the-chart/humboldt-isotherms-500x371.png "humboldt-isotherms")
+![Humboldt's Isotherms](/uploads/2010/life-before-the-chart-1.png "humboldt-isotherms")
 
 From Patricia Fara’s _Science: A Four Thousand Year History_:
 

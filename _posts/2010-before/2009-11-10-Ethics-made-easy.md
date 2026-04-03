@@ -13,7 +13,7 @@ redirect_from:
 - "?p=1013"
 ---
 
-[ ![ethical-reasoning](/uploads/2009-11-10-Ethics-made-easy/ethical-reasoning-500x719.png "ethical-reasoning") ](/uploads/2009-11-10-Ethics-made-easy/ethical-reasoning.png)
+[ ![ethical-reasoning](/uploads/2009/ethics-made-easy-1.png "ethical-reasoning") ](/uploads/2009/ethics-made-easy-2.png)
 
 Despite it being a class on Critical _Thinking_ I'm a little grossed out by "ethical, empathic and just" behavior being described as a deductive exercise.  But then again, I did agree with Justice Sotomayor's " [wise-Latina](http://www.cnn.com/2009/POLITICS/06/05/sotomayor.speeches/index.html)" remark.
 

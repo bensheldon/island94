@@ -14,7 +14,7 @@ redirect_from:
 - "?p=2501"
 ---
 
-[ ![](/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/drunkenlogo-500x190.png "drunkenlogo") ](http://drunkenstumble.com)
+[ ![](/uploads/2011/the-48-hour-mobile-web-app-drunken-stumble-1.png "drunkenlogo") ](http://drunkenstumble.com)
 
 
 
@@ -46,7 +46,7 @@ Together---and with the muse of the open bar---we came up with the idea of creat
 
 We built Drunken Stumble as an HTML5 mobile web application---testing it on both iPhone and Android. As an HTML5 mobile web app, we can access smartphone features (like GPS and Portrait/Landscape modes) as well as quickly write, test and deploy. Both @mikemiles86 and myself are Drupal/PHP developers so (with some reservations) we decided to use Drupal as a framework---using its paths, forms, database and template systems and nothing else.
 
-![Planning documents](/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/drunken-planning.jpeg "drunken planning")
+![Planning documents](/uploads/2011/the-48-hour-mobile-web-app-drunken-stumble-2.jpeg "drunken planning")
 
 I focused most of my development on interfacing with external APIs. Originally we planned on using Yelp to provide business data for locating pubs, but their API is extremely limited with only 100 lookups per day. Fortunately, we found an awesome service called [SimpleGeo](http://simplegeo.com) that currently offers unlimited lookups for businesses based upon location. Using SimpleGeo we were able to quickly write a rich, location-aware application that works anywhere in the United States, not just in Boston.
 
@@ -56,7 +56,7 @@ Once we knew we had a source for business data, the next step was telling the ap
 
 There was one last benefit of using SimpleGeo's well-populated business database: our app's design isn't limited to just pubs. For example, we decided rather late in the process to offer a list of local taxicab phone numbers at the end of the pub crawl. Because we had already tapped into the SimpleGeo API, we just needed to filter nearby businesses for "taxis", rather than "bars & pubs". Which is an important thing to keep in mind: with a few minor changes, our app can facilitate routing for any type of business or geographically based event---like a taco crawl or artists' open studios.
 
-[ ![](/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/Drunken-Stumble-Screens-500x315.png "Drunken Stumble Screens") ](/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/Drunken-Stumble-Screens.png)
+[ ![](/uploads/2011/the-48-hour-mobile-web-app-drunken-stumble-3.png "Drunken Stumble Screens") ](/uploads/2011/the-48-hour-mobile-web-app-drunken-stumble-4.png)
 
 ## About the process
 
@@ -72,4 +72,4 @@ It's only been a few days since the event but we've kept up a steady stream of c
 
 In the meantime though, [happy stumbling](http://drunkenstumble.com), sober or otherwise.
 
-[ ![](/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/team-stumble-500x331.png "team stumble") ](/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/team-stumble.png)
+[ ![](/uploads/2011/the-48-hour-mobile-web-app-drunken-stumble-5.png "team stumble") ](/uploads/2011/the-48-hour-mobile-web-app-drunken-stumble-6.png)

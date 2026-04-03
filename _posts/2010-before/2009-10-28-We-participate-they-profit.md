@@ -8,7 +8,7 @@ redirect_from:
 - "?p=909"
 ---
 
-[ ![je-participe](/uploads/2009-10-28-We-participate-they-profit/je-participe.gif "je-participe") ](/uploads/2009-10-28-We-participate-they-profit/je-participe.gif)
+[ ![je-participe](/uploads/2009/we-participate-they-profit-1.gif "je-participe") ](/uploads/2009/we-participate-they-profit-1.gif)
 
 The [International Fund for Agricultural Development](http://www.ifad.org/) published _[Good Practices in Participatory Mapping](http://www.ifad.org/pub/map/PM_web.pdf)_ [PDF] last summer. In it they mention Sherry Arnstein's _[A Ladder of Citizen Participation](http://lithgow-schmidt.dk/sherry-arnstein/ladder-of-citizen-participation.html)_ (JAIP, Vol. 35, No. 4, July 1969, pp. 216-224).
 
@@ -16,7 +16,7 @@ The [International Fund for Agricultural Development](http://www.ifad.org/) publ
 
 Arnstein introduces a ladder typology whose subject matter is all too familiar:
 
-[ ![ladder-of-citizen-participation](/uploads/2009-10-28-We-participate-they-profit/ladder-of-citizen-participation.gif "ladder-of-citizen-participation") ](/uploads/2009-10-28-We-participate-they-profit/ladder-of-citizen-participation.gif)
+[ ![ladder-of-citizen-participation](/uploads/2009/we-participate-they-profit-2.gif "ladder-of-citizen-participation") ](/uploads/2009/we-participate-they-profit-2.gif)
 
 > The bottom rungs of the ladder are (1) Manipulation and (2) Therapy. These two rungs describe levels of "non-participation" that have been contrived by some to substitute for genuine participation. Their real objective is not to enable people to participate in planning or conducting programs, but to enable powerholders to "educate" or "cure" the participants. Rungs 3 and 4 progress to levels of "tokenism" that allow the have-nots to hear and to have a voice: (3) Informing and (4) Consultation. When they are proffered by powerholders as the total extent of participation, citizens may indeed hear and be heard. But under these conditions they lack the power to insure that their views will be heeded by the powerful. When participation is restricted to these levels, there is no follow-through, no "muscle," hence no assurance of changing the status quo. Rung (5) Placation is simply a higher level tokenism because the ground rules allow have-nots to advise, but retain for the powerholders the continued right to decide.
 >

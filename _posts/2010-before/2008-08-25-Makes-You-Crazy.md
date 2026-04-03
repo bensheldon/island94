@@ -13,7 +13,7 @@ redirect_from:
 - "?p=248"
 ---
 
-[ ![Makes you crazy](http://farm4.static.flickr.com/3279/2798817264_83b877ccd5.jpg) ](http://www.flickr.com/photos/bensheldon/2798817264/ "Makes you crazy by bensheldon, on Flickr")
+![Makes you crazy](/uploads/2008/makes-you-crazy-1.jpg)
 
 I feel like this [xkcd comic](http://xkcd.com/281/) describes a lot of internet interactions I know. This is my take on it.
 

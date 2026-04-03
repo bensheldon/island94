@@ -18,13 +18,13 @@ redirect_from:
 
 My associate, [Rebecca](http://circuitous.org), and I have been starting to think critically about [Panlexicon.com](http://panlexicon.com), the unique, tag-cloud based thesaurus I've written about [previously](http://island94.org/node/128). We're hoping to put some more time and effort into the project and in the process, learn some more about what's happening with the language and the underlying structure of the thesaurus taxonomy.
 
-[ ![Panlexicon.com - Thesaurus Visualization](http://farm2.static.flickr.com/1214/1178070872_b43fabb5f9_b.jpg) ](http://www.flickr.com/photos/bensheldon/1178070872/ "Photo Sharing")
+![Panlexicon.com - Thesaurus Visualization](/uploads/2007/more-thoughts-on-an-interesting-thesaurus-1.jpg)
 
 The thesaurus data we're working with is the [Moby Thesaurus](http://www.gutenberg.org/etext/3202) from the [Project Gutenburg](http://www.gutenberg.org/) library of free electronic texts. Like many thesauruses, it's structure in an interesting way. Every word is assigned to one or more groups based on it's general meaning or idea. Each group has a keyword, also known as a headword, that is a general encapsulation that idea---this is why, for example in Roget's, you must first look up a word in the index to acquire its keywords. Each group has only one keyword, but a keyword can exist in other groups (but as an ordinary word).
 
 This thesaurus structure allows us to do some easy simplifications and analysis on the data. For many functions, we can treat the groups as supernodes, performing operations and storing connections upon them in place of the words themselves. For example, when determining relatedness between words, we only have compare the groups they are a part of; while there are approximately 100,000 words in our database, there are only 30,000 groups, which greatly diminishes the size and complexity of the data set we're working on.
 
-[ ![Panlexicon.com - Correspondence Weighting](http://farm2.static.flickr.com/1297/1178070558_757312a092.jpg) ](http://www.flickr.com/photos/bensheldon/1178070558/ "Photo Sharing")
+![Panlexicon.com - Correspondence Weighting](/uploads/2007/more-thoughts-on-an-interesting-thesaurus-2.jpg)
 
 Currently Panlexicon works by comparing the overlap between groups of words. When typing in a search term, Panlexicon looks up all of the groups that word is a member of. It then returns a list of words that are also in those groups. The weight of each word (or size in our word cloud model) is calculated according to how many groups----of those groups that include the search term---that word is a member of. A property of this is that no other returned word will have a heavier weight than the search term. When searching multiple terms, Panlexicon creates a set of groups such that all search terms are a member. In the case when there exists no groups that contain all the search terms, Panlexicon returns nothing.
 

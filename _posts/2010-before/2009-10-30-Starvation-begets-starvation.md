@@ -13,7 +13,7 @@ redirect_from:
 - "?p=931"
 ---
 
-[ ![np-starvation-cycle](/uploads/2009-10-30-Starvation-begets-starvation/np-starvation-cycle-500x504.png "np-starvation-cycle") ](/uploads/2009-10-30-Starvation-begets-starvation/np-starvation-cycle.png)
+[ ![np-starvation-cycle](/uploads/2009/starvation-begets-starvation-1.png "np-starvation-cycle") ](/uploads/2009/starvation-begets-starvation-2.png)
 
 An article that confirms my anecdotal experience: " [The Nonprofit Starvation Cycle](http://www.ssireview.org/articles/entry/the_nonprofit_starvation_cycle/)" from the Stanford Social Innovation review:
 
@@ -29,5 +29,5 @@ And the article is chock full of fun, familiar anecdotes:
 
 From [Mission Measurement](http://www.missionmeasurement.com/content/thought-capital/thought-scraps/2009/10/30/low-overhead-does-not-equal-better-organizations) by way of [Entry Level Living's Allison Jones](http://entrylevelliving.wordpress.com/). Illustration by [David Plunkert](http://www.spurdesign.com/DP/index.html) (it's included in the article).
 
-[ ![np-starvation-graphic](/uploads/2009-10-30-Starvation-begets-starvation/np-starvation-graphic-500x650.png "np-starvation-graphic") ](/uploads/2009-10-30-Starvation-begets-starvation/np-starvation-graphic.png)
+[ ![np-starvation-graphic](/uploads/2009/starvation-begets-starvation-3.png "np-starvation-graphic") ](/uploads/2009/starvation-begets-starvation-4.png)
 

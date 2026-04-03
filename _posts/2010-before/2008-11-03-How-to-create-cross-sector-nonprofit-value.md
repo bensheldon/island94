@@ -13,7 +13,7 @@ redirect_from:
 - "?p=269"
 ---
 
-[ ![IMG_0659.JPG](http://farm3.static.flickr.com/2342/1544759086_d3e424821e.jpg) ](http://www.flickr.com/photos/bensheldon/1544759086/ "IMG_0659.JPG by bensheldon, on Flickr")
+![IMG_0659.JPG](/uploads/2008/how-to-create-cross-sector-nonprofit-value-1.jpg)
 
 I really like this post from Entry Level Living about [the need for nonprofits and for-profits to collaborate](http://entrylevelliving.wordpress.com/2008/11/03/sector-divisions-collaboration/) in these dicy economic times. She lays out some good examples of collaboration and ties it into a compelling sandwich. But it also begins with a an false cliche (nonprofits war with the for-profits) and doesn't actually get beyond the the assumption that _collaboration_ is an intrinsic good. The interesting and unanswered piece (for anyone who isn't a millennial, like the Allison of Entry Level Living and I) is: _why the hooey should we care about collaboration?_
 

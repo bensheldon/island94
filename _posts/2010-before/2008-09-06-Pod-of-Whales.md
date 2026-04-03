@@ -14,7 +14,7 @@ redirect_from:
 - "?p=252"
 ---
 
-[ ![whales](http://farm4.static.flickr.com/3240/2834048816_7123ed8f06.jpg) ](http://flickr.com/photos/bensheldon/sets/72157607143743022/ "whales by bensheldon, on Flickr")
+![whales](/uploads/2008/pod-of-whales-1.jpg)
 
 I've recently been collecting examples of whale art. My interest mostly lies around their monotonous use in [hipster](http://www.adbusters.org/magazine/79/hipster.html) art; and they're kind've cute. I put up on Flickr a gallery of [whale archetypes](http://flickr.com/photos/bensheldon/sets/72157607143743022/).
 

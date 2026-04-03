@@ -13,7 +13,7 @@ redirect_from:
 - "?p=635"
 ---
 
-![Radical Technology](/uploads/2009-07-14-Media-and-Radical-Technology/media-radical-technology-500x241.png "Radical Technology")
+![Radical Technology](/uploads/2009/media-and-radical-technology-1.png "Radical Technology")
 
 I've been digging through the section on communications in _Radical Technology_, the 1976 anthology of the magazine _Undercurrents_.
 

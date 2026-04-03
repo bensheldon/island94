@@ -13,7 +13,7 @@ redirect_from:
 - "?p=22"
 ---
 
-[ ![](http://static.flickr.com/35/69242962_fb8af427b3.jpg) ](https://www.flickr.com/photos/atomicworkshop/sets/1491836/)
+![](/uploads/2005/somerville-community-mapping-1.jpg)
 
 This evening I headed up to the Somerville Central Public Library and checked out the opening exposition of the Somerville Mapping Project, on display through the end of December. It was awesome.
 

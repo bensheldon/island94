@@ -13,7 +13,7 @@ redirect_from:
 - "?p=1616"
 ---
 
-![](/uploads/2009-12-23-Academia-on-the-experience-of-poverty/Livelihood-Framework-500x270.png "Livelihood Framework")
+![](/uploads/2009/academia-on-the-experience-of-poverty-1.png "Livelihood Framework")
 
 It takes a lot of words for academia to say "We can't describe the experience of poverty". This is from " [Using a sustainable livelihoods approach to assessing the impact of ICTs in development](http://ci-journal.net/index.php/ciej/article/view/310)" by Sarah Parkinson and Ricardo Ramírez:
 

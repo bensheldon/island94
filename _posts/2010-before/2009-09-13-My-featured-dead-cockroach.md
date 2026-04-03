@@ -13,7 +13,7 @@ redirect_from:
 - "?p=707"
 ---
 
-[ ![wired-cockroach](/uploads/2009-09-13-My-featured-dead-cockroach/wired-cockroach-500x468.png "wired-cockroach") ](/uploads/2009-09-13-My-featured-dead-cockroach/wired-cockroach.png)
+[ ![wired-cockroach](/uploads/2009/my-featured-dead-cockroach-1.png "wired-cockroach") ](/uploads/2009/my-featured-dead-cockroach-2.png)
 
 A [photo](http://www.flickr.com/photos/bensheldon/1306195094/) I took in the halls of UMass Boston was featured in a _Wired Magazine _(well, on the website) in " [Universal ‘Death Stench’ Repels Bugs of All Types](http://www.wired.com/wiredscience/2009/09/deathstench/)".
 

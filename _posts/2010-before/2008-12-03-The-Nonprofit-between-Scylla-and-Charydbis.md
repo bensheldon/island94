@@ -15,7 +15,7 @@ redirect_from:
 - "?p=275"
 ---
 
-[ ![the Nonprofit between Scylla & Chaydbis](http://farm4.static.flickr.com/3165/3079520555_a9db691c8d.jpg) ](http://www.flickr.com/photos/bensheldon/3079520555/ "the Nonprofit between Scylla & Chaydbis by bensheldon, on Flickr")
+![the Nonprofit between Scylla & Chaydbis](/uploads/2008/the-nonprofit-between-scylla-and-charydbis-1.jpg)
 
 In my [Boston University Institute for Nonprofit Management and Leadership](http://management.bu.edu/exec/elc/inml/index.shtml) program, we always get up to the edge of talking about the interplay between resource development and need, but then it always seems to drift away. So this is my contribution: if you swing too far towards either (ignoring the other), you're toast.
 

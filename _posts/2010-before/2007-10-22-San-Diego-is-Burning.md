@@ -34,9 +34,9 @@ For news I've been following the local Public Radio Station KPBS which is doing 
 
 She also includes some pictures:
 
-[ ![](/uploads/2007-10-22-San-Diego-is-Burning/North.JPG.jpg) ](/uploads/2007-10-22-San-Diego-is-Burning/North.JPG.jpg) [ ![](http://island94.org/files/island94.org/Twin%20Peaks.JPG.jpg) ](http://island94.org/files/island94.org/Twin%20Peaks.JPG.jpg)
+[ ![](/uploads/2007/san-diego-is-burning-1.jpg) ](/uploads/2007/san-diego-is-burning-1.jpg) [ ![](http://island94.org/files/island94.org/Twin%20Peaks.JPG.jpg) ](http://island94.org/files/island94.org/Twin%20Peaks.JPG.jpg)
 
-[ ![](/uploads/2007-10-22-San-Diego-is-Burning/South.JPG.jpg) ](/uploads/2007-10-22-San-Diego-is-Burning/South.JPG.jpg) [ ![](/uploads/2007-10-22-San-Diego-is-Burning/TwinEspo.JPG.jpg) ](/uploads/2007-10-22-San-Diego-is-Burning/TwinEspo.JPG.jpg)
+[ ![](/uploads/2007/san-diego-is-burning-3.jpg) ](/uploads/2007/san-diego-is-burning-3.jpg) [ ![](/uploads/2007/san-diego-is-burning-4.jpg) ](/uploads/2007/san-diego-is-burning-4.jpg)
 
 **12:00noon** - Nicole says "Oye... I think we are evacuating now. things seem to be getting a bit worse, but then again it's hard to tell."
 
@@ -58,4 +58,4 @@ She also includes some pictures:
 
 **8:00pm** - Kara sends some pictures she found on [signonsandiego.com](http://signonsandiego.com). "The first one is of the front door (or what was the front door I guess) and the second is from where the office was (you can see the pool....I think the patio furniture is ok! :)"
 
-[ ![](/uploads/2007-10-22-San-Diego-is-Burning/SL_witchcreekfire278842x006_001.jpg) ](/uploads/2007-10-22-San-Diego-is-Burning/SL_witchcreekfire278842x006_001.jpg) [ ![](/uploads/2007-10-22-San-Diego-is-Burning/SL_witchcreekfire278842x007_001.jpg) ](/uploads/2007-10-22-San-Diego-is-Burning/SL_witchcreekfire278842x007_001.jpg)
+[ ![](/uploads/2007/san-diego-is-burning-5.jpg) ](/uploads/2007/san-diego-is-burning-5.jpg) [ ![](/uploads/2007/san-diego-is-burning-6.jpg) ](/uploads/2007/san-diego-is-burning-6.jpg)

@@ -52,6 +52,6 @@ With the political talk about Rush Limbaugh being [in charge](http://www.huffing
 
 There was also in the book an interesting graphic explaining the "Producerist Narrative used in Repressive Right Wing Populism" from [Right Wing Populism in American: Too Close for Comfort](http://www.amazon.com/Right-Wing-Populism-America-Close-Comfort/product-reviews/1572305622/ref=cm_cr_dp_hist_1?ie=UTF8&showViewpoints=0&filterBy=addOneStar).  I think it's an interesting use of design to explain a dynamic narrative (click the image to view a larger version):
 
-[ ![Producerist Narrative](/uploads/2009-03-03-Excerpt-Sectors-of-the-US-Right---Active-in-the-Year-2001/producerist-narrative-500x407.png "Producerist Narrative") ](/uploads/2009-03-03-Excerpt-Sectors-of-the-US-Right---Active-in-the-Year-2001/producerist-narrative.png)
+[ ![Producerist Narrative](/uploads/2009/excerpt-sectors-of-the-us-right---active-in-the-year-2001-1.png "Producerist Narrative") ](/uploads/2009/excerpt-sectors-of-the-us-right---active-in-the-year-2001-2.png)
 
 And as a chaser, it would be could to review [The 7 Things Everyone Wants](http://www.island94.org/2008/05/ntc08-the-seven-things-everyone-wants/)---specifically #4.

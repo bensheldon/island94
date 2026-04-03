@@ -11,7 +11,7 @@ redirect_from:
 - "?p=1770"
 ---
 
-![](/uploads/2010-02-17-Quality-of-life-mind-and-language/Definitions.png "Definitions")
+![](/uploads/2010/quality-of-life-mind-and-language-1.png "Definitions")
 
 From "Business of Design", a section of David Barringer's excellent book _There's nothing funny about design_:
 

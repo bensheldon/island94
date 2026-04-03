@@ -14,7 +14,7 @@ redirect_from:
 - "?p=2732"
 ---
 
-[ ![](/uploads/2011-06-30-Print-Share-not-everyone-is-a-social-media-ninja-nor-need-they-be/DonorsChoose-Print-and-Share-600x491.png "DonorsChoose Print and Share") ](/uploads/2011-06-30-Print-Share-not-everyone-is-a-social-media-ninja-nor-need-they-be/DonorsChoose-Print-and-Share.png)
+[ ![](/uploads/2011/print-share-not-everyone-is-a-social-media-ninja-nor-need-they-be-1.png "DonorsChoose Print and Share") ](/uploads/2011/print-share-not-everyone-is-a-social-media-ninja-nor-need-they-be-2.png)
 
 Today is the deadline for DonorsChoose's [Hacking Education Contest](http://www.donorschoose.org/hacking-education), and fortunately I have completed and submitted  [Print and Share](http://printandshare.org) (with no small effort by [Billy](http://b.illbrown.com) on the design). I previously wrote about the [details](http://www.island94.org/2011/06/data-driven-content-first-design).
 

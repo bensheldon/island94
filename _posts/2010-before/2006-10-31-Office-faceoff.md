@@ -16,7 +16,7 @@ redirect_from:
 - "?p=106"
 ---
 
-[ ![Home office](http://static.flickr.com/102/285052618_3f60156e62_m.jpg) ](http://www.flickr.com/photos/bensheldon/285052618/ "Photo Sharing") [ ![The work office](http://static.flickr.com/116/285058957_7d854a698e_m.jpg) ](http://www.flickr.com/photos/bensheldon/285058957/ "Photo Sharing")
+![Home office](/uploads/2006/office-faceoff-1.jpg) ![The work office](/uploads/2006/office-faceoff-2.jpg)
 
 **The Home Office**
 

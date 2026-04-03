@@ -15,7 +15,7 @@ redirect_from:
 - "?p=2305"
 ---
 
-[ ![](/uploads/2010-11-23-Boston-Bike-Crash-Map/bcu-crashmap.png "bcu-crashmap") ](/uploads/2010-11-23-Boston-Bike-Crash-Map/bcu-crashmap.png)
+[ ![](/uploads/2010/boston-bike-crash-map-1.png "bcu-crashmap") ](/uploads/2010/boston-bike-crash-map-1.png)
 
 Today the Boston Cyclist's Union (BCU) launched their [interactive Boston bike Crash Map](http://bostoncyclistsunion.org/resources/crash-map/), a mapping tool that I've been working on with them to help share and analyze bicycle crash data. They did all the hard work of getting the Boston Emergency Medical Services and Police Department to properly code and release the data---I just helped them clean it, geocode it and put it on a map.
 

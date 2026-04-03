@@ -28,7 +28,7 @@ So here I am and all the best on your twenty-third...
 
 ### a picture of your shadow
 
-[ ![My shadow](http://static.flickr.com/140/325591780_9e96c6274f.jpg) ](http://www.flickr.com/photos/bensheldon/325591780/ "Photo Sharing")
+![My shadow](/uploads/2006/happy-birthday-rebecca-1.jpg)
 
 ### a recording of you reading a poem, singing a song, or saying a sentence
 
@@ -56,7 +56,7 @@ One tree in the grove is set back off the street. It has a wound on its sunset s
 
 ### a drawing of your mittens/gloves
 
-[ ![My mittens](http://static.flickr.com/140/325664414_d912306407.jpg) ](http://www.flickr.com/photos/bensheldon/325664414/ "Photo Sharing")
+![My mittens](/uploads/2006/happy-birthday-rebecca-2.jpg)
 
 ### the html hex or rgb of a color you like
 

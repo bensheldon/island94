@@ -14,7 +14,7 @@ redirect_from:
 - "?p=191"
 ---
 
-![Color Lego Guy](/uploads/2007-12-17-Remember-Paul/lego2web.jpg)
+![Color Lego Guy](/uploads/2007/remember-paul-1.jpg)
 
 ** Paul Hansen: my boss, friend and mentor; husband, artist and Director of the CTC VISTA Project; passed away Monday night. Paul's humor, optimism and vision have profoundly influenced me in the past two years I have known him.
 

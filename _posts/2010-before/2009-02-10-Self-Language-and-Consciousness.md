@@ -21,7 +21,7 @@ redirect_from:
 
 What I like most is the circular nature of the self-conception of individuals being tied to their use of language; the strength and ability of that language is tied to the richness and diversity of their interactions with others; those interactions are communication---strongly defined as activities triggering a change in the recipient; that change affects the individual's own self-conception and consciousness.  It's a little heady, so I made up a graphic:
 
-![Self, Language and Communication](/uploads/2009-02-10-Self-Language-and-Consciousness/language-self-communication-500x215.png "Self, Language and Communication")
+![Self, Language and Communication](/uploads/2009/self-language-and-consciousness-1.png "Self, Language and Communication")
 
 All of the components are core to our human reality.  And, recursively, we cannot describe this reality without them.
 
