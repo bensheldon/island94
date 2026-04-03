@@ -15,8 +15,7 @@ redirect_from:
 - "?p=58"
 ---
 
-  [![](http://blip.tv/uploadedFiles/Bensheldon-ChasePalmPark769.jpeg) ](http://blip.tv/file/get/Bensheldon-ChasePalmPark377.mp4?source=3)
-[Watch the Video](http://blip.tv/file/get/Bensheldon-ChasePalmPark377.mp4?source=3)
+<video src="/uploads/videos/bensheldon-chasepalmpark377.mp4" poster="/uploads/videos/bensheldon-chasepalmpark377.jpg" controls></video>
 
 A very short video of Chase Palm Park across from the beach in Santa Barbara, CA.
 

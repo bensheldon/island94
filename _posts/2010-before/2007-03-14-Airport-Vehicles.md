@@ -15,8 +15,7 @@ redirect_from:
 - "?p=121"
 ---
 
-[![](http://blip.tv/file/get/Bensheldon-AirportVehicles233.flv.jpg "Click To Play") ](http://blip.tv/file/get/Bensheldon-AirportVehicles233.flv)
-[Click To Play](http://blip.tv/file/get/Bensheldon-AirportVehicles233.flv)
+<video src="/uploads/videos/bensheldon-airportvehicles233.mp4" poster="/uploads/videos/bensheldon-airportvehicles233.jpg" controls></video>
 
 I had a two hour layover at Dulles Airport. Before I left, I was showing off my camera to my boss . It shoots full frame (640 x 480) mpeg-4 video; that's over an hour of video on a two gigabyte card. My boss told me to make lots of videos.
 
