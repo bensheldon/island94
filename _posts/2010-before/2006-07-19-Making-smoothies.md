@@ -23,7 +23,7 @@ _Another [smoothie post](/tags/#smoothie)..._
 
 Boston is still scorching and nothing is better than some ground up fruit and ice. Sure, the storebought strawberries out here on the East coast are about as flavorful as a glass of water, but they add nice color. This is strawberry-peach-orange I believe.
 
-  [ ![](http://blip.tv/uploadedFiles/Bensheldon-MakingSmoothies470-837.jpg) ](http://blip.tv/file/get/Bensheldon-MakingSmoothies470.mp4?source=3)
+  [![](http://blip.tv/uploadedFiles/Bensheldon-MakingSmoothies470-837.jpg) ](http://blip.tv/file/get/Bensheldon-MakingSmoothies470.mp4?source=3)
 
 
 

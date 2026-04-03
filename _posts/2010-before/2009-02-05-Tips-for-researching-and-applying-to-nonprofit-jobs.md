@@ -15,7 +15,7 @@ redirect_from:
 
 I have a guest post up today at [Entry Level Living](http://entrylevelliving.wordpress.com/) on [understanding and negotiating your non-profit salary](http://entrylevelliving.wordpress.com/2009/02/05/understanding-negotiating-nonprofit-salary/). It's targeted towards people who already have a nonprofit job and are looking to increase their piece of the pie. The last piece of advice from the article is _stay mobile_. If you're looking for a new nonprofit job, here are some tips:
 
-If you didn't do due diligence the first time, you should definitely fully research the place you're interested in. Once again, [knowing how to read a Form 990](http://www.npccny.org/Form_990/990.htm) is immensely valuable (and you can search them for free [here and ](http://foundationcenter.org/findfunders/990finder/ "The Foundation Center") [here](http://www.guidestar.org/ "Guidestar")---though the latter requires free registration).
+If you didn't do due diligence the first time, you should definitely fully research the place you're interested in. Once again, [knowing how to read a Form 990](http://www.npccny.org/Form_990/990.htm) is immensely valuable (and you can search them for free [here and](http://foundationcenter.org/findfunders/990finder/ "The Foundation Center") [here](http://www.guidestar.org/ "Guidestar")---though the latter requires free registration).
 
 - Looking at the upper-level salaries, what's the maximum you could ever make?
 - Did the organization take a loss last year? Looking at a couple years, are they growing or contracting?

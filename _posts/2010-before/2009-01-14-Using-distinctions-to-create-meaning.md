@@ -22,7 +22,7 @@ I found that to be an incredibly interesting way of breaking down understanding.
 
 ![Making Meaning](/uploads/2009-01-14-Using-distinctions-to-create-meaning/making-meaning-500x756.png "Making Meaning")
 
-A **Dichotomy** is choosing between two unities that are mutually exclusive.  Dichotomies (and false dichotomies) are easily used and abused in arguments and rhetoric---some go so far as to say the West is an [Argument Culture ](http://www.amazon.com/Argument-Culture-Stopping-Americas-Words/dp/0345407512?tag=particculturf-20)where middle alternatives are ignored.
+A **Dichotomy** is choosing between two unities that are mutually exclusive.  Dichotomies (and false dichotomies) are easily used and abused in arguments and rhetoric---some go so far as to say the West is an [Argument Culture](http://www.amazon.com/Argument-Culture-Stopping-Americas-Words/dp/0345407512?tag=particculturf-20)where middle alternatives are ignored.
 
 A **Continuum** is a linear series capped by two Unities.  Sometimes there is meaning along the line, but the meaning primarily is a function of proximity to one unity or the other.  Probability is a simple continuum, capped at one end by absolute certainty, and absolute non-certainty at the other.
 

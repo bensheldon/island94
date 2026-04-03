@@ -49,4 +49,14 @@ FileUtils.chdir APP_ROOT do
   else
     puts "No changes to ERB templates."
   end
+
+  puts "\n== MDL =="
+  mdl_changed_files = changed_files.grep(/^_(posts|bookmarks)\/.*\.md$/)
+
+  if !options[:diff] || mdl_changed_files.any?
+    targets = options[:diff] ? mdl_changed_files.join(" ") : "_posts _bookmarks"
+    system! "bundle exec mdl --style .mdl_style.rb --ignore-front-matter #{targets}"
+  else
+    puts "No changes to markdown files."
+  end
 end

@@ -52,7 +52,7 @@ One tree in the grove is set back off the street. It has a wound on its sunset s
 
 ### a video of you eating a cookie
 
-[ ![](http://blip.tv/uploadedFiles/Bensheldon-EatingACookie489-452.jpg) ](http://blip.tv/file/get/Bensheldon-EatingACookie489.mp4)
+[![](http://blip.tv/uploadedFiles/Bensheldon-EatingACookie489-452.jpg) ](http://blip.tv/file/get/Bensheldon-EatingACookie489.mp4)
 
 ### a drawing of your mittens/gloves
 

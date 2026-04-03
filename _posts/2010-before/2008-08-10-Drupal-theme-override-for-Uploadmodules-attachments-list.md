@@ -21,7 +21,7 @@ redirect_from:
 - "?p=238"
 ---
 
-**Update:** this functionality can now be achieved with the [iTweak\_upload module ](http://drupal.org/project/itweak_upload). _Thanks to [Damon](http://damoncook.net/) for the tip!_
+**Update:** this functionality can now be achieved with the [iTweak\_upload module](http://drupal.org/project/itweak_upload). _Thanks to [Damon](http://damoncook.net/) for the tip!_
 
 I made a custom override for Drupal 6.x's Upload.module's attachments table that is displayed at the bottom of a node when you create file attachments. That table is, in my opinion, one of the ugliest common and default presentations in Drupal core. Below is an example of the before and after:
 

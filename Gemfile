@@ -14,8 +14,6 @@ gem "rails", "~> 8.1.1"
 gem "bootsnap", require: false
 gem "bootstrap"
 gem "front_matter_parser"
-gem "vite_rails"
-gem "vite_plugin_legacy"
 gem "kramdown-parser-gfm"
 gem "metainspector", "~> 5.17" # for fetching bookmarks
 gem "puma"
@@ -25,11 +23,14 @@ gem "sassc-rails"
 gem "sprockets-rails"
 gem "turbo-rails", "~> 2.0"
 gem "vernier"
+gem "vite_plugin_legacy"
+gem "vite_rails"
 
 group :development, :test do
   gem "capybara"
   gem "cuprite"
   gem "erb_lint", require: false
+  gem "mdl", require: false
   gem "rspec-rails"
   gem "rubocop-capybara", require: false
   gem "rubocop-factory_bot", require: false

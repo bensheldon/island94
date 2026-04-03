@@ -20,5 +20,5 @@ redirect_from:
 - "?p=55"
 ---
 
-  [ ![](2006-07-01-Santa-Barbara-Summer-Solstice-2006/Solstice-thumb.png) ](https://flickr.com/photos/bensheldon/sets/72157594183776306/)
+  [![](2006-07-01-Santa-Barbara-Summer-Solstice-2006/Solstice-thumb.png) ](https://flickr.com/photos/bensheldon/sets/72157594183776306/)
 Photos from Santa Barbara, California's Summer Solstice Festival and Parade on June 24, 2006. I was lucky enough to be accompanied by my good friends Elisa and Lisa.

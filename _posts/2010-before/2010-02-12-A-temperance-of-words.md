@@ -35,7 +35,7 @@ From Karen Armstrong's _A History of God_:
 >
 > When Denys talks about ecstasy, he is not referring to a peculiar state of mind or an alternative form of consciousness achieved by an obscure yogic discipline. This is something that every Christian can manage in this paradoxical method of prayer and theoria. It will stop us talking and bring us to the place of silence: "As we plunge into that darkness which is beyond intellect, we shall ﬁnd ourselves not simply running short of words but actually speechless and unknowing" Like Gregory of Nyssa, he found the story of Moses' ascent of Mount Sinai instructive. Moses had climbed the mountain, he did not see God himself on the summit but had only been brought to the place where God was. He had been enveloped by a thick cloud of obscurity and could see nothing: thus everything that we cm see or understand is only a symbol (the word Denys uses is "paradigm") which reveals the presence of a reality beyond all thought. Moses had passed into the darkness of ignorance and thus achieved union with that which surpasses all understanding: we will achieve a similar ecstasy that will "take us out of ourselves" and unite us to God.
 
-The preceding's length can be compared to the first 14 lines of Lao Tzu's _[Tao Te Ching ](http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html)_ [(translation by S. Mitchell)](http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html):
+The preceding's length can be compared to the first 14 lines of Lao Tzu's _[Tao Te Ching](http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html)_ [(translation by S. Mitchell)](http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html):
 
 > The tao that can be told
 >

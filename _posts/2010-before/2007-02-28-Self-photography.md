@@ -14,5 +14,5 @@ redirect_from:
 - "?p=120"
 ---
 
-[ ![](http://blip.tv/file/get/Bensheldon-Selfphotography203.flv.jpg "Click To Play") ](http://blip.tv/file/get/Bensheldon-Selfphotography203.flv)
+[![](http://blip.tv/file/get/Bensheldon-Selfphotography203.flv.jpg "Click To Play") ](http://blip.tv/file/get/Bensheldon-Selfphotography203.flv)
 [Click To Play](http://blip.tv/file/get/Bensheldon-Selfphotography203.flv)

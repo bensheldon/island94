@@ -17,7 +17,7 @@ redirect_from:
 
 My roommate [Dean](http://notthemessiah.net) created this video about some peculiarities in our store bought eggs:
 
-[ ![](http://blip.tv/uploadedFiles/Deaner-SixEggsXTwoYolksTwelveYolks959.jpg) ](http://blip.tv/file/get/Deaner-2xYolk193.mp4?source=3)
+[![](http://blip.tv/uploadedFiles/Deaner-SixEggsXTwoYolksTwelveYolks959.jpg) ](http://blip.tv/file/get/Deaner-2xYolk193.mp4?source=3)
 
 
 

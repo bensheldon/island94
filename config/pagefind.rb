@@ -3,7 +3,7 @@ require "open3"
 require "digest"
 
 class Pagefind
-  OUTPUT_PATH = Rails.root.join("public/pagefind").freeze
+  OUTPUT_PATH = Rails.public_path.join('pagefind').freeze
   HASH_FILE   = Rails.root.join("tmp/pagefind.hash").freeze
 
   def self.build
@@ -15,7 +15,7 @@ class Pagefind
     hash = Digest::SHA256.hexdigest(json)
 
     if File.exist?(HASH_FILE) && File.read(HASH_FILE) == hash && File.exist?(OUTPUT_PATH)
-      puts "Pagefind index up to date, skipping build"
+      Rails.logger.debug "Pagefind index up to date, skipping build"
       return
     end
 
@@ -48,7 +48,7 @@ class Pagefind
     JS
 
     output, status = Open3.capture2e("node --input-type=module", stdin_data: script, chdir: Rails.root.to_s)
-    print output
+    Rails.logger.debug output
     raise "Pagefind build failed" unless status.success?
 
     File.write(HASH_FILE, hash)

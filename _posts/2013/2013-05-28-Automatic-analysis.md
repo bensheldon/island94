@@ -8,7 +8,7 @@ redirect_from:
 - "?p=3085"
 ---
 
-[Karl Fogel](http://en.wikipedia.org/wiki/Karl_Fogel) on [ The Open Source Report Card](http://osrc.dfm.io/):
+[Karl Fogel](http://en.wikipedia.org/wiki/Karl_Fogel) on [The Open Source Report Card](http://osrc.dfm.io/):
 
 > So, approximately every year or so, someone launches Yet Another Fully Automated Statistical Tool Dashboard Thing that tries to show the skills & activity of a given open source contributor, or the "health" of a given open source project.
 >

@@ -26,4 +26,4 @@ The introduction to [Fred Turner](http://communication.stanford.edu/faculty/turn
 
 If that hanging question doesn't make you want to read the book, I don't know what will.
 
-I just bought a copy of this book for a coworker. I used to frequently give out copies of Richard Bach's _Illusions_ to friends_, _ but this is a little heavier reading.
+I just bought a copy of this book for a coworker. I used to frequently give out copies of Richard Bach's _Illusions_ to friends, but this is a little heavier reading.

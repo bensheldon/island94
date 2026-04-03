@@ -17,7 +17,7 @@ redirect_from:
 - "?p=221"
 ---
 
-I've been meaning to type of some of my notes from the NTEN 2008 Conference, but the benefit of waiting is that someone will do it better. Like [Britt Bravo: Notes from The Seven Things Everyone Wants: What Freud and Buddha Understood (and We're Forgetting) about Online Outreach ](http://havefundogood.blogspot.com/2008/03/notes-from-seven-things-everyone-wants.html).
+I've been meaning to type of some of my notes from the NTEN 2008 Conference, but the benefit of waiting is that someone will do it better. Like [Britt Bravo: Notes from The Seven Things Everyone Wants: What Freud and Buddha Understood (and We're Forgetting) about Online Outreach](http://havefundogood.blogspot.com/2008/03/notes-from-seven-things-everyone-wants.html).
 
 In short (lots more notes and examples in the link):
 

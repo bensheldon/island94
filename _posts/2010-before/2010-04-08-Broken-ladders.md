@@ -22,7 +22,7 @@ From a social change perspective, in brief, that's pretty fucked. And to be clea
 
 This is Forrester's ladder:
 
-[ ![](/uploads/2010-04-08-Broken-ladders/Ladder_3.gif "Ladder_3") ](/uploads/2010-04-08-Broken-ladders/Ladder_3.gif)
+[![](/uploads/2010-04-08-Broken-ladders/Ladder_3.gif "Ladder_3") ](/uploads/2010-04-08-Broken-ladders/Ladder_3.gif)
 
 Compare that to another ladder [I really like](http://www.island94.org/2009/10/we-participate-they-profit/): Sherry Arnstein's Ladder of Citizen Participation (it came out in 1969 so be considerate of its lack of shinyness):
 

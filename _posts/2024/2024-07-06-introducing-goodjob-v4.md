@@ -24,7 +24,7 @@ GoodJob v4:
 * Only supports Rails 6.1+, CRuby 3.0+ and JRuby 9.4+, Postgres 12+. Rails 6.0 is no longer supported. CRuby 2.6 and 2.7 are no longer supported. JRuby 9.3 is no longer supported.
 * Changes job priority to give smaller numbers higher priority (default: 0), in accordance with Active Job's definition of priority.
 * Enqueues and executes jobs via the `GoodJob::Job` model instead of `GoodJob::Execution`
-* Changes the behavior of `config.good_job.cleanup_interval_jobs`, `GOOD_JOB_CLEANUP_INTERVAL_JOBS`, `config.good_job.cleanup_interval_seconds`, or `GOOD_JOB_CLEANUP_INTERVAL_SECONDS` set to `nil` or `” ` to no longer disable count- or time-based cleanups. Instead, now set to `false` to disable, or `-1` to run a cleanup after every job execution.
+* Changes the behavior of `config.good_job.cleanup_interval_jobs`, `GOOD_JOB_CLEANUP_INTERVAL_JOBS`, `config.good_job.cleanup_interval_seconds`, or `GOOD_JOB_CLEANUP_INTERVAL_SECONDS` set to `nil` or `””` to no longer disable count- or time-based cleanups. Instead, now set to `false` to disable, or `-1` to run a cleanup after every job execution.
 
 ### New Features
 

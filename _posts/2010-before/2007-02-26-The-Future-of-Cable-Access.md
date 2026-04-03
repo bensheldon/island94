@@ -14,7 +14,7 @@ redirect_from:
 - "?p=119"
 ---
 
-[ ![](http://blip.tv/file/get/Bensheldon-WhatIsTheFutureOfCableAccessTV720.flv.jpg "Click To Play") ](http://blip.tv/file/get/Bensheldon-WhatIsTheFutureOfCableAccessTV720.flv)
+[![](http://blip.tv/file/get/Bensheldon-WhatIsTheFutureOfCableAccessTV720.flv.jpg "Click To Play") ](http://blip.tv/file/get/Bensheldon-WhatIsTheFutureOfCableAccessTV720.flv)
 [Click To Play](http://blip.tv/file/get/Bensheldon-WhatIsTheFutureOfCableAccessTV720.flv)
 
 Last Saturday was [Beyond Broadcast 2007](http://beyondbroadcast.net/) and being a part of the _[The Future of Cable Access](http://beyondbroadcast.net/wiki07/index.php?title=Working_Groups#The_Future_of_Public_Access_-_Held_in_The_Whitaker_Building_.28Bldg._56.29.2C_Room_169)_ Working Group got my rear in gear to edit together some soundbites I shot at last November's Alliance for Community Media Northeast Regional Conference.

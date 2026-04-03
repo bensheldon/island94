@@ -13,7 +13,7 @@ redirect_from:
 - "?p=2629"
 ---
 
-[ ![](/uploads/2011-04/daily-t-shirt-sales-600x397.png "daily t-shirt sales") ](http://dayoftheshirt.com)
+[![](/uploads/2011-04/daily-t-shirt-sales-600x397.png "daily t-shirt sales") ](http://dayoftheshirt.com)
 
 I am remiss to finally get around to blogging [Day of the Shirt](http://dayoftheshirt.com), which I launched back in October, 2010. It's a straightforward and (hopefully) aesthetically-pleasing t-shirt aggregator.
 

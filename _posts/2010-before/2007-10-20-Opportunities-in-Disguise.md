@@ -13,6 +13,6 @@ redirect_from:
 - "?p=162"
 ---
 
-Heard this quote I liked from [NAMAC keynote speaker ](http://namac.org) [Gary Chapman](http://www.utexas.edu/lbj/21cp/bio.html) of the LBJ School of Public Affairs. He was paraphrasing John Gardner:
+Heard this quote I liked from [NAMAC keynote speaker](http://namac.org) [Gary Chapman](http://www.utexas.edu/lbj/21cp/bio.html) of the LBJ School of Public Affairs. He was paraphrasing John Gardner:
 
 > The nation is filled with opportunities disguised as insoluble problems.
