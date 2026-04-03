@@ -21,9 +21,9 @@ redirect_from:
 - "?p=105"
 ---
 
-  [ ![Me](http://static.flickr.com/83/283007358_934d0077a9.jpg) ](http://www.flickr.com/photos/bensheldon/283007358/ "Photo Sharing")
+  ![Me](/uploads/2006/spooky-baking-1.jpg)
 
-[ ![The fun part](http://static.flickr.com/120/283023995_b5949dcfd8_m.jpg) ](http://www.flickr.com/photos/bensheldon/283023995/ "Photo Sharing") [ ![With baby](http://static.flickr.com/122/283005536_e2c9b19d71_m.jpg) ](http://www.flickr.com/photos/bensheldon/283005536/ "Photo Sharing")
+![The fun part](/uploads/2006/spooky-baking-2.jpg) ![With baby](/uploads/2006/spooky-baking-3.jpg)
 
 Yesterday a subset of _the gang_ skipped the blustery weather to bake and decorate Halloween cookies in Danielle's inviting kitchen. Other than the predictable headache and infirmity from massive sugar intake, we had good times.
 

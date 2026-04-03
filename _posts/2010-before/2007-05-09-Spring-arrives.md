@@ -15,8 +15,8 @@ redirect_from:
 - "?p=131"
 ---
 
-[ ![CIMG2509.JPG](http://farm1.static.flickr.com/218/448506773_55049ea73c.jpg) ](http://www.flickr.com/photos/bensheldon/448506773/ "Photo Sharing")
+![CIMG2509.JPG](/uploads/2007/spring-arrives-1.jpg)
 
 Spring came a lot earlier to Washington, DC than it did to New England, but the mercury is topping 80 today in Boston. Above, I'm at the Cherry Blossom Festival in Washington, DC last month. Below is the one of the multitudinous dandelions that have sprung up around UMass Boston.
 
-[ ![Dandelions at UMass Boston](http://farm1.static.flickr.com/194/489864761_ffcbfa0a22.jpg) ](http://www.flickr.com/photos/bensheldon/489864761/ "Photo Sharing")
+![Dandelions at UMass Boston](/uploads/2007/spring-arrives-2.jpg)

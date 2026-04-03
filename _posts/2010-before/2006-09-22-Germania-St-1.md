@@ -14,4 +14,4 @@ redirect_from:
 - "?p=98"
 ---
 
-  [ ![Germania St. #1](http://static.flickr.com/79/250013030_e3d45c735a_o.jpg) ](http://www.flickr.com/photos/bensheldon/250013030/ "Photo Sharing")
+  ![Germania St. #1](/uploads/2006/germania-st-1-1.jpg)

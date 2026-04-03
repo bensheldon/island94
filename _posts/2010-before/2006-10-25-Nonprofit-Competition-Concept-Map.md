@@ -35,4 +35,4 @@ Putting them together, I made this using OmniGraffle:
 
 [Download the PDF](/uploads/2006-10/Typology_of_Nonprofit_Competition-concept_map.pdf)
 
-[ ![Concept Map: Typology of Nonprofit Competition](http://static.flickr.com/118/272577537_df531ea720.jpg) ](http://www.flickr.com/photos/bensheldon/272577537/ "Photo Sharing")
+![Concept Map: Typology of Nonprofit Competition](/uploads/2006/nonprofit-competition-concept-map-1.jpg)

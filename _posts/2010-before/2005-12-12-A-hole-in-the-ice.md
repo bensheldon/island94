@@ -14,6 +14,6 @@ redirect_from:
 - "?p=24"
 ---
 
-[ ![](http://static.flickr.com/35/73043709_0025985d9a_t.jpg) ](https://www.flickr.com/photos/atomicworkshop/73043709/)
+![](/uploads/2005/a-hole-in-the-ice-1.jpg)
 
 I snapped this photo just this morning. Lowell, America’s Venice is crossed with canals that have just started to freeze over. The leaky drainpipe is keeping the ice from fully freezing, and the tree is still holding on to some of its leaves.

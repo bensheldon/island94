@@ -8,7 +8,7 @@ redirect_from:
 - "?p=354"
 ---
 
-[ ![Sandor Voros](http://farm4.static.flickr.com/3093/3227588090_f83a1a7b6e.jpg) ](http://www.flickr.com/photos/bensheldon/3227588090/ "Sandor Voros by bensheldon, on Flickr")
+![Sandor Voros](/uploads/2009/american-commissar-my-family-archive-project-1.jpg)
 
 It's been about 3 years since I started and I'm excited to finally be rolling out a digital version of my late grandfather's autobiography, _American Commissar_. The book follows my grandfather from Hungary to America as an immigrant in the 1920s; his entrance to the communist party and their activities during the 1920s and 30s; his wartime experiences serving with the Abraham Lincoln Brigade in the Spanish Civil War; and his frustration and disillusionment with the international Soviet communist movement. The book is human, funny, and---my grandfather being an accomplished playwright---well-paced with memorable scenes and stories. Seriously.
 

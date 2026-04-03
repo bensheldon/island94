@@ -15,9 +15,9 @@ redirect_from:
 - "?p=30"
 ---
 
-[ ![](http://farm1.static.flickr.com/52/115055650_4e87ffadf4.jpg) ](https://www.flickr.com/photos/atomicworkshop/115055650/)
+![](/uploads/2006/my-first-t-shirt-1.jpg)
 
-[ ![](http://farm1.static.flickr.com/38/115054845_9f6bf03a4a.jpg) ](https://www.flickr.com/photos/atomicworkshop/115054845/)
+![](/uploads/2006/my-first-t-shirt-2.jpg)
 
 I was over at my pal Dean’s place in Jamaica Plain today. In addition to lots of semi-expired foodstuffs he snags from behind the Co-Op next door, he also has the screens and materials for t-shirt printing. Previously I had been helping him up in Lowell filming some promos for his [Democracy Player](https://web.archive.org/web/20060321152358/http://www.getdemocracy.com/) channel, “Telemusicvision”:http://telemusicvision.com; today we were putting stuff on t-shirts.
 

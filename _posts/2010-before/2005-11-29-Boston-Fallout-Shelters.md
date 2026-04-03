@@ -10,7 +10,7 @@ redirect_from:
 - "?p=21"
 ---
 
-[ ![](http://static.flickr.com/26/60147098_db41ed6e01_t.jpg) ](https://flickr.com/photos/atomicworkshop/60147098/in/set-1299749) This map lists publicly marked Fallout Shelters in Boston. During the Cold War, Fallout Shelters were built to house citizens in the event of nuclear war. They are usually pretty easy to spot, though sometimes they can be hidden pretty far off a main road. Clicking on marker in the map should bring up a little more information about it (capacity, etc) along with a link to a longer description and some pictures.
+![](/uploads/2005/boston-fallout-shelters-1.jpg) This map lists publicly marked Fallout Shelters in Boston. During the Cold War, Fallout Shelters were built to house citizens in the event of nuclear war. They are usually pretty easy to spot, though sometimes they can be hidden pretty far off a main road. Clicking on marker in the map should bring up a little more information about it (capacity, etc) along with a link to a longer description and some pictures.
 
 Who knows, there is probably a Fallout Shelter right around the corner from you.
 

@@ -15,6 +15,6 @@ redirect_from:
 - "?p=64"
 ---
 
-[ ![Charles on the 4th](http://static.flickr.com/71/182149771_edff213ce6.jpg) ](https://www.flickr.com/photos/bensheldon/182149771/ "Photo Sharing")
+![Charles on the 4th](/uploads/2006/charles-on-the-4th-1.jpg)
 
 It's July 4th, 2006 and boats are huddled in the late afternoon on the Charles River in anticipation of Boston's Independence Day fireworks display.

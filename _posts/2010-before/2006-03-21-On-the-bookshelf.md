@@ -10,6 +10,6 @@ redirect_from:
 - "?p=32"
 ---
 
-  [ ![](http://static.flickr.com/56/116190958_8ebe3e57a6_m.jpg) ](https://www.flickr.com/photos/atomicworkshop/116190958/)
+  ![](/uploads/2006/on-the-bookshelf-1.jpg)
 
 I added a new section to the website—books I’ve read; it’s something I’ve been meaning to do for a while.

@@ -14,7 +14,7 @@ redirect_from:
 - "?p=9"
 ---
 
-  ![](http://farm1.static.flickr.com/26/64889642_51925902ce.jpg)
+  ![](/uploads/2005/rubbed-away-1.jpg)
 
 I was down in Back Bay today and snapped this picture of the subway map.
 

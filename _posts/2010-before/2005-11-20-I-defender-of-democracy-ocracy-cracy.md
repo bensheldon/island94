@@ -16,7 +16,7 @@ redirect_from:
 - "?p=10"
 ---
 
-[ ![](http://static.flickr.com/32/65334904_547afbef8d_m.jpg) ](https://www.flickr.com/photos/atomicworkshop/65334904/)
+![](/uploads/2005/i-defender-of-democracy-ocracy-cracy-1.jpg)
 
 This morning, coming home from my gym I went down into the Chinatown T-stop ( [here](/node/9)). For the past few months, the escalator has been out of service and over that period become increasingly dismantled. In my investigation of this I would find I had become (booming voice) _a defender of democracy-ocracy-cracy_.
 

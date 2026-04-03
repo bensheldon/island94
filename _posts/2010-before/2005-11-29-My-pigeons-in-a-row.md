@@ -14,7 +14,7 @@ redirect_from:
 - "?p=19"
 ---
 
-  [ ![](http://static.flickr.com/20/68517232_7f502b1c29_t.jpg) ](https://www.flickr.com/photos/atomicworkshop/68517232/)
+  ![](/uploads/2005/my-pigeons-in-a-row-1.jpg)
 
   I don’t know anything about Massbank, but the pigeons are lined up like a Coney Island rifle booth. They’d be almost as blue as this sky.
 

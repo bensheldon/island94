@@ -14,4 +14,4 @@ redirect_from:
 - "?p=56"
 ---
 
-  [ ![SF from Arkansas St.](http://static.flickr.com/57/179321274_995632f8c7.jpg) ](https://www.flickr.com/photos/bensheldon/179321274/ "Photo Sharing") [ ![At the Embarcadero](http://static.flickr.com/54/179322317_4657579745_t.jpg) ](https://www.flickr.com/photos/bensheldon/179322317/ "Photo Sharing") [ ![Daniell](http://static.flickr.com/65/179321572_dc1ed53f1f_t.jpg) ](https://www.flickr.com/photos/bensheldon/179321572/ "Photo Sharing") [ ![Across from the Embarcadaro](http://static.flickr.com/71/179321839_77323dd7db_t.jpg) ](https://www.flickr.com/photos/bensheldon/179321839/ "Photo Sharing")
+  ![SF from Arkansas St.](/uploads/2006/san-francisco-nights-1.jpg) ![At the Embarcadero](/uploads/2006/san-francisco-nights-2.jpg) ![Daniell](/uploads/2006/san-francisco-nights-3.jpg) ![Across from the Embarcadaro](/uploads/2006/san-francisco-nights-4.jpg)

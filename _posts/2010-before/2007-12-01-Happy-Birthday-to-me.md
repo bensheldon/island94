@@ -12,6 +12,6 @@ redirect_from:
 - "?p=178"
 ---
 
-[ ![Happy Birthday](http://farm3.static.flickr.com/2109/2079204822_f46a1a9900.jpg) ](http://www.flickr.com/photos/bensheldon/2079204822/ "Happy Birthday by bensheldon, on Flickr")
+![Happy Birthday](/uploads/2007/happy-birthday-to-me-1.jpg)
 
 The message and photo above was taken by my friend [Rebecca](http://circuitous.org) and features Mabel.

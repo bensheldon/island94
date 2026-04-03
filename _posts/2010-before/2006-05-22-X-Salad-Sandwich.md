@@ -34,7 +34,7 @@ No, dear reader, this is the meat meet mayo abomination that, having taken hold 
 
 Only God knows what substance they Mayonaise Advisory Council will think of adding next.
 
-[ ![Dean vs. Mayo](http://static.flickr.com/44/151589267_c92a06c120.jpg) ](https://www.flickr.com/photos/atomicworkshop/151589267/ "Photo Sharing")
+![Dean vs. Mayo](/uploads/2006/x-salad-sandwich-1.jpg)
 
 \_Dean eats his heart out\_
 
