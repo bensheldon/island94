@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-4cd9fbc8705ce9304e625f5df173b9dc6dc69d41d521d0dcfe2498607bfd384c.css" data-turbo-track="reload" />
+  
+  <script src="/assets/vite/assets/application-BVswkaE7.js" crossorigin="" type="module"></script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/bookmarks/2026/04/www-joanwestenberg-com-the-passive-income-trap-ate-a-generation-of-entrepreneurs-ref-labnotes-org">The &quot;Passive Income&quot; trap ate a generation of entrepreneurs</a>
+    </h1>
+    <small><a href="https://www.joanwestenberg.com/the-passive-income-trap-ate-a-generation-of-entrepreneurs/?ref=labnotes.org">https://www.joanwestenberg.com/the-passive-income-trap-ate-a-generation-of-entrepreneurs/?ref=labnotes.org</a></small>
+    <p>
+        <time datetime="2026-04-12T15:43:00+00:00" itemprop="datePublished">
+          April 12, 2026
+        </time>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Jade Roller Guy has become my go-to example of something that went drastically, terribly wrong with how a whole generation of would-be entrepreneurs thought about work and money. A specific ideology - I’ve been calling it Passive Income Brain - grabbed a huge chunk of the people who were, by temperament and ability, most likely to start real businesses, and it gave them a completely fucked set of priorities.</p>
+
+  </div>
+</article>
+
+
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+</body>
+</html>
