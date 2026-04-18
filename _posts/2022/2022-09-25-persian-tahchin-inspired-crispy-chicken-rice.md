@@ -33,6 +33,16 @@ This is a [Milk Street recipe](https://www.177milkstreet.com/recipes/persian-sty
 
 **A pie plate.** Milk Street spends a paragraph saying why glass is best (you can see the browning), but I've been doing ceramic and it's fine.
 
+### The big picture
+
+This is a 3 bowl, 1 pot, 1 baking dish recipe. The overall flow is:
+
+1. Soak and parboil the rice
+2. Mix the chicken and aromatics and let meld
+3. Mix the rice with yogurt, then mix the chicken with the rice, then dump that all into a pan
+4. Bake it
+5. Put some herbs and nuts on top
+
 ### 30 minutes to 12 hours ahead
 
 **Soak the rice.** Place the rice in a bowl with enough water to cover by 1 inch and let rest at room temperature for at least 30 minutes or up to 12 hours. Drain and rinse the rice again.
