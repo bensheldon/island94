@@ -31,7 +31,7 @@ class Pagefind
       for (const item of Object.values(searchData)) {
         const { errors } = await index.addCustomRecord({
           url: item.url,
-          content: item.title + "\n" + item.tags.join(" ") + "\n" + item.content,
+          content: item.title + "\n" + (Array.isArray(item.tags) ? item.tags : [item.tags]).join(" ") + "\n" + item.content,
           language: "en",
           meta: { title: item.title, published: item.published },
           filters: { tags: item.tags },
@@ -49,7 +49,7 @@ class Pagefind
     JS
 
     output, status = Open3.capture2e("node --input-type=module", stdin_data: script, chdir: Rails.root.to_s)
-    Rails.logger.debug output
+    Rails.logger.info output
     raise "Pagefind build failed" unless status.success?
 
     File.write(HASH_FILE, cache_key)
