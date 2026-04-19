@@ -31,7 +31,7 @@ class Pagefind
       for (const item of Object.values(searchData)) {
         const { errors } = await index.addCustomRecord({
           url: item.url,
-          content: item.content,
+          content: item.title + "\n" + item.tags.join(" ") + "\n" + item.content,
           language: "en",
           meta: { title: item.title, published: item.published },
           filters: { tags: item.tags },
