@@ -2,11 +2,8 @@
 title: "One year of Ruby on Rails configuration"
 date: 2026-05-14 19:13 UTC
 published: true
-tags: []
+tags: [Ruby, "Ruby on Rails"]
 ---
-
-
-# One year of Ruby on Rails config
 
 I've been working professionaly with Ruby on Rails for nearly 15 years (I'm also the author of GoodJob and Spectator Sport). Last year I left GitHub and co-founded a technology startup, [Frontdoor Benefits](https://www.openfrontdoor.com/), that helps people enroll and manage their US government welfare benefits like SNAP/EBT.
 
