@@ -118,6 +118,47 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/03/low-effort-prototyping"><p>Low-effort prototyping</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-03-26T13:28:00Z" itemprop="datePublished">March 26, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From Bunnie Hung’s blog about <a href="https://www.bunniestudios.com/blog/?p=7035">exploring and designing an infrared chip imaging rig</a>. I thought this is an interesting distinction between “low-effort” and “rapid” prototypes. I think the analogy in software would be a <a href="https://wiki.c2.com/?WalkingSkeleton&quot;">“Walking Skeleton</a> that is production-like in architecture and deployment but does very little, versus building a demo using lightweight scripting and static site generators. (bolded text mine)</p>
+
+<blockquote>
+
+  <p><strong>Sidebar: Iterate Through Low-Effort Prototypes (and not Rapid Prototypes)</strong></p>
+
+  <p>With a rough idea of the problem I’m trying to solve, the next step is build some low-effort prototypes and learn why my ideas are flawed.</p>
+
+  <p>I purposely call this “low-effort” instead of “rapid” prototypes. “Rapid prototyping” sets the expectation that we should invest in tooling so that we can think of an idea in the morning and have it on the lab bench by the afternoon, under the theory that faster iterations means faster progress.</p>
+
+  <p>The problem with rapid prototyping is that it differs significantly from production processes. <strong>When you iterate using a tool that doesn’t mimic your production process, what you get is a solution that works in the lab, but is not suitable for production.</strong> This conclusion shouldn’t be too surprising – evolutionary processes respond to all selective pressures in the environment, not just the abstract goals of a project. For example, parts optimized for 3D printing consider factors like scaffolding, but have no concern for undercuts and cavities that are impossible to produce with CNC processes. Meanwhile CNC parts will gravitate toward base dimensions that match bar stock, while minimizing the number of reference changes necessary during processing.</p>
+
+  <p>So, I try to prototype using production processes – but with low-effort. “Low-effort” means reducing the designer’s total cognitive load, even if it comes at the cost of a longer processing time. Low effort prototyping may require more patience, but also requires less attention. It turns out that prototyping-in-production is feasible, and is actually the standard practice in vibrant hardware ecosystems like Shenzhen. The main trade-off is that instead of having an idea that morning and a prototype on your desk by the afternoon, it might take a few days. And yes – of course there ways to shave those few days down (already anticipating the comments informing me of this cool trick to speed things up) – but <strong>the whole point is to not be distracted by the obsession of shortening cycle times, and spend more attention on the design. Increasing the time between generations by an order of magnitude might seem fatally slow for a convergent process, but the direction of convergence matters as much as the speed of convergence.</strong></p>
+
+  <p>More importantly, if I were driving a PCB printer, CNC, or pick-and-place machine by myself, I’d be spending all morning getting that prototype on my desk. <strong>By ordering my prototypes from third party service providers, I can spend my time on something else. It also forces me to generate better documentation at each iteration, making it easier to retrace my footsteps when I mess up.</strong> Generally, I shoot for an iteration to take 2-4 weeks – an eternity, I suppose, by Silicon Valley metrics – but the two-week mark is nice because I can achieve it with almost no cognitive burden, and no expedite fees.</p>
+
+  <p>I then spend at least several days to weeks characterizing the results of each iteration. It usually takes about 3-4 iterations for me to converge on a workable solution – about a few months in total. I know, people are often shocked when I admit to them that I think it will take me some years to finish this project.</p>
+
+  <p>A manager charged with optimizing innovation would point out that if I could cut the weeks out where I’m waiting to get the prototype back, I could improve the time constant on an exponential and therefore I’d be so much more productive: the compounding gains are so compelling that we should drop everything and invest heavily in rapid prototyping.</p>
+
+  <p>However, this calculus misses the point that I should be spending a good chunk of time evaluating and improving each iteration. <strong>If I’m able to think of the next improvement within a few minutes of receiving the prototype, then I wasn’t imaginative enough in designing that iteration.</strong></p>
+
+  <p>That’s the other failure of rapid prototyping: when there’s near zero cost to iterate, it doesn’t pay to put anything more than near zero effort into coming up with the next iteration. Rapid-prototyping iterations are faster, but in much smaller steps. In contrast, with low-effort prototyping, I feel less pressure to rush. My deliberative process is no longer the limiting factor for progress; I can ponder without stress, and take the time to document. This means I can make more progress every step, and so I need to take fewer steps.</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/02/farewell-brompt"><p>Farewell Brompt</p>
 </a>
     </h1>
@@ -1216,47 +1257,6 @@ diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_di
 
   </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2023/10/reflections-on-good-job-for-solid-queue"><p>Reflections on GoodJob for Solid Queue</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2023-10-10T16:05:00Z" itemprop="datePublished">October 10, 2023</time>
-
-        • Tagged <a href="/posts/tags/goodjob">GoodJob</a> and <a href="/posts/tags/ruby">Ruby</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><a href="/uploads/2023-10/rails_world_solid_queue.jpg"><img src="/uploads/2023-10/rails_world_solid_queue.jpg" alt="Rails World presents Solid Queue and Mission Control" /></a></p>
-
-<p><em>GoodJob, via its <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>, was highlighted last week at Rails World. A new Active Job queue backend, <a href="https://rubygems.org/gems/solid_queue">Solid Queue</a>, was announced, and I’m excited to see where it goes!</em></p>
-
-<p>I attended Rails World in Amsterdam this past week. During the conference, a new Active Job backend was announced: Solid Queue (<a href="https://www.youtube.com/watch?v=iqXjGiQ_D-A&amp;t=3121s">video</a>), which has the potential to become first, first-party backend in Rails. Solid Queue, like my GoodJob, is backed by a relational database. I’m very excited about this! I had a chance to talk to Rosa Gutierrez, who is leading the effort at 37signals, and I’m hopeful that I’ll be able to contribute to Solid Queue and who knows, maybe it could even become a successor to GoodJob.</p>
-
-<p>With that thought in mind, I reflected on some of the design and motivations that became GoodJob, and that I believe are important regardless of the Active Job backend under development. These are not intended to be design documents but more a list of things that I have learned or come across during my 3 years working on GoodJob. It would be nice to keep these in mind when designing a potential successor to GoodJob. And I hope they can be the seed to further conversations, rather than a fully realized proposal or argument. Let’s go:</p>
-
-<ul>
-  <li><strong>SIGKILL Safety</strong>. Recovering from a SIGKILL (or someone unplugging the power cord) is always number one in my mind when thinking of GoodJob. That informed my desire to use Advisory Locks (which are automatically released on disconnect), and my future thinking about heartbeats if GoodJob switched over to using <code>FOR UPDATE SKIP LOCK</code> instead of Advisory Locks. I do not think jobs should be limited to a specific timeout (as Delayed Job’s design uses) as that also creates significant retry latency when resumed, and jobs definitely shouldn’t be wrapped with a transaction either.</li>
-  <li><strong>(Human) Exception and Retry Workflows</strong>. Everybody has a different workflow for how they deal with errors, and I believe that a backend needs to track, report (e.g. send to Sentry or Bugsnag) and expose the various reasons an error appears: retried, retry stopped, explicitly discarded, SIGKILLed/interrupted, unhandled error, etc. I still am dialing this in on GoodJob because there is wide variability of how people and teams manage their error workflows. I’m always learning something new. For example, there are very different answers on “when using <code>retry_on SpecialError, attempts: 3</code> should the 4th error be reported to the exception tracker? What about an explicit <code>discard_on</code>? Should a <code>discard_on</code> error be reviewed and reenqueued or not?” If a job is SIGKILLed/interrupted, should it be automatically restarted or held for manual review? Everyone seems to do it differently! I haven’t cracked the code on what is “ideal” or reasonable to say “nope, don’t do it <em>that</em> way.” Active Job’s error handling isn’t clear cut either, so maybe we can make that better and come around to a more opinionated (but still inclusive) design. Maybe!</li>
-  <li><strong>Process Harnesses</strong>. I think it’s interesting that Rails might ship with a 1st party queue backend before it ships with a 1st party webserver: there is a lot of operational overlap. Signal handling, timeouts, daemonization, liveness and healthcheck probes, monitoring and scaling instrumentation. There’s quite a lot of ground to cover, and a lot different systems and tooling: Kubernetes,  systemd, rc.d, Heroku, Judoscale, to name just a few of the various operational targets that I’ve spent considerable time supporting.</li>
-  <li><strong>Repeating Jobs / Clock Process</strong>. It took me <a href="https://github.com/bensheldon/good_job/issues/255">a while to come around to this</a> in GoodJob, but I believe that performing work <em>repetitively on a schedule</em> (“cron-like”) is very much in the same problem-domain as background jobs. There’s lots of different ways to design it that I don’t feel strongly about, for example GoodJob minimizes autoloading by keeping schedules separate from job classes, but I do think it is necessary to plan for scheduled jobs in a well-architected Rails application.</li>
-  <li><strong>Unique Jobs, Throttles, Fuses and other Concurrency Controls</strong>,. Similarly to Repeating Jobs, demand is high for everything I’d bucket under “concurrency controls”, which I’ll say covers both enqueue and dequeue complexity. And these features are tough because they sit in counterbalance to overall performance: do you want to run jobs faster or smarter? And these are the features that I think are legit because there are other features below under Queue Design that I think are bunk. There’s a lot of discernment to do!</li>
-  <li><strong>Queue design and multi-queue execution pools</strong>. I do think queue design is a place where lots of people do it wrong. I believe queues should be organized by maximum total latency SLO (<code>latency_15s</code>, <code>latency_15m</code> , <code>latency_8h</code>) and <em>not</em> by their purpose or dependencies  (<code>mailers</code>, <code>billing</code>, <code>api</code>). <a href="https://www.railsspeed.com/">Nate Berkopec believes similarly.</a> And I think that informs that <strong>execution pools (e.g. thread pools) should be able to work from multiple queues and have independent concurrency configuration (e.g. number of threads)</strong>, both to ease transition from the latter to the former, but also because it allows sharing resources as optimally as possible (having 3 separate pools that pull from <code>"latency_15s"</code>, <code>"latency_15m, latency_15s"</code>, and <code>"latency_8h,*"</code> in GoodJob’s syntax). I personally think concepts like priority or ordered-queues lead to bad queue design, so I wouldn’t sweat that. Any ordering regime more complex than first-in-first-out (FIFO) prioritizes capacity (or lack thereof) over latency. This might sound strange coming from me who champions running workloads in the webbrowser on tiny dynos, but it’s different in my mind: I don’t think it’s possible to meet a latency target through prioritization when there is a fundamental lack of capacity.</li>
-  <li><strong>Labels</strong>. Per the previous point, though I have yet to implement this in GoodJob (soon!), I think that giving developers the option to label their jobs might break their bad habit of using queue names as functional labels, instead of what I believe queues should be appropriately used for: latency and quality-of-service thresholds. I mention it here just in case that informs Solid Queue’s design.</li>
-  <li><strong>Observability</strong>. GoodJob maintains a lot of bookkeeping, keeping job and granular execution data around after execution so it can be inspected. People seem to like that, and it’s necessary to keep them around for calculating accurate latency metrics, though it all is a trade-off against performance. It makes for a fun Web Dashboard too.</li>
-  <li><strong>Performance Envelope.</strong> I dunno, I mention this just because I think people spend an inordinate amount of time comparing queue backend performance and asking “do the jobs go brrrrr?” GoodJob targets the small and medium end of projects (though some big ones use it too) and prioritizes operational simplicity over performance. That works for me (and a lot of others!) but also isn’t really reflective of the scale of companies leading Rails development. There’s a tension here.</li>
-  <li><strong>Making better mistakes tomorrow</strong>. I’m really proud of having a reputation for being helpful and responsive and curious in the GoodJob issue queue and discussions and various support Slacks (like <a href="https://www.rubyonrails.link">Rails Link</a>). I think there is a lot to the queue backend domain that won’t be learned by upfront analysis, and that can’t be easily bucketed into either “the library is doing it wrong” or “the developer is doing it wrong” There’s a lot of variation! (not to mention across JRuby,etc. and various database versions). I’m able to do things with GoodJob that I think is unlikely on a 1st party Rails queue backend (like cutting a new release after every patch and fix), and I’m able to stay oriented to the people and the problem they’re trying to solve over the technological solution itself. I hope all that can be preserved as these things move upstream.</li>
-</ul>
-
-<p>That’s it! I’m probably forgetting stuff, so I’ll reserve the right to keep adding to this list. I’d love to keep talking about this and hope that Solid Queue will be fantastic!</p>
-
-<p><em>Oh, and Solid Queue isn’t released yet, so if this seems compelling, <a href="https://github.com/bensheldon/good_job">use GoodJob</a> in the meantime.</em></p>
-
-  </div>
-</article>
 
 
 <hr>
@@ -1268,6 +1268,6 @@ diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_di
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>

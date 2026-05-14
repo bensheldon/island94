@@ -118,6 +118,69 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/09/secret-to-rails-database-connection-pool-size"><p>The secret to perfectly calculate Rails database connection pool size</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-09-19T14:33:00Z" itemprop="datePublished">September 19, 2024</time>
+
+        • Tagged <a href="/posts/tags/rails">Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Ruby on Rails <a href="https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionPool.html">maintains a pool of database connections</a> for Active Record. When a database connection is needed for querying the database, usually one per thread (though <a href="https://github.com/rails/rails/pull/51349">that’s changing to per-transaction</a>), a connection is checked out of the pool, used, and then returned to the pool. The size of the pool is configured in the <code>config/database.yml</code>. The <a href="https://github.com/rails/rails/blob/dfd1e951aa1aeef06c39fffb2994db8a8fa1914f/railties/lib/rails/generators/rails/app/templates/config/databases/postgresql.yml.tt#L20">default</a>, as of Rails 7.2, is <code>pool: &lt;%%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %&gt;</code>.</p>
+
+<p>The database connection pool size is frequently misconfigured. <em>A lot.</em> How to calculate the database connection pool size is one of the most common questions I get on GoodJob (Hi! I’m the author of GoodJob 👋). I have spent an embarrassingly large amount of time trying to come up with a precise pool size calculator and give advice to take into account Puma threads, and GoodJob async jobs, and <code>load_async</code> queries and everything that might be asking for a database connection at the same time. It’s nearly impossible to get the number exactly right.</p>
+
+<p>If the connection pool is misconfigured to be <em>too small</em> , it can slow down web requests and jobs while waiting for a connection to become available, or raise <code>ActiveRecord::ConnectionTimeoutError</code> if there isn’t a connection available within a reasonable amount of time (5 seconds by default). That’s bad! We never want that to happen. Here’s what you should do:</p>
+
+<p><strong>✨ The secret to perfectly calculate Rails database connection pool size:</strong> <em>Don’t! Set the pool size to a very large, constant number, and never worry about it again. E.g. <code>pool: 100</code>, and remove the reference to <code>RAILS_MAX_THREADS</code> entirely:</em></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/database.yml</span>
+<span class="na">default</span><span class="pi">:</span> <span class="nl">&amp;default</span>
+  <span class="c1"># ...</span>
+  <span class="na">pool</span><span class="pi">:</span> <span class="m">100</span> <span class="c1"># &lt;-- that's it 👍</span>
+  <span class="c1"># ...</span>
+</code></pre></div></div>
+
+<p>WAIT, WHAT?! Why? I described that bad things happen if the pool size is <em>too small</em>. Here’s the trick: it’s impossible to set the connection pool size to be <em>too big</em>. You can’t do it! That’s why it’s always better to set a number that’s too large. And the best number is one that can <em>never</em> be too small regardless of how you configure (and inevitably reconfigure) your application. Here’s why:</p>
+
+<ul>
+  <li>The <code>pool:</code> configuration value, despite its name, is the <em>max</em> size of the database connection pool.</li>
+  <li>Database connections are lazily created and added to the pool <em>as they’re needed</em>. Your Rails application will never create more database connections than it needs. And the database connection pool reaper removes idle and unused connections from the pool. The pool will never be larger than it needs to be.</li>
+  <li>It’s possible you may run out of available database connections <em>at the database</em>. For example, Heroku’s new <code>Essentials-0</code> Postgres database only has 20 database connections available globally. But any problems you run into won’t be because the database connection pool is too big, it’s because your application is <em>using too many concurrent database connections</em>.</li>
+  <li>If you find yourself in a situation where your application is using too many concurrent database connections, you should be configuring and re-sizing <em>the things using database connections concurrently</em>, not the database connection pool itself:
+    <ul>
+      <li>Configure the number of Puma threads</li>
+      <li>Configure the number of GoodJob async threads (Solid Queue now has similar functionality too!)</li>
+      <li>Configure the <code>load_async</code> thread pool</li>
+      <li>Configure anything else using a background thread making database queries</li>
+      <li>Configure the number of parallel processes/Puma workers/dynos/containers you’re using, which the database connection pool does not affect anyways.</li>
+    </ul>
+  </li>
+  <li>If you still don’t have enough database connections <em>at the database</em>, then you should increase the number of database connections <em>at the database</em>. Which means scaling your database, or using a connection multiplexer like PgBouncer. <a href="https://judoscale.com/tools/heroku-postgresql-connection-calculator">Judoscale has a nice calculator</a> to estimate the number of connections you’ll need <em>at the database</em> (which again, is not the pool size).</li>
+  <li>If, in an incredibly rare case, your application concurrency is very, very spiky and you worry that idle database connections are sitting in the connection pool for too long before they are automatically removed by the connection pool reaper, then configure that:
+    <ul>
+      <li><code>idle_timeout</code>: number of seconds that a connection will be kept unused in the pool before it is automatically disconnected (default: 5 minutes). Set this to zero to keep connections forever.</li>
+      <li><code>reaping_frequency</code>: number of seconds between invocations of the database connection pool reaper to disconnect and remove unused connections from the pool (default: 1 minute)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>I know this is wild advice, but it’s based on facts and experience. Even Rails maintainers have intentions <a href="https://github.com/rails/rails/pull/51073#issuecomment-1942762197">to remove this configuration option entirely</a>:</p>
+
+<blockquote>
+  <p>…we want the pool not to have a limit by default anymore.</p>
+</blockquote>
+
+<p>So please, stop sweating the precise, exact, perfect database connection pool value. Set it to something really big, that can never be too small, and never worry about it again.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2024/09/the-novice-problem"><p>The Novice Problem</p>
 </a>
     </h1>
@@ -697,47 +760,6 @@ To access local variables named with reserved keywords in your ERB template when
 
   </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/03/low-effort-prototyping"><p>Low-effort prototyping</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-03-26T13:28:00Z" itemprop="datePublished">March 26, 2024</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>From Bunnie Hung’s blog about <a href="https://www.bunniestudios.com/blog/?p=7035">exploring and designing an infrared chip imaging rig</a>. I thought this is an interesting distinction between “low-effort” and “rapid” prototypes. I think the analogy in software would be a <a href="https://wiki.c2.com/?WalkingSkeleton&quot;">“Walking Skeleton</a> that is production-like in architecture and deployment but does very little, versus building a demo using lightweight scripting and static site generators. (bolded text mine)</p>
-
-<blockquote>
-
-  <p><strong>Sidebar: Iterate Through Low-Effort Prototypes (and not Rapid Prototypes)</strong></p>
-
-  <p>With a rough idea of the problem I’m trying to solve, the next step is build some low-effort prototypes and learn why my ideas are flawed.</p>
-
-  <p>I purposely call this “low-effort” instead of “rapid” prototypes. “Rapid prototyping” sets the expectation that we should invest in tooling so that we can think of an idea in the morning and have it on the lab bench by the afternoon, under the theory that faster iterations means faster progress.</p>
-
-  <p>The problem with rapid prototyping is that it differs significantly from production processes. <strong>When you iterate using a tool that doesn’t mimic your production process, what you get is a solution that works in the lab, but is not suitable for production.</strong> This conclusion shouldn’t be too surprising – evolutionary processes respond to all selective pressures in the environment, not just the abstract goals of a project. For example, parts optimized for 3D printing consider factors like scaffolding, but have no concern for undercuts and cavities that are impossible to produce with CNC processes. Meanwhile CNC parts will gravitate toward base dimensions that match bar stock, while minimizing the number of reference changes necessary during processing.</p>
-
-  <p>So, I try to prototype using production processes – but with low-effort. “Low-effort” means reducing the designer’s total cognitive load, even if it comes at the cost of a longer processing time. Low effort prototyping may require more patience, but also requires less attention. It turns out that prototyping-in-production is feasible, and is actually the standard practice in vibrant hardware ecosystems like Shenzhen. The main trade-off is that instead of having an idea that morning and a prototype on your desk by the afternoon, it might take a few days. And yes – of course there ways to shave those few days down (already anticipating the comments informing me of this cool trick to speed things up) – but <strong>the whole point is to not be distracted by the obsession of shortening cycle times, and spend more attention on the design. Increasing the time between generations by an order of magnitude might seem fatally slow for a convergent process, but the direction of convergence matters as much as the speed of convergence.</strong></p>
-
-  <p>More importantly, if I were driving a PCB printer, CNC, or pick-and-place machine by myself, I’d be spending all morning getting that prototype on my desk. <strong>By ordering my prototypes from third party service providers, I can spend my time on something else. It also forces me to generate better documentation at each iteration, making it easier to retrace my footsteps when I mess up.</strong> Generally, I shoot for an iteration to take 2-4 weeks – an eternity, I suppose, by Silicon Valley metrics – but the two-week mark is nice because I can achieve it with almost no cognitive burden, and no expedite fees.</p>
-
-  <p>I then spend at least several days to weeks characterizing the results of each iteration. It usually takes about 3-4 iterations for me to converge on a workable solution – about a few months in total. I know, people are often shocked when I admit to them that I think it will take me some years to finish this project.</p>
-
-  <p>A manager charged with optimizing innovation would point out that if I could cut the weeks out where I’m waiting to get the prototype back, I could improve the time constant on an exponential and therefore I’d be so much more productive: the compounding gains are so compelling that we should drop everything and invest heavily in rapid prototyping.</p>
-
-  <p>However, this calculus misses the point that I should be spending a good chunk of time evaluating and improving each iteration. <strong>If I’m able to think of the next improvement within a few minutes of receiving the prototype, then I wasn’t imaginative enough in designing that iteration.</strong></p>
-
-  <p>That’s the other failure of rapid prototyping: when there’s near zero cost to iterate, it doesn’t pay to put anything more than near zero effort into coming up with the next iteration. Rapid-prototyping iterations are faster, but in much smaller steps. In contrast, with low-effort prototyping, I feel less pressure to rush. My deliberative process is no longer the limiting factor for progress; I can ponder without stress, and take the time to document. This means I can make more progress every step, and so I need to take fewer steps.</p>
-
-</blockquote>
-
-  </div>
-</article>
 
 
 <hr>
@@ -749,6 +771,6 @@ To access local variables named with reserved keywords in your ERB template when
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>

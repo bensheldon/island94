@@ -118,6 +118,34 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2009/08/drupal-adding-a-geocoding-failure-message-to-location-module"><p>Drupal: Adding a geocoding failure message to Location Module</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2009-08-13T00:00:00Z" itemprop="datePublished">August 13, 2009</time>
+
+        • Tagged <a href="/posts/tags/drupal">Drupal</a>, <a href="/posts/tags/location">location</a>, <a href="/posts/tags/mapping">mapping</a>, <a href="/posts/tags/maps">maps</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/stupid">stupid</a>, and <a href="/posts/tags/warning">warning</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>One of the coolest pieces of Drupal is how simple it is to quickly enter a street address and have it show up on a dynamic map on your website using <a href="http://drupal.org/project/location">Location</a> and <a href="http://drupal.org/project/gmap">GMap</a> modules. To make it happen, a lot of stuff goes on behind the scenes. Unfortunately, in typical Drupal fashion, when something goes wrong, you aren’t provided much information to fix it.</p>
+
+<p>A big issue if you’re having regular users enter information into your website is <em>malformed</em> addresses that can’t be automatically converted into latitude/longitude coordinates (geocoding) for display on a map. Out of the box, the Location module doesn’t give you a warning if it’s unable to geocode an address. On my website <a href="http://mappingaccess.org">MappingAccess.org</a>–a community maintained directory of Cable Access Television stations—I average about an email a week from a visitor saying “I added my station but it’s not showing up on the map”. Usually it’s a simple matter of using a PO Box or wacky abbreviation, but the website itself should be telling them there is a problem, not me.</p>
+
+<p>So I whipped up a simple module that checks everytime a new station is submitted to see if the address was properly geocoded. If not, it displays a message with some tips on how to correct the issue.</p>
+
+<p><img src="/uploads/2009-08-13-Drupal-Adding-a-geocoding-failure-message-to-Location-Module/Picture-3-500x136.png" alt="Geocode Warning Message" title="Geocode Warning Message" /></p>
+
+<p>You can download the module for Drupal 6.x by <a href="/uploads/2009-08-13-Drupal-Adding-a-geocoding-failure-message-to-Location-Module/geocode_warn.zip"><strong>clicking here</strong></a><strong>.</strong></p>
+
+<p>To be nitpicky, I’d rather the message show up during the validation stage—before the node is submitted—with the option to say “Please edit the address or press submit again to publish with the understanding that it will not show up on the map.” Unfortunately, in Drupal 6 you <a href="http://drupal.org/node/241364">can’t make changes to node form during the validation stage</a>—which I would use to set a flag in a hidden form element so that the validation message only gets triggered once. The current implementation calls a drupal_set_message in hook_nodeapi’s insert/update operations. It can be enabled on a per-content-type basis (on the Content Type Configuration screen).</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2009/08/religion-and-individualism"><p>Religion and individualism</p>
 </a>
     </h1>
@@ -429,30 +457,6 @@
 
   </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2009/07/clarity-of-hindsight-law-vs-policy"><p>Clarity of hindsight: law vs. policy</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2009-07-05T00:00:00Z" itemprop="datePublished">July 5, 2009</time>
-
-        • Tagged <a href="/posts/tags/legalism">legalism</a>, <a href="/posts/tags/outcome">outcome</a>, <a href="/posts/tags/process">process</a>, and <a href="/posts/tags/screwed">screwed</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Donald Rumsfield admitted that chucking the Geneva Conventions (and 50 years of military policy) came out of a <a href="http://tpmmuckraker.talkingpointsmemo.com/2009/07/rumsfeld_on_abandoning_geneva_all_of_a_sudden_it_w.php?ref=fpb">bad process</a>:</p>
-
-<blockquote>
-  <p>As he explained in an interview in late 2008, policies were developing so fast in the weeks after the September 11 attacks that he did not follow his own normal procedures. “All of a sudden, it was just all happening, and the general counsel’s office in the Pentagon had the lead,” he said. “It never registered in my mind in this particular instance–it did in almost every other case–that these issues ought to be in a policy development or management posture. Looking back at it now, I have a feeling that was a mistake. In retrospect, it would have been better to take all of those issues and put them in the hands of policy or management.”</p>
-</blockquote>
-
-<p>They went the legal route (“the law isn’t clearly against us”) rather than the policy/management path (“how fully are we screwed if we do this?”). And, if that administration was as biblical as they claimed to be, they should have figured it out: even when following The Law, God is still a mean dude.</p>
-
-  </div>
-</article>
 
 
 <hr>
@@ -464,6 +468,6 @@
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>

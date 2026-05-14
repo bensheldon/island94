@@ -118,6 +118,28 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/05/lovingly-reimagined-progressively-remade"><p>Lovingly reimagined, progressively remade</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-05-04T00:00:00Z" itemprop="datePublished">May 4, 2011</time>
+
+        • Tagged <a href="/posts/tags/commies">commies</a>, <a href="/posts/tags/imagination">imagination</a>, and <a href="/posts/tags/politics">politics</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Chris Rabb’s <em>Invisible Capital</em> uses a quote from Robert Mangabeira Unger and Cornel West’s <em>The Future of American Progressivism:</em></p>
+
+<blockquote>
+  <p>“To understand your country, you must love it. To love it, you must, in a sense, accept it. To accept it as how it is, however is to betray it. To accept your country without betraying it, you must love it for that in it which shows what it might become. America—this monument to the genius of ordinary men and women, this place where hope becomes capacity, this long, halting turn of the no into the yes—needs citizens who love it enough to reimagine and remake it.”</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2011/04/belief-based-design"><p>Belief-based design</p>
 </a>
     </h1>
@@ -415,89 +437,6 @@
 
   </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/03/the-48-hour-mobile-web-app-drunken-stumble"><p>The 48 hour mobile web app: Drunken Stumble</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-03-02T00:00:00Z" itemprop="datePublished">March 2, 2011</time>
-
-        • Tagged <a href="/posts/tags/drupal">Drupal</a>, <a href="/posts/tags/intoxication">intoxication</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/project-management">project-management</a>, and <a href="/posts/tags/webdesign">webdesign</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><a href="http://drunkenstumble.com"><img src="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/drunkenlogo-500x190.png" alt="" title="drunkenlogo" /> </a></p>
-
-<p>Last weekend I participated in the <a href="http://beta.boston.com/hackday">Boston Hack Day Challenge</a>, a 48 hour (so I’m not sure why they called it a hack <em>day</em>) competition sponsored by the Boston Globe and held in the MassChallenge workspace. The goal of the event was to develop tools that would improve the lives of Bostonians. My team won “Best Mobile App” as well as the “Crowd Favorite” award for the pub crawl app we built: <a href="http://drunkenstumble.com">Drunken Stumble</a>.</p>
-
-<p><em><strong>Update:</strong> You can also read about the process from some of my teammates: <a href="http://www.nikibrown.com/designoblog/2011/02/28/designing-and-building-a-web-app-in-a-weekend-drunken-stumble/">@nikibrown on the design</a>, <a href="http://www.unruthless.com/blog/post/drunken-stumble">@unruthless on frontend and whip-cracking</a>, and <a href="http://miles-per-hour.com/2011/03/01/drunken-stumble-a-drupal-7-web-app-built-in-a-weekend/">@mikemiles86 on the backend</a> and <a href="http://miles-per-hour.com/2011/03/02/drunken-stumble-a-breakdown/">interface</a>.</em></p>
-
-<p>(And if you’re wondering how a pub crawl app would improve the lives of Bostonians, you must not be from Boston.)</p>
-
-<h2 id="about-the-project">About the Project</h2>
-
-<p>Our team formed Friday night. On the frontend we had <a href="http://twitter.com/nikibrown">@nikibrown</a> (designer) and <a href="http://twitter.com/unruthless">@unruthless</a> (frontend developer)—who knew each other prior to the event. On the backend we had <a href="http://twitter.com/mikemiles86">@mikemiles86</a> (application developer) and <a href="http://twitter.com/bensheldon">myself</a> (API and interface developer)—who happened to be standing near the cheese table.</p>
-
-<p>Together—and with the muse of the open bar—we came up with the idea of creating an application that would help people perform a pub crawl. While other teams proposed concept demos and APIs, we set our goal to be the delivery of a complete product by the end of the weekend. Defining a minimum viable product meant keeping a lot of great ideas in the parking lot (like drink lists and multi-user crawls) but helped us focus on delivering a tight, attractive and functional pub-crawl application that lets you:</p>
-
-<ul>
-  <li>
-    <p>use your smartphone to find nearby pubs</p>
-  </li>
-  <li>
-    <p>get walking directions to that pub</p>
-  </li>
-  <li>
-    <p>invite your friends to the pub via social media (Twitter and Facebook)</p>
-  </li>
-  <li>
-    <p>find the next pub for your crawl and get directions to there from your current pub</p>
-  </li>
-  <li>
-    <p>track your nightly progress (or revisit it the next morning)</p>
-  </li>
-  <li>
-    <p>call a cab home at the end of the night</p>
-  </li>
-</ul>
-
-<h2 id="about-the-app">About the App</h2>
-
-<p>We built Drunken Stumble as an HTML5 mobile web application—testing it on both iPhone and Android. As an HTML5 mobile web app, we can access smartphone features (like GPS and Portrait/Landscape modes) as well as quickly write, test and deploy. Both @mikemiles86 and myself are Drupal/PHP developers so (with some reservations) we decided to use Drupal as a framework—using its paths, forms, database and template systems and nothing else.</p>
-
-<p><img src="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/drunken-planning.jpeg" alt="Planning documents" title="drunken planning" /></p>
-
-<p>I focused most of my development on interfacing with external APIs. Originally we planned on using Yelp to provide business data for locating pubs, but their API is extremely limited with only 100 lookups per day. Fortunately, we found an awesome service called <a href="http://simplegeo.com">SimpleGeo</a> that currently offers unlimited lookups for businesses based upon location. Using SimpleGeo we were able to quickly write a rich, location-aware application that works anywhere in the United States, not just in Boston.</p>
-
-<p>Once we knew we had a source for business data, the next step was telling the application where you are. HTML5 offers <a href="http://dev.w3.org/geo/api/spec-source.html">native geolocation</a> which means we can (politely) request exact location data based on your smartphone’s GPS. If your smartphone doesn’t have GPS (or it’s turned off) you can type in an address and we use <a href="http://code.google.com/apis/maps/documentation/geocoding/">Google Maps to geocode</a> it into a latitude/longitude. If you do use your GPS, we also do a reverse geocode (again using Google Maps) to show you your street-level address to confirm that’s actually where you are (“ <a href="http://maps.google.com/maps?ll=42.331528,-70.94425">42.331528,-70.94425</a>” could be in the middle of Boston Harbor for all I know).</p>
-
-<p><a href="http://code.google.com/apis/maps/documentation/directions/">Google Directions</a> is the special sauce that ties it all together. We provide your starting location and the location of your next pub and Google Directions provides walking instructions and waypoints along the way. We display the walking directions and overlay the waypoints on top of a (static) Google Map. Unfortunately, Google Direction’s API also has a rather low limit of lookups (2,500/day), so should we go over our limit (as we did about 2am Sunday morning), we alternatively display a link that will launch your smartphone’s native maps app (or push you to Google Maps directly) to get directions there.</p>
-
-<p>There was one last benefit of using SimpleGeo’s well-populated business database: our app’s design isn’t limited to just pubs. For example, we decided rather late in the process to offer a list of local taxicab phone numbers at the end of the pub crawl. Because we had already tapped into the SimpleGeo API, we just needed to filter nearby businesses for “taxis”, rather than “bars &amp; pubs”. Which is an important thing to keep in mind: with a few minor changes, our app can facilitate routing for any type of business or geographically based event—like a taco crawl or artists’ open studios.</p>
-
-<p><a href="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/Drunken-Stumble-Screens.png"><img src="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/Drunken-Stumble-Screens-500x315.png" alt="" title="Drunken Stumble Screens" /> </a></p>
-
-<h2 id="about-the-process">About the process</h2>
-
-<p>The process was awesome. We got down to business about 8:00pm on Friday night and went live at 1:45pm on Sunday. Sure, we missed deadlines, our final feature list shrunk (and the parking lot grew), the architecture is far from “robust”, and the final design didn’t match our initial sketches (it was better!), but we met our goal of delivering a complete and functional product.</p>
-
-<p>I think it was our focus on “completeness” that helped us win more awards than any other team (2 awards). Other than a few all-hands decisions, our small and diverse team focused separately on our individual areas and integrated as necessary—@mikemiles86 and I used Git to sync progress on the backend, while I think the frontend mostly looked over each other’s shoulders. For me that meant moving from API wrangling at the start of the project to templating at the end. I also can’t overstate the value of @mikemiles86 pulling an all nighter on Saturday (the rest of us ejected at 3am for about 4 hours of sleep)</p>
-
-<p>The Crowd Favorite award was not only a function of our easy-to-understand concept, but also the stellar work of our frontend team. @nikibrown quickly produced strong branding and interface mockups that were key to creating early buzz: as other teams walked around and mingled, we could easily show off our idea. @unruthless became our de facto project manager and spokeswomen, explaining the app to visitors and pushing progress updates to Twitter and the #bostonhack hashtag for the event. We also lived our values, bringing in a wide selection of beer to carry us through Saturday and Sunday (and sharing it didn’t hurt our chances of winning the Crowd-Favorite award either).</p>
-
-<h2 id="about-the-future">About the future</h2>
-
-<p>It’s only been a few days since the event but we’ve kept up a steady stream of chatter over Twitter and pushed a few minor updates to the server too. The intensive hack model worked really well for building a minimally viable product, but time will tell whether we can keep the momentum and updates coming—turning Drunken Stumble into a maximally functional application.</p>
-
-<p>In the meantime though, <a href="http://drunkenstumble.com">happy stumbling</a>, sober or otherwise.</p>
-
-<p><a href="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/team-stumble.png"><img src="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/team-stumble-500x331.png" alt="" title="team stumble" /> </a></p>
-
-  </div>
-</article>
 
 
 <hr>
@@ -509,6 +448,6 @@
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>

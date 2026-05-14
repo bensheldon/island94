@@ -118,6 +118,71 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2023/01/how-goodjob-s-cron-does-distributed-locks"><p>How GoodJob’s Cron does distributed locks</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2023-01-22T18:18:00Z" itemprop="datePublished">January 22, 2023</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> is a multithreaded, Postgres-based, Active Job backend for Ruby on Rails. GoodJob has many features that take it beyond Active Job. One such feature is <a href="https://github.com/bensheldon/good_job/blob/994ecff5323bf0337e10464841128fda100750e6/README.md#cron-style-repeatingrecurring-jobs">cron-like functionality</a> that allows scheduling repeated jobs on a fixed schedule.</p>
+
+<p>This post is a brief technical story of how GoodJob prevents duplicated cron jobs from running in a multi-process, distributed environment.</p>
+
+<p><em>This is all true as of GoodJob’s current version, 3.7.4.</em></p>
+
+<h3 id="briefly-how-goodjobs-cron-works">Briefly, how GoodJob’s cron works</h3>
+
+<p>GoodJob heavily leans on <code>Concurrent::Ruby</code> high-level primitives, and the cron implementation is no different. <a href="https://github.com/bensheldon/good_job/blob/994ecff5323bf0337e10464841128fda100750e6/lib/good_job/cron_manager.rb"><code>GoodJob::CronManager</code></a> accepts a fixed hash of schedule configuration and feeds them into <code>Concurrent::ScheduledTask</code>s, which then trigger <code>perform_later</code> on the job classes at the prescribed times.</p>
+
+<p>A locking strategy is necessary. GoodJob can be running across multiple processes, across numerous isolated servers or containers, in one application. GoodJob should guarantee that at the scheduled time, only a single scheduled job is enqueued.</p>
+
+<h3 id="initially-advisory-locks">Initially, advisory locks</h3>
+
+<p>When <a href="https://github.com/bensheldon/good_job/pull/297">GoodJob’s cron feature was first introduced in version 1.12</a>, Cron used an existing feature of GoodJob: <a href="https://github.com/bensheldon/good_job/blob/994ecff5323bf0337e10464841128fda100750e6/README.md#activejob-concurrency">Concurrency Control</a>. Concurrency Control places limits on how many jobs can be enqueued or performed at the same time.</p>
+
+<p>Concurrency Control works by assigning jobs a “key” which is simply a queryable string. Before enqueuing jobs, GoodJob will count how many job records already exist with that same key and prevent the action if the count exceeds the configured limit. GoodJob uses advisory locks to avoid race conditions during this accounting phase.</p>
+
+<p>There were some downsides to using Concurrency Control for Cron.</p>
+
+<ul>
+  <li>It was a burden on developers. Concurrency Control extends <code>ActiveJob::Base</code> and required the developer to configure Concurrency Control rules separately from the Cron configuration.</li>
+  <li>It wasn’t very performant. Concurrency Control’s design is pessimistic and works best when collisions are rare or infrequent. But a large, clock-synchronized formation of GoodJob processes will frequently produce collisions and it could take several seconds of advisory locking and unlocking across all the processes to insert a single job.</li>
+</ul>
+
+<h3 id="then-a-unique-index">Then, a unique index</h3>
+
+<p>GoodJob v2.5.0 <a href="https://github.com/bensheldon/good_job/pull/423">changed the cron locking strategy</a>. Instead of using Concurrency Control’s advisory locks, GoodJob uses a unique compound index to prevent the same cron job from being enqueued/<code>INSERT</code>ed into the database multiple times.</p>
+
+<ul>
+  <li>In addition to the existing <code>cron_key</code> column in job records, the change added a new timestamp column, <code>cron_at</code> to  store when the cron job is enqueued.</li>
+  <li>Added a unique index on <code>[cron_key, cron_at]</code> to ensure that only one job is inserted for the given key and time.</li>
+  <li>Handled the expected <code>ActiveRecord::RecordNotUnique</code> when multiple cron processes try to enqueue the same cron job simultaneously and the unique index prevents the <code>INSERT</code> from taking place</li>
+</ul>
+
+<p>Now, when a thundering herd of GoodJob processes tries to enqueue the same cron job at the same time, the database uses its unique index constraint to prevent multiple job records from being created. Great!</p>
+
+<h3 id="does-it-do-a-good-job">Does it do a good job?</h3>
+
+<p>Yes! I’ve received lots of positive feedback in the year+ since GoodJob’s cron moved to a unique index locking strategy. From the application perspective, there’s much less enqueueing latency using a unique index than when using advisory locks. And from the developer’s perspective, it does <em>just work</em> without additional configuration beyond the schedule.</p>
+
+<p>The main benefit is that the strategy is <em>optimistic</em>. GoodJob just goes for it and lets the database’s unique indexing and built-in locks sort it out. That allows removing the application-level locking and querying and branching logic in the GoodJob client; only handling the potential <code>ActiveRecord::RecordNotUnique</code> exception is necessary.</p>
+
+<p>Using a unique index does require preserving the job records for a bit after the jobs have been performed. Otherwise, poor clock synchronization across processes could lead to a duplicate job being inserted again if the job has already been performed and removed from the table/index. Fortunately, preserving job records should not be too burdensome because GoodJob will <a href="https://github.com/bensheldon/good_job/blob/994ecff5323bf0337e10464841128fda100750e6/README.md#monitor-and-preserve-worked-jobs">automatically clean them up</a> too.</p>
+
+<p>Lastly, one goal of writing this is the hope/fear that a Database Administrator will tell me this is a terrible strategy and provide a better one. Until that happens, I have confidence GoodJob’s cron is good. <a href="https://github.com/bensheldon/good_job/discussions/806">I’d love your feedback!</a></p>
+
+<p><strong>Edit:</strong> In an earlier version of this post, I mixed up “optimistic” and “pessimistic” locking; that has been corrected.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2023/01/conflict-at-work"><p>Conflict, at work</p>
 </a>
     </h1>
@@ -591,118 +656,6 @@
 
   </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2022/09/persian-tahchin-inspired-crispy-chicken-rice"><p>Persian Tahchin-inspired crispy chicken rice</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2022-09-26T01:17:00Z" itemprop="datePublished">September 26, 2022</time>
-
-        • Tagged <a href="/posts/tags/recipe">recipe</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2022-09/tahchin.jpg" alt="Tahchin" /></p>
-
-<p>This is a <a href="https://www.177milkstreet.com/recipes/persian-style-baked-saffron-rice-chicken">Milk Street recipe</a>, but because I detest their instructional design, I redesigned it here.  I like this dish because:</p>
-
-<ul>
-  <li>It can be made with ingredients from Trader Joe’s.</li>
-  <li>It has currants.</li>
-  <li>Crispy, buttery starch is great.</li>
-  <li>It’s resilient; the second time I made it with indirect heat on a propane bbq grill because my oven was on the fritz. Still great. Also I’ve tried brown basmati rice, tried doubling the eggs, tripled the garlic, I’m not measuring the butter and currents. Still great.</li>
-</ul>
-
-<h3 id="ingredients">Ingredients</h3>
-
-<ul>
-  <li>1.5 cups basmati rice</li>
-  <li>1/4 teaspoon saffron threads</li>
-  <li>2 tablespoons boiling water</li>
-  <li>12 ounces boneless skinless chicken thighs. I think this would also work with seitan or tempeh just mix a bit more oil in.</li>
-  <li>1 lemon, for juice and zest</li>
-  <li>2 garlic cloves</li>
-  <li>0.5 cups whole milk greek yogurt</li>
-  <li>1 large egg (yolk only)</li>
-  <li>3 tablespoons dried currants</li>
-  <li>2 tablespoons salted butter, melted</li>
-  <li>Parsley, to garnish</li>
-  <li>Roasted Pistachios, to garnish</li>
-  <li>Olive oil</li>
-  <li>Salt and pepper</li>
-</ul>
-
-<p><strong>A pie plate.</strong> Milk Street spends a paragraph saying why glass is best (you can see the browning), but I’ve been doing ceramic and it’s fine.</p>
-
-<h3 id="the-big-picture">The big picture</h3>
-
-<p>This is a 3 bowl, 1 pot, 1 baking dish recipe. The overall flow is:</p>
-
-<ol>
-  <li>Soak and parboil the rice</li>
-  <li>Mix the chicken and aromatics and let meld</li>
-  <li>Mix the rice with yogurt, then mix the chicken with the rice, then dump that all into a pan</li>
-  <li>Bake it</li>
-  <li>Put some herbs and nuts on top</li>
-</ol>
-
-<h3 id="30-minutes-to-12-hours-ahead">30 minutes to 12 hours ahead</h3>
-
-<p><strong>Soak the rice.</strong> Place the rice in a bowl with enough water to cover by 1 inch and let rest at room temperature for at least 30 minutes or up to 12 hours. Drain and rinse the rice again.</p>
-
-<h3 id="to-begin">To begin</h3>
-
-<ul>
-  <li><strong>Place the oven rack at lowest position</strong> and <strong>preheat the oven to 400 degrees</strong></li>
-  <li><strong>Prepare a large pot of salted boiling water</strong> to cook the rice.</li>
-  <li>Thoroughly <strong>oil your pie plate</strong>.</li>
-</ul>
-
-<h3 id="prep-the-ingredients">Prep the ingredients</h3>
-
-<ul>
-  <li><strong>Melt the butter</strong> and set aside.</li>
-  <li><strong>Crumble the saffron threads</strong> and <strong>soak the saffron in 2 tablespoons of boiling water</strong> in a small bowl. Set aside.</li>
-  <li><strong>Zest the lemon</strong> resulting in about 3 teaspoons of lemon zest, to be divided between the chicken and the yogurt sauce. Put the rest of the lemon aside to be wedged later.</li>
-  <li><strong>Grate the garlic</strong>.</li>
-  <li><strong>Trim the chicken thighs</strong> into 1 to 1.5 inch pieces and in a medium bowl <strong>combine the chicken with 1 tbsp of oil, 1 teaspoon lemon zest, and garlic</strong> Salt and pepper it.</li>
-  <li><strong>Separate the egg yolk</strong> (discard the white) and  <strong>mix the yogurt, egg yolk, remaining 2 teaspoons of lemon zest, and saffron water</strong> in a bowl large enough to eventually hold the rice too. Salt and pepper it. Whisk to combine well.</li>
-</ul>
-
-<h3 id="cooking">Cooking</h3>
-
-<ul>
-  <li><strong>Add the rice to the pot of salted boiling water</strong> and cook for 5 minutes until par-boiled; the rice will still be slightly crunchy.  Drain the rice.</li>
-  <li><strong>Mix the par-boiled rice with the yogurt mixture</strong> and stir to combine.</li>
-  <li>Add about <strong>1/3 of the rice mixture to the bottom of the pie plate,</strong> pressing it into an even layer on the bottom and halfway up the sides.</li>
-  <li><strong>Mix the currants and the yogurt-chicken mixture into the remaining rice and yogurt mixture</strong> and then <strong>transfer the mixture to the pie dish.</strong> Do not compact or press the rice, but do distribute it evenly.</li>
-  <li><strong>Drizzle the melted butter over the rice mixture.</strong></li>
-  <li><strong>Tightly cover the pie dish with foil</strong> and <strong>bake for 1 hour covered.</strong></li>
-</ul>
-
-<h3 id="while-it-bakes-clean-up-and-prepare">While it bakes, clean up and prepare</h3>
-
-<ul>
-  <li><strong>Chop the parsley</strong> and reserve for serving.</li>
-  <li><strong>Chop the pistachios</strong> and reserve for serving.</li>
-  <li><strong>Slice the lemon</strong> into wedges for personal squeezing.</li>
-</ul>
-
-<h3 id="after-baking-for-1-hour">After baking for 1 hour</h3>
-
-<ul>
-  <li><strong>Remove the foil</strong> and then uncovered, <strong>bake for an additional 10 minutes</strong> until the bottom is golden brown.</li>
-  <li>Remove from the oven and <strong>rest for about 5 minutes</strong>.</li>
-  <li>Run a knife or spatula around the edge to loosen the rice from the pie plate, then <strong>invert onto a serving plate</strong>.</li>
-  <li><strong>Sprinkle with the parsley and pistachios</strong> and serve with the <strong>lemon wedges on the side</strong>.</li>
-</ul>
-
-
-  </div>
-</article>
 
 
 <hr>
@@ -714,6 +667,6 @@
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>

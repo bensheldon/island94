@@ -5,8 +5,518 @@
     <description>A Lost and Found</description>
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 Mar 2026 00:18:00 +0000</pubDate>
+    <pubDate>Thu, 14 May 2026 19:13:00 +0000</pubDate>
     <generator>Ruby on Rails</generator>
+      <item>
+        <title>One year of Ruby on Rails configuration</title>
+        <description>
+          <![CDATA[
+          <h1 id="one-year-of-ruby-on-rails-config">One year of Ruby on Rails config</h1>
+
+<p>I’ve been working professionaly with Ruby on Rails for nearly 15 years (I’m also the author of GoodJob and Spectator Sport). Last year I left GitHub and co-founded a technology startup, <a href="https://www.openfrontdoor.com/">Frontdoor Benefits</a>, that helps people enroll and manage their US government welfare benefits like SNAP/EBT.</p>
+
+<p>Therefore, I’ve been working in a fresh Ruby on Rails app full-time now for 1 year. One of the Rails pillars is <a href="https://rubyonrails.org/doctrine">“convention over configuration”</a>, so I thought it would be fun to share what has so far accumulated in my app’s <code>/config</code> directory: monkeypatches, extensions, and appwide behaviors.</p>
+
+<p>Let’s start with the most controversial one.</p>
+
+<h3 id="objectnot_nil-and-boolean-extensions"><code>Object#not_nil?</code> and boolean extensions</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/extensions/ext_object_boolean_nil.rb</span>
+
+<span class="k">class</span> <span class="nc">Object</span>
+  <span class="k">def</span> <span class="nf">not_nil?</span>
+    <span class="o">!</span><span class="kp">nil</span><span class="p">?</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">false?</span>
+    <span class="kp">false</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">true?</span>
+    <span class="kp">false</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">FalseClass</span>
+  <span class="k">def</span> <span class="nf">false?</span>
+    <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">TrueClass</span>
+  <span class="k">def</span> <span class="nf">true?</span>
+    <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>I realize there are PhDs written about the evils of null. I DISAGREE. I am continually confronted with the need to distnguish between “Yes”, “No”, and “has not answered the question yet” in my my <a href="https://island94.org/2025/04/wide-models-and-active-record-custom-validation-contexts">wide models</a>. I want a simple predicate pair like <code>present?</code>/<code>blank?</code> for <code>nil</code> , hence <code>nil?</code> /<code>not_nil?</code> .</p>
+
+<p>And then you can see where that led me wanting to distinguish between truthy and falsey and <em>true</em> true and <em>false</em> false. Predicates are great!</p>
+
+<h3 id="timestamptz-default"><code>timestamptz</code> default</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/active_record_timezones.rb</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:active_record_postgresqladapter</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">ConnectionAdapters</span><span class="o">::</span><span class="no">PostgreSQLAdapter</span><span class="p">.</span><span class="nf">datetime_type</span> <span class="o">=</span> <span class="ss">:timestamptz</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>I write my database migrations using <code>table.datetime</code> and it generates <code>timestamptz</code> columns.  I guess this is fine.</p>
+
+<h3 id="capybarathreadsafe"><code>Capybara.threadsafe</code></h3>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/capybara.rb</span>
+
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">threadsafe</span> <span class="o">=</span> <span class="kp">true</span>
+</code></pre></div></div>
+
+<p>I use Capybara as my harness for webdriving automations, rather than writing raw Selenium (never again!).</p>
+
+<h3 id="custom-types">Custom Types</h3>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/custom_types.rb</span>
+
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">to_prepare</span> <span class="k">do</span>
+  <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Type</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="ss">:phone_number</span><span class="p">,</span> <span class="no">PhoneNumber</span><span class="o">::</span><span class="no">Attribute</span><span class="p">)</span>
+  <span class="no">ActiveModel</span><span class="o">::</span><span class="no">Type</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="ss">:phone_number</span><span class="p">,</span> <span class="no">PhoneNumber</span><span class="o">::</span><span class="no">Attribute</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">module</span> <span class="nn">Kernel</span>
+  <span class="k">def</span> <span class="nf">PhoneNumber</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1"># rubocop:disable Naming/MethodName</span>
+    <span class="n">value</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">PhoneNumber</span><span class="p">)</span> <span class="p">?</span> <span class="n">value</span> <span class="p">:</span> <span class="no">PhoneNumber</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>There are several annoyances here:</p>
+<ul>
+  <li>I have to register custom attributes twice: once for Active Record and once for Active Model.</li>
+  <li>I want my types to live in <code>/app</code>, and be autoloaded, but there isn’t a lifecycle hook for that</li>
+</ul>
+
+<p>And one celebration: I love Ruby and being able to coerce with<code>PhoneNumber(something)</code></p>
+
+<h3 id="dom_target"><code>dom_target</code></h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/extend_action_view_record_identifier.rb</span>
+
+<span class="k">module</span> <span class="nn">ActionView</span>
+  <span class="k">module</span> <span class="nn">RecordIdentifier</span>
+    <span class="k">def</span> <span class="nf">dom_target</span><span class="p">(</span><span class="o">*</span><span class="n">objects</span><span class="p">)</span>
+      <span class="n">objects</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">object</span><span class="o">|</span>
+        <span class="k">if</span> <span class="n">object</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Symbol</span><span class="p">)</span> <span class="o">||</span> <span class="n">object</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
+          <span class="n">object</span>
+        <span class="k">elsif</span> <span class="n">object</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Class</span><span class="p">)</span>
+          <span class="n">dom_class</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="n">dom_id</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">end</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">JOIN</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>I write a lot of Turbo and I want to be able to chain together an unlimited list of identifiers like <code>(:admin, client, :outbound, Message, :new)</code> to produce something like <code>admin_client_24_outbound_message_new</code> to pair up Turbo Streams and Broadcasts. I <a href="https://github.com/rails/rails/pull/55204">upstreamed this into Rails 8.1</a> so this is unecessary now🎉</p>
+
+<h3 id="field_error_proc"><code>field_error_proc</code></h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/form_errors.rb</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:action_view</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">ActionView</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">field_error_proc</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="o">|</span><span class="n">html_tag</span><span class="p">,</span> <span class="n">_instance_tag</span><span class="o">|</span>
+    <span class="n">html_tag</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Still necessary 🫥</p>
+
+<h3 id="goodjob-and-uuidv7">GoodJob and UUIDv7</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/good_job.rb</span>
+
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">good_job</span><span class="p">.</span><span class="nf">execution_mode</span> <span class="o">=</span> <span class="ss">:inline</span> <span class="k">if</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">test?</span>
+<span class="k">end</span>
+
+<span class="no">GoodJob</span><span class="p">.</span><span class="nf">preserve_job_records</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">GoodJob</span><span class="p">.</span><span class="nf">on_thread_error</span> <span class="o">=</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span> <span class="p">{</span> <span class="no">Appsignal</span><span class="p">.</span><span class="nf">send_error</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:action_mailer</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">ActionMailer</span><span class="o">::</span><span class="no">MailDeliveryJob</span><span class="p">.</span><span class="nf">retry_on</span> <span class="no">StandardError</span><span class="p">,</span> <span class="ss">wait: :polynomially_longer</span><span class="p">,</span> <span class="ss">attempts: </span><span class="no">Float</span><span class="o">::</span><span class="no">INFINITY</span>
+  <span class="no">ActionMailer</span><span class="o">::</span><span class="no">MailDeliveryJob</span><span class="p">.</span><span class="nf">discard_on</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">DeserializationError</span>
+<span class="k">end</span>
+
+<span class="c1"># **SNIP** Lots of GoodJob cron config</span>
+
+<span class="k">module</span> <span class="nn">ActiveJobUUIDv7</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">super</span>
+    <span class="vi">@job_id</span> <span class="o">=</span> <span class="no">SecureRandom</span><span class="p">.</span><span class="nf">uuid_v7</span>
+  <span class="k">end</span>
+  <span class="n">ruby2_keywords</span><span class="p">(</span><span class="ss">:initialize</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:active_job</span><span class="p">)</span> <span class="k">do</span>
+  <span class="kp">include</span> <span class="no">ActiveJobUUIDv7</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:good_job_execution</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">before_create</span> <span class="p">{</span> <span class="nb">self</span><span class="p">.</span><span class="nf">id</span> <span class="o">||=</span> <span class="no">SecureRandom</span><span class="p">.</span><span class="nf">uuid_v7</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:good_job_process</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">before_create</span> <span class="p">{</span> <span class="nb">self</span><span class="p">.</span><span class="nf">id</span> <span class="o">||=</span> <span class="no">SecureRandom</span><span class="p">.</span><span class="nf">uuid_v7</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:good_job_batch_record</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">before_create</span> <span class="p">{</span> <span class="nb">self</span><span class="p">.</span><span class="nf">id</span> <span class="o">||=</span> <span class="no">SecureRandom</span><span class="p">.</span><span class="nf">uuid_v7</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:good_job_setting</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">before_create</span> <span class="p">{</span> <span class="nb">self</span><span class="p">.</span><span class="nf">id</span> <span class="o">||=</span> <span class="no">SecureRandom</span><span class="p">.</span><span class="nf">uuid_v7</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>A surprising misconception I’ve run across with folks using GoodJob is that using <em>more</em> configuration is better. Less less less.</p>
+
+<p>Specifically at the bottom, I’ve <a href="https://github.com/bensheldon/good_job/issues/1698">patched GoodJob and Active Job to use UUIDv7</a> to see if it’s any better. The verdict is still out. It’s not worse!</p>
+
+<h3 id="i18n-verification">I18n verification</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/i18n_verify</span>
+
+<span class="k">return</span> <span class="k">unless</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">configuration</span><span class="p">.</span><span class="nf">i18n</span><span class="p">.</span><span class="nf">raise_on_missing_translations</span>
+
+<span class="no">IGNORED_I18N_KEYS</span> <span class="o">=</span> <span class="sx">%w[
+  activerecord.attributes.client.reports
+  ...
+]</span><span class="p">.</span><span class="nf">freeze</span>
+
+<span class="k">module</span> <span class="nn">I18n</span>
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">alias</span> <span class="n">original_translate</span> <span class="n">t</span>
+
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+      <span class="k">begin</span>
+        <span class="n">original_fallbacks</span> <span class="o">=</span> <span class="no">I18n</span><span class="p">.</span><span class="nf">fallbacks</span>
+        <span class="no">I18n</span><span class="p">.</span><span class="nf">fallbacks</span> <span class="o">=</span> <span class="no">I18n</span><span class="p">.</span><span class="nf">available_locales</span><span class="p">.</span><span class="nf">index_with</span> <span class="p">{</span> <span class="o">|</span><span class="n">locale</span><span class="o">|</span> <span class="p">[</span><span class="n">locale</span><span class="p">]</span> <span class="p">}</span>
+
+        <span class="n">ignored</span> <span class="o">=</span> <span class="no">IGNORED_I18N_KEYS</span><span class="p">.</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="n">k</span><span class="o">|</span> <span class="p">[</span><span class="n">options</span><span class="p">[</span><span class="ss">:scope</span><span class="p">],</span> <span class="n">key</span><span class="p">].</span><span class="nf">compact</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"."</span><span class="p">).</span><span class="nf">start_with?</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">}</span>
+        <span class="k">unless</span> <span class="n">ignored</span>
+          <span class="n">available_locales</span><span class="p">.</span><span class="nf">without</span><span class="p">(</span><span class="no">I18n</span><span class="p">.</span><span class="nf">locale</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">locale</span><span class="o">|</span>
+            <span class="n">with_locale</span><span class="p">(</span><span class="n">locale</span><span class="p">)</span> <span class="p">{</span> <span class="n">original_translate</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">,</span> <span class="ss">raise: </span><span class="kp">true</span><span class="p">)</span> <span class="p">}</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">ensure</span>
+        <span class="no">I18n</span><span class="p">.</span><span class="nf">fallbacks</span> <span class="o">=</span> <span class="n">original_fallbacks</span>
+      <span class="k">end</span>
+
+      <span class="n">original_translate</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This is a fun patch that causes <code>I18n.raise_on_missing_translations</code> to raise on any missing translation across <em>all available locales</em>, not just the current locale.</p>
+
+<h3 id="i18n_tasks--psych-yaml-mangling"><code>i18n_tasks</code> / Psych YAML mangling</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/i18n_tasks_normalize.rb</span>
+
+<span class="c1"># Drop this at the top of config/i18n_tasks.yml too:</span>
+<span class="c1"># &lt;% require "./config/i18n_tasks_normalize" %&gt;</span>
+
+<span class="k">module</span> <span class="nn">I18nTaskYamlExt</span>
+  <span class="no">UNMASKED_EMOJI</span> <span class="o">=</span> <span class="sr">/
+    (?:
+      (?:\p{Emoji_Presentation}|\p{Emoji}\uFE0F)   # base emoji
+      (?:\u200D(?:\p{Emoji_Presentation}|\p{Emoji}\uFE0F))* # + ZWJ parts
+    )
+  /ux</span>
+
+  <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Visitors</span><span class="o">::</span><span class="no">YAMLTree</span><span class="p">.</span><span class="nf">create</span>
+    <span class="n">builder</span> <span class="o">&lt;&lt;</span> <span class="n">tree</span>
+    <span class="n">ast</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="nf">tree</span>
+    <span class="n">_process_node</span><span class="p">(</span><span class="n">ast</span><span class="p">)</span>
+    <span class="n">strip_trailing_spaces</span><span class="p">(</span><span class="n">restore_emojis</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="nf">to_yaml</span><span class="p">(</span><span class="kp">nil</span><span class="p">,</span> <span class="n">options</span> <span class="o">||</span> <span class="p">{})))</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">_process_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">node</span>
+    <span class="k">when</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Nodes</span><span class="o">::</span><span class="no">Scalar</span>
+      <span class="n">node</span><span class="p">.</span><span class="nf">plain</span> <span class="o">=</span> <span class="kp">false</span>
+      <span class="n">node</span><span class="p">.</span><span class="nf">quoted</span> <span class="o">=</span> <span class="kp">true</span>
+      <span class="n">node</span><span class="p">.</span><span class="nf">style</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="nf">value</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span> <span class="p">?</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Nodes</span><span class="o">::</span><span class="no">Scalar</span><span class="o">::</span><span class="no">LITERAL</span> <span class="p">:</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Nodes</span><span class="o">::</span><span class="no">Scalar</span><span class="o">::</span><span class="no">DOUBLE_QUOTED</span> <span class="c1"># &lt;== THE ENTIRE PURPOSE OF THIS MONKEYPATCH 🫠</span>
+      <span class="n">node</span><span class="p">.</span><span class="nf">value</span> <span class="o">=</span> <span class="n">_mask_emoji</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">value</span><span class="p">)</span> <span class="k">if</span> <span class="n">node</span><span class="p">.</span><span class="nf">style</span> <span class="o">==</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Nodes</span><span class="o">::</span><span class="no">Scalar</span><span class="o">::</span><span class="no">LITERAL</span> <span class="c1"># pre-mask emoji because otherwise libyaml will double-quote when we want literal style</span>
+    <span class="k">when</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Nodes</span><span class="o">::</span><span class="no">Mapping</span>
+      <span class="c1"># only process the values, not the keys</span>
+      <span class="n">node</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">each_slice</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">_key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span> <span class="n">_process_node</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">when</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Nodes</span><span class="o">::</span><span class="no">Stream</span><span class="p">,</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Nodes</span><span class="o">::</span><span class="no">Document</span><span class="p">,</span> <span class="no">Psych</span><span class="o">::</span><span class="no">Nodes</span><span class="o">::</span><span class="no">Sequence</span>
+      <span class="n">node</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span> <span class="n">_process_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">else</span>
+      <span class="k">raise</span> <span class="s2">"not handling </span><span class="si">#{</span><span class="n">node</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># libyaml will do this, but we want to do it first so that libyaml doesn't _also_</span>
+  <span class="c1"># mark the node as unprintable and thus prevent it from being in a literal</span>
+  <span class="c1"># https://github.com/yaml/libyaml/issues/279</span>
+  <span class="c1"># "Hello 👋 world 🌍!" =&gt; "Hello \\u0001F44B world \\u0001F30D!"</span>
+  <span class="k">def</span> <span class="nf">_mask_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="no">UNMASKED_EMOJI</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">emoji</span><span class="o">|</span>
+      <span class="n">emoji</span><span class="p">.</span><span class="nf">codepoints</span>
+        <span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">cp</span><span class="o">|</span> <span class="nb">format</span><span class="p">(</span><span class="s1">'\\u%08X'</span><span class="p">,</span> <span class="n">cp</span><span class="p">)</span> <span class="p">}</span>
+        <span class="p">.</span><span class="nf">join</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">I18n</span><span class="o">::</span><span class="no">Tasks</span><span class="o">::</span><span class="no">Data</span><span class="o">::</span><span class="no">Adapter</span><span class="o">::</span><span class="no">YamlAdapter</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">I18nTaskYamlExt</span>
+</code></pre></div></div>
+
+<p>Ok, <code>i18n_tasks</code> is absolutely essential for doing localization. But it works by roundtripping your YAML through Psych.  This patch does 2 things:</p>
+
+<ul>
+  <li>It makes Psych output every string as <em>strictly either</em> a doublequoted string or, if it contains a newline, as literal-block (<code>key: |</code>). Without the patch, Psych will swap around single and doublequoted strings and convert literal-blocks to double-quoted strings with <code>\n</code>s</li>
+  <li>Emojis don’t get mangled.</li>
+</ul>
+
+<h3 id="custom-mailers">Custom mailers</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/mailers.rb</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:action_mailer</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">ActionMailer</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">add_delivery_method</span> <span class="ss">:twilio_sms</span><span class="p">,</span> <span class="no">TwilioSmsDelivery</span>
+  <span class="no">ActionMailer</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">add_delivery_method</span> <span class="ss">:null</span><span class="p">,</span> <span class="no">NullDelivery</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>I’m one of the rare true-fans of Action Mailer who wants to deliver messages to <em>more</em> channels via Action Mailer, not none.  Our app uses Action Mailer to construct and deliver SMS messages too via a custom delivery method. I’ve <a href="https://island94.org/2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants">touched on</a> this previously.</p>
+
+<h3 id="markdown">Markdown</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/markdown.rb</span>
+
+<span class="k">module</span> <span class="nn">Markdown</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"Can't provide both text and block"</span> <span class="k">if</span> <span class="n">text</span> <span class="o">&amp;&amp;</span> <span class="nb">block_given?</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="k">yield</span> <span class="k">if</span> <span class="nb">block_given?</span>
+    <span class="k">return</span> <span class="s2">""</span> <span class="k">unless</span> <span class="n">text</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">strip_heredoc</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">options</span><span class="p">.</span><span class="nf">reverse_merge</span><span class="p">(</span>
+      <span class="ss">auto_ids: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">smart_quotes: </span><span class="p">[</span><span class="s2">"apos"</span><span class="p">,</span> <span class="s2">"apos"</span><span class="p">,</span> <span class="s2">"quot"</span><span class="p">,</span> <span class="s2">"quot"</span><span class="p">],</span> <span class="c1"># disable smart quotes</span>
+      <span class="ss">input: </span><span class="s1">'GFM'</span><span class="p">,</span>
+      <span class="ss">hard_wrap: </span><span class="kp">true</span> <span class="c1"># turn single newlines into &lt;br /&gt;</span>
+    <span class="p">)</span>
+    <span class="no">Kramdown</span><span class="o">::</span><span class="no">Document</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">options</span><span class="p">).</span><span class="nf">to_html</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inline</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="o">**</span><span class="p">)</span>
+    <span class="c1"># Custom input parser defined in Kramdown::Parser::Inline</span>
+    <span class="n">convert</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="ss">input: </span><span class="s2">"Inline"</span><span class="p">,</span> <span class="o">**</span><span class="p">).</span><span class="nf">strip</span>
+  <span class="k">end</span>
+
+  <span class="k">module</span> <span class="nn">HtmlSafeTranslationExt</span>
+    <span class="k">def</span> <span class="nf">html_safe_translation_key?</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+      <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">||</span> <span class="k">super</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">module</span> <span class="nn">I18nBackendExt</span>
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">locale</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="k">super</span>
+      <span class="c1"># Rails missing key returns as MISSING_TRANSLATION =&gt; (2**60) =&gt; -1152921504606846976</span>
+      <span class="k">if</span> <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+          <span class="no">Markdown</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="no">Markdown</span><span class="p">.</span><span class="nf">inline</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">else</span>
+        <span class="n">result</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="o">::</span><span class="no">HtmlSafeTranslation</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">HtmlSafeTranslationExt</span>
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:i18n</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">I18n</span><span class="p">.</span><span class="nf">backend</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">I18nBackendExt</span>
+<span class="k">end</span>
+
+<span class="c1"># Generate HTML from Markdown without any block-level elements (p, etc.)</span>
+<span class="c1"># http://stackoverflow.com/a/30468100/241735</span>
+<span class="k">module</span> <span class="nn">Kramdown</span>
+  <span class="k">module</span> <span class="nn">Parser</span>
+    <span class="k">class</span> <span class="nc">Inline</span> <span class="o">&lt;</span> <span class="no">Kramdown</span><span class="o">::</span><span class="no">Parser</span><span class="o">::</span><span class="no">Kramdown</span>
+      <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+        <span class="k">super</span>
+        <span class="vi">@block_parsers</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>There’s two features here:</p>
+
+<ul>
+  <li><code>Markdown.convert(string)</code> and <code>Markdown.inline(string)</code> are simple helpers that turn a string of markdown formatted text into html</li>
+  <li>The entirety rest of the code duplicates Rails i18n behavior for html-safing <code>_html</code> keys. Any i18n key that ends in <code>_md</code> will convert the value from markdown to html, and then mark it as html safe. I love authoring complex i18n keys in markdown (especially when <code>i18n_tasks</code>/Psych doesn’t mangle the newlines, see previously).</li>
+</ul>
+
+<h3 id="rbtrace"><code>rbtrace</code></h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/rbtrace.rb</span>
+<span class="k">if</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'RBTRACE'</span><span class="p">]</span>
+  <span class="nb">require</span> <span class="s1">'rbtrace'</span>
+
+  <span class="vg">$stdout</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"Enabled rbtrace. Example commands:"</span>
+  <span class="vg">$stdout</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"- Show all method calls: $ bundle exec rbtrace --pid </span><span class="si">#{</span><span class="no">Process</span><span class="p">.</span><span class="nf">pid</span><span class="si">}</span><span class="s2"> --firehose"</span>
+  <span class="vg">$stdout</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"- Debug Rails deadlock: $ bundle exec rbtrace --pid </span><span class="si">#{</span><span class="no">Process</span><span class="p">.</span><span class="nf">pid</span><span class="si">}</span><span class="s2"> --eval </span><span class="se">\"</span><span class="s2">puts output = ActionDispatch::DebugLocks.new(nil).send(:render_details, nil); output</span><span class="se">\"</span><span class="s2">"</span>
+  <span class="vg">$stdout</span><span class="p">.</span><span class="nf">puts</span> <span class="o">&lt;&lt;~</span><span class="no">TEXT</span><span class="sh">
+    - Show all threads: $ bundle exec rbtrace --pid </span><span class="si">#{</span><span class="no">Process</span><span class="p">.</span><span class="nf">pid</span><span class="si">}</span><span class="sh"> --eval "ObjectSpace.each_object(::Thread).to_a.each { puts(it, it.backtrace_locations, '------') }; nil"
+</span><span class="no">  TEXT</span>
+  <span class="vg">$stdout</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"- Heap Dump: $ bundle exec rbtrace --pid </span><span class="si">#{</span><span class="no">Process</span><span class="p">.</span><span class="nf">pid</span><span class="si">}</span><span class="s2"> --eval 'Thread.new{require </span><span class="se">\"</span><span class="s2">objspace</span><span class="se">\"</span><span class="s2">; GC.start; io=File.open(</span><span class="se">\"</span><span class="s2">tmp/ruby-heap.</span><span class="se">\#</span><span class="s2">{Time.now.to_i}.dump</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">w</span><span class="se">\"</span><span class="s2">); ObjectSpace.dump_all(output: io); io.close }'"</span>
+  <span class="vg">$stdout</span><span class="p">.</span><span class="nf">puts</span> <span class="s1">'Press Enter to continue...'</span>
+  <span class="vg">$stdin</span><span class="p">.</span><span class="nf">gets</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>I have a terrible memory for debugging commands. so this is how I document them. I pair this with a <code>bin/productionrails</code> script that allows me to boot a Rails in production-mode locally by setting up all the necessary environment variables with placeholder values, and disabling https and so forth.</p>
+
+<h3 id="sprocket-reproducible-assets">Sprocket Reproducible Assets</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/sprockets.rb</span>
+
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">gzip</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Gzipped Sprocket include the build time and thus are uncacbable across builds. I’m waiting for <a href="https://github.com/rails/sprockets/pull/821">someone to look at my PR</a>.🤷</p>
+
+<h3 id="turbo-stream-jobs">Turbo Stream jobs</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/turbo.rb</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:active_job</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">Turbo</span><span class="o">::</span><span class="no">Streams</span><span class="o">::</span><span class="no">BroadcastJob</span><span class="p">.</span><span class="nf">queue_name</span> <span class="o">=</span> <span class="s2">"turbo"</span>
+  <span class="no">Turbo</span><span class="o">::</span><span class="no">Streams</span><span class="o">::</span><span class="no">ActionBroadcastJob</span><span class="p">.</span><span class="nf">queue_name</span> <span class="o">=</span> <span class="s2">"turbo"</span>
+  <span class="no">Turbo</span><span class="o">::</span><span class="no">Streams</span><span class="o">::</span><span class="no">BroadcastStreamJob</span><span class="p">.</span><span class="nf">queue_name</span> <span class="o">=</span> <span class="s2">"turbo"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Somone should make this a configuration option 🫵</p>
+
+<h3 id="view-components-that-can-broadcast_later">View Components that can <code>broadcast_later</code></h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/view_component.rb</span>
+
+<span class="c1"># Instantiate a ViewComponents that is (optionally) serializable by Active Job</span>
+<span class="c1"># but otherwise behaves like a normal ViewComponent. This allows it to be passed</span>
+<span class="c1"># as a renderable into `broadcast_action_later_to`.</span>
+<span class="c1">#</span>
+<span class="c1"># To use, include the `ViewComponent::Serializable` concern:</span>
+<span class="c1">#</span>
+<span class="c1">#  class ApplicationComponent &lt; ViewComponent::Base</span>
+<span class="c1">#    include ViewComponent::Serializable</span>
+<span class="c1">#  end</span>
+<span class="c1">#</span>
+<span class="c1"># And then call `serializable` instead of `new` when instantiating:</span>
+<span class="c1">#</span>
+<span class="c1">#   Turbo::StreamsChannel.broadcast_action_later_to(</span>
+<span class="c1">#     :admin, client, :messages,</span>
+<span class="c1">#     action: :update,</span>
+<span class="c1">#     target: ActionView::RecordIdentifier.dom_id(client, :messages),</span>
+<span class="c1">#     renderable: MessageComponent.serializable(message: message)</span>
+<span class="c1">#   )</span>
+<span class="c1">#</span>
+<span class="k">module</span> <span class="nn">ViewComponent</span>
+  <span class="k">module</span> <span class="nn">Serializable</span>
+    <span class="kp">extend</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Concern</span>
+
+    <span class="n">included</span> <span class="k">do</span>
+      <span class="nb">attr_reader</span> <span class="ss">:serializable_args</span>
+    <span class="k">end</span>
+
+    <span class="n">class_methods</span> <span class="k">do</span>
+      <span class="k">def</span> <span class="nf">serializable</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
+          <span class="n">instance</span><span class="p">.</span><span class="nf">instance_variable_set</span><span class="p">(</span><span class="ss">:@serializable_args</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+      <span class="n">ruby2_keywords</span><span class="p">(</span><span class="ss">:serializable</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">ViewComponentSerializer</span> <span class="o">&lt;</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Serializers</span><span class="o">::</span><span class="no">ObjectSerializer</span>
+  <span class="k">def</span> <span class="nf">klass</span>
+    <span class="no">ViewComponent</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">serialize?</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+    <span class="n">argument</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">ViewComponent</span><span class="o">::</span><span class="no">Base</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">argument</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:serializable_args</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">view_component</span><span class="p">)</span>
+    <span class="k">super</span><span class="p">(</span>
+      <span class="s2">"component"</span> <span class="o">=&gt;</span> <span class="n">view_component</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="p">,</span>
+      <span class="s2">"arguments"</span> <span class="o">=&gt;</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Arguments</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="n">view_component</span><span class="p">.</span><span class="nf">serializable_args</span><span class="p">),</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+    <span class="nb">hash</span><span class="p">[</span><span class="s2">"component"</span><span class="p">].</span><span class="nf">safe_constantize</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="o">*</span><span class="no">ActiveJob</span><span class="o">::</span><span class="no">Arguments</span><span class="p">.</span><span class="nf">deserialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">[</span><span class="s2">"arguments"</span><span class="p">]))</span>
+  <span class="k">end</span>
+
+  <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Serializers</span><span class="p">.</span><span class="nf">add_serializers</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>I only use View Components in the complex parts of my app, <em>and</em> the complex parts of my app are complex because they do a lot of <a href="https://thoughtbot.com/blog/hotwire-turbo-streaming-viewcomponents">Turbo Streaming and asynchronous updating</a>. I shared this upstream with View Component and it’s happening, though I <a href="https://github.com/ViewComponent/view_component/pull/2595#issuecomment-4201048398">already can imagine ways to do this better</a>.</p>
+
+<h3 id="git-worktree-support">Git Worktree Support</h3>
+
+<p>This set of things is rather sprawling. I have a <a href="https://gist.github.com/bensheldon/f475a2669d72256545df5e2fcd1a4dae"><code>GitWorktree</code> class</a> that fetches the current Git Worktree name, and then uses either the string, or a deterministic integer, to prevent collisions during development and testing (itself with <code>parallel_tests</code>) across multiple worktrees concurrently:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># database.yml</span>
+<span class="na">development</span><span class="pi">:</span>
+  <span class="na">database</span><span class="pi">:</span> <span class="s">frontdoor_development&lt;%= GitWorktree.db_suffix %&gt;</span>
+<span class="na">test</span><span class="pi">:</span>
+  <span class="na">development: database</span><span class="pi">:</span> <span class="s">frontdoor_test&lt;%= GitWorktree.db_suffix %&gt;&lt;%= ENV["TEST_ENV_NUMBER"].then { it.present? ? "_#{it}"</span> <span class="err">:</span> <span class="s2">"</span><span class="s">"</span> <span class="err">}</span> <span class="err">%</span><span class="pi">&gt;</span>
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># puma.rb</span>
+<span class="n">port</span> <span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"PORT"</span><span class="p">,</span> <span class="no">GitWorktree</span><span class="p">.</span><span class="nf">integer</span><span class="p">(</span><span class="mi">3000</span><span class="o">..</span><span class="mi">3999</span><span class="p">))</span>
+
+<span class="c1"># application.rb</span>
+<span class="n">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">session_prefix</span> <span class="o">=</span> <span class="s2">"frontdoor"</span>
+<span class="k">if</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">development?</span>
+  <span class="n">port</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"PORT"</span><span class="p">,</span> <span class="no">GitWorktree</span><span class="p">.</span><span class="nf">integer</span><span class="p">(</span><span class="mi">3000</span><span class="o">..</span><span class="mi">3999</span><span class="p">))</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">session_prefix</span> <span class="o">=</span> <span class="s2">"frontdoor_</span><span class="si">#{</span><span class="n">port</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">config</span><span class="p">.</span><span class="nf">session_store</span> <span class="ss">:cookie_store</span><span class="p">,</span> <span class="ss">key: </span><span class="s2">"_</span><span class="si">#{</span><span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">session_prefix</span><span class="si">}</span><span class="s2">_session"</span>
+
+<span class="c1"># spec/support/capybara.rb</span>
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">server_port</span> <span class="o">=</span> <span class="no">GitWorktree</span><span class="p">.</span><span class="nf">integer</span><span class="p">(</span><span class="mi">4000</span><span class="o">..</span><span class="mi">4990</span><span class="p">,</span> <span class="ss">stride: </span><span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"PARALLEL_TEST_GROUPS"</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nf">to_i</span><span class="p">)</span> <span class="o">+</span> <span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"TEST_ENV_NUMBER"</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nf">to_i</span>
+</code></pre></div></div>
+
+          ]]>
+        </description>
+        <link>https://island94.org/2026/05/one-year-of-ruby-on-rails-configuration</link>
+        <guid isPermaLink="true">https://island94.org/2026/05/one-year-of-ruby-on-rails-configuration</guid>
+        <pubDate>Thu, 14 May 2026 19:13:00 +0000</pubDate>
+      </item>
       <item>
         <title>A bulletproof `wait_for_turbo` test helper</title>
         <description>
@@ -836,129 +1346,6 @@ party gems.</li>
         <link>https://island94.org/2025/10/hanami-and-loading-code-faster</link>
         <guid isPermaLink="true">https://island94.org/2025/10/hanami-and-loading-code-faster</guid>
         <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      </item>
-      <item>
-        <title>Serializing ViewComponent for Active Job and Turbo Broadcast Later</title>
-        <description>
-          <![CDATA[
-          <p>I recently started using ViewComponent. I’ve been gradually removing non-omikase libraries from my Rails applications over the past decade, but ViewComponent is alright. I was strongly motivated by Boring Rails’ <a href="https://boringrails.com/articles/self-updating-components/">“Hotwire components that refresh themselves”</a>, cause matching up all the dom ids and stream targets between views/partials and… wherever you put your Stream and Broadcast renderers is a pain.</p>
-
-<p>You might also know me as the GoodJob author. So of course I wanted to have my Hotwire components refresh themselves <em>later</em> and move stream broadcast rendering into a background job. I to simply call <code>MessagesComponent.add_message(message)</code> and broadcasts an update <em>later</em> to the correct stream and target that are all nice and compactly stored inside of the View Component:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MessagesComponent</span> <span class="o">&lt;</span> <span class="no">ApplicationComponent</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">user</span>
-    <span class="no">Turbo</span><span class="o">::</span><span class="no">StreamsChannel</span><span class="p">.</span><span class="nf">broadcast_action_later_to</span><span class="p">(</span>
-      <span class="n">user</span><span class="p">,</span> <span class="ss">:message_list</span><span class="p">,</span>
-      <span class="ss">action: :append</span><span class="p">,</span>
-      <span class="ss">target: </span><span class="no">ActionView</span><span class="o">::</span><span class="no">RecordIdentifier</span><span class="p">.</span><span class="nf">dom_id</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="ss">:messages</span><span class="p">),</span>
-      <span class="ss">renderable: </span><span class="no">MessageComponent</span><span class="p">.</span><span class="nf">serializable</span><span class="p">(</span><span class="ss">message: </span><span class="n">message</span><span class="p">),</span> <span class="c1"># &lt;- that right there</span>
-      <span class="ss">layout: </span><span class="kp">false</span>
-    <span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">user</span><span class="p">:,</span> <span class="n">messages</span><span class="p">:)</span>
-    <span class="vi">@user</span> <span class="o">=</span> <span class="n">user</span>
-    <span class="vi">@messages</span> <span class="o">=</span> <span class="n">messages</span>
-  <span class="k">end</span>
-
-  <span class="n">erb_template</span> <span class="o">&lt;&lt;~</span><span class="no">HTML</span><span class="sh">
-    &lt;%= helpers.turbo_stream_from @user, :message_list %&gt;
-    &lt;div id="&lt;%= dom_id(@user, :messages) %&gt;"&gt;
-      &lt;%= render MessageComponent.with_collection @messages %&gt;
-    &lt;/div&gt;
-</span><span class="no">  HTML</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>That’s a simple example</p>
-<h3 id="making-a-renderable-work-later">Making a renderable work <em>later</em></h3>
-
-<p>The ViewComponent team can be really proud of <a href="https://github.com/rails/rails/pull/37919">achieving first-class support Rails</a> for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a <code>renderable</code>.</p>
-
-<p>For ViewComponent to be compatible with Turbo Broadcasting <em>later</em>, those View Components need to be serializable by Active Job. That’s because Turbo Rail’s <code>broadcast_*_later_to</code> takes the arguments it was passed and serializes them into a job so they can be run elsewhere better/faster/stronger.</p>
-
-<p>To serialize a ViewComponent, we need to collect its initialization arguments, so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its  <code>initialize</code> method. To patch into that, there’s a couple of different strategies I thought of taking:</p>
-
-<ul>
-  <li>Make the developer figure out which properties of an existing ViewComponent (ivars, attributes) should be grabbed and how to do that.</li>
-  <li><code>prepend</code> a module method in front of <code>ViewComponent#initialize</code>. Our module would always have to be at the top of the ancestors hierarchy, because subclasses might overload <code>initialize</code> themselves, so we’d have to have an <code>inherited</code> callback that would prepend the module (again) every time that happened</li>
-  <li>Simply initialize the ViewComponent via another, more easily interceptable method, when you want it to be serializable.</li>
-</ul>
-
-<p>I respect that ViewComponent really wanted a ViewComponent to be <em>just like any other Ruby object</em> that you create with <code>new</code> and <code>initialize</code> , but it makes this particular goal, serialization, rather difficult. You can maybe see the ViewComponent maintainers ran into a few problems with initialization themselves: a collection of ViewComponents can optionally have each member initialized with an iteration number, but to do that <a href="https://github.com/ViewComponent/view_component/blob/1ed16e33ad70e45ffc08de3b68760a83d08e912e/lib/view_component/base.rb#L667-L712">ViewComponent has to introspect the <code>initialize</code> parameters</a> to determine if the object implements the iteration parameter to decide whether to send it 🫠 That parameter introspection also means that we can’t simply prepend a redefined generic <code>initialize(*args, **kwargs)</code> because that would break the collection feature. Not great 💛</p>
-
-<p>So, given the compromises i’m willing to make between ergonomics and complexity and performance, given my abilities, and my experience, and what I know at this time…. I decided to simply make a new initializing class method, named <code>serializable</code>. If I want my ViewComponent to be serializable, I initialize it with <code>MyComponent.serializable(foo, bar:)</code>.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
-<span class="c1"># config/initializers/view_component.rb</span>
-<span class="c1">#</span>
-<span class="c1"># Instantiate a ViewComponents that is (optionally) serializable by Active Job</span>
-<span class="c1"># but otherwise behaves like a normal ViewComponent. This allows it to be passed</span>
-<span class="c1"># as a renderable into `broadcast_action_later_to`.</span>
-<span class="c1">#</span>
-<span class="c1"># To use, include the `ViewComponent::Serializable` concern:</span>
-<span class="c1">#</span>
-<span class="c1">#  class ApplicationComponent &lt; ViewComponent::Base</span>
-<span class="c1">#    include ViewComponent::Serializable</span>
-<span class="c1">#  end</span>
-<span class="c1">#</span>
-<span class="c1"># And then call `serializable` instead of `new` when instantiating:</span>
-<span class="c1">#</span>
-<span class="c1">#   Turbo::StreamsChannel.broadcast_action_later_to(</span>
-<span class="c1">#     :admin, client, :messages,</span>
-<span class="c1">#     action: :update,</span>
-<span class="c1">#     target: ActionView::RecordIdentifier.dom_id(client, :messages),</span>
-<span class="c1">#     renderable: MessageComponent.serializable(message: message)</span>
-<span class="c1">#   )</span>
-<span class="c1">#</span>
-<span class="k">module</span> <span class="nn">ViewComponent</span>
-  <span class="k">module</span> <span class="nn">Serializable</span>
-    <span class="kp">extend</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Concern</span>
-
-    <span class="n">included</span> <span class="k">do</span>
-      <span class="nb">attr_reader</span> <span class="ss">:serializable_args</span>
-    <span class="k">end</span>
-
-    <span class="n">class_methods</span> <span class="k">do</span>
-      <span class="k">def</span> <span class="nf">serializable</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-        <span class="n">new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
-          <span class="n">instance</span><span class="p">.</span><span class="nf">instance_variable_set</span><span class="p">(</span><span class="ss">:@serializable_args</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
-        <span class="k">end</span>
-      <span class="k">end</span>
-      <span class="n">ruby2_keywords</span><span class="p">(</span><span class="ss">:serializable</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">ViewComponentSerializer</span> <span class="o">&lt;</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Serializers</span><span class="o">::</span><span class="no">ObjectSerializer</span>
-  <span class="k">def</span> <span class="nf">serialize?</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
-    <span class="n">argument</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">ViewComponent</span><span class="o">::</span><span class="no">Base</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">argument</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:serializable_args</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">view_component</span><span class="p">)</span>
-    <span class="k">super</span><span class="p">(</span>
-      <span class="s2">"component"</span> <span class="o">=&gt;</span> <span class="n">view_component</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="p">,</span>
-      <span class="s2">"arguments"</span> <span class="o">=&gt;</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Arguments</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="n">view_component</span><span class="p">.</span><span class="nf">serializable_args</span><span class="p">),</span>
-    <span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
-    <span class="nb">hash</span><span class="p">[</span><span class="s2">"component"</span><span class="p">].</span><span class="nf">safe_constantize</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="o">*</span><span class="no">ActiveJob</span><span class="o">::</span><span class="no">Arguments</span><span class="p">.</span><span class="nf">deserialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">[</span><span class="s2">"arguments"</span><span class="p">]))</span>
-  <span class="k">end</span>
-
-  <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Serializers</span><span class="p">.</span><span class="nf">add_serializers</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p><strong>Real talk:</strong> I haven’t packaged this into a gem. I didn’t want to maintain it for everyone, and there’s some View Component features (like collections) it doesn’t handle yet because I haven’t used them (yet). I think this sort of thing is first class behavior for the current state of Rails and Active Job and Turbo, and I’d rather the library maintainers figure out what the best balance of ergonomics, complexity, and performance is for them. I’ve been gently poking them about it in their Slack; they’re great and I believe we can arrive at something even better than this patch I’m running with myself for now 💖</p>
-
-
-          ]]>
-        </description>
-        <link>https://island94.org/2025/10/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later</link>
-        <guid isPermaLink="true">https://island94.org/2025/10/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later</guid>
-        <pubDate>Mon, 06 Oct 2025 14:59:00 +0000</pubDate>
       </item>
   </channel>
 </rss>

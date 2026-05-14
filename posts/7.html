@@ -118,6 +118,47 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2023/10/reflections-on-good-job-for-solid-queue"><p>Reflections on GoodJob for Solid Queue</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2023-10-10T16:05:00Z" itemprop="datePublished">October 10, 2023</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a> and <a href="/posts/tags/ruby">Ruby</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2023-10/rails_world_solid_queue.jpg"><img src="/uploads/2023-10/rails_world_solid_queue.jpg" alt="Rails World presents Solid Queue and Mission Control" /></a></p>
+
+<p><em>GoodJob, via its <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>, was highlighted last week at Rails World. A new Active Job queue backend, <a href="https://rubygems.org/gems/solid_queue">Solid Queue</a>, was announced, and I’m excited to see where it goes!</em></p>
+
+<p>I attended Rails World in Amsterdam this past week. During the conference, a new Active Job backend was announced: Solid Queue (<a href="https://www.youtube.com/watch?v=iqXjGiQ_D-A&amp;t=3121s">video</a>), which has the potential to become first, first-party backend in Rails. Solid Queue, like my GoodJob, is backed by a relational database. I’m very excited about this! I had a chance to talk to Rosa Gutierrez, who is leading the effort at 37signals, and I’m hopeful that I’ll be able to contribute to Solid Queue and who knows, maybe it could even become a successor to GoodJob.</p>
+
+<p>With that thought in mind, I reflected on some of the design and motivations that became GoodJob, and that I believe are important regardless of the Active Job backend under development. These are not intended to be design documents but more a list of things that I have learned or come across during my 3 years working on GoodJob. It would be nice to keep these in mind when designing a potential successor to GoodJob. And I hope they can be the seed to further conversations, rather than a fully realized proposal or argument. Let’s go:</p>
+
+<ul>
+  <li><strong>SIGKILL Safety</strong>. Recovering from a SIGKILL (or someone unplugging the power cord) is always number one in my mind when thinking of GoodJob. That informed my desire to use Advisory Locks (which are automatically released on disconnect), and my future thinking about heartbeats if GoodJob switched over to using <code>FOR UPDATE SKIP LOCK</code> instead of Advisory Locks. I do not think jobs should be limited to a specific timeout (as Delayed Job’s design uses) as that also creates significant retry latency when resumed, and jobs definitely shouldn’t be wrapped with a transaction either.</li>
+  <li><strong>(Human) Exception and Retry Workflows</strong>. Everybody has a different workflow for how they deal with errors, and I believe that a backend needs to track, report (e.g. send to Sentry or Bugsnag) and expose the various reasons an error appears: retried, retry stopped, explicitly discarded, SIGKILLed/interrupted, unhandled error, etc. I still am dialing this in on GoodJob because there is wide variability of how people and teams manage their error workflows. I’m always learning something new. For example, there are very different answers on “when using <code>retry_on SpecialError, attempts: 3</code> should the 4th error be reported to the exception tracker? What about an explicit <code>discard_on</code>? Should a <code>discard_on</code> error be reviewed and reenqueued or not?” If a job is SIGKILLed/interrupted, should it be automatically restarted or held for manual review? Everyone seems to do it differently! I haven’t cracked the code on what is “ideal” or reasonable to say “nope, don’t do it <em>that</em> way.” Active Job’s error handling isn’t clear cut either, so maybe we can make that better and come around to a more opinionated (but still inclusive) design. Maybe!</li>
+  <li><strong>Process Harnesses</strong>. I think it’s interesting that Rails might ship with a 1st party queue backend before it ships with a 1st party webserver: there is a lot of operational overlap. Signal handling, timeouts, daemonization, liveness and healthcheck probes, monitoring and scaling instrumentation. There’s quite a lot of ground to cover, and a lot different systems and tooling: Kubernetes,  systemd, rc.d, Heroku, Judoscale, to name just a few of the various operational targets that I’ve spent considerable time supporting.</li>
+  <li><strong>Repeating Jobs / Clock Process</strong>. It took me <a href="https://github.com/bensheldon/good_job/issues/255">a while to come around to this</a> in GoodJob, but I believe that performing work <em>repetitively on a schedule</em> (“cron-like”) is very much in the same problem-domain as background jobs. There’s lots of different ways to design it that I don’t feel strongly about, for example GoodJob minimizes autoloading by keeping schedules separate from job classes, but I do think it is necessary to plan for scheduled jobs in a well-architected Rails application.</li>
+  <li><strong>Unique Jobs, Throttles, Fuses and other Concurrency Controls</strong>,. Similarly to Repeating Jobs, demand is high for everything I’d bucket under “concurrency controls”, which I’ll say covers both enqueue and dequeue complexity. And these features are tough because they sit in counterbalance to overall performance: do you want to run jobs faster or smarter? And these are the features that I think are legit because there are other features below under Queue Design that I think are bunk. There’s a lot of discernment to do!</li>
+  <li><strong>Queue design and multi-queue execution pools</strong>. I do think queue design is a place where lots of people do it wrong. I believe queues should be organized by maximum total latency SLO (<code>latency_15s</code>, <code>latency_15m</code> , <code>latency_8h</code>) and <em>not</em> by their purpose or dependencies  (<code>mailers</code>, <code>billing</code>, <code>api</code>). <a href="https://www.railsspeed.com/">Nate Berkopec believes similarly.</a> And I think that informs that <strong>execution pools (e.g. thread pools) should be able to work from multiple queues and have independent concurrency configuration (e.g. number of threads)</strong>, both to ease transition from the latter to the former, but also because it allows sharing resources as optimally as possible (having 3 separate pools that pull from <code>"latency_15s"</code>, <code>"latency_15m, latency_15s"</code>, and <code>"latency_8h,*"</code> in GoodJob’s syntax). I personally think concepts like priority or ordered-queues lead to bad queue design, so I wouldn’t sweat that. Any ordering regime more complex than first-in-first-out (FIFO) prioritizes capacity (or lack thereof) over latency. This might sound strange coming from me who champions running workloads in the webbrowser on tiny dynos, but it’s different in my mind: I don’t think it’s possible to meet a latency target through prioritization when there is a fundamental lack of capacity.</li>
+  <li><strong>Labels</strong>. Per the previous point, though I have yet to implement this in GoodJob (soon!), I think that giving developers the option to label their jobs might break their bad habit of using queue names as functional labels, instead of what I believe queues should be appropriately used for: latency and quality-of-service thresholds. I mention it here just in case that informs Solid Queue’s design.</li>
+  <li><strong>Observability</strong>. GoodJob maintains a lot of bookkeeping, keeping job and granular execution data around after execution so it can be inspected. People seem to like that, and it’s necessary to keep them around for calculating accurate latency metrics, though it all is a trade-off against performance. It makes for a fun Web Dashboard too.</li>
+  <li><strong>Performance Envelope.</strong> I dunno, I mention this just because I think people spend an inordinate amount of time comparing queue backend performance and asking “do the jobs go brrrrr?” GoodJob targets the small and medium end of projects (though some big ones use it too) and prioritizes operational simplicity over performance. That works for me (and a lot of others!) but also isn’t really reflective of the scale of companies leading Rails development. There’s a tension here.</li>
+  <li><strong>Making better mistakes tomorrow</strong>. I’m really proud of having a reputation for being helpful and responsive and curious in the GoodJob issue queue and discussions and various support Slacks (like <a href="https://www.rubyonrails.link">Rails Link</a>). I think there is a lot to the queue backend domain that won’t be learned by upfront analysis, and that can’t be easily bucketed into either “the library is doing it wrong” or “the developer is doing it wrong” There’s a lot of variation! (not to mention across JRuby,etc. and various database versions). I’m able to do things with GoodJob that I think is unlikely on a 1st party Rails queue backend (like cutting a new release after every patch and fix), and I’m able to stay oriented to the people and the problem they’re trying to solve over the technological solution itself. I hope all that can be preserved as these things move upstream.</li>
+</ul>
+
+<p>That’s it! I’m probably forgetting stuff, so I’ll reserve the right to keep adding to this list. I’d love to keep talking about this and hope that Solid Queue will be fantastic!</p>
+
+<p><em>Oh, and Solid Queue isn’t released yet, so if this seems compelling, <a href="https://github.com/bensheldon/good_job">use GoodJob</a> in the meantime.</em></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2023/10/writing-object-shape-friendly-code-in-ruby"><p>Writing Object Shape friendly code in Ruby</p>
 </a>
     </h1>
@@ -1070,81 +1111,6 @@
 
   </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2023/05/whatever-you-do-don-t-autoload-rails-lib"><p>Whatever you do, don’t autoload Rails <code>lib/</code></p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2023-05-02T14:09:00Z" itemprop="datePublished">May 2, 2023</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><em><strong>Update:</strong> Rails v7.1 will introduce a new configuration method <a href="https://github.com/rails/rails/pull/48572"><code>config.autoload_lib</code></a> to make it safer and easier to autoload the <code>/lib</code> directory and explicitly exclude directories from autoloading. When released, this advice may no longer be relevant, though I imagine it will still be possible for developers to twist themselves into knots and cause outages with autoloading overrides.</em></p>
-
-<p>One of the most common problems I encounter consulting on Rails projects is that developers have previously added <code>lib/</code> to autoload paths and then twisted themselves into knots creating error-prone, project-specific conventions for subsequently un-autoloading a subset of files also in <code>lib/</code>.</p>
-
-<p><em>Don’t do it. Don’t add your Rails project’s <code>lib/</code> to autoload paths.</em></p>
-
-<h3 id="how-does-this-happen">How does this happen?</h3>
-
-<p>A growing Rails application will accumulate a lot of ruby classes and files that don’t cleanly fit into the default <code>app/</code> directories of <code>controllers</code>, <code>helpers</code>, <code>jobs</code>, or <code>models</code>. Developers should also be creating new directories in <code>app/*</code> to organize like-with-like files (your <code>app/services/</code> or <code>app/merchants/</code>, etc.). That’s ok!</p>
-
-<p>But frequently there are one-off classes that don’t seem to rise to the level of their own directory in <code>app/</code>. From looking through the cruft of projects like <a href="https://github.com/mastodon/mastodon/tree/c62604b5f69c3ad7f5449e0a7dc26606adebb777/app/lib">Mastodon</a> or applications <a href="https://github.com/codeforamerica/vita-min/tree/2f5faf06f586d1ea3915af262aab7683240f4727/app/lib">I’ve</a> <a href="https://github.com/bensheldon/open311status/blob/2cd70e391770f64d734f462624222fb8f8bc14a4/app/lib/service_requests_pager.rb">worked</a> <a href="https://github.com/bensheldon/open311status/tree/2cd70e391770f64d734f462624222fb8f8bc14a4/app/lib">on</a>, these files look like:</p>
-
-<ul>
-  <li>A lone form builder</li>
-  <li>POROs (“Plain old Ruby objects”) like <code>PhoneNumberFormatter</code>, or <code>ZipCodes</code> or <code>Seeder</code>, or <code>Pagination</code>. Objects that serve a single purpose and are largely singletons/identity objects within the application.</li>
-  <li>Boilerplate classes for 3rd party gems, e.g. <code>ApplicationResponder</code> for the <code>responders gem</code>.</li>
-</ul>
-
-<p>That these files accumulate in a project is a fact of life. When choosing where to put them, that’s when things can go wrong.</p>
-
-<p>In a newly built Rails project <code>lib/</code> looks like the natural place for these. But <code>lib/</code> has a downside: <code>lib/</code> is not autoloaded. This can come as a surprise, even to experienced developers, because they have been accustomed to the convenience of autoloaded files in <code>app/</code>. It’s not difficult to add an explicit <code>require</code> statement into <code>application.rb</code> or in an initializer, but that may not be one’s first thought.</p>
-
-<p>That’s when people jump to googling “how to autoload <code>lib/</code>”. Don’t do it! <code>lib/</code> should not be autoloaded.</p>
-
-<p>The problem with autoloading <code>lib/</code> is that there will subsequently be files added to <code>lib/</code> that should <em>not</em> be autoloaded; because they should only be provisionally loaded in a certain environment or context, or deferred, for behavioral, performance, or memory reasons. If your project has already enabled autoloading on <code>lib/</code>, it’s now likely you’ll then add additional configuration to un-autoload the new files. These overrides and counter-overrides accumulate over time and become difficult to understand and unwind, and they cause breakage because someone’s intuition of what will or won’t be loaded in a certain environment or context is wrong.</p>
-
-<p>What should you do instead?</p>
-
-<h3 id="an-omakase-solution">An omakase solution</h3>
-
-<p>DHH <a href="https://github.com/rails/rails/pull/47843#issuecomment-1515367267">writes</a>:</p>
-
-<blockquote>
-  <p><code>lib/</code> is intended to be for non-app specific library code that just happens to live in the app for now (usually pending extraction into open source or whatever). Everything app specific that’s part of the domain model should live in <code>app/models</code> (that directory is for POROs as much as ARs)… Stuff like a generic PhoneNumberFormatter is exactly what <code>lib/</code> is intended for. And if it’s app specific, for some reason, then <code>app/models</code> is fine.</p>
-</blockquote>
-
-<p>The omakase solution is to manually require files from <code>lib/</code> or use <code>app/models</code> generically to mean “Domain Models” rather than solely Active Record models. That’s great! Do that.</p>
-
-<h3 id="a-best-practice">A best practice</h3>
-
-<p>Xavier Noria, Zeitwerk’s creator <a href="https://github.com/rails/rails/issues/37835#issuecomment-757367812">writes</a>:</p>
-
-<blockquote>
-  <p>The best practice to accomplish that nowadays is to move that code to <code>app/lib</code>. Only the Ruby code you want to reload, tasks or other auxiliary files are OK in <code>lib</code>.</p>
-</blockquote>
-
-<p>Sidekiq’s Problems and Troubleshooting <a href="https://github.com/sidekiq/sidekiq/wiki/Problems-and-Troubleshooting#autoloading">explains</a>:</p>
-
-<blockquote>
-  <p>A <code>lib/</code> directory will only cause pain. Move the code to <code>app/lib/</code> and make sure the code inside follows the class/filename conventions.</p>
-</blockquote>
-
-<p>The best practice is to create an <code>app/lib/</code> directory to home these files. <a href="https://github.com/mastodon/mastodon/tree/c62604b5f69c3ad7f5449e0a7dc26606adebb777/app/lib">Mastodon</a> does it, as do <a href="https://github.com/search?type=code&amp;auto_enroll=true&amp;q=path%3A%2F%5Eapp%5C%2Flib%5C%2F.*%5C.rb%2F">many others</a>.</p>
-
-<p>This “best practice” is not without contention, as usually anything in Rails that deviates from omakase does, like RSpec instead of MiniTest or FactoryBot instead of Fixtures. But creating <code>app/lib</code> as a convention for Rails apps works for me and many others.</p>
-
-<h3 id="really-dont-autoload-lib">Really, don’t autoload <code>lib/</code></h3>
-
-<p>Whatever path you take, don’t take the path of autoloading <code>lib/</code>.</p>
-
-  </div>
-</article>
 
 
 <hr>
@@ -1156,6 +1122,6 @@
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>

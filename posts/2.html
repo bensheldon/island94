@@ -118,6 +118,135 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/10/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later"><p>Serializing ViewComponent for Active Job and Turbo Broadcast Later</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-10-06T14:59:00Z" itemprop="datePublished">October 6, 2025</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently started using ViewComponent. I’ve been gradually removing non-omikase libraries from my Rails applications over the past decade, but ViewComponent is alright. I was strongly motivated by Boring Rails’ <a href="https://boringrails.com/articles/self-updating-components/">“Hotwire components that refresh themselves”</a>, cause matching up all the dom ids and stream targets between views/partials and… wherever you put your Stream and Broadcast renderers is a pain.</p>
+
+<p>You might also know me as the GoodJob author. So of course I wanted to have my Hotwire components refresh themselves <em>later</em> and move stream broadcast rendering into a background job. I to simply call <code>MessagesComponent.add_message(message)</code> and broadcasts an update <em>later</em> to the correct stream and target that are all nice and compactly stored inside of the View Component:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MessagesComponent</span> <span class="o">&lt;</span> <span class="no">ApplicationComponent</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">user</span>
+    <span class="no">Turbo</span><span class="o">::</span><span class="no">StreamsChannel</span><span class="p">.</span><span class="nf">broadcast_action_later_to</span><span class="p">(</span>
+      <span class="n">user</span><span class="p">,</span> <span class="ss">:message_list</span><span class="p">,</span>
+      <span class="ss">action: :append</span><span class="p">,</span>
+      <span class="ss">target: </span><span class="no">ActionView</span><span class="o">::</span><span class="no">RecordIdentifier</span><span class="p">.</span><span class="nf">dom_id</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="ss">:messages</span><span class="p">),</span>
+      <span class="ss">renderable: </span><span class="no">MessageComponent</span><span class="p">.</span><span class="nf">serializable</span><span class="p">(</span><span class="ss">message: </span><span class="n">message</span><span class="p">),</span> <span class="c1"># &lt;- that right there</span>
+      <span class="ss">layout: </span><span class="kp">false</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">user</span><span class="p">:,</span> <span class="n">messages</span><span class="p">:)</span>
+    <span class="vi">@user</span> <span class="o">=</span> <span class="n">user</span>
+    <span class="vi">@messages</span> <span class="o">=</span> <span class="n">messages</span>
+  <span class="k">end</span>
+
+  <span class="n">erb_template</span> <span class="o">&lt;&lt;~</span><span class="no">HTML</span><span class="sh">
+    &lt;%= helpers.turbo_stream_from @user, :message_list %&gt;
+    &lt;div id="&lt;%= dom_id(@user, :messages) %&gt;"&gt;
+      &lt;%= render MessageComponent.with_collection @messages %&gt;
+    &lt;/div&gt;
+</span><span class="no">  HTML</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>That’s a simple example</p>
+<h3 id="making-a-renderable-work-later">Making a renderable work <em>later</em></h3>
+
+<p>The ViewComponent team can be really proud of <a href="https://github.com/rails/rails/pull/37919">achieving first-class support Rails</a> for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a <code>renderable</code>.</p>
+
+<p>For ViewComponent to be compatible with Turbo Broadcasting <em>later</em>, those View Components need to be serializable by Active Job. That’s because Turbo Rail’s <code>broadcast_*_later_to</code> takes the arguments it was passed and serializes them into a job so they can be run elsewhere better/faster/stronger.</p>
+
+<p>To serialize a ViewComponent, we need to collect its initialization arguments, so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its  <code>initialize</code> method. To patch into that, there’s a couple of different strategies I thought of taking:</p>
+
+<ul>
+  <li>Make the developer figure out which properties of an existing ViewComponent (ivars, attributes) should be grabbed and how to do that.</li>
+  <li><code>prepend</code> a module method in front of <code>ViewComponent#initialize</code>. Our module would always have to be at the top of the ancestors hierarchy, because subclasses might overload <code>initialize</code> themselves, so we’d have to have an <code>inherited</code> callback that would prepend the module (again) every time that happened</li>
+  <li>Simply initialize the ViewComponent via another, more easily interceptable method, when you want it to be serializable.</li>
+</ul>
+
+<p>I respect that ViewComponent really wanted a ViewComponent to be <em>just like any other Ruby object</em> that you create with <code>new</code> and <code>initialize</code> , but it makes this particular goal, serialization, rather difficult. You can maybe see the ViewComponent maintainers ran into a few problems with initialization themselves: a collection of ViewComponents can optionally have each member initialized with an iteration number, but to do that <a href="https://github.com/ViewComponent/view_component/blob/1ed16e33ad70e45ffc08de3b68760a83d08e912e/lib/view_component/base.rb#L667-L712">ViewComponent has to introspect the <code>initialize</code> parameters</a> to determine if the object implements the iteration parameter to decide whether to send it 🫠 That parameter introspection also means that we can’t simply prepend a redefined generic <code>initialize(*args, **kwargs)</code> because that would break the collection feature. Not great 💛</p>
+
+<p>So, given the compromises i’m willing to make between ergonomics and complexity and performance, given my abilities, and my experience, and what I know at this time…. I decided to simply make a new initializing class method, named <code>serializable</code>. If I want my ViewComponent to be serializable, I initialize it with <code>MyComponent.serializable(foo, bar:)</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+<span class="c1"># config/initializers/view_component.rb</span>
+<span class="c1">#</span>
+<span class="c1"># Instantiate a ViewComponents that is (optionally) serializable by Active Job</span>
+<span class="c1"># but otherwise behaves like a normal ViewComponent. This allows it to be passed</span>
+<span class="c1"># as a renderable into `broadcast_action_later_to`.</span>
+<span class="c1">#</span>
+<span class="c1"># To use, include the `ViewComponent::Serializable` concern:</span>
+<span class="c1">#</span>
+<span class="c1">#  class ApplicationComponent &lt; ViewComponent::Base</span>
+<span class="c1">#    include ViewComponent::Serializable</span>
+<span class="c1">#  end</span>
+<span class="c1">#</span>
+<span class="c1"># And then call `serializable` instead of `new` when instantiating:</span>
+<span class="c1">#</span>
+<span class="c1">#   Turbo::StreamsChannel.broadcast_action_later_to(</span>
+<span class="c1">#     :admin, client, :messages,</span>
+<span class="c1">#     action: :update,</span>
+<span class="c1">#     target: ActionView::RecordIdentifier.dom_id(client, :messages),</span>
+<span class="c1">#     renderable: MessageComponent.serializable(message: message)</span>
+<span class="c1">#   )</span>
+<span class="c1">#</span>
+<span class="k">module</span> <span class="nn">ViewComponent</span>
+  <span class="k">module</span> <span class="nn">Serializable</span>
+    <span class="kp">extend</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Concern</span>
+
+    <span class="n">included</span> <span class="k">do</span>
+      <span class="nb">attr_reader</span> <span class="ss">:serializable_args</span>
+    <span class="k">end</span>
+
+    <span class="n">class_methods</span> <span class="k">do</span>
+      <span class="k">def</span> <span class="nf">serializable</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
+          <span class="n">instance</span><span class="p">.</span><span class="nf">instance_variable_set</span><span class="p">(</span><span class="ss">:@serializable_args</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+      <span class="n">ruby2_keywords</span><span class="p">(</span><span class="ss">:serializable</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">ViewComponentSerializer</span> <span class="o">&lt;</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Serializers</span><span class="o">::</span><span class="no">ObjectSerializer</span>
+  <span class="k">def</span> <span class="nf">serialize?</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+    <span class="n">argument</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">ViewComponent</span><span class="o">::</span><span class="no">Base</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">argument</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:serializable_args</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">view_component</span><span class="p">)</span>
+    <span class="k">super</span><span class="p">(</span>
+      <span class="s2">"component"</span> <span class="o">=&gt;</span> <span class="n">view_component</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="p">,</span>
+      <span class="s2">"arguments"</span> <span class="o">=&gt;</span> <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Arguments</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="n">view_component</span><span class="p">.</span><span class="nf">serializable_args</span><span class="p">),</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+    <span class="nb">hash</span><span class="p">[</span><span class="s2">"component"</span><span class="p">].</span><span class="nf">safe_constantize</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="o">*</span><span class="no">ActiveJob</span><span class="o">::</span><span class="no">Arguments</span><span class="p">.</span><span class="nf">deserialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">[</span><span class="s2">"arguments"</span><span class="p">]))</span>
+  <span class="k">end</span>
+
+  <span class="no">ActiveJob</span><span class="o">::</span><span class="no">Serializers</span><span class="p">.</span><span class="nf">add_serializers</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Real talk:</strong> I haven’t packaged this into a gem. I didn’t want to maintain it for everyone, and there’s some View Component features (like collections) it doesn’t handle yet because I haven’t used them (yet). I think this sort of thing is first class behavior for the current state of Rails and Active Job and Turbo, and I’d rather the library maintainers figure out what the best balance of ergonomics, complexity, and performance is for them. I’ve been gently poking them about it in their Slack; they’re great and I believe we can arrive at something even better than this patch I’m running with myself for now 💖</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/10/notes-from-building-a-who-is-doing-what-right-now-on-our-website-presence-feature-with-action-cable"><p>Notes from building a “who is doing what right now on our website?” presence feature with Action Cable</p>
 </a>
     </h1>
@@ -946,47 +1075,6 @@
 
   </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/06/recently-june-8-2025"><p>Recently, June 8, 2025</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-06-09T00:58:00Z" itemprop="datePublished">June 9, 2025</time>
-
-        • Tagged <a href="/posts/tags/recently">recently</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Big business news for my startup: <a href="https://www.prnewswire.com/news-releases/frontdoor-benefits-receives-2-1-million-investment-to-improve-access-to-snap-and-public-assistance-programs-302472695.html">“Frontdoor Benefits Receives $2.1 Million Investment to Improve Access to SNAP and Public Assistance Programs”</a>. My cofounder Charlotte also <a href="https://web.archive.org/web/20250613140457/https://frontdoorbenefits.substack.com/p/the-connecticut-project-invests-21m">added some details on our blog</a> too. Big milestone, and onto the next milestone and so forth.</p>
-
-<hr />
-
-<p>We went to a Golden State Valkyries basketball game last week. It was a lot of fun, and a <em>nice</em> seat was the cost of a substantially-less-nice seat to see the Golden State Warriors. We bought sweatshirts, so that means we’re going back.</p>
-
-<p>On sports, since my last <em>Recently</em> we also went to two Giants games and a Warriors game (whomp whomp).</p>
-
-<hr />
-
-<p>Of random technical trivia, I discovered a cause of flaky tests: Turbo-Rails debounces broadcast refreshes and it’s possible for them to slip out of test transactions and cause chaos. I have <a href="https://github.com/hotwired/turbo-rails/issues/731">reported it</a>.</p>
-
-<p>Also, my prior-colleague Issy wrote a nice thing <a href="https://ruby.social/@issyl0/114489859415578145">and mentioned me</a>.</p>
-
-<hr />
-
-<p>I finished reading Martha Well’s reissued <em>The Emilie Adventures</em>, which for all her books held my attention the least. I also read Brittany Newell’s <em>Soft Core</em> which was very good. I’m now reading <em>The Future of Another Timeline</em>.</p>
-
-<p>For nonfiction, I (re-) read the updated edition of <em>The Strategy is Delivery</em>. And now I’m greatly enjoying Rouse’s <em>Game Design: Theory and Practice (2nd Edition)</em> which I found because it was referenced in the <a href="https://www.filfre.net/2025/05/the-end-of-sierra-as-we-knew-it-part-4-chainsaw-monday/">Digital Antiquarian’s history of the Sierra studio</a>.</p>
-
-<hr />
-
-<p>I beat the game <a href="https://en.wikipedia.org/wiki/Yoku%27s_Island_Express">Yoku’s Island Express</a>, which was a delightful experience on my desired theme of nice metroidvania (recommendations please). I also just started <a href="https://play.date/games/seasons/two/">Season 2 of Playdate</a>, which was a reason to find and charge it. On the theme of small handhelds, I ordered an <a href="https://www.adafruit.com/product/6323">Adafruit USB C Resistor Fixer</a> (say that 5 times fast) for the RGB30 that was collecting dust until I discovered some Pico 8 games I’d like to play.</p>
-
-
-  </div>
-</article>
 
 
 <hr>
@@ -998,6 +1086,6 @@
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>

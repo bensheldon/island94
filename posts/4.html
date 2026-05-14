@@ -118,6 +118,33 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/03/addressing-it-directly"><p>Addressing it directly</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-03-16T21:46:00Z" itemprop="datePublished">March 16, 2025</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Lost to time in my Code for America email’s sent folder was a list of reasons why deferring to software engineers can be problematic. It included this theme, from Will Larson’s <a href="https://lethain.com/building-prestige/$0">“Building personal and organizational prestige”</a>:</p>
+
+<blockquote>
+
+  <p>In my experience, engineers confronted with a new problem often leap to creating a system to solve that problem rather than addressing it directly. I’ve found this particularly true when engineers approach a problem domain they don’t yet understand well, including building prestige.</p>
+
+  <p>For example, when an organization decides to invest into its engineering brand, the initial plan will often focus on project execution. It’ll include a goal for publishing frequency, ensuring content is representationally accurate across different engineering sub-domains, and how to incentivize participants to contribute. If you follow the project plan carefully, you will technically have built an engineering brand, but my experience is that it’ll be both more work and less effective than a less systematic approach.</p>
+
+</blockquote>
+
+<p>Sometimes you just do stuff.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/03/flattening-the-curve-for-the-safety-net"><p>Flattening the curve for the safety net, five years later</p>
 </a>
     </h1>
@@ -1026,69 +1053,6 @@ Overall: Is it positive, neutral, or negative?</p>
 
   </div>
 </article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/09/secret-to-rails-database-connection-pool-size"><p>The secret to perfectly calculate Rails database connection pool size</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-09-19T14:33:00Z" itemprop="datePublished">September 19, 2024</time>
-
-        • Tagged <a href="/posts/tags/rails">Rails</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Ruby on Rails <a href="https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionPool.html">maintains a pool of database connections</a> for Active Record. When a database connection is needed for querying the database, usually one per thread (though <a href="https://github.com/rails/rails/pull/51349">that’s changing to per-transaction</a>), a connection is checked out of the pool, used, and then returned to the pool. The size of the pool is configured in the <code>config/database.yml</code>. The <a href="https://github.com/rails/rails/blob/dfd1e951aa1aeef06c39fffb2994db8a8fa1914f/railties/lib/rails/generators/rails/app/templates/config/databases/postgresql.yml.tt#L20">default</a>, as of Rails 7.2, is <code>pool: &lt;%%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %&gt;</code>.</p>
-
-<p>The database connection pool size is frequently misconfigured. <em>A lot.</em> How to calculate the database connection pool size is one of the most common questions I get on GoodJob (Hi! I’m the author of GoodJob 👋). I have spent an embarrassingly large amount of time trying to come up with a precise pool size calculator and give advice to take into account Puma threads, and GoodJob async jobs, and <code>load_async</code> queries and everything that might be asking for a database connection at the same time. It’s nearly impossible to get the number exactly right.</p>
-
-<p>If the connection pool is misconfigured to be <em>too small</em> , it can slow down web requests and jobs while waiting for a connection to become available, or raise <code>ActiveRecord::ConnectionTimeoutError</code> if there isn’t a connection available within a reasonable amount of time (5 seconds by default). That’s bad! We never want that to happen. Here’s what you should do:</p>
-
-<p><strong>✨ The secret to perfectly calculate Rails database connection pool size:</strong> <em>Don’t! Set the pool size to a very large, constant number, and never worry about it again. E.g. <code>pool: 100</code>, and remove the reference to <code>RAILS_MAX_THREADS</code> entirely:</em></p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/database.yml</span>
-<span class="na">default</span><span class="pi">:</span> <span class="nl">&amp;default</span>
-  <span class="c1"># ...</span>
-  <span class="na">pool</span><span class="pi">:</span> <span class="m">100</span> <span class="c1"># &lt;-- that's it 👍</span>
-  <span class="c1"># ...</span>
-</code></pre></div></div>
-
-<p>WAIT, WHAT?! Why? I described that bad things happen if the pool size is <em>too small</em>. Here’s the trick: it’s impossible to set the connection pool size to be <em>too big</em>. You can’t do it! That’s why it’s always better to set a number that’s too large. And the best number is one that can <em>never</em> be too small regardless of how you configure (and inevitably reconfigure) your application. Here’s why:</p>
-
-<ul>
-  <li>The <code>pool:</code> configuration value, despite its name, is the <em>max</em> size of the database connection pool.</li>
-  <li>Database connections are lazily created and added to the pool <em>as they’re needed</em>. Your Rails application will never create more database connections than it needs. And the database connection pool reaper removes idle and unused connections from the pool. The pool will never be larger than it needs to be.</li>
-  <li>It’s possible you may run out of available database connections <em>at the database</em>. For example, Heroku’s new <code>Essentials-0</code> Postgres database only has 20 database connections available globally. But any problems you run into won’t be because the database connection pool is too big, it’s because your application is <em>using too many concurrent database connections</em>.</li>
-  <li>If you find yourself in a situation where your application is using too many concurrent database connections, you should be configuring and re-sizing <em>the things using database connections concurrently</em>, not the database connection pool itself:
-    <ul>
-      <li>Configure the number of Puma threads</li>
-      <li>Configure the number of GoodJob async threads (Solid Queue now has similar functionality too!)</li>
-      <li>Configure the <code>load_async</code> thread pool</li>
-      <li>Configure anything else using a background thread making database queries</li>
-      <li>Configure the number of parallel processes/Puma workers/dynos/containers you’re using, which the database connection pool does not affect anyways.</li>
-    </ul>
-  </li>
-  <li>If you still don’t have enough database connections <em>at the database</em>, then you should increase the number of database connections <em>at the database</em>. Which means scaling your database, or using a connection multiplexer like PgBouncer. <a href="https://judoscale.com/tools/heroku-postgresql-connection-calculator">Judoscale has a nice calculator</a> to estimate the number of connections you’ll need <em>at the database</em> (which again, is not the pool size).</li>
-  <li>If, in an incredibly rare case, your application concurrency is very, very spiky and you worry that idle database connections are sitting in the connection pool for too long before they are automatically removed by the connection pool reaper, then configure that:
-    <ul>
-      <li><code>idle_timeout</code>: number of seconds that a connection will be kept unused in the pool before it is automatically disconnected (default: 5 minutes). Set this to zero to keep connections forever.</li>
-      <li><code>reaping_frequency</code>: number of seconds between invocations of the database connection pool reaper to disconnect and remove unused connections from the pool (default: 1 minute)</li>
-    </ul>
-  </li>
-</ul>
-
-<p>I know this is wild advice, but it’s based on facts and experience. Even Rails maintainers have intentions <a href="https://github.com/rails/rails/pull/51073#issuecomment-1942762197">to remove this configuration option entirely</a>:</p>
-
-<blockquote>
-  <p>…we want the pool not to have a limit by default anymore.</p>
-</blockquote>
-
-<p>So please, stop sweating the precise, exact, perfect database connection pool value. Set it to something really big, that can never be too small, and never worry about it again.</p>
-
-  </div>
-</article>
 
 
 <hr>
@@ -1100,6 +1064,6 @@ Overall: Is it positive, neutral, or negative?</p>
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>
