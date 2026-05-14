@@ -620,7 +620,7 @@
   <span class="n">port</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"PORT"</span><span class="p">,</span> <span class="no">GitWorktree</span><span class="p">.</span><span class="nf">integer</span><span class="p">(</span><span class="mi">3000</span><span class="o">..</span><span class="mi">3999</span><span class="p">))</span>
   <span class="n">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">session_prefix</span> <span class="o">=</span> <span class="s2">"frontdoor_</span><span class="si">#{</span><span class="n">port</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
-<span class="n">config</span><span class="p">.</span><span class="nf">session_store</span> <span class="ss">:cookie_store</span><span class="p">,</span> <span class="ss">key: </span><span class="s2">"_</span><span class="si">#{</span><span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">session_prefix</span><span class="si">}</span><span class="s2">_session"</span>
+<span class="n">config</span><span class="p">.</span><span class="nf">session_store</span> <span class="ss">:cookie_store</span><span class="p">,</span> <span class="ss">key: </span><span class="s2">"_</span><span class="si">#{</span><span class="n">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">session_prefix</span><span class="si">}</span><span class="s2">_session"</span>
 
 <span class="c1"># spec/support/capybara.rb</span>
 <span class="no">Capybara</span><span class="p">.</span><span class="nf">server_port</span> <span class="o">=</span> <span class="no">GitWorktree</span><span class="p">.</span><span class="nf">integer</span><span class="p">(</span><span class="mi">4000</span><span class="o">..</span><span class="mi">4990</span><span class="p">,</span> <span class="ss">stride: </span><span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"PARALLEL_TEST_GROUPS"</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nf">to_i</span><span class="p">)</span> <span class="o">+</span> <span class="no">ENV</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"TEST_ENV_NUMBER"</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nf">to_i</span>
@@ -1517,6 +1517,6 @@ party gems.</li>
 
   </div>
 
-  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-D47u6wK7.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-Dh5MP7ax.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BSioX4-5.js')</script>
 </body>
 </html>
