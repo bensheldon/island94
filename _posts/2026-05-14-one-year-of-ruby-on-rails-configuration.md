@@ -508,7 +508,7 @@ if Rails.env.development?
   port = ENV.fetch("PORT", GitWorktree.integer(3000..3999))
   config.x.session_prefix = "frontdoor_#{port}"
 end
-config.session_store :cookie_store, key: "_#{Rails.application.config.x.session_prefix}_session"
+config.session_store :cookie_store, key: "_#{config.x.session_prefix}_session"
 
 # spec/support/capybara.rb
 Capybara.server_port = GitWorktree.integer(4000..4990, stride: ENV.fetch("PARALLEL_TEST_GROUPS", 1).to_i) + ENV.fetch("TEST_ENV_NUMBER", 0).to_i
