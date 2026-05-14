@@ -11,9 +11,7 @@
         <title>One year of Ruby on Rails configuration</title>
         <description>
           <![CDATA[
-          <h1 id="one-year-of-ruby-on-rails-config">One year of Ruby on Rails config</h1>
-
-<p>I’ve been working professionaly with Ruby on Rails for nearly 15 years (I’m also the author of GoodJob and Spectator Sport). Last year I left GitHub and co-founded a technology startup, <a href="https://www.openfrontdoor.com/">Frontdoor Benefits</a>, that helps people enroll and manage their US government welfare benefits like SNAP/EBT.</p>
+          <p>I’ve been working professionaly with Ruby on Rails for nearly 15 years (I’m also the author of GoodJob and Spectator Sport). Last year I left GitHub and co-founded a technology startup, <a href="https://www.openfrontdoor.com/">Frontdoor Benefits</a>, that helps people enroll and manage their US government welfare benefits like SNAP/EBT.</p>
 
 <p>Therefore, I’ve been working in a fresh Ruby on Rails app full-time now for 1 year. One of the Rails pillars is <a href="https://rubyonrails.org/doctrine">“convention over configuration”</a>, so I thought it would be fun to share what has so far accumulated in my app’s <code>/config</code> directory: monkeypatches, extensions, and appwide behaviors.</p>
 
