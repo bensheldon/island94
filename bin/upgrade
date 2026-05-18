@@ -3,7 +3,6 @@
 puts "\n== Updating NPM =="
 system "npm upgrade", exception: true
 
-
 if system("which mise")
   puts "\n== Updating Mise and ruby-build =="
   system "mise cache clean && mise ls-remote ruby", exception: true

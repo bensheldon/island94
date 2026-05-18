@@ -4,7 +4,7 @@ require "open3"
 class Pagefind
   OUTPUT_PATH      = Rails.public_path.join('pagefind').freeze
   HASH_FILE        = Rails.root.join("tmp/pagefind.hash").freeze
-  WATCHED_PATTERNS = [ "_posts/*.md" ].freeze
+  WATCHED_PATTERNS = ["_posts/*.md"].freeze
 
   def self.build
     new.build
@@ -58,7 +58,7 @@ class Pagefind
   private
 
   def mtime_cache_key
-    WATCHED_PATTERNS.flat_map { |pattern| Dir[Rails.root.join(pattern)] }.filter_map { |f| File.mtime(f).to_i }.sort.join(",")
+    WATCHED_PATTERNS.flat_map { |pattern| Rails.root.glob(pattern) }.filter_map { |f| File.mtime(f).to_i }.sort.join(",")
   end
 
   def search_json

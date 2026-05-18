@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def show
     # remove any trailing extension
-    slug_param = params[:slug].sub(/\.[^.]*\z/, "")
+    slug_param = params.expect(:slug).sub(/\.[^.]*\z/, "")
 
     @post = Post.all.find { |post| post.slug == slug_param }
     raise ActionController::RoutingError, "Not Found" unless @post
