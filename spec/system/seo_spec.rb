@@ -5,7 +5,7 @@ RSpec.describe 'SEO' do
   context 'when on frontpage' do
     it 'does not include robots meta tag' do
       visit '/'
-      expect(page).to have_content("Island94")
+      expect(page).to have_text("Island94")
       expect(page).to have_no_css 'meta[name="robots"]', visible: :all
     end
   end
