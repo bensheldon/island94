@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "../../vite/legacy-polyfills-legacy": {
-    "file": "assets/polyfills-legacy-D47u6wK7.js",
+    "file": "assets/polyfills-legacy-CmLQ2Gfa.js",
     "name": "polyfills",
     "src": "../../vite/legacy-polyfills-legacy",
     "isEntry": true
@@ -27,7 +27,7 @@
     "isDynamicEntry": true
   },
   "entrypoints/application.js": {
-    "file": "assets/application-Txysmxdf.js",
+    "file": "assets/application-DZtimMEc.js",
     "name": "entrypoints/application.js",
     "src": "entrypoints/application.js",
     "isEntry": true,
