@@ -6,6 +6,12 @@ on:
     - cron: '0 7 * * *'
   repository_dispatch:
     types: [trigger-test-and-publish]
+  workflow_call:
+    inputs:
+      ref:
+        description: 'Git ref to checkout'
+        type: string
+        required: false
 concurrency:
   group: ${{ github.workflow}}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
@@ -20,6 +26,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.ref || '' }}
       - name: "Ruby: Install Ruby"
         uses: ruby/setup-ruby@v1
         with:

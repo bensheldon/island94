@@ -24,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      sha: ${{ steps.get_sha.outputs.sha }}
     steps:
       - name: Bookmark Details
         env:
@@ -56,8 +58,15 @@ jobs:
         run: |
           bundle exec scripts/bookmark.rb --commit="${GITHUB_REPOSITORY}#${GITHUB_REF##*/}"
 
-      - name: Trigger test and publish workflow
-        uses: peter-evans/repository-dispatch@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: trigger-test-and-publish
+      - name: Get commit SHA
+        id: get_sha
+        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+  test_and_publish:
+    name: Test and Publish
+    needs: create_bookmark
+    uses: ./.github/workflows/test_and_publish.yml
+    with:
+      ref: ${{ needs.create_bookmark.outputs.sha }}
+    permissions:
+      contents: write
