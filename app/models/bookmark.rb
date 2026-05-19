@@ -38,6 +38,12 @@ class Bookmark < ApplicationModel
     frontmatter.fetch("link", "")
   end
 
+  def link_host
+    URI.parse(link).host
+  rescue URI::InvalidURIError
+    nil
+  end
+
   def date
     if frontmatter["date"]
       Time.zone.parse(frontmatter["date"])
