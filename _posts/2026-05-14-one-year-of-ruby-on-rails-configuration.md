@@ -401,7 +401,7 @@ Rails.application.configure do
 end
 ```
 
-Gzipped Sprocket include the build time and thus are uncacbable across builds. I'm waiting for [someone to look at my PR](https://github.com/rails/sprockets/pull/821).🤷
+Gzipped Sprocket include the build time and thus are uncacheable across builds. I'm waiting for [someone to look at my PR](https://github.com/rails/sprockets/pull/821).🤷
 
 ### Turbo Stream jobs
 
