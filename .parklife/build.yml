@@ -4,22 +4,22 @@ config:
 paths:
   "/":
     build_path: index.html
-    etag: W/"4d0e774e13e7aeda8111a72cceb21351"
+    etag: W/"2d1beabda1e9651b1d5e9b73201be140"
   "/redirects":
     build_path: redirects.html
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"4f4f27911c810d5c4cd607476c1600a8"
+    etag: W/"338c2384b94e5e263813e3315127d167"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
   "/search.json":
     build_path: search.json
-    etag: W/"a4c36424b48c586c8ebcf5c1d48167a0"
+    etag: W/"025ceea9cc0a63503c68e682c7396de6"
   "/feed.xml":
     build_path: feed.xml
-    etag: W/"e262ad9201016095bb15168056b400e8"
+    etag: W/"a3276483d8b9dc4746aec37ab1656dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
     etag: W/"a02aa67d948b5b7299d717be9bbaf10c"
@@ -42,7 +42,7 @@ paths:
     etag: W/"12c61fde1fcab2b3b89218e87a0f47f0"
   "/2026/05/one-year-of-ruby-on-rails-configuration":
     build_path: 2026/05/one-year-of-ruby-on-rails-configuration.html
-    etag: W/"1c255456d5741818522c733b53ff64d3"
+    etag: W/"300cb3b4eeb100bf365f1c0f38436f91"
   "/posts/tags/ruby":
     build_path: posts/tags/ruby.html
     etag: W/"5d089bc1f2fdab45ac1fa14efb90b2b8"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/05/www-nybooks-com-articles-2026-06-11-on-the-road-i-deliver-parcels-in-beijing-hu-anyan":
+    build_path: bookmarks/2026/05/www-nybooks-com-articles-2026-06-11-on-the-road-i-deliver-parcels-in-beijing-hu-anyan.html
+    etag: W/"8033cf44b3f44229152b7cc8fff80972"
   "/bookmarks/2026/05/www-undermanager-com-three-things-about-data":
     build_path: bookmarks/2026/05/www-undermanager-com-three-things-about-data.html
     etag: W/"9e2a6494616b6f1585a4a714ccf579f3"
@@ -21802,7 +21805,7 @@ paths:
     etag: W/"f86f77b5226ea1f942ac8828fa56c904"
   "/posts/1":
     build_path: posts/1.html
-    etag: W/"4d0e774e13e7aeda8111a72cceb21351"
+    etag: W/"2d1beabda1e9651b1d5e9b73201be140"
   "/posts/3":
     build_path: posts/3.html
     etag: W/"09712ce484f1d9739cff3c3e05c57b89"
