@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"43ec1fa573a1a926b78a6a1ff95d53d5"
+    etag: W/"4f4f27911c810d5c4cd607476c1600a8"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -22,7 +22,7 @@ paths:
     etag: W/"e262ad9201016095bb15168056b400e8"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"a877a87d8e9129b0fa22dfdd1f33c426"
+    etag: W/"a02aa67d948b5b7299d717be9bbaf10c"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/05/www-undermanager-com-three-things-about-data":
+    build_path: bookmarks/2026/05/www-undermanager-com-three-things-about-data.html
+    etag: W/"9e2a6494616b6f1585a4a714ccf579f3"
   "/bookmarks/2026/05/www-astralcodexten-com-p-nostalgebraists-hydrogen-jukeboxes":
     build_path: bookmarks/2026/05/www-astralcodexten-com-p-nostalgebraists-hydrogen-jukeboxes.html
     etag: W/"0a3683b74fd6051785dceaf947906893"
