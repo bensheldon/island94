@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"338c2384b94e5e263813e3315127d167"
+    etag: W/"083853b9b64f9967a16b59ccd2dcc461"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  ? "/bookmarks/2026/05/statmodeling-stat-columbia-edu-2026-05-23-the-humans-are-imperfect-reporters-too-defense-for-ascribing-little-thoughts-to-machines"
+  : build_path: bookmarks/2026/05/statmodeling-stat-columbia-edu-2026-05-23-the-humans-are-imperfect-reporters-too-defense-for-ascribing-little-thoughts-to-machines.html
+    etag: W/"8175cc475950c1806425f16c182cc9f3"
   "/bookmarks/2026/05/www-nybooks-com-articles-2026-06-11-on-the-road-i-deliver-parcels-in-beijing-hu-anyan":
     build_path: bookmarks/2026/05/www-nybooks-com-articles-2026-06-11-on-the-road-i-deliver-parcels-in-beijing-hu-anyan.html
     etag: W/"8033cf44b3f44229152b7cc8fff80972"
