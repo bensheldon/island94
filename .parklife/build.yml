@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"083853b9b64f9967a16b59ccd2dcc461"
+    etag: W/"7d1844f95edd844d812b3404c8584b6e"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -22,7 +22,7 @@ paths:
     etag: W/"a3276483d8b9dc4746aec37ab1656dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"685df9e7d489c641b7f922188bb3a0cc"
+    etag: W/"8d0d2b4fc689d6b58c401b6c6c345641"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  ? "/bookmarks/2026/05/open-substack-com-pub-tuhinchakrabarty-p-ai-slop-grantagate-and-bad-writing-selection-f01dcdcd-9ee0-4510-8a53-a24631cd9e59-r-18low-utm-medium-ios"
+  : build_path: bookmarks/2026/05/open-substack-com-pub-tuhinchakrabarty-p-ai-slop-grantagate-and-bad-writing-selection-f01dcdcd-9ee0-4510-8a53-a24631cd9e59-r-18low-utm-medium-ios.html
+    etag: W/"95145084205fb05e220f456239c795df"
   ? "/bookmarks/2026/05/statmodeling-stat-columbia-edu-2026-05-23-the-humans-are-imperfect-reporters-too-defense-for-ascribing-little-thoughts-to-machines"
   : build_path: bookmarks/2026/05/statmodeling-stat-columbia-edu-2026-05-23-the-humans-are-imperfect-reporters-too-defense-for-ascribing-little-thoughts-to-machines.html
     etag: W/"8175cc475950c1806425f16c182cc9f3"
