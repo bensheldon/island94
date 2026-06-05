@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"029746a47b08b046d5aeea73f17009e9"
+    etag: W/"844d17afd90e1590d38f9f9e9020b491"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/06/rachelbythebay-com-w-2026-06-03-maint":
+    build_path: bookmarks/2026/06/rachelbythebay-com-w-2026-06-03-maint.html
+    etag: W/"09f995f457912df128fb8c9e4f937319"
   ? "/bookmarks/2026/06/www-theatlantic-com-philosophy-2026-06-no-artificial-intelligence-is-not-conscious-687378-gift-r2zbwgnbdp-xhqoa7q8zrp-ev6jgahiamqbxqqlmjqi"
   : build_path: bookmarks/2026/06/www-theatlantic-com-philosophy-2026-06-no-artificial-intelligence-is-not-conscious-687378-gift-r2zbwgnbdp-xhqoa7q8zrp-ev6jgahiamqbxqqlmjqi.html
     etag: W/"cf976ea0b1d0b1581fc9fbb8fcec1556"
