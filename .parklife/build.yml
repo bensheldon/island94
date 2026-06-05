@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"7d1844f95edd844d812b3404c8584b6e"
+    etag: W/"029746a47b08b046d5aeea73f17009e9"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  ? "/bookmarks/2026/06/www-theatlantic-com-philosophy-2026-06-no-artificial-intelligence-is-not-conscious-687378-gift-r2zbwgnbdp-xhqoa7q8zrp-ev6jgahiamqbxqqlmjqi"
+  : build_path: bookmarks/2026/06/www-theatlantic-com-philosophy-2026-06-no-artificial-intelligence-is-not-conscious-687378-gift-r2zbwgnbdp-xhqoa7q8zrp-ev6jgahiamqbxqqlmjqi.html
+    etag: W/"cf976ea0b1d0b1581fc9fbb8fcec1556"
   ? "/bookmarks/2026/05/open-substack-com-pub-tuhinchakrabarty-p-ai-slop-grantagate-and-bad-writing-selection-f01dcdcd-9ee0-4510-8a53-a24631cd9e59-r-18low-utm-medium-ios"
   : build_path: bookmarks/2026/05/open-substack-com-pub-tuhinchakrabarty-p-ai-slop-grantagate-and-bad-writing-selection-f01dcdcd-9ee0-4510-8a53-a24631cd9e59-r-18low-utm-medium-ios.html
     etag: W/"95145084205fb05e220f456239c795df"
