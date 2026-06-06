@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"844d17afd90e1590d38f9f9e9020b491"
+    etag: W/"1f775b001cd5f3f5d49bbc716d1fe811"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -22,7 +22,7 @@ paths:
     etag: W/"a3276483d8b9dc4746aec37ab1656dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"cee67897032fc7627ea4c548805a4457"
+    etag: W/"a4f529e85f4fee3166348442b9cf16a0"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/06/kottke-org-26-06-the-three-ways-to-make-a-living":
+    build_path: bookmarks/2026/06/kottke-org-26-06-the-three-ways-to-make-a-living.html
+    etag: W/"7e2b4b4c1044384ad9d728528c76fc7c"
   "/bookmarks/2026/06/rachelbythebay-com-w-2026-06-03-maint":
     build_path: bookmarks/2026/06/rachelbythebay-com-w-2026-06-03-maint.html
     etag: W/"09f995f457912df128fb8c9e4f937319"
