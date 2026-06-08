@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"1f775b001cd5f3f5d49bbc716d1fe811"
+    etag: W/"61c70b491b57e74b14c055d30f61ca0f"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -22,7 +22,7 @@ paths:
     etag: W/"a3276483d8b9dc4746aec37ab1656dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"8ec4a7820f48d9bf0e28decfe7c578c3"
+    etag: W/"93383e898ae3734530e3c878574f1062"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/06/www-nybooks-com-online-2026-06-06-the-innocents-abroad-suzy-hansen":
+    build_path: bookmarks/2026/06/www-nybooks-com-online-2026-06-06-the-innocents-abroad-suzy-hansen.html
+    etag: W/"2b3b3b19975f518b5ec848e0c7bf40b8"
   "/bookmarks/2026/06/kottke-org-26-06-the-three-ways-to-make-a-living":
     build_path: bookmarks/2026/06/kottke-org-26-06-the-three-ways-to-make-a-living.html
     etag: W/"7e2b4b4c1044384ad9d728528c76fc7c"
