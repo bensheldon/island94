@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"6595f86713032d6ed75c4920bebdeba9"
+    etag: W/"ae0ceb2d52d0dc98c9cd3d32afe5cfa6"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/06/arstechnica-com-space-2026-06-after-nearly-breaking-nasas-deep-space-network-worked-well-on-artemis-ii":
+    build_path: bookmarks/2026/06/arstechnica-com-space-2026-06-after-nearly-breaking-nasas-deep-space-network-worked-well-on-artemis-ii.html
+    etag: W/"d147557b6cca0b933e520de463bc2044"
   "/bookmarks/2026/06/newsletters-feedbinusercontent-com-d1d-d1db18fb0feaed04186150a5756934a3c30271c3-html":
     build_path: bookmarks/2026/06/newsletters-feedbinusercontent-com-d1d-d1db18fb0feaed04186150a5756934a3c30271c3-html.html
     etag: W/"eaa5888a4bfe3e9ad7e701b184b738ef"
