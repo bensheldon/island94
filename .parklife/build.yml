@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"05ee8f7cfa940e8b8a799be536f5c382"
+    etag: W/"6595f86713032d6ed75c4920bebdeba9"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -22,7 +22,7 @@ paths:
     etag: W/"a3276483d8b9dc4746aec37ab1656dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"703ceb0e60ac787b46106c9fcee4a0d6"
+    etag: W/"af1f30fa0cd3475292b56cd8d8e3c52d"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/06/newsletters-feedbinusercontent-com-d1d-d1db18fb0feaed04186150a5756934a3c30271c3-html":
+    build_path: bookmarks/2026/06/newsletters-feedbinusercontent-com-d1d-d1db18fb0feaed04186150a5756934a3c30271c3-html.html
+    etag: W/"eaa5888a4bfe3e9ad7e701b184b738ef"
   "/bookmarks/2026/06/baweaver-com-writing-2026-05-31-beyond-enumerable-for-want-of-better-windows":
     build_path: bookmarks/2026/06/baweaver-com-writing-2026-05-31-beyond-enumerable-for-want-of-better-windows.html
     etag: W/"0c556ef63f8b464361eac816e2b1a7aa"
