@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"70275a1c589722757959f083de32a177"
+    etag: W/"3746590fffc8ffe89f80285028851bf0"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/newsletter-techworld-with-milan-com-p-20-lessons-from-20-years-in-tech":
+    build_path: bookmarks/2026/09/newsletter-techworld-with-milan-com-p-20-lessons-from-20-years-in-tech.html
+    etag: W/"622826d9f5245f99723b4f8a10bc7e86"
   "/bookmarks/2026/09/anthonyhobday-com-sideprojects-interactionconcepts":
     build_path: bookmarks/2026/09/anthonyhobday-com-sideprojects-interactionconcepts.html
     etag: W/"b4afee0f1a7781f33b7ef81ca1e5f256"
