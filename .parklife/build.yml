@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"3c9968b54065345ef1c32452873aae79"
+    etag: W/"21ec48943a6e098b962a7c2208fa51ad"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/www-reddit-com-r-mathematics-comments-1wdnxix-comment-p9c2z1z":
+    build_path: bookmarks/2026/09/www-reddit-com-r-mathematics-comments-1wdnxix-comment-p9c2z1z.html
+    etag: W/"f6f97e798cbd81222995c75b22a65e5d"
   "/bookmarks/2026/09/thingsthatcaughtmyattention-com-e-s21e25-it-s-all-vibes-until-it-s-not":
     build_path: bookmarks/2026/09/thingsthatcaughtmyattention-com-e-s21e25-it-s-all-vibes-until-it-s-not.html
     etag: W/"88fc502d0312495bc4e9c19ea094ebde"
