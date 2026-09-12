@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"21ec48943a6e098b962a7c2208fa51ad"
+    etag: W/"2cdaf4796505053aabdf1de1ab6d74b6"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/pluralistic-net-2026-09-12-god-in-the-box-llms-are-fake":
+    build_path: bookmarks/2026/09/pluralistic-net-2026-09-12-god-in-the-box-llms-are-fake.html
+    etag: W/"4a93b816b0b93d6703be49255799a5a2"
   "/bookmarks/2026/09/www-reddit-com-r-mathematics-comments-1wdnxix-comment-p9c2z1z":
     build_path: bookmarks/2026/09/www-reddit-com-r-mathematics-comments-1wdnxix-comment-p9c2z1z.html
     etag: W/"f6f97e798cbd81222995c75b22a65e5d"
