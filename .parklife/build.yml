@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"d6277048d3e64c84ec5d56825d3a870a"
+    etag: W/"595355ac102000b4835f552d2b98e019"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"acebb513771f9b880c1f1c4f83aa730c"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"dced30b0e9778318bc6e8d319337be4a"
+    etag: W/"1b3116b09a891bf744c1402dbca71d47"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/fabiensanglard-net-agent-md-index-html":
+    build_path: bookmarks/2026/09/fabiensanglard-net-agent-md-index-html.html
+    etag: W/"3cdff9ecf5318e40296f3450890d8c23"
   "/bookmarks/2026/09/wangcong-org-2026-06-30-why-i-stopped-arguing-with-people-html":
     build_path: bookmarks/2026/09/wangcong-org-2026-06-30-why-i-stopped-arguing-with-people-html.html
     etag: W/"cc188c71ada713667d3e8cc527fdb9a3"
