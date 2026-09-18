@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"d76def4870d45c4a698bb10abdd16ed8"
+    etag: W/"3ad93af2c86a22000c5e4e458bbaff01"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/buildcognitiveresonance-substack-com-p-special-report-my-so-called-alpha":
+    build_path: bookmarks/2026/09/buildcognitiveresonance-substack-com-p-special-report-my-so-called-alpha.html
+    etag: W/"801a65023a18f499ba80a66d559b6228"
   "/bookmarks/2026/09/cutlefish-substack-com-p-tbm-439-day-at-the-gig":
     build_path: bookmarks/2026/09/cutlefish-substack-com-p-tbm-439-day-at-the-gig.html
     etag: W/"ff2db6a9fc5ca4ce407a129f9711d668"
