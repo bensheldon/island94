@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"3ad93af2c86a22000c5e4e458bbaff01"
+    etag: W/"5689ff1b2d995e20b985f37779c134b6"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"acebb513771f9b880c1f1c4f83aa730c"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"6fa137f59dc6d6959fa46f94b31ffb2d"
+    etag: W/"c08412741e183fb4878f4b0b51b9a163"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/neat-annotations-syabro-com":
+    build_path: bookmarks/2026/09/neat-annotations-syabro-com.html
+    etag: W/"bc05eeed394de00f3e943c614f40c45a"
   "/bookmarks/2026/09/buildcognitiveresonance-substack-com-p-special-report-my-so-called-alpha":
     build_path: bookmarks/2026/09/buildcognitiveresonance-substack-com-p-special-report-my-so-called-alpha.html
     etag: W/"801a65023a18f499ba80a66d559b6228"
