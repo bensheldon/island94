@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"5689ff1b2d995e20b985f37779c134b6"
+    etag: W/"30e31d762dd96c80fcace2d932a068d0"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/www-foodpolitics-com-2026-09-weekend-re-reading-fast-food-nation":
+    build_path: bookmarks/2026/09/www-foodpolitics-com-2026-09-weekend-re-reading-fast-food-nation.html
+    etag: W/"9f956face66fd7cd77cf810b7dc1777f"
   "/bookmarks/2026/09/neat-annotations-syabro-com":
     build_path: bookmarks/2026/09/neat-annotations-syabro-com.html
     etag: W/"bc05eeed394de00f3e943c614f40c45a"
