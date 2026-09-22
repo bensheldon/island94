@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"02f286947bbc4f6ed397bacc115c0418"
+    etag: W/"e7a912a95939c6dbef6831850c7977e1"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"acebb513771f9b880c1f1c4f83aa730c"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"ae26c14d650dc93d20ff7dd0e531dc8e"
+    etag: W/"963083bc8c6fe4453f4495cb5f3cf2f0"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/lithub-com-in-prison-white-supremacist-literature-is-required-reading":
+    build_path: bookmarks/2026/09/lithub-com-in-prison-white-supremacist-literature-is-required-reading.html
+    etag: W/"86c051d283a68944e3bd1773f7f6e368"
   "/bookmarks/2026/09/www-simplermachines-com-process-doesnt-matter":
     build_path: bookmarks/2026/09/www-simplermachines-com-process-doesnt-matter.html
     etag: W/"77290ea90aa9109662f24dc39ac476d3"
