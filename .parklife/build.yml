@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"e7a912a95939c6dbef6831850c7977e1"
+    etag: W/"56a7c6d5ef8f5407ea5345f7b85a25e8"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/culture-ghost-io-good-taste-is-not-whats-oppressing-us-in-2026":
+    build_path: bookmarks/2026/09/culture-ghost-io-good-taste-is-not-whats-oppressing-us-in-2026.html
+    etag: W/"04945e68816597998c18d6be8f9db7a7"
   "/bookmarks/2026/09/lithub-com-in-prison-white-supremacist-literature-is-required-reading":
     build_path: bookmarks/2026/09/lithub-com-in-prison-white-supremacist-literature-is-required-reading.html
     etag: W/"86c051d283a68944e3bd1773f7f6e368"
