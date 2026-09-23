@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"14ccd4f3cb1015c85ca73367a745dd44"
+    etag: W/"c0bb8cef436102192772dac508b92fbb"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/news-ycombinator-com-item-id-49816899":
+    build_path: bookmarks/2026/09/news-ycombinator-com-item-id-49816899.html
+    etag: W/"56c9589a8802e93928d7c9c61861f441"
   "/bookmarks/2026/09/michaelheap-com-i-dont-want-the-details":
     build_path: bookmarks/2026/09/michaelheap-com-i-dont-want-the-details.html
     etag: W/"5a3dd1bb5cdc5bdbdef1251dbd3b9739"
