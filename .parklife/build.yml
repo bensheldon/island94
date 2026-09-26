@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"c0bb8cef436102192772dac508b92fbb"
+    etag: W/"06e97b44be351daf5f50332ba9049430"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"acebb513771f9b880c1f1c4f83aa730c"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"27d40652f59d4bf50efac5988815ec08"
+    etag: W/"bf94c007141b854822a63ca533ef61f7"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/blog-codinghorror-com-if-we-do-not-stop-to-help-each-other-what-do-we-become":
+    build_path: bookmarks/2026/09/blog-codinghorror-com-if-we-do-not-stop-to-help-each-other-what-do-we-become.html
+    etag: W/"1605c78e115c2b134bec60900ca2ad8a"
   "/bookmarks/2026/09/news-ycombinator-com-item-id-49816899":
     build_path: bookmarks/2026/09/news-ycombinator-com-item-id-49816899.html
     etag: W/"56c9589a8802e93928d7c9c61861f441"
