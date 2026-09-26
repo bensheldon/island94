@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"b60adc0f0d4eb4098dc2dd81fa4726ba"
+    etag: W/"be2bac05e1e307711d54c4fbb7149700"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3709,7 +3709,7 @@ paths:
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
   "/bookmarks/2026/09/aicoding-leaflet-pub-3mtmk6ot6oc2i":
     build_path: bookmarks/2026/09/aicoding-leaflet-pub-3mtmk6ot6oc2i.html
-    etag: W/"cd87e9b31cf59930486f9f91ad478fe8"
+    etag: W/"f5adebf427c1425d7880740999e1dc40"
   "/bookmarks/2026/09/blog-codinghorror-com-if-we-do-not-stop-to-help-each-other-what-do-we-become":
     build_path: bookmarks/2026/09/blog-codinghorror-com-if-we-do-not-stop-to-help-each-other-what-do-we-become.html
     etag: W/"1605c78e115c2b134bec60900ca2ad8a"
