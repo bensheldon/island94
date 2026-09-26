@@ -32,3 +32,15 @@ This is one of the deepest roots of the current cognitive-debt worry.
 When a programmer builds software by hand, some of that theory develops almost by accident. You remember the awkward branch because you wrote it. You know why the abstraction is strange because you tried two others first. You can picture the call path because you spent an afternoon stepping through it.
 
 Agentic coding can strip out that incidental learning.
+
+---
+
+Architectural judgment has historically been learned partly by writing software, making mistakes, debugging it, and living with the consequences. If agents increasingly remove that apprenticeship path, we'll need another way to teach engineers how to form the theory that architecture depends on.
+
+I don't think we know what that path looks like yet.
+
+For now, the important thing is not to confuse preserving the theory with preserving every line we happened to learn it through.
+
+If human understanding stays tied exclusively to today's generated source, we've built an architecture that depends on the scarcity of code.
+
+That scarcity is disappearing.
