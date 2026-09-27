@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"d8d830af72ed0227ca74fbd1a7435408"
+    etag: W/"883bf2e1b50d633c556dc819f44cbea9"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/impeccable-style-ref-labnotes-org":
+    build_path: bookmarks/2026/09/impeccable-style-ref-labnotes-org.html
+    etag: W/"3612f081f08f71a4b59b9ab577f0aa6c"
   "/bookmarks/2026/09/arstechnica-com-tech-policy-2026-09-how-the-smithsonian-became-the-latest-front-in-trumps-culture-war":
     build_path: bookmarks/2026/09/arstechnica-com-tech-policy-2026-09-how-the-smithsonian-became-the-latest-front-in-trumps-culture-war.html
     etag: W/"7b64a0c4263e9002785d951e585bf483"
