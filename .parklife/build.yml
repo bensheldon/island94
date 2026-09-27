@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"b952b441a885270295c33dbc5f97fdc9"
+    etag: W/"1924f816b074d4c547e32724f906e7b7"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/hereticpleb-vercel-app-blog-10-tells-of-slop":
+    build_path: bookmarks/2026/09/hereticpleb-vercel-app-blog-10-tells-of-slop.html
+    etag: W/"500e0f8df259ab6b760fb6c05175f124"
   "/bookmarks/2026/09/aicoding-leaflet-pub-3mtmk6ot6oc2i":
     build_path: bookmarks/2026/09/aicoding-leaflet-pub-3mtmk6ot6oc2i.html
     etag: W/"5bacb6a91f9b96988517ee0d161f61bd"
