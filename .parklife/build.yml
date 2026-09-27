@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"60e211c76129d08cba006c3efe9d4a2b"
+    etag: W/"0874af4069cbb757bfa67a03eb2f3924"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/dansinker-com-posts-2026-09-23-stopped":
+    build_path: bookmarks/2026/09/dansinker-com-posts-2026-09-23-stopped.html
+    etag: W/"8acf4c512cfa2b6dc5f0771dde3aaaa4"
   ? "/bookmarks/2026/09/www-colincornaby-me-2025-08-in-the-future-all-food-will-be-cooked-in-a-microwave-and-if-you-cant-deal-with-that-then-you-need-to-get-out-of-the-kitche"
   : build_path: bookmarks/2026/09/www-colincornaby-me-2025-08-in-the-future-all-food-will-be-cooked-in-a-microwave-and-if-you-cant-deal-with-that-then-you-need-to-get-out-of-the-kitche.html
     etag: W/"c44b0cb54110e898282a6ad8de3f592d"
