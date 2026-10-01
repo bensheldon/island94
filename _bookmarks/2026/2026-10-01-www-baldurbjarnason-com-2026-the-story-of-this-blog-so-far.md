@@ -12,3 +12,9 @@ But I now prefer to compare generative models to leaded petrol:
 It poisons everything, increases crime, harms your brain, makes the world genuinely worse in multiple ways, and could have been replaced with safer and more effective solutions at pretty much any point in its history.
 The only reason people didn’t – why they chose to knowingly poison their children and their own societies – was to save a little bit of money in amounts that never came even remotely close to outweighing the immense costs to society.
 This is a technology that should never ever have been shipped.
+
+---
+
+Design is nonexistent.
+User research is nonexistent.
+Product development is nonexistent.
