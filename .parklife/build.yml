@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"a753e75b6c0b74075bac44f401d79d20"
+    etag: W/"1c4474bdf1754e2916032b15c07ce636"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3709,7 +3709,7 @@ paths:
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
   "/bookmarks/2026/10/www-baldurbjarnason-com-2026-the-story-of-this-blog-so-far":
     build_path: bookmarks/2026/10/www-baldurbjarnason-com-2026-the-story-of-this-blog-so-far.html
-    etag: W/"e34d29c5a5445dd60168f4d0b816a0b8"
+    etag: W/"ad20e733854bbd6877e23e4be517f855"
   ? "/bookmarks/2026/09/www-globalnerdy-com-2026-09-27-dhhs-keynote-at-rails-world-2026-the-most-confusing-funeral-ive-ever-experienced"
   : build_path: bookmarks/2026/09/www-globalnerdy-com-2026-09-27-dhhs-keynote-at-rails-world-2026-the-most-confusing-funeral-ive-ever-experienced.html
     etag: W/"db5b32f7b816f6d18d44d9e6905a69f1"
