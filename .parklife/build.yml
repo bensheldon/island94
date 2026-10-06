@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"1c4474bdf1754e2916032b15c07ce636"
+    etag: W/"c8a861a2a97340e8d61ffda083996add"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/10/rubyai-beehiiv-com-p-ruby-ai-news-october-2nd-2026":
+    build_path: bookmarks/2026/10/rubyai-beehiiv-com-p-ruby-ai-news-october-2nd-2026.html
+    etag: W/"c6dc29d6f2c50b7535ba02eb76241a30"
   "/bookmarks/2026/10/www-baldurbjarnason-com-2026-the-story-of-this-blog-so-far":
     build_path: bookmarks/2026/10/www-baldurbjarnason-com-2026-the-story-of-this-blog-so-far.html
     etag: W/"ad20e733854bbd6877e23e4be517f855"
