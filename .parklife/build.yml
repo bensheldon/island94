@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"bcade6782583a3bc62fd2e6bfd219816"
+    etag: W/"80a4f03426a966aecce609abb27c25c9"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  ? "/bookmarks/2026/10/thishueshallpass-clearleft-com-colors-23202c-2cdae1e2-2cffffff-2ce1673e-2c4d3e74-utm_source-cl_hsp-blog-post-utm_medium-cl_blog-utm_campaign-hsp"
+  : build_path: bookmarks/2026/10/thishueshallpass-clearleft-com-colors-23202c-2cdae1e2-2cffffff-2ce1673e-2c4d3e74-utm_source-cl_hsp-blog-post-utm_medium-cl_blog-utm_campaign-hsp.html
+    etag: W/"9fe371fc6fc4b07c93bfa68c37fec9f4"
   "/bookmarks/2026/10/news-ycombinator-com-item-id-49990289":
     build_path: bookmarks/2026/10/news-ycombinator-com-item-id-49990289.html
     etag: W/"f58cd373fbd1d13c1d19086ab5051c25"
