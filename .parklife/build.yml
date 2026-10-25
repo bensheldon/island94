@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"1396c2d94540e18011c7a45620b9ce4d"
+    etag: W/"c5907b88ddb77de5afd80647495dec2f"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/10/arxiv-org-abs-2610-29162":
+    build_path: bookmarks/2026/10/arxiv-org-abs-2610-29162.html
+    etag: W/"36facb3d1f749c6095a059409894888d"
   ? "/bookmarks/2026/10/www-christopherspenn-com-2026-10-how-the-factory-era-education-system-produces-workers-ai-will-replace-pk_campaign-feed-pk_kwd-how-the-factory-era-edu"
   : build_path: bookmarks/2026/10/www-christopherspenn-com-2026-10-how-the-factory-era-education-system-produces-workers-ai-will-replace-pk_campaign-feed-pk_kwd-how-the-factory-era-edu.html
     etag: W/"c104cb3f83a5eb681003c9d7fbf64fc5"
