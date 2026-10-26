@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"6490c8f7ba3d31f965af704d977df8be"
+    etag: W/"c112eb420f650ee20bd4351bb98ff4fa"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/10/www-thetransmitter-org-spectrum-its-past-time-to-stop-using-the-reading-the-mind-in-the-eyes-test":
+    build_path: bookmarks/2026/10/www-thetransmitter-org-spectrum-its-past-time-to-stop-using-the-reading-the-mind-in-the-eyes-test.html
+    etag: W/"41c53dcc6ffa4135431cadd65ced4d3c"
   "/bookmarks/2026/10/unsung-aresluna-org-they-take-one-look-at-the-ui-and-abandon-it-ref-labnotes-org":
     build_path: bookmarks/2026/10/unsung-aresluna-org-they-take-one-look-at-the-ui-and-abandon-it-ref-labnotes-org.html
     etag: W/"3ecd883841b61a7098313429941135d1"
