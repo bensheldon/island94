@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bad requests and the dream of a quiet Rails app | Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-c31b21bc688426a89aeb8504c37610396fc40eb398ab03565e0258c2b123d099.css" data-turbo-track="reload" />
+  
+  <script src="/assets/vite/assets/application-CHNL1LYZ.js" crossorigin="" type="module"></script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2026/10/bad-requests-and-the-dream-of-a-quiet-rails-app"><p>Bad requests and the dream of a quiet Rails app</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2026-10-28T15:00:00Z" itemprop="datePublished">October 28, 2026</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a> and <a href="/posts/tags/ruby">Ruby</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I’ve kept a notebook page since, oh, 2013, of common exceptions I’ve encountered ever since I started building production Rails applications. It’s a big one.</p>
+
+<p>When you put a web application on the internet, it’s going to get hit with a firehose of garbage requests: scanners and bots that are trying to discover malicious vulnerabilities, and scanners and bots trying to do something useful, like put your website in a search engine, but are built oddly.</p>
+
+<p>And when you’re using an exception monitoring product like Sentry or AppSignal or whatever, as you should, you’re going to start being alerted to exceptions from this natural background noise of the firehose of garbage.</p>
+
+<p>A non-exhaustive list of garbage you might see when you put your application on the internet:</p>
+
+<ul>
+  <li>Fetching of paths like <code>/.env</code> and <code>/wp-admin/login.php</code>.</li>
+  <li>Trying different HTTP methods/verbs (GET, POST, etc.) or making up verbs.</li>
+  <li>Weird mimetypes.</li>
+  <li>Weird headers. Fun fact: HTTP headers can contain binary bytes, like the User-Agent string. And if something in your application (like a logger) is expecting clean UTF-8, you’re gonna be alerted.</li>
+  <li>Weird POST bodies.</li>
+  <li>Weird, weird stuff. Invalid encodings, lengths too long; if it can go in a packet, it will arrive at your website. Your problem now.</li>
+</ul>
+
+<p>In your exception monitoring service, one of those garbage requests might look like:</p>
+
+<pre><code>ActionController::BadRequest: Invalid path parameters: Invalid encoding for parameter: � (Rack::QueryParser::InvalidParameterError)
+</code></pre>
+
+<p>Or:</p>
+
+<pre><code>ActionDispatch::Http::MimeNegotiation::InvalidType: "*.*" is not a valid MIME type (Mime::Type::InvalidMimeType)
+</code></pre>
+
+<p>Or, because of the recent <a href="https://en.wikipedia.org/wiki/PHP2Shell">PHP2Shell</a> vulnerability last week, I started getting some new scans that triggered:</p>
+
+<pre><code>Rack::Multipart::BoundaryTooLongError: multiple boundary parameters found in multipart content type (Rack::Multipart::BoundaryTooLongError)
+</code></pre>
+
+<p>Fun stuff!</p>
+
+<p>And, my assumption here is that this <em>is</em> garbage, and not a potential business partner using Internet Explorer for Mac or your boss’s friend checking it out on their Blackberry (true stories!) that you can’t <em>simply</em> throw away.</p>
+
+<p>And, the reason why I have this all written down in my notebook is the core questions:</p>
+
+<ul>
+  <li>Did this result in my application returning a <strong>500 error</strong>? e.g. “it broke”. Which can become an ambiguous compliance problem of like “what was the nature of the breakage and is that bad?”</li>
+  <li>Did this result in my application returning a <strong>400 error</strong>? e.g. “lol no”. And secondarily, why did I get alerted to this if the application already handled it?</li>
+</ul>
+
+<p>And that implies the long-term goal of having the notebook is:</p>
+
+<ul>
+  <li>Handling 500 errors (“it broke”) so they become 400 errors (“lol no”).</li>
+  <li>Not getting alerted on those exceptions because they’re not exceptional; it’s the internet being the internet.</li>
+</ul>
+
+<p>That’s the dream of a quiet Rails app.</p>
+
+<h3 id="why-you-see-exceptions">Why you see exceptions</h3>
+
+<p>Most Ruby apps use Rack, which is a standardized interface for connecting a webserver (like Puma) to a web application (like Rails). A request comes in at the top, to the webserver, and then passes through a bunch of middleware that processes the request, and then hands it to the web application.</p>
+
+<p>The game here is understanding at which stage the processing of the request would raise a particular exception, and then looking at what exception handling or reporting equipment it will pass through.</p>
+
+<p>This is a simplified middleware stack of a typical Rails app, with examples of how Sentry instruments it by inserting its own middleware and hooks. (Sentry is nothing special here; other monitoring products patch similarly, but also differently, which is part of the fun of figuring this out):</p>
+
+<ol>
+  <li><strong>Puma</strong>: <em>any exception raised to Puma is a 500 error</em>
+    <ul>
+      <li><code>Sentry::Puma#lowlevel_error</code> <strong>← Sentry hook #3</strong></li>
+    </ul>
+  </li>
+  <li><code>ActionDispatch::HostAuthorization</code> / <code>Sendfile</code> / <code>Static</code> / <code>Executor</code> / <code>LocalCache</code> / <code>Rack::Runtime</code> / <code>Rack::MethodOverride</code> / <code>ActionDispatch::RequestId</code> / <code>ActionDispatch::RemoteIp</code></li>
+  <li><code>Rails::Rack::Logger</code></li>
+  <li><code>ActionDispatch::ShowExceptions</code>: <em>turns exceptions into 400/404/500 pages</em></li>
+  <li><code>Sentry::Rails::CaptureExceptions</code> <strong>← Sentry hook #2</strong></li>
+  <li><code>ActionDispatch::DebugExceptions</code></li>
+  <li><code>Sentry::Rails::RescuedExceptionInterceptor</code> <strong>← Sentry hook #1</strong></li>
+  <li>Callbacks / Cookies / Session / Flash / CSP / Head / ConditionalGet / ETag / TempfileReaper</li>
+  <li>Rails Routes and Controller rendering</li>
+</ol>
+
+<p>The main takeaway here is that any exception that is raised earlier/higher in the request than <code>ActionDispatch::ShowExceptions</code> will likely turn into a 500 response, and you’ll see there is a big list of things above it and immediately below Puma.</p>
+
+<p>Any exception that is raised later/lower than <code>ActionDispatch::ShowExceptions</code> will likely turn into a 400 response. But it may still be reported to your exception monitor if it’s not part of an ignore list. Here is <a href="https://github.com/getsentry/sentry-ruby/blob/811815676597c4fd408d2cfa01b577b1011f2be8/sentry-rails/lib/sentry/rails/configuration.rb#L49-L64">Sentry’s default exception ignore list</a>, for example.</p>
+
+<p>What’s annoying is that all these exceptions are a complete grab-bag. Which is why you need a notebook to keep track of them. And you will likely end up with your own custom middleware called something like <code>MalformedRequestHandler</code> that you’ll stick at the top of the stack and customize, and write little notes as it changes like:</p>
+
+<blockquote>
+  <p>I think [this problem] that the MalformedRequestHandler addresses has been fixed upstream within Rails: <a href="https://github.com/rails/rails/pull/40124">rails/rails#40124</a> which triggers an <code>ActionController::BadRequest</code> when accessing params/payload through <code>ActionDispatch::Request</code>. In 2015, Rack introduced a more targeted <code>Rack::QueryParser::InvalidParameterError &lt; ArgumentError</code>: <a href="https://github.com/rack/rack/pull/820/files#diff-69c5b6856deb050ba393562673e0cc863d520360df07503081064f531e852bc2R13">rack/rack#820</a></p>
+</blockquote>
+
+<p>These things are <em>always</em> changing! While investigating the <code>BoundaryTooLongError</code> exception, I saw that unreleased Rack carries <a href="https://github.com/rack/rack/pull/2505">an improvement</a> that will address it, and that there is <a href="https://github.com/rails/rails/pull/58677">an unmerged PR</a> in Rails that would also improve things.</p>
+
+<p>Fortunately too, with LLMs it’s a lot easier now to take an exception and be like “help me understand what raised this, what HTTP error code it produced, why it was reported to my error monitor, write a regression test for it, help me make sure it turns into a 400 and isn’t reported, and find me any upstream Issues or PRs that reference that. Thanks buddy!”</p>
+
+<p>That’s the work!</p>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2026-10-28-bad-requests-and-the-dream-of-a-quiet-rails-app.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+    <hr>
+    <div class="card-body">
+      <h5>Related Posts</h5>
+      <ul>
+          <li><a href="/2026/10/adding-custom-thor-commands-to-your-rails-app">Adding custom Thor commands to your Rails app</a></li>
+          <li><a href="/2026/07/running-code-when-the-ruby-on-rails-webserver-boots">Running code when the Ruby on Rails webserver boots</a></li>
+          <li><a href="/2026/05/one-year-of-ruby-on-rails-configuration">One year of Ruby on Rails configuration</a></li>
+          <li><a href="/2025/10/rails-103-early-hints-could-be-better-maybe-doesn-t-matter">Rails 103 Early Hints could be better, maybe doesn’t matter</a></li>
+          <li><a href="/2025/10/hanami-and-loading-code-faster">Hanami and loading code, faster</a></li>
+      </ul>
+    </div>
+</div>
+
+  </div>
+
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-7rm_FOgz.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-BJUSYmLe.js')</script>
+</body>
+</html>

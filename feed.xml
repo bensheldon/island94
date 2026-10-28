@@ -5,8 +5,121 @@
     <description>A Lost and Found</description>
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Oct 2026 19:06:00 +0000</pubDate>
+    <pubDate>Wed, 28 Oct 2026 15:00:00 +0000</pubDate>
     <generator>Ruby on Rails</generator>
+      <item>
+        <title>Bad requests and the dream of a quiet Rails app</title>
+        <description>
+          <![CDATA[
+          <p>I’ve kept a notebook page since, oh, 2013, of common exceptions I’ve encountered ever since I started building production Rails applications. It’s a big one.</p>
+
+<p>When you put a web application on the internet, it’s going to get hit with a firehose of garbage requests: scanners and bots that are trying to discover malicious vulnerabilities, and scanners and bots trying to do something useful, like put your website in a search engine, but are built oddly.</p>
+
+<p>And when you’re using an exception monitoring product like Sentry or AppSignal or whatever, as you should, you’re going to start being alerted to exceptions from this natural background noise of the firehose of garbage.</p>
+
+<p>A non-exhaustive list of garbage you might see when you put your application on the internet:</p>
+
+<ul>
+  <li>Fetching of paths like <code>/.env</code> and <code>/wp-admin/login.php</code>.</li>
+  <li>Trying different HTTP methods/verbs (GET, POST, etc.) or making up verbs.</li>
+  <li>Weird mimetypes.</li>
+  <li>Weird headers. Fun fact: HTTP headers can contain binary bytes, like the User-Agent string. And if something in your application (like a logger) is expecting clean UTF-8, you’re gonna be alerted.</li>
+  <li>Weird POST bodies.</li>
+  <li>Weird, weird stuff. Invalid encodings, lengths too long; if it can go in a packet, it will arrive at your website. Your problem now.</li>
+</ul>
+
+<p>In your exception monitoring service, one of those garbage requests might look like:</p>
+
+<pre><code>ActionController::BadRequest: Invalid path parameters: Invalid encoding for parameter: � (Rack::QueryParser::InvalidParameterError)
+</code></pre>
+
+<p>Or:</p>
+
+<pre><code>ActionDispatch::Http::MimeNegotiation::InvalidType: "*.*" is not a valid MIME type (Mime::Type::InvalidMimeType)
+</code></pre>
+
+<p>Or, because of the recent <a href="https://en.wikipedia.org/wiki/PHP2Shell">PHP2Shell</a> vulnerability last week, I started getting some new scans that triggered:</p>
+
+<pre><code>Rack::Multipart::BoundaryTooLongError: multiple boundary parameters found in multipart content type (Rack::Multipart::BoundaryTooLongError)
+</code></pre>
+
+<p>Fun stuff!</p>
+
+<p>And, my assumption here is that this <em>is</em> garbage, and not a potential business partner using Internet Explorer for Mac or your boss’s friend checking it out on their Blackberry (true stories!) that you can’t <em>simply</em> throw away.</p>
+
+<p>And, the reason why I have this all written down in my notebook is the core questions:</p>
+
+<ul>
+  <li>Did this result in my application returning a <strong>500 error</strong>? e.g. “it broke”. Which can become an ambiguous compliance problem of like “what was the nature of the breakage and is that bad?”</li>
+  <li>Did this result in my application returning a <strong>400 error</strong>? e.g. “lol no”. And secondarily, why did I get alerted to this if the application already handled it?</li>
+</ul>
+
+<p>And that implies the long-term goal of having the notebook is:</p>
+
+<ul>
+  <li>Handling 500 errors (“it broke”) so they become 400 errors (“lol no”).</li>
+  <li>Not getting alerted on those exceptions because they’re not exceptional; it’s the internet being the internet.</li>
+</ul>
+
+<p>That’s the dream of a quiet Rails app.</p>
+
+<h3 id="why-you-see-exceptions">Why you see exceptions</h3>
+
+<p>Most Ruby apps use Rack, which is a standardized interface for connecting a webserver (like Puma) to a web application (like Rails). A request comes in at the top, to the webserver, and then passes through a bunch of middleware that processes the request, and then hands it to the web application.</p>
+
+<p>The game here is understanding at which stage the processing of the request would raise a particular exception, and then looking at what exception handling or reporting equipment it will pass through.</p>
+
+<p>This is a simplified middleware stack of a typical Rails app, with examples of how Sentry instruments it by inserting its own middleware and hooks. (Sentry is nothing special here; other monitoring products patch similarly, but also differently, which is part of the fun of figuring this out):</p>
+
+<ol>
+  <li>
+<strong>Puma</strong>: <em>any exception raised to Puma is a 500 error</em>
+    <ul>
+      <li>
+<code>Sentry::Puma#lowlevel_error</code> <strong>← Sentry hook #3</strong>
+</li>
+    </ul>
+  </li>
+  <li>
+<code>ActionDispatch::HostAuthorization</code> / <code>Sendfile</code> / <code>Static</code> / <code>Executor</code> / <code>LocalCache</code> / <code>Rack::Runtime</code> / <code>Rack::MethodOverride</code> / <code>ActionDispatch::RequestId</code> / <code>ActionDispatch::RemoteIp</code>
+</li>
+  <li><code>Rails::Rack::Logger</code></li>
+  <li>
+<code>ActionDispatch::ShowExceptions</code>: <em>turns exceptions into 400/404/500 pages</em>
+</li>
+  <li>
+<code>Sentry::Rails::CaptureExceptions</code> <strong>← Sentry hook #2</strong>
+</li>
+  <li><code>ActionDispatch::DebugExceptions</code></li>
+  <li>
+<code>Sentry::Rails::RescuedExceptionInterceptor</code> <strong>← Sentry hook #1</strong>
+</li>
+  <li>Callbacks / Cookies / Session / Flash / CSP / Head / ConditionalGet / ETag / TempfileReaper</li>
+  <li>Rails Routes and Controller rendering</li>
+</ol>
+
+<p>The main takeaway here is that any exception that is raised earlier/higher in the request than <code>ActionDispatch::ShowExceptions</code> will likely turn into a 500 response, and you’ll see there is a big list of things above it and immediately below Puma.</p>
+
+<p>Any exception that is raised later/lower than <code>ActionDispatch::ShowExceptions</code> will likely turn into a 400 response. But it may still be reported to your exception monitor if it’s not part of an ignore list. Here is <a href="https://github.com/getsentry/sentry-ruby/blob/811815676597c4fd408d2cfa01b577b1011f2be8/sentry-rails/lib/sentry/rails/configuration.rb#L49-L64">Sentry’s default exception ignore list</a>, for example.</p>
+
+<p>What’s annoying is that all these exceptions are a complete grab-bag. Which is why you need a notebook to keep track of them. And you will likely end up with your own custom middleware called something like <code>MalformedRequestHandler</code> that you’ll stick at the top of the stack and customize, and write little notes as it changes like:</p>
+
+<blockquote>
+  <p>I think [this problem] that the MalformedRequestHandler addresses has been fixed upstream within Rails: <a href="https://github.com/rails/rails/pull/40124">rails/rails#40124</a> which triggers an <code>ActionController::BadRequest</code> when accessing params/payload through <code>ActionDispatch::Request</code>. In 2015, Rack introduced a more targeted <code>Rack::QueryParser::InvalidParameterError &lt; ArgumentError</code>: <a href="https://github.com/rack/rack/pull/820/files#diff-69c5b6856deb050ba393562673e0cc863d520360df07503081064f531e852bc2R13">rack/rack#820</a></p>
+</blockquote>
+
+<p>These things are <em>always</em> changing! While investigating the <code>BoundaryTooLongError</code> exception, I saw that unreleased Rack carries <a href="https://github.com/rack/rack/pull/2505">an improvement</a> that will address it, and that there is <a href="https://github.com/rails/rails/pull/58677">an unmerged PR</a> in Rails that would also improve things.</p>
+
+<p>Fortunately too, with LLMs it’s a lot easier now to take an exception and be like “help me understand what raised this, what HTTP error code it produced, why it was reported to my error monitor, write a regression test for it, help me make sure it turns into a 400 and isn’t reported, and find me any upstream Issues or PRs that reference that. Thanks buddy!”</p>
+
+<p>That’s the work!</p>
+
+          ]]>
+        </description>
+        <link>https://island94.org/2026/10/bad-requests-and-the-dream-of-a-quiet-rails-app</link>
+        <guid isPermaLink="true">https://island94.org/2026/10/bad-requests-and-the-dream-of-a-quiet-rails-app</guid>
+        <pubDate>Wed, 28 Oct 2026 15:00:00 +0000</pubDate>
+      </item>
       <item>
         <title>Adding custom Thor commands to your Rails app</title>
         <description>
@@ -1165,83 +1278,6 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
         <link>https://island94.org/2026/03/war</link>
         <guid isPermaLink="true">https://island94.org/2026/03/war</guid>
         <pubDate>Wed, 04 Mar 2026 15:18:00 +0000</pubDate>
-      </item>
-      <item>
-        <title>Post your Prompts</title>
-        <description>
-          <![CDATA[
-          <p>This post is mostly a reaction and reflection on Jon Sully’s <a href="https://jonsully.net/blog/generative-ai-tech-writing-disclose">“Generative AI and Tech Writing: The Right Answer is to Disclose.”</a> Strong agree! I wanted to zoom in on one part of Jon’s post: “<strong>Just Give Me the Prompt”</strong></p>
-
-<p>Seriously. If you are blogging, a prompt is good enough. It’s great! If you’ve got a thought or idea that you want to share with the world, just post that idea. It’s enough.</p>
-
-<p>Jon’s post caused me to reflect on my own writing process. Over the course of the nearly 20 years (!) I’ve been writing here, I’ve become much more comfortable incorporating my initial “gosh, I have this thing to say in my head and I want to get it out”-compulsion into the the thing I evetually write. Just spit it out.</p>
-
-<p>These abstracts statements are more “I want to tell you about …” and less “I want to write a longform blog post that tells you about…”</p>
-
-<ul>
-  <li>I want to tell you about this thing I’m proud of, and make you be proud of it too.</li>
-  <li>I want to tell you about the shape of a thing I see, so I can ask if you see it too.</li>
-  <li>I want to tell you a story in the canon of my life, and I want you to understand why it’s meaningful to me rather than simply dumb or sad or cruel.</li>
-</ul>
-
-<p>The form doesn’t matter <em>to the want</em>. The da-dum da-dum rhythm of heading and sentences and commas that results is just how I’ve come to spit out my written words. Don’t worry about that. Post your want.</p>
-
-<p>What I mean to say is: this is working for me; I recommend you try it.</p>
-
-<h3 id="becoming-aware">Becoming aware</h3>
-
-<p>I guess this is a post about writing. When you want to become a better writer, you get told to read more. I don’t think that’s quite right, or not the point I’d emphasize. Instead I’d say: When you want to write better, you should pay more attention when you’re reading to whether what you’re reading works for you and then pause a beat, and become aware of that feeling and, momentarily or however long you want, try to figure out why. …or why not.</p>
-
-<p>Sure, self-awareness is a skill that develops alongside reading more, but I don’t see the point to recommend reading more if you aren’t also becoming more aware of whether you <em>like it</em> or are responding to what you’re reading.</p>
-
-<p>That sort of awareness can be hard because the vast majority of what shows up in front of me is intended to be informational. Work memos, and news reports, and the like. It’s not intended to hit or feel, and usually is intended specifically <em>not</em> to make me feel. But I can ask myself: was this boring-ass memo more or less effective than those other boring-ass memo at achieving its purpose? And why. And recognizing that the purpose isn’t clear at all is a feel too. What is this shit?</p>
-
-<p>…and on that last negative reaction: I personally find it harder to split the mildy good writing from the mildy bad writing. Really good and really bad is obvious, but also rare; most stuff is mid. A mild disgust or boredom or frustration is easier for me to identify than mild understanding or mild respect. “Oh, I wasn’t aware of that before and I now I am” or “oh, this person knows what they’re talking about in an everyday way” is harder for me to sus than “huh?” and “what?” and “ok, whatever that was”</p>
-
-<p>Mildly good itself is a totally reasonable target. I should be so lucky to be surrounded by and produce myself mildly good writing. Mildly good!</p>
-
-<h3 id="my-answer-for-mildly-good">My answer for mildly good</h3>
-
-<p>So, the entire previous section was me recommending that you develop your own personal sense of awareness and taste for writing that works for you.</p>
-
-<p>This section is where I tell you what works for me: <strong>Specificity and economy.</strong> Say the things themselves, and do it directly without a lot of leadup or padding out.</p>
-
-<ul>
-  <li>
-<strong>“Specificity is the soul of narrative”</strong>, <a href="https://maximumfun.org/episodes/judge-john-hodgman/episode-738-i-was-dreaming-when-i-wrote-this-so-sue-me-if-i-judge-too-fast-live-in-portland-me/">attributed to John Hodman</a> via <a href="https://chris.molanphy.com/why-olivia-rodrigos-drivers-license-had-the-biggest-debut-since-wap/">“Why Olivia Rodrigo’s “Drivers License” Had the Biggest Debut Since “WAP”</a>.</li>
-  <li>
-<strong>“If I had more time, I would have written a shorter letter.”</strong> <a href="https://quoteinvestigator.com/2012/04/28/shorter-letter/">No one knows</a> where that one comes from, but it’s true: writing clearly, directly, and efficiently is the hard part of writing well.</li>
-</ul>
-
-<p>Because this is the section where I laundry list the things I <em>really</em> want to share. And because everything else was a leadup to explain why you might spend time reading it… here is a personal example. This is the kind of thing my dad posts, all the time, on Facebook. It’s mildly perfect.</p>
-
-<blockquote>
-  <p>Yesterday morning Constance and I watched the funeral of Prince Philip starting at 6:30am. She has this button of him, and I have this souvenir of the Royal Visit to Whitehorse in 1959. My father was to cover it for Newsweek. He got press credentials for both of us from Ottawa. I was to be his assistant. I was 12 years old.</p>
-
-  <p>We flew down to Whitehorse from Fairbanks on a Lions Club charter flight. We were at the airport for the arrival. The press plane came first, and then the plane with Queen Elizabeth and Prince Philip. The stairs were all folded up inside the front door of the plane. They were deployed and the Queen and Prince Philip descended. A First Nations (that phrase was not used then) girl gave the Queen some flowers, and local dignataries were presented. By now the press were pretty jaded, and they just stood and watched. Other noteworthy events were the ride on the White Pass &amp; Yukon train and the church service. After a visit to the McBride Museum the Royal Couple boarded the train and stood on the rear platform, waving to the crowded. They were talking to each other out of the corner of their mouths. The press boarded and the train departed. The royal party was in the last car and the press were in the leading 3 or 4 cars. We stopped at a cross road outside of town and Queen Elizabeth and Prince Philip got into a waiting car to go back into town.</p>
-
-  <p>The train continued on to Carcross, where there was an open bar to the press. Someone offered to take my father and me for a boat ride on the lake. We did that. On another day there was to be a trip to Dawson City. The Queen did not feel well and only Philip went. When he returned he was piloting, and landed the plane. There were episodes on “The Crown” where he was learning to fly. When they returned to London it was announced she was pregnant. That was Prince Andrew.</p>
-
-  <p>The other event I remember was the service at the log church. There were a lot of Canadian army officers standing around in their uniforms with all their medals. There were some with service medals going back to George V. For some reason I crossed a security line. An army officer stopped me, and I pointed to my badge. He studied it, and said “I don’t know why they are giving press credentials to 12 year olds now.” He let me through.</p>
-</blockquote>
-
-<p>Detail, detail, detail, and a joke at the end. It’s arguably a shaggy dog story leading up to the humor, but it works because there isn’t extraneous structure or padding or filler. In the comments, my dad <a href="https://www.britishpathe.com/asset/196404/">even found a film archive</a> that has the two of them in it (at 8:54). It means something.</p>
-
-<p><img src="https://island94.org/uploads/2026/whitehorse.jpg" alt=""></p>
-
-<h3 id="back-to-the-prompt">Back to the prompt</h3>
-
-<p>I want to read what is personally meaningful to you. At a minimum I’m curious, and more often, <em>I care.</em> I wouldn’t bother reading it otherwise.</p>
-
-<p>So don’t fuck around having an LLM wrap what you intend to say in meaninglesless and next-token statistical noise. <a href="https://island94.org/2010/06/fierce-editing">Go at it with a ruthless knife.</a> Say what you want to say. Write it down. Tell me. I’ll put it in my RSS reader.</p>
-
-<p>And thank you Jon for writing the <a href="https://jonsully.net/blog/generative-ai-tech-writing-disclose">much longer, more thoughtful piece</a> that inspired this, and the discussion in the Ruby on Rails Performance Slack where I mostly spat all this out already.</p>
-
-          ]]>
-        </description>
-        <link>https://island94.org/2026/02/post-your-prompts</link>
-        <guid isPermaLink="true">https://island94.org/2026/02/post-your-prompts</guid>
-        <pubDate>Fri, 27 Feb 2026 12:00:00 +0000</pubDate>
       </item>
   </channel>
 </rss>
