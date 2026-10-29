@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "../../engines/editor/app/javascript/editor-legacy.js": {
-    "file": "assets/editor-legacy-Cj4t2Lkt.js",
+    "file": "assets/editor-legacy-BIc5yLx7.js",
     "name": "engines/editor/app/javascript/editor.js",
     "src": "../../engines/editor/app/javascript/editor-legacy.js",
     "isEntry": true,
@@ -52,7 +52,7 @@
     "isDynamicEntry": true
   },
   "../../engines/editor/app/javascript/editor.js": {
-    "file": "assets/editor-B6RJhgtK.js",
+    "file": "assets/editor-BDtXA72K.js",
     "name": "engines/editor/app/javascript/editor.js",
     "src": "../../engines/editor/app/javascript/editor.js",
     "isEntry": true,
