@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"c219c39dcedb001a9de2caf7da1c159e"
+    etag: W/"c73cd87934878844ac106ecee0fcec28"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/10/martinfowler-com-rachels-ramblings-good-devs-wary-html":
+    build_path: bookmarks/2026/10/martinfowler-com-rachels-ramblings-good-devs-wary-html.html
+    etag: W/"57db85cc4e1abae50c9ecfe7f70b9998"
   "/bookmarks/2026/10/martinfowler-com-fragments-2026-10-28-html":
     build_path: bookmarks/2026/10/martinfowler-com-fragments-2026-10-28-html.html
     etag: W/"554e5188ab39605260a0c640f32f8009"
