@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"c73cd87934878844ac106ecee0fcec28"
+    etag: W/"7a312f86e225a43e8a2c86e020092a81"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -22,7 +22,7 @@ paths:
     etag: W/"66dd544a2530b4dec1feb5a6475050fa"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"4a482858bda1ca0f78bf9cfae9d14552"
+    etag: W/"3470fe8bae89b4310ebf979fbf363b4d"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/10/newsletter-techworld-with-milan-com-p-why-most-of-what-you-build-creates":
+    build_path: bookmarks/2026/10/newsletter-techworld-with-milan-com-p-why-most-of-what-you-build-creates.html
+    etag: W/"d0974c8e0095de613e433544ea5f2186"
   "/bookmarks/2026/10/martinfowler-com-rachels-ramblings-good-devs-wary-html":
     build_path: bookmarks/2026/10/martinfowler-com-rachels-ramblings-good-devs-wary-html.html
     etag: W/"57db85cc4e1abae50c9ecfe7f70b9998"
