@@ -9,3 +9,7 @@ tags: []
 Even when heavily anthropomorphized1, AI agents don’t seem motivated to do what you ask them to do. They will do the opposite of what you ask at times, even lying to you about what they did. This isn’t “going rogue”, it’s just what happens when a system with no ethical underpinning is given a goal to achieve.
 
 Of course, these systems can never possibly have an ethical underpinning beyond just adding more text to the input.
+
+---
+
+If you’ve ever done cybersecurity work, you know that it’s not about preventing incidents. That’s impossible. Instead, cybersecurity is about quantifying risks, and deciding which ones to mitigate. The use of AI agents feels like the same sort of thing.
