@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"d4343cbe230de12e2f72601f256575ee"
+    etag: W/"f562c43b84f18e3a4e3c99b14caa1b9e"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -3706,7 +3706,7 @@ paths:
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
   "/bookmarks/2026/10/naildrivin5-com-blog-2026-10-21-you-cannot-trust-the-ai-code-generator-html":
     build_path: bookmarks/2026/10/naildrivin5-com-blog-2026-10-21-you-cannot-trust-the-ai-code-generator-html.html
-    etag: W/"c05dfcbbf60d527dfcfe836f4a1c7805"
+    etag: W/"0cd304765e3bd227ccc639b1adcb132e"
   "/bookmarks/2026/10/defector-com-ban-the-headset-radio":
     build_path: bookmarks/2026/10/defector-com-ban-the-headset-radio.html
     etag: W/"7fa685ea0aa70b050793ee521e38a751"
