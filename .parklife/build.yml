@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"67675675f6b8626931d98f67c451fbc7"
+    etag: W/"85031d029d1aa1bd0bdb71def30aabce"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/11/onefoottsunami-com-2026-10-27-raisons-detre":
+    build_path: bookmarks/2026/11/onefoottsunami-com-2026-10-27-raisons-detre.html
+    etag: W/"e1c2199b3cf2b6fb15f7f6dff8e38ba1"
   "/bookmarks/2026/10/www-nybooks-com-articles-2026-11-19-bidens-choice-crossing-the-red-line-ahmed":
     build_path: bookmarks/2026/10/www-nybooks-com-articles-2026-11-19-bidens-choice-crossing-the-red-line-ahmed.html
     etag: W/"46b4b71290c130bd1e9f6aa1749c1ae7"
