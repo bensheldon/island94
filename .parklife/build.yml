@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"445e376d0d2e21d92525d235c4b277ca"
+    etag: W/"7adfa1a3179ea51ab39d419339552d4d"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/11/statmodeling-stat-columbia-edu-2026-11-02-science-is-not-naturally-aligned":
+    build_path: bookmarks/2026/11/statmodeling-stat-columbia-edu-2026-11-02-science-is-not-naturally-aligned.html
+    etag: W/"fafffc28392af3ec56f0d83d3981803f"
   "/bookmarks/2026/11/buttondown-com-charliejane-archive-ai-stories-in-the-age-of-ai-hype-a-conversation":
     build_path: bookmarks/2026/11/buttondown-com-charliejane-archive-ai-stories-in-the-age-of-ai-hype-a-conversation.html
     etag: W/"b28f8e70f94678ca2a02e30203ef6058"
