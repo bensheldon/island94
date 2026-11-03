@@ -8,3 +8,7 @@ tags: []
 ---
 
 > Writing without a writer and paintings without a painter are new phenomena, and learning to separate the formerly inseparable is the first step in our societal metabolization of these novelties. Recordings of musical performance have a place in our world, and so do performers.
+
+---
+
+> As Teresa Nielsen Hayden says, "You are not responsible for the things you do in other people's dreams."
