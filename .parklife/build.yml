@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"c9f8230d4dd914991352bb35a32794de"
+    etag: W/"69a1847b27071e944313a1896e445c69"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -3706,7 +3706,7 @@ paths:
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
   "/bookmarks/2026/11/pluralistic-net-2026-11-03-nobody-is-home-metabolizers":
     build_path: bookmarks/2026/11/pluralistic-net-2026-11-03-nobody-is-home-metabolizers.html
-    etag: W/"281d9f2a4a07728fbcbcadb936777586"
+    etag: W/"64956d2153da29f8387e13c6240ff34a"
   "/bookmarks/2026/11/statmodeling-stat-columbia-edu-2026-11-02-science-is-not-naturally-aligned":
     build_path: bookmarks/2026/11/statmodeling-stat-columbia-edu-2026-11-02-science-is-not-naturally-aligned.html
     etag: W/"fafffc28392af3ec56f0d83d3981803f"
