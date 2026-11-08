@@ -10,7 +10,7 @@ paths:
     etag: W/"8b0de6514ff1e9523e480db737ab92a4"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"faa48cdc1b6fd0345460ba31d1cfa103"
+    etag: W/"371add4ae221084e7d2bc6e54d8d5b79"
   "/search":
     build_path: search.html
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  ? "/bookmarks/2026/11/nymag-com-intelligencer-article-democratic-party-spam-text-emails-mothership-dnc-midterms-html-view_token-eyjhbgcioijiuzi1nij9-eyjpzci6infockprtdr2z08"
+  : build_path: bookmarks/2026/11/nymag-com-intelligencer-article-democratic-party-spam-text-emails-mothership-dnc-midterms-html-view_token-eyjhbgcioijiuzi1nij9-eyjpzci6infockprtdr2z08.html
+    etag: W/"7558d824706eea6e170afa4d412e2ea5"
   "/bookmarks/2026/11/cate-blog-2026-11-03-the-role-of-engineers-in-the-software-factory":
     build_path: bookmarks/2026/11/cate-blog-2026-11-03-the-role-of-engineers-in-the-software-factory.html
     etag: W/"3f3f57dba6b2cff20763433bcaed8a4a"
