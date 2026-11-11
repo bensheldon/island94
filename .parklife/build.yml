@@ -16,7 +16,7 @@ paths:
     etag: W/"782878c629658bb48aa35fc4fe80bd4f"
   "/search.json":
     build_path: search.json
-    etag: W/"6daceadd4f79b3f44dccb6610f17dfc2"
+    etag: W/"587cfc0b77bfa282a82b6e417f8b3556"
   "/feed.xml":
     build_path: feed.xml
     etag: W/"66dd544a2530b4dec1feb5a6475050fa"
