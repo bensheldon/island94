@@ -10,20 +10,23 @@ RSpec.describe 'Bootstrap color mode theme', :js do
     # Auto with no stored theme; test env has no OS dark preference, so light.
     expect(page).to have_css 'html[data-bs-theme="light"]'
     expect(page).to have_css "#{toggle} .bi-moon-stars-fill"
+    expect(page).to have_no_css "#{toggle} .bi-sun-fill"
     expect(page).to have_css "#{toggle}[aria-label='Switch to dark theme (currently auto, light)']"
     expect(page.evaluate_script("localStorage.getItem('theme')")).to be_nil
 
     # Override to dark
     find(toggle).click
     expect(page).to have_css 'html[data-bs-theme="dark"]'
-    expect(page).to have_css "#{toggle} .bi-sun"
+    expect(page).to have_css "#{toggle} .bi-sun-fill"
+    expect(page).to have_no_css "#{toggle} .bi-moon-stars-fill"
     expect(page).to have_css "#{toggle}[aria-label='Switch to light theme (currently dark)']"
     expect(page.evaluate_script("localStorage.getItem('theme')")).to eq "dark"
 
     # Persists across reload
     visit "/"
     expect(page).to have_css 'html[data-bs-theme="dark"]'
-    expect(page).to have_css "#{toggle} .bi-sun"
+    expect(page).to have_css "#{toggle} .bi-sun-fill"
+    expect(page).to have_no_css "#{toggle} .bi-moon-stars-fill"
 
     # Toggling back to the OS theme clears the override (auto)
     find(toggle).click
@@ -34,5 +37,6 @@ RSpec.describe 'Bootstrap color mode theme', :js do
     visit "/"
     expect(page).to have_css 'html[data-bs-theme="light"]'
     expect(page).to have_css "#{toggle} .bi-moon-stars-fill"
+    expect(page).to have_no_css "#{toggle} .bi-sun-fill"
   end
 end

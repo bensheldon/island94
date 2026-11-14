@@ -4,8 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 // Default is "auto" (follows the OS preference). Clicking overrides to the
 // opposite of the current theme; clicking back to the OS theme returns to auto.
 export default class extends Controller {
-  static targets = ["icon", "label"]
-
   connect() {
     this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     this.onSystemChange = () => this.#apply()
@@ -49,8 +47,5 @@ export default class extends Controller {
     const label = `Switch to ${next} theme (currently ${mode})`
     this.element.setAttribute('aria-label', label)
     this.element.setAttribute('title', label)
-    if (this.hasIconTarget) {
-      this.iconTarget.className = theme === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars-fill'
-    }
   }
 }

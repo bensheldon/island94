@@ -41,3 +41,9 @@ blockquote {
     max-width: 100%;
   }
 }
+
+// Theme toggle: show the icon for the theme a click switches to.
+[data-bs-theme="light"] .theme-toggle-sun,
+[data-bs-theme="dark"] .theme-toggle-moon {
+  display: none;
+}
