@@ -1,82 +1,56 @@
 import { Controller } from "@hotwired/stimulus"
 
+// Single-button theme toggle.
+// Default is "auto" (follows the OS preference). Clicking overrides to the
+// opposite of the current theme; clicking back to the OS theme returns to auto.
 export default class extends Controller {
-  static targets = ["switcher", "switcherText", "activeIcon"]
-  static values = {
-    theme: String
-  }
+  static targets = ["icon", "label"]
 
   connect() {
-    const theme = this.#getConfiguredTheme()
-    this.setTheme(theme)
-    this.#showActiveTheme(theme)
-
-    // Setup media query listener
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if (this.#getConfiguredTheme() === 'auto') {
-        this.setTheme('auto')
-      }
-    })
+    this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    this.onSystemChange = () => this.#apply()
+    this.mediaQuery.addEventListener('change', this.onSystemChange)
+    this.#apply()
   }
 
-  // Actions
-  switch(event) {
-    const theme = event.currentTarget.getAttribute('data-bs-theme-value')
-    this.#setStoredTheme(theme)
-    this.setTheme(theme)
-    this.#showActiveTheme(theme, true)
+  disconnect() {
+    this.mediaQuery.removeEventListener('change', this.onSystemChange)
   }
 
-  // Public method that can be called from other controllers if needed
-  setTheme(theme) {
-    if (theme === 'auto') {
-      document.documentElement.setAttribute(
-        'data-bs-theme',
-        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      )
+  toggle() {
+    const next = this.#currentTheme() === 'dark' ? 'light' : 'dark'
+    if (next === this.#systemTheme()) {
+      localStorage.removeItem('theme')
     } else {
-      document.documentElement.setAttribute('data-bs-theme', theme)
+      localStorage.setItem('theme', next)
     }
+    this.#apply()
   }
 
-  // Private methods
-  #getStoredTheme() {
-    return localStorage.getItem('theme')
+  #systemTheme() {
+    return this.mediaQuery.matches ? 'dark' : 'light'
   }
 
-  #setStoredTheme(theme) {
-    localStorage.setItem('theme', theme)
+  #storedTheme() {
+    const theme = localStorage.getItem('theme')
+    return ['light', 'dark'].includes(theme) ? theme : null
   }
 
-  #getConfiguredTheme() {
-    return this.#getStoredTheme() || 'auto'
+  #currentTheme() {
+    return this.#storedTheme() || this.#systemTheme()
   }
 
-  #showActiveTheme(theme, focus = false) {
-    if (!this.hasSwitcherTarget) return
+  #apply() {
+    const theme = this.#currentTheme()
+    document.documentElement.setAttribute('data-bs-theme', theme)
 
-    const btnToActive = this.element.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const iconOfActiveBtn = btnToActive.querySelector('i')
-
-    // Reset all buttons
-    this.element.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-      element.classList.remove('active')
-      element.setAttribute('aria-pressed', 'false')
-    })
-
-    // Set active button
-    btnToActive.classList.add('active')
-    btnToActive.setAttribute('aria-pressed', 'true')
-
-    // Update active icon
-    this.activeIconTarget.setAttribute('class', iconOfActiveBtn.getAttribute('class'))
-
-    // Update aria label
-    const themeSwitcherLabel = `${this.switcherTextTarget.textContent} (${btnToActive.dataset.bsThemeValue})`
-    this.switcherTarget.setAttribute('aria-label', themeSwitcherLabel)
-
-    if (focus) {
-      this.switcherTarget.focus()
+    const next = theme === 'dark' ? 'light' : 'dark'
+    const mode = this.#storedTheme() ? theme : `auto, ${theme}`
+    const label = `Switch to ${next} theme (currently ${mode})`
+    this.element.setAttribute('aria-label', label)
+    this.element.setAttribute('title', label)
+    if (this.hasIconTarget) {
+      this.iconTarget.className = theme === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars-fill'
     }
   }
 }
