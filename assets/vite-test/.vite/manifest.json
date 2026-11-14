@@ -37,7 +37,7 @@
     ]
   },
   "entrypoints/application-legacy.js": {
-    "file": "assets/application-legacy-CgtkqYon.js",
+    "file": "assets/application-legacy-C5g4Vrzh.js",
     "name": "entrypoints/application.js",
     "src": "entrypoints/application-legacy.js",
     "isEntry": true,
@@ -87,7 +87,7 @@
     ]
   },
   "entrypoints/application.js": {
-    "file": "assets/application-DcO0jwtz.js",
+    "file": "assets/application-BUyKokQ-.js",
     "name": "entrypoints/application.js",
     "src": "entrypoints/application.js",
     "isEntry": true,

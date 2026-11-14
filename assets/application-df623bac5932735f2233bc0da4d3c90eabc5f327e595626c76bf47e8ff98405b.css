@@ -25970,3 +25970,9 @@ blockquote {
 .post-content img {
   max-width: 100%;
 }
+
+/* line 46, app/assets/stylesheets/application.css.scss */
+[data-bs-theme="light"] .theme-toggle-sun,
+[data-bs-theme="dark"] .theme-toggle-moon {
+  display: none;
+}
