@@ -2,58 +2,37 @@
 require 'rails_helper'
 
 RSpec.describe 'Bootstrap color mode theme', :js do
-  it 'defaults to auto, reflects the active theme in the UI, and persists across reloads' do
+  let(:toggle) { 'button[data-controller="theme"]' }
+
+  it 'defaults to auto, toggles an override, and returns to auto when toggled back' do
     visit "/"
 
-    # Defaults to "auto" with no theme stored, resolved to light (no OS dark preference in test env).
+    # Auto with no stored theme; test env has no OS dark preference, so light.
     expect(page).to have_css 'html[data-bs-theme="light"]'
-    expect(page).to have_css '[data-theme-target="activeIcon"].bi-circle-half'
-    expect(page).to have_css '[data-bs-theme-value="auto"][aria-pressed="true"]', visible: :all
-    expect(page).to have_css '[data-bs-theme-value="light"][aria-pressed="false"]', visible: :all
-    expect(page).to have_css '[data-bs-theme-value="dark"][aria-pressed="false"]', visible: :all
-    expect(page).to have_css '[data-theme-target="switcher"][aria-label="Theme (auto)"]'
+    expect(page).to have_css "#{toggle} .bi-moon-stars-fill"
+    expect(page).to have_css "#{toggle}[aria-label='Switch to dark theme (currently auto, light)']"
+    expect(page.evaluate_script("localStorage.getItem('theme')")).to be_nil
 
-    # Switch to Dark
-    click_on "Theme"
-    click_on "Dark"
-
+    # Override to dark
+    find(toggle).click
     expect(page).to have_css 'html[data-bs-theme="dark"]'
-    expect(page).to have_css '[data-theme-target="activeIcon"].bi-moon-stars-fill'
-    expect(page).to have_css '[data-bs-theme-value="dark"][aria-pressed="true"]', visible: :all
-    expect(page).to have_css '[data-bs-theme-value="auto"][aria-pressed="false"]', visible: :all
-    expect(page).to have_css '[data-bs-theme-value="light"][aria-pressed="false"]', visible: :all
-    expect(page).to have_css '[data-theme-target="switcher"][aria-label="Theme (dark)"]'
-    expect(page).to have_css '[data-theme-target="switcher"]:focus'
+    expect(page).to have_css "#{toggle} .bi-sun"
+    expect(page).to have_css "#{toggle}[aria-label='Switch to light theme (currently dark)']"
+    expect(page.evaluate_script("localStorage.getItem('theme')")).to eq "dark"
 
-    # Persists across reload, including the icon reflecting the stored setting (not just the resolved DOM theme).
+    # Persists across reload
     visit "/"
     expect(page).to have_css 'html[data-bs-theme="dark"]'
-    expect(page).to have_css '[data-theme-target="activeIcon"].bi-moon-stars-fill'
-    expect(page).to have_css '[data-bs-theme-value="dark"][aria-pressed="true"]', visible: :all
+    expect(page).to have_css "#{toggle} .bi-sun"
 
-    # Switch to Light
-    click_on "Theme"
-    click_on "Light"
-
+    # Toggling back to the OS theme clears the override (auto)
+    find(toggle).click
     expect(page).to have_css 'html[data-bs-theme="light"]'
-    expect(page).to have_css '[data-theme-target="activeIcon"].bi-sun'
-    expect(page).to have_css '[data-bs-theme-value="light"][aria-pressed="true"]', visible: :all
-    expect(page).to have_css '[data-bs-theme-value="dark"][aria-pressed="false"]', visible: :all
-    expect(page).to have_css '[data-theme-target="switcher"][aria-label="Theme (light)"]'
-
-    # Switch back to Auto
-    click_on "Theme"
-    click_on "Auto"
-
-    expect(page).to have_css 'html[data-bs-theme="light"]'
-    expect(page).to have_css '[data-theme-target="activeIcon"].bi-circle-half'
-    expect(page).to have_css '[data-bs-theme-value="auto"][aria-pressed="true"]', visible: :all
-    expect(page).to have_css '[data-bs-theme-value="light"][aria-pressed="false"]', visible: :all
-    expect(page).to have_css '[data-theme-target="switcher"][aria-label="Theme (auto)"]'
+    expect(page).to have_css "#{toggle}[aria-label='Switch to dark theme (currently auto, light)']"
+    expect(page.evaluate_script("localStorage.getItem('theme')")).to be_nil
 
     visit "/"
     expect(page).to have_css 'html[data-bs-theme="light"]'
-    expect(page).to have_css '[data-theme-target="activeIcon"].bi-circle-half'
-    expect(page).to have_css '[data-bs-theme-value="auto"][aria-pressed="true"]', visible: :all
+    expect(page).to have_css "#{toggle} .bi-moon-stars-fill"
   end
 end
