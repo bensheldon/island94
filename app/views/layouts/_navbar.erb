@@ -16,48 +16,16 @@
           <hr class="d-lg-none my-0 text-light-500">
         </li>
 
-        <li class="nav-item dropdown" data-controller="theme">
+        <li class="nav-item">
           <button
-            data-theme-target="switcher"
-            class="btn btn-link nav-link dropdown-toggle"
             type="button"
-            aria-expanded="false"
-            data-bs-toggle="dropdown">
-            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
-            <span data-theme-target="switcherText">Theme</span>
+            class="btn btn-link nav-link"
+            data-controller="theme"
+            data-action="theme#toggle">
+            <i class="bi bi-sun-fill theme-toggle-sun" aria-hidden="true"></i>
+            <i class="bi bi-moon-stars-fill theme-toggle-moon" aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle theme</span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li>
-              <button
-                type="button"
-                class="dropdown-item"
-                data-bs-theme-value="light"
-                data-action="theme#switch"
-                aria-pressed="false">
-                <i class="bi bi-sun"></i> Light
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="dropdown-item"
-                data-bs-theme-value="dark"
-                data-action="theme#switch"
-                aria-pressed="false">
-                <i class="bi bi-moon-stars-fill"></i> Dark
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="dropdown-item"
-                data-bs-theme-value="auto"
-                data-action="theme#switch"
-                aria-pressed="true">
-                <i class="bi bi-circle-half"></i> Auto
-              </button>
-            </li>
-          </ul>
         </li>
 
       </ul>
