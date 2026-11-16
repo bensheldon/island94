@@ -10,7 +10,7 @@ paths:
     etag: W/"4fe5d3fdef8d0c691792c301c8123b12"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"ddf4804c16c67346c41c176b888d6854"
+    etag: W/"040f4801c1d9235104248cd3b9561c8e"
   "/search":
     build_path: search.html
     etag: W/"aeafb5d7db6eab3c795eff06ce62f32d"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/11/deprogrammaticaipsum-com-how-could-that-possibly-work":
+    build_path: bookmarks/2026/11/deprogrammaticaipsum-com-how-could-that-possibly-work.html
+    etag: W/"a7fb1a27c2eb7caf14a7f864d36dd07c"
   "/bookmarks/2026/11/www-alumni-caltech-edu-techer-stories-richard-feynman-and-the-math-of-menu-choices":
     build_path: bookmarks/2026/11/www-alumni-caltech-edu-techer-stories-richard-feynman-and-the-math-of-menu-choices.html
     etag: W/"abc64a81e1347ee334f86523cd5c0d11"
