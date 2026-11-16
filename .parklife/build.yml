@@ -10,7 +10,7 @@ paths:
     etag: W/"4fe5d3fdef8d0c691792c301c8123b12"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"040f4801c1d9235104248cd3b9561c8e"
+    etag: W/"33cbbd1903817f3181aa9ea8a6e324fd"
   "/search":
     build_path: search.html
     etag: W/"aeafb5d7db6eab3c795eff06ce62f32d"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/11/fallows-substack-com-p-these-are-not-serious-people":
+    build_path: bookmarks/2026/11/fallows-substack-com-p-these-are-not-serious-people.html
+    etag: W/"45942f2d69bdc6903e3dd6b03a330aad"
   "/bookmarks/2026/11/deprogrammaticaipsum-com-how-could-that-possibly-work":
     build_path: bookmarks/2026/11/deprogrammaticaipsum-com-how-could-that-possibly-work.html
     etag: W/"a7fb1a27c2eb7caf14a7f864d36dd07c"
