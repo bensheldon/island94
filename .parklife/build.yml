@@ -10,7 +10,7 @@ paths:
     etag: W/"4fe5d3fdef8d0c691792c301c8123b12"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"33cbbd1903817f3181aa9ea8a6e324fd"
+    etag: W/"4f2b97f0ceba3623a7b9a7c85cd257ce"
   "/search":
     build_path: search.html
     etag: W/"aeafb5d7db6eab3c795eff06ce62f32d"
@@ -22,7 +22,7 @@ paths:
     etag: W/"66dd544a2530b4dec1feb5a6475050fa"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"bb76a4075c84bdaf7fa31a17998a8c3c"
+    etag: W/"f7a14b168b65510cef06c59de003fc83"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/11/buttondown-com-melodicambient-archive-wishlist-woes-and-post-cozy-problems-danchi-days":
+    build_path: bookmarks/2026/11/buttondown-com-melodicambient-archive-wishlist-woes-and-post-cozy-problems-danchi-days.html
+    etag: W/"773b30e723300f79353adc383060496a"
   "/bookmarks/2026/11/fallows-substack-com-p-these-are-not-serious-people":
     build_path: bookmarks/2026/11/fallows-substack-com-p-these-are-not-serious-people.html
     etag: W/"45942f2d69bdc6903e3dd6b03a330aad"

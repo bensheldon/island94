@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-df623bac5932735f2233bc0da4d3c90eabc5f327e595626c76bf47e8ff98405b.css" data-turbo-track="reload" />
+  
+  <script src="/assets/vite/assets/application-DwGv-J81.js" crossorigin="" type="module"></script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item">
+          <button
+            type="button"
+            class="btn btn-link nav-link"
+            data-controller="theme"
+            data-action="theme#toggle">
+            <i class="bi bi-sun-fill theme-toggle-sun" aria-hidden="true"></i>
+            <i class="bi bi-moon-stars-fill theme-toggle-moon" aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle theme</span>
+          </button>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/bookmarks/2026/11/buttondown-com-melodicambient-archive-wishlist-woes-and-post-cozy-problems-danchi-days">Wishlist Woes and Post-Cozy Problems: Danchi Days&#39; Low Steam Sales</a>
+    </h1>
+    <small><a href="https://buttondown.com/melodicambient/archive/wishlist-woes-and-post-cozy-problems-danchi-days/">https://buttondown.com/melodicambient/archive/wishlist-woes-and-post-cozy-problems-danchi-days/</a></small>
+    <p>
+        <time datetime="2026-11-17T15:16:00+00:00" itemprop="datePublished">
+          November 17, 2026
+        </time>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>We had a 7.4% CR for the September 2024 cohort - our reveal month. Our worst CR is 1.0% in July 2026, meaning the Sep ‘24 cohort was 7x more likely to buy the game than someone who wishlished in July 2026.</p>
+
+<p>Based on my data, there’s about 6 types of WLs, and they have different relative likelihoods to convert. Let’s give them ratings in terms of conversion likelihood:</p>
+
+<p>100: Announcement-period i.e. people who love your past work are likely to buy your latest work!</p>
+
+<p>60: Streamer audience. People who watch streams of early demos have higher conversion rates. They saw what the game is like, and might be in the right audience.</p>
+
+<p>40: Personal Calendar. Steam personalizes who they show the game to now before your release. People browsing the personal calendar are looking to buy soon, and the game also might loosely fit their taste. But they’re also WLing a lot of games at once.</p>
+
+<p>40: Organic (no marketing activities). We had a few moments where we weren’t doing anything beyond social media posts. People who wishlist in this period are likely to have some loose interest in the game from what they see, or they find the game by searching, But, they might not see or try what the game is like to play.</p>
+
+<p>25: Showcase Viewers: Perhaps my biggest surprise after running numbers is how much lower this group is vs announcement period! I knew showcase wishlists tended to have lower conversion rates, but not to this extent! It makes sense though: Showcases are all about games that won’t be on sale for a while, and people wishlist many things at once.</p>
+
+<p>15: Ad Clickers: This was also surprising. In a now embarrassing post where I talked about the experience of running ads, I severely overestimated how well these would convert. People seeing the game through ads have an even lower conversion rate than Showcases, which surprised me, given that clicking an ad and reading the store page takes a lot of time! In other words I would never recommend spending on ads unless your game costs $25+ and is in a conventional genre with higher overall CRs. But then again, the paradox goes, if you’re a conventional designer you’re less likely to need ads as the whole economic system works more in your favor.</p>
+
+<p>In other words, a WL from a longtime fan, on average, is 7-8x more likely to become a purchase, than a WL you can get from running an ad.</p>
+
+  </div>
+</article>
+
+
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-7rm_FOgz.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-DvoPy5GJ.js')</script>
+</body>
+</html>
