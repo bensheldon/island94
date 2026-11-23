@@ -10,7 +10,7 @@ paths:
     etag: W/"4fe5d3fdef8d0c691792c301c8123b12"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"a1538288ad28aac8867c5ab3cb4e7510"
+    etag: W/"a2b573773cda866b6fb79c42f2282b20"
   "/search":
     build_path: search.html
     etag: W/"aeafb5d7db6eab3c795eff06ce62f32d"
@@ -3706,7 +3706,7 @@ paths:
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
   "/bookmarks/2026/11/pxlnv-com-blog-the-work-of-art-in-the-age-of-infinite-production":
     build_path: bookmarks/2026/11/pxlnv-com-blog-the-work-of-art-in-the-age-of-infinite-production.html
-    etag: W/"b8e041ef26ad3d696d2c178b2d7009de"
+    etag: W/"c50f956e5da4cadff276e3851fb37f4d"
   "/bookmarks/2026/11/jonmagic-com-posts-surviving-the-ai-squeeze":
     build_path: bookmarks/2026/11/jonmagic-com-posts-surviving-the-ai-squeeze.html
     etag: W/"5091494dc86d4ffe2746158e7be34a6d"
