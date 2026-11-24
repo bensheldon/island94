@@ -10,7 +10,7 @@ paths:
     etag: W/"4fe5d3fdef8d0c691792c301c8123b12"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"a2b573773cda866b6fb79c42f2282b20"
+    etag: W/"1a398dbad09842e90bd1094071e76387"
   "/search":
     build_path: search.html
     etag: W/"aeafb5d7db6eab3c795eff06ce62f32d"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/11/thedailywtf-com-articles-comments-how-not-to-get-honey-trapped":
+    build_path: bookmarks/2026/11/thedailywtf-com-articles-comments-how-not-to-get-honey-trapped.html
+    etag: W/"5fe89ae2ed38d46b88b5910dc6d3bb96"
   "/bookmarks/2026/11/pxlnv-com-blog-the-work-of-art-in-the-age-of-infinite-production":
     build_path: bookmarks/2026/11/pxlnv-com-blog-the-work-of-art-in-the-age-of-infinite-production.html
     etag: W/"c50f956e5da4cadff276e3851fb37f4d"
