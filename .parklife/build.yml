@@ -10,7 +10,7 @@ paths:
     etag: W/"4fe5d3fdef8d0c691792c301c8123b12"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"1a398dbad09842e90bd1094071e76387"
+    etag: W/"b8c8e8bb13640df1450fa275f9844d13"
   "/search":
     build_path: search.html
     etag: W/"aeafb5d7db6eab3c795eff06ce62f32d"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/11/donmoynihan-substack-com-p-time-to-resurrect-direct-file":
+    build_path: bookmarks/2026/11/donmoynihan-substack-com-p-time-to-resurrect-direct-file.html
+    etag: W/"fb35d4f58f1164ea96a17a2fd6bcbd62"
   "/bookmarks/2026/11/thedailywtf-com-articles-comments-how-not-to-get-honey-trapped":
     build_path: bookmarks/2026/11/thedailywtf-com-articles-comments-how-not-to-get-honey-trapped.html
     etag: W/"5fe89ae2ed38d46b88b5910dc6d3bb96"
