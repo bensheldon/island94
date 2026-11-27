@@ -30,6 +30,11 @@ class BaseFrontmatter
     Type.new(self)
   end
 
+  # Deserializes a YAML front matter string (without the `---` fences).
+  def self.from_yaml(yaml)
+    new(YAML.safe_load(yaml.to_s) || {})
+  end
+
   attr_reader :extras
 
   def initialize(attributes = {})
@@ -49,6 +54,7 @@ class BaseFrontmatter
     attributes.compact.merge(extras)
   end
 
+  # Serializes to a YAML document, starting with the opening `---` fence.
   delegate :to_yaml, to: :to_h
 
   def ==(other)

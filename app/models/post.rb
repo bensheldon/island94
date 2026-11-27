@@ -33,7 +33,7 @@ class Post < ApplicationModel
   end
 
   def self.from_file(path)
-    parsed = FrontMatterParser::Parser.parse_file(path)
+    parsed = FrontMatterParser::Parser.parse_file(path, loader: PostFrontmatter.method(:from_yaml))
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 

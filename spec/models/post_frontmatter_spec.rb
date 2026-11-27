@@ -21,4 +21,17 @@ RSpec.describe PostFrontmatter do
     expect(post.frontmatter).to be_a(described_class)
     expect(post.title).to eq("Hi")
   end
+
+  it 'round-trips through YAML' do
+    yaml = "title: Hi\ndate: 2024-01-01 10:00 UTC\ntags: [ruby]\nlayout: post\n"
+    frontmatter = described_class.from_yaml(yaml)
+
+    expect(frontmatter.title).to eq("Hi")
+    expect(frontmatter.date).to eq("2024-01-01 10:00 UTC")
+    expect(described_class.from_yaml(frontmatter.to_yaml)).to eq(frontmatter)
+  end
+
+  it 'deserializes empty YAML' do
+    expect(described_class.from_yaml("")).to eq(described_class.new)
+  end
 end
