@@ -1,0 +1,6 @@
+<h5>Related Posts</h5>
+<ul>
+  <% post.related_posts.each do |related_post| %>
+    <li><%= link_to related_post.title, link.call(related_post) %></li>
+  <% end %>
+</ul>

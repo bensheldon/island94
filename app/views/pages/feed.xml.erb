@@ -13,6 +13,9 @@
         <description>
           <![CDATA[
           <%= h post.content(base_url: root_url) %>
+          <% if post.related_posts.any? %>
+            <%= h render(partial: "posts/related_posts", formats: [:html], locals: { post: post, link: ->(related) { post_url(related) } }) %>
+          <% end %>
           ]]>
         </description>
         <link><%= post_url(post) %></link>

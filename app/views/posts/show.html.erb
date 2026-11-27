@@ -13,12 +13,7 @@
   <% if @post.related_posts.any? %>
     <hr>
     <div class="card-body">
-      <h5>Related Posts</h5>
-      <ul>
-        <% @post.related_posts.each do |related_post| %>
-          <li><%= link_to related_post.title, post_path(related_post) %></li>
-        <% end %>
-      </ul>
+      <%= render "posts/related_posts", post: @post, link: ->(related) { post_path(related) } %>
     </div>
   <% end %>
 </div>
