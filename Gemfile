@@ -43,4 +43,4 @@ end
 
 gem "informers", "~> 1.3", require: false # on-device text embeddings for related posts
 
-gem "numo-narray", "~> 0.9.2"
+gem "numo-narray-alt", require: "numo/narray" # fast vector math for related posts

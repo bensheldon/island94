@@ -237,7 +237,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.7-x86_64-linux-gnu)
       racc (~> 1.4)
-    numo-narray (0.9.2.1)
+    numo-narray-alt (0.12.0)
     onnxruntime (0.11.9-arm64-darwin)
       ffi
     onnxruntime (0.11.9-x86_64-linux)
@@ -457,7 +457,7 @@ DEPENDENCIES
   kramdown-parser-gfm
   mdl
   metainspector (~> 5.17)
-  numo-narray (~> 0.9.2)
+  numo-narray-alt
   parklife
   parklife-rails
   puma
