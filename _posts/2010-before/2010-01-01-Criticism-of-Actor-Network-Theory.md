@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/criticism-actor-network-theory/
 - "?p=1659"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "65ceecea1e178a3d"
+  vector: "APz7/QIFCgD/Bf8F+wYC/f4AAf0A9fz++QAB9Pn/+Q8A//oM+wYGAAUAAPj6+QT08gLx+vwAAfsGBfb6Bfv9BAkI9AP8BwYA/QMK+AoFBPcKAfgB+gH4+fv9+AMEAA0C/f74BgAC/vwBAfz3DAbyAgH9Cvv6BhL/BAAH/QgA+AD/AwMFCfz3+wD9AQsCCQIEAfcK+P0I9//++wL9/AX8EAMJBP788wT4/AEA/QMGAgADDf8EEPgA//kF+/oGB/8GAwb3+Qr7/Qb4+vj69gL8CPT///35/gb/EQr+/P4J+wD58/0DBfgB+QAD+/oA9A7xBvcFAxIF7gII/QYD+v7/BQH9/w8B/f3z/fz6+gL89wHuBv8B//P+CwkABAQFAfsM+foEAAb9BAL2BQEC/wX4/fr/BgEGB/YIAwED9fcG9gD3/wUCAgEHAPYRAAL8DgP3CP34BAQA9f8D/vj//AT3B//7/gUIAAH6AwUIBAn+/gIF/f8E8/4F/AQK/wUQBP38"
 ---
 
 Once you have a basic definition, I find it easiest to learn about something through its criticisms: what is criticised is usually what is unique. This is the Wikipedia's [criticism of Actor-Network Theory](http://en.wikipedia.org/wiki/Actor-network_theory#Some_criticism), which was developed by [previously mentioned](http://www.island94.org/2010/01/modern-and-post-modern-science/) Bruno Latour:

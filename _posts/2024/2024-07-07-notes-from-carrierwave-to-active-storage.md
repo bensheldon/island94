@@ -3,6 +3,10 @@ title: "Notes from Carrierwave to Active Storage"
 date: 2024-07-09 3:30 PDT
 published: true
 tags: [Rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3429f7ccb89bdce3"
+  vector: "+wH+DAv7AAb4AwsLCQT/AwEC9Qb9/gv/A/b6/AL1CAP+BQ4FAPn++A37+gL7AAIA9//7+/QK/QH9+/0JBP/59v8ICvwJ/AYH9gf9+woE/PD89Ab7Bf35/Pz4/P4KBQL+BgIFBgEGCf8F/AQD//oAA/7//f/3Av78EAMF//n1+gD+AgAL9wH++foA9wv1CgP9+QcMDf8E8gL9AAH6AwH9/wcCA/77/vf/DAf3BfsG/wT8/wYBAgP68gH9B/cO/PwF/gAL/f4B+Q359QXy/wj5A/7++AT0/gj49vkDBQD7CgAO+wEE/vsGBfnv+vj68vf2+vT9CPoIBQ0DC/oA//n9/QH9/AQCCAQCBAX3BgQCBf//BQf89/oI/wT5+QEDAQP4+AEA9v8FAP0CAgj+Af8D++4BBQwCCv0AAv78AgIG/AD9C/sF/wEBAgj9B/75//wBBAH3B/wGBP4BAfsEDP0P/QcI/QICAwAEB/z7AwX2Avz6Cfv5+hL+9w0IDQcJ8foJ"
 ---
 
 I recently migrated [Day of the Shirt](https://dayoftheshirt.com), my graphic t-shirt sale aggregator, from storing image attachments with Carrierwave to Active Storage. It went ok! 👍

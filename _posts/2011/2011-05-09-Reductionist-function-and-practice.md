@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2011/05/reductionist-function-and-practice/
 - "?p=2644"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ab1303e9a0b58d84"
+  vector: "+wUD8wn5+wv9AgAGAwIG/wX8/f76+QD68goC9gP2Ag0G/AAABQD69//29QAM+QL///v0//z3AQL/BPn+CP33BAoBBQECB//+/QwD+gP6AAEAA/8IAPv8/v/5Av8C9gIJAPb8CPwECvP++gT8Agb4+vEBAf0AAw0HAQUB//0K+gD8DQAA/v4GBP8MAwb6Cxn89AEB9AH6/v4KAAj9+/8BBvr+/Pr57Q398gH7/wUKCf/5+v8FC/789wH0Bgf5+/sI9wb9AgX4/Pr/8gX/AQD6/wMHBf4JAgj//gr9CAIDAgD9+/8BB/79+AH5AQED9/MI/fcF/gUL+ADz//j4AQX99QEEBQD8//wJBfr4+gL3+P3/AgIKAvj3AAz6AA38CAQBCfwICvT5+AH8/f8CAvj8+AD/A/8BD/P+BAYAC/8T/wD9+w0EAPgCBwQBA/36ERACBgT2AAz/A/4A+f0CAAn8/wUNBfsH//j+/Ab9BAj9+vUCCvwCBwEKAQIFBQsJ9wEK"
 ---
 
 ![](/uploads/2011-05-09-Reductionist-function-and-practice/remote.jpeg "remote")

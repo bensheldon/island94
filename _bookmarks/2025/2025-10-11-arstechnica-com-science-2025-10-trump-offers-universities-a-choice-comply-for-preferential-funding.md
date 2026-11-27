@@ -4,6 +4,10 @@ date: 2025-10-11 01:52 UTC
 published: true
 title: 'Trump offers universities a choice: Comply for preferential funding'
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0200ab6ab7d31166"
+  vector: "C/kJAQn/APn7CP3+APsGAQLz+wP7+vcA//z9+/kE+gcD/AX/AP0GBP/+BQsB9wD5+/wFBQP79gYC/PoB9/4B/wL+9gEQBQsL8gIQBAMMCwIH9fkDA/f/8QIJ/f8GAAwE+vwEBfkHAPr+9Az+AgEJ+wYF/gEOAwYN9gYA+AH+8gAAAfz/9vcE/AH7/Q3/AA0A+Ab6BwwH+/j4AfgIAv8I+wEBCP8HBwQC9AAJAQAE//z3BPUD+f71+QT/+vz+/P788/cB/An//f35AwcFAwAJ9Qn7+Pf+CQj6BfwF/P8EAgADBQr4Cf8K+wf+AAUIBfX5BwQE+wUJAwb6/fv7AQQCCPcHA/v/EP0HBfb3AQsPBQEBA+78/wUL+gz99BH7//3+/Pj/+vMD/fsF/PcHAQf+/vr7AfgFBAL9Bf/8/Qb19wADAvsH/wL1/wkE/AL3+QcPAQP9/v71/gT+Bf79/f/8+gD8/wUCAQkF+e8C/QkF9g4FCgL89/kC/Pr6+QAD+PcB"
 ---
 
 But the single most important metric in admissions for selective universites is none of this stuff. The most important metric is how predictably you will accept the admissions offer. Exclusive universes have a numbers problem. We had 130,000 applications for 5,000 seats. If you expect ⅓ of your offers to be taken, you have to make 15,000 offers. If you're wrong on that ⅓, and half take them, you're fucked - you have 2,500 students with no dorm rooms, not enough classrooms, instructors, not enough services, and so on. At a public university they also won't get their subsidy, so you're taking a ~$10,000 loss on each student. You've probably also wrecked your financial aid pool. If you go under that's less devastating, but still pretty bad because you have a lot of fixed costs that you need that tuition + subsidy at a public to cover. You can backfill from waitlist to some degree, but only so much. Universities care more about how reliably they can predict your likelihood to take the offer than they do about boosting the average GPA or whatever. When you're admitting 12% of the pool, there's really no difference between the top 1% and the top 5%, and the top 1% are the hardest to predict so you don't admit them. Yes, you turn down the highest achieving students because they're the hardest to get and you can't risk modeling them wrong.

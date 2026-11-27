@@ -4,6 +4,10 @@ date: 2025-01-30 14:43 PST
 published: true
 tags: 
   - Ruby
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9b167902813f5874"
+  vector: "9vYBBP34+vgIA/8L+Pr8/RT18gcF/f8B/fj9/AX4/foFB/kC/ff6BQEA8v74BwX/+/T3BP/+AgEN+PkD/fv6AQ3+DQUC/QkB9QT+/gD6Av0CAgYAAfn+BAYAAgQCCw8JBwX7/wUABQIDBP8N9fUNAgkF/AUOAgUIAgn7+f8B/AAE/fT79wX7/AH8A/0AA/v6AQABCAf7+AL9BAP29QMBAP0FBgL+/gP4AAHzA/z+9wP1/gwDCgj//w8AABEJAPsKBPsABPsK+QT/AQT7A/v5Af0F+fn6+gX3+gD9/gr/AQAA8foVBwEA+fb7+/3/DQ77CPwBAAb+BfsK+ff8Af4B/wYA/Q3+BgP9Cfn9/foN+Pn7BQUFBQ4D+/sAAwQDAQT5BPwL9gP+AwYAA/4O/Pn4//QHAAn9AQYG/fwC/QD8+AAMAPwCCwEAAvwQEP4CAQsD+Pj/+wAA+gj0AAUAA/EBBP4A+AH1AwsA+/4IAwT88/36AfYC/gz7BAj1/gIF+vX+"
 ---
 
 There’s been a ton of fantastic posts from Jean Boussier recently explaining [application shapes](https://byroot.github.io/ruby/performance/2025/01/23/the-mythical-io-bound-rails-app.html), [instrumenting the GVL (Global VM Lock)](https://byroot.github.io/ruby/performance/2025/01/23/the-mythical-io-bound-rails-app.html), and [thoughts on removing the GVL](https://byroot.github.io/ruby/performance/2025/01/29/so-you-want-to-remove-the-gvl.html). They’re great reads!

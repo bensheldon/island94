@@ -11,6 +11,10 @@ redirect_from:
 - setting-octave-and-gnuplot-osx
 - 2007/09/setting-up-octave-and-gnuplot-on-osx/
 - "?p=151"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9793864c8e1d1157"
+  vector: "+/v/8vQA9gH9/QT1AwIFAfv6Av4F+f4ACQUDBgQGAwT//fn5Av/yAwAHAQMD8gL6AwEA/gECAAD89gr49g4BBvv8/wL/Bv35Bfr4AgD59v3/BfUM+gEECP4CBQbzBP8DCAMA/P/1CwYAAgcIAQD+/fwJDQ38+Pz+AQX+CwcA+AAEAf74AP30Av0L/w78CPv6Df/z+wD//vv3FQkCCQQBAQL5AP3/BQcF+gALBgsD/gQHCvz//Ar9BwH88QT8BwD49wH6+PsS8gcIAgX9Bgf3A/n/A/YC/goM/Pr8AAX8+AD8AwQG/ggIAQP9+gMF/wv9/gP19fcEBf0G+wv7//74BvjyAgkD//H4APj9+f4OAwgABQT+Cf8H9v4C+vv1/ATx+/b/8wYEAQT7/QID8Pj8AxQQCAUB//kIA/4BAPMB/gAECwIFAAUG/gEDAwL9/vUFAvwE/vsE9QL5/AEE+QQD9/cFCPr2DAX9/AcD+vsFAv8ACQL/9/j8//z0+AD5/AH9"
 ---
 
 I just started auditing a Mathematical Models in Biology class and Matlab is one of the requirements. I had relatively good experience with the free, open source alternative, [Octave](http://www.gnu.org/software/octave/) back in college, but then I was running Linux, not OSX. It took me about an hour to figure out how to set it up (I was a little worried for a bit).

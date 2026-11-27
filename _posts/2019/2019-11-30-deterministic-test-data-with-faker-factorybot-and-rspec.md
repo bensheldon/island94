@@ -2,6 +2,10 @@
 date: '2019-11-30 11:33 -0800'
 published: true
 title: 'Deterministic test data with Faker, FactoryBot, and RSpec'
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f1970ab9478fb676"
+  vector: "8fj2AQH9/vv6+QgEBvn/A/0ABvcGAAYA9vP/BgT1Ewn7/g0G+/wE/wj/8v//BP0IBP77AQf+APcI+wQEAvz99gAB+gUOCgIE+gf9B/r99/zx9AX/AQMLAgMB+/gCCAEHCwQEAQD6CwP/+/z6AfwGAwsFAQP4AfkHCggCBwgBAAAE/vwI/AsEDgME+/z4/f769v8BCQT/+fcEAgABAgT8CQEOAAIAAfQC/gH6A/7x/QsJAv8LB/r89P38AQT9APkMA/gJAQcIBQDxAvz6Cw34/woF9vn3/gX59/YF+gIH/AAD/QoLCPkDB/j9+vcOAgX9/f0BBP4N/f76AvsKAv0FCQEB+/kCCwwHEAv0/QH9//YHAfwD9fb69vwG+gn9AQcC+/sD+wj6AQL4BAD88P4A/vf5CAj3CgAJBQcE+QIG+wAG/AYKAPn7/Pz4BQf6AwL/+/39/P8EBAb4BAABCfgD+//78QL8/wL8AP75+/fv8fIA9/v8AAML/v7//gAC/AD8"
 ---
 I get a lot of joy from using [Faker](https://github.com/faker-ruby/faker) and [FactoryBot](https://github.com/thoughtbot/factory_bot) to efficiently generate real-world test data, but its randomness can be a liability when trying to debug complicated specs or when setting up systems that require repeatable data across RSpec test runs like [Percy's visual diffs](https://percy.io/).  
 

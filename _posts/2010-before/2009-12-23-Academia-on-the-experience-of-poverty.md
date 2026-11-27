@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/12/academia-on-the-experience-of-poverty/
 - "?p=1616"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e5d1b19c142a7ee1"
+  vector: "/wj7Bv4E/AQDAAP8AAH6/vwB/v8G//78/AP/+AQNCQb/AwMQCQT9APr2+fAA+AL3+PX+/wADAfsJ9v35Cv3/BBAF+wn6A/32APsA9gIEAQMLC/z+9gsC9w/68wMFBwH6BPf/AAP9A/f9/vcB9Ab9BfoHBPn2/QUKBgEA/wP/AgAD/gb8AP/+A/0ICgcEDwX3//oJBAEDBfwJ/v/8/QEE//zuBPz1B/sC8/kI/QcIDgT6BAD8/fX99vz39vMC9fgACwP/AwD6/v8HA/7+AwP8DPYF+fgLB/3/Cf0AAvP9/QAHAfYCCP38AQUH9v4EBv77+f36AQQF+f8BA/8B8v0JAvX39wP89f4C/wn7//0CAPoK9RcCAAIJ/gr7APwEBP0TAf3/+/74APb78vwH9gX/AAb0CPkC/vb5Agn4/vUKBQANCvv4+vkL/QUV/P/9CQIGC/v8Ag/5+QEF+QP/AAEBBvr6+QMBBQED/AT///wA+gn9/vb+AgIE+AIE+v0K/gP8"
 ---
 
 ![](/uploads/2009-12-23-Academia-on-the-experience-of-poverty/Livelihood-Framework-500x270.png "Livelihood Framework")

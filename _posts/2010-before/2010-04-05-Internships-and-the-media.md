@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2010/04/internships-and-the-media/
 - "?p=1861"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bfb771a266745527"
+  vector: "/v8F+v3/BPn9+gUICPn5/Ar99wH59QQF/v/6/vkAAwoB/wYNBgUL/wb1//v78QH2+f369g37/gEHBAYJ+vYDAgT9/QL3+AL69wwIAQn8Av4H/gD8+fP8/wcK9QD5/gz++v35Cf0BB/7/8gj++AT+BQX/BwkCCAX5Bw38CvP68gD7Cf0MDgL5AQgDAQn8+wIJ9AP6/Qn/Av37/QP8EQL+/gP7AgT+/v0A9AIE/voMBPwCBf4DA/z8BAT3BPkDDvoG9QMBAAf//wT3+v0E+PwA+g38B/wDAQf/Dgz7+P8I+wAG9QX7DwD+/wQB+fr7BQn2Av/5AAUI/A/5/wgJ8wP8APoA/gf9/fUABvr0Avr8+Pr3+vL+AgL9/QMEAwIAAfr7/fcD+PwLCP719/oNAPv58gT4A/8KBgUJ+AgJ+vgA/wD+Af0CA/cA/gwJAvYH/wUD+gT5AgQG/wT+//4B/Qb3A/rz+wAH+P8BAPYJ+wMD/AANDv8E//8C+PwL9gQK+QX+"
 ---
 
 An exceprt from "Internment Camp: The Intern Economy and the Culture Trust (Interns Built the Pyramids)" by Jim Federick in [_The Baffler_](http://www.thebaffler.com/archive) ( [1997: Vol. 1, No. 9.](http://www.thebaffler.com/issue/33)) - mentioned by [Henri Makembe](http://www.localpolitechs.com/) on the [Mission Based Massachusetts listserv](http://groups.yahoo.com/group/Mission-Based-Massachusetts/).

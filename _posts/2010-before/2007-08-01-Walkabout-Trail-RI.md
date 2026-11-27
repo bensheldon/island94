@@ -12,6 +12,10 @@ redirect_from:
 - articles/walkabout-trail-ri
 - 2007/08/walkabout-trail-ri/
 - "?p=135"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2c8b471710f49d06"
+  vector: "B/8KCwcDA/32BQb9AA0FBgEBAf4GAQUKAf8BAP36/f///AoGBfkFBP0ACPz7/AD7A/8D/vkF+AD7//n3CQAABfgD9PkQ9PoJ+/r2AAUP+/b8/wgDBAMEAAL2/wf39fb7+/77AwUD/QII/vf8AwUK/A4MAwEACQgO+gII/QEFAAAEAQX/Dfv09vUAAvoFBAL+AAEA/v36CAEC+f0BAAQF/QQBAPUK9wcHCP8EAgIDCQb6+/H/CP0A/gP8/goAFAL2AfL5Af/5BAMI+g31AfwA+fcB8gT/+/7v+//6AP/5CAAGAA7+BPcDBQf+7v8GAw0CEvwD+/z7/fwICQIC//X+Cf/68wn5/wX7DfYFAP//9APyAf7++gcK+fcH9/n7A/YPBAED/vgA+AQA/QYG//kE/vwC+fQCA/UCAwEJBfgB/wAMCf0ACvwQCvsEAQEKDQb7BwH7//ME/f/4/An7APr+B/gEBfr9BQAA/wYAAfr+AP0AAfT9AAQE//r39wv8+Pb9"
 ---
 
 ![Frog](/uploads/2007/walkabout-trail-ri-1.jpg) ![Helen sees something](/uploads/2007/walkabout-trail-ri-2.jpg)

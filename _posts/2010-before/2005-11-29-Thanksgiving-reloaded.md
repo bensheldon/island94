@@ -16,6 +16,10 @@ redirect_from:
 - articles/thanksgiving-reloaded
 - 2005/11/thanksgiving-reloaded/
 - "?p=18"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e1142049ea5d3348"
+  vector: "AwQEB//yBvL/9/oD+ggB+gj8+/75/Qj9AgD/BPT9/vjzAwMECPoJ/gL3A//+BvT8Bfj6+gH9CAT//vf6+wkABPv4/AAGCfwG/fv9+gb9BgUGDAwB8/gE/gQAAf0D+QL/+vzzB/wEA/sKBfwLBQD+DAP8/Qb8+/37BwMFDAH9BwACBwkFEQL9AvYCBPv/CAf9+wMK/vX6BAD+AAMA/f/3BgH99/oF+PYDAQgDBPD9Bgf8AgUFCPvzAgb3CP8R/AD6+Pf/BvoGAwn67vwHBwEK+BADAPnv/vb8Bwz5Bv73/QAG/fn+Bvz3AgsA+QQA+wAB/AD8+/0I+Qb/BQgE+PMI7QkJBwr6CPgECQP7DQf+/fsHCf3z/P/+BAX8AAD4AQD7Aff29v8F+/36+AkECAEBAAL2BgAHBAQE+gcB/gYDDAAD+vYDAgAG8vkE9v7+APz+BP33BfoF/PwA+gAS/gT8A/ADAPj9AA0F+vsC//4IAPr7Bvf6AA0D/gUDEAQJAPwD"
 ---
 
 > I have been writing blog postings offline on my commute to and from work but just forget to post them when I get home. Sorry for any delays.

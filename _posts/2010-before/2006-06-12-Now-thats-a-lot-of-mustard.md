@@ -13,6 +13,10 @@ redirect_from:
 - articles/now-thats-lot-mustard
 - 2006/06/now-thats-a-lot-of-mustard/
 - "?p=48"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "baa707c62d288b0d"
+  vector: "AwUMBQwD/fj3Bgf9AQMGDgH4+wf6A/sE+v70Cfn9+woEAwUKCfMMCvj9BAT4/f/6BvcFBQH5+AL5+wP7Cv39A/0E7/oU9AUHAf3/AQMN//IC/gICAgL9+QkHAvf4+Pn89/b6CgYI/vIF/fcD+QgCAgEI/A0C/Pz4BQAABPr8AQACAv//CPn69vcA/gD9/f/4/foA+fv/+/QCAgMCBgX7/QUDBQcF9QEFAAn9CQT2CAX59/sFBgH7/w38/AcPDfr+/f0BC/gCAfoH/P3//woI/wAB/Qj4AArwA/oEAQj49gAD/wr7/P4D+v7w9QgI+gYBDQj1+f0E/fr4BwkH+vf/+//4+QkC+/v9CPQABvwI+Qj9CP0C9wD/AgAC9fv6CfcJB/r+Avr89wb39wQE//sBB/cA+wYGB/30/wf7BPgD/gAJB/sFB/gABvYC+AgBAP33C//0AfsIAfwFAgACBgkA//UDBfz8BPz//Af9DPoG+QoFA/4AAgsCA/37/g0A8vwE"
 ---
 
 _Staying in the condiment vein..._

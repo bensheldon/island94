@@ -13,6 +13,10 @@ redirect_from:
 - node/278
 - 2009/01/weingarten-rights/
 - "?p=278"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "dfb71b74ebed17f2"
+  vector: "9Av/AwUFBe//+AAD+AUD/QYD/f0DA/wJ9/f//f/8/Pz6B/z6/QD8Af36+vv5/AQE8AgG+w0OAvcB+P4LAvn7Bfn99wUDAwP4+QUHCf//Avf3+QMGAPz9CQz7AQQE+wb5/wf8CAr//f0F+Ab5+wT7A//9BwX4DgH5AQgA//v5/gAC/vn0Dfz+/wkI/AMP/P4GAAkEBg/+/xL0Afv3/QX6AhECCAH5Avr5/P0C+wP3/f35CwQIBfwF+/8LDfz8B/sA9/z6/f/wBwUBBPsD+wgG/wP6CPQB/gMDAAcDBAELDQAA+vbyAAgA/AP//vr7A/7zCgb7BAIC+QgAAf35/wH9+fcGBe38DPwCCAUDDQT9/O/3/fz4EgIA///9/P8H/gUGD/n7BAoBBv76/Ab9/fXuAgD9BQAOAQD9BAUJ/fsB/QD6AP37BPP++f0HCP0DAAT8B/r8+v4B9wD7BQAEBwH2CQH+/AYE+AHz/Q0JAQr58/v//Pr8CAoC/wb8+vsI/wQD"
 ---
 
 I found my union card today and with it was a little [Weingarten Rights](http://en.wikipedia.org/wiki/Weingarten_Rights) card---explaining my right to have union representation during an interview by my employer. I didn't particularly like the text of it, so this is from Wikipedia:

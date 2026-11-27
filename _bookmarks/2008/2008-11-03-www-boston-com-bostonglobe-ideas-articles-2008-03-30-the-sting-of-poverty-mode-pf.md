@@ -8,6 +8,10 @@ tags:
 - psychology
 - socialogy
 - economics
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8d2225b940063ec5"
+  vector: "AgQACQMGBwz8BAoG+wT9AAf79AYD/AAAAAUC+fwGCAQFAQoBBgYF/gX68AL8+Qv/AO/9/QD+AAL/AgD+AwEHAw0CAv/zCgL6/wQE/QYE/AQG+e4C+PwB8w/+AAX8AgH+Av70Cvv8BvwG8v8C+gIABwQJ//r5+QAFC/35CP768wAI/wD59f/y/AMJAfwFBwIC+/kGBf4BAvv2AwT1EAL+BQz4/P39Bfz09/8NAwsCAfv6AP79C/v6+Pz57/f+9vr9BAj9//r/Awj8Bf0CBgL9AP3xCP4IBQL7Dv38+Pr/AQD4BgQGB/8C+gEK7PsFBgH/A/f//f8M/wL7BP0C9vkFC//29wgA/PMA/fz29gH/AAQIBAwGBxH/+Qv8/gH69voI/P38+v77B/IA9fwN9AkBAAj4Cv73/vwA+gL4AgEB/gAJ//0ABQEHAQQT9gEBBv4IA/n+AwcB/gIC+P0C/gUEAQT7+wP7AwP/BAMBBAXz+AoI/vsD/vQB9gMH9fsP+/r+"
 ---
 
 The sting of poverty

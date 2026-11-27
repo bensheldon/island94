@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2009/09/technology-2-0-mapping-presentation/
 - "?p=716"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4e99ea5fc4cb1f5c"
+  vector: "B/8I/AUD+gL3/gQDBAL+BQ79Af7+AQIDBQj+Af3+/gUGAgMKBwcE+/v3AQcEAgb+AQP3/gLy+QL3//v6Avv/BQwE+QQJ9Qj+BvsGAfYA+/cKAQIN9vb9+wAA+wQB/AT6+PgCB/wHBO338fwE/gUA/vUD/PkFAAkH//8E/f0E+QAACwMSCvvz9/kEBxIIDQQB+v/4/vz/AfoCAwAKBv8CBP72CgED7gMB9fz5AgUIA/7+Agr+9QcB/Pv8CQMGBAL8/vwDCAP9AwIC/P0C8wH+BALzAP0D+Ab6/QX6BvcH/QD4+gAA/PYE9ggF9/wGBf/+DPoA/wMI7v8DCfv7/wH9/QT5/hYI/AD9+/r78vwEAP/4CgcG+PUE/v8B/fz8+fYHBPUE9gAC+gD8/QEGCQv5+f//AgAPDv4A+wgBAe0L+gAACAEBAgAJC/gF/wD1CA38BPr5Av8E+gEEAf78/PMCAfkD//f5AgcF/wUCBQYMAQD5APL6AAUJAAIDBAX/Cer9"
 ---
 
 On Saturday I presented on Mapping at the Technology 2.0 community summit convened by the [Organizers Collaborative](http://organizerscollaborative.org) (I'm chairperson of the board), [Boston Neighborhood Network](http://bnntv.org) (the local cable access TV station) and the [John O'Bryant African American Institute](http://www.aai.neu.edu/). I had 10 minutes to...

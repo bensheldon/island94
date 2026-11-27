@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2009/02/self-language-and-consciousness/
 - "?p=446"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "03fde191ab3625a9"
+  vector: "+/wA//YCCQMT+P7///79AfoA/wACBAID/QEA9gUBAQoFAvYMCAQH+PL++AMD/vkF8gTt+f7+CQUDDgH//PYACQYA/gf2Df8HCP0FA/759fUKDQH++PsI/gL//Pn9AAED+v8FBAUIAQT8+vn59v359f0FBv4E+wv+AQT9Af37CgAKBAATAf/39gD8BAUFCQAF9PwH/f4O+fL//wX49wDzDP8C/QEE9v4DAQT7+QQB/wj5/PgGBfn+BPkB/wIJ/QAHDgb1+wT88v32//36A/3/B/r4/fsDAgr7/wX5/wz69QD++/oPAAD/C/v8+vwLAwH6CAD//wkD+PoDBAX99QMD//78AQsBAvwA9wP8+v399AD1BQIH/Pb9/wXyCgP/APv+Cv79AwUCB/rz/AQG+Pj0/fsAAQEBAfAECgEC+fEE/AD5AQAMBvsK+PUC/gb9CQUEB/X6BAv99vn4Cf0B/PkABvv7/gT8/gQDDAcICQr9+/78AfwKBgQF/wAO/AIRCQL2"
 ---
 
 [The Tree of Knowledge](http://www.amazon.com/Tree-Knowledge-Humberto-R-Maturana/dp/0877736421?tag=particculturf-20) is a goldmine of concepts and ideas. The most interesting parts are at the end---in discussions of society, communications and language.

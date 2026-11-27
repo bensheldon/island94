@@ -8,6 +8,10 @@ tags:
 - wordpress
 - development
 - webdesign
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d44f22aac6332e39"
+  vector: "/g/6BwYDCgQD/vwLA+4CAP4A+goCBv4G+P//BQT8A//9/foCA/n9//kF/AYB/gAA9P7+/ff+BAP//gEG+/4FBwgB9QoA/Pn++wQJAv/99/QE/gcCEA/7+Qv++Pj3/QQF/vQPBPn9BAQBAAcOAPUD/fzzBvoM9gT/Ef/9+//7BwAD9vz+BQAHAvsNAv0DCP4LAfwF+QEDBAX+CQQI+fsK+P8CBQD5/wUGBQECDAL99gP4+/wOBgX//vT7+gAD9/74APcJBADyBQIB/Qb9+/4K/P8DAgcE/wL3BgL/BQD5/wADA/kH+Ab9/wf+Awj/AQIH8f38AfUCBv37/vkA+Az9APUDCfny/f0FBf0G/voE+wD++gb7/gIEAPkF9Q4OAADx+f/8/Ar++f8A//kJC/sCCwIB+fcA+fMG+fX8BAQF+AD7AgYA9gwK/vf9CPgSCO/2BQH19/YN/gEEB/4C/AQFAPoI/Qr9AgT+Af4EBvzyB/0ABAD0AwUG+QcNAAbxAAID"
 ---
 
 While developing my Techozoic theme, I’ve progressed from adding custom CSS into the head section, to having an external file and using $_GET variables to pull options from the database, to now I believe is the right way to do it, using add_filter and a custom query in WordPress. By using this new method I’ve done away with unsafe $_GET variables and can now use any builtin WP functions in the external file.

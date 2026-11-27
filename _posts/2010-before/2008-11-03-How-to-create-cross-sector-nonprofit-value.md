@@ -11,6 +11,10 @@ redirect_from:
 - articles/how-create-cross-sector-nonprofit-value
 - 2008/11/how-to-create-cross-sector-nonprofit-value/
 - "?p=269"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2406d18dc9b1be93"
+  vector: "Bv/x+gAH/wAK///2BQIN/QD/+AD4+QIEAvsD+wADAAIDAgMP/gT+BP73/fD6/AL+/PoH+v0G+gcG9vv7/vsD/gn6/Qvu+Aj4Bv8F/ggEBvgLD+8N+gH//AYD9wf7+gkB/f0F//7+CPEC/gEHAgr8AQADCgP8+gr7Bf3+AgL+/gD8BwID+gH9AfoD/xANB//49/QBAwEC/wED8vn5/wADBQj6AQP8Af4A8v0EAAkEDv/1AQf///j9+gP69fcG/QEB+wwEBQvz/wH4A/gG+wsUAvoAAQMF/wP6/gcAAvgFBgAOAAUCCPz69QQH/AH8/wH1AQMM+gsPAAP+Afn0BwMI+Qf69wIB8wD1AP78//0A9/0GAQj+Afz8AAED+/0HCPsM/f4D//z+9gL+7vn///wBAvz7CAH1CgME+/z68/4GBAALBvsB/Pn08AQU+/b5AgH4AAL9AwMA9P0DAfr6AP0EAvMEA/73CAwDAwwA/P8C9wj8+wQBBP0E+gIIAQQG7fkB"
 ---
 
 ![IMG_0659.JPG](/uploads/2008/how-to-create-cross-sector-nonprofit-value-1.jpg)

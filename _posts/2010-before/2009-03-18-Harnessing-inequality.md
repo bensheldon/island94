@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2009/03/harnessing-inequality/
 - "?p=508"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "48bf4ed4eba5c0be"
+  vector: "BgAGAAD9+AQJB/sCDAMAAP8F9vj9+wMC/vH3+AUGAQUL//MA/vkA/fv8+wL1CAj7+/X6BQb8/vn5Bfv6B/UBAggAAA/3BQkC/QUO/v0C/AIDAQMCAP0C+gYF+P0R/AEAA/f+Cv4EBvcE+PsGBAP7AgMEAvkLBgUHAf/9BAwJ8wAF+wUE/wL3//cD/w8HAQkC7gID/ATxAAH68vgABv7/APz+APgH/wf49AIA+QUFCQP7AQIHCPwC//8H+fj9+gMCBwcAAQEIBATq/foHAQMFAwD1CPcAAAYAB/4B9v4J+ADu9f0CAQH/9fwDA/0FAwD2C/7+Av4EAQQHA/r9/QT3+fzxAPn8APz//f729/sK+/wE/w0FBQQC+wMABwjyBPEP+Pr7A/z/CgIE9fsNCQUBAQIID/L+//4F/gb5+vn//wAHBf0G/gD/BvkMBQUDCwcC+/36/An3//cIAfX9A/T8+/T+BgnyAP3+/gUIBAgE/Q0D+gT7B/wD9wYJ8wUH/Pn4"
 ---
 
 The following quote from [Here Comes Everybody](http://www.amazon.com/Here-Comes-Everybody-Organizing-Organizations/dp/1594201536) is interesting in that it exposes dewy-eyed optimism surrounding equal participation (rather than equal access or equal ability) as untenable:

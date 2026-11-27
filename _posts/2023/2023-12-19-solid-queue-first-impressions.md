@@ -3,6 +3,10 @@ title: "Solid Queue first impressions: Nice!"
 date: 2023-12-19 08:24 PST
 published: true
 tags: [Rails, GoodJob]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e00317963c51083c"
+  vector: "7/j5BvYC//P8BQAGAf3+/RH6//v5+f3/+fn7//v19AL7B/0IBPz7/Qb68wQB8QH5+/35+wUICgcC+Pz++f8B/QD9/AwABfz/9gH/BQD59fL8/QED/PkE+gn6DQ0F+gMEAwkBBAUEBfz8AP8B+/n+BwP6+g31+QQEAgn6AgMFAgAEAAT/Af8DA/4C+Qb7AP71+QoGBgEA8QcFBQX9Agj+Cv0B/AbxAQHv/Qb0////AwEA/QYACQr9AQkDBw4BAPYBAQb+AQ39AQUD9wX++/v//An/+fME9ggD+wT7AwwGAgAF8/8NBQH++AMC9/oE/QL+APX4CgAE/BIBB/n/9wb59f4F//r+CQIBB/8C//kM9/3w/fgA+wQD/vv5+wz/Aw0ABfoG+P4C/wb4BQMC//P1BfIBBwH7BgoC///7/PkE/gD+AAUFB+j+EQUHDfgB/g8CBvv4/AYLBAL/BQIACgID+gQBBf4B/AIDAgT3AQf88wD8/vv8AAQHAgb+CggJ8/oK"
 ---
 
 [Solid Queue](https://github.com/basecamp/solid_queue) was [released yesterday](https://dev.37signals.com/introducing-solid-queue/), a new relational-database backend for Active Job.

@@ -4,6 +4,10 @@ published: true
 title: Maimonides' levels of charity
 tags:
   - charity
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9de02d3de22e5bf0"
+  vector: "+AL99QAECQ8DAgL1/wIDAAT38P0K9QUDA/sC/f/5/AQB/wAPCgX5BPz/BPwA+wUB+Pf//fkN/gMC/fcD/wMD/hD7/QL2CgT+CPwBAP739P4ABQMD9vz+9gYC/gUG/gUL//gCCP4DAvsC+fn6//36AAP9/wH6BwwBAwAJAvkD+QACBwYK/Pr4/f0D/gcKA/n4/AH6AA0I//4M/gYE+v31CAL2+v8AAP3v+wAJCBAHB/n/BgEABv758wEA/foG9gTzBAr8/gQA9gj6Av0B/f0IAfwBAwr++gr8APoEAAr5+AD/+gANBf/5/AkQ+/4C8/n8AfkC/Q8U8vsACP77Av8J/vwC+QMF/vkLAAEECfX++/7+BPv9+QMIAvn7Bgb9/v4H9/oA/fb9Afj88QMBAgT+9//7/wID/RACDgb/BAgBAgALBPz6AP3/CfwKBQX3/gz9CPv3AAMA+u8AB/wC+PwBB/kBAw75BfsABvf1CwT89fr+9/MAAAMD//wMA/8V/fn7"
 ---
 _This has been kicking around in my "to blog" bucket since July, 2008 when I had many more posts on Charity. I originally copied this from [judaism.about.com](http://judaism.about.com/od/beliefs/a/charity_nine.htm), and [Wikipedia](https://en.wikipedia.org/wiki/Tzedakah) has a version of these too._
 

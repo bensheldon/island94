@@ -4,6 +4,10 @@ date: 2014-10-26 16:52 UTC
 published: true
 title: Jerry Seinfeld's Clio Acceptance Speech
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "fe4751da1b62b51f"
+  vector: "/AYB9wb8Ff387vf++fwI+wf7BAQIDP4E/QH/BwQA8wcQAgT8AfUIDv0A9vj37wj8DQj4AAX6+f3//vYD/fv9CwP++P7uBgEJ///9Agj8AfcB8Pz3/vj/Av/9AAb8Af0B+voADv4HD/kAA/4IAAD5AQ4CBAf9/gn+DQP8CgEE+gD6Awr9+gf4/fcCAAgDCP4H+wEEAw8G9//9AQb9AgT5CAT5BPj9Afz8AgL5AvsGAAEOAfz6/vsC+f35//oLBAP99wL8+vwDAf/xAvr2/f4GBA/1CPgC+/8A+QMBA/8E8wD/AwUH+wgA/wj//gIM+gD+B/vz/AME/w38/AMD9AP7+/QIBAQCAvr//PkHCQP3+PT6Au3//fr5CfsC+vr7///3B/UKAQb7AgL0AvoP+gD0BwT9+Qr9Afv69wcG/AUI/gD++AP4//8C9fsA/w4CC/v/A/oE/gH/CgcD/vwECAX8//kAA/8E/QH+DP0E+wMIAf4F+AT9/gwJ+/UFBwYFC/76"
 ---
 
 Loading…

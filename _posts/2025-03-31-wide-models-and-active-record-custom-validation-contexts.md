@@ -3,6 +3,10 @@ title: "Wide Models and Active Record custom validation contexts"
 date: 2025-04-01 08:00 PDT
 published: true
 tags: [Rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c8b3276abfc83aaf"
+  vector: "9fv5BAEA/QIBAP/+CgEEAgcE9QIE+f8K7/n+AQH2CAH/AQX9Awr+9/r0AAYA/wP8+/v//AQE/AEC9/UCAAH4BPsF8/4DAgAE8gIA/f/8/v38DAD6BwL++wD+Bv8KBAABA/0DCf4EAwAR/f0AAvwIAv8BDAH7AfsA/gEI/QP59wAGD/0L+Af5AwME/QsCAg4E9AsEBQL1/AoAAwEJ+AP5/AYHCwcC+Ab4AgT9BfkFAQj+AAoDAf70AgAACQAH+PUF/P7/8wf9+wXx/gHrBQH3CPwE7wn9+QUA8f77AAf/AwAH8/0ECfcIB/fx/P0GAf748vkHBwUI9wj5A+7+AAL+Af4A7/3+AAcJAgf4/wIF+v34/P/7+QIDAgf7BAH9DAEMAgQI+wD//fv7Bf/7+/j+/vL4DAf8AgUA/Ab9BAL88AD3BwkG/fkK+wcBBgD1AAoI/gT0CgcK+wEO+vYLBP8OAQcLAAf9+/8CAAH//QcH+Pb8A/YD+g37AQQABfYGAgUF"
 ---
 
 This post is a brief description of a pattern I use a lot using when building features in Ruby on Rails apps and that I think needed a name:

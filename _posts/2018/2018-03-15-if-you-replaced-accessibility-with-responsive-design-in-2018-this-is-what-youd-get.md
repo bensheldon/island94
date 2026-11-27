@@ -1,5 +1,9 @@
 ---
 title: If you replaced “accessibility” with “responsive design” in 2018, this is what you’d get
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9716c5f74fa7a496"
+  vector: "+QcKAQv//wP2+wAGAv0G/Qr59Aj7AQH+9wP3/Ab3/AcEAf4BAgD5+/L3/QcH8QP9+fEB+wf58wEFAwz//fkDDAYE//v5Avj/CwYNAP4GBv8D+voN/QP5CP35/QEABAP5A/L/AgQNCPr9AQIH/wgC/PX+A/v9/BIC/wj+9QgI9gABCfYFCfgFBP3/DQv+AxL9+wD6Af/1/gD9Av8GBv/2/gD8/vwB9gf88QT9/AEFBvr++/4JCPb/+AD4B/8C/fgH/wEEBvz9/P3/BwH+AAAE+gINDQIB8QH7/QX+AgEE/gD//P/9AfgE/xH4+QQC+O0D//gEAAoD/AX8Afj49vb+9QQBDvnx/wADBAMA/wwI/fL4AQwBBPX8Bwj3/gQIAfj+/wAE+v//APT49wQCBvz1+wUL/wECCgQA+gD2AvYKAAAEAvz9/v77+AYFAfoBDgkI+wj0AgEM//8HA/n9AgX7Af0C+/kF/g8FAQIFA/v78Qb4BQH5A/wK/gf+/gELAAQN"
 ---
 
 _I took all of the conversations and experiences I’ve had over the years advocating accessibility features, and imagined them applied to responsive design._

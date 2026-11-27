@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2013/05/that-whereof-we-cannot-speak-we-must-consign-to-silence/
 - "?p=3084"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "15cb00e0259916e9"
+  vector: "+Af3BwcJBQILAfz8AAP+/vr8/QgICPsF9Ab88voB/Qb6+wEOBAQI+vsJ9AIE+QL+B/30A/v5//35CQD4AfoFBwj/A/30EPsGBQT/BAADBQYG+PgA+fkH/woD+fYBAw0A+wL9AwwD9/0B9Pj1AAb98gr8AwQH/AH/9QcICv7/AgD+/gUD/QH//woBAQAJ+QT+9/v9+/wE/vj3/AD99QH5Av8BAPb//gL4+AkA9QUKBQD1AAMHBv38A/cFAP39/AQE/fvp/PX//P4ABQP8BQP3/fwC+AUF/AgD//kBAgbv/AAC/v7/+wj6Bgb8AAMI//b6/wH8//8A6/wADQIC/gP7B/n9AQEHB/n9/gDz/P/3A///BgYABgEJAf/+AwQJCfgHBwnzDwD4+Pf6AQ4PAvv6+wr6BAEL+Pf1CgP6/vkD+QACAgAD/QIJ9fj/AwL7Df4F//r8BAMB9/cLBgMD/QQAAfsG9f75CPr//hD+AgAA+QP+BPQMCQMFAfkJ6/8PBAz7"
 ---
 
 [Roger Scruton](http://www.bigquestionsonline.com/columns/roger-scruton/effing-the-ineffable):

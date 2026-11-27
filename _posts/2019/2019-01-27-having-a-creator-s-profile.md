@@ -2,6 +2,10 @@
 date: '2019-01-27 12:55 -0800'
 published: true
 title: Having a creator's profile
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "44c32b046a758412"
+  vector: "/QMEAwP+DAUB6vkDCvv/AAgB+gH3+voA+/gDBffwBwANAAgBAQP99wb1AAQEAA0K+QD3+Ab/+QYAAP7/A/sAAgMB/gL/B//8/QoBAv/7/QYCCPgG8AII/AEA//oH+gL/+P7/AfkHAwMBBPgDAAcAAvoCD//+BQb+Aw0E+/kGAAD5EgIMAQP8/vULAQwMB/YJ//4I/wMA9AEE/AwEAwH/+QcACQD7+AIE9QX7BPsLDf/8+gH5AAb3+P/vBPcAAfsI//gC9gP3AgD9+PwF9gj/Cg0GAgH7BQb79A4CAwEO+QAC+g75APwGBAD/+QH6/QIBCwH89f4F8v0AAwD/Afz+DQT9+QL0+gX1AAj09/35BvUFB/EDBvv+AQkEBAYDBQn+AvcIBv/5/vv/+Pn+/fnyCP8A/gIN/v4FAgAC//cC/wD89QQM+f/9AfoE+vT4EQ35B/v+BQQK//YA/wH6+gP6BwAJ9P0BAAADAgUKBv0I//r8B/z/CQMB/QIO/wXz+/YA"
 ---
 I recently responded to a question on [FounderCafe](https://web.archive.org/web/20190111170912/https://www.foundercafe.com/)
 

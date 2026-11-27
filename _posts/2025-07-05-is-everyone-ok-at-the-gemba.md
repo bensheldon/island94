@@ -3,6 +3,10 @@ title: "Is everyone ok at the gemba"
 date: 2025-07-05 17:35 UTC
 published: true
 tags: [working]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d2be6a88189bf076"
+  vector: "+QEFBAX9CQv/+/MCBPv4Agf29gL5+gL/+QoC9Pn/Af8FBwENBgkH9/z5/P0A+gj39vPv+Qb+AAoIAwMA/vr7BQYF+wf1Av/8AQgFAP39BfoJBf0L/vsEAwoE/P4D+RMBBP79CAAIBPH8AAL+/QH5//r8DAL7CfwFAwQGDwUE+AABCfwO+/77AwkPBgwIAwUG8Pz4AwP5/fn+/gP7AgD7A/8CAQj7+AcA9gIDAgMHBPf0Av8EEgP+/f/7BPgKAvEH+gD5CAj9///z+gD///4C/Ab+AfYE/wIBAhH89/8L+QAD+/cFCgH89AAA9gD9AAHyBfsB9wUL9gD5Cf/8+gEDAAD+AQj6/PwC/Pzy+Pz8/fj5/v8A9/z6/QsAAgkDAgf/APoFA/0D/Pr2+wML+vjz9f/3Bgb9DQEE+f4A9fYD+wADAwUCBPb4/v0EB/f9BhIM/APz/A7/9//+/fkI/wf+Bv0BAvwC+gkD9wYMB/0A9gH9AwT8AwoLAAMG9gQFAvQA"
 ---
 
 The following is the bones of a half-written essay I’ve had kicking around in my drafts for the past 3 years, occassionally updated. I recently read _two_ things that said it all better anyways, but if you read through you get my perspectives as someone in software cooking the goose.

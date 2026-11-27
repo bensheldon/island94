@@ -3,6 +3,10 @@ title: "Hate and sarcasm"
 date: 2022-07-26 12:02 PDT
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "06bd123f3f2be982"
+  vector: "9fgHBAgEAg39BPEMBAIECAn6+/v4/AoA/gIDA/34//8H//UIBQL+/PMD/vwG+gf8Avz7AP3z/gMDAAX+A/4G/QP3+AgGBf4CBwQC9gH9CAf/+PYJ/v8GAwACAvgMBQYEAvn1CQQKAfP+AvYH+gICCPcEBfwH+QgKCg4ADgkF+QAAEgIN+QIB/vkABQoEBgf4/fUDAPb/APz//gcL9/v8APkADPsF/wT79gfwAQ0NDQD3AfwEEgz9+AH9CvkC/PoD+AL+Cwf/+gkF/wH2AAQIAQAB/AAE+QT9BQ7z+gEDBAD7+P4J+PgC/AP6+wAGAgD3/fwE+f4R9f8CBPP6+/sJAgX4/ATyAgP9Avj6+wD+Av38Bfz69/QH9QL9BAb8AQD5/fX+AAv5/Qf9AAgA+wf1/v78AAMBDfwE+//4Af77/gD+AQME+gP8A/4GCwT8AQIL/QX5AwgK8QYA+QL6/PUB//4EBPgC/gf//QoC/PT/9f31/AL+8wYKDf3+9wQJ/fgD"
 ---
 
 Two things I read recently were commentary on forcefully-weak communications.

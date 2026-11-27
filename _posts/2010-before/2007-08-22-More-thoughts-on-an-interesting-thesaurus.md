@@ -14,6 +14,10 @@ redirect_from:
 - articles/some-more-thoughts-interesting-thesaurus
 - 2007/08/more-thoughts-on-an-interesting-thesaurus/
 - "?p=139"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ccc63e0cbacc3318"
+  vector: "AvL9/AL8AvgJAwP9BwEAAAAA8vQLBgb//AXx+gL/ABAIBvsF/wcEAPkD/gQKBfED+Qb0/P4I/gf8+vr0AfH5Bf/9CQcDBgULBAkDDAb5/vUADAkFBwAF+/X/+fIK8wYEA/kHBAP///L6/fb+Bfr5BPr/APkB/QwG/wkK/wAH9wAFAgAFAPn3BfUE9xAACAQA+AH59QMMBvv69P31AAL//wMH/wH/9Qf2+AIA+gIE/P7+BAT6Awn9BAcABgcDAwUCCQb7Bwj/Bv/+AAf+Afj1BP72/fns/AXxAAL9BAf7+wD6+gQHAvsF/QD6+wYC/gb+BAUMEP7+8gUEBf35AAT6APX+/AL8//f//AgA9AP98QP5BQwF/wIHAf/x9gH///0NB/n0//oB/P//+P8F/fP4/gL/BwT7CAALAQQB9f4G/QD9AAMBAvUEB/0CCgL3CAQF//78+/0F+QcDBfYEBfv/Ae4ABg3y/wMKBgEACQ4C/gEB//0I9wH//v4JBv0FAAEG"
 ---
 
 My associate, [Rebecca](http://circuitous.org), and I have been starting to think critically about [Panlexicon.com](http://panlexicon.com), the unique, tag-cloud based thesaurus I've written about [previously](http://island94.org/node/128). We're hoping to put some more time and effort into the project and in the process, learn some more about what's happening with the language and the underlying structure of the thesaurus taxonomy.

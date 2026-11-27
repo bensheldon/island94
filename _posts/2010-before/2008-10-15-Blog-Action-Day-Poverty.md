@@ -11,6 +11,10 @@ redirect_from:
 - articles/blog-action-day-poverty
 - 2008/10/blog-action-day-poverty/
 - "?p=262"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "81eebc9d081ddd71"
+  vector: "AAoHAwIIBQX6Af8JAwAKAAj98wYD+wMH//r9/vYD/P8FAwIDCgH7BP/u+v0I/gIE9vn5BAL9+wkA/wL5BP75DAQAAgr8AwABBAf8/Qj++PoGC/0J+AIB+gf4+AL9Agf/+/r5CwQBBfb/9/sH+wf/BPcCCPoKAP0GAwUAAvn9/AAGAAYMAP72+fwFBv4ICwP99fsLAwgIA/r9/gj0+///+f70AQL++gH4//0N/QgLCgACCQEAB/L79Pv2AfwG+/n4+gT6/wL6AQMCAgUKAP0D+wb/AAX9AwsBCPwABPb4AwAECf0GBv/5/wgLBf/8/QED+Pz7/v8Q/P0HBgcJAPUAAP8A/wb5//7vBf3/Avj68vL/Af/4BAcA/QD3/gD5DvT9C/D79fT//vwC7gEGAwfzAQb1BP77EvsIAAn9/QUJAwADBP8L/AIA/gEK/P8ACf75Avz3+wf69AcEAfkG+QAAA/T58gD//QT9+PsMBQr27AH+Afb+BQb7/gEH/AEO+u7+"
 ---
 
 Today is [Blog Action Day](http://blogactionday.org/) and this year's topic is **Poverty**. Since I've [recently written](http://island94.org/tags/poverty) about poverty directly, today I'll be more lateral:

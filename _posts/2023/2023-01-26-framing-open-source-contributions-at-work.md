@@ -3,6 +3,10 @@ title: "Framing open source contributions at work"
 date: 2023-01-26 16:51 PST
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "91e3aa8807b5e7d7"
+  vector: "AvkBARAI/g39BvoPAv0BBQUD+/vz/QMM+wD7/v72AgQF//wBB/z7/P3/+wIB+g74A/0F+//5/fwB+P3/CQkB+wX39wj//gb9+/MBAAQCCAMDAPsB+AAHAQkCAAMO/v0BAv77CP/7Cvn6BQEKBwAI/wADCAD5+wQGCQ4EAfgG+gD7DPgL/P8DAPj9AQ0FCAj0+AMGBQP6/AAL+AED+AEJCQD8+ff9+AD69gLyARQHCwT79gIACQn5+wLzBPgA+vgE+wMNAwgB8wP5Avnz9gsCC/8D+gMGBQcDAA0B/wEJCAD/9QQCAPr+9QT7+/0B/vjv+/8CAPsI+vsKA+z4A/oCCv309wn1+AP8CQIC+/wI/AH/AQP8AvUH/goC/Af/Cwb9+vcEBgL5/QD/Bv8H+gT2/Pn4Bv0CBfz9Av3uAPkCAwADCfz++gH9BwUIAv/5CPsI+AD7/wUHAAH8+QIDAfkLAAAJBPsEBQcJAgkG+fD49/z4+v0B9ggEBv3/+/z/7v0E"
 ---
 
 Excerpts from the excellent RailsConf 2022 keynote: [The Success of Ruby on Rails by Eileen Uchitelle](https://www.youtube.com/watch?v=MbqJzACF-54) [reformatted from the transcript]:

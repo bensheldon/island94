@@ -2,6 +2,10 @@
 date: '2019-04-07 11:41 -0700'
 published: true
 title: 'Weeknotes for April 7, 2019'
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "10840b425619f5fd"
+  vector: "/Qf7/gADCv8CAQIHA/8AAQkD+AQB9QEL9QIA9/f3Af4EAwUJCgMG9//3+v/79Qb5+/by//75AgIGBwEC/fb8AwMB+QnrBAX4+/4E+wH9BAIGAwEF+/n9+xAB+/7+Bg8A+P38Bf0FAvv8+f0C/gD5AfwFDgH8Bv8DCwUHBvz2/AABBwUF+AEAAwINBgsJBwv+7v4IAgn+APb9+f39DAX/Av/7BAX6/AH5+AAFCAUMCvXrCPoCCvP6+wD7+u8C+fQG+QkABQP4//76//oC/f8D+gH8Cf4HBgYACg4F+/sP9wAC+vcDBgD8+QL77/8BA/vtBAT69wMP+AL8Bvv3/QQE/wEB/QID+vkE+APy+QEFA/wA+gUDAv7/+woACAkBBfgJ//v7BwIA//v89/gF/AD4AwPwCPcCBQP/+/36/voC/AAI+wUB///4/gUJCfwDBwULDPf+Bwv6/vr+/PkE/g0AAf36/Pz//AsF+gALBAEB9QcCBQMAA/wL/gYF8QcL/vv9"
 ---
 The back page of [“Learning How to Learn” by Joseph D. Novak, D. Bob Gowin, and Jane Butler Kahle](http://www.amazon.com/Learning-How-Learn-Joseph-Novak/dp/0521319269/sr=8-1/qid=1161788036/ref=pd_bbs_1/104-3768589-3995934?ie=UTF8&s=books) still gives me goosebumps to read:
 

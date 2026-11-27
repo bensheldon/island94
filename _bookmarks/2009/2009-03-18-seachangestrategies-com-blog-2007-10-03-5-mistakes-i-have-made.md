@@ -7,6 +7,10 @@ tags:
 - nonprofit
 - nptech
 - consulting
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b19dab1067c6207c"
+  vector: "/AUE//z5Bv4E8PcHAwADBQUBAgbxAgAD8vj+9vcB+Qr+/gIH+QgCBwD9AQj98QQB+wDy9/79/gMAEwMBAQD+AQgK+AD3D/71/f/9AwEADPz+AvQCAPcJ/Q33AAH9+gYI/QH2BgEHA/j6/vkK9gv6Af76BwD8CPYN/AkIBfn8BAAACQIQ/wAEAAEJCggGAPr8//8B+v36AP8A/gEKBgL8/QIB+wH29f/+8gUCBAUHAfnyBfkHCRT/+gz6Av0K/fX5/f36BP/1+QkB/vn6+PwH+AMDAwn4AgX//hgABAEABwD8+gICA/v+/AwC/Pz8/fj7Af0G9gwCBAP+Bgj3+fz6A/wGBgb9Bvj9+/v9/QD4CPsAAQAB/QAABw//BgH/AwD+A/oEBA4CAvv79wkB+u78+wH/Cg76BAP9+P78AAEEBQD6/QEACfL4CAAECfr6Bgf9AQX29/4L+PUD/P4R9/j8+wID+PsAAAMH9QULCvwI/wf6/fsABvv/AgAA+gr1DfwE"
 ---
 
 There’s an upcoming blog carnival on the theme of “mistakes consultants have made with their clients.” Another opportunity for us to walk our transparency talk. Can you just hear my enthusiasm?

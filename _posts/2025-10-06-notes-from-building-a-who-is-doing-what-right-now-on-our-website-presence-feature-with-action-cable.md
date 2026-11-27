@@ -3,6 +3,10 @@ title: "Notes from building a “who is doing what right now on our website?” 
 date: 2025-10-06 14:59 UTC
 published: true
 tags: [Ruby on Rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5d44e1c995b062ab"
+  vector: "8vT8BwUABf3//wEN/wIBBBH2+f/++P0F/Pr++v/2Cfv3AQADBfzw+w73+Af+/Pv++v/4/QQMBgD7BvwEBf/6+/0JAQUHAAMA+P0D9fr9+P/9+/r/AgD89wEF9wQJAvsF/wEBBwQG+gMA9voL//3+BAD/BQsBBwf/CQIKBA3+/AAACPkLAAP/BAUI9woCBAT19gQAAwj8/AD/BvoCAwX/AgIEAwH59PsB/wLu9vT8BAH8/AoDDQL9AP0FDQYI+P79AQYAAwf79A75+AD1/AAEAQH1+w4IAP727Qv/CQsADAAD+fcABf4FAAP9//70CAD1/vQDAvcG9/sCA/0DBQAIAf77AA0ED/37DgL3AQEN+f/uDgP/+gT8/gkA/vwE//v7C/sJ/QT9Av36/QkD9vf8A/AGAAIHCgMJAv0ACPcH9gD5B/b/AwH/Afz+Cf/+AQj5+/z0Av8I+An8/AcJBfQCAwYF9QYEAAD/Afn9AQQL/fUDBfj/+wwJ+wn2Bf0EA/gD"
 ---
 
 ![A screenshot of my application with little presence indicators decorating content](/uploads/2025/presence-screenshot.jpg)

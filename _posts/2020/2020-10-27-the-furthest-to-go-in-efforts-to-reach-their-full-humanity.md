@@ -2,6 +2,10 @@
 date: '2020-10-27 17:14 -0700'
 published: true
 title: The furthest to go in efforts to reach their full humanity
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "20198680228236cf"
+  vector: "BgX9AwEA/fr7AP/+BPr9Cgv86wT2+gMI+AEB/P8JBvMFDAH9DQX+9f///gABAf8A9PMEAf8B8wYCAAb/+/z+CAL8BA74CAUFBwAICP/4/vcQCwQE/v78/AL+9f4G+gv7+QL7Avz9/PP+8/4D+P8EAfoJB/QGAAL7A/z4Awf2+AD+/wT/A/37Bf4F/QoECvoB+fz3/goJ9wD49vkE/wL5APwGAAQBAwT8/vz2/woABPntCPsA+/oAAPgFBvf+/Pb/CP37/v38A/b8A/39DwIJ/P4BBP/+/gD/B/76/fkC7QAL+/4HBwIB+QYBAwEJEfv1BQX7/gUOAAEC/woF/QQCAA39AgMDBf4A9f3w9QYGAAH///0EAwYH9wv6/gX+AP3+Bfz/BAQB/v/78v8DAPr5/vv0DAkBCv8HBv/59fn//QD/BgMLARL89wIK9vsE//8EBe3+AAH+CPsC/fL4/AP+Bvn/Cfv5EgID+AUNAAH+/A32BwcD/AYE+QAJ9AgOAfb9"
 ---
 Tawana "Honeycomb" Petty writing in a ["Mama Lila Cabbil Tribute: Pushing Us Toward Deeper Thought, Still"](https://riverwisedetroit.org/article/mama-lila-cabbil-tribute-pushing-us-toward-deeper-thought-still/), published in Riverwise Magazine.
 

@@ -2,6 +2,10 @@
 date: '2020-11-03 11:55 -0800'
 published: true
 title: Better by our own standards
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8312bfe019f4500e"
+  vector: "AwD3Av/3/v4H+//3AQD8/f4F+wL8/woP8/wH/QID/BAD9vgSBwQIAPsG//z/BwL6+AT+Bf79AQH8BQL4BPcCBQX//AX0+wEGCw7//AT1+vYN/v0CAPwE+f4D/v8F+QsG+wcLCAEB/Qf96PkB/QX+//0DAfsL/QD6/gQDABACAAAE/wf+APv7/QMB/AsE/wQG8vv+//wH/fv49gP+/wEA//79A/4B/wD5BQX8/gYGCP7yC/4BDfUG+vwKAvwE//8HCP78Avv5/v/3A/4CAf799vcDAv73AgUEFAMA9QL68QD29wACAP77BQP8Av8EC/vx/Qn9/QgI+f/4CvgB/QcB/wIFCv8EBf797QH19wADAfz1A/z5B/UD9//5+wsJAfkI/gb8BwYB+Pbz+gcLBP4DBfr0AQb+BPMJBP/97/0CAQD8/wYKAAr9+/4N+QYECAAFAPf9Awn9BfYG+/MD+v4EBfQF//r9EQgGB/cABwn8AQ37BQL/CPoB9fsJ/gEMBgP6"
 ---
 This book review in the New Yorker of [Charles King’s "Gods of the Upper Air"](https://www.newyorker.com/magazine/2019/08/26/how-cultural-anthropologists-redefined-humanity) has been kicking about my brain for a long while, especially in regards to the phrase "variations within groups are greater than variations between groups" concretely in my work on accessibility, diversity, equity and inclusion.
 

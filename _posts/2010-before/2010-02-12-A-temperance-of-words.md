@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/a-temperance-of-words/
 - "?p=1754"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "754158396e12a3ae"
+  vector: "/AoAAfv3BwAR/gD+BfoA/foGAfwIBAEA/Qr98wP6/v3///sHBgkE+v0F8Pv4/fkH/fny/AD59gb5Bfjz+QEFCQAAAgD6CQcACP37+wH2/PkJC/8G+wEG+/v8B+32/hAB+gH+CgAH+/wD/PrzAQUB9/v+AQ0AAQEA/AgPEgIH+wD+AAL8AAkF9AP//QgFAv0BAv0E+f4J+/n9AgEC/gf0BAQHAgL/8QT3/wcD9vkA/vz0BQMFCPL8//4FAwP++wUE+f30BPwD8/oEDQr6AwH4AQL++wP/BAwI//oEBwP18QACAP4C9/z5BwD5BQAA+/38/w35/wUG7fsIAwEK//0HCvT/BAIBDf/2+vsC/f8CBAf9/Pz6AgMDAfn7+wUQ/wIJBQb6CgEG9ff8AQkN+fL/+QL39gAM+fsGAQQB+vwDAAD//wQICv4G8vT7+wH4AgMGBAUBAAEB+vIABf4GAAIFAP0E+wX2A/79CQYJBQP//wcBCfkNCAIH+PoH8PsOAAj9"
 ---
 
 From Karen Armstrong's _A History of God_:

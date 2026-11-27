@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2012/08/put-your-civics-where-your-houseplant-is/
 - "?p=3018"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e1e3e8b2e70844c1"
+  vector: "/QEG/gj+BAIABv7/APwF+wQC9Qb6/AEIBP38+P4FCAUABfwK+/oD7gLxBP79+wT4AfUB/wj/+gADB//8Bfz8A/0H+gQC+gECBAL//fz/AfsIBAIKAQD9BAoF/wgI/PgBA/r8C/cLAPsE/fL+BgX7Av0BCf0EAQX/CwAA9REE/QAGEAQJ//37/AP+BxAICAcD6/wJBgfzAAAE8wYC/wECAf75AfgB+QL5/AUCBQUNCQH8Bw8EAP38+wHx/fIG+vwH+wH3/wH+Bv/z8f4AAPX7Bwv5+wAT+gL3+gADBf8H9wD89QEGBvf29QkC+QD/Ev3yBwD6//0R8wUDAPn/BPYA/AD6AAsD+PcBBPv9/e7++gXxDQf/AQIC+Qn/AAUCCfcH/vQHAf0CBfv19gIIBP/7+fwABfcA/vMDAAn6Bv4JAgD+AfsBA/8H/wICBgD6BQn+Bv3zBwL79foA/QAAAgkCAQID+vwD+Qn/AAIE//v9+v4J/v3xBQUGAQgPDAMFBPQD"
 ---
 
 ![](/uploads/2012-08/civicsgarden-large-600x266.png "civicsgarden-large")

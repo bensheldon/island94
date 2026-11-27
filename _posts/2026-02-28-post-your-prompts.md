@@ -3,6 +3,10 @@ title: "Post your Prompts"
 date: 2026-02-27 12:00 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2cf5173eb15eb949"
+  vector: "AQMIBgcFBwYB/fUNAfwAAgsD8AkHAg0G9gL6/PwD/gMCAf0CBAcI+AL6AwsG/f37+/v2BP3y/AX7Bv/4+voBBQP8AAn9BP0FBQP8Av/8/fsBBgIH+/UK+QEFAfIFBAgD/P/7CQwOAf0C+/QF9/sDBvv9CQACAQcJAgL1Cf/1CwAICv4TAgP4Af4EAwMF/PYA7/oIAwQC//b+/AD3/AT1Af7y//cA8gL++/36APgLAP77AgL9BfkB/v77DP0NCP4G+/70BwL3/AD49QMEAvQB/wkC+/7++QX3/gn8AAb6+AAF/vwH/Pf4/gQA+v4E/v/3BAb5//4H9PwJCQIC+PcABgQB9gkE/PcABfwB/Pf6AAIJD/7++QP9/v72/wD/BvD7AuwF+gEBAPz6+gsKB/nw/gH6/QUACf8G+QX//AIFAAD8+voDB/79/vf8Cvv0/wkCCPP3/AwA9v3+CQQB/vwABvsA/P8OAQkBAQENDQP/Af78AgD7CAwGBQAN8AcLDPT+"
 ---
 
 This post is mostly a reaction and reflection on Jon Sully’s [“Generative AI and Tech Writing: The Right Answer is to Disclose.”](https://jonsully.net/blog/generative-ai-tech-writing-disclose) Strong agree! I wanted to zoom in on one part of Jon’s post: “**Just Give Me the Prompt”**

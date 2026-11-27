@@ -4,6 +4,10 @@ date: 2024-04-30 12:48 UTC
 published: true
 title: Constraints on giving feedback.
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f21d25bfd9cc7115"
+  vector: "/gIFCAgA+wkE+PoEBPz5Ag/9Avr9AwwH+v78BAT7+wH/A/r8BAb9/gACBfwF8gL2+v/3+wT3BAAEBv78APn4+wYG+AP4AwEA/PoGDPQL/v0H/P37/PAJAAkACP//AwIHBvr+CQsP/f35//8OAv39BPYBAPoD+gMIBPv/AAcK+gD3Bfv7+QT6AQX7AwMKCP77/QL6BgL7AQAA+wAM/AEA/gb4/AAJ/QL+/wr3BwIIC/PtBPoGBP35+Ab19/gEBfj38AkBCPn/+Qj39g3x/PsE+gj9BAQA+gcGBwX6/f8NBwD+BfUE+AX4AQr7Avf8BPf1+v4I/AwMAAQACPwHBfz5+Ab8/Qn8Av0NAP/x/P//CP7/CwME/gT9+AwF/AT9DQD1Cf4K/xEA/wb9/w0P9vj2/PsHBwIGB/wC/AUG/AEG/wD7/wYHCf0EDQECCPv4/ggDAwbz/AEE+vcG9/8M+vP9+/7//QAFAgUA9QX+//wC8wH9/AH2/AcFAP369QkA//kG"
 ---
 
 an industry around delivering good feedback, such as the Situation-Behavior-Impact (SBI) framework, and these things are useful guide rails for giving feedback. In particular, I think they’re the sort of thing you can actively practice for three months (e.g. spend time proactively framing every piece of your feedback this way) and reflexively deploy without much effort from that point onward. However, I see them get misused in two different ways.

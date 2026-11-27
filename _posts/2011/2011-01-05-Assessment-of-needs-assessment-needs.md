@@ -11,6 +11,10 @@ failed_files:
 redirect_from:
 - 2011/01/assessment-of-needs-assessment-needs/
 - "?p=2404"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "19a9f4dddd873073"
+  vector: "9AsH+wgBCQQAAgL/AgcIBgX1+gINAgoD+wMC9/j8/gcABgP+AwT6+fX1AgP+9wPwAAT6/wX8/wP/AAQA+fkEBv8E9wcBCfIL+QQF/QH8Cfz/Cf/9/QD/BAP1AQL7AhEA+u/7/Ab9Bf7w+/cE//79APn7//EDCwcC+gYA+QXy/gAGCgAHA/0ADvr7DQkDBA/9/gQEAwT7BgQG+wIAB/wG/vb1BQQG/QL9+wQICQX4CwMFCvr++fMA/wH/BwD/+f71Bv4EBgj9+vj5+fsD+Pj3/f/1/gIKAQjxAwUAAPsE9AAI/AEFDvcB9wf4+f78+/MI9Pj99/kK/QL9A/X6BgYC8wkICAEO/fsGCAP9Afz9+f/6BgX+9/kCAwL7Bv0D/fsABPkL/vf/BPv99P4CC//yBPv7/f36/AgE/wH6BAUEAAAA/QQCBgEKAf8BCAb5AxICBPoA/AcB9wIABf8B+Af8+QEBA/X4/AgG/QEBCAX78vz2Afb6AQQFDwcAAQAUCfL/"
 ---
 
 ![](/uploads/2011-01-05-Assessment-of-needs-assessment-needs/staff-development-activities-600x684.jpg "staff-development-activities")

@@ -16,6 +16,10 @@ redirect_from:
 - articles/making-art-inkscape
 - 2006/03/making-art-with-inkscape/
 - "?p=63"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1b1fac01a9fdcb69"
+  vector: "+f4F/ALvAAP+APUD+gcA+wAEA///9v/9AwUFAwXy/wIG/f4JBgLx9vkFBPz/+wD9/P/97vr6BfUC8/z7/gD5B/z9BwMF9/j6+xAAAQP9AfgJBv8J/Qf/BwsI/xEAAQX2BvQBCgYAC/UOAAUACAL7/vz8A/r8/An7AAH4+AIB8AAFAwAGCgAA/fsEAP39Gwv8AQMBA/7+AAX+B/oAB/4AA/z6/AP/8AIHAvj///0GAQL9AQYGBQP5Cgb1//4ADv4H+/sD+/0F/AIC7vsB/wf6CvX8AvX/AgkC/gX2/AcG+gD4BPsJ+gT9AwH2+QIG+wLzBfb0+PwJ//0CA/79+vwC+Ar7A/sO/wH5/wX8/PoF+wT5BfoDAvQE9/cDBwb3/vgGAAD7+vcHAQsGAQP+DAQF+Qr4CAsDCfYBBQ3/BAQLBwAEAvv8Av8N/gAGAvX6AAIECgH8APcD+QT7/wL/Av7yCwkLCfr3BPkDBwQN+foHBvgCBPkMAAQF/v4HBhEC/AED"
 ---
 
 Lately I've been spending more time than I should with a great free/open source software illustration program: [Inkscape](https://web.archive.org/web/20060812120129/http://www.inkscape.org:80/).

@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2011/04/shirt-sales-scraped-daily/
 - "?p=2629"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "dfffc900c2b231db"
+  vector: "8f7/Awv39/37+gIFCAMF+Az1Bf/1+wIBBAP6Avn6AQP+AP0IAvcAA/zt+AIDAQEE+Aj/+wX//AsJAP3//P/3Cgv99goA/QAD/hIHDAr7+f74//8I/gYCAwP4BQcHAvgF/AT/CAAEAfoA/P0TBfv7BgDx+gECAAUMDA39+gIIDwD+CAcDCAP+A/kEAAj6AAT5/fwK+//9BQIECAMFBQQG/gYA/wD88ff/BgD9+vL/+PgF/AYABvr++/73CfwJ/QT7+/0GAgT+BwYG/AT++fsH+gb/BAIM/APz+Ab3CPz8/gAA+vkIA/77DvgHCvvw+gENBPn6A/r8AAP7BQQH/f77/fkDAwkCDQf4/fn9APjy8vkACQD5/vv7AgH89QgCBvf8CPwACvj8Bwb/+fj3Cwb6/vsEA/sG/f38AQP+BvsNBwD9A/4NCgMB+vwCAf4DCf/6/Pv2+/sLBPcGA/YHBfX4/fj5//7y9vj+CgQAAw368v4IAf76BQQK+QgABggG9P0E"
 ---
 
 [![](/uploads/2011-04/daily-t-shirt-sales-600x397.png "daily t-shirt sales") ](http://dayoftheshirt.com)

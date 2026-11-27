@@ -3,6 +3,10 @@ title: "Four dumb-cringe tech interview stories"
 date: 2022-07-15 10:14 PDT
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "85f4c0b057993d75"
+  vector: "8wcKAQb1AQX78vX9Bfn6AgL2/QX2+Pv8AQQE/vUF+wsCBwoK/v0E/vv2AAD88gX4+vn1+wP1AAwFAwID//gACwcF9/7+AAL59wIIAgQGCAIE9/UK9vn/AQYF/fsAAxcF+wgABAEI/vT0/f4BBgH9AQECAQL9DP4CBA39/f/6BAABC/4LBAL9BvkHAgkD/QME9P0AAwMC+P0BAAMBBAP0/wT+CgX89/sH9gcABQT+Avv2AfgIDwD5/Av+AAcFC/MC/vr7BAcAAgL8/gEE/wsF9Ar/+vsLAwX1AQ/8//8BAQAC/gD+CfsG9wX+CQUJ/Pj9/vP6+w4M+wf4BgX8/P3//v4HBwwB+/r/APr3/P75APT//vQK/wL89gIAAgH/AxD3BPkFA/H/AQECBAT++/f1/P0DAwoKEAEB/fv89///+wD6AvkB//LzAP3+/QD7DAoJ//36+QMI9wv5AvwEAP7z/vj8/PT++ggD+wUDCAYE+wb7AQP8+QoI//sD8gYFAvMB"
 ---
 
 In my previous write-up about NodeTiles, I said that I had dumb interview stories to share. They are also cringe. Here they are.

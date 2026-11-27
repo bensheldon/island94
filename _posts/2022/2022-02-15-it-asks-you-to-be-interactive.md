@@ -3,6 +3,10 @@ title: "It asks you to be interactive"
 date: 2022-02-15 10:55 PST
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8e880ac403aea6c7"
+  vector: "/goDCQEEB/0JAPv+APkB/vr7+w/8CQX98/8C+/8IAfwDA/YEBwMC8v7+Afv39/sA+u/0/f//AP8JBAAE/QX/CggBBQP8CgH9B/4C/vz+C/0ECAMG+vkE9AwF/QAHAgkC+AHzCP4H//sC+Pb27wX8+vzzDAID9wf7Af36Dgb5+gAH/f0D+f/7/wUEAwMK/voI9gD/BP0GAwPv9AAAAQP7/QX6AgT6APn//gcCAAAG/PTuCgAKBAP7BP7+AvYJ9PsAAvkA+fr69AUD/vz9AP0C//3//AP7+QH+/QgH/vwA9wAD9vX/A/r0AggD9PUIBvv5+/3++AUS/vwFAA7//f4D/QMF+gQLAwD9+gT1AAEACAIDAAX7CwYI9Qj5/AP/CvYHBP3w+gEG9fr89gkG9/f1/wL2CRD4AwcI/QkE/Pr//AAB/fb/BQsD8/0LB/8E/gD9CPX2AQH8+QMCBPT68wH+B/4C/gb7/wMCAAcJAwMC/AT5CPwDBAsCAwcO9gMSCAP8"
 ---
 
 From the introduction to Sarah Schulman's _Conflict Is Not Abuse: Overstating Harm, Community Responsibility, and the Duty of Repair_:

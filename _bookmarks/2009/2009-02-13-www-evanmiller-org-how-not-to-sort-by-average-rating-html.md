@@ -11,6 +11,10 @@ tags:
 - math
 - usability
 - statistics
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e593e8206cf8a55c"
+  vector: "/gH+C//6AA8AAvwADf/6Agj/+wcFBQj7BvP7BgX8+wcJ//v3APkDAAcKAQPxBf7/+wT0DwD3+f778Pz/BPn++wP+BPv+AvoC9wL/Afz19gUB/P0ACfcGAwYIAQL6Bv4D/vr7C/0BA/AC/P//Af/7Av4ABwkCEwP8CA0DAwAL/wAC/QcA/RL79/38CwMG9QX6//39/AT+AgAA+/r9BP39AQX0BPsCBwL9AQL6Bf/2AAr6A/f6Cw36+/8G/vAGAQT0CQn/APwHAQj7/voCAwgB+wACB/z+/Q4J+/L+9AL++wD3/wYIA/T/9Pz5+PoC+hP/+wwB/QcDAQoAAAX++Pf8/gL9+fX9/v4JAfz4+QEGAPn7AAEN+BABAvUIBQT/Bvr8/QAEAv0C/AsR/PwIAAwCAvgDAPsC+RT9/QMC/g/4AwAL+/cMBxT2+PsECv7/+wAC/gT///z/A/z9Cf72/PwE+wX8Awr6/gID/fv/AAf//wII/wIG/v/8CvwC6fkE+/kD"
 ---
 
 CORRECT SOLUTION: Score = Lower bound of Wilson score confidence interval for a Bernoulli parameter

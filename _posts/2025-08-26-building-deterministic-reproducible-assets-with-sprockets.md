@@ -3,6 +3,10 @@ title: "Building deterministic, reproducible assets with Sprockets"
 date: 2025-08-26 03:03 UTC
 published: true
 tags: [Ruby on Rails, Ruby]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7c40bb95effd975d"
+  vector: "8gn+Awvz/v8DAgAQAf77/AQA+wL//wYECv72/Qf6Bgj7/wYSBvv6/wkJ+gT5AQz88AAA/fv7/f77Bv8A+gP0/wkADPwI/gcD8wP8CQEE9fMA8wb5APkICQj7AwIJBfwEBQoBBwEDBAQJ+gAP9gYCBAb9/wT2Af4HDgUH/vj9/QAF/v0G+AD7/AUIAgT9CAAA+wEPAwD++PkCAQb/9f4H//4DBwAA+fj9CPr0//v6Av3+/wgLCAj1/wbvCv4M/gABAAMJCgYE//4J/vz1AwT5/QT9+QT4+gj8/f8G/P34/wAG8wAJAfkEAgD6+/35+QEEAOwA+fkD/wgJBfP8APwBBvbx+wP7EAAAAwr8BQcD/foDAwkGAvgQ/vkA/wQJ//b2+PwB8wEIAf/8+/4FBwD9+f0G+gQEAPADCPwA/PcN/QD8CfkIAAIGBQn2Dvf4BPsA//v3+P4I/wH7AQMKAQAFAQH5/wT8AgUA/PgCAvf29//6AwQC9QkM+goBCP0A8v3+"
 ---
 
 This is a story that begins with airplane wifi, and ends with the recognition that everything is related in web development.

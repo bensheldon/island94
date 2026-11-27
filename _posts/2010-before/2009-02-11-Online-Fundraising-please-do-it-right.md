@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2009/02/online-fundraising-please-do-it-right/
 - "?p=456"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "eb1c305e874b4e98"
+  vector: "/wH7/wAAAgcB+P7+/vsG+AT99gP4/AUHAf389QMFCfwEAAIN/vz8AALz/P4A+QQK+vgA+wMA9gkD///3BQECBAUH/w4BAAj7AgAE+wf8AgkGAgMC9gcE/A4A9A33+Pv+APsCCfwDDfIB/PkMAgf9AQEADgT9/wP+A/8HAAD8+gD9/wgGAQT9BPQFCgcNCgf3+fMG/wz3/gYE9gMAA/4B+wL1Avz99gL89QgHAgENC/n2BQQDBgL59Pv+AO0F8v4D9/4CAAL6BgL1+gAB+vsJDg38/QcKBQf2AQUEBfb/+wAF/Ab+BwH57ggN9QD8/vzyAf7++wgG/AD+BvgCBPoGBP33+w8BA/73Avz7/fICA/75Av79AgX9/gH/+gQA/vcJAvAKBf0E+f4A+fYEAQQB+QH3BvUH/AMH+QkA+AQKCwAG/P0EBvz+/QEE+wH5CgT///X6AQT89foD//sK/P0AAPQF/v74/wQB/wkOBfsG8AkF+vv7B/8B/QMUCgQF+PD6"
 ---
 
 Of all things, tonight in my Institute for Nonprofit Management and Leadership class we were talking about **Online Fundraising**. I got a little frustrated since (a) I couldn't get a word in and (b) they were really making a muck of it. What I was hearing was a confusion of the _indicators_ of successful online fundraising with the methodology for _creating_ successful online fundraising; saying things like "have a taste-maker blogger promote it" and "get people to post it on their friend's Facebook wall". To take a line from Joe Breiteneicher's _Quest_: they were identifying with the money, not the purpose. So allow me some catharsis...

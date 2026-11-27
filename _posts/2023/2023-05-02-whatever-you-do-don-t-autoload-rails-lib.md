@@ -3,6 +3,10 @@ title: "Whatever you do, don't autoload Rails `lib/`"
 date: 2023-05-02 07:09 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2a24baaff5b344c0"
+  vector: "9Pb//gIB/wf8AgEM/gYCBQn8/QwCBgEL/vP++QH3BQj9AQL+Bv34/wYE/Qfz/AX4AP4FAPwA/QD/Af8O/hL7AAIG/QUEBAEE+wAB9/4D+PT6/AYIAP0A/A7/B/cOBwUBCQP7A/v/BQUDAf4F/foI/QX5BPwA+wIH/gYIAQX8+AD+A/kR9fv8A/8BBAr7BAb/+QIEA/sA9wL/Dg8A/QIF/AUG/gj8BPf6BQj0AQv+BgP59wQBBxH3/Pf1B/IQ+vcFAPoC/gkC+/0AAv/7/QH6BAL3AAAC/gj39gIKAAACAQAK+P4ECAH9/AH59QAG+AT5/PoCBvAG/gIE/+wA+wABCP7u7AbyBQr5Df37/Pv/+v///f//AvcIDAMD/AgDCQHy7PP+AAj/+Qv8Av8ABAD8+PX+/wj6/P4B/QMDBf0H9wABCAAC+wIFDwMJAf31C/MDBATyBf4EBAb9/QH9A/4CC/j/AAkB/gcBAf4H/Pn1+/n5BPgI9gMKBwL3Af4B9/sB"
 ---
 
 _**Update:** Rails v7.1 will introduce a new configuration method [`config.autoload_lib`](https://github.com/rails/rails/pull/48572) to make it safer and easier to autoload the `/lib` directory and explicitly exclude directories from autoloading. When released, this advice may no longer be relevant, though I imagine it will still be possible for developers to twist themselves into knots and cause outages with autoloading overrides._  

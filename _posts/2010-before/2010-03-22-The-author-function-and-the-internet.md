@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/03/the-author-function-and-the-internet/
 - "?p=1852"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d94e4ed2d85d3c33"
+  vector: "/gT7+//9CQERBfYKAvr///n8/gcFBwP5AP73+AD++wsEAvsFBgYE9vz7+v//AP4J8gHwAP3//vwGCfz+/wD7Cgr9AwLzCAQCCgEK+f37/vcKCAwD9AX//wf/+vYFAwL6/P0BCAAGBfoB+fr/9Pz5//n/B//++wj+/wcECf/3AQAFDvgKBwH9+QP9CQoHDQD///4G+QkGBfn4Af0C/gX0/v/6BPz+9AMF/gQB/PoKBQYBCP3+BAEC//T2A/gIBgMGAwb9/QP++f38+v0D/fz6Cv77+fv6/gMAAgT/9//3+gD19vkL+vj8AgP39fcE/fj5//z6/wT/8/kMBAT/+wIABfr6/AQHBgL7CgcC+voB7P0HBgcBAvT5AAgA/AgC+/gIC/b9DfwGCfD7+vwEBf7zAQT/AAkH/ff8/AAJAPwI/QD6+PYIBwAJ8vkCAgEA+wf8BPL6AQ/+9fX+DQH3+Ab+DvsC/QH9AfcBBgkDBQj5/wIFBP8JDgcD/AUP+AIMBQn1"
 ---
 
 I rediscovered this wonderful paper by Siân Bayne of the University of Edinburgh entitled " [Temptation, Trash and Trust: the authorship and authority of digital texts](http://www.wwwords.co.uk/rss/abstract.asp?j=elea&aid=2728)".

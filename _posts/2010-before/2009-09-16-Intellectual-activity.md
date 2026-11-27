@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2009/09/intellectual-activity/
 - "?p=740"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "aff0f256cf41154d"
+  vector: "/fwFBQgCDwUBBgQL/vf8CP729fn7AwUJCAL39fwM/AwE/Pv+BwgHAv/w/Qn++/n99AH1/PX7/gL+Dwn/AfgGCAIF/Qf0/gcFBggL+wb8AQYACP3//vMA/QAE+/sF/gT++Pf1AvUICAb/+/3+/AL9+wD7Dv4LCwYDBwMIAfn8/AAFAgIU+v/3+wP7BQcBCwQG/AcDBAwD+/n8BgL6/AT+AgH6BvwI9wf+/wX7//0LCAAHA/UD/Pr3//T/CPsGBvsBAQD5AQYDAP75AfoBA/PzAwr6AfgC+wH8BQID9gD76gD58fkEBAABBAX//P7x/QX7AvnzAAD98wIBDwMD/AECBAL9+QQB/f3+Cf77+/cA9P/4CQD8/AX++wACCQf/BPj8AfT6Af39Avj97fwBAwX3/P36AgAF/v8J/gUCAe8E9gAH/fcLCQYCBAIIBv0BAgz7//f6/w3/+vv8BwD+8wYBA/YAAQYB/PoFAPsCCwz/9P4D//wJCgQMBgYI+v0RAAD6"
 ---
 
 > Only those who have power, for example, can define what is correct or incorrect. Only those who have power can decide what constitutes intellectualism. Once the intellectual parameters are set, those who want to be considered intellectuals must meet hte requirements of the profile dictated by the elite class. To be intellectual one must do what those with the power to define intellectualism do. The intellectual activity of those without power is always characterized as nonintellectual.

@@ -34,6 +34,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
         with:
+          ref: main
           token: ${{ steps.app-token.outputs.token }}
       # Dependencies
       - name: Setup Ruby
@@ -47,6 +48,13 @@ jobs:
           BOOKMARK_TAGS: ${{ github.event.inputs.bookmark_tags }}
           BOOKMARK_NOTES: ${{ github.event.inputs.bookmark_notes }}
         run: bundle exec rake new_bookmark
+      - name: "Embeddings: Cache model"
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/informers
+          key: informers-all-MiniLM-L6-v2-1110a243
+      - name: "Embeddings: Update stale embeddings"
+        run: bin/rails embeddings:update
       - name: Create commit
         run: |
           git config user.name $GITHUB_ACTOR
@@ -66,6 +74,7 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
           title: "Add bookmark for ${{ github.event.inputs.bookmark_link }}"
           body: ""
+          base: main
           branch-suffix: timestamp
           add-paths: |
             _bookmarks/

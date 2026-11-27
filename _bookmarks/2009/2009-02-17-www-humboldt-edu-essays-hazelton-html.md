@@ -7,6 +7,10 @@ tags:
 - theory
 - economics
 - corporate
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8b0f4520fb449b7e"
+  vector: "+gH49voGAvwJ/gAG+voG/PoJ/w78+AAM+foA//v5AQIPAggI+/f6/AP78/X3+BH79/f8Af0D/vv6+wf/CfkEBwcIAQPv/gr6//zv/v4FBP4F/v8G/QID+gwP/wYB//4DAQD+AQEHAPkC+/wBCxD6Cvz7B//8AQn0BQQB+gX5+wD4BQX7+wX+CP8I/AAKAQX8+vYJ+AMH//z88gL5/QMPAAQEDAL3BAID+P8HBw0CAf0BBAQGBPQB/wT77voAAf4A+wn//wDzDv////gE+AILA/kBBwACAwX/ChD/Bf4D9QAH/Qn6/wT4+wAD+f4IAwT6Av32+QQIAQ36Bfv6Df3/A/gA//3//AH2/QX5BQD1/PgEAv3/+QQAAAP4AvwIDf8Q/wj7//v0//v09fcL+gX6/g/4Bf/5+AnzAAf6/wUKBgD//QIBAfT++fsEAAP5Dvn8/v0ABgMD+v8EAvv+CgQGBQAE+Pr9BPwI/QX9BAX38wX/9AUAAf39/AMO7gQD+AP8"
 ---
 
 Abstract

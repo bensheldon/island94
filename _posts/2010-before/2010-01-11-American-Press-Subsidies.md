@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/american-press-subsidies/
 - "?p=1678"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3dd296b6c4314973"
+  vector: "+f78AQsNAfz5AwYWBP3//gX79wb7AgcHBPz08/7/APkF+wgACvX+AQn39wH6/QgN/AIBAwP2CPT3EAEC+vz4AP8B/AL8/v0HDff+9wwCAf8O/P4E8fz58gj8/vMAAgP5+QT8CgMB//UI7vYD+wsFBgIDCfcA+gj6AwL5/QD5+wD/CAEC/gX///8BBAsACAL88gsHAAIGCvwA+vv3AgQDAwX6BfgC+AQC+QQAAwcIAvr9+wgEAPj//vz7APAB/QcG9wr3Af0JA/vx/fwNAv4H/QH6BvkD/wMHEAH4CPn5/QD4BPr8+QT7+gb/+Pn9CfEAAPv5/QEG/goJ+ff9Cv//AwEG+Q0DCAL5/fcA/vz78/z/BPT6CAXzA/sAAgj9BPH0BvgH+wT+CQEC/vsT/gz+DQX+A/0ADAz79gIA/QYGBwD79/sK/fwD/wD8/gD/AgL8+fz6AQ0ABQAEBQT7AQT8+/L++QMBAwAEAwIHAgcF/AYH/gMDBQAC+AUG+gL8AgAB"
 ---
 
 A brief history of the United State's subsidies to journalism and the press, from The Nation's ["How to Save Journalism"](http://www.thenation.com/doc/20100125/nichols_mcchesney/single) by John Nichols and Robert McChesney:

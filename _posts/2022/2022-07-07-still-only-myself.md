@@ -3,6 +3,10 @@ title: "Still only myself"
 date: 2022-08-14 16:18 PDT
 published: true
 tags: [life]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "53b595170d222321"
+  vector: "/ggBCwkABQD/+AIIA/UB+v8C9wn5//8JAAn//vwBBQEAAQAKDAH/+wL3/v8C9wD6+ff39wL2BwwBBwAFAvwAAwgEBv/5DPr1+AkDAAD8AwIGBvkK9fcABAv+9f/3BP/++vv6A/oCCwMA9/oKAQX1+wYABf/9//8RAgQAA/MCAwAB+woL9v75AQUADQAFCQP+7vsOB/oDAPUB+wX4/gEACPryAP4H/v77+v8L/gEOCQH1AP4CAfz5+fMA/PkD/vwE/gL79v0JAv32+QoB/vvv/gYKAf4TBgX2Agz99QcE8gAD+gIACff5/f8BBwEFBvf5AP/38QEI9QL+CgAN/fkCCQH+AQf1//v4+Pz5AQD3BvX9BgUB/wkE+AX2/P72CfsECPoF/foA+/X4AP39AAT1AP30Cv/+CO4DBwsD/vT8BgAH/AEHAQMKAQAG+gELB//+DAD7/QL9/vr2/QT9+gQFAf0C+PgJBf8F/f8JBQD5/AQGAgYDCAH9Af4M9QUP/foA"
 ---
 
 Two quotes about the experience of life. The first from NYT's Magazine ["I’ve Always Struggled With My Weight. Losing It Didn’t Mean Winning.

@@ -9,6 +9,10 @@ tags:
 - art
 - advice
 - money
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4f885441a4ad39fc"
+  vector: "9gcA+wD9BvwHAPr+//78/QMAAwD88//7CfoI/AYC/QcD+gkFAQv+BPr9+gQB+goD9Pz79ff5/fwI+wECAAABAwsC+Aj1BQX0/fwL/Qb+9/0ABP399vsGBA71AwP88g0F/wMAAgACCPcJ/vwJ/AT8AQMEAQL0/wIHBA3//PD4AQACCgECBv4IDgENC/wBFfkDBv3++fz3BAD5AvoDAf35Bw/+8gP89gMA9QD9BQID/f72CfwPAwsA9Aj2APn6BfQP8wj/AQf8+Ab6+vsAAAAABwMA/gEHBwr+/wn9AAH+CAD7/voICvj6+AsJ9gD9/QLxAvcCAggIAfv0Cf/68wX89vn9Af76A/sJAfr8A/vu//YG/QMIBvv8AAsACg0GBv4EAP4ECf0BAAr8+fwFAv8D+/z7BwYI+fL5AgECBQEHAgD8BAf+CvsE//0FCvYCCQICB/b19/4J/Pj1+QcN9QP5AQQHCPf///UC9wADBP4B9gD2Bvf9Bf8I/QQJ/AUBAQH7"
 ---
 
 Top 10 Lies Told to Naive Artists & Designers

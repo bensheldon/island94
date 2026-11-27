@@ -11,6 +11,10 @@ redirect_from:
 - 2012/11/reimagining-chicagos-311-activity-with-super-mayor-emanuel/
 - 2012/09/reimagining-chicagos-311-activity-with-super-mayor-emanuel/
 - "?p=3057"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b732caaded8d5e2f"
+  vector: "8/f8+/30Af0DAP0F+/oGAhX6BPcD/f8E/gj99wn6A/kAAfoEAPj6/AAF+/39/Pb/+gAE+wEF/wD9AgINAfwDCwcD+QEG8gIA+//98/n6//kD9vsKBggCBQUJ9gUAAvgFAwL5BwICA/UE/f0MAQ35/v74+/0H/AgKEgj//AwDAAAEAPkCB/8E//wABQ8L/wX6AgUI+wP+AAkLCPwKAwIHA/QBCP4B8/n59gDtAvH+AAAHAgMBAgj9/wP5/gcK//36//z8CAEFAAAMBPgC+QL8+wb0AQUJ//35/An7AQcD8QD0/vgG//76AgP++AYGBgACAvX6AfoK8/n7B/cBAfv9+vr2AwkGBgL7Cfj+A/8L7Ajx/QT9Awb8AP/+BQQK+/oD//v+8AAABf34//z9BPX9Av8SBv4IBfj/AQT9C/UPAQAABP7+BQT/BAP8BQD+AgwCBvz3/fsE//8F/gkM+QHxCAX2Bwjz+wH9BP/5BgUG+fUMAfz3+wgG/v73BAkLBv0E"
 ---
 
 ![](/uploads/2012-09/screenshot-600x437.png "screenshot")

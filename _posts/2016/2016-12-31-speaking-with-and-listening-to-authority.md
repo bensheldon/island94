@@ -3,6 +3,10 @@ layout: post
 title: "Speaking with and listening to authority"
 tags: 
   - communications
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9742936386ffc82b"
+  vector: "/woOAATzDQH7/f4C+gL3/wkB9Qz7Bv8C8wf7Af74+AIL//0KBAL9/f76AAb8/Qf0Af39/AbzAQoJC/z9APz+Cv0A+gIABvwAAgMCBP8ECQAB9/gDAPYH9wIF/v73/QII7wPzCQEL/Pr+9AL/BAL9+wUFAQj6DfoACAAIBvv/DAAIBQENAP/5+AUFBgUOAfoO+AD9AQr6+/QAAgQGCQLrAgUAAgMD9/z8/QH9/v0EBvv3Av8DD/oCAAkG/AEGCfQC9/r5/QH47gT2/P/2/P8C9wj9/v8C9QMHAgz+AfwEAQAAAQIHAQD8/Aj7//34/Pv9+PwA+goOAP/z/xD//fYC/fkJAw4BCPUDA/z4+f/0A/z5Bv/3BP7+/An+/wUDBQACAQb+/wUI/QDz+QsE+/P1+v/9AgcHDfsHAAcABP4C+wD1AwAGBwH8/Pv/AgADARAB/v/z/wL/9gEC9AQO8vsE/PYC+QAH+w0F9AgEB/kG+P36AgD6/QsNAgAF+QX/BfP8"
 ---
 
 From Chris Hadfield's _An Astronaut's Guide to Life on Earth: What Going to Space Taught Me About Ingenuity, Determination, and Being Prepared for Anything_:

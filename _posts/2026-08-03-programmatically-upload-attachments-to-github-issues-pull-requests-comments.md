@@ -3,6 +3,10 @@ title: "How to programmatically upload attachments to GitHub Issues, Pull Reques
 date: 2026-08-03 17:00 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4345ad6b96c63451"
+  vector: "9/r8BQnz/gT+BgcGCwoDBwIA/gX7/Qb5CPT6/f/9Cfj4AgMPCf8A/QX/AfwB/wj7+v778gYH/ff6BP0IBP34AAUJAwL48AH67v8EAv8L//cI9wwLAg0BDAAAAAEE/g/6+wD4Bv0DAfYCBwAAA/36/Pn1/wv/AwLxEAb6AQX4/AAFAwkH+/j+9/j8/AoCDPcA9gQMC/f49wEF/wcBCP/5AwP++fP2/wABDAD1BwL8BvwGBgkDBvr+/wIBAP8FAAD/AP/8CQEH9gz4+P7xAQcKBQT2//77AwH69QALDfkEBQAD9/oNBAgLAAgBAQXz+f359/r++wYHEQH+BwD9BP0A/vj+BAICEQT+AAD4BgT++P78CPz+AAEFAAL/+gT++f77/P39/fQMBv4E9AoDAvj2APkLAQUEBPsHB/r4AQsIAQAAAfb89gH9AgX6Av79Bv/9Bv4A9fv8BPj5/vwI9vgF/Pz6+P74+wH3BgP+/gEDCvz8AQP9+BEG/QYADwYA+gcD"
 ---
 
 It’s possible to programmatically upload images to GitHub Issues, Pull Requests and Comments via automation. Finally, though maybe mistakenly, I dunno.

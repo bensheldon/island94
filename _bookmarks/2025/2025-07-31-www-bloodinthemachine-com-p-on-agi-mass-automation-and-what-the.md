@@ -4,6 +4,10 @@ date: 2025-07-31 13:59 UTC
 published: true
 title: On AGI, mass automation, and what the Luddites really fought against
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "cf74c1ece1fc0117"
+  vector: "9QYJBAv6BAXxAQMGB/f8CAcA9wIA+QIH/Qj++/wE/wQGBAEEEPoC+QX4//j8BQL78/wI+Af2/vcEAQQC+voA+wf5/fz2CPv6Agf/+gD7Af3//QoF/wEAAQf4BP36AQz4/woBAP/8BPz38/oD/QACAAT7/fj7B/oIBgT4AwT9/gD/AgIFA/v//wYCBAQC/wn6/e0DAgP8AwP8AP0DCAgE/QMQ9QT98fv7/AMDAQIMCP4CBgIHCPsF+vj9/wACCQYE/QIJBPQHAfz8AwAFCgX29AID+PgE+P0GA/8B+v4D8gACBPcM/P3+9AMH/f34/wMABv398wgK+vL3B/MABf/8AAQIBQD7DP/y+vn9DP359/v/BwgGB/f3+gX78QcBBQEQBgkBAgD7CAECBAAJ+wv1Bwr7Cgf6CPoE+gP++AMRAgD2AQH8Bv0ECfwM+PwHCQ4G/fT4BQf/AAT6B/X6+w8BAf4A7/34+QP6/wAFAQr68f7/BQIABgz+8QT9AwAB+w4D"
 ---
 
 The Luddites were not concerned primarily with the power of the technology, but rather the people—the bosses, the factory owners—using it against them.

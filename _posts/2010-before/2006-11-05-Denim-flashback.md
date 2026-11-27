@@ -19,6 +19,10 @@ redirect_from:
 - articles/denim-flashback
 - 2006/11/denim-flashback/
 - "?p=108"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7291dd62d6c4bfff"
+  vector: "AQMO+woGDQL3+wAICAEA/Af99wL9BAEI/wT/A/X89Aj7/QP4C/sGCAMB+wMDAwsDAv8EAgME+Ab4AgIE+gH9Bv0D+wEIAA0E/QD9Bwj6+v/y9gMM/vsDAQD++fv1/wP99wUCCP4KDgEH8wIMBfkC/Q4K+PwBB/4D+hD/AO0DAQD5/AUFDv71A/kEBP8D/AQH9/r7/AIDAvf7BQMGCwQABQgA/wII9vz6AgIB/vwGBgUA+/wJBff2+QcC/wIQDAb//vkC/gj9AwAECAwB9v4D8Qb7+woJ+gTy/AEA/v358wADAAX5APsCAgH+Av0C/QQCCQX5+QT//wH4AwMJ8Pj5Afv/+gX+9wD4AfMMBwf59gD3CPYF/P0AAQb/9AYBCPkBAP389Pb6/v36/fT7AQv6AwH6AQgEDP4A/QMDB/UH+gACBP4GBP/6CPn//vr8DP76Cvf3//UECgz+/foAAv0EAfT69PoFBQkD//MECwsEBAH/AQD7AAcA9+wD+AgF/+wA"
 ---
 
 ![Jeans: New and Old (front)](/uploads/2006/denim-flashback-1.jpg) ![Jeans: New and Old (back)](/uploads/2006/denim-flashback-2.jpg)

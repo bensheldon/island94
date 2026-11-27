@@ -3,6 +3,10 @@ title: "A mostly technical reflection on Disaster Relief Assistance for Immigran
 date: 2024-10-20 09:35 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "82718b63510f8e3c"
+  vector: "9f0BBAT8/AT5Af4FAv0AAgP19wT1AfkKAQf3+/78Ag4FBwkIBgH7+QD2AAcD9gL8+AH3/Qb9/QYJ/vr9+f35AAAG+AAO+P/7+gYICAIGCPEGAAAL/P8ECQ7/Cv8PAgb/AfgCCwEHA/n4+gECAP8ABQH+BwT1AAwFBAn9+gIE/wABD/8LBvgABAH/ARAAAQLz9AkIBwn1//kNB/wHBQP8AQYBBQL+8v7++An+/gL/BQD/A/0FCPv49wb0CAIG//YB+PwABAf/+wT89wD6/wb8/gcD/gMHAwcB9wb7/QkFBQD59f4ECvUA/Ar5/f8F+/f3BfkAAgYL6QL+DPz/AvoA/vgE+QL7B/r+BwL3Af0J+/78/gD+/f/8AhD39gT5BAH8AfYI/vr7//n0+wQE9/ryAvv9AgcKC/38AQry/PcM/gD+B/gFBfT7CAIFAv33BAcDAgTx/AII/PoAAf0NBwD//v//+fgD+gX+BQj/BP/+5/0D+f76+g8O/wH4AQQE+PkC"
 ---
 
 > "Meteors are not needed less than mountains"

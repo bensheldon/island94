@@ -16,6 +16,10 @@ redirect_from:
 - articles/valentines-day-2007
 - 2007/02/valentines-day-2007/
 - "?p=118"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c7e805fe8ddc8024"
+  vector: "9AMXCv0A/vcC9/sH+AEE//0A+hLzA+wIAQgHBvz/A//4AAL/BfgBCv34Bv//BwYCBgL8AAH8/AL5AAb8/gIBBP4D+AoJ/gcJAAUBCvj+AQH//gAD+gIAC//9+gf6Afn79wT4CgMN/QsN9/b6+/QAAQj1AAH/BQgGBgAE/vv+BAD/BAcEBv319P7z/Qb7+Pz/+wL4CfrwAP/vCAkJBf0FCAv/AAP++wQB/Pj8AgYG+wMF8wkD+gX6+gX5BQMGAwz09PkIBPUECgb/+QIDDP4GAv39EP/8+gL/9gT+BPkBBQAI/foBBAD4CQcLBAUCAQf6CwID/vwF9AYEBAoB//YGBfkFABEB+wb+APn3BQACAAUJBfsF+wT8+/X78//1+vr29voF//8JAAj0+wEH/QP9APoFAQb7+v/+9Ab6AvgH/QAPAvj5AP8BAgYI8v36+vwAA/j//QwFBvQC/QEB+gcK+/72Af4AAgHxAvv7/vcF/vn9/vcDAAP5AfsDBfr5BPYN"
 ---
 
 ![CIMG1622.JPG](/uploads/2007/valentines-day-2007-1.jpg)

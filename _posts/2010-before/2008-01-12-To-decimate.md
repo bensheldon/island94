@@ -11,6 +11,10 @@ redirect_from:
 - decimate
 - 2008/01/to-decimate/
 - "?p=199"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "10bd2c8c5b0b72ba"
+  vector: "BAsGBgD6Awr2CwgCCgDy+P/++wICCQMHCgH1/gEA/gwR/wQDB/wEAgID+wMB/PMH+QQDCv0A/u/7+/n8/gj8AQn9Bvz3Fgn6CAL59wAEBAIQ/QD5AgAG9QsE+ggMCAgG+fn7BPgKAfjw8/cE9vr2+/8CCvwMAPkIBQXzBvwH/QAC+v8KAPfyBgEJ//z/BQf9AAz8+ggH/vkDBv0GBQAD+/z7BAD6AvsJ+QP//gYCCf30AwEBAAAD+wkA/P4EAAL9Bvz8BvcC+fz/AP//C//9/QH/APYDAwP6AwD7+gP79gD0AfQF8AIAAv/29f4LBv78Dvr4AP0A9/v9CfwABff/+/8C+AP/Afv5AAD4CgP+AQIIA/8C9w3+AwP7AAL4A/sH/fj8CAP6Bwny//0A/QoEAAT4Avn9+AP8+wr37gEDAAACDv//DPsCEAICAQIDCgEE/P/9/v3+9vkMAfsP+P7+AgL7BAP7AgTy/AkCDAr5/gMC/AIE/AkE+v7+7QQG//v+"
 ---
 
 A good [World Wide Words this week](http://www.worldwidewords.org/nl/rgnp.htm). I read it weekly, but of particular interest is language that has to do with numbers. Like [decimate](http://en.wikipedia.org/wiki/Decimation_%28Roman_Army%29), which originally referred to the Roman military practice of preventing mutiny by killing one-tenth of the soldiers (drawn by lots).

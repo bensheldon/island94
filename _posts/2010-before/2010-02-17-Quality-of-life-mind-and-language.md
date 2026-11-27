@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/quality-of-life-mind-and-language/
 - "?p=1770"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6a29f146af75602f"
+  vector: "D/oGCQD/EfgL+Qf+/QML+gkD+gYNBwz7+f/9+An2CAQA+foNBvsE9Pn7/AID/AYCAP/5/f7+Agb7APv9+/0CCAkA/An9AwUCAgUEBfrzAfwHCfsC/PsD+fEE/fH4/wf6//8BBgEF/Qn9Afr++/79+/0EBwf+Ag0BBfwI/AH0BQAA/QQFB/4B/wAC/gL+DQUB8gkD/PsH//z8/AX7+P74DwP6/AoFBP7++Qf8+/kHB//5Bv76B/37AgT/AgD4AgMBBgP69wL99P0E/Pr8Bvv6CQL7AvwGAgjx+/72+g/y8wD4+/wI+/z+BPYD+gQCDAT8BwcABAQL9//8FP/7+vr+A/n///8I//b6/wH/DAT9+vn3AQIC+fn7+gDxEf8EA/78BwD5CAf+APz3+/oC/wP+Afz5/f79AfT4AgD4AfEE9wD9/A8EBAUQBvkH/fwACwwGAQH1AAQF/P38AAL6AggJAwMCA/T8+QAE/gkBBAr2BPj+CAYQAwsJBvoL+AYXAgL5"
 ---
 
 ![](/uploads/2010-02-17-Quality-of-life-mind-and-language/Definitions.png "Definitions")

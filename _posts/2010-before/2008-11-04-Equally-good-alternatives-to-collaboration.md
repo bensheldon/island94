@@ -11,6 +11,10 @@ redirect_from:
 - articles/equally-good-alternatives-collaboration
 - 2008/11/equally-good-alternatives-to-collaboration/
 - "?p=270"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9c309309b6d3f1d8"
+  vector: "AAL0+voGAP4LA/0C/wgKAv/6/Pzz+wEC9wAD/wH7AgUBBPcNAQT+/PwDBfL8/QD/+Pv9+AIGAgYC/fzx+wX8BgX/BA34+AT3CPsHAP4AC/0IEfYJ/fv9/Q4A9BAI+/4KBv3/BQUC//AB+vr7/gX6//n7CwT/BAv+Avj9BgYJ+QAA/vsHAv/4BPr//RYQBQH08gL7BP8A/gkK+QcBA/3+BwP/AAr3+fr98vwBAQsA//n7AAEDCf/9+wD9+/gGAP8BAwn7AAvw+QAC+/v9/QQK//n+AAkB/QX9+wz4BQMRCwAL+wEEDwH+8wkB+voDBPv5Av4G/AwO//v///7tAgEB8wb0/QYG9f78+v/+Af8G/f39/wH++fQD/gf9+gP+BPsIAAYAAfwJ/f4B+Qr9/PT5AQD+BQP5CAIF/gb49AAAAgAFBP0B+vv78f8SCP/0Bf35Bvr5/Qb58vsGAPcC+vr9A/sFAAH3Ag7//A78AP8G+wD2/v/7BgIJAQgHBwUH/fQC"
 ---
 
 Yesterday I posted an article that sought to give a broader frame to the idea of [cross-sector nonprofit collaboration](http://island94.org/articles/how-create-cross-sector-nonprofit-value): placing collaboration within a process of negotiation to create new value. Today I will break down negotiation a little bit further to show why I think it's important to take a broader frame of things and maybe even [get semantic](http://island94.org/articles/how-create-cross-sector-nonprofit-value#comment-3761). **Updated to add:** :-)

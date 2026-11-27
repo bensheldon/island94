@@ -3,6 +3,10 @@ title: "TIL: ActiveRecord transactions roll back on Ruby Thread abort"
 date: 2022-02-07 19:54 PST
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "07107f5a5d0186e8"
+  vector: "8/34BP0AAPcBCQYS/fn1AQkB+gH+BgML+foA+vz3/vv8/wYIAfz7/wwE9AP6AQH1/f78CgMGBQIK9fgLAwX59gUBAfwBAwL87wD7BQT08f74+wIA/P//+w//AAkBAgf9Bwj8/wMGAPgDAP8G/vkEAwkLBBQEAgAADQ7/A/f9BAAE9/cD/Abz+gsEAv/4+fn4/wYEDAb99QD7BPv+/QD9B/4EBQD3Bf30/wfvAwXz/QQIAQ38DgH3/QwF/wMKAfv+/PkDAwAD+w/+/gD1/gX+BQr9+vQBBQL99v8DBwkEBwAC8wML/gAABPn9BPYABg3zA/z8CvsG+wkDAfMC+PoF+gIL9/75BAL6EAn7AP0H+//5Av/9BwYD/wX2+wH/AgoCAvsKAQL8Bw79BwYI9/T4AvIAAAsA//gEAgMA9/r/9wABA/3+AvUACAD///78AgT4Av4CAPz9/Aj1CAEIBvQH/QcD+AoH+wMC/gj6/v//9f34/vcAAwX9+gj5+wEI9vsF"
 ---
 
 I learned that ActiveRecord would roll back transactions when inside an aborted thread. It's implemented right here, in ActiveRecord's [connection_adapters/abstract/transaction.rb](https://github.com/rails/rails/blob/3f13828392a4aea81184fa873c47cb2e53d295e9/activerecord/lib/active_record/connection_adapters/abstract/transaction.rb#L336-L342):

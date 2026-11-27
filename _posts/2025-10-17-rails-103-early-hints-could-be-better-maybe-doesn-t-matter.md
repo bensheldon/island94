@@ -3,6 +3,10 @@ title: "Rails 103 Early Hints could be better, maybe doesn’t matter"
 date: 2025-10-17 15:00 UTC
 published: true
 tags: [ruby on rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "74ce142ad93c976d"
+  vector: "9AMEBAj++gAGAAIH/PEI/wn9AvwF/AMDAv3/AwX4B//2A/4N/vn8CQUE/An/+wEF+vsC//31/fn3/QQIBPUD9wUBA/kFBgEA7/v6AP4A8/P69AMEAQIDAAr6APb6B/cQ//n0BwYBCf0FAAIXAPv7BQL7/vsK+QcHEQkE+gT5+wAHBfoB9f0E+/sFA/77/vX/BAQJBPz4APsFBf8D+P8L///6B/sF/P/8AgL4+wD/8wgCAwEOCgD++/4CAgAL+/T59f0FCQYH+gkIAAPz+wERAAn8/wD7+wr2+QH/BgP6+gAM9/4OAwAGAwX/CwD6/gQIAP0K/vgA+wj//gP/9Pn+BQQD/Ab4CwMKE/z+APYE/wP9BQn6BAED9/v8/AgDAfz9A/f4+Af+Af//+wj/AvoB/PEA9wAIBvMM/AP4AwEG+wD8A/77BRADBfv8DAsDAQL/+/z5+PkPAvgDAwER/QAB9/v7AAv9AggKAPv6/f79/fb58ff3+QgAAgP8/gUMAAAH"
 ---
 
 I recently went on a brief deep dive into 103 Early Hints because I looked at a [Shakapacker PR](https://github.com/shakacode/shakapacker/pull/722) for adding 103 Early Hints support. Here’s what I learned.

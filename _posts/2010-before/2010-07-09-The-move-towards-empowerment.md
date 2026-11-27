@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/07/the-move-towards-empowerment/
 - "?p=2107"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8a5be9477b12189e"
+  vector: "Avv3CgMDBf0B/AcE/vICBPr/+wX1/AIAAwL8Av8AAwX8AQQDCAMDAP73/fj/AgQF+foF/ff/BQkKCgIDCAMCAwv6CAf1BQP6AwAJ8AX+AAICCf4M8v399wsK8vMD/gP4/PsFCPwF/AQA9f0I9wb69gf3Cvr+AgT9//3+BPj//gD/AgcF//4B/wL/AAL3+/n67v0ECAgO+vUC+AkB+QECBQD1B/8E+P/8+f8K/QIOBAL5B/gDBvv6APcHA/n9/P//BQb//PsK8gD4+gEC+Pr88PwE/AIO/f70/QYEAg7+8gAE9foJDP75AQEF//cKDPX5Afr5/vwI/v/9CAgGAfwFAvn7CwP6Bvr99QH/B/0J/AYFBfcABgoJ+wn0AAL0AwAFAvP5/v0F+PkF+/35AAL4A/z5BAT6APwHBQED/fn+/QD+AAMFBAIN+/wE9QoLAgX2DPj9AAr4APf+C/r2+gQDCPsD8QYABPz8Bg4LBfn4BgYDAwYFBQoGA/oL9Q4L/gP/"
 ---
 
 The New York Review of Books [on _When Everything Changed: The Amazing Journey of American Women from 1960 to the Present_](http://www.nybooks.com/articles/archives/2009/dec/17/growing-up-female/?pagination=false) by Gail Collins:

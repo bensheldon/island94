@@ -12,6 +12,10 @@ redirect_from:
 - observation/why-i-apple-computers
 - 2008/03/why-i-like-apple-computers/
 - "?p=209"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d421787876b937c1"
+  vector: "CPwK9wr7Bg3/AP0ABf4CCAX3+An1Af0E+gn7+/kE/gX7/gEEA/j67fsCAgkE9wf2BQL8/AX6BgcC/v////z2BAkCAPr8BPj5BAf3Af/4AQIGCfoG+/j8AAj/AAMOAQoCCP72CfwABfH/+gEE//v7+QEGDv76CwcIA//+/QQA/gD+9wEM/foBBf0HBwX+/BP7+f7+AAf5+vUK+/3/AwH0Afn79QH+/Qf96QIDBwwBCPjzAf8GDQj5+gb7/QYA/Pr+/gMJAvQM+/z19P3+AAD8AQ0A+gIHDQT6+wf//wIJ9AD98gUL/QH48P37+QD///35Av/+9QcP9/b6AvT+BQEK/wP6DAX/BfoEAv73BQAGBPkDAAP+AgP7+QD//gAE/wH4/wIACf0L+Qb5/AAKBvP2AwMAAgD5BwD+BvwA+foC+wD++wUFAwr+AgICBfL3BgcOCQT+BAQG/wP6AgoLAAv79/sI/vgGBgP//AYHCfQA8AMF/wr+BAwI/gEB+A8G+/kC"
 ---
 
 Ran across a Slashdot comment that neatly summarizes my [evolution of computer preference](http://apple.slashdot.org/comments.pl?sid=473622&cid=22623782):

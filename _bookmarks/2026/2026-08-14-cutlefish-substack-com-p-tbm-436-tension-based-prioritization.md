@@ -4,6 +4,10 @@ date: 2026-08-14 14:16 UTC
 published: true
 title: Just a moment...
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c69e3f7316de1e00"
+  vector: "/AQDAAUACAQEB/wH+AH/BAf/7Qf/9wQE/QD4/gP8AgQJA/0S/P0IA/z/+gD6/QP/+fHx+/f+BQcH//799/r/BgUDBAn3GAYE+gIHAgH8BvkG+/0CAfkA/hD6+vcDBQcQ+/3wBQgBAff68/wC/QUE/wQIAgX//v8CCAAEBPkBAgAA/QUF9/7/Av0BAgX+AgTx+QgD/gn68/gG+QD6/APyBvT9/gP2/wH+9Qj2Bwj1Af7s/wEDBvn4+gP4AQAG9/QO/gv+AwT/9//49/4HBAIB9wD//v0B+wv++wj8/v0H/wAC+wMKCP775wD88/0GAf35APcE/QME9gv/Cfj6AP369v/6/AgE//oOCP7x//75Cfv6BQkD/wL+BAD8AQMEB/v8//8A/wL/AQL7+QIIAf3+A/7/AgX6CwMH//75+AD7+AACAAUED/UAAgEDDgYBCf0A/vnz/AkC9vwC+wMN/wL9AfgB//4GAwT7+gcFCgEA7QT+9/4BBg0IBAEI8QMK/vsF"
 ---
 
 Conventional discussions of prioritization assume something like: “We have several plausible things we could do. Let’s compare value, risk, effort, confidence, etc. and decide which ones to invest in.”

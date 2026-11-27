@@ -7,6 +7,10 @@ date: 2023-08-17 06:51 PDT
 published: true
 layout: book
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "240e79f5ff67a14e"
+  vector: "+AAG/QEEBQD+Av8PAvb6AwH09Aj//AAG+wT8+PP/+QQBCAoLDAgF+vzw/wX++wX59fL4/QX5BQQIBgH9Avv4BAP7/QD4/QH/AgEI+AMDCvYKAAEL8//9+A0D+v4E/gMA+QD0DAAN//YC9/z/+gAB//n/DgL8BAf6CAX0AP76+QAAEfwSAgH++/8GBhEBAf/78PsEAgoB/PgC9wAE/wT6CwT9BQEB9wf+9QYIAgEDBv76B/8GDfz6/gL6B/gJCvcH+v/4AgEB+wb/+PcE/AD/9Ab8Bv8FBgj7BQz+/QkC9wAF+P8DDvn69wT2/PsHDQH5A/T7+AMN9AgBAwD9//gA+f0G9QYD9Pv4APb9Av8B/fr5//v/AgX/AQ79BAL9A/sCBPMG//0D/fvz8wUL+PrxBwL5/gIJDv//+QH78v3+/QACAvb7BvkE/AEHAgIBCgQBAwT3BAkD+fn9CPoB/wv2Bfz6+P4DAQf+AwUGCgP7/AMH/wUBBAMIAwIH9QME/vkA"
 ---
 
 The last time I communicated with Jen Pahlka was in the early days of the pandemic: May 2020. No longer locked down but still heavily masked, I visited the San Francisco Ferry Building Farmers Market and bought some fava beans. In the years before the pandemic, Jen had brought her own harvest of fava beans into the Code for America offices and shared them with any staff who wanted them. That had been my very first experience with fresh fava beans: shelling and boiling and shelling them a second time. Now, again with fresh fava beans in hand again, I thought of Jen amidst the pandemic turmoil. I sent her a short email hoping she was well. Jen never replied.

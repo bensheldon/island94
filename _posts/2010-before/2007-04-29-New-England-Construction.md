@@ -11,6 +11,10 @@ redirect_from:
 - node/130
 - 2007/04/new-england-construction/
 - "?p=130"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "56346bd2db8c54d5"
+  vector: "/gcMBv/9/gL+AP0F/gb4AQcD/Bb5Bv8ECAH7BPQCAgP7BwsKBQcLA/v4AgH1/gb+//X7A/f7+AQIAP77AgABBQID9gb6BAr/AAgJ/v4BBf36/fkI+PwDBQz9Bf76AQwA8gT0BgAEBfkA/P8B+/4BAvr/A/0F9wD6CwT8AfT/CgAACfgICwb5AwoNCgH8+wQK/foCBP8GBQX09wb9/gECBgn/+gP3+Pf++P4MCv8EBwjyAQkF/gP3+wf3CfgIAgQE9/f/AwAAAQb8AfkGAAEB8gMA/gYDAgr1AAv7//j1/gAD8wEH/vbw+Qf59QAGBQj8/vQB+AEJ9w30C/v+/fT++wEA+g4J9vf3BP39BQH3AP8HBwkK/AH8/gf3BAj8CPQB//f/8fkFAgj7+ggHB/r7AP72AwIJ/PsF+f/9Bfv+/wD/D/36AvIMBwEB+f/5Cfv+A/v0BAoF/P759/sK/QsEAwP8+fsH/gL//PX7AwP4/P8CBwAD/wb99QcBAQH/9/YD"
 ---
 
 _Wrote this a while back and it's been floating around my drafts pile. The story is a little light, but mostly I wrote it to remember all the arcane details my landlord's handyman told me when he came to rehang our doors._

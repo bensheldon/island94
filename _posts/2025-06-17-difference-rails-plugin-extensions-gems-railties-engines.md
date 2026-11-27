@@ -3,6 +3,10 @@ title: "The difference between Rails Plugins, Extensions, Gems, Railties, and En
 date: 2025-06-17 15:48 UTC
 published: true
 tags: [Rails, "Rails Engines"]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8c01f12778bd29a3"
+  vector: "8fb6BgAE/Qz0/v8IAAQCBhMA+gQJAwQI9fn6Avz4A/7/Av8DDPz4/gL++gMD/QH4+Pz//wH+//38/f0I/AwA/vr/9QAG+v77+P/39wQE9fv5/f4CAQYG9wQC//cKBgT7CPwAAP4EAwX8BvYJ//YFAAH9BP73+AkDAQkNA/4A+AD7A/YQ+AT3A/8HAQ8BBQcB9gMKBPsM+gUIBAH+/QIEAgUAAv8A+/j4AQPy+wYBBwP//gP9GBD8+gECCfoB+/cEAgIDAgUF/gj3Bwf0/gP2B/j++f79/wb+AAP8APkKDQAN9wAMAvsE9P/5+f8J+wj39PEECvcE+PwNBOoB/vcCBQL17Qz5Awb2Bf78BAEHAPsAA/79APsG//8G+QgRAQH77vcC/Ab8/wUGAv//AgD9+Pj9BQEBBPwFAPwFA/oB8wAIBQD9+wIIBfsDBgX3CQH+/P38CAAF/Aj2+P78B/0LBgQGAQb8BgT6AwAC/f8E9vT8AvgF+gcDCQb2//oA9AUB"
 ---
 
 There’s overlapping terminology that describes the act of packaging up some new behavior for Rails. I think of two gems I maintain that are of vastly different scales

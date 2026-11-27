@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/10/life-before-the-chart/
 - "?p=2275"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "80e52668aab1702b"
+  vector: "BP8GBQD+9QgECv/7AAf8//YC/f78/vz9CgL4+QX+/QgEBfgCCAb7CvkCBQb+A//3+wn3/PP2AwcI/An7AgD//wgE+/8CCgIDAfoH//oI9/EECfgJ9wb8+QH4C/b0AgUDAPkG/hD+AQkC8wL/Av8CAPcGBPz+/wD+AQYABAMEBQAICAIQB/z4/gYG/BMDDv8A+/r++/r5CvcCCfz/+P8EBPcABfcD8QMFCAQA+ggIBAn+AvcBCfMLBPn9/AECCAcK+gj5BQEB8Aj09P38/f4BB/X0/vT5/ggBAf/3+Af79wDyAAIK/fv3Af78BgYB9QH7+v34+wP77vYBCgT19AT5Agj69QYJAP39+REJ9vsC/QX8DAUBBvf//v0C/QT8+f/6/QX/APoCAv79/gQCAQH6AQD3BgoIAvb8CAP9+PcJBAD8CAT9BgEKC/MC/AcCBRL6Cvv6CwcBBfoEBv8G/P7//wD9/wD7Af78+wr9BgcE/wP9C/kDBgEDAAL78wUE//f0"
 ---
 
 ![Humboldt's Isotherms](/uploads/2010-10-31-Life-before-the-chart/humboldt-isotherms-500x371.png "humboldt-isotherms")

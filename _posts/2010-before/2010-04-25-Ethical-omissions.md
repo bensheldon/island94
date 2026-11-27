@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/04/ethical-omissions/
 - "?p=1907"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a40729db369e8b2b"
+  vector: "AAT0AgAC//YFAwsS/fj4A/oE9wL8A/4E/P0B/fj4AwYKAwkCBgID/AEA+fv09gD2/fn8+fn9+QH+Av0CBf4BBAYK+//z/Qfy/v39BQAIBfoG/f0J+P3/+gwKA/8I/AL++gH7/PcJ+vcA+QX7BgICD/gAEP8BAwT+BQwDAfz48QD6CP/+AQT/AQgRAAUJ//oB9fb6Ag0IBPj69v8BCQYJ/gH/CAr7BQD9/QYCAgkHCPwECvoDCvj8+wn79PD///r6+gr9Bvv4Bv75/PEK9wQA/QQABf4GCAsAEQUJBAQE9gAA/AH6BAH8/wH8/P7+AQD8//r6+wUR/wj7BAP+C/sLDgQG+f4D/vr/AgD1/Pz4+vcGAfX7AAkECAcEBAYIBQEE/f/+/PL//f/48/wM9vrsAQzzAQr6+QT8/AH/+QIEAQD9Av4F//T7/fwM+//zDAH7+/sGBAb+/fwF//QEBQEEAgX58/79BAL9AvsDAgb79wsDA/4BAfwF+P0C8vgH+Pz4"
 ---
 
 Again from Marianne M. Jennings' _[The Seven Signs of Ethical Collapse: How to Spot Moral Meltdowns in Companies... Before It's Too Late](http://www.amazon.com/Seven-Signs-Ethical-Collapse-Companies/dp/0312354304)_:

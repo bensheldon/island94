@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/02/the-purpose-of-copyright/
 - "?p=491"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "aab5fc0e880b127f"
+  vector: "+Aj88ggI//8KBv4KBfz/AwHzBAgGAAH8CAQF+gQC+wkFAf8AA/j4AgP9+wn4+wIK+Ar+/wb5B/IGCgX7+/76AQL5AA3uAwT9AwkA9fwD+PsC9vr/8QIF/woB/gEB+wb+AQMJAgkCAvQG+wEAA//4Av8ADQP7AgD3CP8C/wP6/gD+AvwG/wP/A/QBAwL1CgEE//cEAwr4DADy+/r0CgH7Bwv3AP8A9gABBPr6AP3+Av4BCAgFB/n/BfP7APb9CggO/xEVAAT/Avb7+PgH+AEDAPMG/f3+BQP/AQgE+fz+/wD89v/++/n8+/z+9/f4//72BwP29gv7AQMAAwD5/wEDC/34+v4BDPn2+f70+vfv+wQH+gYGCvcCAvECDAX9//IL/wQFD/7/Bgf//foL/wD7APz//Ab9+/72/foE+vMH/wD3AP0IAfoBBgAAB/gA/ggFAv7+BwwBCfX3BAD7Bgv9APQHBfT8Avv//gUFAv0E/AwEBvz+BPsDAQgO/gIC+Q8B"
 ---
 
 I assume I'm not the only person making this connection, but it's interesting how successful the entertainment industry (and anyone with an intellectual-property axe to grind) has been in making this rhetoric commonly accepted:

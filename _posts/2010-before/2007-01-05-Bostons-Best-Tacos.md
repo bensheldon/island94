@@ -13,6 +13,10 @@ redirect_from:
 - articles/bostons-best-tacos
 - 2007/01/bostons-best-tacos/
 - "?p=115"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2e34de7c166d447b"
+  vector: "EfwHAPX+AvUA9A34Afv//Q37CPoB+AAI+wQHCPT59gL5/wABBP8SBfn2CAL++/4GAQL3AP/5/wH1+wUDAP/5Af739Aj+/gT9CgcAA/r49gH8Bv8G//wCAQn+Cwj3/Af+/gP9AgEFBPwDA/r+Bvr8Bfv/9QAH/Qr9/wb6/fsGBQAAAwIDEfj0+fgFAPn3CgMLBvv19/oBBvz4D/z9/wMAB//7AAMC+fkG/wMDC///AwMDBvz7+wH1+f4CBv//Awf+Bv0A+w0CBAERBgMC+P8H/gD++wQAAwfzBAbvDfvz9gAI9gQE+PUCBgb+9PoMAAcKCwf49/oL/QwBAAP59/n9AAgC+A0BB/4RAfj5///+/f/5AQkA9AALAPz3/Pj3B/4DFAH59wQDAgT6+QEA/wb5AAT3BAoDDf4D/ggECvYD/wAF/vYK/v4DCf4M/wH9APv+AwX5BvkO//gC+/wI//0DAP7+/vj4/AH+//fz/wP9AQUBBPEAB/8E9wIDCQIGA/j2"
 ---
 
 $mymarkers=array(

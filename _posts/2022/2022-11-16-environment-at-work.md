@@ -3,6 +3,10 @@ title: "Environment, at work"
 date: 2022-11-16 12:14 PST
 published: true
 tags: [terroir, work]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e5ac821458677105"
+  vector: "AgEF/wr9Afj/BQD9Bv4DBvn78gn3B/8K+AT/BPv5+xMDAgAOA/0C//72Bfz4AQP1/fX9/Pv6BgIJAf33C/j4CAv8+w38+gD5/wD/Av0FBvoGBvsN9fkAAg8G/P4D/QMBAPMABwADBPkB8vcDAAf2/vsGA/v/+QEBDP/8AwQK+AAF/AAKBfz3AP39/AoBBAf88f8EBf0I9vr8/AIC+wMJB/oCBwL7+gQA9gYJBQsECQX2BvoHDPv8/gL/9/0ICf/+BgL+AgEHA//7A/r6Bf74/P8B9f74Agr+/QgC+Af99AD+9voEB/n5/gL89A8PBP74B/76+wAG8/74DPr9+v0A+/f//QT98vj+Avr9AwMD9QD5AQoMAPsB9QX9/gT8APkH9gIAA/oE+/319QED+vL1Afb9Bv8E//cDAQT59PIH/AAFAgYJBP4IBAUW+AkFDwwGC/rxAgME9vv///v9BwEFBvgC8wABAgb+9wX7CQP8/wr+AAYEAAcE9gACAwz9/vz/"
 ---
 
 ![Screenshot of Sim Earth's Daisyworld](/uploads/2022-11/simearth-daisyworld.png)

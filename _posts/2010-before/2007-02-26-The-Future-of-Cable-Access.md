@@ -12,6 +12,10 @@ redirect_from:
 - articles/future-cable-access
 - 2007/02/the-future-of-cable-access/
 - "?p=119"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2507f66814f8e1b9"
+  vector: "AfUD9wIH+P3/AP4I/AIH/ALw+wL7/gEBAwIAAQL3BP4GBPv9BvoCBAbz+fv8/AUB+P37AwIF//f/CwAEA/v6Cv0BCAz/+/cIAgQH9wwDCwEIBP3+9wH3+wD39QYIBwsB/PMDCP0C/fT99wMM/wn+/fj9BQL/BQ4C+v0AAgj+/AD7CPkG/wX+BPf9Awv+/A769voG/QL8Av3/8/7+BQH+AgUACP8B9gME/ATyAQMGDv3zBQQI+foBB/b+CvEFAgoJAAEKBgIA/fn6/vgI9P4KCgAHAgcMAAz7AQX8AwYCCQACAPf4+PYB+Af+/Pn/AvL1Bff8/wL99/4DAfsAAAH4+gH+ABAIBP32AwL9+gIG+ADt/gkDA/n8CgEA+wgI+PAGCf4I/P0IB/X99v8HAw73Bv8E/PgIAQ37+Pj3+fYDBQD+9vgECAH+9QcEAwgBDQUK9/T5BAX5BQUI//z8BQP5/vMD+QD+BAIKBgEGAwH/+wwD/vsGAvsI+QsH9gj9/voB"
 ---
 
 [![](http://blip.tv/file/get/Bensheldon-WhatIsTheFutureOfCableAccessTV720.flv.jpg "Click To Play") ](http://blip.tv/file/get/Bensheldon-WhatIsTheFutureOfCableAccessTV720.flv)

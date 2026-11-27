@@ -8,6 +8,10 @@ wp:post_type: post
 redirect_from:
 - 2011/06/minimal-mass/
 - "?p=2691"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "94f509128250d0a9"
+  vector: "Avn+Awn+AxEDB/z+AgIE/hD5/f/+AQYH/Pf3/v4CAwYMAQkKBfv8/AH9/f8A7gEI9QID9wEE/Pb8BP39Avn1AQkMAggB/Qf/BwIH+P8ABwYI/fwH9vYD/f4D9wQBAQAC+/j8BgD+BvP79vcB/Av9CP/8EwAABwcH/QT3+v4K/QAACQMHAP0BBPvz/Q0HAQH09wv//Pr0/gEI/gP79wL7AwP6AgP69QcA+gn8AgwMDPX5+wgD+v///QjyBvYGA/0HA//4+AP9AQEE+/wE/v/6DQb9+wD+AAMB/Qj9AvwK/gD0+/0CAwH78Q4H9fn9APf4Aff/AwoE+AQR/Pr8APgAAwL6+AoKA//+CAcB/PEBBfv7/ff5AwD5B/r5/gb/Bvn8AfcGAPgIAv8I+/ENAAX3AgEEAvkMAv/8+Qn2+QL9AAD/+v4CBPr+/wkM9/b2CQz+CPb2/gkD9/0OAQT+/QP0CPEC/wUCCAAEBAELBAIE9P0B/wD3BwX/CgcI+gAIBvoF"
 ---
 
 I was searching for something else in Google Reader, but it seemed timely to resurface this note:

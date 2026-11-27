@@ -16,6 +16,10 @@ redirect_from:
 - articles/nonprofit-communications-2-0
 - 2007/04/nonprofit-communications-2-0/
 - "?p=127"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a54033180e1cb95a"
+  vector: "Bvr8+QT4+gUDA/r7/QX+/Qf39QEF9gn/AgECAwD8AgQPAgcJB/36+wIABfwC/gT++/j0Af4E9f39AwL9Afb8DwIEBQT79/YBAAT9+A0FBPgO//4F/gEGA/wA8Qf/AgQB/O3+CQL8BvH6/wMSAQj5Cfr/EQvyCQj9BPb7+vz+BwD/DfwNAgcCBfsABAMDCgX38gj/BAj9/gEG/Ab8BQP6/QD3Cvz49foE+gv79/f+Df/3CQcCA/gHBAgBBAEP/voE+v/9BQb4AP0E9gD/9AH6DPj9BvwDAQL9+v/+BP8GBQAIC/wCAfcABQv4/PT5AvL3CfQC+AsG/v0FBAQFA/0H9fv//gcQ/P78CAj0/v/+//kAAfwBAv0A/gIDBvgFBPr+AQEBAfcE/v76+PsD//0B+wABAgMLDQsA+gX6AQEKAgD8A/QA//v8/Ar+/f71CAkA/Pn3AQ78/AEF///7BvL7BfT2/wL7AwsDAAIL/QcI8fv5//sD+wcQ/AoGAQoEA/f/"
 ---
 
 Last week I attended NTEN's 2007 [Nonprofit Technology Conference](http://nten.org/ntc) and sat in on a wonderful session entitled **Nonprofit Communications 2.0: Seven Steps to Transform Your Organization.** Led by [Lauren-Glenn Davitian](http://www.cctv.org/index.php?SiteAlias=cctv&PageAlias=CCTV_Staff#LG) of the [CCTV Center for Media and Democracy](http://www.cctv.org/), the session provided a strong framework for nonprofits to better communicate in an increasingly networked society.

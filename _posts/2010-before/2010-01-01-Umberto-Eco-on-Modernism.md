@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/umberto-eco-on-modernism/
 - "?p=1663"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "817147bd5ffa59f4"
+  vector: "+/8EA/wIAQEF+Pr//v8DDQD/AhAE/gT//QEKB/UEAgMIBPsH/QYE8/r3/gQC+gQE/v7q/fn8/ggIDv8EAf79AAb4/gf1BgsB/QH0A/r/AwAE/Pz99/wC8/79+/r7BgL8+gf2BvwJ+QP+//z9+fv79wEACfoE/QgDAgP8B/7w/AACAQIL+gT9AAD1Afz/+voAAPoC/QYU+vry+g8A+QX9Cff6A/r1+P0I9gL0APcCAgcH+v37/AkC/wYBDQAJ9wEACAT9+/kCBP7+BfT5BgMO9/sD/Pv+AQX2/g4DAQjy+wAC/vYL+wT/BgcEAvIMAAABB/f8CQAE+P/9AgYF+QIG/vH4BgL9/wUE/f76AAP1Av4I/Aj++fz+7g39/gL9/f0DCQn/BPwL//v6AAYJ+AL9/QL/AgP9//n6/wb8+wb3DQD69vf7APr/9gMC+woIAwADFvkACQkFAvz4EP74/gkLAgH//AEBA/gEBv//BQ0ABfv7A/sL/wYEAP0M9wYQ/wr1"
 ---
 
 Widely quoted; from _The Name of the Rose _(paragraphs breaks are mine for readability):

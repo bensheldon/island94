@@ -5,6 +5,10 @@ title: To care about AI
 tags:
   - artificial intelligence
   - love
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "34dd1528c64f6f3d"
+  vector: "AQYHAgUBCf//BwoBAfz8Bfv27AH3/Aj++AgG9AMFAQcKAvsCDAEH9QX5B/77/wb3+/cD/Ab5Avf8+QMDAv0HAP/+AAP5/ggBAf/1AP//Bu4DAgQF+wP88QUHBP4D+gn9AAL+Bf7+AAH5/fX6/AbwAQMEDgD2AwL8BQPyBQX+8wD9BPkD+/r7/AQG8wD+9Af+8Pz/BQADAAL7Av78BAMABvn7+gn3/v0FBgMBAAIJ/Pj//QAK/vIHBP0I+/wD/wAGAAIGCwMBAQP99/QDA/j//AAC+f4H+QQE/gX4+wL98QD7//UA/wP0+f8H8/r/AQL6AvsGAwUN9Af7C/H8AfkE/vcGBP3/AP/4/wH2EP4FAf779AEF/fr6+wv8AgT7+QID8QAABgT1CvrzB/gE+P3+A/n5/wICCgL4Av8A/P8C9QD+BAUGAvv3Cf8R/fgDEBQIAwP8CwMH+fb9/fn3+xH/CP38CAIF8AT7BBECAxH6BAEDAgMCBAoH/AYCAggCCwUA"
 ---
 From the endnotes of Ted Chiang's _Exhalation_ on the short story "The lifecycle of softare objects":
 

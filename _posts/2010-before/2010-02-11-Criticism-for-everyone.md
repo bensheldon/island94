@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/criticism-for-everyone/
 - "?p=1749"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "dc079f22b81c5b5d"
+  vector: "/wgNBgcBBfwKBfkB/voA//r1/Ab+CAD7+wYB+gf+/Q4H//gN//0D+PsB/wMC/AP6/vj19/MA/gAIBgD+A//+Agf7AwH6Bgr+Av0BBPn3+/gIAv0C+/3//gAC/Pf8BgcF+///CQYO+gcE+vX8/gD4/wACAP3/AQkE///8BAv8+AAHBQwLAf/7+f7/AQgEDPz6/vQH/fX7/PfyBf4E+wD4CP4D/fkB+gr+/Av4+ggNDAX5CfoHDgL9/fz3/vUEBgj9CQX7/PcD9//6+gMABvMB/vr//fv8/Af8AQr6/wv69gAA+PYBBPb1+f4LCfkD+QH1Bv37AQIK9fL7CgT//AcA+Pv/CQID//z//AoABAP6Awj2Bg4FAO8F+g0A/AcBA/f8/QEFEPwA+wH2/QQHBwL/9wEGBgH9Be8A+/32+gAB/gD9+QD+Cf8LAfgKAgQEDgkGCvf19wr+/PP+Afz1+wj+A/oEB/f+///7AAsICAD3CwH9Efv/CP4H/PkK8gcNAf75"
 ---
 
 From _Zen and the Art of Motorcycle Maintenance_:

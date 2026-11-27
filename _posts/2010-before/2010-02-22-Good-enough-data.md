@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/good-enough-data/
 - "?p=1776"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4ca4aca2e22cf3d7"
+  vector: "/AUPBAfz+vj5/PwDCv0ECAIC/fkCAP4BCxMFBgP/9voCBwoLBQX7//X/CgAKA/75//z++fj+BQgB8AL8Afn+/AQB8gP9BAEAAQH8A/wBCPoE/QMTBfwA/gQG/PUTAgMO/vYJCP8GAvL8B/kGBgQI/PgD9/kB/QoEBgP/BP4C+QAC/gEDA/8A+/AH/QDy+gr6+QX1//kE//0C+/YA/AAG+vsABv8M8/4C9f8DAgj79wT/AQEK/vj3AQgFCAn4BAQB+gwIA/z//fz+8gr5AwL5/f35BPn//wX0/v72BPD+/AAF/wv6BPH4+wr8+/wD+/kLCQT9Af0I8A//A/z//wL++wQA9AP///v+CgT8D/cF+w76A/0E9gcA/gME7P70/wILCgD8+ff9+AD8AgkE/wr7Dvz/AggGBAYDBAX8A/8BBQD7Afb7/QECCPkAAQTx+vsGBQf6Bv4J+wT9Bfj/BAIF/foG//j+/v3+BQb6AAgI/f0C9gH39QEIBAIB+wEJBQYF"
 ---
 
 ![](/uploads/2010-02-22-Good-enough-data/btop-map-combined-500x462.png "btop-map-combined")

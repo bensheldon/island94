@@ -3,6 +3,10 @@ title: "Two stories about technical debt, I guess"
 date: 2024-01-18 09:37 PST
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e811f831285769d5"
+  vector: "+P4NAAf1AAUF/foEBP8DAQbx9gYD/wEH/wr9//76/xAEAAcM/P//+fvy+wQA+Qj7+Pz5+P/1AQULA/v8+P3/AwkE+wf9Af8A+wUDAAMJBvcD//kF+v4EBQv//voJBgQE+fr+DAIJCPT7/PwG/gL9BAP/Afv7AAkGAgf+/wUE/QABCwETCf8ABv/+CA0EAgn09v8QAP35APkEBAALAgD+BAUD/voB6wED9wX4BfsDCP3+Av4ED/z5+ALrBPsJ/foC/gUABwX3+//8+/4A/gcB+wj+/wIOAQj7/A71+v8LCQD4/PcFCPr69gT6+f7+/fL7CfT+/QMN7AX6Cfj8/vf69v8C/P/7/QAEBPz5//r++vYCAAMCBff9/Q36BQn/AAX0//wG+/4C/f/z+gQBAfj0/P4DBf0ABP4BAAH1A/gT/wD9A/sDDfb8/wUBAQD4DQYF+wD09QUI/fsI+gIJAgH4APkF+/j8/AoAAAcFCQUD6////gED/AoMAAQD/gcE/fcC"
 ---
 
 One activity I don't enjoy very much: griping about "technical debt"; that label just never seems descriptive enough. And the things people gripe about seem to mostly fall into:

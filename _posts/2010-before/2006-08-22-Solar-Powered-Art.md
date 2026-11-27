@@ -16,6 +16,10 @@ redirect_from:
 - articles/solar-powered-art
 - 2006/08/solar-powered-art/
 - "?p=89"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ec810379295f9a28"
+  vector: "+A8JBgT5BPv+/gADAv36DAgC9wcC/f8D/hD0CwX7/hD0+gsEAv4C//z0BQD0/Aj2BvMF9gLy+fz6Awf0CgD8Bwj5+fUG+woGAvf8BgP6+fkKAwAGBgIFBv0C9QX2BgD//voEDAcCB/4A//QG/gAAAP4F9/8BA/cDDAH8BP35+gAC/wb9F//6BvoFA/8C/QT29/gB/vUIAPv+CAYFBgQBAgIJ+wH77/0GAAH6AfYNAgT4BwEIAQD+BQf3+/0BDwIA+vr4BwEA9v0A9gT8/v73BQL4/O/1/wP7/PwA/AL39wD/A/7/C/n5+f8B/AgAAQT5A//9BAAO/Pz5CgD6/wYA+f8B/Af+8/7xBPn9C/f/+gn7AAQK9QQH+wQAAgn8//T6/fwA+/0EBgv4CAQABf4D+ff4BgUK//YAAAkRDAUSBwAABvn4B/USCfwH/QAECQMF//r5/vv8/wD8//35AAD+B//1+gT2/gP4/QIBBQME+vv6BP/+/wYJ+foF+gMAA/0A"
 ---
 
   ![IMG_0582.JPG](/uploads/2006/solar-powered-art-1.jpg) ![IMG_0587.JPG](/uploads/2006/solar-powered-art-2.jpg)

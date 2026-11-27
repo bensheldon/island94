@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/quotidian-insights/
 - "?p=905"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8d0038f5352d3b3b"
+  vector: "+wsGAgECBfn19/sAAvzzBv398AUCDAYI9gED/foJ/wIFAwsGBQP+9AD7AwYD/AYB/QD7/fvz/wD6/gL3//0BBAH6AAX3BfwB/gr+AgD0APsD/gII+vsG/Qb/+/cHAwv6BA32BgMEBP//+v0D9/j/AvUBDfED9/4D/gTz/fb5EQALD/4Q/f//Bf/4CAQQ//gN+PgACAr/Afn9/wH5+/8CAf3y+vsA+/4D/P/+AgsGCQT+Bvn7Av0C/wAEBvgI/PsL//n5/gL7A/r4AQIKB/UE/gUD/PoGCAP1+wLz+f4A+QAN/gEA/vv9BAwE+gINDvH0CAL4//oL+wAGBAX78vr+AwoK/QYE+fkH/wb4+gL/A/7+BQEAAAMF/gPr+wL3AgMCAfL/AgD/Bvr6+QADB/31AgP4CPwJAPwBCf74BAP++gD9B/4J/AD89wAI9fz8+QYECvb7BA0F/P/9CAb58f38BgP///gNCgIE/v0MAwT+9wr7AQMAAggD/gUF+P8QCvP5"
 ---
 
 [![china-hw](/uploads/2009-10-29-Quotidian-insights/china-hw.jpg "china-hw") ](/uploads/2009-10-29-Quotidian-insights/china-hw.jpg)

@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/07/competitive-collaboration-or-collaborative-competition/
 - "?p=2751"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "07fcf3d5352f2700"
+  vector: "/P31/RAJAwIJ//j/B/0BAQv7/fv7+gkB+PT9/P3//AcCAP8L/wb1/fbw/wUIAgQB+v789Qnz+fz/AAb6A/37CAT++Af5+wr/C/kOBvQBCgQG/QAG+QIC/QH7+P4DA/7+BAEDDPcKAP4E/wAHBgL8AAT9CP/3BgcECQf+9g0A+AAHCg0H+/gA/fMBCQgJCgkA+fz/+AX5AwMF+AT0CgL/AQH/Af8E7QwA9gABA/4EBvv4AgUGBAIC9wD1+/cFAf0A+QEC/QT3AAL79voB/QYP/QX5//wC+v30BAb+//YI/AD6/f4GEf748BAG9v8C+/rwAQX8AQ0EAu8JAfz9BAEF+/X9/woC+P0A/Pj29P0E/f8G+wAGAAf8CQD/BwcCC/oKCPcBD/wC/f4D/wAHAwX9Af4AB/8LBwcA9QMD+goHBAD/B/X8A/j8Av8ICgL6AQQAAfj4+wf8+Pj5AP4D+wj7Bvn7BADzAwkF+gkFBQIG9v769/v0BP8NCQoEAwQE+fwG"
 ---
 
 Howard Fisher in the Transmission Project's newly released report " [Back to the Source: How Collaboration Can Transform Online Engagement](http://transmissionproject.org/resources/2011/7/back-to-the-source-how-collaboration-can-transform-online-engagement)":

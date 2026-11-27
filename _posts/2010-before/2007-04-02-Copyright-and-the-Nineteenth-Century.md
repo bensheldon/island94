@@ -14,6 +14,10 @@ redirect_from:
 - articles/copyright-and-nineteenth-century
 - 2007/04/copyright-and-the-nineteenth-century/
 - "?p=125"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c0f7063f39eb59ec"
+  vector: "9QL+9QALBvoIBv8SBvn6AwIB/AYDBf4DBQD8+P0A9gEFBAf8DQEJ+wP5+Qj5/gIN+AgBA/34BfsFDQT59v78AgT+9wzzCAMCBQj++fz+9vf5+gAD8f3/AA35BfkHAwD4+wT+BAgHAvkN9f/3+voBAf4BDv39/QL9Agv9AvT+AgD3CPgHB/sC/v/8BQL6BP0I+vcM/Ar/CQHv9fjyCAYBDQv5A/7//AkG9f8C/QMF/QEBBQb8Cf0B/vj8Bfj8DAsI/QX7/vwA/gL9/vYC/wUA+fUAAv74+wb5BQwE+/b3+wD89vkK9Pj2AQP47/0BCAD0AwD8/QP++gAF//z3/f4DEf3+9v4KCwD2A/3/+vv4/P8BBgH+CgH8/wL8AQf8A/EBA/kBDAQD/vYE9gQNAwP0AP4B/goDAvn9/AIE+f0GAAD1A/sJAgMF//8JAfUB/PkACvX8BgUJCPj8CgH0AAv/CPz+BPz9DQUB/gUAAA37/gcICP//DAIC/gcL//sJ+wf/"
 ---
 
 _I've had these notes kicking around my desktop for a few weeks and just got around to typing them up into a cohesive post._

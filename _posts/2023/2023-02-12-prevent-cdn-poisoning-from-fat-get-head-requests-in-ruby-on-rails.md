@@ -3,6 +3,10 @@ title: "Prevent CDN poisoning from Fat GET/HEAD Requests in Ruby on Rails"
 date: 2023-02-12 12:32 PST
 published: true
 tags: [rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d4c74bf8892254fa"
+  vector: "+gQAA/33AwIBA/wFAP8D/Qz2+gUJDAcG8fXz9Af6DgH0AAUEAvH+/wIE/AICAQf//fsA/QP89/P3AgEF+/sI+f77+QIHCQX/6/sJB/z19/n9+gICAwP+AAn4Bfv9CvwDBwD7CQX8CAAGAQUOBf78AP8A+QIH+fn7Cvv9/QT4AAACCgMB/QIJAQUG+/4CAPkB+QELAgcA/vv6AP8D+f8EAgb/BQEMCPP9AwH5BPn2/AYE/f0FFQcAAvv/AvoN9vr5/QIKCwf9AQP+AP7y+AkGCA39+Qn8BQb3+wEF+//9/gAD8/gPB/sJ/wX7/AD//fwC+v0BAfQG9AD3B/wDAP8ABfr79//8Ff0BCAEECAsC+foACQf/+wMF/vQI/v8HBPT/AfoB9Qn6/PkHAQ0A+f4ABvb7AggEC/AN9QAG+/4K/AAGBPsE9wkHAfv/AwL+//r9+wD07fUCA/4JBP4I//cC/P7/AQP7AgIDBAQE/v8EAQUF/AL48wv9+gT+BAMR9/kG"
 ---
 
 There are many different flavors of [web cache poisoning discovered by Security Researcher James Kettle](https://portswigger.net/research/web-cache-entanglement). Read on for an explanation of one I've run across…

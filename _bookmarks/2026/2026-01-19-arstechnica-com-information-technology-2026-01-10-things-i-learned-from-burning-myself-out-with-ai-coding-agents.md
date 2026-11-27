@@ -4,6 +4,10 @@ date: 2026-01-19 17:58 UTC
 published: true
 title: 10 things I learned from burning myself out with AI coding agents
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "457eee3d02a717ad"
+  vector: "AgX+//gE/QkB/QD+BwYDAwb//voA/gX4/wYA/gj+Cgr/BAYC8wgI+/34CAgHAPwDCfXt9/z8/wH8AP/3A/7+BAIH/f4CAgoI/wUA+/34CP72+v8MAwYEAgP++/z/AwgN/fUKDAD6APcDAAkFAfb2AQMJBPoECQkADQf8CfwB/QD/DBAMBfT8AgoI/AP/BwP+/wb0Af76CPv/BP33BQIACvX8/P4D+wMF+gMG/goABAH7AP8GB/v/+fz6AwkH/gEH+QH8AAUB/AIAAf768/P99AcD9vsG/wT8/wDqAQMA+AD4AvX7BPz/9w8M/gMA+AH7AvcCBfwQ9AAJBwcBAAYB8vn5+AcF+vsBAfnzAvr9Agn9CAAB9fb4+QQCBAr1/P4CAfj2Df0AAwX7CwX++AAABPb7BwMBCf32BQH9AwgG/gD8+w8M/gL2BPXxBf38CwoEAQL0AQQK/ff+/vL89wYDBP4EAQL//QL9AAMAAAwCBPIJ/P/5/wcT9QEB/QkFB/j9"
 ---
 
 Due to what might poetically be called “preconceived notions” baked into a coding model’s neural network (more technically, statistical semantic associations), it can be difficult to get AI agents to create truly novel things, even if you carefully spell out what you want.

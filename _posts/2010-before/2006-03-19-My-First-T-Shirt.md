@@ -13,6 +13,10 @@ redirect_from:
 - articles/my-first-t-shirt
 - 2006/03/my-first-t-shirt/
 - "?p=30"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f5208ee073cb5909"
+  vector: "+AsM/wf2///6+gEFAgj8/QT8//3+9AH2BAEEAv74AgT7AQf7/wT++/739gIE/A0HAQAB/wHy+QcM/gH6Bfj3BQsBBgUDBwcA/AMJAQT2AAn8AAIQ/AUC+wYGARD4Awb9/P3+DPcACfz+8gAG/AD+BAALAP4KBAD+AwbzAP3/BQABCfoFCAIF/v0NCP37DAT+BPnx/wL9/Pf1Df4H/wP/AQYC8wD9/QoF+gcJAwIAAgP/BgT//+3w+wL0AfwHAwQH/wL6BfXz+AQG9v8ABQL/+wL//ff5+vwBBgX4+fz8AAAH+P7///f8DPkDAALz+vsECgfx+QAGBAoDBQgDAQj38w0FCQYH/AX0Bwb7Bv8B/PX6AQX8BvkABwj7/gYGDfb5Af4CBvsH9wUC8gf8/QX4+f72/AYN/fgA/QECAw0OCwAB9wz9AQMG+QX09Pv9BAT8+QD0+O/9Df//BAAGBf/3APoD/foE9v8I+gT9BgbzAv/7CAUB+QX59QEBBQcF/f79"
 ---
 
 ![](/uploads/2006/my-first-t-shirt-1.jpg)

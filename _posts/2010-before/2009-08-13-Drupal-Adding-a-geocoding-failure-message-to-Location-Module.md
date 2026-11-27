@@ -14,6 +14,10 @@ wp:post_type: post
 redirect_from:
 - 2009/08/drupal-adding-a-geocoding-failure-message/
 - "?p=676"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "26b2fe4ad5f36d1a"
+  vector: "A/sEAgP9/vL99/4ABf78AAQDBf//AgUKAvv/CgABAQD/BgwJ/gQDAQL2BQIC+wUDAfgE+AD5/gP2B/0AAQAG/wEH+Pz/AwQF8Ar+BO75/wgF/gIE//wCBQT6Bv0ACgD9+AABAwb99fkP9gAH/Ar+Bf798AoGCPsC+/T8+gH4EAABBwMI/AL2/v3/CAAJ//8ECAMEAQP5//wDEfUI/wD9/QQFCf/6+ff8AwHuBQgA/QIHAwAK8gD+Av/6CgUCAf7/CfL8/vn7Bv0DDvP4+QP9/Qn1/wgG/QAC9g8D//f9AAD/+Pb69fcKBgUB8vkGC/ID+QT7DAIC9gL8BAUD+gD9CP8BBQAFCwgRAQr1+AH9AQb6BP//AQcJBfv7CgD69AIGBv8D/A8BCv739wYGBA37+v8D+QQFCQQF+QX9DfEA8QD2//cFBQIN9gD7Avv89wL7/P34CQIKBQAD+AgHAPsC+/sB9AYF9/0E//v4/AIFBvsC/vP/9QYGAP74Agb1Bf79"
 ---
 
 One of the coolest pieces of Drupal is how simple it is to quickly enter a street address and have it show up on a dynamic map on your website using [Location](http://drupal.org/project/location) and [GMap](http://drupal.org/project/gmap) modules. To make it happen, a lot of stuff goes on behind the scenes. Unfortunately, in typical Drupal fashion, when something goes wrong, you aren't provided much information to fix it.

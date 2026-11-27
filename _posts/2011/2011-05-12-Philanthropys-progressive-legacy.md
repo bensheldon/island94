@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/05/philanthropys-progressive-legacy/
 - "?p=2652"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2df05b58120d65a6"
+  vector: "/QH7/wEH/AL5BgQFBAD9/PkA8Qr1+foG/QD68gEEBgMFAQgKDAX5///1//r8+wcA+/UF+AP6+wUJ//f6BfwD/QoC/wX5/gr3Bf8G+PsF//wMCP8E9Ab+8A0C9/z+9wD7BPr7DvwDBvgF+PX+BAj+Av0BBvz2AAT3DgX6+wIH/gD6CAEJAf/+A/39Cw4LAgD1+PYE/QQCBPwH9PwDBAEICQDyC/oC9wXy/AcMBQgJDAT9BAUBBPX99/0H+u8L9wQI9gb5BAIBAAb6AvkFAQQD/PMD/wMHBwUDC/79AAL9+QAG+v4BEP/08QQEAPwFA/j4AAAB/gULAvoFA/f+/P0HB/n/9wgG+//1/fv+AgH/9P0DA/7+CwgCBgD7AAH6A/gOAfgDB/r8AvoA+/wJ/gH2/v70BPz6BAcAAwQA8AoCCwAKA+4DA/T3+vwI9wj8BwH4+vr1Bg39+fgABPz//v4EAvT9/AP8AgT8BwIBAf//9QwJ+/4GAwEF+gUL+voJ+AL+"
 ---
 
 The following excerpts is from a paper Lenore T. Ealy and Steven D. Ealy entitled ["Progressivism and Philanthropy", published in](http://muse.jhu.edu/journals/gso/summary/v015/15.1ealy.html)_[The Good Society](http://muse.jhu.edu/journals/gso/summary/v015/15.1ealy.html)_. Author Stephen D. Ealy is a senior fellow at the conservative Liberty Fund, so take this article's purpose "to understand how we might best articulate a new rationale for philanthropic enterprises that are today working to return social responsibility to local communities and to support the emergence of new forms of mutual aid and voluntary action" with salt:

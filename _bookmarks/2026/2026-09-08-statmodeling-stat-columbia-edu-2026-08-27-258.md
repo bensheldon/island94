@@ -4,6 +4,10 @@ date: 2026-09-08 14:40 UTC
 published: true
 title: Just a moment...
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4ee7c77fa6b4c748"
+  vector: "8AEC+xECDQYE+fwFBP37/f39+AH5/gYB/wMBAfr2AQsF//sJ/wcC+wH7AAkD7AQCAf37+Pr8/vsJ/P/7/APxCgAECA3/DhL9/vwJCQMECQsFBf8AAfgCAwUG+vMJ+AL8/AQDEgEHAvwF/fr+AQD++gIHBQz//v0HAwQBAQL5+AADCQgL/foC//oFEAYD/wP6/Pj+/wj7/fj89//3/QAFB/wB8f8K7QUF/wIB/P0MAf/1CAEF8vfx/vr8CfoB/fUI+gP9AwYD+gD59vv8+wAF/v///f8JCAL1A/wC/v4D/QD3+v8HC/3///IMAfcAAP71BAH9+gQDAP8DBQUF8P8AA/z1Ag7//f/6Af4E+vf2/gEHB/b7AwMDBAUMAwX+//8EBf/6A/v//AH1/vQA+wP6+foA//kF+QD//AP6AQ0LBgD/A/YNBQL0Af/8Bf33Dwf9/fv4/wUHAu8FCAAFBf8DBvv/BPADBfsAAAQJAfz9Af/6CAEFAgMNBP8F+/8ZC/v/"
 ---
 
 Imagine you are a person who has highly esoteric, potentially important ideas every day. Many of those ideas you suspect, based on some combination of experience and ego, are new in at least one dimension. You would like to get credit for that newness. For being first. What’s the problem?

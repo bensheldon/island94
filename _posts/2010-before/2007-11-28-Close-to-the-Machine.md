@@ -12,6 +12,10 @@ redirect_from:
 - close-machine
 - 2007/11/close-to-the-machine/
 - "?p=176"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "cdb73f9d196f02d4"
+  vector: "/wAC+wL9CAX9AwEHCPr/A/3z+wT+//4GAggA9PcB9gr9CAYKDQgB9wHu/v/7/gD99fT09wf5/gALBv/9BPT9BRAGAQn4BP/+AgUI8QH7Bv8LA/8C8/v6/Ar59P0C/gf6/vj9CgAHBv7+9vwB/QL3+vgACvr/CAX/Avv6BQT8AAD+CQAPBwD3//z8AgoEDQ33+QAP/wYC/vwB9/4BBQL9CAP9BwP+9gb8+QcE/QENEAD+AwAGAvwD/P36BvUGCAH/Cgb/AAIF9/76/fYM+vz6AP/9/PoG/wQBBAz/+/4E8QD48/kLCvj7/QAF/vwDAQD7A/z/+gUA9f4CC/78/QAA/v/9BAr8APzzAwLy+/3/9P33/AwGCPT5+wb+BQb/+/YJAfUHDPYCBv739v4D/wT4Bf0BBQYDA/sE+f4B9PYG+AAA/QT/BgAK/f0M/P0EDwoE//X3ABH2+f0CBPz//An2AfQB+/3//v8E/gADDQv6/v79AwH/DAcE9AUM+AsIA/37"
 ---
 
 Fred Turner's _From Counterculture to Cyberculture_ has an amazingly pointed criticism of modern technocracy (my word) following what is an amazing outline of both Countercultural/Communal philosophy and modern cyberculture.

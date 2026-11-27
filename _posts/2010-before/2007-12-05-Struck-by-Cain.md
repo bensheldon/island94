@@ -11,6 +11,10 @@ redirect_from:
 - struck-cain
 - 2007/12/struck-by-cain/
 - "?p=183"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f26a58e0a6e61566"
+  vector: "/Qv3AAIH/PoJBQgCA/j9//gE9Qv6DAkE+AkCBwMBA/4AAfb+BAUI+PwM+QD3A/QAAv3+/AD5BP4G/wAE+wL7Agj3Cv/1BwYBAwH2AP8A+v35+/8KAP0G8wEJ+vwPBAQC/grxAAH++gAF9vnx/AL69QUDAff9/v8BDwP1C//7AQAG/fsEBf33/gcB9fQIBvcEAPoC/v8I+Pb2AwQC+v/3CQcABv4E/PoF9gf4/gb/Afv3BQMDDgAF/PYL/gcB9gQLAgD2Av/+//719v/5/wb9+vYC//n5+Af2+wQK+wYCAgD4AP4EAP78Av4A//b2BQP6Awz+Ag/58/gLAP//+gAG/fsBCAUFDQD9AAIF/wECCAIG/QL/BQgF9wjx+gH+/fkLAAjzBQQH+PgE9gEC///5AwL69wX9/wADAwcF+wf5AwAB/PkBBQkI8PYPAQwBAf/+/u79BwIA/QIAC/4A/ggHAvb29gAHCgfz/gICBRH5/Qj8AgAGBAMH+P4G9/8V+wv8"
 ---
 
 > ...there are some guys who can return good for evil

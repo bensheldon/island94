@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2011/10/the-point-where-creativity-and-invention-occur/
 - "?p=2942"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "085e9c3e4934ca2f"
+  vector: "BAv/+/gBBAL7Avr/Dfr7//f4/Qf9/wQJ+wYB+fwE/g0AAgEJDwIDAP/3/gT9BgP28/b5+gLyAPYIAQj4Bfz7/gf9/Qf5AQj+A/v59gEGAfcHBvkBAwX8/gn4//7/AQ74Bvr7BwQBAAH99vMK/AD5/vj5BAb7AAABAfj4Af3++QD7Cf4PAgD9/wH6AQkCCRT4+/cL/f7/AfsH/v//9wMEB/f5Bfv/9AcB/gT9BQsNDAL3AgMKCfIF9/n/BPQLAwYM+gEACQYEAAIB+/wO+Pv6Afb//P0M/Av+/wf7+f0A9gD9+foAAPr78P0BBPoBAP7///0D/Qr/8/r2CvX1BAEE/foCAQYI/Qn7+wMDDff5APr8/hT+B/b4BAL/+QgE/f4B+gMEDgP+/fz6+/oIBgf5AgT6/fj+AwD89vz99f8KAAAB/f/8/fUC+vwI+wIAEQcF/ff1ARIA/vf+AfzzAAkHAPgB/f8A9wP4Bv38DAj3/wj9BgMMDAMFCwUHAgYB/wT9"
 ---
 
 From the preface to Arnold Pacey's _The Maze of Ingenuity : Ideas and Idealism in the Development of Technology_:

@@ -4,6 +4,10 @@ date: 2016-05-26 22:12 UTC
 tags:
 - disability
 - solidarity
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f4621c32066d5070"
+  vector: "+v8CEgULB/3+/wUGAff6AvkF/AQDCPv8+AX+8AMF+/kGBAkDCQL/+/n4/AH9Av//+/T5/gX2APwDAP78B/QFAgoEBPv0APsEAgD/+gb1/QYKA/0F/gH8/QH78vr0BwkA/wf5A///AAAE/fv/+AIB9/8FAf779gMJCAT7Cfr6BQABAQH/BvwB+v79/gAFCfn4/QMDBAgG+/z3Bf/+/QP+DwX4A/kEB/X18goG8QwLCwT3//oL//sL//wJBPsA/gID/gT79vn/AAD6CP8IBwX4/AMEAfcNA/z5/wEABAD39gD+BPz//vj7Av8KAvkADPT2CQD6AwMM9/YCEAAB9Pb/BvL6AwH1AgH8Av3+/AECB/gC+QcDAwUF9wb3BgIG//oLBQD+CQoEAvj5AAcN+QX7CP30BAgEAf3+/v3t+fr8/gAG/vz2+vgF/fUM9wIGDAkDAvj89Q4AAfwBCfz4/P4HBfr9/P/9Bvz+/Q0MBgf2Af76Bf3/DwQA+A0I7gEO/fwB"
 ---
 
 From [The politics of Helen Keller: Socialism and disability](http://isreview.org/issue/96/politics-helen-keller) by Keith Rosenthal:

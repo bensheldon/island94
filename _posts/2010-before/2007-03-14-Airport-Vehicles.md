@@ -13,6 +13,10 @@ redirect_from:
 - articles/airport-vehicles
 - 2007/03/airport-vehicles/
 - "?p=121"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9c0bd124d85db12f"
+  vector: "CP8B/An9/wIHAvoF9QT3Awj78fsK9Ab/CQgACQL4A/4I+wn/CP0B+gMJDQP4Bgv1Cv38B/b/+Pj7Av37/QUEDP3/B/r///UB+An49QgC/foO+PkD/vgKA/388gMK/vn9+//+CQn7Av0DAggM/wYA//4ACwzwCPgBAPIAAv39CgD7APsJBAMBBgUE/vP+BgH///8BDAL3+wT9AgP/Ef73AAT7Av39/fkEAAv49f8DBQnxDAP/CPr2CAz/AwT9/fj+APsIBwMC+gUF+gX/8gX1BfIABAAC+f8A/AT1BAL8AAAK//gDAQEBCAb8AfL/9/f2Cvj9+QcDEPkFC/8HBQAD+wH6/QsHBPj+AA38BQn59vgEAPv/+AUG/fn+BQH8BPb+Af/+AfcJAvsACQH7BQgI/P74/wYBDQr7AwUCBgMJ+wD6Bvf+9/f7CgnsA/33Cv77/v3+Bf78+/oBAwf8DAD4Cv73/vYFAgQF+wIE+AkCA/f3/f4I+gMI+An+/wICAf8E"
 ---
 
 <video src="/uploads/videos/bensheldon-airportvehicles233.mp4" poster="/uploads/videos/bensheldon-airportvehicles233.jpg" controls></video>

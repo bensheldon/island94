@@ -3,6 +3,10 @@ title: "Working the problem"
 date: 2022-03-31 16:11 PDT
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "77bef08c552cd82d"
+  vector: "BwEFDw4AAwQH+/n/BAf8/QL89wv6BwUG9Qz9+voCBv0I/AEICP3/B/37AAX8AgD2/Pf4AAD2BvwAA//4+PsCAAEH/gETBwL+APz+BAb5CwEL+vgC/vsBCAYKAff/CQsC9wT4/gP/+PsB+fn7Avv6+wIEBA7wBP4IDPoH/AUE/QAKAvwLAvX4/wMO/gkF/f8A8wP5+gL5/v4DB/4GBQDyBvf6/gP7Afj5+Qb9Ag0A/Pz1BPwECvr6CA0C/AUAAfz+A/z/+v39/gD99/36AQD29wf8AwkHAvoC8g77+g8F+gAE9/kDAAD/+fv//v4JCPv0Awb9AAP/8gH4EA0AAPMCBv4ICA4GAPb2/Q7+Af8CC/75Bf/99P/9+vz3AQEC/P4B+wH5CAkHCgL0AAMC8fz4Af79/wcACgUIAvv0Av0J+gD8/wAACPgAAPAAAfwGBwcDAgT5+wcD+vwG/gEJAQP/9/cB+AAR+Ab9+QMCCPn4/P0FBQT9+gsJA/oC/Af+++z9"
 ---
 
 From _An Astronauts Guide to Planet Earth_ by Chris Hadfield:

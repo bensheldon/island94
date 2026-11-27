@@ -7,6 +7,10 @@ date: 2022-06-19 16:19 PDT
 published: true
 layout: book
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ae542ee646fc5888"
+  vector: "9gEDBfn9/wDxCPsJDPcA/gL4+QT/+Pn9/AH0+PkF9QsMCQMJEAYK+/nxAf8BBAfx7/T8/QX/+P4KAPz+8vj9/wb7/vv6AgH89ggF9gkBBvcG//8S/vr4+AX/AvwCAwv8AQL9Bf4BA/37/v8B//YCAPgA//X5CAAHBP70/AMAAgD9AAEJCgMBAQwC/AsAAAkA9f//BQcGAvQCA/3/CQMEAQH9AAMB+wv6+AMQ/PoICgUCDvoHC/0DAwgF//8CBQUG+wH9BgQL/QT6B/0PBv/77wIABPcKAwUADQf88wEN9wD3/vUFAwYI8PoDBPwACgH38/36/wYI+woFBvP7AwL/+fsFAv0AAgUI/vr6AAEA+f/++wICAP/6+Qb3/gb5/QAG+/sCAfYABvn///sI/f35///7Bf70Cwb8/PT49Pv/+gD9AgP9BPj8+gMGAPoI/Q4L//76/xL2/AD/BPkI/xD8BP75AwMB/P38+/sBBg38+QgDBgcHBgQB/AD78wgE/wH8"
 ---
 
 The experience of learning about systemic racism in the US is a constant derailing of "but we can't know the actual intent"; systemic sexism on the otherhand is "oh, here are the receipts". Which is not to discount the research and scholarship of author Mar Hicks, more just to say "wow, there it is".

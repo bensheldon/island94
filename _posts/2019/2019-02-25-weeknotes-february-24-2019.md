@@ -2,6 +2,10 @@
 date: '2019-02-25 08:01 -0800'
 published: true
 title: 'Weeknotes February 24, 2019'
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b2c371daa717902b"
+  vector: "AQz+CAMACfkA9vQH///0A/YB/QH7BgII+Ar2+vcA+gH7BAMOBwsIAAr8A/z89wH3Bff5+gQFAg4IBPkD/QH4BQsA/P/3CPr4/v8EAv36CQIB/QAF9/sG/xD7AAH6AwwBAwf7CQQF//MF+v8C9vj7Af8BBgf8BPUKBgf8BvwB/gAJAQMOEPr3AQIDAv///QMA/PcL+wb89/r/Bf37+AX2BP/1+gH6/gX89wIHBQYHCPb+Dv37Df74+QL9AAD//fUECfj4Awb4+AYA9P0D/PX2+wkA+/wHAAn5AAsABQ3/+gAD+/kDA/j4/Qb+8P4HB/X2AQL49QAN9wIACgf4/f79AQUGA///+gEBCQH38QT8Cf36Agj8/AoG9Ab5/gb6BfwJA/oAAQoH+wT5/QYG//r3A//3/gIKBwEJ/P3+/fz+AgAB/QAACvkG+/8GA/YMBwoED/r3+QP8APz7+/kN+gj8Bfr/+/kG+wUE9wcGBQHz/wkB/wsADQMCAQEG8QEHAvUB"
 ---
 From [New Yorker’s “Do Jails Kill People?”](https://www.newyorker.com/books/under-review/do-jails-kill-people) (Yes):
 

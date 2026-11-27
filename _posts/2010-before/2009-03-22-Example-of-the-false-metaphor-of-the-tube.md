@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/03/example-of-the-false-metaphor-of-the-tube/
 - "?p=580"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c46e4174b3fbe582"
+  vector: "BvoF/f/5CgAS+f4F/wYM/Av89wEIAQn+9/n9+v4ABAoCBfERAAMA+vn2Afr+9wMK8/jxBf4KCf/6Efv9/vf8/gIFAgr9AP/99wAF+wYB9wQEBgUB+/v8/f4D+Pj8AQT++QH+BQYE+fr9+fj/9gb2//kDBQL/CAwBAPoIBf73BAD+BAMPAwX8+QsD+gsMDAQB6wMFAAQC//8D9wP5/wD6BQH5A/7/9gT8+wH3AwALAfr3/gABB/wFAAD+/QAE+wQADADy/QT2+wv4+wL9Av0GC/4A/QAHAwH3/wz6BAMK/wD9BvsD/P4A/AAF9v0CBvnyCfv/+AQH8v3/AAAB/fz/BwcD/gYHAAD8AAT2+/v++/z6BQ8CAfj6/wn5AwIA/P/7Av0CAQkCCPf39w8E+Pfw/vUFAPwDCP/9/v/8AvgE+wD3+AIDBQYB/P7+/AP8AxEBBPD7ABH98wYC+QUJ+f79/QIG9v4D8wMICfwBBQUE+vzzCgEEBAgG+wUHBA0GFPb4"
 ---
 
 I was flipping through my old college business communications textbook (_Business Communication: Process and Product, 4th Edition _by Mary Ellen Guffy) when lo and behold I came across the [(false) metaphor of the tube for communications](http://www.island94.org/2009/02/the-false-metaphor-of-the-tube-for-communication/):

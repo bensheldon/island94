@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/03/double-loop-learning/
 - "?p=531"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9371faecf8083391"
+  vector: "//z7BP3+BQQAAgQO//wD//cHAvcG8wYD9Qf1Av38CgEF/QQOBQf7CAAAAvQF/Pj68/z9/gD8DAL/B/r3B/X1AwQC+gT+AgIC/v4J//0BBPsIAP74Bf79AAcDAvz9AwMK/gH2BwQDA/4E7wT8BPMC/wUIBQYDBfoD+/gJBP/z8AD/BwoDAvj89ggEDAQEDAH5/gULAAX6Av4HAQgLAwcCBvIHCPsB/AMD9f8K/gT9Afr2Bfn6APIACP8B/xEGBPcH/QgE+wn1/Qb6/Qb3CP0C+/z2BPv6+f3+/hT4Af0HAQAI+Pz+BQT48P/w+/37CwP5Af8GAv///Ab6BPv/Awj/9P4H+wYI/AECAv71/AT+AwP09QL59fr7Awf6+wIE/vgAAgIC+gACBfzz+gUA9Pf5/fUAAAb9CAUM/vf7A/sJ9AD6/wYJDPr7/gAG+Q0D/wUBAwj4BhL9Af4G+foNAwAE+PwFBvoF/gn6+ggGB/4G8P8A/v8HAgoFBgb++g/+AfIG"
 ---
 
 While reading a [snarky review](http://www.amazon.com/review/R3SH49SV19FRVH/ref=cm_cr_rdp_perm) on Amazon of Difficult Conversations, I was pointed to "Action Science a la Argyris". Googling around I came upon [this](http://tip.psychology.org/argyris.html):

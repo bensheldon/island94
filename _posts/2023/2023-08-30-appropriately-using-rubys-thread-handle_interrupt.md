@@ -3,6 +3,10 @@ title: "Appropriately using Ruby’s Thread.handle_interrupt"
 date: 2023-08-30 17:41 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a53659e07ef78d6c"
+  vector: "9v79Agf5AAH/BwAI+vb4/wr6+AQICAkE8fcCAAj8//cEAfgFAgT4/f398v/3/Qj8BPn1BAP5CfwL9PwB/QH1/gQGAgYG//3+9QcA+wD0+QL89QUAAwABBhAA+wAFBw8EB/74AAf7/Pn+AgED+PcLAQMDAQoHAgoHEhAD/f75AgABAfIG+Af2/AcBAvn/9wQABgP+CgXy9gr/B/37BgL5Av0KBAD3AATz+/73Agvw9gf8Aw4FDAL3AQkHAAYF/QIG+wH6C/8K8wb+Bfv//v3/Bw0D+vz2AAAC+AH4/wYAAwAH9AEGAf8E9/r6+vj9BwzzAAX8CAP6BAAE//P//f/+/wwBAQb8AgD8FAIABP0DAPrv/f7+AQEA/wP8/v7//AEDAv0C+Qf+CQz7/v4O/Pb8BPj9AA75Af4F//j4Bv39/AAM/gYAAwL88/wFC/wH/gP/Av/7/gP8/w3zAvsDAfIE+gMI9QsC/wj/AgEBBQD99/76A/YFAA/8BQT1+gIK/vj+"
 ---
 
 Working on [GoodJob](https://github.com/bensheldon/good_job), I spend a lot of time thinking about multithreaded behavior in Ruby. One piece of Ruby functionality that I don’t see written about very often is `Thread.handle_interrupt`. _Big thanks to John Bachir and Matthew Draper for talking through its usage with me._

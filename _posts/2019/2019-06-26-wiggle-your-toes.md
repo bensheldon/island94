@@ -2,6 +2,10 @@
 date: '2019-06-26 07:14 -0700'
 published: true
 title: Wiggle your toes
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0f742cb3885b6006"
+  vector: "AQQGBP77E/z7AAcN/vr9BgL88w0AAQQN+QUABf78+QfyAgT+Av4KAAUACAkAAQL+BQH4/QL6BAQJBfz7/f4AB/kF/P4EAfr/AAX99gT/BwYG/fgGAfYGBf399vYL/gf7+gXz/g4FBgX5/wUA//f4AQkG+wH6BAUC/QcLBvbzBgADBQMHBvzu/wEV+P0B+wQD9/wF+wv1APMG/vn9Bwf5Ef76+vsI+/oA9/8ABQAB/QX7BPcGCPIC+AsI/wf7DPkD9//+BAL79/7+/v77/fz+8goAAwMP9wHx+wX5AwT69gAD/gD/AvoHAQH19/0CAQP0+/8E/wD9/wL7CAcB/f0DAf4B9gT/Bfr1+/4BAQD9/wL0/vr5BP8G/gb1B/v3+/wAAvoDCgEG/gD/BQIBBfwB+AD1B/0HCPsDAAIJAP7+AwD+DwMDBQMHBPbwAgQJFAMI+gH6BvoG+gH/A/r9AgD7//QC+P0G/QL4+QwACAL/AP/zAwcE/g4RCvcC8AgFB/H+"
 ---
 I've started collecting ideas that are anti-flow. From Jonathan Bach's _Above the Clouds: A Reunion of Father and Son_:
 

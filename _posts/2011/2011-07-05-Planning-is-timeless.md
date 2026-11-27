@@ -11,6 +11,10 @@ failed_files:
 redirect_from:
 - 2011/07/planning-is-timeless/
 - "?p=2739"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "25387697592d97e4"
+  vector: "/f/+/f4CBQICAgEF/vb4AAD//AYF8QIA/AL5AvkDBv3/BAwB+wAIA/3zAQn6BQQG/gsGAAT5A/0AAwD7//z5+AL6+QEE9wUJ/wAEBgUIAv4BAgT9AAT+BwgEAvgB9PYK+gL7CwMH/fUF+vsGBPX/AQoB+AX2AgL5BAAF9/L2BgADBwH/AfwF9/4E/QUDCfb8/Af6BAD4BwANCPMDCQD//wj+A/0H+g30AwYEDf4HDwgM/gQD+/j57wYEC/kEB/8H9gL1+AwDCgID+PgGCAMK9vj4CP8OBgT4/P/2AQP4AgAD/wcAAQf78gUF9v4GAf7xBwgD+wUKAw32AAT2+Qj69/sK//sJ//8IA/cBBfn19QcDAvX7+gf4E/n3CwP2AfgABf0B/f8F/vcJ/wgHAQUIAvb//gQKAwX4+Ab//RUD/QD/BwEFBfn/+/z/Bf719QP1/QDu//7+BfsAAAYR+wX+/gACBQD9/wgG/P35Av4F9P/68vz8/QEBAQUJBfsE/vj+"
 ---
 
 [![](/uploads/2011-07-05-Planning-is-timeless/Operation-High-Hopes-600x675.png "Operation High Hopes") ](/uploads/2011-07-05-Planning-is-timeless/Operation-High-Hopes.png)

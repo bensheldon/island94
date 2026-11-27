@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2010/03/if-you-dont-know-how-to-notice-you-cant-do-anything-well/
 - "?p=1856"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b0e16bc79818d840"
+  vector: "BQYHEAkDAvsI/Pb++/z9CP8A/Ab+AAD5+wj3+wT+CA0G+wMLAwUE+/cC9wD++wL7/P3z9fjzBgUGAf73Bvj8BQYA+AD9/gYBAQEL//35+vsMAfv/Af/8/vYDAPXv+xED/AAEAwkFAP8I9wEA+gf5/f0DBf8BAAL+AwQCB//4+gADAwYIDf0D9wYECQMHD/0D+PcDAPn++/33B/z9+wD3EPr9/PwC9wH8Agj6AQYSBwX4CQMGBfoGAPz8/fgACgMJAgj6A/YJ9f/59fn+//cCBfgC+fT6/wUDBAEC+gT87AD6+v0D/Pnw/AYBAv/++/nz/QT6AgUN8vfzDwD9/QQB+f38BwkD//oH/QT6B/3//AL7AAUC//n/+ggCBxQABfEE+wP6CP8FAAH7Av8IBQH5Afj5AAEAA+/6/AAB/Pz9/AD5/An5B/8JAvcMAAUBCg4CBvf8AQv9/Pj+/f7/9Q0ACP8DAfIA8vcA/ggCAgD4BwT+Ev3+BQEE/vsN+gEMAwL4"
 ---
 
 A subchapter on art from K.C. Cole's _Something incredibly wonderful happens: Frank Oppenheimer and the world he made up_.

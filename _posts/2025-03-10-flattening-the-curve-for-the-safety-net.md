@@ -2,6 +2,10 @@
 title: "Flattening the curve for the safety net, five years later"
 date: 2025-03-10 08:00 PST
 published: true
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7f2633191ebbb816"
+  vector: "+fsGAQQC/Af+AfoKAvsE+/739gT+/vIH+f/w9fsDAQMAAgsHCPwA/wH1/gb69wD4+Pv//w7+AgAKAfkB+/v7AwQG/f4C/Pb8AQME+gYJD/cN+wEJ+v79/Q3/AAcMAQX+APr1C/0CBvgA+PUE/wL9AwMDBAD5/AoCBwX2+gUBAgD+DgQC/fX//vsAAA8EBAX29wQIAgb4AvoK//4LAQAECwX2BfcF+QD7+goGCwsHBfv3Bv8KAPz1+wP5APkK9Pz4/QACAP8E+wQB+v7/BAT89wT5Bv0QBQMA/Af3+QoK+wAB+fgEBwD8+gQB/AMIBfn7C/oB+wgG7wkBCvf6Avb9+PsF9wcH+fj+BP34//cG+f32A/77/QL8Agj68wT5A/T+CPcE9gL/Afj4+/wHAv30Bf3+AAEGCAb9AQnw+/8FBQAOBfMDA/j9A/wEBwT9BAUH+QL1BP4C9v4FBwANAAj0/Pv++/78/Q8BCAkDBwT/7wgL+P36+gsI+P//AgoC9P4D"
 ---
 
 _It's been 5 years since the start of the COVID-19 pandemic. From my notebook, I found a brief presentation I gave at Code for America in April, 2020 about that first month of the pandemic and the positive impact that GetCalFresh had during the initial lockdown and economic turmoil. There's a contemporary postscript at the end too._

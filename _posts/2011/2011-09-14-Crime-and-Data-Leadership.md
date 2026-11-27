@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2011/09/crime-and-data-leadership/
 - "?p=2829"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "297b269a14bcd5aa"
+  vector: "AwIA/wkL/gIACAkEBf//AQj6+v78/Aj/+gf79vr//wQIEP33DAgBAwX89gj3+QD29v/0BAQE+v0DBQIE/QP6BQIA/AYBAwQIAAb//PwCBPQM/PsO+vr0/wD2+wQFAAcF+vsD//wDBfX+8gIB8QAN/vb+DvT0BP0HAgP3BQL69gADBAADAfr4AAIM/wr/CQcE/wX6/gUCA/oA/fcDBwD9CwkFCAL/+wQB+QP7AAsHA/j6AAQA/wb5Cvr4BgEBCvz+/f8BBAb5/wX7BAgAA/z+/gDxAgAB/gcA/wz7/PIG+gD0/fsA/wH/9Qj59fn+/v/+A/3t+v4G9gUCBP34BAj7+gb+8wUR9fr/+Ab19foA9wT8/gAH9wAAAQkC8wb9BvUCA/UE+P/+APr29/j7/wb4CAz4BgYEBQP7/Af59PAK/AABAAIECAP8CQMDCf76/QUCCfH9BgAH7wENAfIE+gz5Af8BCPQIB/36AgIDBwkB/QcK/v38AQsI/wAH9fwJ//0A"
 ---
 
 This afternoon I have been following the mis-framing of Chicago's newly announced plan to release 10 years of... not crime statistics as has been reported, but... police incident reports. From the [Boston Globe](http://www.boston.com/news/nation/articles/2011/09/14/apnewsbreak_chicago_to_publish_crime_stats_online/):

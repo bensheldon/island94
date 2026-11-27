@@ -3,6 +3,10 @@ title: "Weeknotes: September 19, 2022"
 date: 2022-09-19 20:50 PDT
 published: true
 tags: [weeknotes]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bf45edeb6869452c"
+  vector: "/v4DBQAEBP4E/f8FCPwBCAD9+QX4/gUDAgT58/UBAv35Aw0TCwj9APn9AQfv9QT2/vv5+PsAAgoECP0B9gD8BgUBAgAI/PwIBQMDAQwEDvv9/gcH+fv2+wT6A/7//f/6+v//BfsOCvgG9fIE9gEFAgAICA8CAPv3/Aj9/fX0AgAFAAwLCwEBA/4ADv8E+vQN8QD9CgQAAgX6AAQIAAL1/Ab3CPsE/PwBAwEKA/gDEwAFBQD+8//9AQb/B/oQAwD+//z/+ggA/gb8/f0J/fQA/goFAgX/+AH29AX+Cgf2/gAH+QT8C/D2AQr5B/oABvsBBfv39vcO+wT+BQQDA/8F+wIA9f799Pz5B/n+Av/9/wYG//3z/QcIBAP9Bvf7A/T/+fj/+vMIBAj9/PwHAgL/AfQBAgEHBf74AvcD+gIBAgAAAfP6Af8IB/sJ+gcBAAD6Evv7/vvyBgT5BwT+/gX8B/f/+/cD+/gMBP/+BQP9BgQCDfv9APz++wP/9w0H/QP6"
 ---
 
 - My mom, Susan, Sue, passed away at her home last Tuesday morning. Her wishes were that people recognize her life through donations to the [Santa Barbara Food Bank](https://donate.foodbanksbc.org/) and [Save the Children](https://support.savethechildren.org/). My brother and I are figuring out everything else; email me at bensheldon@gmail.com if you'd like to stay updated.

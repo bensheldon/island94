@@ -11,6 +11,10 @@ redirect_from:
 - observation/failure-confidence
 - 2008/08/failure-of-confidence/
 - "?p=246"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "88109f3dc3903aa2"
+  vector: "8voGBAT49v75BP0IDPP4/wD5AAgB/vgGB//7Af37AfoA+gcACPkCAAL6+Qj2+QP/9/f0/Qv1APcABfsFAQH2AQMPAfYG+AABAwEFAPsEB/f9/v8JDv36//v6BQH+DAYIBwYJB/gHAfX8/P7+BP8F/QgKBvzxBfsI+gEC9xAKAQAEAf4I9gL/AP4IBAn+AAgE/gP5/gb4CPUIAwEJCAb6/AUH+wX9+/UHBP4B/QL9+QL9AvsKBAf3BAL5BAIFDPj5/wH/+QL9BPjx/v75AwIJ9Afz//b//wAF/AL9/QME+QDz8wIL+Qb88QL4APwGAQH9//wG/hAJ+Qj5/fz4AQAF+AASBgME+AD9AgP9+/wF9/8G/QH/+gn2A/0GAAf5APz+CQgC/BMCBf/7+wAN7Pz2/Aj2AfgDBRT7+v76/vgJAAAABv4EB/EHAfcCCfcA+wr//g739Qr9/gUE/fkM/gH4/QgA/wsIAgj9+v39AP79/wcB+QL//AsCAPwA/gcA/gb+"
 ---
 
 Diebold (now Premier Election Systems), [admits voting machines have had critical software bug for the last 10 years that can result in votes being lost.](http://www.nytimes.com/2008/08/22/us/22brfs-001.html?ref=us)

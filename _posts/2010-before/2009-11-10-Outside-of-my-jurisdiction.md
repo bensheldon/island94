@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/11/outside-of-my-jurisdiction/
 - "?p=1007"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6f7c331f175294e6"
+  vector: "AwL++A4S/PwAAQIH/PgH/Qr7/wsJCwkECPwB+gYGAgUFCAQDAgj+CAD/+vr8+AEA+/f3AQEE/fD+CP4EAPf7BQMG+gX/+PMGAgQA+AwADPYF+fz5/vb3+w0C+QYB/QP89/b5CP4C+fYA7gX++AkABwb+CQQA/Aj6//wFCAD1/gD5BgEBAgf49v4JCgMG/AH99wkB/QgF/f318wX2AgL1CwT6D//6AP3/9f8KAAIA/ffwBQUE//oABvMGCvb/CvoA9fnyAwcABQP9BPYG+wIJAwfzBwEE9wIFBwD8/PkBAAD6+vj/BgL/+wf3+PgBBwX1AQD6Bf4E9wf++vwG/AL6BvMH+/0D/P3+BP/1APgB/QADBfICBf4B+v8BAP4EAvD4EAAAABABBPr9+gEJD/z1+wv0+/kH/v36+gYA/foA/wAB+AUDBQT/8v0FC/z+A/4AA/78BvsFAQf/BQj+AwUDCO8J/AH3CgoI/QgI/wYG+wAFCQADAfkFDAcE+wACAwD7"
 ---
 
 A cable access TV producer is indicted on child pornography charges. The station pulls their show saying "it's good sense". An uninvolved station [gives their point of view](http://www.dailytidings.com/apps/pbcs.dll/article?AID=/20091030/NEWS02/910300312):

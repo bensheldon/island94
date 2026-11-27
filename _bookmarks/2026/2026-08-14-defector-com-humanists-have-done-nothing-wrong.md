@@ -4,6 +4,10 @@ date: 2026-08-14 15:26 UTC
 published: true
 title: Humanists Have Done Nothing Wrong | Defector
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f8f237a0b07e7810"
+  vector: "AAL///4EA/4EB/sD/wD+A/8BAQf6/QIF/vr++vgD9g/6+wIOBgcO/f79//gC/P0D8/v7AQP7+gAGCAf8+/r7BAb3AQn4CQMBBQUO/v/6/vIJBwUC9/oB8wYG+vYIAhMD+gX+BwQO//797f399/77/f/6CQIO+wcB9wb+BwX7/AADB/kN+f3//QT2BA3/A/j++vwGAgUK//j2/AT/9gf7B//9AvoE9gP8/gIC+QQJCgD3C/wEAv//Afn9CvEIDf4BBgD0+QL09AD7BQAF/QED+/8CAf78+Qb3CQL+9vz7+AAC8/cJAfv3/wj//vUEBwDxBfn+BQQF9v4DBQT7+gQHBv3/Af38C/76//708AH7AAMEAfkCBfkC9w37/AoDCfcBAff6AP8D/PX6+QIGAPr8//70AwQIAvEEAv0C8fn/AQAAAwAK//n99/kO/f0A/gIFD/r4Ag77/fb+Cf31/wECEPn7+gAABgEGBvsFAAX/AAb/EAMJDAUIAAME9QUOBgD8"
 ---
 
 For many years, I’ve held a pet theory that cultural consumers can be grouped into two broad categories: Primary Source People and Secondary Source People. The former are the book lovers, cinephiles, archive perusers, and history buffs who grew to love their areas of study because of the specific objects that constitute the field: the two women I overheard whispering about how they wanted to fuck Adam Bede, in one of my undergrad classes; the student of mine who disclosed that he loved The House of Mirth because “something similar happened to me recently” (????); or the guy who collects swords as a way into understanding the medieval period are examples of this type. You’ve certainly met these people or been taught by them; they are often motivated by personal attachments to specific works, and my hunch is that they represent the majority of those who care about art today.

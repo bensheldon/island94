@@ -4,6 +4,10 @@ date: 2025-07-31 15:43 UTC
 published: true
 title: Negotiating With Terrorists, Unsuccessfully
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "15c2349c2f92ed5a"
+  vector: "BwAJAQL+//oMBggLAPr4CQD++//+/voO/QoF8fX7BPb8BQwDC/8C9wb/AQT+/P71Avn8+gT5+v8C/AIB+wEEBAL4AwD5Cw//BP8ABgMMCPoM//v7AAEA/QgB9/YBAgcAAf/9//kI+vP6+QP9/wAD+f0AA/0F/fX//gL8/vX27AD/Afr39vf8AwMJ/AQMBQL2+wAAAwQCBfcH+vMK//8F/vYBBPkGBwb4BQH/DQoHAP75+/0F/vH9/f8DAfP7APP8+gP2Bwf4B/z7Avr8AQIHAQX9D/8EBgX/Cwj8+/8L/QAJCPkABAb9A//1/QL/Bfz1Dv/89QUM+wL5+f75BQcKAAAM+gX/CPgHBPr0AQIH/vv9Avf9AAUL//4BCAUE9wL//wP5BvoEA/r5+P8K+f/7Bwv0//4EBAb6Bv8D9wH7AAAA9/4HAfv59QoKAvvw/AAP8wME/fv9AfoFCf77/hD+/vz6+//7DAn//PYF/AMC9A8LDAD9/fMK+AT79AAC+QIG"
 ---
 
 Which brings us to the most important thing to be said about what is happening here: These schools do not believe in anything. A fuller way to say this is that, like many institutions that come to thrive under capitalism, these schools do not have any ideological values other than their own flourishing. In the case of private corporations, this quality is taken for granted—they exist to serve their own interests. But in the case of universities, this conclusion is obscured by a thicket of declarations about the timeless nature of education and learning and knowledge and serving the values of mankind. Still, the actions of the schools tell the full story. They define their own survival as the highest inherent good. Therefore they will pay whatever price is necessary to punch their own ticket to the future. They will throw as many people overboard as necessary in order to ensure that the ship itself continues sailing. If you are trying to figure out the ideological beliefs of America’s most respected institutes of higher education, you will come closest to the truth by concluding that they do not have any ideology at all.

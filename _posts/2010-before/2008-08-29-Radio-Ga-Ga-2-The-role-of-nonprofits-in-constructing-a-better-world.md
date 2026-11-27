@@ -14,6 +14,10 @@ redirect_from:
 - articles/radio-ga-ga-2-role-nonprofits-constructing-better-world
 - 2008/08/radio-ga-ga-2-the-role-of-nonprofits-in-constructing-a-better-world/
 - "?p=249"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d89e97bfc0a9fcee"
+  vector: "/f3+APz+/PYAAfwOAfsC/QH2/goABwgKBP4DAPwE/wQFBAQGDAD+BgL5/vn6+v35+fgC9AAC+/7+AAD6BgD7AgcE/gzz/Pz/D/7/9wcDCPwIAf8H9QH79gkB6woH/wQE/vr7C/4FA+v79PoG+QX8BwUCBwYD/QL+B/74BAP+/QD5Cf4KBQj6+QADBAkIBAP28/7/+QgG+QEM9//0AwP/Cf35C/79/AD8AP4G/QgME/7+/AUD9f0G8/gGAfQH/AH+/QT0A/4BAgL5APUE/gEJBP7yAgAJ/A//A/z9Bfn//wAA/gEBAf/29AkDAf0DCQTuA/kEAQMO9v8C//kCAQMAAPj5+AwI+PrtA/f7+/oEAwL7CAD+BgL8BAb3/wD6CPj9BPgACwoCBvj18vgPBQH3+Qr5BvoFDQD+/Qb78gUGCwABBv7/Bfn+//8N+wAABQP/APr4AAYC+wH5CAX3AQX/CfUB9vv4BAP/BgYEAfz/+/0J/QADCv8OAgMO+AEE/f36"
 ---
 
 ![DSC03532](/uploads/2008/radio-ga-ga-2-the-role-of-nonprofits-in-constructing-a-better-world-1.jpg)

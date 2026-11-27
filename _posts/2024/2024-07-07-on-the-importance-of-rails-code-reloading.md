@@ -3,6 +3,10 @@ title: "On the importance of Rails code reloading and autoloading"
 date: 2024-07-07 07:44 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b68df787f4350188"
+  vector: "9/v5Bgf7/Qf5B/4O/QL8Awj4+QX8/P8LAfX7+wH3AgL//wAFBPv5/wX+/Af/AAT/APkDAQb0/QAI/gMLAAr9+wACAf4HAwAD9fwD+gD9+PL4+v8DAgIF+QwCBP0GCPwCCwT2Bv4FCQgA+gYO+PwHAQL/CgL9AgIICwcAAAUA/QABAfYR8/v+AgUDBQj+BQH49/4IBwD98f8FCQYI/QEIAQIEAfkGAPj6Awf6+gT7/wz59wcJCw/y/ff2DP8K+voIBP0H/wcF+QICAAjzAfzvB/4A+gAC+Qr4+wUG/gQBBQAP9/4GCvkB/vvy+/j/AgL8+vwGB/UN/v8C/O8I+foGCQD67Q37Bgb7Evz5AQEI+wH5BAX7/vsN/gQA/QgBBAHz+PkBAAUE+QIBAvsD/fv4+PX7/AjwC/sJ//8B/v8I+QAHDQL/BgUJDP0ABAD7Av0C/gP1+vwE/QD6+wT9B/kGBwL//Af+/gn+AQUC/PL47/wB+vgD+QUIBwT5AQQD9/kB"
 ---
 
 I've elevated to "strongly held belief" that [code reloading and autoloading is _the_ most important design constraint](https://island94.org/2024/04/a-ruby-meetup-and-3-podcasts) when designing or architecting for Ruby on Rails.

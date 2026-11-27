@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/04/leaders-and-privileged-voices/
 - "?p=1875"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f8509101e3b7024b"
+  vector: "AQYD/gsOB/4D//sBBfUFAQAG/wf9AwcK/AL+/AED/f3+Cv0JDgUG/f79+/n//vwD9PX6+AEE//4EBAb9+vv8AgL6AgT4Dwf+CwD69AL9+/YL/wEF+Pb5+QMB9gEE/gn99vz+CAEE//gD7fv47wUA+f7/DPn++fkBCP/9DAgB/QACBQEPAAH99AcAAAEIBf74/f/9+gsR+/3/+Pnx+Qb/APf9DfoG+Qf79/0A/AQK/f8DAwICB/sN+PsCBPQG//wDAfzs/QEF/f78BP8C/AcDCfn0BAAH+gz6Cwf8APcA6QAACAEN/AX9/QUB+v8D/wX2Bf/6/P0C/f0B/Ar+/fkFA/37/Qr+AfsC/PsB/fT79Pv2//wHCQMC+f38/QEFCvT8Cv36AQgJA/P8/f0D/wT4/Qr0AAAACv0E/wgH8wIBBgD2/v0LBf8F8AEK/foFAQIAAPP6+gQC+P7/DPr7/QYCB/IA+w79BQf//gIMBQQH/gMCAQUCCw4ACAAM+QAMA/z4"
 ---
 
 From _Active Voices: Composing a Rhetoric for Social Movements_ by Sharon McKenzie Stevens. [Chapter 2](http://books.google.com/books?id=_l7PoDouA4IC&lpg=PP1&pg=PA25#v=onepage&q&f=false), "Vernacular Rhetoric and Social Movements: Performances of Resistance in the Rhetoric of the Everyday", by Gerard A Hauser and Erin Daina McClellan (emphasis mine):

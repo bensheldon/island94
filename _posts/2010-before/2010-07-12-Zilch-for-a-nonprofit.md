@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/07/zilch-for-a-nonprofit/
 - "?p=2114"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c4841ca7b8994bf1"
+  vector: "BP8EAQT9/QQFAAH4BAAC/wT89gH6/AkCAvf5/wEDAwgEAREIBAH1CAT79/r2///5/v0H+QL+/AP7+/f4AgP8AQwC/QP2+AT1Bgb++QsLCP8GA/wL8gIBAQkF+Qn7+P8AAvr8CQP7DPD6BQgJAgsB///+APz5/Qr9AQL7/PoB+AAADwP6/Ab9A/P/BwQFBf/u/PwDBwj9+gMI+/j4/AEKB//zBQD8/gDy7wEDBAIHE/4AAQn+9AEA8/38APcG9vcGAgIBBgcCBAP8AP0DAwEOAwD+/QALBQ0A/AMDAPUA/AAMAgv3BwD69gUE+QIA//T1/wEJ9gQOAAICBPkJAAABBfz0+QwBA/jy/vr++vsC9PkFA/n6AgP/BwD9+foDDfkI//cL//37/wP98fQGCAD3+gP8A/z6BQb+/Az6+wYMBgAMCPn+Avn7+AIJBAD6Awb/+v78AP0B9P3+Av8H/fgGCPkA+f3z/v/4/wcP/vj79vsK+QD/AAYIBAALAAUH7gH9"
 ---
 
 Last week I was contacted through LinkedIn by a stranger asking for help in forming a nonprofit organization. I get these types of requests not infrequently---whether directly through this blog, [LinkedIn](http://www.linkedin.com/in/bensheldon) or Aardvark---or on mailing lists like Mission Based Massachusetts. My response is usually "Why does your cause necessitate its own 501(c)3? Have you considered [Fiscal Sponsorship](http://foundationcenter.org/getstarted/tutorials/fiscal/index.html)?"

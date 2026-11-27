@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2011/06/developing-intent/
 - "?p=2725"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "47b81f5945c95864"
+  vector: "+gID8wT8AwgCA/wBAwILAwP79gEFBAID///69QYCBwYACPoGCPsE8gL2+wMDAAf59/cD+gT29vgECg0BB/kAAgcEAAP6/AEACv/97QAKAPsKAf8K/Ab6BAX78wwHBQj4+/b4BvcFA/YA+fcE/g38+Ab7Cv76AwEIBvz4+gb+9wD+DAUM//r/AgH6AAwDDBL6/f4FAAD6//wA/QABBQD8Afn6B/cF+wgA8gj9AgoECvj3BgMIAwD89vf8BPMF+fwM/wAJ/gABB/z9APkGBAL2//39B/sC/wn8/Qz3A/kI+wAA+fP/B/0B9QUE+/kGAvv9BgABAf0E+P4AAPb1BfwC+PoB/gX8/AH5AgX6APcG+/f3+xUICfME/xD9+AECA/v5AfwEBwAIBPb0+PIGBP719v8FCvP+Bv/+9wb4+/wG9wAFAfoB/AABBA8J+fn9EQcL/vr6AAcD8v4G/Pz3/QsCAP////wEAgf+AwUIAvz6/P0D+QYDBfoHBwQGBQMMAf8A"
 ---
 
 A [comment](http://laptopburns.wordpress.com/2011/05/03/why-apps-cant-transform-society/#comment-52) by the author, Tony Roberts, on his _Laptop Burns_ post ["Why apps can't transform society](http://laptopburns.wordpress.com/2011/05/03/why-apps-cant-transform-society/)":

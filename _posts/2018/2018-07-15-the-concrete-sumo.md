@@ -2,6 +2,10 @@
 title: The concrete sumo
 date: '2018-07-15'
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1beba448652f73ef"
+  vector: "+BIH/QH7AgcAAgoCAwP0BQD8+Qf+AQAHBQQA+gX4+QkH/AUHCf7+//n4Av8D+ArvBfb7/v35+gcKAgAD9AD5CAT+APz9Bgb/AwAC/v0EAfX7+Pz//vUF/w0CAfz4AwgE/wD6CgAS9/UAAfz+Av0D/gEFBgsBA/0ABwQABPrwBQD/APcIBfwADAICCQAH/vwC7f/+BQb7Bfj4/An5BAf6CAAF/wsD/P4C+gEC/wP/CPoBAPUCDvgA+wgC8/0BCvEI+f70Awj3+QL6+voC9wAG+wj+9/wGBAj8AAYA+wT/BAD9B/EIDfn3/gcD+wD9AgH2+vP2AQkQ9wD9C/4BAAD+APsCAQQABPkDBf///QT3APQD+AADBf0C+gX7BQgLBAMJ+vwDAe8M/Qb+9hAG/QPy9wb2AQT++AH/AwcC/wH+AQD8A/gEA/r3AvAABQcCCgP/Av319g3+Afv2/v4HAP78Bvb7//38/gkC+AMBBg8E8QP/AwL4/v8IBQD66PsHCvr8"
 ---
 
 This paper on ["The Concrete Sumo: Exigent Decision-Making in Engineering"](https://web.archive.org/web/20180308083300/http://www.onlineethics.org:80/Education/instructessays/sumo.aspx)

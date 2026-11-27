@@ -3,6 +3,10 @@ title: "The Rails Executor: increasingly everywhere"
 date: 2023-11-29 21:37 PST
 published: true
 tags: [Rails, Ruby]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5e510d370420eeaa"
+  vector: "9/z7Dv/6/PsBB/8OAPz+/Q8B9gL+/QMM9/T88/b8/vf5BQgIBP/2/wj++AP+///8+PsFBgL8AwAO+/YNAQP++QH9AQQHAwIB9Pv8CAL48vfz9v//CgEJ+hIBBQICBQEFAAMAAQb6Cv/+BAAB+/YJBA0FAwUFAAQIBxAD/wj+AAAE+/0F+Qj+AQgFBAH+/AEA+QIPDwP18gEBAP4D9gT/BfoD/QIABvr89QH1AP/4+w0DAQn+DgT8AQT+CQQF/PQBAv0JBQMC9ggAAQP0AP/3BQr89v78AQH++QMMAQgCBgAH8QMNDvgB/vb09/cCBgP2+/wGBvsEAf8B/ur89/sAAQIE9wT2AQUEDQUAAf4G+vv3Cfz8/AYG/Pr9+QoB/gMF+PgK/gcCAwD6CgME+PX2CfL8/AMBCPoGBAH8+f0B+QAHB//+BPsFCPkGCwP/AwT5Bfz8/P4H/Qj3A/4CBfcJ+wgA+Qr4AggF/QICAgL89v33+PQB+AgDAQj5+wAB+Pn+"
 ---
 
 *The Rails Executor rules everything around ~~you~~ your code.*

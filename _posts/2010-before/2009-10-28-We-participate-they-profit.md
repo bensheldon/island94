@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/we-participate-they-profit/
 - "?p=909"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "32d2fc72406ebcbc"
+  vector: "BP8I+gUFAwH8BQQA//sFBvwE/Qj//P8N9wMC9//9AgMBCAMLFP/9+QT3+f4DAwP/7/cG+Qb/AfsD/gX8+v33/gH5/gD3Bgj6B/r+/AEKDPQMBf0F+/n9+g799gcI/AH9A/oDD/QGA/T69vj//wYB+gICCAAD//sCBP38Awz9+QD5/gIJAP39//8KCQkQDQ7y+PsBBAf+/gAF/v4ABQMIAQL6Af8H+QP3+f8HAwcCCPz1EAQCA/j/9fIF/e4FAPkF/v/4/gv3/wDzBPf8AQIC//33B/wN/Av7BQD+/f0M/AAC+vUECAT+7gT68/kAB/71AQcBBAQM/gT/B/v7BPwD+Pn9+AMBB/oC+/v/A/QGAAD2+vz7BgUG+wr4+wQIAPkHBvn8AgkD/fPu+P8IAAD7+QX2//oEAgQHBwr7/QIBBAAJBPj9Bff49gIMCP8B+wsJ/P/xA/r+8/gDBfoE/AcBB/j9/wf7BAn1AAIFAvwA9wgKAv3/AwAFBAIIAv4IA/j+"
 ---
 
 [![je-participe](/uploads/2009-10-28-We-participate-they-profit/je-participe.gif "je-participe") ](/uploads/2009-10-28-We-participate-they-profit/je-participe.gif)

@@ -11,6 +11,10 @@ redirect_from:
 - articles/planning-strategic-planning
 - 2007/07/planning-strategic-planning/
 - "?p=133"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c08f88cbcbd9cccd"
+  vector: "AwUE+wAB+gj8BPcH/wQEAP3+/AT6+AMB9gME+vkEDQL//QQR/QYBAP39/gQB9AP/+ff3/QD3AQUEBAP2/Pn79AQBAwL1Cwb2+/8HAwEDA/4GCfcOAvwC9w8C+/0H/wYG+/D6AQUEBPf/+v0E/f7++wj/C/7xCQIFAP3/AfoF/gD8/wQK9/oG//oDBwkDBg3x/QQCA/wAB/AP/f8D9AIFAfX/AAH19gT9+AECCwoEA/zy+/8EBfP98//9/fsJ+/gEAAb6Bgn+BAMF9wABCQYB/vcGAwQICQkA/gn7/fkM+QAFAAb8Cfr55//28/wC/fr2Df4D+goI9AYDBf30+v0G/f/8/Af5/P0I/f4J/f4DBwP7BAcG+v8EAg34BgP7Cv4E/QUD+wT5+/sCAv8G9QH4BAL8/AH5DAEAAAD79AIFBgAGBv8ACPf1AAgI/QP9BgT6Cf/5/wH+8PkD/fQGBwEL/wL+/v8EAgf/Aw4NCfAE9wv79wP/AQMJAgT99gQCBfEA"
 ---
 
 At work I have been furiously engaged in strategic planning in advance of some major grant-writing. This process is a continuation from some vine-withered efforts my coworker and I had made last fall, but due to some changing circumstances---a better understanding of the existing processes at play and increased authority to manage the outcomes---this most recent effort is bearing more fruit.

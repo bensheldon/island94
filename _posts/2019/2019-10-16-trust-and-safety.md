@@ -2,6 +2,10 @@
 date: '2019-10-16 17:41 -0700'
 published: true
 title: Trust and safety
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "face6dc796fca7a3"
+  vector: "/wP4/xMDBwUK/P4MAAL9BAL69/78CA4F+P32APv//QIJBfgD/v8A/vz89AH5/AD2+/z5+AMCBfj7//n/Bfn5CP769QgB+/3/CwgHDAf8Bv4O/wn8/vr7+wEEAQEU/AoC/vr8BPv99/b8+QEI/wv0B/v+BQADAwn9+gEHBQ8C+QADCwH//wb79/wFBAgE+wcD9Aj6/AkD/wL1/Pn5AAP1Bfz8/wX9/AD//QT8DAoJ+v79/gQCDPz9B/kF//cL///9+v8CAAD9AAP7AvP7/gUI/AkEAgEE9AgDAAr/B/wH9QD68wEA+vr6+wwGAfoA//X4Affx9gME8Af7BPv3A/r+DPkB/wD/+/0C/QDw/vcFAAMDB/v6//4ECvj+/QAMBOkJBgL/Bvj9/vz2+f0IBfb4BAH5/QQEAwAH8QL78vIGAAAG/PkLCgECBQQPAAf3AggA/QD8BfoG/v8I//gDBgYB/v0KAP79AwIIBwUMBwAB+A/7+P3+CAoLAf4I/gAN/AgD"
 ---
 
 When I heard [this on the radio](https://www.npr.org/2019/02/22/697152943/how-pinterest-jumped-into-the-fight-against-health-misinformation) I was impressed (it may be a low bar) with Pinterest's Ifeoma Ozoma’s responses to NPR's Audie Cornish:

@@ -7,6 +7,10 @@ date: 2022-03-05 09:18 PST
 published: true
 layout: book
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6a91b2281bceb52d"
+  vector: "+AUEA/73Bw7+AfIAAPsIBQj9+QgI/AcC9Av++wX8BhMCBv0NCfz8/PcC+gQF+AL39/fs+fj6Aw4IAff5/fz/AgIABv39CP0CAggIAQL9AfcCDfwH/gH/BgED+fT+/hH+BvT+BP0JDfT89/77Af35+f//+v/1BAUEAP7/DQX/+AD6BAgJB/oL/QMEAAj+CQ777Qb1BAcFAPUEAwD2/AT9APgB/fv/9Af3/wcEAAYCBf//AP//CPf++PkF/wUFAwMD/wH0/gf9/ALuA/oBA/sA/QMGAP7+AAn//AsB+/3+/wAE+vb//AD78fr69f4IAQD18/oFAQQK8/YDBfcB/wQB+/n5AwMGAf0BAfr2/wD7+gIG/AkFAe8AAgn0/wIABQMCAwMD/AL0+fvzAQ0L/v76/f/5BQv7/QAH/gT7//wO/AD5+gcJBwb6/PcE/wQDDAwCAQD2Cwz6+QQB/f8HBgcACP0HAv8DB/78BQoABgkD+/z2BfkD+gr6AvwA+gcGEAEB"
 ---
 
 I came to this book with certain hopes that were left unfulfilled, but I read it in a few hours and enjoyed it.

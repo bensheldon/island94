@@ -16,6 +16,10 @@ redirect_from:
 - articles/introducing-panlexicon-com
 - 2007/04/introducing-panlexicon-com/
 - "?p=128"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a729904e85fc34d4"
+  vector: "9/f5/gb7Bwb9/AMICgIFAQoD9/gKCgD+/wLx9gIEAhIGA/3++wj+/vb49AIJAPUGBgLz+/7++gv5+Pv2//v5CQP7BgMH/wQOBwECBwT5APYCCQn//v8I+QL6AvMG+P37BvYABAH+Avf3AvwBCfr3Bf/y//78/RD9/gcC9/r/+wAEBgABBfj7AvQFBxH+EAT4/AUD+wEDBwP4/QABBAb+/gID+AL47gj2+AIC/QAM/AAM/wj7/Q39CP78CAT8/gEBAgYFCAYGAwIABgkA//P5/AP6APv0+gH3Av/5BwAA+wD98/wG/gIH+wL69gf8+gMKBQEACfz87vwFAvv/BAT/Bfj9AgQBAP78/gcI9gD96QEFBwcA+/0B+v/3+f75/wAKBvv2AfQAAAL79/gEBfv7/AYDCf/4BAMNAgEB9AUOBAD7AQQA/vkGCfr6Cv75DQUIAwAA/P4I+wUGCfwBCPsABvT2DAv29/4GBgcIAgwD/foE//sKA/4D//wCCQQBAQcL"
 ---
 
 ![Panlexicon.com](/uploads/2007/introducing-panlexiconcom-1.jpg)

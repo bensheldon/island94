@@ -3,6 +3,10 @@ title: "Productive Struggle"
 date: 2022-10-30 14:34 PDT
 published: true
 tags: [education, learning]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9c3cea842474e36f"
+  vector: "/v4H/QEABQcFB/0PAwAA///4/QEHBAADAgYG9fv3AAL9AQIFBwP+9/r3/QIK9AD6/fkA8Qn4+v0DAQEC/vgAAgb+BgX4CgMD/wcO/QUCDfwPA/z/+fwCAw7z+v8BDQv6AfL+Bv0KBff79AAHA/4B9/4JAv/9AQkGBQfy/vz09QAIB/8GAvsDBP4CAAsBDhL18wD/Bfv0Avv4/f8BEf75+gL/AfwE+wf/+AcBAQYHCf3xA/gJ/fL//gD7B/r+AwIG/Q0HAQP+APb5+AT///wFBQT0AfcFBv78BQL+/PkIAwAB//AFCgID/wP8/P76Cfz1AAX+/wAF9gAE/vQB/Q4I9vwI+gQH/PcDBff6/wIF+wD/CAsGB/b9/Qb8/goAAf4E/vgFD/UCCgT+8foP/gX9BAr6Bv74BAEC9QT8+PwDAQAC+Pn4BP8FAwoI/vwACgAPAwP6+wz+Afr4AwcC+gT4/fn4Af7/AwMG+f0G/AD87wAD//sCAPQD/wAD8AkI9gUH"
 ---
 
 From Logic #17, in ["The Edtech Gold Rush"](https://logicmag.io/home/the-edtech-gold-rush/) by Kevin Miller (emphasis mine):

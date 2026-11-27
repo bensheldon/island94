@@ -13,6 +13,10 @@ redirect_from:
 - articles/should-i-get-nonprofit-job
 - 2007/07/should-i-get-a-nonprofit-job/
 - "?p=134"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "02d75bc40897c326"
+  vector: "CPv9BQQCAPr9AAIA/gUE+v3////6/v8DAgMC/P38/fgHAAcS/gH+BAb+/PX88wT5//QJ/AME9AIH/vv7Bv8E/gQIAgj7+fv4BwgO+Qf9CQEJCPcQ9AEBAgwB+gb1+wn5B/0DBvz3/fsEC/8A/QP+Cf0ABgP2AAIEA/4CBP4FAgAECgX7BAX9BgAHBgYF+/n1/fYCAPz88QAA8QP8/QAEBf33Bvr9BALx8gAO/QgIDffwDAkEBPb49AUCAvYI9vn9AgcDBhP9AQT9AwAEAPgF/QcH+QYMAgT4BQwLA/oA/QAP/gz3/vn4AAMH/QIAA/X99gb8+QIL/QACB/cEBPwCBwf2//0A//31AAEB+AH8/wEABvj6CQUG/wH3+vwBBPwK/vMDA/8A+gf97Pb5BgX2BP73Bvz6EAcA+gL7//8BDAAM+wD7Cfzz9gME+/gH/woDCvj7BQH++QP9Afn7/wcBBvn6+Pb8+wQBBwMJAPX5/gIA/gT+Af4BBgIN+gYH7/X7"
 ---
 
 I have a lot of friends and acquaintances considering a job in the nonprofit sector. I've been employed within small (under $2 million budgets), community nonprofit organizations for three years now, beginning straight out of college, but have also talked to many people with many different experiences and histories in the sector and outside of it about their experiences. The following is my boilerplate advice to people that asks me about working, or finding work, within nonprofits.

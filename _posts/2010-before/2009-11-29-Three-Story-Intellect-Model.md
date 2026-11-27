@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/11/three-story-intellect-model/
 - "?p=1529"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a9068eddbe65a814"
+  vector: "CPv4AwL/DAMDBvoG//0DBQf2+/wN/wgF/QT7/Pz+/QkD/wT+BQoCAAL+9v//9/37+f36/Pj7Ag0DB/79+/75Ag3/8gv4CAADBv8MAwLw+vv/AP0H/vYD/f4AA+z9CA4F//b7BwMFBfQA+fz///7+/wEHBgUE//78CAoKCAT1/AD+Cf4JAv8BBAMFBQYJBQMF9vz7AQH9+vb1AAYCAQUBDAEG/QP79QQC+gcGAwcMAQL5A/kBBfoHAP//CfEDAf0E/ArwA/7/+/73/vv5/gD9Awr2/fj9+wv5AAABAQH79AD+AfgNBgD8/P//9gL2/QDxAfv+AgcH8Pn7BQj++AcC+gH89wkL9vIL+vsE9vcAAwYDAP75/wQB8gf5/wcECgT/A/T/CPcFA/r+/wcN/wfy8v/uBggE+gEG9wP+BAkBBgD7+/4G/v4GAfwMAP0DAQr9DPf6AQwG/vf+Cwj89wf6CgT8/gH9CP/9+v0DBAz9/QT7Cv4EDP4E+/0G7gIQAv0D"
 ---
 
 [![Three Story Intellect](/uploads/2009-11-29-Three-Story-Intellect-Model/three-story1-500x564.png "Three Story Intellect") ](/uploads/2009-11-29-Three-Story-Intellect-Model/three-story1.png)I netflixed _[Rosencrantz & Guildenstern Are Dead](http://en.wikipedia.org/wiki/Rosencrantz_%26_Guildenstern_Are_Dead_%28film%29)_ this weekend, so I'm in a mood of rhetoric and reason. Above is from my Critical Thinking reading ("Teacher Behaviors that Enable Student Thinking", Arthur L Costa_)_. The terms are a nice way to evaluate the complexity of test questions, and is comparable to Bloom's Taxonomy. Apparently the metaphor is derived from an Oliver Wendell Holmes poem:

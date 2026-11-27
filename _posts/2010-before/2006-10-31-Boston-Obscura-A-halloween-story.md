@@ -13,6 +13,10 @@ redirect_from:
 - articles/boston-obscura-halloween-story
 - 2006/10/boston-obscura-a-halloween-story/
 - "?p=107"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5dd566a68f1313c5"
+  vector: "AgIKDAP9APwA/wP+/Pr4CvoG/QoB/vcG/AkDA/35/QL8BAcJCgEK/QEDAgP3/v/9AvsA//33/AT9BQH6BvYABQv79f4CAAIABPwB+/r+9fsMC/0G+vUCAQkF+/jyAg759Qn7CP8CAAIE9/j7/wH+9v0BA/7//f4JAwkABP7/BwAA//wHDPf1+f0BAQH6Af4C+PUE/gEEAfXz+v8AAAb9EAMFAQIG9f/98//7/QQGBALxCQIC//j++/sDAQAFBAUB+wH8APsC+AH+CQL9AAAA+Pv89wMD+wr1AQL8AQX08wAH/P8A9vj1AQIF8gUOBwP5EAb7/gQG6vT/CgMC+vsBDQD5+xQGAvr3+/sF/f0J/wr3AAINAgEAAvr4/P/9//MACgH6/fsK/vfz/g8G+wL0AP36BQANAfkG/wn7AfQA+wAAA/0EB/4MEf0M9Qn/DAgIAfT2AgAC/PkA+/kC/AMGBvf+9QIBBQj5AwcECAP+/wX6Av0GAg8M9/0L+f8EA/j7"
 ---
 
 One evening, not far earlier than today, I was sitting upon Boston Common enjoying the last sloping rays of the day. As was my habit, I blissfully blocked out the city around me to better enjoy the feeble warmth of a setting sun.

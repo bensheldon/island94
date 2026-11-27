@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/01/mediation-journal-version-0/
 - "?p=2409"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0335d17339a9e72b"
+  vector: "AwkJBgby9v/8BP4GBv8DBAIE9AX2+QT6BP35/gL3BgX/AwsDBwP5/wb3+/v6/gYE/f/8/fX/AAYDAf74AgLvAQ0FBgEC//8EA/sB/fwECfwNAv8J/QAHBAAEA/z7BPX8+/cDCQQAA/sB8P4H+wYEAvgGDQIGBQP1Agb8A/v5/gAGCQIHDAT9/fn+BgL7CgT9+Qn7Avv0+QL/AQ7/+P0A+AkC+f/+/gAD+AoIAAILAAAEBAQH/vEA/Ar7//sG/v8GBAzw/fz58QAN+AT7/wL9AfgM+Pzz9voG+AkDCv8D+wAA+gAAAQD6CAr8B/71APP8Afr2/P8XDAsEAgwCBvf89AT+A/0F/vP5AwP8+P/1AfkBBQf7/wYAAAP6Agf5Bvn7/v/+/vwL/wMJ/xD9AAL7A/UD+AgMBf/5/QL9BAYJBAD7/fsC+fsN/f75AP8ACPzwDf/39/34AgIEBwYAAf4ABgUB9voDBvkR+vcCBQf3BwP7Cgv6B/0C/QcIAQsO+PYF"
 ---
 
 [![](/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-3-500x334.jpg "mediation-3") ](/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-3.jpg)

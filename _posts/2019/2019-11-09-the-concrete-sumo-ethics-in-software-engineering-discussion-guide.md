@@ -2,6 +2,10 @@
 date: '2019-11-09 12:38 -0800'
 published: true
 title: 'The Concrete Sumo - Ethics in Software Engineering Discussion Guide '
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8e02eb19d96a880d"
+  vector: "+gf/+gH9BAcBAQAFBv35BPv89wcE/QEH9/4H+QD9+AkQ/wIMAf4C/fz0/vwF9wr0+fby/AL4AAMI/Qb//fj8CgX//wH1+wX9Bf0A/QQC//cD/v8G9fwA9wwL+vcBAAUL+/71BQMJ/fUA/Pz8AQH7BvYCCAP+AgT9AwYEAAX4/wD+A/gIBPr9AQIGAggHBP4C6fkBBgwA//f5+gD3Awr5BAH8BAj4/P8C9wL9AAYCDvr/Cf3+FvYJ/Qn++vkEA/sK/Qb7CQfy/f39/PQH+AMDAvsH+P4GCAYCBgsD+gAF+AD7/v8EDvT6+gv/8/0E///49/f4/gsK8QIDC//8AwP8BP4EAQYDAAP9BP739vv+APEC+wAEBAH++gb+CQcKBgMJ9gADA/IB9/X2+gUE+vrv/AT0AwUA/vwCAAH9//YF+QD9/f0FAfz09PYMCgb+CgYC/f75ARH/AfsEAfMA/QAADvcB/vkAAQYI/AUDBQkG9wn9CQT8BQcFBQMB8v8EBwP4"
 ---
 I prepared this discussion guide for Taft H. Broome, Jr's [
 The Concrete Sumo"](https://web.archive.org/web/20171213030414/http://www.onlineethics.org:80/CMS/edu/instructessays/sumo.aspx)

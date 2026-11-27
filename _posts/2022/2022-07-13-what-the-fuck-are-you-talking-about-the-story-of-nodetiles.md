@@ -3,6 +3,10 @@ title: '"What the fuck are you talking about?": The story of NodeTiles'
 date: 2022-07-13 22:31 PDT
 published: true
 tags: [maps]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0decf7b96f51a51c"
+  vector: "9QQGAAX3+QTyBfYDAPgAAgoJ//z27//7CgX8BwT6/wgFCgASBPf5/gcE+AUI+gH5+AT49wX08wAE+QYBAf0FAgkC/ggO+AP//P/1/QP5+fwC/P0H+P79CAcE/gUFBQD/Cfn4CwIBCPIE+QQC+wb3AfUA+vYBAQwODQT9/AX/+AAEDgcICvv79+//BBD8DQT3/f0E/vr++/8EBQAIAgL/BgAKAQH48P7+/P3/Av33A/0I/wAI/QYD9wH5CggD/AICA//8Bvr9AwcJ//0A9/v1AgD7+fwDAgoE/wEC+/74/QD0AfcRA/QB/wEH9vwG+/sDDPn/+QAO+AX7Bvn/9QH/AAT+CQYAB/35/PT4/P4E+gz/A/4H//gI+PsIAgAC9QAAA/cA/AIJBQoBAAMFCAH+9v0IBAcHCPwD/wMDAvQOAAAGA/r+/f4IBgIFCvz+AQsDCQb2/PsM+wD8CP0G/vX++/8E///5/AEEAv4BA/gE+fgB/P789wQNBfwDBg3+/PEA"
 ---
 
 ![NodeTiles' trippy demo image that says "NODTILES" written across a map ofthe globe](/uploads/2022-07/nodetiles.png)

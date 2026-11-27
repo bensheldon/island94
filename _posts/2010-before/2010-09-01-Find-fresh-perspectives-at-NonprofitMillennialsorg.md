@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2010/09/find-fresh-perspectives-at-nonprofitmillennials-org/
 - "?p=2167"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d721c5f3d9f5472a"
+  vector: "/Pv+BAcC9fkIAf8HDP4AAPkA//r5AwEFA//1/QP/AQYFCAAE/wP8/QL1+gAB+Pj99wX+9Qb9/QH9A/rsB/71Awb4Awv+/AMBCgsC/gkEAPMLDQAH9gMHAf0B/AIL+vn//vkIB/8IAvoAAvwP/wYBCfwABvUC/Q//AwwB//0D/QAHDAIKAwn4AvP9AgkHCgL19v4H/gMFAwX8/gL/8wUB//n1BfsL9QT/6gP/APsMBQICBAX8Af3/Afn2A/gO/Pv6AgwACQsHBv78+/UHAP8EBAME+/gA+Qb/AAYBAwcD+gD5AwAA/fn5AgYJ///8CPz+APr1/wMI9AYSBAII+/0D+wH3/gn9/v71/wUF//cG8gEAAvv3BgH//wQC+QH+B/cIBOoH/e0DCAL86/oBCQL6+QAGBv8BAQQE+AMA8/oEBAABB/QJBQD//wAIAfz8BAv1+Pn49gME+f0F/vv8/vj7BfEBBQb2B//5AvwPBvv9/gAB+vz2DQYA/gEHBf4N/gIA"
 ---
 
 ![](/uploads/2010-09-01-Find-fresh-perspectives-at-NonprofitMillennialsorg/nonprofitmillennials-screenshot-top-500x420.png "nonprofitmillennials-screenshot-top")

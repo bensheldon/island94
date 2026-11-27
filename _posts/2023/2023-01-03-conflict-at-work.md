@@ -3,6 +3,10 @@ title: "Conflict, at work"
 date: 2023-01-03 21:17 PST
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bf5cf268d5a00deb"
+  vector: "APwAAwgHAf7/+fwJBPf/BPn/+Qb2/PUG9QID/voAAPv8BAUJAggH+wT+APj+/v369Pz4AAP8DAQLD/wDBPv5+gr9AwX0Cfj4/v4G/gMFDAIKCfMD/PH99RUC+AEHAwUC/wn6BAP+9wED8vj79QP6+vz5CQL7/gcEBv/3C/f/+gD/9/oN/fn4/gIA+wcH+gP88gAE/gMK+wD/+/j9/AIACf78BgT1/v/59gICBwoDA/nz/gAFC/z9+vsEAvMFBfsBAv/3/Pr//AT+8/oA/AcA9QMGAv4FAQj0CRkB/gUM/QAG+QIAAwYGAAEC/f0MEPr4BgH/+AsG+//7AAXz9vkFAf0DAwP1+v/88f4AAAUAAPv+AQIA/QQF+wX9AQP8APcDB/70AgoF/fz8/gUB9vn6Bvj+BQn6DgMKAvkA7f/3BAAD+vz/AvwE9wESAgEDB/8ACPUABAH++f4GB/0A+QECAfr8/AwBAwX9AQwJCAIHAwn3AQoDAwQC+f8J8gMOB/j9"
 ---
 
 - I had a conversation with a coworker that reminded me (again!) of this [Foreign Affairs essay](https://island94.org/2022/03/over-rapported). It was about receiving feedback that seemed to focus on minimizing interpersonal conflict over things like achieving goals and strategy and impact; it felt familiar.

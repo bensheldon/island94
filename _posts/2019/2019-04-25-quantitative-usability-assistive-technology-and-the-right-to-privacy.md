@@ -5,6 +5,10 @@ title: 'Quantitative usability, assistive technology, and the right to privacy'
 tags:
   - assistive technology
   - lighthouse labs
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "155b11c2816e22e5"
+  vector: "+v76AQUEAwH5/gP/BQYCARH+8gD7AQQD/f/39AP/+AMFBfz5Bv39+fLy+wL/8//89P79/ggD+f8MBAAFAfT8BwcF+f8A/vcCBwkK/AACCPoG/P4QBf72BP0A/wkE/gX6/vkEAfsFAQP++AL+/goCAfoDCPcA/xEE/wgD/REH+QAEB/kABvr6/wUCCRcGAhEE/Aj8Ag30AAgAAPsGCQT3/wP5CP4C+gT/8gMF+voIBvn///kDAfX6/vv0Bfr9AwP6+/4A/gD79wABBAH/BQT/9AP/Bf4F+v4A+gT+AvgD9QDx/vwDAvf/+hL89gT/AvME+vn4AwQD9AIDBfzyBvr++P78/vwCAvz/CQbw+gcL/QH3/gwGCwD6/BH2+An/BvYCA/oF/vv6BfT99QAEAv30BgMACPcJB//8/PzuAOsG/AAJ/wIBAAL8A/4IAPv6BwYGBf73BwAG+P0GAvwCAQL/B/8F/fgA/wcG/gMCCgj+9/4EB/74BgUIBAz6/QgP/P4B"
 ---
 You have a _legal obligation_ to produce an accessible website; these are some thoughts about what comes next.
 

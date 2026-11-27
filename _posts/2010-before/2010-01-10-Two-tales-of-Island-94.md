@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/two-tales-of-island-94/
 - "?p=1673"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a6104b4f3fdc9196"
+  vector: "AAj7BQX5/AP3AgAGA//+Avj7AQgHBvz5BAEAAPj+/Qn4AAYCDwYEBPwDBgb1+P4AAwH9BP76/fj+/An1BAUBAQX8+QEEBQQC//X++QMD+wD7+QcGAAQBBAf7CfkAABP49gT/BgoEBP4MBQT/APz9AQEDBAL2Afr7CAP+AgMQDgAKAvv9Ffr5AwAM+Pn5/f3/Aff99wUEA/P3APYB/wT5AwoCAP8A9f0DA/37CP70BQL+Bv8B9Pr5/wACBAgC+Q38AwYJB/n3+/UG+QcDAgEF//4C8wn4/wf1/QD5/wX3AQD7//r8+u8IA/r18voBA/0HDwr8Ag33+gIMDA/6+PgDCwb98g8GCAH7BwACAf0HAw79APsHAgUEA/wC/Pz0A/QDCwH8/v38+f36/QMC7/j0//f7/f/8AQr9A/sC/fUE/AAGDf8GBfgGC/sD+QID+QX7Be/59Qj/AQH9BAEECfsDBPIAAvsC/QP5+gYCBQcA/AQE9gABARAL+PgG/wb4/fb4"
 ---
 
 ![](/uploads/2010-01-10-Two-tales-of-Island-94/Gr-Warranty-500x399.png "Gutenberg-Richter Warranty")

@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/models-feedback-and-crows/
 - "?p=1792"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8c826d14ed9ac99f"
+  vector: "//gHBv73//sLCPn5/AX7AAb6/AH8BQsF9QH2AAL7A/gD//cE/QIEAAD2B/b9Afb++frx9fr8BQYDAPj3CP7xBAkH+P79AgL7/P8LCAQADP8C/QD/BPsABQH1AADz/wYGAAH8CAAKCvkG//8EB/r5CwESA/T49/gGCPoC+woH/wAC/Qf+Dv33AgsG9P4ABxAB//r6+gIIBvkG/wH88QD8/Pv/+QMG9Aj5BwADCv0L/PjtBgsGAfwBAgEA9AIA+wL9CQAC/AT///348/v1/vkI/QUF/AH8+wX5B//+Bf//DAD9+/kE+gP4+f3//AEDB//yAPwQ+goL+P8BAvsCBP8F+gP4AgcFAfsFA/71/AUDBPrwAwv+Aff6AwP2AwTvCfv7AQX9/g76/AL8AQkL9vj+9fj+DAj9/wIJ+QQDAgYM+wD2BwYECg0C/AAEAP8CDP8HBf75/ggH+P0E+PgN9QkDCgMLBgIJ/An5/Az3AQEB/vX/A/8F/QL//QL9/gIJ/fwB"
 ---
 
 An article from Ars Technica on Crows not being as smart as we once thought. Apparently they're good at meat-attached strings, but not at building mental models of said strings:

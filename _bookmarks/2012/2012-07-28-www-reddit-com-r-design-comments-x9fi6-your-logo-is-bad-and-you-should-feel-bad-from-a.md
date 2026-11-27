@@ -6,6 +6,10 @@ title: 'Your logo is bad and you should feel bad: From a printer/designer about 
   unprintable logos. : Design'
 tags:
 - design
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "cb5483823c415fab"
+  vector: "/w0D/gT+BQH59/oACAD6+AMA/wL2+PoB9/4L/vn3/wP//wr7AwEB+wX++ggDAgEL+f4F9f/v+f//Af74/wL0BQkCAQYBEAQFAQUCBQn8A//6AQAIB/wC/wcGCgsE9gcJAvcIB/39CvkJ+Pr+BQMGAvoEA/z5/AID9QDy+vME/wD9D/kHBQcC+vsBAg0BFv4FB/32Bfr1APX9APwJ/voAAAn/+PkD+AAE9gkA/wQMAvr8BPz/+/vy9gD8B/sFAggHAwT6Av38AQEL+AUGB///Av8G9PkB/QD/Awf8/AIC+gD/AwkA+foCBPn8BQX9CPX4/xEB+QIE+AwEBAD++gf9Ag8BDwAECAT/+f/8+/73A/YDCwL5BQP4/P///xH4Av7//vkGAP0H8wIGAQX3BQb6CAH7/QgFAv34AAIACg8GAwD7+Q7+BgAF6vv9/O39+gP+//z4Ae4EB/r7+wYE+/v7BQgL/PsLAPwG+QD//Qf1Bv/6BgICAwX99vYQBwgF9v37"
 ---
 
 Alright designers, it's back to basics.

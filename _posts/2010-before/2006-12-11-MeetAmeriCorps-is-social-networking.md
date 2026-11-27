@@ -19,6 +19,10 @@ redirect_from:
 - articles/meetamericorps-social-networking
 - 2006/12/meetamericorps-is-social-networking/
 - "?p=111"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2d8748f2fd1ea71b"
+  vector: "9/oBBgD4Av/9+/f8/wX+BQn5BAX6/AIGAv38+v0IBAsLCAMQDgf5//j+BAL4/gIF/P4B9QMF+gf7APcGBPz9BQIG+gwF7wMBAQcIAwX/DfkDCP/8AQP3/f8H8Ab48AD9CgH2CPkCAvX5/v8JBA4A/Pj8BQIACg4C+gD+9AsF+wACDQEO/wD6APv9AQ0OAwj6APv/9/cA+AEEAPYCDv4ADvwCAwgB7/329wgA/QgGBvkBBQEC+gX4+P4FBQEKAQEHAvr+Bw0DBQX/BfgCAgMCCQMB/QQIBQn5/wz/Bf4L+AAG/gj1AP8C+Pv7+fwEBfv7Bv0B/AIK/v8D+vz9BP4IAv71AAz7/Pr4Bf7y/fsD+v3x//nx9fkBBfn7+vr///gFCPcHA/gGBfr5+Pf1Cfrz+vz9CAEGCQUL/QkAAQAD/AD/BfwCAgj6//8R9v34BAj9APr5AvT9+f8A/vX8/v71BQECAvr5/wMABwQFCgQI/vv/+v/8BwEG+f8OCwb8/fT9"
 ---
 
 My pet project, [MeetAmeriCorps.com](http://meetamericorps.com) has finally passed that development milestone that marks a "social network": Buddylists. To be a little more haute, we've decided to call them "contact lists", but the concept is the same: you can demarcate people who you like/know/want-to-be-on-your-contact-list.

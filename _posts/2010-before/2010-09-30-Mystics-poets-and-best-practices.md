@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/09/mystics-poets-and-best-practices/
 - "?p=2215"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3d56fecb6b22d336"
+  vector: "Af0CA/gECf0I/QEK/fkFCgL8/Qn//QAP/Qj7+wf//wf9BPkPBgUJ/wH2+AUAAwgH/ffw+ff2Ag0B/Qb5AgP/Bgb5AAT4/QX7AQn+AP399foACAYM+QQB+Qv9//b5CQkJAPr4BQ0F/wMG+P/3AQAI/Pr+BAUAAPoBBgMKAfv/AQD6Df8K/QL3+gD6BAYHBP8B/vcF/v4K+vn5AgUK9QIFCAb6Bvr69gP7+QP6BAIL/v39/fcFDP4A/AUD/+/3+QUD/Pz2/gP//gT5/Pn7/wX9CPgD+wEF/RH8/gIEBAv18AD+//0TBPH6/vwE/AX8/AL2BQEA/gQE7Pv+DP389vcH/v38/gD/+v4CCf4A/fr+AgL3/Ar+AQUD+wgB/QcDA/0G/wD+DfgC+/73/QAHBvv9+/31AAIF/Pb9+QMA/fsBCgD2/vz7BvoI+vYXAQD9AwsCAv31AxQM+/L8AfkE/gIIBAr+9vn4BwwBAwAEBfv3/wv/CgEEDP/79AAI8/sM/gH7"
 ---
 
 At the [Transmission Project](http://transmissionproject.org/) we're steadily working towards fleshing out our critique of _best practice_ and the proposal of an alternative: _ [honest practice](http://transmissionproject.org/current/2010/9/revisiting-honest-practice)_.

@@ -3,6 +3,10 @@ title: "Even if the answers are messy and provisional"
 date: 2022-02-07 21:08 PST
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2afea79aadcff524"
+  vector: "/gkBAAYC/v0ACPwE+P/4/QH7/A39AgEBA/wD9vMH+gcABf4GCgcB+gD8+wT3/AH5APn6Avv3AAT/AwL7Bfv/AgQB/AfvCf0C/f/9+//4+/kICQgG+Ab/+An4+/ICAgYI+//8CQEH/v/5/vkB9Av2+gEBCwMFBf3//gICDP/7BwAB+/4K9w8BBA3/BAL8Af0J9voGBwUEBfT3+gL+///6APv7BQn9+QH89QcG/AILCwL3/foB//39/vv+AfsO+wb7AA35Av7//v30Cf4LC/v59wP1//0A/xL8CgcD+Pz89wD89vr+Afzu/wEC/vcJAAEABPb5AfUM+P0EBgEA9P4IBPoABAIA+w37Avv3/vUB+QMFAAQCCP4E+gYBAAn+CPgG/Pb6/foH+vX5BQMAAvsB//34DAIE//kBBgEE9vf9AQAE+QYB+AIE/fcL+QQEAP8IFfj6BBcB+/b9CgX7/gUDBvn7/ggFA/0A/wQAAAb7Av/9Cf8JGQD+7/sT8wMH/gD8"
 ---
 
 I liked this (email) conversation between Willa Glickman of NYRB and English professor Anahid Nersessian in ["Late Romanticism"](https://www.nybooks.com/daily/2022/01/08/late-romanticism/):

@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2012/07/hard-data-on-the-status-of-open311/
 - "?p=3012"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "54d83b72403f2d41"
+  vector: "Afn/AwL19P/8BvME//oHARP3BQD4+gEAA//7AP/5Bfj/BgP5A/v1/gn7/gX5+wH+/gEG9PoFCAPzAv8NBfv8BAj7AQAF8QIFBfj+/vQCB/cEAPUHAAQDBgX8Bwn9/v/9AwT/B/wDBwMA+AMD+xEA+Qf5+/7/+gUCAPwC8wYLAQAB/voIAgIEAv/6AwsI/gsGBQYF/wHw/gMH/f0JBwIGBPcIBwEC+fv57Ab1Af/8//8F/QcD+QgDAwf1/gv7+f74BP8ADQUFBP77/f8E//v/+An7AAsC/wD6+Aj7AP8F/AD4/voF+f38/wgB+f0LAvv1+//9Bf0F7vf9CvP7APv9//v//wwJAgQDBvr2+f0H9gjz+v8E+gsD/wb9/QcOBf4LA/cK//oF+fv1/AACAwL5Cv0IAAIPAQ/9Aw32CusP/QD7/foF/wL7CgMLBwD5AgQKBPbzA/8HBvoF9P8O+gD8Agf8Awn8CQIECQH2AAb89vr//fUA/gIGAPj9BQ8E/foD"
 ---
 
 ![](/uploads/2012-07/open311status.herokuapp-2-600x369.png "open311status.herokuapp-2")

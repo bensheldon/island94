@@ -13,6 +13,10 @@ redirect_from:
 - articles/alternatives-nonprofit-job
 - 2007/10/alternatives-to-a-nonprofit-job/
 - "?p=164"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "14e5e6d8a0429829"
+  vector: "A/v6/wEGAgABAQD/+AIHAgQB/gP//gQD+/399foADfoEAQsQ/QT8AgP8+//7+wYBAfgH9AL/8QEC+vzxAAIF/gIF/wL79QIABQMH/wUICvkECP0O9gb9/AkC9woF/gP8Cvj9Bv/+BfcCBAAE/Qj8AwEHB/r5BAv4CAH//wAF/AD6EAQBBAMD/fkJAgsPCgH2+PoCBQQB/P0M7vv/+QAD/gH1AvMA+/7y8QMMAgcHDQb5BQb+APf78/8CAPAN+fwB//4DAgr1BgUAAfMDAPsG/gQCBAAN/wX//P8ABP4D+AAK+A72CwP66wgB+AT//vT6/gcC+AUT+AEGAfsH/AP9Bgny9QcE+Pz8BAMG+fkF+AX9Cfr1BgkDCwr8AP38BvoG//MA//4A+v4A8fsGBQT9AgL8BvsDCgL6/gL99AgJDAAQAvr5/fj29vwA/QL6/wb5AAX2+wcB9wMD/P36/gEBBfz9/P/0BAUFAwgG+/0A+Ab//QD5Av4HAf0M/wQM+Pv/"
 ---
 
 I was really happy with the feedback I received from my last article"Should I get a nonprofit job?" The responses I got, some of which you can read in the comments, helped me focus the message I was trying to convey:

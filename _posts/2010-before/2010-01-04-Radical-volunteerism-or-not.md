@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/radical-volunteerism-or-not/
 - "?p=1665"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "505abe542fb58f7c"
+  vector: "B/37BA0HBfz4BwoRAv8GCf399/zx+/0LBwIH+v4FAwH8BQsGEwL+APz5/v3+/v77+/gS/P/5/QgGAwAA+/f/Afv8+wH7+AIEC/0I9QoDCvcLAvgB8/j++wkD+wT78vn9AQX4A/kHA/UA8/78/ggA/QILD/0HAvv+BwP8Av33/QD/Av8FAv0C/v8DCgoNCwH67/j6AwQDAP789AICAwIABff9E/4IAf/2/AYJ/QsGDvz9A/wBAPUC/voM+O77AvkC+//2AgH+BP31/vj7CvgF9QH3CP4G/QL6DvoC/vsD9QAG/QIDEAP9AQP7AQH4DwDz/wT9//0IAf7//fwDA/0PCAT9+goFA/IA/Pf6+fwFAPz4A/L5AgcO+gn5/QICAf//C+7/BfcCBQH39/f+AQH3//zy+AH7BfwFAQQF/AL+/wAFAPUDAAP9+QQKAf4AAQMDAfj8BwT/+vn9Bf4L/f/5//X2/gH8/wQD/gQH/gMI+wgHCfj6APoGAv4E/fr//fcC"
 ---
 
 From the [NY Times](http://www.nytimes.com/2010/01/04/education/04teach.html):

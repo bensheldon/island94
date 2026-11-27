@@ -11,6 +11,10 @@ redirect_from:
 - articles/progressive-terminology-discussing-poverty
 - 2008/04/progressive-terminology-for-discussing-poverty/
 - "?p=214"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3d2972abcb697cd3"
+  vector: "BQT+B/kICAoC+gIAAQH+BQ8B/AkGAQICA//9/PsP/wQKBgcNBQr5+QH7+/8B9wIC9ff+BAgD+wAGAvr/AgECAgcG/wP4BPr8CQH//wUG/vYMAvj/+QUA9An6+QcH/Ar5AfbwBwH/CO//9gAD9AMDBv0IAPcB+AQC/v/4BgX+9QAEAQIB+Pf5+AQKBgMMDPz+9v0DCv4Q/vr6+/z2BAD+Ag3xAfoCBfn4+gENAQkGBf31B////Pz4+fgB//UF+P34Bf39BgD8/wcCCv8DCgYH/wL1AP7/CP8ECvn/+/T9+AD//QEFAwAA9gkI7PwJB/35+PgFAAMO+QYGAf4B+PT+BAH38gIE9PL8/v/s/fz9/fgFAf/5Bg0E+wn1/gP9AfoCBPP6+v39CPYA9P4DAQP4AAnwBwL8AgEH+Qb8/foG/QAICvwA//z9AAQL+/77+QQKA//7CAYD+wMG//wB/fwBCfb6+gb6Agn//f3//g0B7wcD+voB/gMJ/AUG//kMB/35"
 ---
 
 Because of constructive criticism of some of my organization's archaic language, I [asked](http://groups.yahoo.com/group/Mission-Based-Massachusetts/message/2096) the [Mission Based Massachusetts Listserv](http://groups.yahoo.com/group/Mission-Based-Massachusetts/), a nonprofit discussion list, what terms they use in place of "poor people". Below are all of the responses I got, which were awesome!

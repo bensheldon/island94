@@ -2,6 +2,10 @@
 date: '2019-07-14 08:44 -0700'
 published: true
 title: Truths about the interpretation of falsehood articles
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4e1ac47e3e03bcc3"
+  vector: "9gH6BQMCAwMGAfQFCAIABf0NAwH7/AIEAfsC9vYA9wj8+wUKAAUIAvn2/voDAvQG+gDv/P/3+Pb8CPv/A/75CQUK/AT6BgINARcE9AgEBAEFAQMEBPz9Cf8F//QLCQoF/fgA/P3+//wK+Pz6/PwBCv30/vwHBQL79Q4IEAT3+AD/CAMB+Pv5AwcIAwoGAgID9/76+wb7Agv+/v4B+Qb++AP5BQT7/gUE+gD//AX/APP8+/8NCv4C+f0AAPkLA/cC8Qj5/PsCCQD/+/cD+QT/+wn3Afj5BgMABgYM+P//+ADz/P4B9gL+/gL8Bf/1APn4AfvyAwoG9P4IAv8EBgH6Cvv3AP8EBAIABvf0+fkCA/4K/PwBAQYA//v6Agf+//kDAPz0DgP8/vz89PMEAf75AxL3EAUIB/n/8Ar7APoB/gAE+/z8AQP5/fT8BQT7AgcA//oB/BIG9/4MBvr9CQD2BP0IBgYJAvr5BAMBC/8B+wEBCQIABgoEBPsD9AYMBAX8"
 ---
 I enjoy "falsehood programmers believe" articles for the same reason as Graham Lee, who also points out that I shouldn’t assume others approach those articles (or any seemingly common structure) [the same](https://www.sicpers.info/2019/06/falsehoods-programmers-who-write-falsehoods-programmers-believe-articles-believe-about-programmers-who-read-falsehoods-programmers-believe-articles/):
 

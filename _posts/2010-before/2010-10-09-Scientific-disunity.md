@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/10/scientific-disunity/
 - "?p=2227"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1300d9d2c576679b"
+  vector: "/g33Bvz99vcL/wL6Bf39/fP6/f75DAgC/goE/P8CBA79+/sGAQQG/QP7+wT/+QEDBAXz+//+A/4HCPr1Bwb/BgTzBf3y/wD/CAME/vP38wYEAvj+AfoA+//8BP39BwcB/f0JCQEEAQkF/fn3+fr4+v74Cwf/Cfv7+QANBwj5/QAE/vwG/P8D/wL3/gwJAgD+BvUF+gD7AfUCCAsB/AL+Bvr3AAL99f/0AQQM9QcE+QP5Cvv5DPr3//4E9wb3/P0C/wn9AwAJ+gL8CgP3AvYDCP0N/vX3AgAD/vcBBw/2/AD9+vQHA/v4Avj/Bvv88gD7/AL9AwgC+u8H/QUC+w4GAPP9Agj+B/8E/wkAAwIHAQwC+AcFAfoR/gAC9/8J/wgH+gMGDfwD+gH0AgUE/AD3AQP79vwJ9/n6+/r9+f399AAABAcCCAcG+fgE/QX8D/0D//8ECRMD+/YAAfgD+AAK/fr/+fv8A/oC/gsCAgn/A/8ABQkKDvj8////9gMM+Af9"
 ---
 
 From Patricia Fara's_ Science: A Four Thousand Year History_. She takes a historical and comparative approach to explore the diversity of scientific experience (similar to Karen Armstrong's _A History of God)._

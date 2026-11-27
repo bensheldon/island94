@@ -4,6 +4,10 @@ date: 2017-07-08 18:53 PDT
 tags:
   - operations
   - communications
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a05d1e3bd176c632"
+  vector: "AP3+BP76/wIBAgIAAwgAAQT58Af//f0C8/v7/QT5AggCBPwRAgP/+/0C/f319gH9+Pv3/AIGCA3/Bvr/+f/2BBIG/wP0BQL19AEJBwEABvkDBvv/Cvn88wUH+/sPAwEAAwn+AwIJ+wD7/P/8+v77/f///wT9BQP+AvgG/gUB+AD//f8LBP/yAgX5AwgP9gIF+Q73AQUG+foNBgf9AAL5Cv0C/ggA+vv48QAAAAb4DfnyB/0GBf8FAAYAAgQGBfsBDQj5+gb8/AP7AwL5/v8CAfj4BPz58gT//AkAAQILBAD4/voFA/4J8wUD+Pz+BwT7AvkA/AoQ+Av9Cf36/gAB+vMC+wf2AfQBCAX6AP74/fv3AgD5BP79CA3+AwUOBP8EAwL6BQgACvz9+AcE9fb4+fcACgv0BvwHBff79f4A9AD6/gn/B/T8Bv0W/QH7BA8BA/7w+gP/+hAB/wAP/fz7Bv0I/wMBAQH7/AH9DwsG9fr+9P0BAAYD/gEDAwIGAQAC"
 ---
 
 From Sidney Dekker's _The Field Guide to Understanding 'Human Error'_ on Crew Resource Management (CRM):

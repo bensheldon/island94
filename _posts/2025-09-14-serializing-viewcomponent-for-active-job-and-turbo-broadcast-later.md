@@ -3,6 +3,10 @@ title: "Serializing ViewComponent for Active Job and Turbo broadcast later"
 date: 2025-09-14 14:17 UTC
 published: true
 tags: [Ruby, Ruby on rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "31726132632741d2"
+  vector: "+Pn5CAEEAQXz+wEK+wUBAhb8+QYIAAIFAPwD9wj3Bwb7B/0IB/z3+QYG6gD69wj7+PT4AwQD/P//+gL++wIC+vgBBf8IBf39/QIC+AP4+vYB/f3+BwH8/QUA/AQLBf8AA/79B/4FCQT89v4E9wALBf8ABwT9BggFEQUHBwj4+gACCfES/wgBBAYA/gn7Cwr59g7+CAIG9/z+BgP79AL/AgUG//v89/7y+gb2+/v7ARIB+gQDCfz6/P8CD/r9/v0H/QAFAwH79wn2/wb5/v76BvoE+w8F+goB+Qn7+gH+BwAM9/oEAPr8BfXz9fwAAPz99/f+//4E+v0CBfsEBvkBBQb29hL/AP8FDQP5BP77B/kAAgL////++wz4AP0D/QL7+vYC+gj9CPz7AAoDBPwD/vL4AgEH+wUF/Pv/AfwH/AD0BfwBAP79A/v4Bv0B/gwE/fvyBP8G+v73AwYFDAAGCwUF9QP7AQj8//j2BwQC8vcBCfX//Af7/wv1CAAH/voH"
 ---
 
 I recently started using ViewComponent. I’ve been gradually removing non-omikase libraries from my Rails applications over the past decade, but ViewComponent is alright. I was strongly motivated by Boring Rails’ ["Hotwire components that refresh themselves”](https://boringrails.com/articles/self-updating-components/), cause matching up all the dom ids and stream targets between views/partials and …. wherever you put your Stream and Broadcast renderers is a pain.

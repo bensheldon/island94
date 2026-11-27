@@ -2,6 +2,10 @@
 date: '2020-11-03 12:44 -0800'
 published: true
 title: Triangular eating
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "78b087ee7d95e41f"
+  vector: "A/gB/eYC+vj/9gH5+gMN/g8KAfj//QX9/goI9AP2/wUF+PL+Af0BBP8KCvj2AfADBfz4+P/8BgUCAwEC/QD8A/3//w72DP38BwMA+wXv+wbzCP7//gP5//0D+gEA+QwO//cFBgf6A//+Af8BBwH/BAUB+P8E/QQABPv+/QL+BQD++gkACPgB/QEHBPP5BQD2/gT4AAf4Bv74AgL9BAIAAfL6/v0EBvv7BQf4/gAFCQT4AgX6BQD9/wkB9QMB/gQB+A328wr3APr8BQH6B/X+/gkF/gP3/QL4CAz1/REF/gACCAEABP8B/v74/wT9+gUJCQv+BAECAPwCCAIH/QMH9AbxAwP5+fn/+QYCDv8ABf70BQT9APYCBQgBAvzyAv8BCwME/QQF+g0CBgT59/b6Avf//wP6BAEDAgv4AAcFEwAA6/oP//L7+/34AwwGBQP/DQP2AQEC//v9/wIKCQIGBPkE/vz3Af/9/AICA/YHAgAEBvoIBQQFA/0BAwYCDPL3"
 ---
 I have been practicing [triangular eating](http://fedupwithlunch.com/2010/05/guest-blogger-triangular-eating-in-japan/) after reading this blog post from The School Lunch Project in 2010:
 

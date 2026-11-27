@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/12/gatekeeper-code/
 - "?p=1599"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0b513ddb1e8d5cb8"
+  vector: "+wL4/wkABAoBB/kKAQL5//39/Pr2+f8DAP/8/fj9+QMKA/sGBAkAAfn2+Af/+gb6+fj4+Afz/QwBB/sF9vv6/AH+9QP8AwAE/gUQAAYJCP0E9/wCCv0G/hD/CPIEAQ0M/f38APcABfMF9gwCBPkCAgALAgQBB/ML/gX5AAD7+QAADvv+9PgHAwYDAgcBDQ8E7//4Af8E/O/6BP4DBwED/QMABf/7BgcD9AgIAgb9AAH4A/n/Afr4/QEB9f4EAP8C9QP6BQUCAAr4+QP/DAAD9w39AfUEBgEBAw0F//wJAAD+BQQHAAED9AH7+v/8BP309f//9gwE7/7+APcH+wP++wP//gIFA/oMAfT38/4DCP8DAgT/+QT/AQP6AQX+AwED//n1DfgD+/8C/PAM/wL3BwL3AP0ECgkB/v39/gb/+QAA9vkGAv/+APwLBwP4/QsP/QP5BQj79wYB+v8O+gj/BQP8CAT+AAACAwb+Aw31+QMF/wv+AfoLBPv27Qf+AwcG"
 ---
 
 From a thread on whether [BASIC is relevant](http://www.reddit.com/r/programming/comments/agtjh/why_basic_is_still_relevant/c0hhwz4):

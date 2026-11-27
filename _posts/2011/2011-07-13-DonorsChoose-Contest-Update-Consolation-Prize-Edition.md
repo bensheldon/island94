@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/07/donorschoose-contest-update-consolation-prize-edition/
 - "?p=2773"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "76951648f03d74a1"
+  vector: "9/79+wgCAwUCAQAFBQIBCgn3A/7+AgcE/v/98/wA/vsCAg0LAAT0+/73/P4B9QEB/AD86gvz+gABAv/5CADzAAQF+g8A9g4AEAIMA/4ABvwA+P7+/gUE/wkE+f4DAPv6APv+CPYLBu8G/fQDEAf8AgUDCvv4AQL7AwkD9QYA8AAGCwEJ/f0AB/L4/wcMDwL69wD+Av37AgME+P8GCAT++QD3AQP89gID+QACBAIIBPwEAwP7/QQD+//+B+wFAwEA+QIG/AT+/wP3/fj5/AQNAgn2Bfv/AgHzAAT/BvIJ/wAA9gIFCwP98w0A+PsA/v36Avj68/8M/PsH+f39B/4K/Pb89xADAAH9A/r7/vQH/P0CAwAACQAEAAT8Agf8+v8EAvQFC/gFBgb/9/gKAwv6+QUBDfoJAQb++gn//wkBBgADAvgFBP/8BwAIA/zyAwP2Avv2+gEB+vUBAPr/+AL4Bfb/BAP2AvwNAAEFAPwFAPoEB/vzBv4IBAMBCgQG+AIL"
 ---
 
 DonorsChoose announced the [winners for their Hacking Education contest](http://www.donorschoose.org/hacking-education-winners) today and unfortunately [Print & Share](http://printandshare.com), the app I developed with my coworker Billy, didn't win. The consolation prize is all of the positive feedback I've received from teachers who are using Print & Share:

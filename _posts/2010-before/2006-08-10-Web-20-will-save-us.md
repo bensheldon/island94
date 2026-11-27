@@ -18,6 +18,10 @@ redirect_from:
 - articles/web-2-0-will-save-us
 - 2006/08/web-2-0-will-save-us/
 - "?p=84"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bb99eaf958f5139c"
+  vector: "+vwFAgj0+gL5AwUFAAELBwPzAv3++Qf8AAf6/AH4/AD8AgD/DAH7+/n5/f4E+AP8+/768wj3/wACAv77AvwACgoCAwAI+fMABQYD9QUBBvsN/gYH8gD8/gL8+gMPAQH7Bvv5Cf4AA+4FAwMECQcBBvj8AvkEBhEFAgP8/Qv6+gAFCv8ICvsE/vj2AwcBEA3z/f0M/QT7AwMH/fgIBQMCAP//B/0A9goC7wr+//31BwL9/QEEAA/++wb2B/0GAvn9/PwFBf8DAvz9/v4HAPcCBQP/BPkB+wj+AQYAAwAJAAD2A/sJ+vr+9QMBCAT+BQX2AvT6+g0D7wAE//37AwD99wn6CgEB9v/9BwL0/fYH+gL4/wIDBPQA/QEA/Ab3/vcJBv39DvEBAAL68fgBBAv++gQFCPoHBQAA8/36/fcIAQD8Af4FBgX+C/0HAQj/BA0RBPv99gj5+PwDAvgD+vnzAPoCCPn4/QMD/hMGBAMC/QH48Pn7BQcJ/wILAA8F+/b8"
 ---
 
   ![Web 2.0 will save us](/uploads/2006/web-20-will-save-us-1.jpg)

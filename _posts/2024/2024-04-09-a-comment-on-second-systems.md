@@ -3,6 +3,10 @@ title: "A comment on Second Systems"
 date: 2024-04-09 13:33 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "49fd3f8451d41b87"
+  vector: "+wEL+wn09AsH/vgHDPsI/Pv1A/38+PQF/Qf5Afz7ARAE/v4EBgf9+PL7Af8A+gj4+frz9Qz6CggAC/X6/vv4BAII/v77BQIA/wQHAP0JBfUHAvcG9vv6+AP8BwAM/w8BBv4CCf4ECfsG+f8B/gAC/QEAAP7+CAYMCf8B/gYGAQD3A/oJ//QDBAL+AwQEBhUB8f8H/vwCBPcBAwT++wAFCP4C+wML9wz/+wX6Agn/BAD3+QMMDQQB+wD3CQf+AgAFAgQKBwEF+ffx+gT2BgAC//wE/QMIAwEB9AcB9gINBQD29fsBBPf59f3/BgEABvr4AvT+/A8G9/0BAvX7Avv+/AYFDQP1+/sA/vr3+wMB/fr/+QYF//f7+Qj+BwYB+//6/wEAAvkA/P3q/f0J/f7y9/MBB//+APr//wH9+/UI/gAABgYHB/76BfwBAQMIBwsL/v70+wwB/fr59/r+AwL+Av8GCfMDBgf5+wH9CAL59AP9/wgD/gwI/wUB+wUDBAMF"
 ---
 
 

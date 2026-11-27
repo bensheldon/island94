@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/11/ace-advertising/
 - "?p=1038"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "328ca53c5866f87d"
+  vector: "9ADuAgMHBgAC/QYHBf/+AwT/9QcDBgYF+wYB9fcBAwAC+gr+CQQF+Ab4/AT3AgsK9gT9+wP8AvEDBfb//fn+BgMEAfv+/Af6BQP9/AcDCvQNBQQJ+/f/+wQEAP0DBAj5+gn2Bf0C8vv58P8B9gf5Bv74Dvr6BP37AQrzDP77/wACCwID/QL59wcLBwUD//7+9QkE+AQIBP8B//n9AgUFBP38B/b49f0DBAv8BwMI9f/8AgMADPgABAH8A/MGDPcF9gH1//wC/wL5/fAF/wT79ff6DPP/B/4DCAf6AvkF8gD4/PcB/P379wz+/f3+DP8BCff9AgUE+AD6AgoADQAFAwIE+AYJ/fr59wLzAfr4+P37/PYEBgf5/fv2B/3/Cfn9A/8A+gb+B/75/QEF+Qb0Cf/9AfwIBgj//QQB7wcJBAD1AQMFBvEA+wQGAQb7AgP+/PkB/Qr//fsLBgD3AQb2AAP7+goJAQcA/gELBA0H+gMF+AEDAQoA/QAI9AQIAP76"
 ---
 
 It's a bad evening when Google [points you back to your own blog](http://www.island94.org/2009/08/marketing-in-wealth-bondage/). So to get on with it, George Creel of [The Committee on Public Information](http://en.wikipedia.org/wiki/Committee_on_Public_Information) (CPI) had a great quote:

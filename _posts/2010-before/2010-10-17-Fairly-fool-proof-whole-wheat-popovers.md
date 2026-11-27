@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2010/10/fairly-fool-proof-popovers/
 - "?p=2243"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "db1c509225d6f9f4"
+  vector: "/voM/v/6/wH/APf5/vgA/An5/gAB6QT/AQL9BPkBBQb8/fr/AwkB+gcHBwEECQT8AAcAAQD8AQL1/f0G9wAA+//4+AT+CPoMAP4BCgL8+gT3/wj///4QCgn+BQf/CAIE+vT/AfT5C/gC/wUEBv8GCAoDAgACAAb6BggEAfUBBgD7CAEOA/n/AAAE/gL6Bvf3Bf4BAPny//0FCv39/AEL//UC+gL+BQMF9/kFBfwC+RUBBgX+/Ab5Bv74AwIGBPf99wb8AgEGA/oDAf/+CgUGARL4+/P0AvoFAgX/+AkE6wAE/P4KBP4I+wT5+PQB/vYDCg0K9P8F9gf9BAgF+vz58A3/AwYKAgH7+Pn1Bf8F+gUFEwH5Avf+AQLzA/v5AAoDBQf7AQP+8/4E8wsFBP4C/PwBAwL/BwT9BwgACg0JDAAK/f4CAAMF+f/y/AgAAf33+wH8A/kECvsDBf4C+wb2AvoF9wT8BP0C+QEF+AD79QQCDggL/QX3+fj8Cf/1BAH7"
 ---
 
 ![](/uploads/2010-10-17-Fairly-fool-proof-whole-wheat-popovers/popovers-500x373.jpg "popovers")

@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/11/going-crazy-over-social-impact/
 - "?p=1041"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "79b9e4e6880a25c8"
+  vector: "AQL/BgYHBf4AAAj//wIF/QT++Aj8+PkLAgD7+gAEAgkIAQUFCwT//wDxAPb7+Q398vwEAQb/+wMN+/39APn8Agj/+wjwAQX8B/kI+gYACPkL/v0J9gL/8wT++QT/+gQBAPsHBv4ECPUG/PoH/gz8+/sGD/cC/wkABwX1AQUI/wD/AAMGAP/4/v0BBQ0QCwv68/oKBwf9/f8A+PkAAP4GBwX3AfwF/vr08gQGBwcOEAT7BgQF/P349Pz8AvEH8gX/CQgHBQP7AQj6BAAI/gADAPz/BP4LAAb/B/YDA/4H+wD7AgQABf389gsI+fz/A/f1BPv++AcHAQYGAvT4+/v+AgP4+QT3+P/yAf/1BAAA+v4EAwb6AgX/ARD4+QT7CPIOAPQF9wP7/gD+8voGAwf8AgP2CO/9/gIA+wXy/PcABQAIAvsL/fwAAv4O/AQBBv0AAvb0/Qj++/z//fgBAfgDAPX+///7AgcG/AAB+gD97gj5+AH8AwEI9gQLAAAH9/j4"
 ---
 
 This week's topic in the Millenial Blogging Alliance is "How do you define and measure Social Impact?" Since I'm currently at 34,000 feet and salty about some recent Federal funding restrictions, let's go a little crazy.

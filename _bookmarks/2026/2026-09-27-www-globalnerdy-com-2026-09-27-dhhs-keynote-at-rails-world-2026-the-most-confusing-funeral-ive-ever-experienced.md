@@ -5,6 +5,10 @@ published: true
 title: 'DHH’s keynote at Rails World 2026: “The most confusing funeral I’ve ever experienced”
   : Global Nerdy'
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b1664a2939325bc3"
+  vector: "9wADAQP99wX4AvsSAf8CBwP2/gD8AP4EAAf++gH6/gYFBwQDBv0A/Pv6+QMA/QX0+/r9+An3AvcK//4AAQj4Awn8/QT+Agn2AQAA/AUA/v8AA/sH+AUABgj6/P8GBvz/Bf32CPcIBfL//wEJAwH9AQABDAT5CAoACxIGCfkE/AD/CPQH//3//vkGCAUCCQL29v0IBwP7/gMBBAsDAAT8BgP7/gP3+v73///x/AsGBwP6/AQDDA768v74CvsIAfUG+v0FBQMI+gTzA/fx/QYKCP8A+v8BAgkF8gz89wQGCQD/8/YBAvL++gH5Af4FAQn2+PgEBQgO6v4HBfgC/fsFA/3+/QrzAf77CwH7BQIL/f0E/vwDBfAC/f4CAQYCAQr/8/YH+/z5Awf0AQUA9gXu9wADAQUKA/8E+f76//UE+AD/BQH9AQgJAfwGCAL2CwIB+v/6AAf7//7x//n5Bf0MBgUBAvv9Bgj89wYB//v3+Pn7/fz9+AYLAv789vkH8QMD"
 ---
 
 Ruby on Rails won’t vanish overnight. Thousands of monoliths power the backbone of global businesses, and Ruby’s and Rails’ expressive designs will always offer genuine joy to developers who care about the craft of programming.

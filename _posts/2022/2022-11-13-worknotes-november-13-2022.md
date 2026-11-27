@@ -3,6 +3,10 @@ title: "Worknotes: November 13, 2022"
 date: 2022-11-13 12:13 PST
 published: true
 tags: [weeknotes, worknotes]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1d2539e1a6632abf"
+  vector: "Av8BAgr/+Qf/AfQC+wUHAgD3/vn9+AQI+gL4AfX8AwYHAwYNCAED/P/0/wD/9AT99/747AP7/wYD/QH2+vn6BPcF/xL4/Pz4/v8LBAABDP8C//UL9AMFAgAF+wMCAAAJA/MDBwMFCPv7Af8IAgIBAfgBCf71Dv8JCRMBAwUK/AAEB/4WAQACBfoBAAwF/Qz+8AL+CQP4+PsK/P77+//7Bfv++P/69wn+9//3BAn/CPoAAgX/CPwA/gT7Af8HAPz9/gAFCRP8/fwB/wH8/QT9/AkD+/wLAAj++wr3/wAL/gAJ+AH/Dfr99AIB+f77APf4A/gE8/8L9wQEBf31Av4A/An9CAP3+gEEAfz5/PwFAAD6BP4A9vP5AgT6BAQFAwD9/PkC9/sG9gL7/v7+//b1/vgG/Aj/CwIM/gD59fT/AwAKCfkIAPr5AgoFCPr7CBEH/AP1/AkH9QH89/YK9v8JAPkAA/sC/gkH+QQCBPj4+AT3+/7//gYJDAMB/QUO/vsF"
 ---
 
 Let's go!

@@ -3,6 +3,10 @@ title: "Consider Thruster with Puma on Heroku"
 date: 2025-07-25 18:18 UTC
 published: true
 tags: [Rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ca78b54198e5d97f"
+  vector: "//v0AwL99QH/CP0D+f0FBwr2AwH2AfoF//f6+wD5A/r3BQQMBv31CQ/19wIAAvsBBPb5CQMCBPsDBgABAgIA+QH/AgIEBgQI9Pn0+AT1+Pz+/O4C+wIC+wMBB/wBBgD/Avr6/gD/+gUDBAkJ/gcAA/4NAhEA/wQCAQMGAAD9BQD9Af349gIA/wAA9QEA+gPzBQgMBQf37/wCAQT+/AMDCQMFCPf8/vkAA//rAvb0/v79BvoI/gT+9Ab4BQAE8/v5Bv0ABwEJ9gQB+wHw/AX/A/wG8gQBCgQB+AT+BQ7++gD/9gAODQIDBv39/P3+9gkAAgICAQIGBvsFAvr99v8IBPoG+Qv/EQH+EP34B/4J+f35Cgj8AAoIA/z/AgEP+PkDBfkMAwoABgP+EfkC+f/5CvQR/P7+Cf8FBAMABf0B+gAN9vsJ+P/7/QICBwD//gb4CPz++wH++f72CAME+PMJAPkBAQ34//4G//8BAAED9v79/v36/f8IBf7zAQIMAvIE"
 ---
 
 To briefly catch you up to speed if you haven't been minutely tracking Ruby on Rails performance errata: the Puma webserver has some mildly surprising behavior with the order in which it processes and prioritizes requests that are pipelined through keepalive connections; under load, it can lead to unexpected latency.

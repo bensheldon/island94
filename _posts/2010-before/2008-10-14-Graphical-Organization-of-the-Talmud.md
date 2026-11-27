@@ -11,6 +11,10 @@ redirect_from:
 - observation/graphical-organization-talmud
 - 2008/10/graphical-organization-of-the-talmud/
 - "?p=261"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0700c7fae3bba21e"
+  vector: "Awfy+fgG8gMJBQEK//z69P4LAPwEBAH7Bgv3/wTz+w0I/vsGAAwPBf0K+gv/BPkH/P7wCgYF/P///AUB/QH9BQL6//r0Av79//z9+wH98vv9Cg8G8wEFAgP9BfkHAP4D/QEJBhH+CgP89gEC/fr5//v7AfkPAgQGAQMF/wP+/QAI/AABCfz8AgT9AQH9CvoJ9fsB/voEBQYHBwr/+AD6APfzBQMBAAT+/gAI/QQN9wP/Av8FCAMEBPcDAA0BCPoD+wzx+woB8wIEBPX/9Pn/9/31BPv3+gX7+vj9BAT5AQAA+vkG+AX8Bv/++AAA+/75AQf+AQUA/PoPAwwA/AQF9Pr89QH+BPwC+v4C+vwJ+A399vwCA/7++voEAQEFBvj3BPUD+AEE/vUABwMP/vv9/gL5+QsRAgH8AA4IBQUKCAAEAP38/voT/vsCAQ38AAUJBvf+BQoB+Pv0Av8A+/sCBgn1BgTt+gP5APIE/wX4/Aj++QEGAgX+/f3+/wIJCP39"
 ---
 
 Interesting explanation about the traditional layout of the Talmud. From Andrew on the Marks and Meaning [mailing list](http://groups.google.com/group/marks-and-meaning?hl=en)

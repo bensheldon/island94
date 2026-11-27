@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2010/11/accessible-leisure-through-technology/
 - "?p=2313"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1ee8f3a8a11091b0"
+  vector: "BQkL/gEDCAwABQgDBPsD/AH09/35BggEAwD59wAJ/wT+B/38BAD99/31/wQE+gD8+/gA/gn49/0GCgsEAfr+AgYD+gD/B/79BQQD+wH/AAIOAwID9wH7Awzx+QgABQb5Afb1BQIFBQD/A/8GAwj5/vr9Cfz0BQgIAv/5/QX49wAJCAYG/PoE/gL7BwP5BRD89fwHCAD1A/72/P//CwAA+f3yA/cF/gQD8gUG/gYCC/r0C/UFAfT4Af71A/QD/vcD/P4P/vkH//v2/wII//z9+gX7AfoEBf/zBgr//PQI+QAC9/v+CPUB9gD/+gIBB/v2BPv9/wcC/gD9AvP9/AEG/QgFAggBAff+Bwn3+wEH+f7/BBICBP38/A7zAAH++/oDAfkICgABBPj97fgM+wf0/QoBDPf5BwQA9P75+vkG+gAD+/79/v0ACw0I+P0EChEMAgD4ARH8/vr/Afv//gUB/vr1AfoH/AUC/gEIBAP9+AUEBPn+B/cJ9wsG+AAN/P4A"
 ---
 
 I always talk about technology as a multiplier of action; here is someone with better credentials than me making the same point: Kentaro Toyama writing in the _Boston Review_ on " [Can Technology End Poverty? [No]](http://www.bostonreview.net/BR35.6/toyama.php)"

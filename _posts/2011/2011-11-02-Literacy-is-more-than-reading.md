@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/11/literacy-is-more-than-reading/
 - "?p=2950"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f917bdfc6f278723"
+  vector: "A/j//wcBAQD8/AELAwEH+wP5APv++wj8/f38+wT7AQAEAQP/BgL7+AHx/gEE9/wB+AP7+AUA9PwKDAj8Afb+CgMEAwYD9vYAAQgC9QT+AwUEAQID9gL3/gT2+wb5Bwf2A/v3A/8GB/j+//4I/v7+Afn9Cv34BwoIAgb29wrz+QAMC/8MB/wKCfb7CQkADgX79/0K/wf7AQEA/P8ICAH3+QH5CvwE+gf++P/8/f0CCP0ADP/+/vj+BwL6AvALBf4HBP4MBAn3/fn4/v4C//wECA0DBvb+AgL2/wUCBfoHAQD7AvwNAAMM/Ab6Af7z/fj9+/X4////8gMK/vr//QUC+QcC/gAI//4HDgX0+PgF/vsDAREC/vkAAgf/APwA/fkDAvMFEe8CBAEF7PYAAgbz/gIE/AIHDAL/8v/5AP0I/QAA+/YBAgQH/wkEAP0AAAsGAvj9/Rf/+QEEB/wBAwD6/vfz/f8D/QEE+wMN/v0B+QP9BPMECQQK+A4I+Q4B/v8A"
 ---
 
 Below is a year-old memo I wrote for the Transmission Project was later polished into a more [general statement on media literacy](http://transmissionproject.org/sites/transmissionproject.org/files/Transmission%20Project's%20Approach%20to%20Digital%20Literacy.pdf):

@@ -3,6 +3,10 @@ title: "Persian Tahchin-inspired crispy chicken rice"
 date: 2022-09-25 18:17 PDT
 published: true
 tags: [recipe]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "901108a457f8e09c"
+  vector: "/PwB//j9/f0B8Qf2AfcD9QoB/e//9Qb9Bf0G/vz9A/8BAwH/Af8I/Qn/CvcJBwD3Af38BAL++wn5BPYC9wD/+/r4+PwDCgIIBAH9BA/7/fz+BgQG/goEAQb3EQf3AgMD/vP4BPr/AfX+AgcA/wMEBP///QQG/v/8Avz7BPcDAQD+CwX5A/n7/f8AAfr6A/35AwcB9QMA+/X5AQT5+gEA/vwE+f/8CAUH/wUEBvf+Ag0FBQgBBv8B/Qr1+wIA/fwB/wXv+v/9+voI9fj9CAH/AgkE/wD5AfgIDf/5+gsD9QD9Bv0JBPMJBAT++fEB/fgJDxEFBv0QAwwBBxAE9P4C5wH4BAIF/QL8Afn9AwEBAAD3B/7vAwEFAgYF+/n2Bgj9CgUEAAb98wcFAgb/Bv3/AwD5/gACCPwHBgP/ARISCAAH9vsJ+PkE8wf2+gUDAPb+BAP/+P38BPoKAf0D/gD8+P4LCP74BAgI/QcE//z59/wHEf37B/8G+Ab/CAf9Cf/+"
 ---
 
 ![Tahchin](/uploads/2022-09/tahchin.jpg)

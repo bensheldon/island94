@@ -10,6 +10,10 @@ redirect_from:
 - writing-my-congress-critter
 - 2008/03/writing-my-congress-critter/
 - "?p=206"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f034380686c526ad"
+  vector: "9wkN+AL/Bf0D/AENB/n/Avz18g4LAQABAP3+//z9AQQIBAP0AgIAAgX1/Qb/BQYE/fz2//sN+vsA/wP///v/APUG/wD+//4DAQoCBQABA/7/+wP//QX5Awb5/vsEB/v7//X7Bf8A+fn//wEABwUEBAD3AQT8Dgj6AP39APv6BgD/DwQCAAb9AP8I+wQP9/z//QEK/gb7AgQI9v74BQH8AgwIDQn5/AMDAAP8AwL9/gAFAQQJ+P7+Bvv8Bv4CB/sB9fP4/f/8Cfz7//AB/QcHAAb+CwIDBQAA+RT6AvoH/gDw9/r5/vkGAwMB/P8C/PsBBQLyA/4F/AgA/wACDgL0/PcT+/kIBAH8CA78BPf4/wL0Af/8EAD5Bwj7CAAH/fb8CAAH/Qv6BvP28gYG+QnnAhH8/PsF/xH2/v/0+fsEBwAD/gAFA/v/8Pf6B//9CAf+//P+C/z//AYB/gABAwHzAfsG8AYA9v0CBAEHAgH2+/YQ/f/5BQMD/AcC9wX///z8"
 ---
 
 I got one of those "write your congress-critter right now!" emails and tried to do so. But apparently Free Press's anti-telecom immunity form didn't like me: _We're sorry, but based on your address, you are not eligible to take this alert. This may be because the alert is restricted to particular states or to constituents of particular representatives._ Guess I'll try emailing him direct.

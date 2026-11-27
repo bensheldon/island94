@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/03/excerpt-sectors-of-the-us-right-active-in-the-year-2001/
 - "?p=512"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f3fc171467cdcb37"
+  vector: "BPr0/w8EA/f9/QUDBfsABv779xH2/P8K+gEG+vsBBv76BgP/CAYJ/QD0/QABCPoJ+vcD/vwD/gD/AwH/A/4F/v7//wr9AAQABPwF9AYBAPUMCgD8Bv/+/wwF9gUJ+Qv/Av/2Cfz8AQIC7PsB+AQC/vz+DfAHAgUH/AL4Bgv/6wD6+gAF9wL8Af0I/QYDFgXz8f8D/fwKAfkE9PsD/wP7BvoBCwD9+gT69gn7BAwEBgD6Af4HCff99PgMAO79Bv4B/QPw/wYDB/wJDP0EBAUC+fwDCP76Agb8Dvv4+/r57AAB8/QHBwP5/gX+AgIFCAL3AgIF/wEB9wYC/vn8Bfr+/wj//v/0/wb7+PwB//sC/gb//fgJBAMC9vr8AQcBAQH/CfT6AgoB//30+v/6CP4ABwTv/wv+Bf0DCP4G9fgGBgAD+gUG+QT/7v39APv+/fz8/QP5BAQAAPsEBfj2AAMA/vr9/Q32CgQFBQgFAf/4/gMFAgMMAgkFAf4MAAUJBQYF"
 ---
 
 With the political talk about Rush Limbaugh being [in charge](http://www.huffingtonpost.com/2009/03/02/steele-takes-on-rush-limb_n_171135.html) of the Republican party I---serendipously while cleaning out my office---came across a list of definitions for the US Right from [Defending Democracry: An activist resource kit](http://www.publiceye.org/ark/democracy/brochure.html). In reading over the list, the question for me that comes to mind is: if that's the Right, what is the Left?

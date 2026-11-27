@@ -11,6 +11,10 @@ redirect_from:
 - articles/somerville-community-mapping
 - 2005/12/somerville-community-mapping/
 - "?p=22"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e8bfacb3c17c0db3"
+  vector: "B/4J+wEH/Pz1/AYDAwH6AA8DCQL4/wMIBgsDBfz//gYLAAYPB/4F/fwBDAb8/gX8/wQA9/709AT6+wH5+/b9BgX+9AwG9Qb/Cv4JBvX6/fcL/gEN+vj/AgQC/Af9+v/09gAIBf8KCPX27/v+/QP9/fv9/P0OAv4F/f8H/fwI+wD8CPwTDvz58/MCBw8ACQL//gD3+/n8/v8ABQADCgAEBwD+Cgf87gYE9P4B+gUFAgAN/gz99AQC/PoCC/0ECQL5/gEF/AoAAf0C/vgJ8fkDBfz1+wIG/gT6/AYAAfsC+wD8+//9+fgB/Q0E+PwGB/j/DQEB+wAH9gD9Df/+/P74/wf5/g4HAv38/Pr9/////wP5BvwD/fr//f34/vf7/PMIA/399/cI/AD7/gQE/wn+/PkC/wUOCfz9+wYFBPYGAAACCf3+BfkCCwAN+AT2BQ37CQH1+/wMBQD5BQD7/fH/B/f++P/9/gME/fn7AgEPAQL5BPL+/wMHAAMEBgX8BfH6"
 ---
 
 ![](/uploads/2005/somerville-community-mapping-1.jpg)

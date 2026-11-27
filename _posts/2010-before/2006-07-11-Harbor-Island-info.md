@@ -18,6 +18,10 @@ redirect_from:
 - articles/harbor-island-info
 - 2006/07/harbor-island-info/
 - "?p=66"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "50d2a8840d58b207"
+  vector: "BgcHCAf6/vn3BwgK+QIABQnx/AIIAPkA/QAKAvn87wT/BgAGCQIL//j8Bxf1AfX3BwP5+wD9+fz8/gX8+/v+AP/89QT69wUKA/79+/4FAwMCAgMG/f76AQcCAPv7/wT/8wP4AQoJAwAAAQECCfn9BgD9+QH6AgP4CQAI/fYD/wAA//gABvT++vwE/vz0AwgAAvz9/gT1A+78APn++gj8B/4AA/D/+gL9/PwAFgP7BAAIBAH38fv+AAUB+wMABA37AQf8/f4CAwAE/fr7CP8M/gH6+gr4+QH5BwD4+AH7+QAJAAL39PoE//sB5wUCBwEDEgX79wz7/gQGBQwC+PsGCQ798wkMDP//B/b6BPQD/wYABPQCAQH+//H/APn5/vv+AgYE/f0L+fz7AwcBAvj5BwD79v8F/QcE/fsABvb//QAOAgUC//kEDQEI9wUD+AgCCvv6+QIAA/75AAQHBwj+BvX9CQD8+gAA9ggBCQMJ/Qb/A/79/A//CwIBBQv+A/cD"
 ---
 
 I took a cruise out past the Harbor Islands today. U.Mass Boston runs a ship every Tuesday that's free for students and staff, $5 for everyone else except VISTAs, who with proper haggling, can ride for free.

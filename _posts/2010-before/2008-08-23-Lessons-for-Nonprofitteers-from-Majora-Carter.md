@@ -11,6 +11,10 @@ redirect_from:
 - articles/lessons-nonprofitteers-majora-carter
 - 2008/08/lessons-for-nonprofitteers-from-majora-carter/
 - "?p=244"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "048e91564f8e411f"
+  vector: "AP8BA/4IAfb8//4I+AD9AgD+9/329gAK/AH8/P8C/gMGBgYXBf/+///4//T59AQD+/b++vb7AhIDBf/4A/z9/wcEABD4BQX2Bf//AwYDDAYKDPcK9gD/9w0D7gkC/gMD+fj6CgYI//AEAAMDAw78Bfv9Bv/8AQT6AQP+Af7/+AD9BAMGAAT7//gEBQUO+AD0+fgAAAYF+fsG+AH+AgMEDfz1AQLy9v759wMD+g4NCPz8Af0CAwD3+QECBO4E+vf/9wX2/wT7AAf6A/YB/QcIBQEB/wMA+QwCBBL+AgYD+gANAAj9Df/08QQE//sEAALxCvoF+gIHAAYDAP/8+v0BBvgCAAT59fv0A/v6/QUFAvn3//4ABf4NBAb+AgMCA/wH//gD//sD+Af2+ff5+fny+wf/A/8FDAgG/gf/8wP+AwAIAPv7/v34/gQO//74Cwb8//z6/gIA8wQBAQQH+gP+BfgCAP//BAsC/hALBvkE/gL++AMGAP0IAgAK/gED+fH9"
 ---
 
 This is more notes from last weekend's Craigslist Foundation's [Nonprofit Bootcamp](http://craigslistfoundation.org/index.php?page=ny2008).

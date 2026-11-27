@@ -2,6 +2,10 @@
 date: '2020-11-03 15:51 -0800'
 published: true
 title: 'If you can hook them for a day, you can hook them for two'
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "51a73636811e82e5"
+  vector: "/A/8BQL+EAIOB//5+QAK/AL+/f8F8QEAAgL9AP4L/gQB/v8FAgf7Afvz/wDzAQYC/AAAAf8CBgINAwUD+/P5AAYB/Ar1Agj5AvUA+wz9BgIE+gD8BP4G/w3/9wYFAAsHAAD8AAAHCAUL+PcOBQf3AQT+Awj//AMHBAQCAAUAAQDyAAP89gf5AQAIAwcEFQP5+fsTAAT9Cf35/fv9Df4ABAL69/8KAfr6+Ab9B/sECfbsAvwE/Pr18AD2+PIE+gcF+gYE/Pv/AwUA/AMHBQD4BAHzBgQC+/31BPz8/gIEAAD8+fcGCv/w+gwG8gL8AgTvAwEC/QMF/QH9CAT2/QX8BQT9+gcBBP4BAv/5Aff9AfsCBQ///vnz/AT9AwQAAfwO+gYD+wn1+QX4+/kQ/QEF+/8CCvf79fn8+foB/vcI+gAG/AgF//4I/wQNDAX/AwEEBPf4CAcB+/kA/gEIBwMDBPoAAfcA/vwE/Pv0+voB7QMCCv4IBfYB/PoH/PwH+/n5"
 ---
 I think this essay has come to mind more often than any other in the past decade of my work as a developer, and sometimes distressingly, in life. From Tim Rogers ["who killed videogames? (a ghost story)"](http://web.archive.org/web/20201111182117/https://insertcredit.com/2011/09/22/who-killed-videogames-a-ghost-story/)
 :

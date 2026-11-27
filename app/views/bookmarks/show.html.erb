@@ -16,4 +16,14 @@
   <div class="post-content" itemprop="articleBody">
     <%= @bookmark.content %>
   </div>
+
+  <% if @bookmark.related_bookmarks.any? %>
+    <hr>
+    <h5>Related Bookmarks</h5>
+    <ul>
+      <% @bookmark.related_bookmarks.each do |related_bookmark| %>
+        <li><%= link_to (related_bookmark.title.presence || related_bookmark.link), bookmark_path(related_bookmark) %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </article>

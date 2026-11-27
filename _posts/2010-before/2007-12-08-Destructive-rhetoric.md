@@ -12,6 +12,10 @@ redirect_from:
 - destructive-rhetoric
 - 2007/12/destructive-rhetoric/
 - "?p=187"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bbb33a7f03f414c5"
+  vector: "+gT++gX7DAUJ+f4DAvwAAgr7+QsLAv8AAAX6+wIF/wX+BQgLBgkD/wP5+PsC//wG+fzx/f3/AAMCCgH/Cv8DBA4CAhTyBQn7+wEE/gP8+vgDAwEB9fj4/g3+9/v2CAcA8/r7CQAEBfUD9PcF/QH2/gH7Cfr/AQP+AgT8Av/59gD9AwYM9wP0+fgABwkFAwf99/sW/gkM/fP/9AD4AQX3Cf36/QL69P769wD9A/0LBAT6+wT8Bfj2+/f6//cJ9vwB/wb6A/0CAf/9AvoF/wwCCwH2AwIFBQ37DAYC/vcB7wD8+vgLAQD+Av79/fwGB/r+BwD9AAcB9wH8BPkB+f4GBgD+/gwE9vz4AP/2/Pr9+fwDBQEGCPz0+gUA/wn+BfoEB/gH/v35Bvv6+wEMCP75+/77BwID/foEA/4C+vcI/wD5+gEHAv0M+QUKAAH+/vYFAuf+/w3+BPsF/fn8/wP9AfcB+wsCBgYFAPwBBA4E+QcE+AUHCfwA+f0VAQQK+AD5"
 ---
 
 .!.

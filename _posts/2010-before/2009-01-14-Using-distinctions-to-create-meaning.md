@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/01/using-distinctions-to-create-meaning/
 - "?p=335"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f6cbbb0b6f98d3b6"
+  vector: "Bf0DAPsBCgAQBvn4AQQH//wB9goN/wAL/Ar5+wL+AAoIBQEIBwYD/v0A+AMJDfv9/PzyA/UD/wsABfzv//UACQT5+AkACQIMBwUDAQIE9/0CBQb8AAQA+Pr98+4OBA8A/vYHBAEHA/QA8vr2/Pf8+v8CBf8F+RMBAQAEBQr6AgAF/f8RBgf6/AkI/g8HBAUA9wAF/QAM+fj5+Pj49wH4BgAJA/39+P71+vr2/gYHAP/xAgIDDPX/A/sA+gD+BAD9BwD2CgP4+gD6+Qb9Avz8A/b7/fr8/w/7/v78Awf9/AD5/fUK/AH//v759gEC+v/4Af8IBQcB5vr9Bvz5AgT6/gD79vwD+f/6+Pz7+Ar7AwP8BQj+9fsC/gX1+wYG/fcL//z4BAIC+fr59gUECvb8/vv7BAQBAfkEAgUB/fcI9wD+Cf8DBv4G/fgEAAv6CAUJAPv/Cgj+9P8A//wEAPsBBf8D/wH4/QT/BAIBBQcG/wP3BfkLAQMHCv3++wEJB/79"
 ---
 
 For Christmas, my friend [Danielle](http://verdesmoke.com) bought me the book, [_The Tree of Knowledge: The Biological Roots of Human Understanding_](http://www.amazon.com/Tree-Knowledge-Humberto-R-Maturana/dp/0877736421?tag=particculturf-20). It's getting a little long in the tooth near page 150, but I really like how they go about building up their argument. Specifically, how they define _Destinctions_.

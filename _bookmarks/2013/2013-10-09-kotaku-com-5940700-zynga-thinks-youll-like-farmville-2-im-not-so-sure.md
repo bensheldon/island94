@@ -6,6 +6,10 @@ title: Zynga Thinks You'll Like FarmVille 2. I'm Not So Sure.
 tags:
 - games
 - design
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "19b2e153e2d6cfe3"
+  vector: "AwMD/gMCBAv+BAb/+/4E+gT+AAb9+P8AA//8CPwF/w4D/P0HA//7/gH4/gIAAf8C+f4D9wIDBQIBEgEG+/gABwr7BQP5+vv8//3/AP34AgcI/QD+9fj/AA7/+REBBv8I+v77BvkAAwEPAQH++A73Afr9BwL/C/4G/QL+/gwK/gABAP0DAPgA+v0L/v8AAA/4/PoABwkCAPj8/v78Bv4ABffxCQUC+PX79QgAAwb8C+/2+gAFAAgA/gT7+QYF9gD7AQUCA/39B/0A/QQGBPn28gL87wQH+gf2Af/4/gcE/AD2/fcGAPr3AP7/8wQCCfv4CQEA/wgD+AEECPn2+wMN/QP8DQb9//78AfnwB/oMAf32CAIF//wB+AL48wAJAfEQBPv/+/v/9Azz+/kBAwIBAAD+//39Cf8F/fsDAAIC+wD/AgEECQX5BgITAQn+BQwNC/n7EAX/9fb7+QALAwYL/AMF/gT+/QUE+/4OA/kCAgT/9v0H9QYO//wSCwH//u76"
 ---
 
 So one of the things that's really funny in social games is learning how social actually helps relieve challenges or pinches in the game," said LeTourneau. "Every game has a pinch, you know, Super Mario has a pinch, in that I only have so many lives." (Again with the Nintendo comparisons.)P

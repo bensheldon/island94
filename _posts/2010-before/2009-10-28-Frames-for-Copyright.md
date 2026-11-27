@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/frames-for-copyright/
 - "?p=916"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "206b1be3d34e1309"
+  vector: "+wP58fsJBfr6/gEPA/r7AvsB9wgBAfwFCQj89wj8/P8L/wQCCfsI9Qf89wn0BgsD+gH/BAD0+fsACQL79gT7BQID+AbwA//7BgID9wD++vn+/P4D8/8FABL9Bf4FBAMCAQAACQEKAwQI+Pj7/PwA//8BDf/7/gT3AQgBBff+/QD2A/0HBv//BPn/DAD+AAEI//UQ/AEDCAXv8/74DQX+CAT9AQf79ggG+vwJ/fsE+wX9DQX//PwA9+8J/vf5CwwP9wb9/Pz9/AP6//kB/AP+/fcF/wD5/Qn8BAQE/Pn6/AD/8PcF9vj5+gb5+P4BBfr0AwEB/v8E+AkBBPX+Af4HCfz8/v0KCAL5/v8EAgH8APwQCAEDCvr7BAX/AwoHBvEDA/v9BAMA/ff++wMRCQf3/QIB/AUC9/34/fkD+/0GCwD6APwE/QUK+PkE/vv5AvgEBe/5Bgr/CvTyAgf3/wwDBAb+A/z8Bf8BAQD7/gsBAAkNBQMIDwMC/QIKAPoC+QT+"
 ---
 
 Lewis Hyde, author of _The Gift_, has a wonderful essay entitled _[Frames from the Framers: How America's Revolutionaries Imagined Intellectual Property](http://papers.ssrn.com/sol3/papers.cfm?abstract_id=870073) _about the differing perspectives on copyright present during the drafting of the US Constitution. I have written of [historical perspectives on copyright](http://www.island94.org/2007/04/copyright-and-the-nineteenth-century/) before, but Hyde outlines 3 different frames in which creative works and copyright existed (via [BoingBoing](http://www.boingboing.net/2009/10/23/important-and-fascin.html)):

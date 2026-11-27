@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2011/03/the-48-hour-mobile-web-app-drunken-stumble/
 - "?p=2501"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9732d8a3c5759ee3"
+  vector: "+/0L+gj/+//9+foDAAEHAAv5AP75/gAEBQL+BQL7BAT6Bv4C/vcB/QH3/BEA+gADAQL++Ab5+QX+BAYACf7+BgH98wEK9Qb8BAAC//gH+wIC+P4S+/wDCQcC+gQD9gcB+fj3Cv4O//UJ/v4FBwf8AQP9/QP5BA0EBA4F9QEI/gALCAALCvv9//n8Agj/AA7//wMA+/ru//4EDQEFBgL/APoCAPr47gH/8gH1+foC//kDAwYD/f/2+wL3Bf8JBAD+9vgCAQYABQQP+/sFAfwF+Qr3/v0FAAXu8hPvBvoC+AD/8f/5BPIE/gkG9QMDAQECDPf/BAII9f0EBgH9+/YD+vz5AhD5BQL6DPr8//4E7wD2/gkI9wEABQX3/gL9//sIBP4B/fcG/AP7AQAKBgP/+PsM//4LAQID/wX7B/UIAwD8B/gHAvsDCQcC/vv4FAf//v33AvwI/f8E+vwK//0BAvUA+/36+QAI/v7/Af0A/PgCAfP2/wIPAgL4BgMHAfUG"
 ---
 
 [![](/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/drunkenlogo-500x190.png "drunkenlogo") ](http://drunkenstumble.com)

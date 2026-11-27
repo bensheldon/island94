@@ -3,6 +3,10 @@ title: "Converting a Ruby block interface to start/stop methods with a Fiber"
 date: 2026-09-05 12:00 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "100b3441668fdb19"
+  vector: "9vv9Cf8B//v4/QAN+gIGAQ/9BAQOBw7/9/b5+wv6EPz5AAgOBPbzAw788QT79v36//n7+wH6DP4K/QQCAf31/QIEAA8EAAD//gwFAQMB8Pr49gP9/AUH/wz7/AX/BAgA/fn+AwQAAfcC+vkI+vcD/wYHAQUGBQkLEAYGAv72AgAF+fUH/v3/AfwE/wD3BP35AwwHBAAC/Ab8//76BAMBAf0MAQL/Aff6/gD4/v7v+QP7AgoHB/779f4KBfoD+vcCAf/9+wEI9gb2CAH8+gP4AwIG+fz1/wb6+Pz6/QP7BgAO/P8HBfYKAP39/foEAQT+//gFCvMBBv4CB/r//PsF+v/98hD3CQUAFP78/f36/fHy/AIHBvgG+QcA+f8HAgL7A/wE9v/7CQ4BAv0H/P39CO0C/gb+AgAFA/kCAQUIAgD//voLAwL//gAEAgIHBf7/BQP7/f4A/Aj4AgEBCfsI+P0M9wj2BwgMA/7+//7+8gL0B/r/9wYG+wj7+QT39wAE"
 ---
 
 One of the small joys of computer programming is reading some code and thinking _aha, that’s nice_.

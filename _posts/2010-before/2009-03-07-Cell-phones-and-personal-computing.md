@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/03/cell-phones-and-personal-computing/
 - "?p=528"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0dcfc58d7a8527db"
+  vector: "8wEO8vz7BAwJ/w4JBf0K9wHu9v/7/gH5DAIA/v8C+Q0JCfj8BAX9+fj3CAAGAAD3+PkABAcF+f4GDQoI/fn9Bv8B/QEDBfkCAgz7+wQABQICBAr/+/73AwD3/ggBA/z5/vv7AgUJCQP//gICAQXz9vIA/PgECxMI/P35+AMC/AADCf0CAPz9AAAB/gn7/w4B7f0MAgn4BvoF+AD7Bf/++vz6BwAJ9AYA9gT9/QQEAf8AAfMB//z+CAP/A/8BBvwGAf8I/f0E/fX/+QEH+f/4AAEA/QMDAwD1/xAC/P8I9gD4+f4BBfgI/vr5+gEKB/v9A//7+QL++gYBAfUA/AL8AAMEBAT4BgP6BwL9AAIB8wH1+woFAPPyAwzz/gMC8v0H+wEKBP8AA/f9+gAG/QX3/wQN//j/BAEA9ff9/e0G9AAEAAj/BPwJAw0GAAT8EBAPBvr+CA/+/f8GCfoGAgL7/f0B+vsB8/7+A/kBBAYA/AD+BP33BvsJ9gn+/wwDBvkC"
 ---
 
 One morning a month or so ago, I was listening to a really interesting story on [how the US and Japanese vise and view cellphones and the internet](https://www.onthemedia.org/transcripts/2009/01/30/07). The emphasis in the following transcript is mine:

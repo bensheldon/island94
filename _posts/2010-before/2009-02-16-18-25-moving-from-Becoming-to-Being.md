@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2009/02/18-25-moving-from-becoming-to-being/
 - "?p=487"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6b4983aff07e5f46"
+  vector: "AgEIBgcB+wT/AAAE/vkFAAT49Pz4AP4HBgf88foKDAAA/gEGCQcCAwH8//7/8wH6/fb+/QT//xEDAwIG+vv+AP7/BwMCBvkB/gUOAgX7DfoLC/YH9PQC/QUI/AT7AggB/fz9BPYCCgH7/gIG+AkB//v+CP/8BgkL/wj9BfsB/wABBvcR9QT8A/4IBwkC/QoE8f4CB//+9Pj++AP9/Pr8BwD4A/YHAf/y+AMCBAoMBvDwB/sE/vny+fr/AO0L/P77BQYAAA7+/gL1AQYAAvH9/gsH/QAS/gH8DgoE9QEK+wAO/gr1Bvj7/wT4/f8CBPv3/AL69ggK9QQD/vz//gMFBw74/gb1Avf8/vYA/QICA//6Bv/7BAYG+Qn3+AMA/fz9/vkA/vcH/gD89f71BgL3A/z8BPf5AwAE/wAC+fX8+gAJ/PkMAwP6AQsG+/oI/A0ECPr7AQD7/QL6+wD99gX+AP77APz+/gUHAvsLAwAEAAsABQEABPYBCQMN+QUKAfEA"
 ---
 
 I got to talking to one of my favorite coffee shop girls at my favorite coffee shop today. She's 23 and just graduated from College and living with her younger sister, 21, and we were talking about differences in age. In my day job I spend a lot of time interacting with people in the 18 - 25 year range---and though I just left range a few months ago myself---also spend a lot of time with those ages in my personal time as well.

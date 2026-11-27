@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/laying-out-latest-layout/
 - "?p=1795"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "256b077b02ece6c0"
+  vector: "AQsDAAcK9gH9AvgLBvkBAAgD/Q37BAUE/wD+/gD2AwUFAgoIAwEJAfn2+QMC+vcE/gD4+/32AP/8Afr5BAP1BAgA/Af8+gn+C/4D/gb6/vUKAgQG9/n9+wUF/wMBAQAF9/35CfwBBPsD5vv98v8EA/kBC/oB9gcFAgT2/Pn8AQAADfoSCgD6+f0CCAD+DAL6+wT7/fr8BfUACQf87gH3AwD7+/799gIE+AYDBwURDP4AAgcCAQEK8v30BO8OCAEDBAby/QYBAPwBAfMG/fwEBQUFAv0B/A35CAP4+wH7+gD89/j9//7y/wcD/vkCBf38CvX7/wUJ7gkGBQL7AvsA9QULAAX+/QL+BfsB/vj0APT/AgIAAPz3+Pr8BQL9Cvb2AvP89vwDAP74//wGCgr9Bvz4+wIJCvUB+wYE/wYMBAAC+foB+P0G8v8IAQH8BPz//f/2/gcE/fz+EP70Agb+C/kC/PsIBgALCPsBBAP9CQUBA//+BgEBBAYNBQMBAv4B"
 ---
 
 ![](/uploads/2010-02-27-Laying-out-latest-layout/SurvivalNews-W2010-chop-500x543.png "SurvivalNews-W2010-chop")

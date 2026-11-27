@@ -12,6 +12,10 @@ redirect_from:
 - node/138
 - 2007/08/two-stories-on-a-theme/
 - "?p=138"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3c950a7924f29616"
+  vector: "+goDAv//CAD7Avr/APv+Agf9/Qv8AwMF/Pb++wEC/QMAAfcHBQ4NBgsC/QcG/AD/APvu/fv9/Qf8+wAB+gMKBQDxAAP4/gT9CQT69AP8+QAA//sB9/UG/AT8A/r1AQsH+/r1CQAGAgj4APL//v0D/wH/AwgE/fwEAAcECgD7EQAC/QoKAAX8/wT5BQEF++kG/PoJ/vsB9/f/BAoBEgT9AgL4AAH4+Pz79QAR/PkFAQL3APf7CgAG/gQQ/PsB/PYK+vb2/QkB9gX4Cfn7+v77+gME9AoG/wL2BAAABAn9+AACBAYQDPX+BAD69AMC/Pz2/QH8/QMM/vj8CQQK+P0FA/j7/gQD/PkF//0A/vz5CwUF+/f4/fsE+AL9CPgEAvoF/QQDDPkIA/T7AA0DAPT/8vvpAQIE+v//+/8DAgb1BwAEAPr/BPYC/foJ+wcGAhEAA/b6+gkAAfX+BPoF9woFA/8BAP/8/Qn6Af8FBfz5Bgj4BQH7Dv39+/8C+f8OBf78"
 ---
 
 _I recently had an idea for a story and upon going through my other drafts, realized I already addressed it, though differently. So here they both are. Also, the second story is not a criticism of the Buddha---though if you asked me, "Surgeon General" is a more apt description than "Great Physician"---or Jesus for that matter (or anyone else that calls themselves a physician)._

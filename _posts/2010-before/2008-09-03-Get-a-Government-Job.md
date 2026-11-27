@@ -11,6 +11,10 @@ redirect_from:
 - node/250
 - 2008/09/get-a-government-job/
 - "?p=250"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "03fb72157e82d8f2"
+  vector: "+PoB/gcKCfr8Bf8EBf3+AQQCBgv7BQwB+v379vv+Avz7Dwb8AgcH/QTt/f/88woCA/b7/QMG/vf7/QIF9gH9BPMM/gb/Bf8F/AX6/QkJDvwF//wBBPv1/wkB+QAN8wT+Bf/4Bvn9+f/8BP76/wb8/wf+CP4CBv4F/gH6/wT59AABBwMH9A/5/gIG+wP9DAX/+Ar4/wgH/wcD9wT5CQH8/gYFBP36/Pr8/AgECAT+Af70BQAP/vv3/AP+/P/+Bfz0/fzz/QIGAwYE/foA/v0B9wL5CvsGAgP2Bf74+wH6/gD07fwLBQEG9AP++/4L/gT4Avj+/wcL+xj5AAH5AAL1BPoH//8E+/z+CQL6Ae/48wAB9/X++gUDAf39CAf9CAH+A/UBCf37B/j9AgAC//P4BAHy+fwCCgkCAv/+9f0C/gAFAQcHA/f4+wH4Efz3/w4DAg38+PkH8Qf/CP8FCQr3/vf//gj6/AYH+wgF//sA9/4H/P//AAMJAgX+9wEL9AMF"
 ---
 
 I've been thoroughly amused by the vetting process for political (and supposedly un-political) government positions. Recently there was the [vetting for Sarah Palin](http://www.msnbc.msn.com/id/26527513/), VP for McCain's Republican ticket:

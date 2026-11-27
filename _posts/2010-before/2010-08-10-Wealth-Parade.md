@@ -10,6 +10,10 @@ redirect_from:
 - 2010/08/wealth-procession/
 - 2010/08/wealth-parade/
 - "?p=2121"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "77fc76dec946d089"
+  vector: "CQALBQcC+gYHBAEGBfv9/vv7+AcA/AcFBf34+/8GAgoSBv39CQkH+Qv3/v/3AQH7+v76BAT9CAEA+gcB+wX9/hD4AwjuDAUA+AAC8/wD+vwF/AD8+gAB/gP79v36CAoH/QL8CQEDC/gE9/0G9wH5+QEEAvwC/PwACAf7BQcCBwD79gIM/AP1AAQCBQUDAvkAAQH7+goABQD49//9AwD5CgL19vwGA/z/9AL9//sICwf1CgH8BPr6//f69PwIAAAH/wf6CgMOEAX6AwQCBgL/BAn+BvsH/wj8A/349woB9QD4/gYBA/8FAPYB7vwSBQX6EPID/Qv89wX6Bvj97Pj7+P739f/7+fj++vX8+QIBAQEF+gQHAAv/Af4BBgP9A/sHAPwC/Pb9A/z29/4TAwYC/gL2AfnzAQb1/QD4/foAAQAFAPr/Af8PCQQL//8JAgABAfL6AgAEAvsABwAB/f0B//v/AAH3CQIA/v8EAwr6+xED/AEACfwK8wMJ+AQM9vcE"
 ---
 
 From _The Number's Game: the commonsense guide to understanding numbers in the news, in politics and life_, by Michael Blastland and Andrew Dilnot; on wealth and averages:

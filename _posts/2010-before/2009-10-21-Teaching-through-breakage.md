@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/teaching-through-breakage/
 - "?p=837"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "830c16239ae802ea"
+  vector: "+AIIAQP2BAQI/wIGBf///gX39f70/f0IBAL8+P8B+AQGBAP6AAj4+Pj89gcA+wX9Bv75/AD2+wAOCgAE9//8BQYD+//+DPoEBAUH/v4AAQAG+gAEBvUH+BH3BQAKAwoA/v77Bf0GBvf7+vwCAQL3+/77AwECA/8JAgMA/QUD9wD+BfwB//z9DAMEDQwH/gj9+AL8/f35BgL1BgUGFgH6+/3/+wIF9Aj79AAD/P8FAfvuAvMJAgv19wT1APYCAP0E9foCB/cC/ATz+Pj+/wIJ9Q71CgH+Av73+g4A/vsPDAD8+PkF/AD7/QT99AX4CP73A/8E+wAK9v77Av/+/AD7/wAD/w/+BvgHA/75/Af3//UEBfwCCfb2/wb9/wQBAP8CAv0FB/8ABwT08P0K/Pr1+ggBBwPy/QEG9f39//sN+AD//AEFFP31DwEGBfgECQwJ//71AAMJ/v8A+v8K/v/2AAIDAgT+AwX79wIEBQAD8QAFAfsHBgUK/QIE/Q8B+/kH"
 ---
 
 A great comment from [Tom Wolf](http://nonprofitable.org/) showed up in my feed reader; left on a [quote](http://simonwillison.net/2009/Oct/19/upgrades/) by [Marco Arment](http://www.marco.org/217159338) on [Simon Willison's blog](http://simonwillison.net/2009/Oct/19/upgrades/):

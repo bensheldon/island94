@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/09/nonprofit-social-media-literacy/
 - "?p=2181"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "731defc9494af614"
+  vector: "+gL8Ag4CDfv/9gEICQIM/wb28wPx/AAE/fb3+vgF+wQLA/wA+AACBAL1+QAB/wb7+fkA/QQA+fIFAQYFA/f5BAEHAQn9AwkEBgEJ/A8BDfwEAfsJ/wP3/QED7gEP+QP4//r9FPkFCPkD+foHAQT//f0ECfsFAQoCAwf9AAP5/wADDwgCAgX3/voFAwMGCQb1+vz/AAsA9gX58/7+BAH0BAQACfsB+gL8+Qr8BAEQDPoACAMC/Qf6//33BvUDAgAG/f4CAf74AAT4/fYE/QAE/wj5DPf7/wj7B//+CvwJ/AD19gf//wEI/gAKAvT7CPz6C/r3/f8G+QQDBgYE+QL7/QP7/wb7AAb1Bgb4BvMD/v39B/38/wX8AQcE/wH8CfQI/PX/AgD/CQD19vj9BAbz/QIADPcEBf4G8wL5+wEMBAD7/f4JAv0A/wQJ/gL3AgP+A+75/v4B/PoHAvX3CAAB+/T7AP72AgID/QoLAvf/9gT4+/j9BAoL8wMIAgkO/f0C"
 ---
 
 A [comment](http://lowhangingfruit.us/2010/04/19/social-media-avoidance-excuses/#comment-616) I made back in April on a blog post entitled " [4 Poor Excuses for Avoiding Social Media](http://lowhangingfruit.us/2010/04/19/social-media-avoidance-excuses/)" that asked the question "Are there good reasons to avoid social media?":

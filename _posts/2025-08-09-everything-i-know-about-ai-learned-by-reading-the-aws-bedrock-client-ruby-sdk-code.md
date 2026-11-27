@@ -3,6 +3,10 @@ title: "Everything I know about AI, I learned by reading the AWS Bedrock Client 
 date: 2025-08-09 21:28 UTC
 published: true
 tags: [Ruby on Rails, AI]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7be772468391af54"
+  vector: "8vv8AQ79AQcFA/QCCPsGBRH29P8EA/wA9Qf89gD5BQUEBv4LA/n9+f76/AAJ/v70/P7x+wYD/PsBBPkAAvUEAgYH+AQC/P7/+AIE/QUBCPT8AP8K+v/+BAgD+vYLAA0I/fb4BwANA/P//P0IAP39BQD6Cvz8AQwKBQYBBAn/+wACDP8NCPsBBQAG/A8DAgn69QUEAAnyAvwQ/gP8AwP5A/v+AP769v///gT7APgCBPz59wEDC/wD9v39BwIDAfsJAAP9Bwn8/wf5+P32//YBBfsD/wj//wL8+QD3/v/7/wD99vkFAvoBAAP+9vwB+v759fMHAP8H9QICBfMCAfr/+/z99ggHBf7+Cvz0/v7+9AgB/AD9+vz3AAgA/QX8/wL+AP0F//z/BPz6BQcGA/X4+f0DBgkSBwH//QHv//IL9gD7BwMGBQT/AwH7Avn3BwwLBf35/A4D+fwK/fsD/wUB/wEJCvv+9/8AAQn6Agr/9vUBBQD4ARQQAwjxBg8MAfwE"
 ---
 
 *This essay is a little bit about me and how I solve problems, and a little bit about AI from the perspective of a software developer building AI-powered features into their product.*

@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/10/dont-confuse-online-with-twitter/
 - "?p=2241"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5258e741a0d1a3f9"
+  vector: "/fL9AQf7+gEB/gAH/wMU/gb8+v/8/wACA/b7Af8JBAYCBPwF+AD6//jyAwP8AQIF/P/8+wMF8f75AgUABv0FAv8LAg8I/wIH/AH+9Qb6/AgH/wb8/v36+/kE9QwBA/36+/0DA/QGAAABBwAHBgf5Afr3DvwBBA0ABwT9+wgB/gAMDgcH/wP5//r8CAMJAwv5+gIG/v/3/gUAABD7BP/7/vr+C/v8/goA+wT++wEQB/n8+wgB8wb6+vr4DfUG/QQC/gH8/AH5BgH4+vsEAAIKDgf2//0K+AT9AAf4BfoE9QD//f0BAgUE+QkO+vr1+gD7CPXwAvz99AEGAQQEBgD//f3/+gv5+gj5Dfz4/vMH9PzyBAkF/vv4+QEA/AID///7Bu8ABfwIDf8B/wf2CQv/+wAGBvwIBf0FAPn8+/8BAwD78wQP/gcEBQUC+wIGCv/0/e7/CQUD8gcGCPr6A/36APz+APz6/v0J/QcHBf4E+Pn7/vf9CgX9/gcOBAgK++4F"
 ---
 
 My [advice](http://www.publicconversations.org/blog/2010/social-media#comment-1270) to the [Public Conversations Project](http://www.publicconversations.org/dialogue) (who are awesome, BTW) in response to them [posing a question](http://www.publicconversations.org/blog/2010/social-media) about social media and "Can real dialogue be practiced online, modeled in a way that will shift online conversations from torrents to curiosity, from blame to understanding?"

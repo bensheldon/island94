@@ -2,6 +2,10 @@
 date: '2020-10-02 16:56 -0700'
 published: true
 title: Performance facilitators not supervisors
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9844b2684af69828"
+  vector: "9/n/Af8ACwAE9wMEAQYNBA75AwD5/Pb//vn5+wUE/Aj+BQgNBwv9AwX9/PwB/AIH7vr08wsL/AACBP8A+vv+BPwH9Qb6+/37AgUI/QcAEPYEBvz/9/sB+gME/gT9/wcA+vYKBP8F/QD1+/sFBgz+//74BQX4DAn6BwcC/P8B/AAABv0GC/4ABAH++wcM9vz++An/AAII+woB/wMCBwMAAP8GAQj59AL/9AAJ+Pf9AvX5BvkCCQYH+wEE/v8CA/ME//AA+wr8AAUBAvn4+wr+Af3+A/8B/gECBgr4AwEP+gAE+voBBPcF/gH09QH6BP/4BPsD/Q4B/QEF/w0B/gT/+/kGAAP+9/j3BQD4BAAAAfv6/fj9/wDu+xD7+/4M/wEFBQD+CAj7Bf/0+/wD/fP2+vv7BgEBDgQMAv8B9fsOAAD4Bgb9BvP/+wcD/vEB/BoBAAbzAwMI9P/+//sI+v72CwL3/QX79Ab/+QYKAwEB9gIF+PwBAv8H+An/+wYCAQ0D"
 ---
 
 Doublespeak from Pro-Publica's ["Meet the Customer Service Reps for Disney and Airbnb Who Have to Pay to Talk to You"](https://www.propublica.org/article/meet-the-customer-service-reps-for-disney-and-airbnb-who-have-to-pay-to-talk-to-you), via Pluralistic's [ongoing chickenization coverage](https://pluralistic.net/2020/10/02/chickenized-by-arise/#arise):

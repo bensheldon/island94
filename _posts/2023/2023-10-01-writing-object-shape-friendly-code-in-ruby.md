@@ -3,6 +3,10 @@ title: "Writing Object Shape friendly code in Ruby"
 date: 2023-10-01 08:05 PDT
 published: true
 tags: [Ruby]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0407d29beb4d1ba0"
+  vector: "APz8CfoA/vr5/AIHBgEKAw8B9f8K/P8N+/wCAAPyAQL9CP8IAP4A+/8C+gEBC/4A+uwA/ff+AAIK/f/9/P8K+vz3AAYDCQYJ/AMBBQX+9vvq//79BfkD+/8KAgUMAAX/BvT/Bf4HEgYF+//2Af8IAf4F+v3//wgHDgcIA/4B9QD8AfQF+QX9BAkC9QX8Agr8+w72CAD99f7+BQL4+gEGBAEIBfYGAQHyBv0DAvz6/xH8/QQACAP7+f78//wFBP8E9fwAAQUC/wvu+P/yCP3++/0L+/zwAwz++An5+QP/BAAB/AYJBPz9+Pjw8AAB+QgC9/QFAfMD/fz6BPT+BwP+//8C7f//+wcCEQD2CwEDBAIE/wD9+Pz6APr9/wL9/gII9vsE9Qj7BQr/+/8GAAD8AfcD/wn8/wUM+gb8CP4K+wAA/wYOAf0EB/8G+wn8BAED/P74B//8/f/7+QEHDP4JCAQL/v74DQEEAv75AP/++/f/C/YG/An4BA32BgX5+PwB"
 ---
 
 **Update:** Jean Boussier wrote a [deeper explaination of how Ruby Object Shapes are implemented](https://railsatscale.com/2023-10-24-memoization-pattern-and-object-shapes/) (and more up-to-date for Ruby 3.3, unreleased as of October 23, 2023) and when and how to optimize for them.

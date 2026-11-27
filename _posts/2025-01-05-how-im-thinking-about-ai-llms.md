@@ -5,6 +5,10 @@ published: true
 tags: [ai, opinions]
 redirect_from:
   - /2025/1/how-im-thinking-about-ai-llms
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c707c43842cfc7a4"
+  vector: "Av/+AQgCAgUMAPwADfn8ARD59PcGAgoC9gb5/QP7AQoFCPkJ+wb7+vz5/AIO/fr3+v/u+v4B+QEFAvv59fH4Aw8C/Qb9BAAB/Qv/BwD8CPsAAAUEAQEIAwQD/u8BAAcP+vP+CAQJCPH8/AUGBfX+BgEABf8C/gEIAQMABAX7AAAICAEOAgEACAEG+wUEDAb8+AMAAwj6BvgDAwX++gPz//7+AP37+gb9//8B//f+/vzyBgUEA//7BQD4AAECCPsJAwX7BQ37+f31+AP5//YIAQn9/Pz9+AHx+wH7/v4H/wD/+fQO/f8AAv/29/8D/Pv5/v4HAgEH9AADCvwFAQUBAP8D9QUNBf8FDwT1/fn69AAHAv4B+v7x9v34/gP4AgX2A/gBAQH9CAH3/wYF/PH28wb9AQ4CBwEI/AUACPsO+gD6+gQKB/r/BAD0DP3t+wkJBAD3+woB9/8H+gAL+vsBAv0FAgcH9wb6/Qn8/gH7/vEA/QL+/goFBQf+/g0KCQD7"
 ---
 
 With AI, in my context we’re talking about LLMs (Large Language Models), which I simplify down to “text generator”: they take text as input, and they output text.

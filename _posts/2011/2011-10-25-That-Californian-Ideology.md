@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2011/10/that-californian-ideology/
 - "?p=2928"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "270fd4564c57fd38"
+  vector: "/f0A+gUECPsABQQKBvf+//zt/An3+/YIAgIB+fwB+QgDCQcDBv/49wLz9wb8/gn5+/b5AAr/9/wGCAQEBvP9AQoJ/Aby//0AAQgG7QgGCP0P/fcC9gH2ARL19QEB+Q73AP39BwACBvr++PcHAQb/AgABBf/3BAP//P/2AAT67wD+Cf4HAQEBAv3/BQf9Cwr58/gH/v8J//r99vsEBQP7CAQBCgIC+gcA+wsA/wQEDPz9CfwMAfQB+vkBAfUFBf4G9gUFBQQIBf78AfwN/AX//gH7AAIHBgj+CAT5+v8D8wD58/UJBvwD+P7/BP3+BQP6Bfr8/QQE9wYABPoE/gD4/wAFAQP/Af76Avj2APQB+Pr/AgoHCvv2/gEC9wsEAP0EBfsEB/35Bfbz9PUF/wT6AgH7BwQDDfz7+v78+PMK/AAC9gEBA/4F/wAK/fwADQQHAPv2AQwFBvv/Bfn5Awr4//D7/foAAgL+AwcBBgX2+QUHAgIJBwQE9ggI+A0H/QcA"
 ---
 
 From ["The Californian Ideology"](http://www.alamut.com/subj/ideologies/pessimism/califIdeo_I.html) by Richard Barbrook and Andy Cameron who ask the question "who would have suspected that as technology and freedom were worshipped more and more, it would become less and less possible to say anything sensible about the society in which they were applied?":

@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/but-licensed-in-how-many-dimensions/
 - "?p=748"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5cd6f6a9092cbbd0"
+  vector: "+fcB8QoF+gMKB/0I/wQF/AUB+AD5BPwHAPv2/Az9/wcHAgAI//v1/wX3+wb7/QT6/wQC+gT++PADBPsBAPz1AQcB/Qn19QX6CAQGAAYJBO4EBwYA8/8CAg7++gMR+gIA+/ULA/oA+/YEAvkFBwgCAgX/CgP29wnz/v0D9fv5+QD5BAcGCf4EBO8DCBADBv74/AMGBwP8AQf98fz7CwL9AAT+BgX3+wECAvkB/PYAAAAKAQgH+voJAvgBA/z7AP0L/f39/AP9AAb39/n3/ggNCvwIAAD4BAED+v4B/wABAAD/+wICCQX+/wEBAfz5/vjz+/j8/gQDBAgE/fQEBQQAAOj1+vYEB/f2/f39Af799v4K+wT4Cv0CBgQJBgQJAfAI/P4GBPkEBPn/8v8LCwD7+wYCBAgH+Qnw/gP7+vkGDAAFCfP8+P8E+wIKAff7A/0DAAH7Av4EBvD5BgL8Av4ABff8CPf4AgIK/woDAf7/+AkBDAL/Af0GAQQC/wMD9g79"
 ---
 
 My boss came in this morning to gripe about how a media service, [Mixcloud](http://www.mixcloud.com/), wanted her to upload her media to their service, rather than link to where it's currently hosted. As always, the reason was in their _Terms and Conditions (snarky emphasis mine):_

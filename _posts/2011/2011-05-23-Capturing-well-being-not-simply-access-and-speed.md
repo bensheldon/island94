@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2011/05/capturing-well-being-not-simply-access-and-speed/
 - "?p=2433"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a1a3b0448c27bd3b"
+  vector: "AAUGAQIB/wf9AQsOAvoG/gf58wP++wX6APf29wYIAgsHBPv+DgP9+wHx/QQG+ggA8fj5Cgv9/AACCAEI/Pn//ggC/P74Bf8BAgMC8gQPCQAI/vgE+P769/3zBQYCBgX6AvP2Bf4H//oE+v0G/wr///wI++37/AkIBv7+AQQDAgABAwgC9Pb4AAYA/QoEDBD+8wEIDgL0Bf0LAfn+CPwH+gTxBfoFAAD78QIK//4BAv75CfsI+Pb3/fv9Avv/+AIBBgkF/wME//74/gUIAgT//wP8BvYGCAH8Cfv9APUC+gD8AAACBP4A+gMB/QMKCPv/AvcAAgMDBAz+A/D5/fAB/QEF/AIBAfz8AQD1//sDAAb7/RIFAQb/Awfx/f75/+8DAvQH9wb3AfIC9fwPAgT1Bv/7BfL7AQTx+QjrA/IB/gAPBQH9/QH7Bf0FAQX9AwEIAv/7BwsEBP8FA/r++vwE/QP/Av4AAQsDAgcCBP73+gcD/QD9//YF+gb9/gQE/P0C"
 ---
 
 In January the Associated Press had a widely run article entitled ["For minorities, new 'digital divide' appears"](http://www.denverpost.com/recommended/ci_17041068) by Jesse Washington. On the [Digital Inclusion Network](http://forums.e-democracy.org/groups/inclusion) commenter [Jeff Smith](http://civsourceonline.com/) wrote of it:

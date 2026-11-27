@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/10/no-wonder-you-werent-good-at-it/
 - "?p=2249"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bc3978352054a9cd"
+  vector: "BgQG+fAECQIIAwMCCP3+BP3/+/7+//wEBQ379vsD9gwG//sFBAb+A/0G/P/68/v69/35/vr4+gMHDgYG8PoB/Qj//f37DwUDCgkN//r+/v8B/QHxA/r/AP74//37Bg8HAPz+AQcEDP/+9QcG+fEH+wILBQUFAgEHBAL6Bvj89gACCgcBCfX7/wsIBgMJDgoC9vsFAf4EBvX4DAH6Cf/9A/72/f0JAwD4AAH8/wANBwb+AvgC//gLBwcA+fkDBAUA/QL79wrz9P34+//6BfUD/gb8/vX//ALw/AH6+QAB+QD8BP4FAQcA/gQCAgD/+vjz/RH7+vYC/gL1Avb59QUI/QTw//0DAPYE//4K/AADBwj3AgT+Bfj+AQL4AQ4A/fz4A/35Cv8HBAX4/vYC+f/4/gj++vz//gP6/goECf3/AwD7Bf74BwYF+fgKAfX8AAMGDAf7AQkGAfb3/gUF+gf9BAb79/YCAf8C/AUBAQL2AAUBEvUB9/sH/PcO7AQEB/z9"
 ---
 
 From the introduction to Paul Lockhart's _A Mathematician's Lament_ ([PDF](http://www.maa.org/devlin/LockhartsLament.pdf); it's also published as a book which is how I discovered it):

@@ -13,6 +13,10 @@ redirect_from:
 - articles/web-2-0-produsage
 - 2008/12/from-web-2-to-produsage/
 - "?p=276"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1efce76b1d7e941a"
+  vector: "A/j+/AT7AAYABggDBAEJ/gPw//v//AH++wH8+wn3AwYHAQIIBwL7AwP48v37/AME8v/49QD8AwH+///9Avj7CQ4D/Arz/QD//AkJ+QT///YIBP4D8PwE/AP69PwDAgACAPwDCvoCBPP8//sPDAX1A/v/CP/8Bwz+CAUA/AL++AAFBwAMBwD//vfz/ggABBT4+QUP/gYBAQIB+wACBAIEAf8IBAb/6wX/9QX////5B/r/AQIJDv8BB//6BP0DCPsD/QcBAwr9+gL8+/kE9fgGDP0C+/r+AAUABAr+AvoJAADx+/kIAAD79f0BBv76BPzyB/z//Q0G7wQMBf7+/AUG/P36/gX9/v36AAD1AvoA+/4B/gYIAvD5/gMA/QUAAP4JBf36CvsEAATz9PwD+QT5/vn/CvkD+wD++/v29fUM+AD6AQUKCQABAAAM9gj/CBEIBv33AQ/59gAG/vsC/AP8/fYBDgD8BP4A/gsKBwgJ8Ab6+f3+BAEI/wkC+AUK/QwA"
 ---
 
 **Fact**: I now feel uncomfortable when people talk about Web 2.0 as a philosophy.

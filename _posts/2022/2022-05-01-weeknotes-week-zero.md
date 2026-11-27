@@ -4,6 +4,10 @@ date: 2022-05-01 19:41 PDT
 published: true
 tags:
 - weeknotes
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "87f20e24d06de028"
+  vector: "+fQCAg38/gcD+/QLAv0EAQH6/AL3/f4I//32/fv2/AYHBwETD/n8/AD4+Qb//wr3/P398Qf3AQH/+wD5AQMBBQX6/Ab+/f39/gIDAAQGCP8G//gQ9AQCBQUC//4R/AMCAv74C/0HDvr4AgII+wAG/AD9AwH1AwoGBQwCBv8JAgALFfwK/f37APsABBAH/wH18v0FA/3/+AAF/AD7Av/+Bf//BP0A9wT+9/70AAcGBvsA+P0CCgcA9wP3BfkEBfwJ+PoACg7++QH2Avv8+/0FBgME/AUNAwn29hD9//4IAwAD9AEHAP0F/wsE/AP8/f3w/QcBAf0J9P4FBv77/PQEBP37+QrzAv3/Cfv59/sB+/z0Av38/PEG/QQC+ggDBwAAAfAEA/oB/Pr3AAX9+vr2/Pf+AQcFDQQMAAL5/P8I+wADDPsDAv3//v8JAvz5BQYS+/75+QMG+f75+vkEAPkEA/r+/fz8+wwA/goHAPUB+wL18wH9/A0MBAQJ/wMD+PgD"
 ---
 
 I started a new job midweek this week at GitHub, managing their Ruby Architecture team. I love the team's mission:

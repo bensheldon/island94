@@ -15,6 +15,10 @@ redirect_from:
 - articles/node101-weekend-new-york-city
 - 2006/08/node101-weekend-in-new-york-city/
 - "?p=87"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5017b8bbde8f7efe"
+  vector: "BPcL/g4C/Pn1+wEI/Ab++gf5/f8A+QgACAL/AQH/Bgj9BQEDC/78CQEBCv0A/gD7BAP99wIB/gH9BAgBAfoBBgQE/gsC+PwG+AP6AgH6+wYJ/QMA+AD3AvwA6w/+/Pn6+f0BCv4DAvgF+QcGBgb8Dff6CwECBAH+CQD7/Pz+AQAKAwMFEwj8Aff/AfYAAwP6+v8ABP39/wH3/goEFPv7BAEFDgMD9/j7AgXy9QMG+/36/v4J9/z9Bw33CQIIAwL99/4H/wsCAAL9+wII8f8BDAz6Bf0CAAL7/AsBA//+BAD/BfT3APz7/QkEAvL6AgD6B/f4CAkC/f8AAwsV/vv79Pn9BQ4ABAHwAv73A/wD7f72APT/+AIA+AALBgL//PYH/voF+/0EAQcB//z7Agb8/QID8wUOBA4M+QcGBfH+/wD0/PYAB/0FAwoHBP8CA/74+vwBCv/6BAL/AP4GCPz3CPj1+v/8/wj+9/cLAQEE/vgG//T+/wAF9gL8+wr/AfAB"
 ---
 
   ![Node101 Weekend @ MNN](/uploads/2006/node101-weekend-in-new-york-city-1.jpg) [video link](https://web.archive.org/web/20070308074255/http://node101mnn.blip.tv:80/) · [fullsize image](https://www.flickr.com/photos/bensheldon/215234231)

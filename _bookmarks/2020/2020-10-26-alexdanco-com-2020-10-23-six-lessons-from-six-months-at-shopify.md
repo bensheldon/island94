@@ -4,6 +4,10 @@ date: 2020-10-26 02:52 UTC
 published: true
 title: Six Lessons from Six Months at Shopify – alexdanco.com
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "565e8e0dd513d02c"
+  vector: "Af8E/gEHBALx9/8K+v7/BQf99/n5+gcH/Qf3+gD+DgUJAP0QBv8J/wX/9/wF9AoC///89/z6/QQHBQb7+fb/A/oBBQj5Bv39AQEFAwD6CAP8A/gI9/wE/wn6AwYC8QIC+P36AAQD/PIB+f0MAAf7AQIEAgn6BAUPBxT/BPoFCAABEQ0PA/sGBPoPCAsC/wL49/n+/gLz+vkJ+gUECf8CBv389fz0/wH28wP+/QMBBvT9Cvz6CwH29wD7AfcF+/YL+QL+Bgn8/AkA+v4C/fYAAQkFCQUMBQsB/Aj+Av0DAQAMBA4ABP/4/AD7+AgC/vj1Bf4C9v398wP6BQP/APz5/Qj3/f36AP8CBPv58//2B/35AvYC+gADBQv2/v34CgT8//MGAwL//gwB9fn7A/71/wP+//0EDwL9/wH3AAQHAAAG+QMEBvr1CQT4B/j6/wj9DwL2+gD9/f0E/wkN/v7/+vf79vUD+gX//AQIBfcC+v8BAP0DAwMGBQP+9gv++foG"
 ---
 
 “In your first 6 months here, here is your number one job. Familiarize yourself with the dozen senior people at Shopify who have the final call on really important decisions, from Tobi and Harley on down. You need to familiarize yourself with their operating philosophy around business and around how Shopify works. Go consume every written memo and every podcast episode (we have a great internal podcast called Context) they’ve ever done, get inside their heads, learn their perspectives and their preferences, and learn what gets them to say Yes to things.

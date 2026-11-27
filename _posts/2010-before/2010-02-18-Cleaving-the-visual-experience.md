@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/cleaving-the-visual-experience/
 - "?p=1774"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "69a68a40cc62e4ba"
+  vector: "AwwAAwf8CAMN+wP7BAL/9wD+/AUG/gT5AgX89QX3AAEFAQAOCf8G//wD+fwAAgcD+Pzu+/j9AAoFAv/9+gD9Cwv/BPr8AQkDBPr+Av79AfQK/P7/+/sF9gAB+PT1Awn5/f8ECgcHAvwC9/X49wH6+fwCBP7++AH6AwH+BAHvBAD/AP4BBAL6/AH6BgX9EAYG+QIDAPgIAgD8/gv79wP3CAL9BP4C9v0DAAL9AAUIAwTyCAf9Avj6/v/5/vEOBgUJAwr0/Pj99QP9/AEF/wD7CO77/vz8Ag76BQQBBv779QAAAPQN+f0CBwL6/vv69/j4DAH2BAUK/P/+Cwz8+f8C/gD/AQcQAfr+AgL6Bvj4+v4CCAj+CP77/P39BgkIAvb9BQH0CPsFCPz9BgUHAwb7/P30/gUJCO71A/4A+v39CgD8+wT9CfYH+vr+AgMA/wEPBfP8AgH4+vn8CP38Av4MCgX9/P/+/P7///4CBAcBCQL5C/0FCA0B8hAL+Q4YAwP8"
 ---
 
 From Jacques Racière's _The Future of the Image_ (translated by Gregory Elliot):

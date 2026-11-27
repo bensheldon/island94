@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/11/my-nonprofit-facebook-strategy-and-tactics/
 - "?p=1001"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "02a53899f428c54c"
+  vector: "/vv+Ag36+QAC/PkDA/wC/gj+8vvz+QkJ/PT8/vv6EwECAf8I9v/++gL8/gsEBgII/PcD8/3//P37/vv8CvoA//wB/Af8CAIFARAH9vz8AAUG/QcC//gA/f8N9QsJAfcI9v/3Cf0JBP4DAP4J+AUCDPn7AvYHBg4EAwkG/QEA+AABDwQI+Qj9/P75AQUNCgj4/QEB+wn09AMHAAMF+v/4CP/9BfsC8wj++gX3/fwQ+/z//A75/wz89vv3C/wI/wUBAgX8B/z1CAH29vUCAPz7Ag39/gAE+Q/8+gkBBQQM+AACBQb9A//+/gUA7Pn7/vb9Cf34/PUH+v0I/wEGAfwBAAf4/wr8Av8BAAL2/vUH/P36DP34BgL1BP0LAf36Avn/A/MFAQENAgr6/gMKC/36BPQKBfoF//7//wME+gIDAgD49/0IAQIF+AX//gACCAr6Avb8AAAE/fgO/PkA+gD+/f0BBQP/+gL+CP0OCAAC/PgD9gH7AgMABfwRCQH/APEC"
 ---
 
 I was asked by a colleague how to increase the size of their organization's Facebook Fan page---not that I would consider any page I manage to be an overwhelming success.

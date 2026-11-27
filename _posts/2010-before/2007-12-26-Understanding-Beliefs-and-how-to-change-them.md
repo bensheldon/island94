@@ -12,6 +12,10 @@ redirect_from:
 - articles/understanding-beliefs-and-how-change-them
 - 2007/12/understanding-beliefs-and-how-to-change-them/
 - "?p=195"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "792757feea2f63d2"
+  vector: "B/oEBP8BDAUK/vr+/f4EAgP++Az9+/sJ9fwG+fz6/AIH+v8BAwQA/wf4CvoD/f8G9/j6AvsA/fb7CgIFCfcAAwEI/QH8+f0C/QYK9gb2/QD+DQEGAvz9AvwO+vQAAQYB+/YABP0G+gAB9ff9/wby+PD3+wL9BwT5A/4VAgr+/AD1CP0DAgr2+wcCAxT7CAgE9/73/wAR+v8D8AYJ/QAA/v/6A/3+/Av1/wL/DQIIAvj3/wQBDfv7+PwGAPIDBwf59gPz8wH6CwT6//r8+AYEAwD8BwMA/f36Ev7+AwIB+gD8AQAD+wD//gn6+AH+A/ry+Qr++gUA9QwCBgT/B/T7BwEG/wIAAP76/fwB9wD+BAIHAvn9+QX7/gb+9gUCAQMG+fP/+wUAAvn58wD0/wIF/gADDAAFB/kD+wsGA/kI9wAK9AcIB/r38PcC/Ar1/QsABPUBAwb5/vsF//sK/w7/AvgBBAEDAQgCCQIEBAIB/Qj7CwAJ/gX7Bf4HAf4UAwH+"
 ---
 
 It's the holiday season which seems to make a lot of people think about beliefs. I'm thinking about this great book on my desk entitled [Communication Planning: An Integrated Approach](http://www.amazon.com/Communication-Planning-Integrated-Approach-Relations/dp/0761913149) by Sherry Devereaux Ferguson and reading the section on understanding the psychology of audiences (Chapter 7).

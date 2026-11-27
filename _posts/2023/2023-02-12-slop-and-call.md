@@ -3,6 +3,10 @@ title: "Slop and call"
 date: 2023-02-12 20:34 PST
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "774903817548f97d"
+  vector: "BQIF9PkEBwgFBf8I/QYI/QED+QD6/wP2/gUBBPzyAQf/A/kC/gH/BAD4BgH8Dfr7Avz1BAH/DAMCC//59f36AP3y+AACDAYG+/8BAvr5+QH///f+/PsDBA3+/v8GAQgD+Pn4CAYLBgAEAP4GBPkCAAQG+fv7Av8BBwX5A/gJCAAG/v4M/fn+/wIB//3+AAsE7wf+DwACBPT+CAT8Av4A/fACBv/9+gH6+gH5/wf8/Pv1/Qb8CgH/+gUC+AMUBPcH+QT/BQr1/AD9BAX8BwII9QoC9frxBwL5+wb3/vcCAAD8/PsLBAIC+Af8+gH+AAf1AQD/BggC///5BP75+AUJAAcC9P4FBgD/Bv/9BQMGAAH4B/QD8vj/+QXx+wX6C/UB/xT49vf17gMB/QQE+QUABfb49goFD/z9//8IBAcCAwD6BQEE+QH+BAT+/fn8AAwJ/gX4Fgf4Awj3APn+APYOCAcB/gIH/QkG9gL7AAID/Pn1AwEHAwQOAfrz+wcGA/YG"
 ---
 
 In my role as Engineering Manager, I frequently play _Keeper of the Process_. Having worked effectively alongside plenty of agile `#noplanning` people (RIP Andrew), and carrying the scars of dysfunctional processes (oh, PRDs and OGSM), it feels historically out of character to lean into OKR scores and target dates. And I think I’ve made my peace with it.

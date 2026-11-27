@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2011/06/data-divides-and-umbrellafication/
 - "?p=2716"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "87944921a4218551"
+  vector: "CQECCAkA/gH/CgMFAgAHCgUC+AH+Av8EAQP/9/0AAQEBCAL6CgH5AAL7+QX6AQz4/Pv5BQsCAvP8AvwC/f75AAUA+wYE/AUDAP8C+foEA/cL/gELA/v9BQD6+gcLBwcCAPcFB/kE/QH89PwC9wUD+wH5CfP4BPwL+/oBBAwB+AAABwEBAfv1+wENAwwHBREF+wj9AQb2BP8F/PsFDAH9AwwFBgL9/v8C/f0BBAgDA/n5/wcF///4Afv4Av74/wT+/v/+BQn3/wL6/wIC/QME+wfxCwICAAMF/wvz/fMC/QD4/Pr+/wQC8A//+fkL//v9/v76/fr/8AYEBfT1CAH19gf48AcL+fsB+Qvx+Pj8+Qr//AgK/f8HAAv/9gj+AvcMBfIA9gL6APf5+wMDAQz4Cwf3BwILBAb5/gbv++4J/gAB/AQFBv/9CfsDDQb0/AQDB/j+DAAD8P8S//gD/gf8+wEF/P0DCPr8BAgDAQMC/AME+P35AQcO/f8H+AED+vn+"
 ---
 
 Jesse Lichtenstein in "Transparency for All", writing for _Wired:_

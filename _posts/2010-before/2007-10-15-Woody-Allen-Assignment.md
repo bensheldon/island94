@@ -12,6 +12,10 @@ redirect_from:
 - woody-allen-assignment
 - 2007/10/woody-allen-assignment/
 - "?p=159"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e7900810e786d428"
+  vector: "B/oG/QMOCwEACPUJ+Pz+Bw73+wUPAQP9/f8D//b9AAr/AQEHAQf/AvgJ+wIF9/r4/vz4Bvb9+wUFAQX/+/sDBQ35+wP6DPsDBQH59fcF//77Agn89wIJ/fcF+PMJAw8G+PAHAwMEAvX++gAC+wAB/QUDEgELAAD/DAQDDPn+/AAB/wEN/QIC/gP//f7/BP4I9wMGAP4PBfjt+P/7+P/5Bvr6Cfr7+wEAAv7xAgILBgb7CQEFCfP9BQP7CPkKCPr69Av+BQL37wT/AP8C/fv+/f76+Pnw8Az9AwQA+/kD/AD79u8E///u+QYA+/n89v39BfX4AgUK/fb+DAH7//8JAAD7/P4H9QP+Bv3/+/z8/fz+AfkDAAMA9gMCBggAAP0ABvn+/AP8+f/9BwQFAvz8BAH3Bv8ABPoHAAoJ/QD+AgD49gAB+/0FCv0ABQAABgL/CAD/BgT5//34AgL8+w39DPn79QQL/wUF+QIAAA35Af75Cv8GAgYA/vUE7QAIDQH/"
 ---
 
 Today I was helping a work-study student down the hall from my office on a film studies essay. Her assignment was to analyze what critics had to say on Woody Allen, specifically whether his films were comedies or dramas.

@@ -3,6 +3,10 @@ title: "The secret to perfectly calculate Rails database connection pool size"
 date: 2024-09-19 07:33 PDT
 published: true
 tags: [Rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "99aa30bf2a4e9b94"
+  vector: "/vn4BfT+Bf39Av0G//76CAv7+QT+9v0G+/r5+fv7/AP8BQf9A/v6BQoA+gv9Bfr9Bv0ECQL/BP8H/PYNA/8A+/78AQQHCP0L7vv/AAb3+gH8AwT7//oD+goAAwn3AgEK/P73AAf+DggC//8K+vwMAwoCAg0B/AQNAxD7+gEH+QAA/wYC9//5/f8B+f33+v/+BgcOAQX49AEI/gEB/gMB/f0ABf79Bv38+gfyAf7+CAf8AwH/Agz6AQf+BQYE9vQCEQIFAgME9Ab8APvx///2DQUE+/74/QoD9/0EAgz2/wAB7wQHDgIICfj1BAIB+v74/gACEf0EBP/++/D0/AL9AAMF9fz8CQcHCgL4+P0M+vb2CPT6/wMG/P7/AQQIA/f6AQMCBQX+/Q8DB/z/9gABDPIR/wcFAQIFAQP2+PoL9AAIAf/9CgH9C/8QCgf8BgL7B/f9+/0F+AcE/v4FAPMG+Pz/+wX0AwME/AAJ/gcE/AL7/gAB/QgGAQUA9v8A/vT8"
 ---
 
 Ruby on Rails [maintains a pool of database connections](https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionPool.html) for Active Record. When a database connection is needed for querying the database, usually one per thread (though [that's changing to per-transaction](https://github.com/rails/rails/pull/51349)), a connection is checked out of the pool, used, and then returned to the pool. The size of the pool is configured in the `config/database.yml`. The [default](https://github.com/rails/rails/blob/dfd1e951aa1aeef06c39fffb2994db8a8fa1914f/railties/lib/rails/generators/rails/app/templates/config/databases/postgresql.yml.tt#L20), as of Rails 7.2, is `pool: <%%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>`.

@@ -14,6 +14,10 @@ redirect_from:
 - articles/lessons-1960s
 - 2008/11/lessons-from-the-1960s/
 - "?p=273"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "fe3bc0c803c0d795"
+  vector: "AQD8+gMAB/4CAQkHBf/9DvT69gn4BwUE+wICAAL8E/wBAgUBDAL++AT1/v39Afz8BPbz///v/AcACP79APoCCPkLAfvzCPn7CAT48gX9DPYGC/4FAfQE8wUC/PkAAQgA/gb6BQIC9vj+AAH/9wz8/QECDAL9Bv3/AwEFEQL1AwAD+/kAAAL/AQEHDvsEBP8C7fsC8v0D/wAD7wn+BwP3B/v+CQX+Avz9Cwz//wIBBAD6AQL/BvAD9vQE/PQD+PQD8//z/fQABPz4+PYC/AD99gMHAwEB/AkFCQkD+/z38QD//wQPBf34BAr2AQUKBP/2+gD3AgMI+//9CAP+A/8DAgACAQID+vr7+vn98vkBAAL29/sEBwgB///3Df////f3Awv3/gcJ+/b5+AkEAPz6/gHyAAH7B/4CAgoG9QD+BAD9//wEBgcC8voLCQD+AQX/AvsBAgv9AgUFCvcA+QgBCPr8+P7/AQX7BgX/BQYCAAX+Bv8DDQYG/wQD8v4NBvv4"
 ---
 
 A few weeks ago, I listened to [Bill Ayers](http://en.wikipedia.org/wiki/Bill_Ayers) interviewed NPR's [Fresh Air](http://www.npr.org/templates/story/story.php?storyId=97112600). As an interview, it wasn't very good, but Ayers himself said some really interesting things, which I went through and transcribed:

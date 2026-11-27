@@ -3,6 +3,10 @@ title: Is SecureRandom.choose the wrong name for generating randomized strings w
 date: 2021-05-27 08:37 PDT
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3a1f2efae218516f"
+  vector: "/f/1C/v+DvwG/gMBDPkABgn9/gAF/wz8AfAFDQT9BwP8+gMH9PgCAgH79Q/1A/8F+f4GAgH59vX4/PsCAQD4AvoCBQMC/vwA/Q4FBgHzA/n09gUKCAwDBAoF/f0GAgL/BfrwAPz9CP0DAwX7BgECBgcE/QT3AgYJCQP7/vEACQAEBPwCAgoB//0C+PoIAQUB/wwKBwMFCe74BwH/AQT4BAMFBv4AAvkBCv4FCwD9/AMD+f4G/gMB8gAH+wD2CgUDCQD//AD9Agb+//T7CQMB/gUB+QD5BQT5+vcF8wL7/AD6/AoLBPQF/v369QAF9hT7+wUGAP0H8wMKAf77Bf/7Dv8B9PwJCgkFA/oBCQX++wIDBwb58f0B//QHBQP3/gr4AgH5Ag34BPwB+gb7Af37Cf4C/wgI+gAD/f4GAQQIAQAJAfv/BgTt8v/5Av///fv3+gX6/v4D9/j5//L9/AIF/AD+/Qn39AgED/0ABfD3APcF/vz2/vsCAvz4BwQB/gD5"
 ---
 
 I frequently need to generate a short, random string:

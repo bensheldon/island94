@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class Post < ApplicationModel
   include Markdownable
+  include Embeddable
 
   MEDIA_URL_ATTRIBUTES = %w[src href].freeze
 
@@ -113,17 +114,27 @@ class Post < ApplicationModel
     end
   end
 
+  RELATED_POSTS_LIMIT = 5
+
   def related_posts
+    @_related_posts ||= semantic_related_posts || tag_related_posts
+  end
+
+  private
+
+  def semantic_related_posts
+    semantically_related(limit: RELATED_POSTS_LIMIT).presence
+  end
+
+  def tag_related_posts
     return [] if tags.empty?
 
     self.class.published
         .select { |post| post.tag_slugs.intersect?(tag_slugs) }
-        .reject { |post| post == self }
+        .reject { |post| post.project_filepath == project_filepath }
         .sort_by(&:published_at)
-        .last(5).reverse # Limit to 5 related posts
+        .last(RELATED_POSTS_LIMIT).reverse
   end
-
-  private
 
   def rewrite_media_urls(html, base_url)
     fragment = Nokogiri::HTML::DocumentFragment.parse(html)

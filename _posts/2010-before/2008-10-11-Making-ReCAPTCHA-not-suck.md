@@ -11,6 +11,10 @@ redirect_from:
 - observation/making-recaptcha-not-suck
 - 2008/10/making-recaptcha-not-suck/
 - "?p=260"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0ab6ba681a03d54b"
+  vector: "9Pn8Bfz/A/r7Af//CwP2/wkD/vYC+An9+fvyBPf2/P37//0HBgUE/+4D/AkM+PgACfgC+AgF9wT+AQEF+PkMBQb//vv8CPMG/gUABPv9BAgA9wcIBwf/8AUBAvcPBf4B+/34BgD8+e//+gUF/AIDA/v+Aw0C/AX2BgPz8gz8CgAHC/gACP4CDPj9AAT8//7/AAby/PwDC/kGBwP+AADwAPoACPYFAfwD+wP69wAA/gD6/gcL+AL9+f4ABQsNAAb+BQL/DgAACwEBBQH4AgUF/Qz6+ff39Ab1BP/7CP/4/AD///gB+/4IEg4B9fz5AAEA+Aj4//0J+wUCAPsDBfoCBvYA/QYCAwQFDwH4+QT48f0BDgHzBPv9/vT4BgL9/vcHCfYH/gD+BvkD/gUBAQH8AAf9BgYFCv0E+wcD/QcOBQAFAP0C/wT2A/r1CgL/BvcO+goA9wQG/QT4BvwL9fn/AgP5/Af6/PwD/wYGAPn9/fYIAgP+Av4DAAf/AAcLCQUI"
 ---
 
 I really like using the Drupal [CAPTCHA](http://drupal.org/project/captcha) system with [ReCAPTCHA](http://drupal.org/project/recaptcha) (the one that helps [scan in books](http://recaptcha.net/)). Both of them suck in the standard "Drupal makes everything ugly and hard to use by default, but it's still easier than building something from scratch".

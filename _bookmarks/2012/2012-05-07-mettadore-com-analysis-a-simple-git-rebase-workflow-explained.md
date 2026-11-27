@@ -6,6 +6,10 @@ title: A Simple Git Rebase Workflow, Explained - MettaProgramming | MettaProgram
 tags:
 - development
 - git
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ffa273ff824ef242"
+  vector: "CPcE/v//+wX/A/8AA/v2AfoLAfn8/QAIAgIFAff7AQcABvcMAQH//v8GBPwHAfz/+f4F9f0HBAgF/gr+BAf6+AL5CxAL+QEE8vn4/f8H/AD5APz7Af8MDA0E+v8K8QX7Av8NBAYBBfUBCv8HAAAB/fwBAA8H/fUDAAIA//oE+wAMBPkNBgL7//v/Cwv///vz+QEFDPEC/QAJ9gIF/voE//wGAf79+QL+B/j09hMAAv0S/QwEAfrtBP38AQoD+fsGAAH/Cw/7+AUDAPsBAQkD//sD9AENBQED9wgCAwP/CgD8+gEF+fz2/P/y+PoE/vr8A/37BAYEAQT5B/cBC/0H9/7+/v7+BgQC/wH89/4F9wX1+f37+Pr7AAYB/gD99wMH7/j++vQI+wX9/gn8/vX/+fsA/vkEAfwDDvz1/QH7AQAECAIJA/4BAgH69gD6/ggHA/3//fb6Bwz2/wwT+f0RA/cA/foHAQgG//r9Bvb4/vr+AAsE/AQICQYFCAEC//35"
 ---
 
 There’s a lot more that rebase can do, a look at the man page or The Git Book can tell you a lot more.

@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/09/boston-subway-in-vector-format-svg/
 - "?p=697"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "95c4400754bf77e5"
+  vector: "/gEJ/QYC9f70/foH+f/8A/4DCAH68///BA0JB/j0+P8FBPsICwEEBfb//woECPv5BAP99wL/+f/8/wr8/gECCgz/9wf//AABAv/8A/v/+gABAfoN/AEB9gMFAA8FAAMC9vf8BwMEA/kI+gQAA/8FAPcA+/kCBgsCAAL/AfMCAgDzCAEGDvn28/0G+vz1DAn6Avrw//3+BPf+BAMF//4BBwEG+P/++v4C/Pn/BAQJCf8IBAIA+Pb/9wQFBv0DBA36BP8H/v0D/gMEAP/9/AQG/fj7BvoL/gn6BQv5B/r/+wACAwQD8wH9BQUM+//6+gX+CgP09QAH+QYKBQkD+/z5+wr7BgwDCAf99v8C+/77AAf3CgMG9v0CA/L6+/X69/j8Cfz/8v8RBgUD/AX3CxcB/QMDBQ4HDQD+/w0EDPwNAAAIAfj/BP7++vT/+QfzCP389A/4CfkG+gsCBP4BCPEEAgD8+/z4BP0B//gHAv39/v32/fUD/AgF+gIHAQH8A/T/"
 ---
 
 

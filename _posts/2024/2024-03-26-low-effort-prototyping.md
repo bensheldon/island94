@@ -3,6 +3,10 @@ title: "Low-effort prototyping"
 date: 2024-03-26 06:28 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "017255b4aa5913fc"
+  vector: "+wAG/wLy9ggEA/r9///+9wj7AQD68wL//QH9/An/Agv9+gkJAAgD+/39+goH/Af0+vX3+P/z/QQKAgH//fj89AoCCQADDgcG+gkI/gb/A/YEAvsB9gABCAn7/wP2+AEFCf/7AgIGDfT++v0B/AT+AAEJ/gP8+ggRBAMABP4B/AD/Cv4FAPYLBf0BAQH8Cwv0/AH4/vjrAv0J+gQC+QD9CP0E/foJ9QoE9wQDAwEFBQD1AAENA/oB+gP0Bgn/AvMQ+AQBDQcB/vkC6g4FCfz++wAM+f4F9wAE9wD3/PoD+wAE8gMICvv78P39/f34APz3/wAP/QkE+vz5Avf////5+wIAAwr+DAf7/wD5/P/++/gGCw4JAPf5+wb2Agz9/QX+A/8FBQcA/gX7Af4C/v4A+f8DAfz4CvYC/gUCAQMMAAAH/wr6DP0CBwL9B/YJDgcEA/z2+QIJ//n69f8EAvz7BPwIB/b///3/+wQAAALy9fsABQQEAAMEDP/6/wkG+v4C"
 ---
 
 From Bunnie Hung's blog about [exploring and designing an infrared chip imaging rig](https://www.bunniestudios.com/blog/?p=7035). I thought this is an interesting distinction between "low-effort" and "rapid" prototypes. I think the analogy in software would be a ["Walking Skeleton](https://wiki.c2.com/?WalkingSkeleton") that is production-like in architecture and deployment but does very little, versus building a demo using lightweight scripting and static site generators. (bolded text mine)

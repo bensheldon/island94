@@ -13,6 +13,10 @@ redirect_from:
 - node/68
 - 2006/07/two-two-two-yolks-in-one/
 - "?p=68"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d54d309969663bfb"
+  vector: "AfkF/gLy/QMH8Aj++vn+/QL5+/ME9gj9APv5/vX2Af76AQH5DQcL+BD7DPj6A/z3/AEC+AgFBwb4/QEE/wIGA/z9/QH9+wcECQUACgb/B/v4/gT4/f0EAwD9AP0FBwsB+v7xAfkADPcB/vP+Bf//AAoL+gL+B/z6DAEC9wT59wD9BgUDGPn/BQULBP/+Cfb8Bf4E/PoM///7AgL6AAYB+/0EBQIH+PYFA/j9Afj/+gX3AwD7AP0FAP36/wb9AvT98vj4+/sNB/n59P78AgML+wYCAvz0B/UBAw4CCQD7/QD6BfQCBfoEBQLu/QD+BQMADggG+gAGBAkECQMG9P/8+An8AAcC9AT++QL8APwFA/4FA/v++vr5AvYABwT5BP//A/4B9wb1Cgj7/vX++fIC/Pf/BgYB+QkOBQYCB/sUDwAH//gBBv71AwL89xH5/f0C+wT8AwMHAfv9AfwHAgH/AAP4AgD5Agv2/PsGA/z+9v78A/7/DAoD9gD/AAwDAQj+"
 ---
 
 My roommate [Dean](http://notthemessiah.net) created this video about some peculiarities in our store bought eggs:

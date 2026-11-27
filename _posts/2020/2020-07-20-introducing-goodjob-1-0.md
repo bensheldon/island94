@@ -6,6 +6,10 @@ title: >-
   backend for Ruby on Rails
 tags:
   - GoodJob
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "adfa79924cc5abc8"
+  vector: "7vr+B/sE+fn6Bf4N/voFABYB+/v8+v7//PP++/v49/0EB/gIBP33/gEB9P/49AX7//r//QIEBAgF+voDAP7+9g33+wH8/v789QH5/QP7/Pv+/v0G+v79/AsBBQoMAwH/Awv7AgkEDfsAAv8E//wFCAUF/gr9/wcEDA0G/wH5/QAABAAC+Ab8/foC/wb8Bgj29wUMDQD99AYG/Qn/AAP8BwIG/gL3/v3z9gn6/gb9AgMABwX+DAn6/AwIBQoC+PkD/AMICAcD/gf+/gH7+wX7BAME+AADAgcE/wkAAwYICgAD8vwOC/4C+/L5/fsCAgn2/vv7BwIG+goJBOgB8gL9/gMF/P/2/gYADv8G//YL9ff2Af4C+f8D9/z6+Ab+BQoJAPULAf3/AgICDP0CA/n1Bu3+BwgBBv0C/gH5+vEGAQAF//3+/vX4CAEJCPn7BAcBBP78+gIK/wP4Bf4BCPoF/v/+BgD0/wUDBwf+AQT+9fv6+vUBAAIFBwb6AgYI8foF"
 ---
 [GoodJob](https://github.com/bensheldon/good_job) is a new Postgres-based, multithreaded, second-generation ActiveJob backend for Ruby on Rails.
 

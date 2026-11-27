@@ -4,6 +4,10 @@ date: 2024-10-29 13:13 UTC
 published: true
 title: A Checklist for Making Faster, Better Decisions
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a52644e8831023ef"
+  vector: "CwcAAgUCAAYJBgAK9QEA/foD9fz59QMC+gIA//r4AAQN/PsN/AMH/gD9/v/+9AP5/vv4/fzwAgcBCwD1A/v3+/4IAgL+DgIDAf/5AggEC/sCAvAMAfkFAAj8BfUJ+wIP/gH+BgUF9/j/+wADAAABAgAEAwT+BfwLAAUAAfgAAAACAf4JAf///QAEBwAF/v/68goCAwH2AfgE+wAB+f4FAQL4Av/5//759v/zCA0J/fT5Bf4CBfv2BQfzAAELBfEG/wn9BQXz+AIA/v0F//z++QoCAgAF/Ar+Agr0AwMDCAD9+QcEBP768Qz68/4FA/j5/fgGAgUF8Av7DQL19Pj0/wMEBv8F+/UG/gH6+gH5AQMDCgEA9woGAQn1Bg7yAwMBBP/7+gj+/ff69wv99QHyBgX/AQb8EP8BB/31+Qj/+AD9+gYEC/fzCgEBAAH2AwcDAwL5AwT++/4K+PkN9QQEBQYABPgHAgwDAAkGCfn79gb69AH9CQQJBAH9+QEBBPr/"
 ---
 
 Write down five preexisting company goals or priorities that will be impacted by the decision. Focusing on what is important will help you avoid the rationalization trap of making up reasons for your choices after the fact.

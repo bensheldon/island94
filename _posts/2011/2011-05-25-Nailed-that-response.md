@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/05/nailed-that-response/
 - "?p=2671"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6891cf7f7a772bc9"
+  vector: "8vgD/v79BvoAA/sEBgMB/gr3Av39/gAB//799f4C8wcGCgEPBQb+APrw/fwC+gD6AAAA8AED+AMJ/f4BBPr7AQoIAQr76QX/AgcLBgUNCvcKBwAL8Af5AAYA+gL8+AX7Afj6Bf4CBu31//8ICQUEA/f++v/xAw0HAQH8/AL7+wADEggGBv0BA/r5+hACCQf2+/sH+QID+P0E/fMEAwT9BgL7BAT5+wP89wgCAwUBEPcGBgQC+/kEAAX9AvcJ//wK//0FBA77/PwA+vcBAwUAAQL8AwACBgr+9wcAAvcOAgD//wIFCfcE/wIJA//4BPj3/Pr9/ggK/vsDAvQD+wYG9v8BAQAF/v38Bvr7+fwC//34BAX+AvkFBAX8+AAB/AEGAfoGEvIC/f8E7e/6BPz0+/v6/Qf/DQ79+gX0+P8H/AADDPf+CP/7AgIIAfz+BAgB+/X4+Qf7AQAA//wAAAr4A/T/Bfv8/gUBAQ0DBgX8/QIBAfsC/AoI+gcF+gz/+fwC"
 ---
 
 ![](/uploads/2011-05-25-Nailed-that-response/3collage-600x202.png "3collage")

@@ -2,6 +2,10 @@
 date: '2019-05-27 15:24 -0700'
 published: true
 title: Team Number One
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3b3d36c358927269"
+  vector: "/QEF/QMBAgUGBfkBCAID+f368Pz88v4H+fv5/vr3+f8ODPoKAQACA/z9AP/1AAH99/n5/AP9DggD9QD9APr+/gH9Awj1/w73/vsICQMBCwECAwEM/fwA+QAF9gEKAQENAwL0AgQD//35+Aj5AgH8AfT+/Pj2B/r5CPwHBQkGAgABB/4C/voBAPQA+AQMAvz38gH6/wYHAfn++/D/+wYH//gB9gD2Awb++v74CQkG/fz7/P0CEPkC+xH/+vP+BPMH//sBAgr3A/z3+/cCCAkE/fb+Af8FAgEA/Q4G/QcO/wAG/Ar/EP3+9QEE/f74AQL7CPz/+ggC+wv7BAH4CPkE//wBAwb1AfkNAP8C+wIGDfTsBv8FAQYIBvwEDP4GAgEF+QL2BPsG9vn5Afb87Pv7/vgD+QMCBA4JBP4B9P3+/gAFAQEBBfX7+AoNCwD9AgwE9wP7/fb+9/0C/fcC/gIACPgCBQP9+AP+BAn9DQIC/QH89wID+wn+B/4F/vwIBwEB"
 ---
 Last week I attended [Code Climate's Engineering Leadership Summit](https://codeclimate.com/summit/). The content overwhelmingly focused on the "team" of people you manage, rather than your “team” of other managers and leadership.
 

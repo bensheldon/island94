@@ -4,6 +4,10 @@ date: 2017-09-28 04:27 UTC
 published: true
 title: 'Research: Vague Feedback Is Holding Women Back'
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "53beef7d1ea926e0"
+  vector: "AQ3+/AEDAQIE+f4D+gH8AgoI+/UI9wwA8v75AQH4+/4JBPsD/A0IA/P6/gT+9wH4+wgB+QIABAT+/P78/vj6BgcB+v/4/f/7AgwEBf8D/wP+CQIKBv0G/v4GAvv7+fwD//kDAgf7B/31/f8A/fj7BfcCAPj2BAUDBvwHAPoE/gD+CAIR/QT9//0F/wUFAQAF9xL3CgP7+v4J+wUD8wIA/wP6AAz6+QX7/gADAQUK/fv7Df0BCfwIAQP0AP7///D98gUD/w/68wMH/fgA+gIF+wL/Bf4D/gwA+wwBBv8M/gAB/Pv+AwYD7AQB/vzz+/ME+fb+/QcL/QgCBfz3/P/88/0F//YCAAsPAQMA//sAAff2Avr9+v78AAfwAAb7BgAO+vkG/foE9vz8/QD8/vHzA/X/AwMBCgMGAPj2+vr8AAD7AwUF/fv9AgMABgD0CRz7Awz2/gQB9AALAv0R/AEHBQMAAgYGAQ0K+wcEBwMD+ADyBgL7AwcCBQP6/f4KD/8A"
 ---
 
 Before you begin evaluations, either written or verbal, outline the specific criteria you are employing to evaluate individuals. Articulate the specific results or behaviors that would demonstrate mastery. Use the same criteria for all employees at this level.

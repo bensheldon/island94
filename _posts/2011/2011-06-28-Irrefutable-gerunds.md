@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2011/06/irrefutable-gerunds/
 - "?p=2726"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "eb470d7dfb2d0873"
+  vector: "/Qr6/QMC+/8CCQMDAPwB+P/69Qj8+Qf/Af0B9wEEB/n7AgUNCQIE/g/5/vwAAQIA7PIG/gP2AgAC/gUABQIB/QD9CQP5/gv8Cf4D+wMRCfoJCQYEBfv9+gb5+v0JAQADBfn+APv8APwC+v4FAAf1/gQFCPv3A/0CC/b5+gL++AAH9/kA///5C/sG/vz/Ev4G8//+AgQCCvoW9fj+BAIE+fz0/vz4BPj9/AwC+gsODfr7AQYD+QAB+vcOA+8H//8CAgb9Bf/8Afz2EvMDBf0C+P0ABP8D/f77APj5BfkG9AAG+/j8BAb3/QX8A/gJEfj5AP8H/QUF+/UBAgD7/v79AvX/9QEG+Pr0A/4BBfkD/QIH/fcABgcG/Az+AfrwDAL9AAr7BBECBfnyAPsL/AIC/wr2//n+DA/8Bwv+9QIJBwACCvwD/wD1+fcCBAj+//4A/f35+wX++vwM+v38/vz7CP4BAAf++Qb2BQcJ+wL8AwMC+wD8BQkF/PwIAQQB9gUB"
 ---
 
 Gerunds were referenced in [yesterday's post](http://www.island94.org/2011/06/app-contest-submission-boilerplate/). Below is from William Easterly's " [Foreign Aid for Scoundrels](http://www.nybooks.com/articles/archives/2010/nov/25/foreign-aid-scoundrels/?pagination=false)", published in the _New York Review of Books_:

@@ -1,6 +1,10 @@
 ---
 published: true
 title: Japanese processes
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9f01aef28bd7cd5e"
+  vector: "/Ab+A/77AgULCQsJ/AP9//8K+f3+/AoO/QoG9wL7AQQC/wIHBgn9AfgE/vwB9gH0/Pr79f75Af0BAQX8+/n1AP/3+wr9BAIGDv//AAD9BP4D+Af3/fsE+wX/AAUC/QQDBP8DBgcTBPT69P7/BAP/+vgNCP0I+/MCBP0E+wD8/QAFCP0E/fkFAggBCgH/BQD+7QD7AwX+C/b+/wIBBwUHAvgD/f4FAQUBBfQBBAgHBgT6BvL9/vcJBQr+9/r8B/MK/gL4/AT2+wL5CPvv/gAGBAP0Af35/f8BCAIG/AAHAgD/CPkMCAP/+gT58P70B/b2Bvr0+AAB9wUDAQP5+wcI8Qr89AIDAfoH+ff99QAABAL8+gb//PgHAhD5AAcP+gEI/fcGBwMCAQH88gYK9/0DAAH5AvsEAQAD+f7+AQAFAAAB7wUBCQD8Bf0IAQT+Bwz/DQX39wcA/foFA/oY/QIBA/n5/gYJAQIH+f4GBf0K9QT7B/z7//0BB//67/8PBfkL"
 ---
 
 ### Jugyō Kenkyū ("Lesson Study”)

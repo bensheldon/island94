@@ -8,6 +8,10 @@ redirect_from:
 - content-map
 - 2005/11/content-map/
 - "?p=15"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "be3ab004bfaea526"
+  vector: "/v7+AAcA+Pj4//z/B/0IBwMEA/EBAgQB/AYDAgP5CP4CDAEMAP7+/An++v0A+gP++wL88PYH/gf69f70AP4F/gcI+AcK/v4BBgP8APr68fQABAQL/gMA/QD+/foH/AcFAPT8AAj//PUD//f+/Af+Bvb28PsDAAQLBQT6/wf7/wAKBQkLCAH4/vn9BwH/CQX7AAUEBvX5/fkFAgAG+v4D+gYEBf34+PoAAAT3//kG/QABBBD//PYB+vz+CgT9/wYDEAAGBAT8AAYGAv/9/Pf9/wD2BQAG/QX7+v4ABfr5+wD9+fwKBvf7BQ0Q9P35Av8E+/z9AfkFAAMGB/8H9v77+wPwAQMCDgcL/QD99fj0/Q/3CPv89gAH/vwHA/T79gAICvYB6f4FCAX5AgoDEgMB/vP+BAgQCgAJBv4AC/gI+wD0/fAM/QQOAgj9Cf76/gX5AP/2A/8L+gYHAgsFAvsH/P8C+/X+AfoPBwAB/QEBAP0CAPT9/AIH+ggGBAX/Avz/"
 ---
 
 This is an example of my googlemap module that I extended from [this module](http://drupal.org/node/29091) by [bjornarneson](https://web.archive.org/web/20051201055033/http://choirgeek.com:80/).

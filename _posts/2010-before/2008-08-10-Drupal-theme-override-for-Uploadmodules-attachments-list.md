@@ -19,6 +19,10 @@ redirect_from:
 - articles/drupal-theme-override-upload-modules-attachments-list
 - 2008/08/drupal-theme-override-for-upload-modules-attachments-list/
 - "?p=238"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "10511611175d8ba4"
+  vector: "+AP7AxEDAAL9Av0T/Af///z8+wkF/wL5BAP2/gAAAgYFBvgEAP8CAwADA/75/Ab1AAD8+wH+APn++gIC+f7+CQYK/AkE9AID+QH4/QQP+vcP/QL+CQn9/ff3BP8BAPb8/gL2AgD+Bf0GAP/9Av789fPz+APwBvz5D/74+/738wD8AwQCBe0C+/0DCQb8DfwA+P8M/PcD9gb1Bwr/BwL9AQ4J+vnu+wMICQHuEQEABgAEAgL8CAMA+v4DBPgH9Pz5/QYC/wYJ/gf6BAv4Af/9BPL/BQH/+wkG/vMKA/8AAQALAvIJAQgKBQQAAgT99gQD+wfx+/36CwMEAgD9DvT+BfkB/wkFBwAJ+AIACgP1/QoBAvz3AgYNCAYAAAMF/vX0+AYEAvgL/wD49QECCPz89vcJ+wMDAAQG/Pz8CgcKBwAB/f7zCwQCCQL6A/z++fwAAg75+QX/Av79AgMC/vj6AP/8/wYBAP0BBPUAAAACAAH2APn+9gv+//8LCQP+BQEF"
 ---
 
 **Update:** this functionality can now be achieved with the [iTweak\_upload module](http://drupal.org/project/itweak_upload). _Thanks to [Damon](http://damoncook.net/) for the tip!_

@@ -4,6 +4,10 @@ date: 2026-11-17 15:16 UTC
 published: true
 title: 'Wishlist Woes and Post-Cozy Problems: Danchi Days'' Low Steam Sales'
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "626685a98da4f041"
+  vector: "/AEC/g/+BAoM/P0A+fwL+gj39gH9+P0A//X2B/4G/QkI/wL4+vn+BQX7+QP1+gcI+wr6/f3x+QT6Av8C+/n5+//++QP/+f4C/QUG/gD1Af4L/fb5AfkFAgv/+P/9BQgM/f4BCvsFA/z7+PsX9/31Cwb7CPr5BgoKCQsNAgf+AQD+CAMD/QYH+v0CAwb+CxL//wMBAggB/P/1AfkHCf/++gb6/wT89gr59wb7B/0OBfr6BgQE+wb18grxBP76/QH99wgL+fcFCgH++wIDBf8IAAb+AQECAwL3/QMCA/cKAAD4/gQF+//4/QsC/AD8C/f1CvsG+wcL+gIDAfwDAfsF/gYACgP/A/sD+Pj++fkFBvgMCQQK/v/y//f5BAIBB/v5//sHAAD6+/v19fIBBQoEAu8GBfYC/v//+gYGAAQDAwD4BQQGAgMBAAYJB/ryBQQB+/n//gAGCfT9AAMJ/P8BAv//B/35//4J/fYDBQT69vcH8gIB/f4EAvwK/QQH9fIJ"
 ---
 
 We had a 7.4% CR for the September 2024 cohort - our reveal month. Our worst CR is 1.0% in July 2026, meaning the Sep '24 cohort was 7x more likely to buy the game than someone who wishlished in July 2026.

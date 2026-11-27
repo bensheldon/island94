@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2011/01/notes-from-the-city-of-bostons-open311-developer-meeting/
 - "?p=2463"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "48cd41fa461816cd"
+  vector: "AvMB+wj7+AD7Bv8D+/YABA7yAgf9AvwFBwX/AgACBgUHDAb7Bv38/QL3AAf8/AMA/f8D+QEC/AX7CgEK//r4BQEC9f4J6wgDBf0IBPYLCPQL+/kNAgIBDgYDBQkC/fn+/AX+CfcL/gH/+wb+BgsK+AL6AAD5BwUA/QH+7f8G+wADBvgDAvz7BAT8AQoD/gsC+P78A/7x/v8DAAAEEgL7C/8HCQf79QD+7gL5AP/+/f4JAAoC9f78+//4BAH/BAUH/AEAAAn/AwMC/vsBAgP9/Qr4BQgHAf/+/Ar5+/kH+wD5+vv89/v/+g0G9f8KAwT2Af75/gQG7/4AAvwBAvn//fUD+w0KAwD+BPj3+P0D9Qnz9wML9gX+Bgv4AP4IAfsFAfwM/voMAvb6AAMK+QLxAgP+BAIRAgv7/Q30AvQH+QD+AfsDA/z8CgQGAvzuCAIJAPj0BgAA+/4F+fsU/QH+AwX7//8FAQcAAvz3Awb99/gG/vz8+wYH+gD9AgD+AvsG"
 ---
 
 Today I attended a developer meeting at Boston City Hall for their [Citizen Connect API](http://www.cityofboston.gov/doit/apps/citizensconnect.asp), a to-be-launched [Open311](http://open311.org/) implementation. The city currently has official [iPhone](http://itunes.apple.com/us/app/boston-citizens-connect/id330894558) and [Android](http://www.androidzoom.com/android_applications/tools/boston-citizens-connect_najk.html) apps that allow community members to submit broken streetlights, potholes, graffiti and snow removal, but the intent of the "open" part is to allow unaffiliated developers to integrate the system into their own applications. The other developers attending were the 7-person Boston [Code for America](http://codeforamerica.org/boston/) crew (who just arrived a few days before), [SeeClickFix](http://www.seeclickfix.com/) and a university researcher (the latter 2 via teleconference).

@@ -13,6 +13,10 @@ redirect_from:
 - puddingstone
 - 2007/10/puddingstone/
 - "?p=161"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bc24f77b3f95be27"
+  vector: "AQUNBQH9AwTz/fT8Afr1AAn9AgMEAv0NAQT7BPb7/v4H9vwKDfwH+gMABvn6Af34AwMA+wP/+wQC/wIA+wADBgX9/P/8CAMGAwH9+/z9+AT0AQn1+f8D/QX4//f+DA71+f/5BQMHCAMJ/e8BAwEDAA0G9v/49fb/CAj5Bf8G/AD/AQYFDAH7AwEF/v8B+fv8+/sDAvoK+/zz/wYE/gcB+/7/APj69fwB+vwCCPQA/wf89w8BBAAH/wP9/QQP/wn/+gD8Bvv/AgUG/Pv7BwD9BAbw9fj6/AfrAwTy9wP7+QD/AAAJAAAECgH48gkC+AX+C/oB/wH+8QABDAL7+v4A+gD9/AEH+/75+fkECwAG/AgBCP0CBgX8+f4A+Pz3Av4F/AX29vYV+vsD/Q0NAwLx/gP9DAAI9QQH+gkAAAH9EQAKAvb7BPoDBvsH8wz/AQECBez4/f4DBf39BAL6+QUEBfX/AgH8BQr1/wEEAwMC+w0FD/0JAAkB/AEA/wcJ+woC"
 ---
 
 I happen to be particularly fond of Puddingstone, the conglomerate rock found around Boston. It's also the official rock of Massachusetts; specifically [Roxbury Puddingstone](http://en.wikipedia.org/wiki/Roxbury_puddingstone).

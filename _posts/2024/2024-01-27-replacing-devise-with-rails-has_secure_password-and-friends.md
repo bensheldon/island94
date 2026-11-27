@@ -3,6 +3,10 @@ title: "Replacing Devise with Rails `has_secure_password` and friends"
 date: 2024-01-27 07:43 PST
 published: true
 tags: [rails, ruby]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2d10a0c911ef881f"
+  vector: "9P32BAP9DwYAAP4EBwMEBQQL+wIG/AEJ+vQK/Pj6BwL4/QT8BAEB9P3+9Aj6BQIF/fwJ/gMA8gEC/AEBAAED//oB+vwO+/z79PkE/gT99v35/gT+B/4C/Qb+CQQB/AQA+QH2Dv8FA/kMAgkBAwYIBQIHCQb8BwEKCQoHAv/8/AD6DfQH8ggA/wMC+wsFAPz+/AEOAwL+A/4B/f8B/QD6/wMGBAEM/P709wX///T6AQ0E//gCAAD09P3/BPYM+vr8/vsBAgUB9Af8A/H0Bg4DCggA8RD2/wT68f8D/ggFBQAE9gICDfwNAvbw+P0CAQb5+gcAA/MT8/kBAPwD+AIHBgAA8f79BP0BDwT9/QEIAv77CAP6/fb9+QX5Avj6CAoF/foCBgIEAfgIAAr9+/n++Pb7+wUCAf0FAgEA+PgD9wAGBwgLAwQB/Pb/AAMC+v0E+//4+/cG+wEDBvoHBvsKAAQD+Qj1//0A9wIG/vX7+gACA/YA/REH/gX7A/0H+PX6"
 ---
 
 I love the [Devise user-authentication gem](https://github.com/heartcombo/devise). I've used it for years, and I recently moved off of it in one of my personal apps and replaced it with Rails's built-in `has_secure_password` and `generates_secure_token` and a whole bunch of custom controllers and helpers and code that I now maintain myself. **I do not recommend this! User authentication is hard! Security is hard!**

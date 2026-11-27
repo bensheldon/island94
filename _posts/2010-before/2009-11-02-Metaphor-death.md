@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/11/metaphor-death/
 - "?p=937"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d706ff5cc77018a4"
+  vector: "CQEC+QYCAwUPBgAC+wIH/Qb7/gcMAgAA/wT8+v0F/wH0AAwRBgcI/Pv8+/8C+gAAAfn1+wD0+gIK/f/2BPwFBA35BQXxEAj4/QP5BgD8//r+BgEA9ggB+g789PcFCgwG/gf4AwYBAO8G9PT7AP32/vkIBwn88fkGBAj7CP3+AAD6/wQIB/v4AQAJAQL7CP73+vsE+fz//vb1B/4BAwEEBwHz+/P6/gQE+AABBAoKCwTx/gr8Aff++P/y/PMD9P0G/wf/+wEFAgT5AgD9AAH8CAv3BAAHBALz/v78/fX7+AD7A/0D/gAA+AQD9fwDCPv3CPr//f4B8/8BC//59/YGAP/+/QYA9/b6/v79AfzxBPoICAf/BP3+/gT5AAMBBv4IAPgC/AAACwTv+P8JAQj8/wX1BgEI+vcH/Qv1/PoN/wADCwIEAf4D+QEJ9gT3D/sBA/n9BAcI+PkH//0KAgUAA/sB+Pz/BgYBAAIHAgQG9v8BCPgE/gQF9f8K8AMHAvsA"
 ---
 
 A [well-worded comment](http://gallandgumption.blogspot.com/) by [Kia](http://www.gifthub.org/2009/10/money-has-failed-in-its-role-of-allocating-resources-towards-human-survival.html#comment-6a00d8341ccc8253ef0120a6334716970b) to a Gift Hub post entitled [_Money Has Failed in its Role of Allocating Resources towards Human Survival?_](http://www.gifthub.org/2009/10/money-has-failed-in-its-role-of-allocating-resources-towards-human-survival.html) (my own, typo-prone [comment](http://www.gifthub.org/2009/10/money-has-failed-in-its-role-of-allocating-resources-towards-human-survival.html#comment-6a00d8341ccc8253ef0120a63d802f970b) is lower down in the thread)---also reposted on [IMproPRieTies](http://interimtom.blogspot.com/2009/10/markets-are-dead-metaphors.html):
