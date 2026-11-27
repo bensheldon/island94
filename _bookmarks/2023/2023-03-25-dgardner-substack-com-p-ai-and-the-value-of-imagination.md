@@ -1,7 +1,7 @@
 ---
 link: https://dgardner.substack.com/p/ai-and-the-value-of-imagination
 date: 2023-03-25 14:11 UTC
-published:
+published: true
 title: AI and the Value of Imagination
 tags: []
 embedding:
