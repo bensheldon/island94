@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/02/the-ethics-of-awareness/
 - "?p=437"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "76960cce23bc597c"
+  vector: "/wb0AgEBBv//BQAFBAP6BvsE+gcCAwYD8f8K/f8CBP8KAvwGBwMH+QUC+f/7A/77/fbx/vr3/wUDBv/6DPEABQT//gjvCP0CAvsA/QL6APYMCQIA/fMD9g0E+fb//gMF9f72BP4J+f4G/Pj7/wn4AfoACwYKAgP8Af0EDQnzAAAA/gMB+gb49wQGBf4JBPcI9/kC+wUD+/T38gX/AgP5CQMDCQT1//8AAwkB+wsEBwH0B/8EC/X+/fcFAPT/9vkFAwfv//X6/f/5/vj/Af4H+PoC//v4/ggACQ8E/v0E+QD6+gABAAT0Avv9+/oL//8AAAX9+wgF9wEGBAL+AQUBAv//AQP+AAP79v/z6vv4/gD/+wAC/gEB/wQICgIGBPMKBQn8CgoG9f/17wsE//b2AwT2CwX99/0D/ggC+PX9AwD//fwCAwQC8/UMBwIEBQAB//P9Cgv0AP8F/vv+/QUBAfoA/QL8BAj+BQQEBggAAAr3Cf8DDP8L/P0L+f8OAvz1"
 ---
 
 I just finished reading [The Tree of Knowledge: The Biological Roots of Human Understanding](http://www.amazon.com/Tree-Knowledge-Humberto-R-Maturana/dp/0877736421?tag=particculturf-20). I posted upon the book [earlier](http://island94.org/2009/01/using-distinctions-to-create-meaning/), but I wanted to paste in the conclusion, which I think presents an interesting closure to their introductory thesis: "doing is knowing, and all knowing is doing"---a thesis the authors make a compelling case for.

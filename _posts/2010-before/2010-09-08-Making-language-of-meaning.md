@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2010/09/making-language-of-meaning/
 - "?p=2190"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1d4a50b0b7ae3533"
+  vector: "CwAJ/fj4Bf8W/fv/BQIK//wJ8wELBv7+/gr1+AkC/AoCBv4J/QgE+vUC/wADBAMC9fvw//0A/QgGDwD++vUKBAD2Agf6Cf8GBQAEAwIA/gECBAP8+QAI+/8A9ur7AhAC+Pr/BAkIBfIA9/z39f/7+QMDAAP9+v8G+wkJBQL6/wAB/vsJBgH+9wcFBg0ECgQE/fj/AwEJ+vf2//z5///2AwP9A/UG+/v3/Ab3/voJAwLs/v8HBvwBBwD7//kG/QkCBAH6CAD69/72AgL8Af8CBwABAfkD/gD0AQD6/gX79wD1/vgJ/vwH+Qj29/v+AwfwBQkLBgMF7fz6AgH99gEAAff+/PsA/fb7/Pz/8wP3+f4GAgv+/vwB+wX7AQQE+/cHAQvzAQL//PL4AwED+/T+9/r9+wQG/PcF/wUGAvUH9QD6AP0JBPwG+f4DBQH3AwELAfsA+AcC9wD/CP0E/P4KBwAA/fr3+wkJAwIK/QQDAAD/BgIPAAgS/gEI+gQJBQH2"
 ---
 
 From [Peter Elbow](http://works.bepress.com/peter_elbow/)'s _Writing Without Teachers_---whose quoting by me here is the result of coming across [another example](http://www.coalitionblog.org/2010/09/the-case-for-open-source-design/) (via [GiftHub](http://www.gifthub.org/2010/09/coalition-of-the-willing-open-source-philanthropy-in-support-of-the-swarm.html)) of the (false) [metaphor of the tube](http://www.island94.org/2009/02/the-false-metaphor-of-the-tube-for-communication/).

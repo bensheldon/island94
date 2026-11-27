@@ -12,6 +12,10 @@ redirect_from:
 - articles/poverty-singular-moral-challenge
 - 2008/07/poverty-as-the-singular-moral-challenge/
 - "?p=235"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f2b14ee9ab7aac50"
+  vector: "/gUACPoE/gUE/v8AAfwA/QQA9gj//fv///8J+P0LBf8EAwcKCwH9/AT1+PgB/AH7+fL+Bf8CAAoE/Pj7AgADBRMBAAj4Avz9BgEE9/77+P0OCfYF+wUD+A35+AH6Aw0DAPH4Bfz8CfMC+PwE9wf9AfoEA/kC+gQCAP76Bwj8+QAG/QgC9P78/vsKBQUJCAX6+vEEB/8L/vUB+gP0AAL7Bv7xA/76Af31+f4L/gkMDP3yBvsCAfX27fv/+/gA8fr9BgX9Bf7//gABCAMBCgQC/wIGA/4GCAMEB/gJAvb6+gAF+/4EC/36/gEK+gQJA/z/9vwB/AcS/f8CBf4L+PsGCvfy/gQA/Pb3Af35/gEDA/kA/Aj4Bg0L/QD2Av3+BPsKAPsIAPr9+/T/9PwJ/gb9BArwBP4BAvoD/wP2/v4FAwAMBfgA/v0D//4S+PwADPwFAPz8BQ0AAv0DAPz+/fwIAff+9AP6Awf+Bv0FAwH58woE/vsGA/0E9wIJ/PsU//f/"
 ---
 
 We just had our AmeriCorps\*VISTA orientation last week---which to our delight and hard work turned out great---and one of the things I've been ruminating on since then was one of the powerful dialogue we had around poverty. AmeriCorps\*VISTA's mission is to help individuals and communities out of poverty rather than focus on making poverty more tolerable; so it should come as no surprise that we talked a lot about poverty. But the substance of the discussion made me think a lot about how I view poverty. Making it doubly interesting, of course, is that I was running the orientation and manage our VISTA program.

@@ -2,6 +2,10 @@
 title: Goal Evaluation Practices
 date: '2018-08-23 20:26 -0700'
 published: true
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "cc83add732499160"
+  vector: "BxD3+wT//wQEAfr+CAX4AgQH+vwF/QkH9wX7BQX+/AIDAv0TBAEG/fsBBvsF9QT4+wD5+v/zARAA/fnz+AD0/wP7/P/0BAT9AvsCCvz9+wIMAgAKAvgJ+QcGAfn+/gcA/fcABwEB/fH++QQGAPr7/QAFDAT3BP78BfkLA/79AwD9AwQL+PgDAf/+Ag0HAgcC8wz6CwD3//oP/wIA7gIECP36+QL7/QYB+/4BBQMF/vn+BgL+BgAB/gL9/vgF/fAF+wcBAg3+8/wB+gD5+/0CBgAGA/QJ+gP//AX///oH/gACAP4GBf387QAD8vf3A/MA/vsE+AoTAgH/Bgby//kJ9gIBAAUJ9AERAgb+/vv/CP76/gD9/wT/+Qj3BQYFA/4K/QIHBv0P8/4BBf4D/P/5+vz0/Pr9CgH///75+f74AAD/BfwI+f73A/8EAvn2Bgr3Bw/6AwgG9fT/+vcG+v0LCf3+AQAFAREJ/gsHCvkE9Qf8+gb/+QEIAgX8/QkIB/kA"
 ---
 
 From [Appraising Performance Appraisal](https://www.linkedin.com/pulse/20131109201506-2293107-appraising-performance-appraisal/) by Steven Sinofsky:

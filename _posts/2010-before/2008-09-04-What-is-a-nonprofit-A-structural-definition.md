@@ -11,6 +11,10 @@ redirect_from:
 - node/251
 - 2008/09/what-is-a-nonprofit-a-structural-definition/
 - "?p=251"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f8a35030188d61f1"
+  vector: "APz9/gQGAfoIAwj+/wML/QIE+QgD9gELAf/6/vz//fsHBQkIAP/xCP79+P36/f/6/PsK/QMD+fj//Pv1BPkHAAgD/wH28Af8CwUA+QYOAvsKDgAM9g0A/QUE8Qf+9AX+BvoEBAQAAPgE/QEAAwwBCgEBAf73BAb3A/4C/v4E9AD7BAP8Av8AAPsE/gYOAwj7/v0I/QEG/wD79fX7+AEKBQT5D/r8AwD3+QAJAf0CBQMBBQ0FAPMC8//99v0EAfv/+gQCBQr0CAT4BPwAAwALAQEBAv39AAgC+v0DAvUCAgAP+wfzBAH69gMA+vz8Afn/+AH//AkOAgH9AfL/BQIIBvn3/AAB//7u/gYFAgII/P8EBPXwCAcCCPv+//cDBvYP+gAD///2/Pz67PEHBQX2/Qj6AQH9CQ77/QgG/gUSDwAIBvP/BPX88AEG/wDz//77+Af/Bv759wAAAAH3B/4FBvUA9/75BgP7AQMB/f789P4A+QP+/gABAf8M/fsG9Af9"
 ---
 
 My radio program piece I [posted last week](http://island94.org/articles/radio-ga-ga-2-role-nonprofits-constructing-better-world) generated some good discussion in the [comments](http://island94.org/articles/radio-ga-ga-2-role-nonprofits-constructing-better-world?#comments). In this post I would like to follow up by providing some background to the discussion that nonprofit organizations are not fully deserving of the aura they they receive. The following is a synopsis of the Nonprofit Structure training I give for AmeriCorps\*VISTA members; you can also watch the [40 minute training](http://ctcvista.org/node/1334).

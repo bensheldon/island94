@@ -3,6 +3,10 @@ title: "Rebuilding Concurrent Ruby: ScheduledTask, Event, and TimerSet"
 date: 2023-05-31 18:44 PDT
 published: true
 tags: [ruby, GoodJob]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "66df1f28d649de9b"
+  vector: "9Pn7BP4AAPoIA/wH///9+Q/89wEIAAgK8/gD9wEBAPIAAAEHAvn6/gH68/71A/sA+/j7AAH4DQYN+vz8APj6AAkC/QUK+PwG+wf5/gn58v/2+QACBPcDBQkB/wYEBgsHBwf8AAT+AfsE/vb/+PQN+A0EAAgHCAwICwv99QYCBQAB/fH7/QH6AQD9BPr7Afz4CAMHBQX99wgB/AD6+gP8CvcDBAD+BAT1AP30AQLy+QcE/w/8C/v7/gcA/wkI//0GBP8C/QMF/Q3+Av//Bvr1BwUB9/76AgAC+fv8+gUCAQAJ8/oKDQAA9PP49/35Awr3CQL9Bf4B+P8K/vj/AQH/+QgC/QcCAAT8E////v0N+vvyBQH8AAoC9f/3AQUB/gwGBQID8wIBDQv5APsK+f71AvYABAj7CgQHAf0B+/8D+QALAfwEAf0E+P8GB/sLAwj/BAD/+wj+AAH5BP4GDfgB/P4I+gD5/gb/Av36BgT69Pv6B/IJ/wgABw7y/AUE//b/"
 ---
 
 I’ve been diving into [Concurrent Ruby library](https://github.com/ruby-concurrency/concurrent-ruby) a lot recently. I use Concurrent Ruby as the foundation for [GoodJob](https://github.com/bensheldon/good_job) where it has saved me immense time and grief because it has a lot of reliable, complex thread-safe primitives that are well-shaped for GoodJob’s needs. I’m a big fan of Concurrent Ruby.

@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2013/05/automatic-analysis/
 - "?p=3085"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8fc028d6b7b59a40"
+  vector: "+AT5/QnzABAFBfT+B/z6AwT0/vn5+QP+AQr99AAB+wkDAf/6AQT3+vP49v/+8vv4/gLu+AXzAv39AAMCAvz6CAUHAf3/APwB/QH/AvYEAfINAvQOBgQHAAn+A/oB+wYAA/0EEP8H//P8AgD/BQMB/QH4CP35/vkICQb+AxEJ9wABAwb//v36CQEGBw4DAgsM+gny/gfwAf8DAP4HBQL49AIBAAT29wcD+AL9BAIC/P/6/AQFCAv+BwbyAgb8//QA+A4CCwoB/Pr99gP6AgIDAAj5AvoC+v4G8wgCAfUMAAD0/f8C/v799gT8/fr/AwMEAfj3BwIN/P0AA//4AgAA/PP7BQUE/foEAgL29foF9gf++ggHBf/8/P4A/wsB//8EAv8DBvr+APn7+wYL/PT6/gP7EP73DPkE/wv6/vMHAAAC/QUFDv34DvgDCf32CQUJ/gL29QYGAP4F+v0KAgX/AvsECgEBCv4A+Av9BvwE+v4F+gP0AgUEAwEH/gQB/ggK"
 ---
 
 [Karl Fogel](http://en.wikipedia.org/wiki/Karl_Fogel) on [The Open Source Report Card](http://osrc.dfm.io/):

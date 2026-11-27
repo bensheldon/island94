@@ -3,6 +3,10 @@ title: Home buyer letter
 date: 2021-09-14 12:02 PDT
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3ee12b9c77146bb6"
+  vector: "CAEJ+/kIAPv49PkCBPsKCQT7Bgb4Av8B/gcDBvj8CQoJCAwFBP0AAwP8/Qj3/gX+B/3//gMF+w3//QL6Dv76Agr+9gT/9AYG+wUB/AMDCPr//fYL8Aj1/gUDAPz/8/v5+fL5Cf0FAvgC//8I9wgBAPgI+wMB/wj0AAP09fn3/gAAEQcFB/z6AfgABAEKAQH9/vwC/AkB9gb47wIHA/76CQkAAv/9+fv+9wUGBQkHDPoDCAH/9wn4/AP6Af4PAQX/+fUJAgQABwIMAv4E8wMJ/Ab9+wsPAwrv9wr5BwH9+wD+9AP+/QAD8gn/8AYL+vsAB/0B/AMP9wIFBv4LAQH4+QAD/Af++wIAA/oCAwAB/fsABAUH9wYCCAb/9QMADAMJAvUD+Pr+9v79+/IDDwL6CPgE/QkGAPX4Ag74A/v9+gAE+/cA//0E+gEGAQD0BPr8Dv/0Bf8H/QH7/fkBBAT/Avv/APcAAQIKAv30Av38/P0E/vz+AQMBBvL/BgkB/vkD"
 ---
 
 Having now successfully purchased a home in San Francisco, I have had friends asked me for resources. This was the letter we sent to the seller, which is _very_ SF, but also the energy to bring. I also learned that these letters are waning because they are biased af.

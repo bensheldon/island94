@@ -4,6 +4,10 @@ date: 2026-01-28 15:12 UTC
 published: true
 title: Just a moment...
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "48032465062ce72c"
+  vector: "/f8C9/wLBAANAfsH/P3+/P399/4NBAP//QD5+vv8/QcE+AECBwsB+QIE9wv/+vYBAf76B/r3/f8EBwn7+fz8CQX7B/v2Efz/APwCAvrz/f3//gcH9fcK8wf/9/IACwQD/AX8BQcCBP4F9wT1+P3/+Qz7DwT8/P0SBwX5BQH7/QAACf8JCP/9CQYAAPn8AfsD/QUE/voIA/X4/QII/QP+AwX7Avj6+QcI8wD7/P0D9wn9BQkNB/8JAf33AfsI/wIIAAX0/QD38Pz9Af0CCwIG9/n7+P/x8wT6/gMD/AL1AAADAO8JAgQBBwn69fsC+gEACQICBgYA9fcDA//3+/4B//8E+wQM9/r/AvkE+wT+Bf8CAfsBAQIB/QTy/AABCPf0Bf73+/0E+e33AAEICff1/fr//wQFCf/6BBIGAwcHCwD9BfwDAvgBAAELCAMJAP4HCPT2/wEI//L4A/0A9wgBCP73/AQEBgcEAQYCCQn+/wH5CP4ICgIMB/wJ9wYHBQDy"
 ---
 
 it took half a century for the accumulated wisdom to be codified when in 1979 the second-tier screenwriter Syd Field published Screenplay: The Foundations of Screenwriting. His prescribed structure was this:

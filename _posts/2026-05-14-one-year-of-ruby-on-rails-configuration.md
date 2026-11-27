@@ -3,6 +3,10 @@ title: "One year of Ruby on Rails configuration"
 date: 2026-05-14 19:13 UTC
 published: true
 tags: [Ruby, "Ruby on Rails"]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "be3588eaa33fee3c"
+  vector: "+AH5CAP/AgH4/gMCAf8DCAcB/fwHCAYJ/Pf9/wL5BwD9CQ4QCvn9AAoD9AL8/gH++vb8AAH+/P0A+AEE+gT+9/sE/gQFCP7/9QT6AQP79vX08wEEBf/8AAkF+fkICAcEBQT4Cv4CBvj+/QAB+/kFBQQDCAUBBAkEEAj/CP75/AAGBfoI+Ar2AAEG+wL8AP7+/goGCwcA8P39Bv/4+QH4/gQIBPwC//P2/gb2/gT8/QYF+wMDCQH89gUGDvoD+v4FBf0DAQf/8wr3BQDwAfv7BQD/8wEF/wj/9//79v75AgAK9fwH//gMBwH2/fYE/wn99f8FBvEK+gkBBfgI/fsDBvwA7Ab6BAMGEwf0BfwJAfz3AQX79PwD9QT78/4B/gT5/vUDAwj5Bf77AgYH+//+A+77/gsEAfwUAf8AAf0L9AD9A/sD/wIA/v78/wD3/v3//An6//8G+AT6BfwFC/sQ/wAD9AgAAg0EAvz0/vf89voBAvb/+wsBAAj2BP8H9fsD"
 ---
 
 I've been working professionaly with Ruby on Rails for nearly 15 years (I'm also the author of GoodJob and Spectator Sport). Last year I left GitHub and co-founded a technology startup, [Frontdoor Benefits](https://www.openfrontdoor.com/), that helps people enroll and manage their US government welfare benefits like SNAP/EBT.

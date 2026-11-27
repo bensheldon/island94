@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/02/tips-for-researching-and-applying-to-nonprofit-jobs/
 - "?p=419"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1c6cd86890131b1f"
+  vector: "AAP9BQEC/f/5APn6//z8AP38Bfv9+wT4BQID/v0E//kHAgoS/QL4Cwb9+vP59gYH//oG9wP/8QEJ+vv7AwUDAAQB/wP39vv6/fwF+gkBBgAIAPUR8woEBAgEAgH3+wwCAv8GAQb1BfYDAwwE+wQCCf0GBv/yA/8EBgT6Av4B/QADDAIABAQGDPoOBwQCAPX5/vkD//z+9QAL/PQC9vsDAQD1CgP3AgD58QIK+gMHCf/2CwcC/QD08gcF/f4I+/z8/gH/Ahb/AwMCBgEDA/0JBQoI/QAGAgkAAQUKBPb7/wAIAwz3+gD5AQH8BAcB/fP79wII+gAP9AcAAgIE+gH+AAj9/P4I/gX3CAIA9QD3/QAEBPj3AAT+A/v8AfT3CgII++8I+/r78AgI8/L5B/36Cf7+AwECFgP7/gD69gIDBgAHA/z8A/b39QD/+/r5AAwEBgX6//4D+AYFAv0AAQP/A/v0APz5/Qr+BQoE+/wA9wT9+wsBAwIA/wAL+AUE8vn8"
 ---
 
 I have a guest post up today at [Entry Level Living](http://entrylevelliving.wordpress.com/) on [understanding and negotiating your non-profit salary](http://entrylevelliving.wordpress.com/2009/02/05/understanding-negotiating-nonprofit-salary/). It's targeted towards people who already have a nonprofit job and are looking to increase their piece of the pie. The last piece of advice from the article is _stay mobile_. If you're looking for a new nonprofit job, here are some tips:

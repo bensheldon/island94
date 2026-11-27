@@ -7,6 +7,10 @@ date: 2022-11-02 18:26 PDT
 published: true
 layout: book
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7b94b727b9303745"
+  vector: "Bv79/QD8C/4LAP0C/v4E/gH/9gT/9//68P4A+gL9BBAEAQMM/A0GA/75+P/9+f//+Pnp/gH9AwAFAPr7Avj5/g0CAAb9Bgj9AQEMBv34//cBCvkF/f7+/QcC9Pf98w4IA//6BAIHBfv79/f9AgD0/fwGBAD4Bf8FDQkIAv//9wD+AwAPAfz7+QIPAQgDDwQD7gP7/v0G//v6/AL/AgT7C/f9/wL49Qz99QICCQQIBf7xBPkCE/MB/wAA/fkEBPUFAwb5+A7+/AT1BPv6AAQA/f76+/38AwX8/Qj//QAE+wD7+fcGBvz68P379AEI/vr7AQYAAQwF+/v/BAD3+P4BAvj7Av/++f4E+wIH//73APsAAwQC//gCAAv0BAoJCAMF/f77BQAABPj/+AEB9v789vT5AgUAB/wNAAAE+vcH/QAC/QQBAv/49PkMBAT8DQwADAPz/hH/+AQAAPYA+QkBBfz8BAL4/wcEAQUDCgX7+QT8DP8BBwMHAAUK+gIQDvz9"
 ---
 
 This book has big '60s energy, believing in the creative potential of a group of men openly jawboning in a room (but the prompts!) to solve problems. I've also read _The Practice of Creativity_ and _The Innovator’s Handbook_ too; the former probably being the best of them. They all are mainly persuasive theory and leave me trying to figure out the actual facilitation plans between the lines.

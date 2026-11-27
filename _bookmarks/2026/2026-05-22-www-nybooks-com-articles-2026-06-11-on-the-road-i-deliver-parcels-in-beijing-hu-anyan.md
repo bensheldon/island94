@@ -4,6 +4,10 @@ date: 2026-05-22 15:13 UTC
 published: true
 title: On the Road | Rumaan Alam
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b4915f4b22ee283c"
+  vector: "+wf/BQD6E/0B/gEA+PcD/QP3/Qj9+/wHAf4BAvsB/QIJBwcKCAQEAgHy/gH/7wv+/fz4/P78AAYKBQP++Pv/Ag75AP3xBAD+9AMD9Q78CAQHAv4H9P39+A/19fn6/AD9/Aj0CAkLBPoA/wQG+wbz+wD9AAHy/voCBAcDAfvyBgD5/AkCAAD6AwYGAAf9AvsB9/8ICAQB/Pf79AT+DwP3Bwb8/AH2//359QALCfoQB//2Cvb/BgD78wb4APr+9/cG8QX++wALAgf5B/kKBAcB+/77CAQMCAD5AgsDBAH4AwD7/fsFBgH+/AoJ+f0CAgH1A/UBAQEK/v4ACAf89vv69/cE+wH1A/gF/fb5/AUAA/YC/QYEBQj5/wD/DgIDBv4M/vYH+fz+/vP6/gAL//sC/f/3Bgj+APv+AwcE/vkB9AAA+v/6A/gC+AEJAgcGC/8EC/v6AQkB+wP6Bf8RBAEBA/b2/wH//v8D//4EBQgD9wH9/PwCDfgA8gUC9QIL+f8A"
 ---
 
 A woman who can’t receive packages while at work asks Hu to make his delivery after hours, which she suggests might be a nice evening outing for him.

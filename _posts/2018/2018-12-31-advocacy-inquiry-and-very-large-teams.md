@@ -2,6 +2,10 @@
 date: '2018-12-31 18:38 -0800'
 published: true
 title: 'Advocacy, inquiry, and very large teams'
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "fc7fbdb6147d2532"
+  vector: "A/z99QQB/wsMA/UA/wMKAfzz9AL49QcF9/cC9vsBBwkNCQQJ/gcAAQIGBPn8/QAB+v7++gECCPz4/f8BCP79/v4E/gj3AwoEAwIF/gECC/oECgL7/vr8+f4H9gMO/wYSAf33BAIEAv32+vv//gf6/foC+fcFBwMAAgACAQ8A+AD4Bf0L/P4CAvj9AwMUBgb19gv2/wIC/QX6+AAEAwH+Bvr7Av8A/QP59AH+BgsHBPnu/QABBvsD+f78/vQB/P0L/QP8Bgv4Bvj4/fYCBAkD/vgDCgUEAAMHAAf8//0AAwAF/gL8DfoF8goA+foA//T3A/cP/gb//gYEBvn5Bf37+QL8CAj7A/n/CPn9/vsEDgX1Afr8BQQEBgX//f8GBwEE+wD0AP0D+fb4Bf0D9vT9AvEBAQAD+wEOBAUF9wn4/QALCAH5BvX5+AoMBf31AQT8/Pn2B/z78QMFAfgD8ff+AfAFC/n1/ggBAgMABgH/8f72AfQE/wIHB/4GAf8JCvYC"
 ---
 From _Overcoming The Five Dysfunctions of a Team_ by Patrick Lencioni:
 

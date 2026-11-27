@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/07/similar-message-wider-audience/
 - "?p=2785"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a5635088d3cd67c1"
+  vector: "9vwB/gUB/P0AAvMFBQYD+wP9+wP7/QT+//r8+f79/QYHAggVAgH5/wD1APz48Af5+v//9gcE+P0C+P77/fz//ggD/AsB9wX7AQMIAQkJCfwQAQAJ9QX59wME9Qb/+gn9/fr8BQEEB+z59wAGAAMEBvoBBf7zAgECAQH+AAb+/gAAFAgKBv8D//gBARMHDAL09v4F/gUA+PkL9vwDAQX6BQf6Bf769wb79wP8BQAFDvz9CA0D/v4F+gP8APQI//kIAv4A/g/5//z39vz/AAYNCAT6BAMKAQn99QYDAPwHAgAHAgP+CfkB9wYCAv77A/HzAvkB/g0K/AH+BvoC//8D+QD7/gcOAP3+Av//9vn7Av/2Av0B/gMABgb8AAcCB/3/A/cICO4G+/oD+fYCAf36+/T8+v8JDQ33/Qf57gAABAAADPEBA/n2+gcCBgT6AgoA+vv3+QYA+Pz+A/r/AwH7BPMEAPr4/AMCBQ4EBQEH+gf6/vz//AcL/wYJ9wkE+vYC"
 ---
 
 ![](/uploads/2011-07-15-Similar-message-wider-audience/namac_QA.png "namac_QA")

@@ -9,6 +9,10 @@ tags:
 wp:post_id: '2944'
 wp_link: /2011/10/the-work-itself-isnt-inhumane/
 wp:post_type: post
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2a97bf9d36c9b33b"
+  vector: "AwECBQD7/QL+BfwKBPf+BgTzAgv3/P8FAwYC9PoA+gQCCgQCDP34/v309gz7+gjv+gT3/w8C//wN//8MAPv7AgkD+f7+9f76/gIL/Pn7CfUI/P4S+P0ABA/+BAQF+gUAAgP9BAILAf76//0A+gP+/P0AAv7z/vwKBAX9AQX+/AD8BgT/Avf6Bf8MBBEDCgsH+gQA+wwAAgL+/PYBCQL3AAb/AQsDAQD+/wcLAQAHCfz6AwQFAQT+AwTzA/38BAEG/gAEBQj/AAH69fgC+f7//A/5AAMJBAIB/Q35APoC+AD3+PgD/wD99gP/+PkBBP/6///y/wMI9QgFBvf8A//2+gf7+AMFBP3++wnv/f//8ff8/AMEAPv8AQQBAAUCBfsGA/IK9/P3A/v5+wIE/gLzAwT1CQUFAwD49wb09+4D/QAAAAIECfr/Dv0IEQH3CggMCPXyBwAJ9vwF/vgFAQX7/gD//PcJAwD++Qb8AQP99AQEAQH3AwgJ/gMG9AIJ9vv5"
 ---
 
 ![](/uploads/2011-10/IMG_1116-600x450.jpg "IMG_1116")

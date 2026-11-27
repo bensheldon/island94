@@ -1,6 +1,10 @@
 ---
 title: There is often a crisis
 published: true
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f08c73d21095df41"
+  vector: "//8IAQb/BAgF9/gL/P0F//z9+wr5+vwH9AgCAP37BPcKBAgIBgUD+AH5/QMH+wYCAfj1+/72CgkFAwX7BPoA/v4GBAf7C/75BAb8BwL+BgcJ/fsF8vwDAwoE+PoD/QcF/gX8AgYFBfn6+PT+/f71AP/4Cvz0AgEQCwQF/gMK/QAECgMP/f77+wYH/wcI//368wH4AP30+/4C9gcAAwH7AP4A+wH4/gjy8wb+BgoKBf38/wAGCv/29gH0//kG+fUA+wb+/wD8BAH/9P0DBAX6/AX4BwYFBAUF+BT6/gkP+gAM+vz/AwcA+gL+9wMGCPP1CvsB/fwC9gMFDPz9+fL9BwAGAwf39PsEAQL7AQD8Cff3CfsB/vwD/gX18Qz1AAEA+fkC+wIAA//1+/0B+PP1/vz/BgH2CgMI/wPy/PoDAgD//wkCCvQBAQEFCPr6CgYAAwH4/AgF+gAJ/wEF/wf+Afr/8/wLAAX+AAoCBPb78gn+9wb9AgsHA/sIAAYBAPMA"
 ---
 Some reflections from Matt Webb on their [accelerator's office hours](https://interconnected.org/home/2018/04/20/reflections-4):
 

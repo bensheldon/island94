@@ -4,6 +4,10 @@ date: 2021-07-27 06:50 PDT
 published: true
 tags: 
   - GoodJob
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "30a6d14bec747b10"
+  vector: "7P34A/sA/vv4A/4HAwEBAQgB+vUB/wQF9+8A/fv+/vr/CAIL/f39AAUA8PX99f/9//8C+f8FBgcF9wb/BQIA+f348gn/BwH+9ff8AP369Pv09wUD/v4D/w/9AgAH/f/+Bgj9CAL6CfoEBP4H+foFCQQCAw3+BgEKEQoC/gP+AgAFBP8BAAT5Avz+Agj9BPH1/wUICAL77AQD/gcB/wQCEAEK/Ab3Avz2AwH4+wX6CQMHAwP+CAT6+ggDCgYD+fcI/fwHBwcF/g399wL4A/7xCwb++fwGAwQDAAEEAQEHBAAG+AINEQAD/fn5+/YD/gL9+/73B/0BAAcKBvQA/AL2+QAHAPb7BAMIFf8D//gH/f/z//r79QUG9wD8/AkBAgwMAfQD//4GAgn////++/D0CvT9Bgj5CvwMAQX8+voJAAADAv8BAvP+AAAGBPv/AgQACwIB+QYGCgP6CPkKA/oE+/v7/AD2+gEEBwn7Av79+fb8+/j/BwX/CQvzAgQE+PwB"
 ---
 
 This is a quick roundup of what’s new with GoodJob v1.12.0 since the last update published for [GoodJob v1.9](https://island94.org/2021/01/goodjob-1-4-jruby-compatibility-and-more).

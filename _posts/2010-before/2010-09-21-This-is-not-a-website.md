@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/09/this-is-not-a-website/
 - "?p=2203"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6ae453c787a1a577"
+  vector: "/AD4/gf89gAHBv8VBPsI+wL7BwIHDwUCAAT3+APy/wT9/gEFBPwE/vf3+ggD//n3/vj0/QH3/QD+BP3z//7+DQj//wX6//kBCAsG/Aj99wAHBwgE9QEG/wf6Bf8Q///9//b9CP4QBff4/f8QAAD6APX7B/gI/gsJAQYDAgPz/gAJCfoJBgH+9vkAAwn/Dgn/+gEM/AgBCfT2//sD+gL59/z3B/kD9Ar8+AIABv4NCPwIAPz5B/7//fj8BfgIAvv8AQD6AAP5/fv++PoD+/gAAQv5BQAC/Qf9BggF/fr9BAD8+fYJ8wb/AgH5/QH6BPkEAvT1AgL/9P0PAgYB+v0G/AMA9Qj8Cf/9BAH9+vf9+v4GAP7+CvAF/P0EAAEDCu8BC/ICBfn/B/f+8f0DCQP1AwED+/wJ/v4C9QABAwINAQD/9fsHAwgO+fcKAP4ABQYGBPr7+gr6+/kGCwEABAH5BPv7BP78BQD7/f8OBQUF+gMG/wL4CQQD/QIO/AcGAgX6"
 ---
 
 In conversation with a friend, he mentioned his dream for a "No Website" Movement: content should be freed for consumption in whatever format its consumer desires.

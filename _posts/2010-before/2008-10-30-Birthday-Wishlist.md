@@ -13,6 +13,10 @@ redirect_from:
 - articles/birthday-wishlist
 - 2008/10/birthday-wishlist/
 - "?p=266"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "40616721b8ba09f9"
+  vector: "/AkIAwMFCQP8Af77AgIDAQoE/QQD+gYF+QT//Pj8AQT+/AUGAwgI+/70AwYG/w4I/fr8//r5+AD7/AH5AAAABAD5AA3//wEGAAn/BAX18f30CQkI9gACBPz5+vwG/gL+/Pr6CwgKBQIM//H7BAADAfcD/v79AQz+BgH//vf5DAD9DwYLDwAAAPcKBg0DDfkA9PwI+vv5/Pv/AAf9BP8BAgnx9fj58QYD/fv7Bv4MEQT8APz6/Pv39gL3C/YMCAL/+fr8+QT7/QcF9fwCBPwD/QT89gMCAwP09/8AAP71+wAE/P8JC/b/+wT/8AMDBf76AQr5/fkL8wT+CgT39/35/gj7+v8D+vwGAP4EAfv29wIJC/0F+/79A/v8Bwb9BfwHBfQB/PgJ/gUC8QwIDAL/A/7/BAgK//gE/gX7CwUNCAAC/AADAAYC9vcA/f32Bv/+B/z6BAkIAvb1AQYC/wb7BAYCA/b1CP4BAPb7AwUC+vr4C/j4CAsEAgAIAwgEA/IA"
 ---
 
 My birthday is coming up on the 24th of November. Twenty-six. In [the](http://circuitous.org/rebecca/2006/12/12/birthday-list/) [tradition](http://laidefawei.blogspot.com/2007/12/birthday-list.html) of my friend Rebecca, below is a list of things I would like.

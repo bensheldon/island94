@@ -12,6 +12,10 @@ redirect_from:
 - node/224
 - 2008/06/other-words-for-lie/
 - "?p=224"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9a764dd9363354a4"
+  vector: "A/0GBwH/9/T9//wIA/0AB/EBAwQLCAEMAwAA/fUKAgoA/gUD+vwA/P/zCgT5CwYDAwX/B/36APz6CP0GCQIBA/cK/fwDAQv/Avj5+xAPE/oFA/z9+vf79gUH+/QCCv32BAj6AgH/9v0C8gL89wICB/z9BAEAAvYF+AYCBQvxAAAL9QMC+Ar7+QUD+QYD/QH/8QUH9QMCAvwE/gcB9gT69AsCBgUA+f4J/QP7+gr+/QD6/wEHCgAG+wYFAfMI/vv4/ATyBPgDCvf5/f3+AQQCBAT4Afn6Bv78/P/3Agj+9gDuBQEGAfkBAwb+8/sFAfsBBfn+BAIC9vz89w//BPz+AfsFAAgD/fcEBvf8APMA9AUBAvf/9wr6AfMG/QUE/gHy/wAAAAcFBPPyAPwA+/sAAgvyBwQB+wD99BT9+/kG+gAEAAACBAIG+wb9DP349wcH+/z/+wD/8ggCCPwNAgQABAj//QcCBwP99AwHCf3/AQoB/wMA+QoHCfv+/gP4A//8"
 ---
 
 It's another election year which means that politics are flying.

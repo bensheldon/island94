@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/04/i-am-now-a-technology-of-participation-facilitator/
 - "?p=1894"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "184ea28275c0abab"
+  vector: "BwQCBQQDCQH5/PsDAAP++QH7+f328wUH+/kG+AgB/wn9Bv0QBwcF/fz9AP8E/gP98P4D9AUB+/YCA/76/fr1+fYAAQL++QUD/QAI/QMEDPwOBwIJ/ff8/wYA9Q78+PgB/gYGDv8D/fr4+/8DBQn9AvwCCQn1AwECAf8EAgf4/gAC/QETBQIC/wL8BQUKAAj59gH6+gb9/wT+/wL+BAUB//n5BwMC9QAA+QII+gECCvr3DvkDDvQE/QEBAPAJBPYS+P4A+wz3+AD8/fj9/f0EBAX5/wD9+wb4Awz6APoQ/wAJ+gX7EAAB8QoF/fn+A/zy/wcDBAEFAvoCAP8DAQgH9wD38woDAPn5Af37A/gC+vb3///7APgKBAT59wH/A/wBCvz7DQQJ/wL8/wMC/f35/f71APv6DP4N9/8B+wsAAQADB/kBBPbyAQIP//YG/Qn9/wDxAgj+7/cCAvQN9AD7CPoE9/8B+gL6AggKBPwLAAf9Bvr9BP8JBwcC/gL/B/P+"
 ---
 
 [![](/uploads/2010-04-20-I-am-now-a-Technology-of-Participation-facilitator-/Consensus-Workshop-500x314.png "Consensus Workshop") ](/uploads/2010-04-20-I-am-now-a-Technology-of-Participation-facilitator-/Consensus-Workshop.png)

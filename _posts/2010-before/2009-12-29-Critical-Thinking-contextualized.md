@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/12/critical-thinking-contextualized/
 - "?p=1628"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "83827c7d6e34f9ab"
+  vector: "AgL09vz/Dw4HDP0MAQEEAAAD/vwAAQYA7AsB+AMGBgYFAv4JBA3//fUA+vkE8QL/+P3w+fT6/gkGB/8A9f36AwH++wb3CgQDAfUJAP/6+vwDBgEB//0E/wL6BPb8Aw0J+vz6/QQCAfL89gQGBQL7//4JCgME/wH8AQYH/v74/AD+AwgM+v4H/QMG/v8IDgD98/n5BQQCBfYBBAH+/gH4Be0N/gMD/f/5BPwGBwgMBgH+A/kCBPf6A/4JAvn/AvX+Agj1/wv6/f8C+f75/v/9BgYAAvP19wH+BQX6/wAG9gD99/wLC/8D+gTy9/r7Bf31+PsB/ggG8AD/BwQC+goJ+AAG9Qj9B/kG+f4J9/sBAwX2Bv8B9QAF/wfyCQUIAP4AAPr8A/0E/AME+AYF+P71+QPv/QP8A/z/Afj7/QH/+gD+/QQFBgAFBP4O/vv+AAX+DPv+/RL59gH9/gMC+Qb5BwH6BP4HB/0G/v4H/wT88goBDwIK/QAJ/v3/7wkLCgEE"
 ---
 
 Below is an excerpt from my final paper for the Critical and Creative Thinking course I took this Fall. I based my paper on a quote from the Arthur Costa, author of our textbook, who wrote:

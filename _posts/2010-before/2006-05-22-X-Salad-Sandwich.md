@@ -12,6 +12,10 @@ redirect_from:
 - articles/x-salad-sandwich
 - 2006/05/x-salad-sandwich/
 - "?p=47"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c802c94c18471343"
+  vector: "A/cL+gECAfsA9gcCBfb//xb8+Qb9BgYH+QQH9/QABf4C/QH4DvgFA/f8AvoH/PkAAvv8+QH6Awnw+fsIAP0FAvz+AwP6A/r+BxAA/AT5+/r8+v4GBPz9BgEB9PgC/QUA+fMBBvkGB/P8+PkGAv8D/v37/P0S8/YD+AT3CPwA+QD0AAYBCwEB+/0DC/sBAwf9+Qj//PwDCPr6/P78CwT5AwD8AQT69gEL/AP6BvgCCQUE+Aj8CPwAAQEIAPgAAvP7/QX+Af4ECf36DAv9/QUH/Qj/AgL4CgEEDAL8+gMH8AD3AvUMCf73/gbvAgP//QEKBgL6/wf/BQn8CwIGBvf5AAju/wr59/0I/PwGBfsABfz3A/r8/wACCvb++Pz7BQEDCPv69fMC+fn8/AT7//n8Bvr9/fsK/fcKAQz7/AEHBwAPAfkNAvj4AQAE+A76CfYFBPz8+vwKDPkI//4E/wH6APH/+//2AQkCBgABDgMIAAv+AQEBBf0ACQf9BPwCAggB"
 ---
 
 \*Alternate Title:\* May I? You Mayo.

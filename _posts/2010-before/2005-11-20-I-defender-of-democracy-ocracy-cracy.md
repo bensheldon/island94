@@ -14,6 +14,10 @@ redirect_from:
 - node/10
 - 2005/11/i-defender-of-democracy-ocracy-cracy/
 - "?p=10"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7518a1f9f5250829"
+  vector: "/Q8B/w38A/wA/AgIEvz2BAP+9Ar2/RAG+wL8Bff5AfYCCAoFC/0J/AH3/wYABgMA+fH/Afz+9/oACAj/+gMAC/0MA/kEBP8JBwP2+Qb4A/8N/AIC/fX2+AX//AMJ/QXx+gP8Cv7+AQAF9AH8/AEA/QIEC/f3A/v6A/r3/gL0AAD+DP8HCwX3Af0EAQH9CAYJ+gT+A/8BBAL++w4ABAL7CQMDDQEC+fsGBAgDBQYCBgT2Bv8F/ff59/X8CfYDCQACAPnyAgEBBP/8//wH//z/8wL+B/wF+wn7Bg37Avn/8gAG/fz+/QH8AAj+BP0B/gLzBPzvAPcF+QX/Dgf/CAL68v8IAwkD9/399gD6APr3/QEB/vUD+/v//gH9AwD8BfL5Bfr/Af4DBvv//Ar1AQ/8AADwAf8BDP/5AAID/P4HCwACAAcEB/v+/vv4AfsB//wFAPr6A/j5AP7/B/X9+Q/7/v/8+AMA/wYC/vwKCgQBDQP+BgD6ABQC8xD//hIG/PX1"
 ---
 
 ![](/uploads/2005/i-defender-of-democracy-ocracy-cracy-1.jpg)

@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/03/cold-start-car-advice/
 - "?p=551"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "150ff15ee99c83b3"
+  vector: "AAj8CAAC/wMBCv8HAw0MAA37/v8I+wH/Bf33/PYF+gD4/AcJ/AP7/QQDCQH+BQAEBvkBAP/++gX2A//++gMD/P8BBAQBAwgG9/r5+wf+/P4A+gQFAgAT/QEJ/gEE/wIIDAH3+RD9BP4G/f34AfkCAf4EAf75+QsDAwcCBggFAAABAQMHAvYCBQAECAX/AAYB9vH/BPn7CQMDAQUA/AP+8PQD+QP//wECAgn7AAAF9P/xA/n+Bfz2BwAAAvv5/PkDAPn7/vn4EPcD+gwFBf37+AH8Bv0B+fr/+gL/+AYHAwAO/A35AQf7+v4B9vv//QjxBgADCwAD8wgCBPv//vUHAQn9+gT//wgCDvMC/gL69f4FFP709QT+8P8C+PsE/QP78PL9BAb9/QIF+fr8Bf8K+gQG+/sP+gQEAQAF/P8U9gAAA/4D//78/v8BAQAMBPUHCAYDAPYF+wIIB/75FAHpBgIG/foQAwL5EAEB/vr7/gP+DQL//wT5Cf0J/gEE/PgK"
 ---
 
 A quote from a Slashdot story on a new fast charge/discharge lithium battery:

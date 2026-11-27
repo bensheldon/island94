@@ -3,6 +3,10 @@ title: "Farewell Brompt"
 date: 2024-02-13 17:49 PST
 published: true
 tags: [Brompt]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ab499f2bb476e5af"
+  vector: "+vsEAwEFBAIG8/0F+/7+Bvf/9/kB7wEFAgAC/gL5CPr++/z/9QEF/voG+v0MCPwHAwz69fwAAQUE/Az8/wIAAwT6/AD+CAcHCQz/+/sFAAUA+goMAgwB/wIA+gz2B//8A/T3CQH3BQP8+/8B/wT8AgAC+gUB+wz6FAj2+P39CgAE/P0KBwP5APD8Av/5+wTvEAX9Avz79Qf5DPoL8QEHCvUI+fj4/P8AAP/9AAD8BQICCv4LA/kIAQT99/oEBAL6/v71//8D/f4H/PsB+/3/9wb7AfQG+gUA+gf1/AwD+gD5CfgJ9gv+BAQF/gf8BvsQAv/4+/4G+f39CwgBAv71+AIIA/MI+wT4B/0D+/0LBAP8Avb4AgD9AP36AwP8+wP+BwX3BAUAAA4I9QD7Dfz8+gIEAfsA/fUFBAL9Chb6BwD4+/v7BQEE/v7xCAoK+wP99P8BAQD9BwL4+PsDAAPvBAf++vr5AAQCCgX9BAT+AvcCCfMEBwAE/f4E9wf4Cvz7"
 ---
 
 I'm planning to shut down Brompt, which I previously wrote about in [2008](https://island94.org/2008/04/Brompt-is-a-blog-reminder.html), [2011](https://island94.org/2011/03/A-form-from-my-favorites.html), and [2022](https://island94.org/2022/09/reflections-on-brompt-2022). I [archived the code](https://github.com/bensheldon/brompt-archive) on GitHub.

@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2010/08/fondly-remembered-experiments-in-minimal-webdesign/
 - "?p=2152"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b711d93d0a1a0dd3"
+  vector: "AwYJBAf/+gECAfQIBQYG+wwD+QUA/AUA9gf0/QH4ARMCAPkHAP0F+v77BBIH/f/1+/77+f/3+v338wH6BAQFCQTz/wcBB/0F/w8E/f35/foGBQQL+fsG//b8A/4RAPr//vb8DAcKBv36/QULAgD9BPf5/f4F9xL/AQT8/wYDAgAHCgAQCgIB+fH9BQb5Dwf1/AIG+/j9BwL/Af3++QH8/gP9/vsD9gIH9wL8APwJA//9/gMDBQj+///zCgcGAPz9BQcDAP36+wL++v4D/vQCARH6Afn49Qz3+gP+AAb9BAD59/QH+wL+/wH8BAH7A/UBBPj/DAkJ5gMIDgP/+vwA+QD4AgX8A/oFAAP+/P778gULB/v8AfQE8fgCAgP3Bvv9CPP9A/QAAAH4/AoDCgECCP0IAvsHB/QG/gH8AwQJAAD5+PkD/AED+vwAAgD9CgQDAfz7AwcH+fr/BwAEAfn9AvUG/fr4+/v/B/0LAQcKAvsB/Pn5AgcI/AMTAgoCBPoB"
 ---
 
 [![](/uploads/2010-08-31-Fondly-remembered-experiments-in-minimal-webdesign/pantextual-11-500x356.png "pantextual-1") ](/uploads/2010-08-31-Fondly-remembered-experiments-in-minimal-webdesign/pantextual-11.png)Tomorrow is launch day for a blog aggregator website I worked on, but because I can't write about that _just yet_ I thought I'd write about a website whose development has influenced a lot of my approach to minimal webdesign: [Pantextual.com](http://pantextual.com)

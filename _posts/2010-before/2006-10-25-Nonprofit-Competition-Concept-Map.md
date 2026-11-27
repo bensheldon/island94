@@ -13,6 +13,10 @@ redirect_from:
 - articles/nonprofit-competition-concept-map
 - 2006/10/nonprofit-competition-concept-map/
 - "?p=104"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "691b5535a37f0427"
+  vector: "Cvn7AAoF///9A/sEBAQC/AL++/n79wMF/QL8Bfz6+/0PCQoB/AX4Af709PYA+wH6/vj59fz4+Aj88/f5CfX5AwgD9xL0+Avz/gEE/AQKB/kHA/kM9wAA9gn/8f77/wcFB/gOBwQB/PT4+/0GAwgEBfgEAf74AQoG/AIAAwME8gD5AAEKAQb5A/oE+g4JBQf28///+vsH+wUH/foDAAYICwECBwT1+gIC8/v9AP0LA//9CAIDAvMI/f/4+vr8CPz7AQ7+AgT/AQH4//wB/AcIAf35APn6+wf/AQT/BvcMAgAFAAUDB//z9AQK+wH+//jzCAAB/AgL9/7+A/H1AQH7//8C+wgC9/zyA/v/AAACAPwIBgH///v6Ag3/+wgHBfkQ+/cAAgP3/gD27fAEAAj2/QoBCQsEFAEAAAr7+fsIAQABAvz8BPj9AfsRAAT2CgYB/wf8BgYD+gMC//z+BAT/A//5AP39Av/0+goBAAID9gMAAwH8Af8C+wP//f8G+gMF"
 ---
 
 At this summer's CTCnet Conference the thing I most took away--or rather, repeated to the most number of people--was something said by the keynote speaker, Ami Dar, the creator of Idealist.org.

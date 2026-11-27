@@ -3,6 +3,10 @@ title: "Javascript is a management problem"
 date: 2022-01-11 11:17 PST
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "230d0fb235b5935f"
+  vector: "+fwFAAX5+Qn++/kH/AEI+wP8+v359gQGAPnr+f/5BQn8BvsF9/z8+/QB9QkC9Pv4/f798gL2+/j+AQMG/f8CCQn+/fr5AwD4CAcE8/YEB/8C+wARB/8C/QkG/v8KBwD79/31BAEEDPwCAAQCBwUECAb5/fwFAA0QAAj99QUL9QD7DwEE9/oCCvQB/xIFARD6AQcH+gH4/P4AAP8G9wX6A/kG//kA9gUD8f/6+wEEAfv2/vwJBg4J/gH3Bv7++PMD/AQCBv39Bf4A+/z3CQMC/AIBBgAA/gYF+Q/8AQYB+wD69/gCAwD//gP/9wEE/PgG//UIAAMI/goC/PT0+fsD+QUAAgD4AP4C/vv9/QcF+PwG/AMCB/Tz+gMA9QcH/v8BAgECA/0C9/cAA+wJCvj7+AUKDAQCBfoA/gT9AvYEAQADAv/9Av0ABAsP/gH3Ew0L/Ab5Av8N+gEJ+vkEBf34BwAHAQIABAP7/wMKAv0D9gIF/wgJ/gYBBQD5AQUN+P0G"
 ---
 I have been on board with low/no javascript for a long time for a variety of observed and experienced reasons, and grasping around for a succinct explanation. Baldur Bjarnason captures it in [“The Single-Page-App Morality Play”](
 https://www.baldurbjarnason.com/2021/single-page-app-morality-play/):

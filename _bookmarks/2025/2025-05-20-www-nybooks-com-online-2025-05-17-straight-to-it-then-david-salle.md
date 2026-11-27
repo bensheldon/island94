@@ -4,6 +4,10 @@ date: 2025-05-20 14:59 UTC
 published: true
 title: Straight to It, Then | David Salle, Sam Needleman
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "15221da52c7e6aae"
+  vector: "DAMEAQsDBQELAfYE//sH/wT8AgoGAAL4/QT+9gEE/A/3AgEN/Q4I+PkG9wEB/P8E+/fy+f32AP0HBwAGAQD/AwoABAX0AwX+BAQMAP72+/EFBAD//f8B/gb7/PX8/xkFAAH3BQYCCvkG9fv49/3+AQECAP0A+QUD/gIHCQDt+QADAwcEAf36+ggGBgoBFf//+AL9/vcI/vTxAPv6/AP3C/4D+/QC/QL9+AUBCAEKAwPvCQQIDP0F/fj9BPQEA/gE/wzz/v0J+AH5A/7+AgIACf7+/vr6BQf5Af///vr29AD6+wMI//r7+wEFAfb5AQDzBP/6AQgH+vH9Cf769AEHAfz6/gcAA/wE/fkAA/z4+v7+/v4CAPT/9gP7/AgJAvj6A/3+AAABAPn0AQAKCP0A+wPxAf7+BusCAQcB+/gIAwACAwn8AgAIA/cIBP/+AAYDB/j6Aw0F9vf3Bvv6+AQABvoA/P///v0DBQIKCwcDBwb8DPkDCAT+/P0M8goLBwMA"
 ---
 
 Which of the many intellectual battles among American art critics in the last half-century has most affected you?

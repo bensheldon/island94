@@ -14,6 +14,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/nonprofit-budgeting-scenario/
 - "?p=752"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "769a2d8331093a55"
+  vector: "AwQCAQIB/gAABAX5//8B+Qr8+/4E+f4FA/8D//b/CPwJ+wUSAwP5CPr9/Pj+/v8E/v8I/AH/+foD+/r7/AH+/gcCAgL79AT4AfoECgYLDfoFAv8D8wIF/gv//AYF+P8J+vL/BAL6DPAF9AME/QYGCP4FBwH/+wcGBgQAAQML/wD7CQX8BfsGAwIECAMF/gDz/AMCBPb1AgQQ+fr+BP0M/Qj8+vkAAP/98QADCP8AEAjzAwP5/f/59gr3BfMJ/P8CB/8I/wz6AP4IC/wDAv4GBgMDBQEGAQUB/f0BA/oCCQADCAr6Cf338Qv/8vz+BvT7AAAB9/oKBAX/CO0C/P39+QT1+AD+BAL+Df0BAv31//b//vT2/Qf7CQz9/vn/AP8IAvgK9QQA9AAI+PkMAQICAAH4/vb/BAj1+Q71+woOCAAOB/r/C/L9/QUGAQX8Bf78/gj1/v/99f0H+gANBwIBA/YB+fj0BgYO/gT9Af8E8v8A+wIAA/wBAQcJAf7w9/r/"
 ---
 
 While cleaning up some files, I came across this awesome scenario I wrote for our AmeriCorps\*VISTA orientation last summer. I wrote it to give our new service members an idea of what it's like to enter a small community nonprofit organization in contemporary times: under-staffed, under-resourced, broadly missioned, lacking in a comprehensive strategic plan. Most importantly, the nonprofit in this scenario lacks a well-prepared board... which is the role _you_ play in this scenario.

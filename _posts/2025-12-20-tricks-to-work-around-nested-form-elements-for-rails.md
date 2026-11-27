@@ -3,6 +3,10 @@ title: "Tricks to work around nested form elements, for Rails"
 date: 2025-12-20 17:14 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4a9e72bce3f20d8d"
+  vector: "7wD7B///9/78BP0LB/oICQH7+f8KAQMH/PgC/wT7CfT4/AEDA/j/9/r+9AT8Avv8/AAC/QgB+PL7+/0H//8B+/4G9P//AQb69P0D8vz/8wMD+/UAAfv6AAX6+wMGBwMEAwT6BQX++gAL+QEPBf37A/QHAvwKAQD8CgT+BQbz+wANDvUF+wwAAgsG/gEE//339wsE/ggHAAD+A/wG8AEA/PwCBQL++PoABQD5APn8+gcC9P8EEfz9/Pj8BfwI9/399/sCCgr79wz7/APyAAUKCAL57ggOBAD59gAA/vr3CAAJ/P8LCAMOBQT9+v4B+v0C9P0B/vIF+wD7/vUDBwQIBwkD/AYEDAkEA/4CCAgL+AP6BQn56wIC+Pj8/AEBCAYEAfUI/QT+//sM/A/9Avz+/vz7AgIBBPsH9/36BQQH+gAEDP0F+QUABgP7CAj6+ff++wEAAwL/+gQN//YKBQAH/gQJ+v77AwIKBQP3/v0K+Pv6BQH9/wsEAAD4Cv0N+wMF"
 ---
 
 I [recently migrated](https://github.com/bensheldon/good_job/pull/1658) GoodJob’s Dashboard from Rails UJS (“Unobtrusive Javascript”) to Turbo. One of the most significant changes _for me_ of moving from UJS to Turbo is that UJS’s `data-method` is not functionally replaceable with Turbo’s `data-turbo-method`. This `-method` attribute allows you to make a button or link act like a form submission without using a`<form>` element.

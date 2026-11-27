@@ -4,6 +4,10 @@ date: 2025-07-25 21:23 UTC
 published: true
 title: So You Think You've Awoken ChatGPT
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "517d13b817f55e0e"
+  vector: "+P0G+wQAAwYJ+vH9/vz8BhP99/0AAwsB+/8F//kC/wj/BQII/A0C/f/6CPgG/AAA/gHw/v/39QMHCwH8APgF/wsI/Qz3CAX8BAr7APz6Cf0DAPwH+PkI/gMGAPP+ABkK+fX6BwUHAPD9AAEA/gIACQQEFP0G/wQE/PwCCgH/AAD/CwQR/v3/CAAE+AEHBPsB+v79/fr8BPP7/f78AgH2A/77/wL4/AUE/wMA/v0JAvn3BAAGAv3++QH8BvcCCPUE/wz2Bgb5/vz2+vwA/v4M/QoB+fj99v39CA/7+P4J9wD6/PYO/vz0AAUC/Pv/+wLx//kC/wgJ+voDCwQBA/0H//wB/wcH//n9Bv33+Pn1APsCBv3+AwDz9QT+/AT3/wHyA/cABQD/Bfj+AwX/APoA9wH6Bgf/C/4I/woD/QAB/wAB+AcN//b2BgH+CfX6+Af9AwD6/A0F+vwIAAD+8Qn6B//+/gQK/Aj//Af7AQT5AvYBAv//Aw4G//wF+A8QDfX9"
 ---
 
 Okay, you may be thinking:

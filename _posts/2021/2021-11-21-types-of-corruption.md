@@ -3,6 +3,10 @@ title: "Types of Corruption"
 date: 2021-11-21 14:33 PST
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0a81cb69f4aa430d"
+  vector: "//759/z7BwX9/AQH//z//An//REE9/kD+Qn5/QD2BQYB/wEGBQ4CCQb0BPkD8AEO/fP5+QENBfgDCv0JBQYF+gUK/wT8BgX4+wP+A/8J//gC/wP6AgP7AAz8CQwJ9QEC/vz//gkBBP4N+QYEAwP4DAAC/QnxAPoECQX8AQL49wD4BPz8/QH8AAAE9gb9FAMD+fkIBwr8BAT+APr6CwH7/Qf5+P779/oA9gD/BwYOAgH4+/77+/r5/ff9/AEC/QAF7wEA/wQBAwb7DQUCBP/8BPjxAgUFDwf2C//++v0AAAAF/gYABQr4AgYB9//7+gbxBPr6/gAEAgf0Bfj4/xH+EPoB9gf+8/zxAQIA/Pv2/AQGAg0BBQT9AQj2/Af4APYG/fQE/AX9B/n/BfkN+wL8/QT5CvrzBAD8B/3++fwHBgAD/AYC+AH1BAAGAA3+/vgAAPv+AAD//v8D9AUMAv8AAAMG/wEBA/0FBPUB+Pny9QQJ+wEEBfUCAvsB+/gD8Qz/"
 ---
 
 An interesting breakdown of types of corruption by [Yuen Yuen Ang on Freakonomics](

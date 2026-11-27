@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/kick-in-the-baud/
 - "?p=882"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9ee790dd4060da6c"
+  vector: "Bv/7+fj5AQMFBAAEBfr//gn09AMLAf4ABQf5+QH//wwRCfkE/P3///z+AAwFAP8I/Pz5DwIJ+PD6C/cL9f7+/AEB//r7Bv0B+woA+gT/A/0A+QQEAv4BBvr7+/kHDPsC+QIAAgQF/Pn5+wUI/Qf5/P//CP/5BwUB/fv6+/z+DQD5DvoQBAX9BQoC9/wHBgYAAgED/Ab8AvwF/wD3DP/y/wX6C/0K+P0FAAAF+fUCAAH0CQMI/AgMAAf9BhQC+xICEP/5A/7++wAG+vz/BPz/Bvv5Af0DBQP68wL5/gX+AAD0BPUL+/cHCPoFAPsLAv3/Cv4FBQb9+wEECPj9/wH//P0C/AALCv0ECgX2///79PcABRICBQH7Afj9DPsA+/v7CAEHAPn6Bvz+AwQK+v34BP0G/wQDBAP5+/0FBwUE+wD7+vv0Dvz4/QT6BQHwCAj5+O7//QgE9f0CAgcK9/T9/PQA//8A+AD+Avf8AQsC9vv69wQNAAMI+gH69wb8CPL5"
 ---
 
 [![human channels](/uploads/2009-10-23-Kick-in-the-baud/human-channels-500x215.jpg "human channels") ](/uploads/2009-10-23-Kick-in-the-baud/human-channels.jpg)

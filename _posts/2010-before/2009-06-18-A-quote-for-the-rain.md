@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/06/a-quote-for-the-rain/
 - "?p=612"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "df7b06e402bdb292"
+  vector: "/wkSDQz7DPr5Af/+Cwf1B/oB/RD9BP4A+AUBBv/8/AYA+f0DCPkCAv8C//kBAwYD/gEFAQf79Pn8/vz6AP32BggB8wMDAAMICAL2/P7+AQII+wsF+v4H/wIA/vf1Af8E/vf9BwMB+PQI9/f7AP35+wQG/APzAQH9BQMCBwH9/wAJ+gACDvr99PkA+/wA+gH/+Pn///v++f/6AQAIEAX/BQr/CgkI+gP/+P3/+gD///vw9gYQB/sBCAwGAgL/AgLy+vcCAvj09wT/AQH4A/sM+QYD/Qr6/wX8+wcHCwvvAwAJAv0DCQP5AAICAwn5AQX9AAj89QT7CwD7BA8EAAADBPX/BQwC/vLz+vQH/QgBBQAA9/sCAAkF8wjz+AH4AvkCAfr3AQIB/fX8AgsE+f/xAfwJ+QgF9wD29Qj9+gH9AgD6AP7+BgAGAv32+P0MFQb/DPX3AgEC+/8EAvj9+wMB//QD+wYIAQP6AwcEBAYEAPwABvz/AREFAPr//Pj9+fQF"
 ---
 
 June in Boston has been wet beneath the _unicloud_, as my boss calls it. A June Gloom lower and more dripping than any in Southern California. Below is the best advice I ever received for the rain (and any inclement whether, except perhaps lightning, or perhaps more so), from Tom Robbin's _Another Roadside Attraction_ :

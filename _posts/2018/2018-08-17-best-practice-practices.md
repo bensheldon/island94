@@ -2,6 +2,10 @@
 published: true
 title: Best Practice Practices
 date: '2018-08-17 20:26 -0700'
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "cba3cb9aa789b166"
+  vector: "AAb++vwC+Qr6BQASCP4EAf7+Bgn3/gMG+QD/+Qr8/Ar//PsMAwUHBgD+/fkAAAj49/n2Avz7CgUH+gf/Av/0/P0BAQcBBvYGAw8AAwQA/vEABAsD/wcA/gX8CAH9/A8I//j6/wsB/fv+9f7+/QX/CvX8AwD+AgAF/gwQ+gACBQAF/vAD/f0B/woDA/0A+wMC8gj0A/r7AfoCBQf/+wL/+f/6CQr5/wMG+wME+wwI/vYB/gUDBPv+Agj6/gT9AvII9/38+QbtAAT09ADwBQf5/gAI/P8FAAoD/wQC/f0DAgAD+Q0PCAP78/79/vv6+fz89/QI+wECBAkB/f36//cDAAD99QL8AAMJBAf6AfYD/vb//gL3+/ED/wP7/QADCP7+A/8EBfsC6Qb2AvsFBPv7APv99wP2BQP3/AD1CfsIAgD+BQQCAAH7DfsG+QEECgT0CQPx+ggJB/cI+ggHAfz8CAIEAf0CBgoM/AIKA/L99wj99f7/DAIGDwD1APn6CfkL"
 ---
 I like how _Rapid Development: Taming Wild Software Schedules_ by by Steve McConnell lays out exactly how "Best Practices" were selected or rejected:
 

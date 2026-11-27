@@ -7,6 +7,10 @@ date: 2022-03-19 09:01 PDT
 published: true
 layout: book
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a6c11a099403a593"
+  vector: "/AT6AQgNCwUDAgEP//sAAv8A7Q/8/AcH9QL8+P8KAgMFBAIODAMB+wX7Avf9+gII+Pb6+AP6/f78BP38//f/CP0FBA39AP7/AAIE+wf/BPkPAQIG/Pz8+wj/8wIC/BEA+gD+DfkCAfP+7vP99gj3/QL+D////f/5CQD1B/8BAgAAAAQKBP35+AYEBwQQ/vj77gABAQYG/AL6AP4AAAH8CP75CwP/+QD1+woB/gUN/fL6BgYHAvv5/voDBfsIAP8K+Pj0+wD//wP2/PsB+//+AQL0APv//AP9/gL4BQMB+QAC/wAAB//69QoC+fgHB/z4Bv79A/8H9/7+CAkDBPf/A/oD+g0HAP3vBv3zAvwGAQP3/PkACAUE/QP09wT7BvEBA/f99f4G/Pj4+gD/9fvzAP31AQMBDwEK/Av+9gMA/wAEAf7/A/z8AQUP/gT/BQP6Avb1AgX9/PkFBfr++gP6CPED9v4D/w38AQgLBgID9AQCAAACBAYEAAEP+gMH/fIB"
 ---
 
 I discovered the [ACT UP](https://actupny.org/documents/documents.html) organization in the wake of Occupy, when I became friends with Michael Petrellis, who I met through my church.

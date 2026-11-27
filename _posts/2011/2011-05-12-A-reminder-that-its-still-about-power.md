@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2011/05/a-reminder-that-its-still-about-power/
 - "?p=2648"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "54547124e2265aba"
+  vector: "/voB+wgI/QABCPsJ/AEHBP0F9Q36+wAJ+f/79PwABPsEBQUPCP/9+wH0+/r7/Ar9/PAE/Ab5/vsEAP76//z9/wcA/wb4/wr7Df3/+QINCfkMCf8K/AL/9woA9gUHAAD9Cfb7DPoFAvMC+PUABAoEAAUIB/b2+wL2CPz89gYA+gD+CgkGAAD/+fYHCA0LCQDy9P4CBAH+APkK9AIE/wIHA//6A/b++gT2+QUGBQMGCwP3AA0GAfoA9Pv9/ewI8/oG+QT6AQX/BQL9A/kBBAQHCfr8Cf4GAgcBA/r3+/7/+QAJ+AP/BwP47ggB+/0DAgH4BAAB+ggM/QMCAPX5A/wFAfX58QYC9Pv6AP4CAPj/9gf9APz9BQkFBQb+AwD7B/cJAvwDAAP/Avf8AfsMAAX9BAz3A/YCBQv9/wj59gcHDQAJAPD+/fb4+QABCwb4BAH7+gL2AgL++fkDBgH+/wH/AvgB/Aj6AQb/BgMFAPgB8w0H+f0AA/4EAP4M+vsG9wUA"
 ---
 
 [Mark Rosenman](http://pndblog.typepad.com/pndblog/2010/05/5qs-for-mark-rosenman.html) impeccably synthesizes the need for building political power in the philanthropic sector. Writing for [Philantopic](http://pndblog.typepad.com/pndblog/2011/04/foundations-and-power-beyond-advocacy-1.html) (emphasis mine):

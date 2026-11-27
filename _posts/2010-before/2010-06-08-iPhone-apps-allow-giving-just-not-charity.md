@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2010/06/iphone-apps-allow-giving-just-not-charity/
 - "?p=2023"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ad85fd66214d1e5e"
+  vector: "9vwJ9QUABAMFAgcB/v8EBAL/+/8C+QkGBv72+vsCBwH9BQoA/gT6AP78+AgC/AIGBQYN+Aj/9P0EAgL5CvgABAUJ9P389wn4DgMB/QEG/fz+BAQO+gb9AAUA/QcF+vz/A/f8BAID/fEK//4BBw8AAAMB/AT7BAz7Bgj88//8/AD3Egn6//gLCfoB9wsMAfv9+vkIAwzwAvv/+/4ACQAFAgbz/gAFAP8B9gEMAwUHCP4DBQb5AwH7+QD2/PUJ8voF7AcAAQEH/Qb/A/r+BQQF/gT3BwQCBwH/+Qb/BvUH+gAA9w77B/75BQgL/QQD/fn69QII/v8NA/3///gBBQAF+vb8/v//AwL5AAH7Afz/+/4HAvz2AAgAEQIC/Pr6BAMCBfUNBQMGAP739vQIBQH3/gkCCQAA/gn4+gz9/ggLAgALB/n++Pb1/AT1Av7rAf/3BgP8AfcE+Pz8AgIC/fv8A/f/8fz6/QADBvwB+fn7+/AK+wP5A/3//fr+BfwM8AkD"
 ---
 
 Annie Lynsen of [Smallact](http://www.smallact.com/blog/what-nonprofits-should-know-before-developing-a-mobile-app/) on the "Apple hates (nonprofit) innovation" kerfuffle:

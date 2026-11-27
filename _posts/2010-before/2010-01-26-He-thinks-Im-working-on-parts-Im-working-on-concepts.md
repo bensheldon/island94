@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/he-thinks-im-working-on-parts-im-working-on-concepts/
 - "?p=1726"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2b19b9217d516bce"
+  vector: "+QMD+//5/gMJBQIFC/z/+vgA8gwGAvkK9Qz5AwH4BBL9AQUIAgUG9fr8AAYEDAT6/vHx/AX/Av79CPv3AQb9AA0A/gL3CAf+AgQB+/8A/PwIDAABAv0I/AUE+PgJAQoFBQAGBgYACvz59vYAAvj6+/n3/fgA/vwBBwH+BAUB+AD1+wELAfr7/gYK/ggBBg769voC+fcEAPsH/wEF9QP/CvcD/vr89P729v34AwcHAQf0AgAFEPf8//j+/wIBAvsQ/gL5AAQG/vz+BgID+ALyAfcB/PsFBAn3AQD69AMF/wD/APr5BPn67P0A+/oCBPz6APgAAAIJ9vz+BvMDBgf69gEG9gL99gX2+vkDBP/1BQcB+Q4LCfgFBAr4/AoGAv8KBPv9AQv4AP/1+wMC9gD9+QL0CQP5+/wBCQEA+fsM+gAEAP/6BPcEAfcJAgb8DAIE+wP2/g/6+/8B//wEAA0CA/sA/Pn8/wP0AP8ACgX+8gMB/gIIBQYDAQUG+vwICxD7"
 ---
 
 The following quote is from _Zen and the Art of Motorcycle Maintenance_ by Robert Pirsig. (The John mentioned is the protagonist's buddy who wants to escape modern technological life via a motorcycle he deigns to tune-up):

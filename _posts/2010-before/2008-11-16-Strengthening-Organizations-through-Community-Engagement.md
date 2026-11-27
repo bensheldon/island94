@@ -14,6 +14,10 @@ redirect_from:
 - articles/strengthening-organizations-through-community-engagement
 - 2008/11/strengthening-organizations-through-community-engagement/
 - "?p=271"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "724058737a5e903c"
+  vector: "B/75BwID/gL/Afr9/QkGAgD7+P8D/QQG9AH//AL7Bv4LAggSB/8BAPf1AvcE+AD+8/8D+QIA/QL++vrzAf/2BPz//w8B8wL4AfwFAgcGCvkKCgEJ9wP+AgMC9wr7+gQGAO8ACgL8A+7++/sGAQr//wEADv73BgsCAf4J+wUF9QD+BwATBPsCAvn+AhUHCAH09wcAAgDzAAkR+v8F+AADBPvxBQP9+AD67///AQgDC/v8Awb7BQH8+wb6A/wG+vX+BwP/ABL4APwF/fv69/8DCQEAAfwJ/gX/9/0ABvoKBQAJAf4ADP757w/3+fr/B/T3//oGAwgH9P4GAvf0A/4D+AL9/gAF9fwADAEB/fwHAv74/gH3+gIHAQr2/wH+A/sKA/kC+/gF9gD+9vkC/Pv5Af36Avr+DAYA/Qry/QMCAQABBvoABAD5/QcHAAT7Bgr9BgH5+wn/9/4E+vgG//oDA/4BBP/7AQsK/Q4BAPoF9Ab0+f76/QIGBgQJBQQBAvf9"
 ---
 
 The following is from a handout I created for the CTCnet Conference in which I presented on capacity building models for community engagement. You can [download the handout with worksheet (PDF)](http://island94.org/files/island94.org/Community%20Engagement%20Presentation.pdf), or read the overview below.

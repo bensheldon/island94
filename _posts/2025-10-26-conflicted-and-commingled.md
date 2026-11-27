@@ -3,6 +3,10 @@ title: "Conflicted and commingled"
 date: 2025-10-26 23:39 UTC
 published: true
 tags: [stories]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0496217c6a8cbaa6"
+  vector: "+gf/+Aj+BgcH//8P/AP7BAP79Q///gMC+QQC/ff7Bw38AQf79wgEAQT6/gP+9wkIAQDz9v77+/4FBfn+AP8BBAf/BwQCAA4A/gUABgMKDPX///z8APkC/Qf8AfQN/QMFAwEJCAgJ+fMB/P3+AQL8CQgGBQoEBQT+AAj1A/z+/AADA/4IBQL1/PgJ+wUJ+vQF7/0I/fv+/wnrAgQCAv4ABQYHCAb7+gUF/wMEA/4E8v32Av7/E/78Afr+BAYED/sO8gLy+QP3AQIC/Pv4AAED/wj5/wLs+P70/Qz99gMABQD99gD+Bfv79gH7+v8E/fn+C/z//wwE/AL4CQTxBAD/BPgD//8Q+Pz0AP34Awz7+/0M/v//CAAC+wP9AgkFAPT9+vz//QT8A/n+9A0I//rs/Qb0Bwb9CQH9+wUD9gADBQAJAAEA//QC/f4HBAf7AgUG/Pj6BP0F+Pv+/wP++wP2AAAE+fD9Awf59AP/Bwr7+gkHAwQA/fgABAMC9/ML//z9"
 ---
 
 More than a decade ago, I was seated on the jury of a civil trial for "complex litigation". I’ll try to keep this quick, but the case does come to mind more frequently than I would have imagined at the time.

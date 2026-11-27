@@ -4,6 +4,10 @@ date: 2016-10-04 20:17 UTC
 tags:
 - secrets
 - confidentiality
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "908f5cab8418d9d7"
+  vector: "/v0EAwcCAP3/+f4JAvn7AgD+8/wB/wcB+wP49vUDBgQDAgL8/w0Q+/79CQf9BQEC+/r0/gP+/AH/BfQJ9vX+/fsG/f8BCP0G+AIAAP4FCPUFDf0C+fL//wT+BuYD/wwF/gbyBPwB+Pr9BwD+/wIAAfv/BQEFBfwG/gIIBfT4/QAFB/wN/AT48wURBA7+/wAK+QYG+gr4/vYK+PwBBAH0CQj9BwL/+Ar9CAP/AgIABv38A/wG+e/7+wL9CgEKA/UI9wLyAgAB/vz6+v3+AgMB8wj+BQT5AwcD/wv5+gP/9QD3/AP5//z5Bf/7+gYK/wD/Cf35/gQB9AP7Bf/+/QHy/f8G/vgE/PX9/gn09vj5+gIF/gQDAgD7CPwAEAP+B/MCB/7+B/8GA/P79gkE+fvxAwH7APsOCf3+//8B8vj+/wAE+wUCB/v4APsCDgH4/ggF//4BBAAA//kGBQQK/w/7+gP9BQH/+QAG/gAKDwf9/P4EAv8HBwsJAgAH6gIIAvUE"
 ---
 
 From "Secrets: A memoir of Vietnam and the Pentagon Papers" by Daniel Ellsberg:

@@ -15,6 +15,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/social-work-is-womens-work-so-we-dont-care/
 - "?p=840"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5ac6bd2d2b18b531"
+  vector: "/f/8BQMHBPb/CP4O+P8CAf77Awv+/voDBfv7+fgL/QMEAAUKAwcDAQLu/v/2AQf59vAJ9vwD+AML/fz//AABAQr3+wb1BwMEAAEG+Ab3Af4J+PsP9wAB8hf/9wD+/wf7/gX6A/UBBPYE+gMB/gb7CPsFBf4CAQT+AgH5Bfz8/AD+AgMCAgIG/AEBA/8FAvz5+foFAQkM+P33+gX//AAGBAT1B/0CBgL49/0PAAQKDAb5DwIF/gEA8/8H/e4J7wX7AAgCAf0G+gn7BAEMBQML+f4DAgIK+QT6CgIGAf3//wD++/4BBvf9+AUPAPb6Bvjx//X79AIYBAMIAgACAAD9Bf4CAQT8CAX3/vny/AMAAAMHAvr8/wID+Qz7+QD/BPcKAfME/P8ABP7//fsHAwb3/QXxDPf+CgMC9vz69wgDBQAHAvj7AvT5/QcL+wAJAwUCAfP4/Qr49ff4BvsE/v4GAvz8+wT8AQMCAfcG/QAA9wz+CQcECfgA/gEG9/8H+f/8"
 ---
 
 Two articles came across my desk today that I think are strongly connected. The first is from Danah Boyd on [_Teaching, nursing and second-wave feminism_](http://www.zephoria.org/thoughts/archives/2009/10/19/teaching_nursin.html):

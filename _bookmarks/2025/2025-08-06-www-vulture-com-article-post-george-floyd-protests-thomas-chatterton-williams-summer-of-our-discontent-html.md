@@ -4,6 +4,10 @@ date: 2025-08-06 00:16 UTC
 published: true
 title: Zero Tolerance
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b851375a2d2852fa"
+  vector: "/gT//QsIAfgCB/0MAfoHAgEB9gQICQkF//z88wQDAfgOAwf/FP0D/Qf6+AD7+wgH9v4BAAP89/b8CQIA+/X7AAIA/f/3APoKDf0A9AkBAf4J9f8J8fv6Awj69////wD89QMBBAEAAvoG8fb87gsCBgcHCfn2/PkEAAf5Bvz+/AD9DPwDAgj99QgDBgALBv4B+f8E/QUF/wH79vv1/AL3AgYAD/n6AQD8/QgIAwQI+/8F/g4D+vwA//oAAvX+CgEB/QPvBf/7Cf70AvUMB/4DAQD1DPv+9QIICQIFBfgC9AD1APoI+AUC/w/9/PcDCv77B/z7Bv0D9/79+vkA+wD8CPsEAP4G/gT9/wH9AfYE9/r6BvQBCQMB//39+gP3BvL5DP/+/gb+BgD/9/cL///1A/8A9/YFCPv3+AQE+gUHCAD1+PsDBgAH9wQLAf73AvoDAO7++gb9/gUG/wX4AAz7AfD/+wQABwkFCgoA+xD//AMFAAIACAIHAf4LAf/8AgH2"
 ---
 
 It is all well and good to say that a janitor at the New York Times Building enjoys the same freedom of speech as the paper’s top editors do; but the fact is that the latter can use this freedom in ways the former could only dream of. This is why the Founding Fathers viewed free speech as inextricable from a free press, as indicated by James Madison’s first draft of the Bill of Rights. “The people shall not be deprived or abridged of their right to speak, to write, or to publish their sentiments,” he wrote, “and the freedom of the press, as one of the great bulwarks of liberty, shall be inviolable.” Without the circulation of public opinion through the press, the founders agreed, democracy would be impossible. As Thomas Jefferson put it, “Were it left to me to decide whether we should have a government without newspapers or newspapers without a government, I should not hesitate a moment to prefer the latter.” Of course, the speech of a newspaper does not emanate spontaneously from its soul; it takes capital, labor, and a means of distribution, and these are limited material goods that must be secured one way or another. (As secretary of State, Jefferson would fund a friendly newspaper by appointing its editor-in-chief to a lucrative sinecure in the State Department.)

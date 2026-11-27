@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2012/12/a-gentle-conceptual-introduction-to-node-js/
 - "?p=3066"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "38c09020ebd069f1"
+  vector: "8fYGBwX5+gcK//QP+/oJ/w3+//v69P/+/AD++AL9A/X7AusK/fL0/fsA+P8A+PYB+v37/vz9+fwB/P4K/P4JBQgAAQQEAgAD+AP87gP5+gz9+vwJAAT+CAEC+AEFBgAHCQL9/wT/CPsA/v0IBgH+Av3//P4M+g0UDBIE/g7//wAA//4B/wQE+/X9BAsHAwr5Bv0S/wL7AhQE/wAN+AAD/fcABP799P7/9wT1//j5+gL5/foFDgr/BQX8/gQF8/0BAPkBBwECAAcDAQQB+/oACAIA/wcJAAEC/wgB/wX4AgD79vgNBfz69/v9+f7+A/4C+/cJAP0E/vgB++369gD6Awf7Bgn/Bwn4CvkB+v4N7Av7Av0BAPz+9Pv/AwcF+AEC+/r+/wb6/QQDB/sE/vX8Af8OAvsACvwA//kBCfME+QD+Bf4BAQMFBAkMBv8DAQcKAv0BAwQC9wn/AAQEAffz//4GA/359QAFCQUAAQEC9P38AgH3/AMIBgf1AQYEAgL+"
 ---
 
 _This is the text of a skillshare I delivered at [The Sourcery](http://www.thesourcery.com/), an awesome commission-less recruiting service. Not only is their model nifty, but they care about actually knowing what they're recruiting for---so hopefully there isn't anything too wrong below._

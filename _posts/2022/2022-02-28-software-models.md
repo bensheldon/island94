@@ -3,6 +3,10 @@ title: "Software models"
 date: 2022-02-28 17:32 PST
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7da55ad4a9bd08fe"
+  vector: "+QMB/Pn3/gkD/fYCBvsLAwgAAP0GBfkI+AIAAwL8AAoCC/oP/Af++e3/AvcA8QH4APr0/vj3CAoHDvv5/QECBAsA+AL0DQAAAAoE/f0LAfcCCPYF/fwH/gr9BPwH/Q4I+fP5BP4OCfMD+wAC+vwCBPr7BQICBQANBAP8B//4/wD6BPwPAfsCAfwDB/4GCQr/+P8K/v78Avj/AAb8/AD7AP8KB/8F+Ab+/wX5AhAEB/3tBgMGEQX28PvvCAYDAfwB/gMBCgT2+QH0Afv1AvwE9/kF/wL8/gYBAwn1+wACDQD+/fb/APf1+P34/fb5/v/5/fj+AAcP9v8ACvX8CP79AQAABP7++gP/Bff4+wn3Cf0E/gkA//r7+RD8CwMBAwf9AP0F/QUA9AH1AAEEAvb2/gL4Agf5/vkC/vv0Av0J+QD+/gAJAgL0+/v6BQT+CAMD+/z2AwYD+/7+9wEEBQAEDQAKA/EJCQX7/AgABAL9Afr4Av0GAAYFBwD8+gcABwQE"
 ---
 
 <img src="/uploads/2022-02/strict-technical-debt.jpg" alt="Stickynote drawing of a chart in which understanding of the business domain grows, and understanding of the modeling in code sinuisoidally approaches and departs from it.">

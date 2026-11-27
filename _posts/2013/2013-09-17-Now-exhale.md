@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2013/09/now-exhale/
 - "?p=3107"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a79ed0a3f860a0f5"
+  vector: "+/4IBgH3CPwMAwME/f0CA/oE7w4NDAb9+AX69wH0BgP8+f0JBQT3/f4A/AcBCPj/Cvf2+/oF+gQA/Pv4AAAABAEABP//Bfj99/37AwPu/gwDAf8G/AUHAvIB//v8CgH9+Af1CAL+AgIC+Pv+BgH/9QYHBAX9BP4JAAYA/QTy/wAEBAsLA/f4/wMO9QH8Av377P4I/QACAvUA+//7/AT8BP38/QYJ//b89Qf+BQX5AA3//gT/CAH8/gX6+wcDBAAG9v36/wMC/Pv/+vz8Av/2BRL+9AAK/QX0/QH6/Qzz/QAEAAAFCQX8CfP6+QYMAQz2Av32A/oB+/7+CAUGDPgD/fgG+gYB//vqAf8LAv/9AAL0AAMF+wQL//r2BP8AAfkBAgADBQAG9wTz/AkMAv78+/cBAv8D+/wMAAT6CgADBwD8AwwDAAAQBvgGCQgHCwkM+wL8/QEBAQEA+/gC+AEIBvv+6/oJ/f37/AL/BPz1DP33Dv4BBgT/A/UD/QkHAfgD"
 ---
 
 From [Why’s (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/book/):

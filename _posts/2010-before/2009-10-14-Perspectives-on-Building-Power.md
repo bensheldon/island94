@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/perspectives-on-building-power/
 - "?p=802"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bca0d57cb343a093"
+  vector: "AAn0BAUJCP/+AAcRBvr8Dfz59QH4AgIB+wb++P8DDAEECQMGDQgHBAIB/QD6AP4A/PQB+QL9A/0CCPsBAf77/wL9Bwf4BgP/AwUD+wP/AvUECAD+AP4BABEL+f4G+QUA/v3wCfwD/PME+fsG8QL6/Qf5Ef8D/fUCBwP7E/n88wAFAvMH/QL7+gQJ/wUKBv8G7/0A/gAG+vcCAgIAAwD4CPsCBgX9+voAAgkHAggOCfn/AfsEDPz/9vYHBPgF/vYO9u/wBAH7A/z8//r4/Pv7+v76Bv31BQf9/wL2+AgA+gAC+v8ADgP3+v37/v4BCgTtAfr7+QQJ+P/9Awf9BAQCCfwEAA78AvIC/v/7AP8H/vj99/f+AAID9wD1Agj7/v8A+Pj8Cf8H+Pb7APv+/AT1AAHr+wv/CgEDAQn/9wUE+QD9AwMJ+wUD9vYM+gIACwP8//v8/gX//PoAB/sAAQ8BDPr9/gcCAAT+/QcL/wf9AQAGAg0I/gIK+v799vwE/vr7"
 ---
 
 Flitting around on Amazon.com, I came across this [review](http://www.amazon.com/review/R3QGD562AEZE8O/ref=cm_cr_rdp_perm) of Saul Alinsky's _Rules for Radicals_:

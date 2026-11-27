@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/motivated-design/
 - "?p=1762"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "85f5a844817b5089"
+  vector: "AAv//f/5BgYG/fICA/cBAAT7+wb7/wEB+QQD+QT4/AYFAgEKCAoD//j0+QQE/fsB+Pr29/z0AAoFAPwGBf0CDgYDBAXyAAjy/QQQ+AX7AfsBBwEG+f//AAkC/Pr8AQn8/wD+AvcACAn//P0D/QH7/Pb+DAD1Bg4F/gf+Afzz9wD9EgML//sDAwcKAgn/GAQE+/sA/QIG/Pb8BAAI9gH8Awr7/Pr++Ab7+AL/Av0LEwD2CPgEDAIA7/b9Afj8BvsKBAQECAgB+AP6+P4DAP/7BwAKA/kGCQ/+Bw38+QEG9wD/+vsECvcCAf38/wMAAPj4/ff1+gcK8vz7Cf76/QME+/8CCgD5+wEC+//8AAL3APcD/v0EBvn78Qj7CAcFAQAB//r9BP7+Avzz/PX9Cf32A/n8AAIBBfII/vz/A/QK8wD7AAf+AwIA7/kKCAACBwj5AP799gr+//H7Bfv59Qn9CwT9//wEAgEB/v8HCPz4Awb6BwD8//8D+QAI9wME+QD8"
 ---
 
 From David Barringer's "Myths of the Self-Taught Designer" in his book of essays and more, _There's Nothing Funny about Design _(and available online in parts [1](http://www.aiga.org/content.cfm/myths-of-the-self-taught-designer-the-first-conversation-between), [2](http://www.aiga.org/content.cfm/myths-of-the-self-taught-designer-the-second-conversation-betwee) and [3](http://www.aiga.org/content.cfm/myths-of-the-self-taught-designer-the-third-conversation-between)).

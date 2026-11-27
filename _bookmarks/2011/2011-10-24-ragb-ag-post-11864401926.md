@@ -4,6 +4,10 @@ date: 2011-10-24 14:21 UTC
 published: true
 title: miscellaneous portmanteaux trois
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "51e83457f3133856"
+  vector: "+wD49/YDAgT+/QP5/QEA+voACwP8+gH8/f8AAPv1+Av8+wH/A/z5Bvz2/wP8A/kDAwP//P0FCff/BAP9CQb0AwP3+/3yDADx+gAGBP//APX3+/YHAgT8/wcA8f0AAfoF/QP/DAEHBP33Bf38Av79AP32/A0J+RD+DQP+Bf4DBgADAv0PAwT+/fUB+wn/Av/5AwAG+gQLAwMIAf37CAcQAfwFAv38/P0K+vj1/f/5BPsJ+v75/QP9AvQK+AAECvwG/f4EAg//8P4PBA0GAAgD+uwFAwMB//75/BDyAwMH/QD9/AD/AQABBP3/Af0K/AEDA/4BAwb6CPv2CATx8QgCAQID9woGCgQEAQIFDwr/9/P1/gAB+voGAwH7AwgMBvUEDQXy/AAABf35BPf9/f4BEPj//Qv/+ggHBPsGCP8CCAAG//EC/Pf2/gIE/wMC+A8DAPz4/wYC/fj2/wMB+/sGC/sA9gUA/wb/BQP6AQ77/f/4/fgEDggMAPoH+v8ACAv/"
 ---
 
 

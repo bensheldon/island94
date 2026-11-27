@@ -4,6 +4,10 @@ date: 2026-11-16 16:30 UTC
 published: true
 title: Just a moment...
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e15909c5e5790072"
+  vector: "CPz/BwkCAAH6AwIL/wT2Afnz8gb4AwsO9vsD+vv/AQX2Bv4DDPkJ/Pv2/fz1/v/7AP38/QX2A/7+/vn7+Qb8BgT/+f4BAPr5AQf8BQgADQAR+f8IA/v7/A0C+f8RAAf//Qf3BQYD/QH9+Ab3/QT6CQL2Agj0+wH8/wcEBAX4/AADA/oA+Prz+AkIAQYB8gz++QIB+wL3AgAK/QD//wbyBv72+/7y9foLAv4ADA0I9v74A/r+BvoAAggBA/oECQEDBv34CfoIAQH5//77AQQJ9wkICgUD+wgF/Ab7+wwD/gAF+P4C+AD8/wYE8QAMAwXyBfoB+gj++AjyAQD2/fgEDAoQ/QcG+vz6/QL79/wEBvX89/35+gAECf/0BQQDAvwB+fv3+AsABPv0BAQGBQX7BAL49QYGCP/0+f78+gD7/AACBQEHBv/89voIC//9B/4N8wX7CwEF/Pv+BvgCAAXzAvb+9gER/wUAAAgDCAECAAgC+wD7BQgBBPv8BAIC/PwA"
 ---
 
 This morning’s print edition of The New York Times Magazine has a long cover story by me titled “Is Air Travel Getting Less Safe?”

@@ -3,6 +3,10 @@ title: "Rails Active Record: Will it bind?"
 date: 2024-03-31 10:15 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5d17742d5213855e"
+  vector: "9QX+EvgCAv/8Av4HB/0FBwv59/4GBwMH+PID/gME8/z3CgEABvv++wz//wL9//8C9/34AQL7AAb+9f0D+f78Avb0/AQIAvj/9gIEAwb39/T38vgDBvkG/A/5AgX2AwQGCQMCBAkJAP33/gH8+P8FAg/5Awr/BPv9Bgr+AQD2AwAN/v79/A8GBAEM+gD/AP8IAQIFEQL47QcC/PwG+/73BvQAAQb8BP/7AAQBAgL5+gT/AQgACAL6/QsMBAv89vr9AgwFAQoBBgf8/v/5BgH+DQgB9w38/gMDAP8CAgcBBQAM/QAHBPUK+QD2BPgP+gj+/Pr9CwEI8wUHAvkD7gH49AEC9v7/+wQBCwT+BP0I/v74CPv89gIH9vT2AP79DAQC+fsLAAb4/gEIBwIF/f/5DPb9BwX3FAAH/v8E+fwDAgAACwL8AfMFAf4EBfr4/QUCAfT2+AAG/QEFAvcEDQEE9AD8AvoA/AAEAv75/v32/vkC/vr+A/z9+wT+/PsB9fcG"
 ---
 
 Active Record, Ruby on Rail’s ORM, has support for Prepared Statements that work _if you structure your query for it_. Because of my work on GoodJob, which can make a lot of nearly identical database queries every second to pop its job queue, I’ve invested a lot of time trying to make those queries as efficient as possible.

@@ -12,6 +12,10 @@ redirect_from:
 - articles/whales
 - 2008/09/pod-of-whales/
 - "?p=252"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2f6eb4d67bdf84aa"
+  vector: "AgIGAP78A/oACAD5BAgECgkFDgP9C/4BAf3+/f708gMIAAgGAQQFCP0A/f8H+wMBAwP57/UECPH89wf9DfsB/gEA/Av+8wH9AQj5+wEB/Pb9/vr9AQf4/Pr58gAF8wfzAfr3BAQDCPgI/ff8CQP9BfYE+/b3/wT2/v4H+PcB+AAIAQUCDPv7Avj7/gH+Ev7/+v8B/P0L/wEA9v3tAggAAw38/PT8+/sABgH8Cv0LCAABAf3/7wL7/AMA9fkBDQP+AwUGAAIH+gEF+/0BA/z0AP7//P/3CAz3+v79BAUB9gAL/AT/DPoFBv78+/j+/Af9Af34/QL8Av79Cv/6/AH3AA378wn7+v//AwL/Bfr09wr8/gL6A/kE+/8IAwz5/P4G+/sA/fEJCAcDBP8F/wMIAfgC+BcGCPwGBwYJAgEACQAG/gQABv8DC//+BAb9AAX6AwIC+fwABfj2/vz3AgD8CwD9CQP0+/MHBv0J/gUEEgQA//r+BQj8APMDBA0PAPcI"
 ---
 
 ![whales](/uploads/2008/pod-of-whales-1.jpg)

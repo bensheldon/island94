@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/09/where-rhetoric-is-substance/
 - "?p=2815"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "226e34573b167844"
+  vector: "BAUC/QMGAgP3/wMCBPcA/Qr8+QAB+gEDAwT/+QD7AP8HAggGBwUB+P/z/PkE9f8C9vf59AHz+Aj+Afv+9/0BBgIA9QD5AhH8+v8LBAADAwsF+fsJ+Pj79Qb6/P/0CAYA9gAJB/4JAP0A+QjzAQH8/wYHCQP5BAD5CAv++v369AD9Av4S/gkE/PoB/wYCAhAB+PoEAgwH//n4Bv8BBAQNA/4F/Qn69AkH8QIGAvsOAwL9C/sBBfsE+voA9vQFBgED9wsG/AYABATw+wEBBAMH+Qz/+/gB/Qn5CAYI/foI8wAD/vsDBwAC8wD8+vkDBf74CgAA9ggP8fn9Avr5+AAHCPsEAAwD9QH8+vj6AggE//MEBPoEAgf9/Qj5AAYBAPcK/P0CBfj9Agf//fQS+Qr4/vn7A/kDC/3++QMD9wgAAgD9AvYF/P/8+wEQ8gP2BgYCAgEAAg4B9fj6APwC+QYABP/y/wL9//8D+gIJ/woE+v8IAwH8APYH9wQG9AUB/wAD"
 ---
 
 From Chris Rabb's _Invisible Capital_ on business plan competitions.

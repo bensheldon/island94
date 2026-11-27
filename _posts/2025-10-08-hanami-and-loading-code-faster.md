@@ -3,6 +3,10 @@ title: "Hanami and loading code, faster"
 date: 2025-10-08 00:00 UTC
 published: true
 tags: [Ruby on Rails, Hanami]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "29bbfda8276d7f0d"
+  vector: "9vn+B/z9Agr0AgMH/wELBAz88wkD9/YO/vcE/gX5/gf8A/sFCfb8+Ab99wMD+wr9/fcCBwH+/vsOAQED+AEF//v+AAQN/v4AAv/+/wEA+/b+/woGAwII9AgAAvcH/v0AAvX6BvsHCgMC+QEA+AEEAAL7AQYF/gUICAUJAv4H8wD+AvQO+Pn/+/8AAg/+CQkB+AMMCwP79vYNBv4E9gIM/QACBvMAAvjzAgbz/gH7BAf68wQDCgf99QHwCQH/9fYNAwD/AAn4+f36/Pz4Af72BAYA+wf+/Af08/sD/wf8AwAO/P0ECvwB+gH2+fgBAQcH+vQDBfkI/PkE/+8D+/35AwD17wT/CwT4EwD5BfoB/f36BAL3A/4G/QQE+wUH+wQB8/kE9gP5+wEABf4H+/cD//T2+gIDAv4LB/3///oG9wAH/v0EAwMEBAEJBg//A/8GB//zAvsG+AMF/gIABPwLA/wF+wcAAgMGBQIA/f8G+fwCB/ME+QYABQUBBwn/+gX9"
 ---
 
 I’ll be giving a talk in November in at SF Ruby Conference ([tickets on sale now!](https://luma.com/sfrubyconf2025?coupon=SEP29OCT6)). My talk is speeding up your application’s development cycle by taking a critical eye at your application’s development boot. Which all boils down to _do less_. In Ruby, the easiest, though not the simplest, is to load less code. So yeah, autoloading.

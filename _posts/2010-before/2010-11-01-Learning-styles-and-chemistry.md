@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/11/learning-styles-and-chemistry/
 - "?p=2279"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "33c0f6f65d77df38"
+  vector: "BP36//r9AwEDCgP/AQUA+vgB+wMA/AsE/RED+QL6AAsJBPf/AwwDBPj4AwsDAfbx/QL4A/sFBQv//AAA+v0HBgQH8/kAAAMD//8K/AD6//73CP8EAPr/+fX2Bv8C/QIGCPkCBgsG/gj29QP3/vz8+vwE+v/9/gwACP/+BQH9+gD7CwQJ/v4AAQYI/g4EDAIL9AX7/v8EBQD+CwACAAIHAfAAAf8B/wj/BAQEAwQOCQX1AfkAA/YFAvsB/v8CB/4H/QjvARL8+gT6+v76A/UC+Qj8+vvy8wX0APwD9gcA9QD8/vMECvz+/QL9/gP++gUBAP/7BQkB7v4ACfny/RD88Qb8+//8/fcD+wIE/QMGBAHzAwL6/u8JBwL6BQYAAQYH9vv3AfoD/AID9AQD/f70APf2AwH7/gQD+/39A/YI/AAC/wL/B/sEBvcGCQb/ABQRBf/3Bgn/+/oBAvkE/AUB/wQHCP32AAMB9QD2CAwF8QP/C/X9/AAICQD+9P8HDPsA"
 ---
 
 ![](/uploads/2010-11-01-Learning-styles-and-chemistry/Alexander-Periodic-1.png "Alexander Periodic 1")

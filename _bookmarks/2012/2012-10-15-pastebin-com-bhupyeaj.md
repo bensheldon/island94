@@ -5,6 +5,10 @@ published: true
 title: hackers.txt === 'I'm running a Mud so I can learn C programming!'
 tags:
 - programming
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f54fd49de50876bd"
+  vector: "/ggMBAz4AAj9APwDAAEA//z//AL88AAGAgkA+fz59xEA/AgK/P8E/Pn//Qb/+wj6+fv6//f3BQYDCfz7BAD4AAgCAwQAEPsD+AYEAwD+AwQABPcE+/kMBAn5CPgM/gcAA//6CQD+//IEAAP/+gEDA/75Bg32Bv0N/wQI/vUFAwD9AfX9CvkICv0BBvj6Awn1AAMIAQTr/PQH+AMC/QD+CAID///49wUC+QL3AQ8DB/f0/gQFCf30+gzv/wgH/v35/QUFCAL4+fr69QMBBwEC+ggABPQFAAoAAgb2AgACDAAH+gEHA/r2/AQA9vj+9/n7+/ECCgAB9/0CA/sB/v38+/n6CgH8APoQB/37/AQCAgAIAggACv4C/gn5Ag/5+gT7AvYC/wD++AT59/wA/QD+AgEE/wL3Efj/BAP/AQMLAAAF+QH9EPbzBQn/DPf3DAYA/wT7/wv7B/0D8w0RBAYBAQD+Bf0KAQML/gYCBPr5+v3/+gICAQcKBgAF+wD5+PgA"
 ---
 
 === Schedule versus Features versus Quality

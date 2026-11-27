@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2011/03/advocacy-in-print-survival-news-for-2011/
 - "?p=2537"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a2c11a450f25fcea"
+  vector: "9gIAAwoGAP36+gkFAvcCCAcD9wn5AwMECPz8/QECBvn9BxANA/z8Af76Avz6+vwA+voD+wQC/P8EAfT8CgH+AAEABAEB+fr/AgkC/wkFBPoD/AEL9f/0+wv/AAUL/AH8/QD6A/kCB/kE9vr/+gcFBfsG/wD2+w74Bgn2/QUAAQAIDwEIBAL6+wUGAwkK9fIA8gT8AgsGAgT5/AMD+QL2ABPrBAH+Aff7+v4RBP4DCvr5BwD59AQB/Pr9B/ML+wD4/f4D/QMBAQkJ+/cH//0F/gkC/gYKAAH89QP+BQn4/gD+9gD2A/L4+wcC+vsBDPH+AfT/9P0N/RAJCAMFBPYA/gQH+wUA+vn8Cfv7/QD/Cff/AgP3CAsB/QH5+fz/B/gJAvP87/UBAfr69AADA//5Afr2BQIMCvcAAQj3/QEE/AAOC/j3APYIAAAK/Qn//QP7CPv6/wT+/Pv9BvsFAQP3BPsC/PsN/vwD/wP8AgH//AL/AfvwAwr9+QQEAQoE/f4I"
 ---
 
 ![](/uploads/2011-03-03-Advocacy-in-print---Survival-News-for-2011/foodTimer-600x600.png "foodTimer")

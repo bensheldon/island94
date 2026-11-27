@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2012/03/state-of-the-shirt-march-2012/
 - "?p=3001"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e14b4766e1db307c"
+  vector: "+AUCBxH+/QD6/QUHAgUN/gP3/wLy+gMCA/v+/AP7Ag0CBP4BBvn8BP739wP+/QUI/gUA+Ab1/QkE/f39Afz5Bg38+wgCA/8DAQ0K/wD7BwP5Agf8Av7/Af39Aw0O/PQK+QT+DPkBBwAC+gELBAH8BgD7AvoHBgcODAsG+vkC/QD/DQUECfv9+wH+Agn9EAj6AAIEAgP0AP79Cg8L/f8HAgAD+v0B9gT8AP/9//kFDf0C/wX7/v/1+fnxCvoJ+AgD+wQF/PwABgP88wL2A//6CAIHBAAF/An7AP8A+QUAAQAH/wAEAvn/FfcCBgDx/f8HDvf69/f99/38CP4A/f32/P0FCwL8AAIBA/sABf369/j5/QP+APv4BgED+Qf5B/L9//v0/PgC/v/7/O35EQr8AvP6+v0C+fn+/A/5BfoWCwD9AwQDBAgC9wUIA/36B/sA/AH3/v4HAgEEAvoP/QD7BPv//f339AIABf4EAwf09/gH//79/AkAAAAABQkB7PkA"
 ---
 
 [![](/uploads/2012-03/dayoftheshirt-cal-600x428.png "State of the Shirt ") ](http://dayoftheshirt.com)

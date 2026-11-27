@@ -2,6 +2,10 @@
 date: '2020-10-19 18:22 -0700'
 published: true
 title: Centering Civic Tech
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d63c34e8e08d994e"
+  vector: "+/77+AEBCgH/AfsHBP8E/vv8+wD8//4J/Av7/AD5+QUICfkUB/0B+vz0Af4D/gbx/fT89gb9AAUIBAH4B/v8BwT++g31+fz8AQQN+gQFBvUIA/sN9QT8Awf69v3++fwC+/b3BAAHCfb19vgLBQD9AfcABv71BgkEAQT5/wP8+AACDAQSBvr6A/7/Bg4HBwby7vz/AQAJ/AEO9wEC/gP/CPz/B//58gf/+gP1BQYFC/3+AwEEC/0E+wL6//QE/fYFAAb9Bg0C+AH4A/sE+P0EAvoFBgYS/AX+/Qr3//0J+QAA/vgMCv3+7hAH//r4BfXvA/z8AAUI+QQAAvj+AwAD+v0A+wT/A/sBAvj9Aff+//3t/gQA/vwBAwn9/QAACP//AP0DBfP+Avb6+ff6Afn8AP73AP7+C/4C/AD7/voG/AD/CPr7AvwG/wEEBAH/CQ8D+wLy/gz7+/8F/P0EAP8BBPsAAvwG/g/9AAoECQIF9wv68wH/AQsICgkB/QP/AgcC"
 ---
 From Cyd Harrell's excellent ["A Civic Technoligists Practice Guide"](https://cydharrell.com/book/), via a [Twitter convo](https://twitter.com/bensheldon/status/1318348423012102144), reformatted by me:
 

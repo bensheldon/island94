@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/12/proposals-to-change-the-tax-deductibility-of-donations/
 - "?p=2339"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e7cd57d89d817a17"
+  vector: "9f8F8gQIAwQBCQcA+QMFBgUI/gsK/AQFCvz6/f0CBf/8AAMH/Ab4CAH++f78/AYB+f4NBgX//vcGAvr2/v0E9wcDAAX1+AQEB/sA/AIOAPkGCwMC/QT/+AoF8f4C+PUCAPYCBPsJAu4E+/0BBf4CBAQFA/z9/gX1Cv8B/QIA9QAECQv8//v/Bfv/AgQLC/z58wAFBAQBB/8F9/YFAv0HCgb1/PwC/AX/+gMLBP0ADAP5AgwFAPb59v4A/v4Q9AL+9wgGBAMD+wb3Bfr/BAIS//gBBfkCBgcAAO8E/P32AwAE/gYBBQAB8gcI+/0EAvz6+AIA+Q0UCf/7//X/CvcBBvP0+wP//P76A/z+Bf7/8wMGAvz6Ag4ACQL7C/70AvcL+foH/wP8BvkA8/kMAQf9AAL2BvsA/Aj9/Af0/Q8KCAALCPEG/vb0Afr8Cwj5/vr8/Ab6AAL++AEAAwAEBPMG//UDAwP2AgcCCPT4APsB+fr9+gEB+/sEAfoEAvwF9gH7"
 ---
 
 The _New York Times_ yesterday gave a breakdown of [proposals to change how donors calculate donations in their taxes](http://www.nytimes.com/2010/12/03/business/03charity.html):

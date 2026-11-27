@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/the-motion-of-gifts/
 - "?p=921"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f3bfbaa48770e4d0"
+  vector: "+g38Bf77EfYCAQn4/f/+/QP+9wsH/v4DAQH59wL/BAP8B/4OCAAC+gf5AwH9BQUE/vv/A/4KAf0K+v35AgYCAQr1/QzzAQz7Av7/+gH49QL6AgX48AD8+Qn++f78/wT8/gX5CAUJAP3++fH8/gLxC/wI/Ab0+gD7BgYAAvz3BwDw+QYCBvr//gH+BAQBCf3+9vYW+/8GBgH59/wAAgMJCAb59P4B+v73+f0CDvsHCgTuCAb6Cfn59AQD9vUF/AQE/PsG/v0A/Qb1AAD9BQMD/ff7AQX2BAH0CQYFAAH8BgAD/PURAvj2/wf/9AAIDAT6CwcB+v8S+PfzCfcC9vYK//z+AAUDAf8D/gb/B/77/v0MAg4GBPX+CAP6Bfr+BPcF/v0H+wwCA//7+gANAQED9/X/C/4F+fwAAQP8/AEDBgAFAfsEAgAG/gEL+g0CAfsCCvT0/Aj8A/v6+wIBBgABA/oBCAP4AwgBA/z6AvwC9gb/AwAAAwL98/8JCPoF/vr+"
 ---
 
 While referencing something in David Boyle's _The Little Money Book_ (my current read), I came across another Lewis Hyde essay, this time entitled " [Some Food We Could Not Eat](http://books.google.com/books?id=xy9S_PT4U0YC&lpg=PA48&ots=bTCu__a6-k&dq=william%20bloom%20people%20do%20not%20work%20and%20create%20the%20economy%20because%20they%20want%20to%20support%20the%20economy.&pg=PA48#v=onepage&q=william%20bloom%20people%20do%20not%20work%20and%20create%20the%20economy%20because%20they%20want%20to%20support%20the%20economy.&f=false)" included in _Money and Faith_, edited by Michael Schutt.

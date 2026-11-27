@@ -11,6 +11,10 @@ redirect_from:
 - articles/response-net-neutrality
 - 2006/07/a-response-for-net-neutrality/
 - "?p=74"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7bd947c73d00fe0c"
+  vector: "+/oM9QQIBQADBgAK//oJAhH2+AIAAAIE/AL1+gH2/QADCPn5+vwBBAj47P8F/gcFAPwEBAH5/Pb+BAMJ//gDCAMB/QL1/f4AAA0F+QsHCAX/+gAA+fT/AAD19wkNBAkD/vIBAAYB+fb5/gIGEg749QH9AgH/AhH/+PwD/QQCAAD+CwL1/AQFCO8B9QACAAj+/v4P+wP6AgYE7vMBDgEB/gEM+gb0/////Aj2BfoDAfj5/gMOAP8FCP4CBf4G/PgD/AMFAgABA/4EAvYE8ggBAwUFC/748w0BAgn7BfYLBwDuAf0I+vwH/AP7/v8B/Pf2Av/7+gT+/wICAfj2CgYABP39/gD8Dvv3/gIF+////gD7/v8ABQUACv8DAPwD/vn/CgQHAAj++vf8/PcJAgXwAggJBgEE+wr3+fn4/u0HAQAA//8GBAEH+QACAv75AwcI+/0EAfv//fkDBQL3BgL2//sA+Pv4AP8LBgoEAAv8/AYFAf/8BfoL9gX9+Q399QcA"
 ---
 
 This morning a coworker placed an article from the July 2006 edition of Communications Engineering and Design Magazine entitled ["Net neutrality legislation--my take on it"](https://web.archive.org/web/20061030130703/http://www1.cedmagazine.com/article/CA6348436.html) by Jeffrey Krauss, President of Telecommunications and Technology Policy.

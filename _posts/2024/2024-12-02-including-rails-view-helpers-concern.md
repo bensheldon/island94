@@ -3,6 +3,10 @@ title: "Including Rails View Helpers is a concern"
 date: 2024-12-02 09:01 PDT
 published: true
 tags: ["rails"]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e1cd833297fb84ce"
+  vector: "8vX3BQYGAwj6/QYAAQkCBw/99wn/BAAK8/gA9gP8BgX3//oGBgb59PoI9v/69gv1A/YEBP/4A/wB+QAH/gv+/voA/AgF/voEA/sA/v/8+vEBCAQFBgX8/AoCBPwI/v/4Av/8BPj5Cf4H/v8GAAH9AvcACfQK/gcEBAgQBxAC9AACB/gK/gj/BwoGBQgB/gYC+QX4+/j+/gUBBQb/AP4E/gL+CQQFA/j19QD3/QP7Aw79/vwADAP28/8BB/UA8vkB/vwD/QH+8gkEBv7v+vwEBAD8AAX4AQQE/v3++gD/AgAH+QP5Cfv+AQj29QEF/wH/8/4C/vIIAPkGA/kEBQUD/gXu7Qf3B/39CQIDBPwH+vn6Avr2/f8BAw3+/v0EAv8C9fkC+w78Bfz9/QYFBvkD+vn0CP/8/AUJ/ff7BQQI+AAFBgH//QT9CP4JAgD4/Af3AQbwAPsF//8DBPUFBf0NBwAKAg34AAQE//sCAwT//u8AAvUC9gsACQn1Bf38//sI"
 ---
 
 If you’re currently maintaining a Ruby on Rails codebase, I want you to do a quick regex code search in your Editor:

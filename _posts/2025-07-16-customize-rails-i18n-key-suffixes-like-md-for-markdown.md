@@ -3,6 +3,10 @@ title: "How to customize Rails I18n key suffixes like `_md` for Markdown"
 date: 2025-07-16 10:00 UTC
 published: true
 tags: [Rails, i18n]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a3c5fc02c7357f41"
+  vector: "+AP8/gMFA/4B/v8HBgD9AwEI/QEEBgUNA/78/wQBBPQCAAUMA/oGAAH9/v8D/v//+fz6Afz9+vX88wEF+Av//wEG/QIBDfv9AgYAAAT/+f3/+gQH//f//QkCAPcNCAQCBgH7AwH/AfX4/gUHAfkCAf0DAAEI+AsCAAn8B/cA/gADCQD++QHt8fr/B/z/Afz8AgYICAEA+wD9DP77+AH19/7/Av0F/fb+AQD5BAcDAgYC9PgBAwH8AwYED/oA+AYEA/UH/v/87gX/DQH1+/kKAgL+/foK/QH4/fwA9fz3/gAJ+P8J9fsNEg/5BfYA9wX9/QIIAvb89gv+CfcK+/4BBQAA7AT6AQAEDgwABf8J9gMA/QH79AD+8wED8/z6AAj4BvsDAQT5DPYAAAkC/wQC/fz+/wMFAfQV/wEDA/wJ/AD8AvkA9wf89gL3/v33+u4G+Q8BAfsIAQECDPAIBfkO/wIG+wcDAAsKCvvt+vgA9wD++QT2/AQC+gT/BgEG9gID"
 ---
 
 If you’ve had reason to use internationalization in Rails on Rails, you’ve probably used a [nifty feature](https://guides.rubyonrails.org/i18n.html#using-safe-html-translations) of it:

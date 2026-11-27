@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2011/10/the-prevailing-worldview-of-the-present/
 - "?p=2933"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "dbb051d29f5a57dd"
+  vector: "/xL7/wAB9vkMAP4HBP/4APj8BPz3CAwAAAYEAv8G/wr4+/cEBwgM/AYG9QEE/f0H/AHxAAb3A/n8CP3xAAECA/j2BwX1A/QEBgH4/Prx7PkPAwL6/QAF/wAABvQB/xQA/AAJCQQF//8B+vr98fr09/r4CgEIBPj9+AMIDAX3/QABAvMD9/wD/QX9BwQK/v0B9/sG+vgAAvn8AQkC+AH7//b3+gQA/AT1BAMH/gYIAAL0CAH/Bf75AfkE/gEB/PgGAwf5BPwC/QD9Cf8FAvsJAAYEBfn9AgYCCf4B/QX7/QAG//UF+gL1BP/6//j9AQT3/f/7AAAF9PcICAn6+QcD+P38AwUACf0G/Qz99vwIAwUF+wEEB/cI/wD8Bf4H/QH+//0DCAAB+fny9wUN+wT/AQj78wYM/vcBB/kD9Pz9+wD7AQAICAoA/fIAAgD7CP0JCPUBARL9+/n8CfgB+wgGCPb7+vz9BwEEAfoCAQf9+gb5BQQCEQUH/wP/9AEQBQUC"
 ---
 
 From the preface to _The Vision of Islam_ by Sachiko Murata and William C. Chittick:

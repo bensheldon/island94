@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/05/jfk-accuses-media-of-sensationalism-triviality/
 - "?p=1916"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d39872a690a1c7a7"
+  vector: "BQf+BAgN9/cG+vsKA/7+AvwD+wz2BgYFBfgG//cE//j4BgT5CwMH9wj6/Pz2/v8K8/z7Awb+Avb2BvwFAf3+AwABAfv1AP4GCAH99v0CC/oK+f4DBPb9AQEC9vIG+Q4G+QMFBvgC/foC9e8D8/8CBPoBEv4KAvT++v/6Dwj/AwABAvsA/gD99P3+BAcF/v/8+Qj99QH//gL/+AgE+AL7/gcBDfwE/An7Bwj5DggIB/v4BAUJBvr6AAH7Bvf6A/n9BAD2B/oKD/j6+gIFAgAE9wj+Bvz/+wP+B/8ADwP88AD5+P4G8//9/wj4Afj9CvYAAf/7/wMG+Aj+AwT6AvT9BgX7/QML/v4ABf/0Afj7AQb6APEAAgr7CPb4/Af+B/j1DfgG/QwD/fn5+QMF/gX9CwX9+fwJAAAE9wb9/AICBwAEAfoFC/oA9f38/gH8BP39Avr7AA4GDQAGAfkDAgj5A+4F/gP4CwUEAQMECQUC/AkCAf4CCAP6CQUF/fUHAPr8"
 ---
 
 This is the 50th anniversary of John F. Kennedy's primary run in West Virginia, where a large focus of his time was spent responding to fears over his Catholicism. This is from remarks titled " [The Religion Issue in American Politics](http://www.jfklibrary.org/Historical+Resources/Archives/Reference+Desk/Speeches/JFK/JFK+Pre-Pres/1960/002PREPRES12SPEECHES_60APR21.htm)" that JFK made at the American Society of Newspaper Editors, Washington, DC, April 21, 1960:

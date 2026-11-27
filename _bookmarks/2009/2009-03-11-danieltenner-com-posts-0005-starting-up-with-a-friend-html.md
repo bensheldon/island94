@@ -14,6 +14,10 @@ tags:
 - entrepreneur
 - strategy
 - nonprofit
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0805fcbd9cc8170c"
+  vector: "Av7//fYHBQj+/f4D+f7/AAPx8gb+9fgBAPwI//r+AvIC/wYEBf8A//3z9f36Bf8C/wX++wYEAQUA+woA+wAECAr+AAD3//fy7v/4/gcGAPgGCfcM8Qf/DwX6+wUD+wwN+vkA+wYEDfn7AgH/CQIE/AcCDf75Af0BAQQE9ff//gAAAP8U9vsEAfcIBgcAAgb6EPwBAQYEAAUI9QEIAvv/+/v/+f36B/fy8gT+BAH7Cf0B+AD9Awf7///z+P4DAPwE+QcDBvv4AfoD+gYQ+gEHBfz7CAD/CgoA+woCDP0GDQAGBQj5BQj9/AD/8P0DAvfyCPwF+v4J+f34DfsA9vkG/AMH+f/5/QP3AQED/AD3APP9+wEF//38BAUCAwMGAwgL9f0EAAT8+P0E9AIL++sA+gf++QX2/gH9Bf738/sDAQAABgf+//kF/QcG9f76DPoDBgYBAv0BAAb9//8N/QQDAv4F+fr4BPoCAQ4CBfT+8AP4/AD9CgEE/v8Q+AX//f/+"
 ---
 
 *  What do we both mean by “the business is successful”?

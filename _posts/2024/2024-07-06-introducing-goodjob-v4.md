@@ -3,6 +3,10 @@ title: "Introducing GoodJob v4"
 date: 2024-07-06 21:44 PDT
 published: true
 tags: [GoodJob, Rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3e9dbd8ea8cff8ab"
+  vector: "+P4C/gH+9fjxB/8J/v/+AQwA+vj5AAICAPr6+PLy8wEAAQMJBP/2BAT69gL6+//y/gEB/AkKCAL9+P4BBQT5/AL69v8BAvkC8wH+CgT8//b8+vwA/wEE9woBCQYEAwICAQf9CAH9A/z+BQEJ+PkECQID/wn6AvcIEgn///sIAQAF/wIFAQH3AP4A/gH4/ALy/QkGCgb97wYDCwH/AQT4CvsC+gfz/P/4/Aj0+Av2AwICBgf8BgT2+wsFAgkFAfoBAQAFAAT//QcG/Qb3AAH7/QQE9/gJ+wQC+wUE/wUL/AAJ/wEJAgQJBfj4Av8B/gH/+vn4BgoL9QwHC/IE9gD9APsGAvf/CAEIFgIECfsD9/34Afv++gkE/QD29Qb8BggGCvsABP7/Af35/v/9/fX0Cez+BQgEA/0GAwX9/fcJAgAABP8EA/L6DQQBBv//+BIF/QD3+vwHAgT+AAAJBgEE/Qb7/gj7/AUF/QP0AP378/378PcE/gYBCv/8BP8H7PkD"
 ---
 
 GoodJob version 4.0 has been released! 🎉 GoodJob v4 has breaking changes that should be addressed through a transitionary v3.99 release, but if you've kept up with v3.x releases and migrations, you're likely ready to upgrade 🚀

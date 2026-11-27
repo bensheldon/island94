@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/04/mendacity-in-order/
 - "?p=1880"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4810242c921ba3d9"
+  vector: "+wz/BvwG+vj4/AAG+gIA//wS/fwOBAMF+vsF/P0AAAEIAPX8+fwD+AD/AwH7/wMC+PMCB/z99/b3B/4ECf0IA/4MAwX5CAL0/gL6+Qf5AQP7B/sE9vIC+gkCAfsABwX89P3v+gQC+/kL+QH5+An/CPj5Cgn/Bvz4AvsGFPzv/AAFBgL9/gECBf8OAQcGAfgM+QkD/gsDAv72/gL5/v8E9Av3Cvz/AwAI+v0I/gv/9Pv4A/wFCQIAAQEK//oI8/f28wD3+f34+/v5AggCAwUH/AT49Pr9BPUAAgcC/gcC+wD6CwEDBfj//gME7vkIAP/9Av75AfwH/QP+AAz8/P0JBPn8AQQJBPIDBP76/gXy/vgGCvsCCAwH9voDAgT/BP0B/PX7AQP+//X69vYB//f6Awj1Dv//9g37/Qr7//3//AADAf8F/gf9AfoDB////wr/+vQGCAwC+QH+/QcG+wUJ/AwPBf37BQAFBQQNCAIC+vj6CQIC+QQHAvsGAAMCBfv4"
 ---
 
 Augustine of Hippo's [taxonomy of lies](http://en.wikipedia.org/wiki/Lie#Augustine.27s_taxonomy_of_lies), deduced from his book _On Lying (De Mendacio)_ (395) in order of descending severity:

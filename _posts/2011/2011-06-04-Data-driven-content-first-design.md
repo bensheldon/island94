@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2011/06/data-driven-content-first-design/
 - "?p=2682"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7ed69313507a8ece"
+  vector: "/Qf4/QT/9Ab+AwICAwEAAQ7+AwT+9gn9Agr7+f72CP8EAgcE/gT9AfX6/gn79PYBAQf9+f/7/QL++fr9+wf9BQYL/Q/7/QEFCQUJ+f78/PEAAwQG+QIDCP8A/wYBB/gFBfEABP0IEPL59PwHAgIHA/cABvr++Qb8CQ78+wL/AAAEDf4PD/0GBvcEBAQCCgb69wr+CPXvDAIHAPMP+f/9/ALx/vYD8v4E9gAMAP0JDAD++wUAAvYD9gH8Cf8FBv/5/gL5+wn1+/4A/QABAf0KAQf6CfsA/Qf49QH9A/n3CwD8/fYDDAf8CQ34+fv09vz+//j9+AIK8gULA/f7AQP/7wIC+AL7CQYI//f9+/oD/P4HBvsG/voG+Pv7Av/0/wIIBPb/APYI/v8C+/4FBw4EBQMBBv4IBQT3AAT8CQkFCwAAAvb8AQQGAf8EBgABBPz9//32/QAG+foAAfr//vz///MFA/n9AP0LAvn5AQkC/f3/Bf72/vkJAwIQCwL///8F"
 ---
 
 [![](/uploads/2011-06-04-Data-driven-content-first-design/pdfpulltabs-600x342.png "pdfpulltabs")](/uploads/2011-06-04-Data-driven-content-first-design/pdfpulltabs-600x342.png)

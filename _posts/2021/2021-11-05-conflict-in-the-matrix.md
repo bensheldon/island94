@@ -3,6 +3,10 @@ title: "Conflict in the matrix"
 date: 2021-11-05 17:17 PDT
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9db5c1c224853832"
+  vector: "AAP5+fr99/0GBfwF/gP+AvsH+wX88/j/7AYE//f3AgYGA/UNAQkG/QMI//gB/AD6+fru/AT5Bf8H/wH5+vn3AhAB/wTxDAX5AP0ABPz9CQEDC/YGBvf9BQ37/f8IAgQGBQT9BAQC/fr9/gH+//j++/wB/wEIAgL7A/sPBwID8QD2+wcJCP/6+gUE/gkK/f78/gHx9gMC+v0B+QT8Cf//BP8N/wL6AgL2+P8CBQX///37/gMFDf///P/5CAkFAPUKAgr3/wX//gMB//X/AgYB+QMBAQH3/P7//hb6/QoPCwAC+v77CP3/7gX3+v78CAX9CfkA+AYH9gf8CAH5/wf57PoGBwT1/P8J8/z3BAkC/v748gAC+P78AAgGAwYA/gH/AgX7AQYK//jz+hMD8vz+Af4EBgv4CAj+APoF8wMC9gD7/gf6BPQA9gQRBf39AgD+9wL4+f/+/AcA/v0EAA4B/QQKAwH8Bgb6/wYCCgII+QH++AAG/ggA9wL+/QMMBfwE"
 ---
 
 From Apenwarr's ["What do executives do, anyway?"](https://apenwarr.ca/log/20190926):

@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/07/what-does-your-computer-symbolize/
 - "?p=2118"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "95bb6ff7de5018ef"
+  vector: "/AIA+QH9BAIG/wYLC/cE/fvx+v/9/PkA/wr89fsC/gcIC/8ADwL9+v72AwMAAQD+9Pz5AAQF/PwMBwD8/PL/BwgHAAMDAv/+/wgF9f//CAEJBAQH9f/2/Aj18wQAAQbyAfkBCf8EC/n++/0E//3y/vn9CPX8CQgG/wD6AAP9+AAACP4KDQD8/QD+Bw8CDhP6+fwM/AUDAfr+/fQEDgABAv36CgIG8woA/QcC+wEJA//+AfoDBP0A/v//BvkHBQUB//wEAwMD/fv5+vsL9vzzAPv6/P4CAgX7/Ab7+wMK8wD2+vcMBfoE9/4A//0EAgP9BwD4+gUA8fwFB//5AQf+/gIIBgcAAQHxBAL1BP4E7wD5AQUECPP1AQQAAwj38/cF/voGC/f8BQX8+vkEAwb0AfsDAPwBAPwE9fsA+fYJ+gD5+wUHCgQM+v4K+/3/CgsJ/vH8Ag/5+wADBfgA+Av7/vj//v79AAj8/wAEBAn9+AT+CQADCAcE8gcIAQ0FA/j6"
 ---
 
 The introduction to [Fred Turner](http://communication.stanford.edu/faculty/turner/)'s _From Counterculture to Cyberculture_:

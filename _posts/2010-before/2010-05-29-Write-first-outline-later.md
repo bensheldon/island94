@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/05/write-first-outline-later/
 - "?p=1966"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3bcd2558f8075e7f"
+  vector: "BPoDDQIBBwUSAvoD/v79//oB8g0DBAb68wX89AT1CAH8/AEI/AYH+gAA+QMD+AAD+vT0+gP9BQYJDvr99/78+gUKCAv8DP///wAJBQD2B/4EC/sD9fcGBw4DAPkC+w0I/PzzBAIFAQAF9wD4/P7//gMPAgj+/woLAvz/B/72/gAI/vkL/QQA/P4PA/YBBgD68v0ABAIH/e/4+AL9/QP2Bvn99////QX3+gQBAgYHB/nsBP8KCvT9+f3+/QAGBvAD/QP1/AX6+Pn4/gD5Avz2/QgD+gb/+AUE/QYD/wn++AD++vsC/vv6+//39QQEBP/z+gUC9vkG9AABCQEH+fz2BAD8/v/7A/v79QADAQb5AwENDwUH/voG+Arz/Qj6BP4CCvf8AQcFAv/++Q3/+//9+AECBv/2B/sDA//5/f4D/wAF+QAJCP4B/v0FBPr/BAYFB//4+gj+9v7/+wAE+gcEBv0G+wACBAMGBQgLB/32AQMFAAUICQcHBwAH9QoMDfj5"
 ---
 
 Peter Elbow on free writing, from the book _Writing without teachers_ (1973):

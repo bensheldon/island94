@@ -15,6 +15,10 @@ wp:post_type: post
 redirect_from:
 - 2009/07/different-strokes/
 - "?p=650"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b98230ce7e8e702e"
+  vector: "/gUGCwf5/f8I/fUA+P8I+/71+AX9+QIL/AYB/QMB+wkH/gYNCBAF/gAEAQD1+/7z9vv//QD+Bw8JCQYD9QP5+wX/+wj4B/76/wEJ+P/6CgQA///8AvUHChAD+wYA/QwH/xEBAv8CBAEC+f3+//sBAgL8BAT9BPsL//sF/foEAwAE//wDCP79CQ0EAgECAgP4BQD8+/r09f7+/wL+////B/8DBwX9BQL88fwA/gIFBfz2Dv0IDP76+wf2AvsHAPsFAAj/AgYCAwD1+gAFBwXyAgMFBvcD/wECAgr+/AYP+AAM8v/4B/z79QID/AP4+/vwC//9/P8C9vP/BAL//v3/+AP7AAfvAP///gD+AgAHAvr1BQYC/gAA+Pv0/Qn+/QEF+/z+/QYH/f77BvD///79/Pb7//3rAvsMAv0H+PkRBQAK+AP7CfIC9QURDfL+Awf+BQH8+QL6/fwF+/sJ/QL/DfkJ+/P3/v8FBv8HBPn+AQoABwIFEPgDBQgB/PsD//P8"
 ---
 
 Paul Graham has a new essay up on [separating Maker's Schedules from Manager's Schedules](http://paulgraham.com/makersschedule.html):

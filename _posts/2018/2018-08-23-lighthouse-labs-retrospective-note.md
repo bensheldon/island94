@@ -5,6 +5,10 @@ title: Lighthouse Labs retrospective note
 tags:
   - accessibility
   - notes
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "235248799299ef19"
+  vector: "+wUEBQYKBQT4/wYB+wL9/P3+BAMBAwUF9wv99QID/wEA9gAFAQP6AvT4+/wB6wX2Bfj58gLzAPz+AwQCBfT/BQYO+wL9AvMCBwcB/gL4AAcH//UNAv38BPX79wL8/wcCAPv6BQIFBvj+AfsD/wcAAfwFA/39+g0FBQUMBQEDAwAED/8EC/sAB/8FDgkHAQD59gn5AAL2BAIH//z5Bf/+CwPyA/MF/Pv59ggI+wwRDPX9AfgG9fgG+fv7BvQIBAIA/gIE/AXx+f/5/PwG+v39+AYBAPoI/wD+9wEAA/r9/QAABf37A/b6+g0H/Qb5CPT2AP31/QMQ9/sDDP78+f38/wL4BQr6+fcACAH49QH++/sDA///AvsB9wn2AgEI//cEAwIDBQX9Av/7+AUNAf/z+wL7AQL9BQT7+/31//YFAwAFBP4C/vv6/fYF/PoHEg4BAQP3/AcBBAX9AQQB+ggEBPsKA/X+AAMJ8gEAB/8C/f/1Cf37DP8HCA4J7wQJB/gF"
 ---
 For more than a year I've been attending monthly [Lighthouse Labs meetups](https://lighthouse-sf.org/lighthouse-labs/)
  at San Francisco's Lighthouse for the Blind. Each month Lighthouse Labs holds an open forum for accessibility technologists to present and receive feedback. These are my notes from an audience retrospective of a year of these presentations:

@@ -2,6 +2,10 @@
 date: '2020-11-03 11:38 -0800'
 published: true
 title: The five ideals explained
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "18749be3a21b495b"
+  vector: "BwQA+wj6EQcEAvgBA/cE/wT69fz+/PwI8wb9Av74+QwNAQQMAAEB/fr3/wT++QD1/Pb0+P36BwUGBQIDBfsC/wb9AQD0/f/7/fkHAAL8A/8KBP8H8gEC/wT//Pn+/wcA//r2BQIBBfj8AQAG+AH3BPr/CwD2BwgJCAcG/Pv+/wABCvkKAvcD+wH+AQQEAwr79Qn7Bvv9+vwE/P/+/AL5C/4D/QTz8wT99QcHCggLAf38A/oCF/4CAQ32AgH69fUCBgEEBg/9+wgGAPcA+vv4AAIM/fsJAQUF+Av9AAMH+AAB+PYPCf4E8AAH+P/5APr6BPcC/AwD8v//BfL4/fkE//4DAv/6AAAD/gQB/PwGCvP1AQP8+/oBAAj3BAIJ/wcK+AEFA/cA8/z6/fP8+v/8Avz7+gn+BwQHA/n1BfT++AABAfgBA/wCBAESA/r8CxEEBQf5/Q4I9vwE/gEIBQYCB/f++QEIAQMKAAcGBgP88wH9+/8F/REHBAQDAQUCBQAD"
 ---
 I previously posted the [The Three Ways](https://island94.org/2017/12/the-three-ways-explained) from _The Phoenix Project_. Here are [the Five Ideals from _The Unicorn Project_](https://itrevolution.com/five-ideals-of-devops/), by way of Gene Kim's _IT Revolution_ blog:
 

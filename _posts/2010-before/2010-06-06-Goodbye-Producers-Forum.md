@@ -14,6 +14,10 @@ wp:post_type: post
 redirect_from:
 - 2010/06/goodbye-producers-forum/
 - "?p=1999"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4cfb6efa5eb4cb0d"
+  vector: "9/X6CQ37+fv++/wIAAkBAAP7AfX6BAUGAPr3/v/5Bv4NCPkKCAL4//oA+P72Av379wH88wMHA/v2+Pj4BfcBAgD+BAgG9/UE/g0D/wH2+f4CA/b+/QQHAvwH/wwL/wAFCPr+BAII/u789v0L+QUADfn4A/YCCggJBgUCAwsG9AAJ/wQAAvsAC/r2CAgCAQf3+wkJ9vf//gYCBgAECAH5APwFAwT59AgA/wX8APgN+AEL/wn8APkJ+fz5DAP9CwH//fgFAQECCP0ACPz8+foF/wwC/v0E+wUD+wj7AwcK/gAA+vgCA/v3AQsF9/3+Avb8BO/7/v4I/QkFAAEG//8F9AH1+wL7BQICBgn9+/j9AAn+Bvr5BPACAP39AwLwAAIBBfkH//QFCfv+9f8CAgL7BfgJCwMC/wAJBgYL+AgPBgD7/fcKBv7/AggGAvoDCQ37/wL8+gf8//wIAPv7/Pf9A/EDBfXs/fsCCgEFBf4E9/kA+v76BQQI/AUGC/cEBf0K"
 ---
 
 ![Goodbye Producers Forum](/uploads/2010-06-06-Goodbye-Producers-Forum/Goodbye-Producers-Forum-500x324.png)

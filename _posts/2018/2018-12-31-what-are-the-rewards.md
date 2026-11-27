@@ -2,6 +2,10 @@
 date: '2018-12-31 18:25 -0800'
 published: true
 title: What are the rewards?
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "df20f2843b0f4403"
+  vector: "/AH+/wEEAvsMAQL4BwcH9QH8/fb+9f4L+vr5/v/7+v0JAP8T/gL////+Av/4AAb98/YDAAMCAQQG/vz3A/gG//sAAA75/Qz2B/gHCQL9BQsB/wML+PwA9wME9AwC9wAHAv/3BgwC/vUB/gUBAfz8BPn//vz5BP4ACwAJCQkMAQAACQADAPoFCPf6+AYOBwL98vgD/QQDAfn8+fT69wENCAD89wD/Agz9/fr8BQkEBPjzBwL7CPX//AgJ//gE+vkD/QQLAQn3B////wYDAwMAAfz6/f4GAwD+AgoF/vwN+QAJAAz4E//+8/8M9wD5A/n3Bf0C+QgI/QoHBwH2BAYJ+/7zAwT7AvkE+vz7/gUABvP5DP76/gf+A/n5AQH/APQJ/PwAA/4E9gb++PcD8QT9/Pn7CP36BAkMAAIF9wQFCQANCf8A/vTx+ggHA/gA/gQH+gD+/AP68fn/9vj+/fL/BfcHBv/++wAE/wgEA/sE9AD48woF+AsAAgYE/vsGAPr4"
 ---
 
 From _Overcoming The Five Dysfunctions of a Team_ by Patrick Lencioni:

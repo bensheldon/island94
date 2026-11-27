@@ -4,6 +4,10 @@ date: 2017-01-30 04:22 UTC
 tags:
   - software engineering
   - boil the ocean
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2f4aff333df1239d"
+  vector: "+/37AgP5/wf8BPUHA/4H/Qb3Afv4//8H9AD//P3x/AYHA/wNCP0A+vj5+AAF9QH4/AD48QL+/QcG///5Af/3Bf/+/QgA+/n9+/4C/gIAB/kDBfkS+wEDCAUAAf8F/gAEA/gDCgMAB/r3AwAFAgT7Aff4C/32AwwEBg0I+AwLAQD+CPkQBAECBPv/BxH/Aw31+QoDAPzz/QoO/wIG/wIEAAH+/QX08wb+8gL1AAECAv8D//v/EQn//wzzAwAAA/YBAP4AAwv5+AMEAf75+AICBPoG/wAM/wYD+g7+AwQLAAAA/f4OC/n++gf6+vz7A/f7/fL//gEJ+AL8Avf8//kD/AT/+/z/AAMGB/0A/P8H+P7z+v8B/fUB/AL6+QgIAwYG/foEBPUB+f/4+wD89/L///kC/gf9DP8AAvrx+/UEAwD5AwL+Af//BQkCAvv2CgsC+w708gcGAP4F+QAIBP4DAQQBAvsDAg8M+wkCBfUA8wX28QD9Ag0JCgr9BQUG+/8J"
 ---
 
 

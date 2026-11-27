@@ -10,6 +10,10 @@ redirect_from:
 - observation/interview-questions
 - 2008/11/interview-questions/
 - "?p=272"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1a8ec4a6aa3329b9"
+  vector: "+Qv//AIJ/wf2+vL+AvX5Bgb9/QL6Agz++/4B+gQMBPoHDwcC/AQCAQXy+/oA8gwG///2/QQC/QL+//kO8/z9EP8D+wIH+fgE+QD6+/0G9f0H+/8G+QD79/cFAfgL/gwB/gUF+wP5BAT1//74+wT6AwIHBvYDBPgABAID+/31/wAKDAEK9Ab7AAkIAg79BvgL8wkBBAMB+AQGAQD7AgH6+P77Cw0AAAP7/QEICQD6AQT+BgcD+gD6+v/6+gQDAf78+QD0+wcDAf749QYG/wkB+gQBBPgA/wgABAYE/wH+/QAC9QABBwEEBP/5BAMI++8BAf4E+QYLBAX6+wL0CgH+/fgD+wUJ+QECBwDz+f739wD+APb/AQYCBf0HCwL7DP/x/u8JA/EC/fAE/f4ABfXz//wDAwsGCAL5BAYD+Pj48wAFC/wK/Pf1/QP1AQP0/gcE//8F/gAB/Q4KCfn4/Q36BgT8Bf39+wT7/gUDAgsBAgr8/fj8AQUJ/wb+AvUMBfUA"
 ---
 
 In the news is Obama's top-level administration application questions, e.g.

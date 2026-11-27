@@ -11,6 +11,10 @@ redirect_from:
 - observation/enchilada-sauce
 - 2008/04/enchilada-sauce/
 - "?p=217"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4113b2e8653fdd23"
+  vector: "7wP9APj8+QL/+AH4AfsAAQsG9/MCAAj5Bv4CBfb2AQn2+wD8AfoHAQAKCfgH+esEC/n3/gH3DP799fkNCAT8Avjz/QP+Avv7/f/7+gb7/AD8CQb8Bwn8AgQLBPz69/0F+vbzDAT8/e/6BBEI9AAC/P30/QUN/gH8BQIABAAGCQAFAQMHBvr9Bvv3+AD6Avn1AQAFAAYAB/j6APn/AQD///sD/QP8APsI/gv3BfUDAwkKAwgECQH2Bwv6Dfz6Afr2BAP5AwL9BPgEAAf6+f3+/w77/gP+APwGDgD//g73AgD/Bv8ECf31AgQB/foH9wAAAg4BAfwAAwcJBgP/+v0A7v38AA0B/PwH/gQBFAH79wP3BAUD+/sD/gf+/wX2+/X6Dv7/CPoB/f3/9wjzAfsCBf30A//9+wH9/goCBgkLBwAN8fkF+vf+/gj+CA8ABvwFAwkABAMF+/MD/vsGBgL///kB+Pv8AP759wD7AvYBAwAABPz/DP4BAQcBC/z6CwYG"
 ---
 
 Dandy's recipe:

@@ -3,6 +3,10 @@ title: "Trigger GitHub Actions workflows with inputs from Apple Shortcuts"
 date: 2024-01-08 15:18 PST
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "712fa92b44270697"
+  vector: "+PkBAQD/9v7//wf/AQQLCAAD+wH7A/0KBPr8/PgCCgD/BQcHB/cD9/wK/gr9/wT9+wj8+wEJCP/2AQwCA/n/+Pz9+/wA/QT7//z8//b+9vcB/AYSBgv9AgMF/vYL+RD4APv5BQMGCPwMBQMA/QgDAQEGAQUEBQMFBgj5Avn7AwAJBv75BfIG/f///gD6BPz49v8ECgH5+PoCBAYIAP/+AAX58/gB/f/7/Pz3/gIC+gcP/f79Be729fcACAP3AgUG+Qb9A/7+9wf9+v37+/kA+wT1AAcFCQD28AoE/PgA/wAK9P8F/f75BAf89wT7/vz+9QEG/QH//wj8BAT/Bf4G/Pz9/wb2Df//DAT+BgUFAw/9+wX6+/77Cgn+9Prz+wP+//D//QIIBAME+QsCAPf4BQQQBgEIDAIPAQH4/gUD9QD9DvMB9P4ICQj6AAD1Bff6CAz/9AEBCPv+BP0O/vsG//z7+vT8/wr7/Pf69/ABAgMCCQP7AgoJAP32CPkP9/0F"
 ---
 
 I've been using Apple Shortcuts to invoke GitHub Actions workflows to create webpage bookmarks. It's been great! (disclosure: I do work at GitHub)

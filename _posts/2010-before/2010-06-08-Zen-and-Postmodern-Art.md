@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/06/zen-and-the-art-of-postmodern-philosophy/
 - "?p=559"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8a3ce4242ab6864a"
+  vector: "/v0FBwP/BvYN+QT+/vz8+/8A+AIJ+/X/AgL/8QX8AAn4AwAJBQMG9/n/8/oD/Pf5+Pr3/voAAfsACP4E/gkEBwn4/QD0AwwBBv4IAP0A/fkIEgT++QH8+QX//v/wBw75/QD+Cf4PAfkJ9Pn/+QIB+wEBAv/8+QD+Av/+Cfzu+QAD/gUFBfv//gsCAAf9DwUD//wOAP8M9vb6A/788gL9BAH7+fwA9/kIAAD9BP8HCwPuBf4LD/n//AH1A/wA/PcI/gPv+v4H7/4A+AL1BvoABPsG//35BAQBAQMC/gb3/QD+/PUJAf32BgH8+v38Avf8CgP3BQAT+/T3EAgC+f8L8wD9AgUF/fgC/fsCBv7/Af4EAQb9/vr7+v/+/gwHAgAF//4ACAj//QABAgMBC/8F/fjzAf4EB+7/AQAD+v39BAD++v/7A/8O+fwGBwD4/QEICvv9Av7/+PL//voD+Aj/CQEECPr9/vkACBAGBgb7DQQADv4HBQIC+wUJ/QwMBAj+"
 ---
 
 From _[Zen and the Art of Postmodern Philosophy]( http://books.google.com/books?id=VR1SYOYq6r8C&pg=PA10&lpg=PA10&dq=cleaving+in+philosophy&source=bl&ots=eg_6e5AkC1&sig=b5e6qRmSOeSq9GuEKXvGy1jrf7Y&hl=en&ei=9RPBSfuaFpbEMaLH7aoN&sa=X&oi=book_result&resnum=3&ct=result)_ by Carl Olsen (I added paragraph breaks):

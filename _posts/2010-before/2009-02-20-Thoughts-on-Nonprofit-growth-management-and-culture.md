@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/02/thoughts-on-nonprofit-growth-management-and-culture/
 - "?p=502"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f63d962967aa68fe"
+  vector: "Dfv5/P4C+/wI//8GAAEMAf4C+wPy+/8I+fwC/P71A/4QBAgTAwL/BAb69/MA+wQA9/gBAAT//wP+/gD4Av8BAAkBAAfx9wn4BQMA+gMCAQIKCPkP8QT++wsF7wX3+wb9/vQHA/8GB/IC+QIN/gj+BAEADvT4/Qb8Av0B/f0E+gD3BwQJ/gX9/vsE/hEMAQ73+v0BAgMG/fUK+AID/f4JAvz9BAP2AgX47wACBwIKB//1BAcC//oD+AL8APIIAf0ABQb9Awr6CgT4/vgG+wALBP8GCQIJBAv/Agv5AvwE+QAO+gf/CAH8+/0C+wEBCvr3C/wG9gcQ9An6B/L7/fwB/wYB+wL/9wL79v/8/v8C//n/Avv7+QD+AgT6/gH8Bf4I+gEK+/76+/v89vQDAgH9+wb1Bf38DP/6/AP59voABgD/Av0H/PT99gEL+P72BwP//gH9AgsD+vwF/PL2/gAJCfoG/vn2DgUAAQMF/vf9/Ar/+wIGBv0F+gUG+wQD7f//"
 ---
 
 On the ride home last night from my Institute for Nonprofit Management and Leadership Class, I was talking to my classmate about the difficulties of creating a comfortable workplace environment. Both of us had worked with organizations who's good works externally did not match internal working conditions.

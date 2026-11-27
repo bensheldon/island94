@@ -4,6 +4,10 @@ date: 2026-09-26 15:51 UTC
 published: true
 title: Most of Your Architecture Was Just Expensive Code - The Phoenix Architecture
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5823fb66bd0000a8"
+  vector: "AAL9+gH3+gcKA/YEAAAB/wH9+AAAAfP/+wgD/AP5Bg8EBAYMAfoE/fYGAAAD/P70+/T1/f71/AgLC/T5+QD+AgID+v0J/AL9A/kIAwIKBfIG/vgOAwMG/QwAB/sGABgJ+vb8CvsCBP0BAAgE/v0AAAYCB/3+AwAJAAD9BwABAQD8BAIABfQI/wX/Cv/9Bg3/8P4EAPoFBfT+BP/+9/8BCf8I/AUB9AD7AAMC/w79+fvx+QULDgH4+P4CBAcC/wISBgT7CgYE+wD1APv2/fn++fwK/QIJ/AIBAQz++f0KBwD79/j5+Pfz8vkA/wQD//z4//MC/QgN9f8ABfgKDv39Av4EAwz+Af/99vj4+wj+AAIC9wgGA/v+BwoDBgb+A/v5/gL++Pv//QLrBgQC+AT4+fj8AwAD//39AAH9//kA8gAAAAYLB/oBCPkA/P//DwYG/fj5+Af5+P759v0IAAoHCAQF//0I+gjy/QUGAAf89wECA/8F+AQJ+wb2AQkBAwH3"
 ---
 
 But the history of software has quietly mixed together two very different reasons a thing can be hard to change.

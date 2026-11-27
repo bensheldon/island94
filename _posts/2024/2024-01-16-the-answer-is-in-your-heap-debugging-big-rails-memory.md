@@ -3,6 +3,10 @@ title: "The answer is in your heap: debugging a big memory increase in Ruby on R
 date: 2024-01-16 14:41 PST
 published: true
 tags: [ruby, rails]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "50d809d17ff576da"
+  vector: "9f7zDAb5AgX7BAEJ+/z8CAb3/AAKCP8H+vr8//7yCQr0AwkOAvr+AggK+gAA/gn/AfICCQD4AfoH9/kF/AT99vX8AP8HBP0D9gAEAQL9/Ov69QQEBf0E+QwDAwD/CAMACAb9DP4GBgYC/wMJ/f4FA/wHDgEH+/oFEAkFBff+/QAH/vUJ+gT7BQQI+gf7/wH8+Qr/AgQA8fcBCQAA/AIDAwEHBv8EAfXwAwL49/b3+w8EAgQIDgf39wECCwINAfoIBAAACQQI9wkEAATw/gD0AwP9+vf2AAz5+QH+/P77AAAG+QQHB/gIBfn4+/sD/Aj7+vcBBfYN/vn6AfoD+/gCBvz+8Qj8CgL7EQP1BAUF+gYFAQX7AAEEAQD9/AMC//b8//j+9wQBAAf+/AUE+v35Avb6/wX/APcO/AD//PsF9gD/BQEKBwMECP8CBQb3Af/5+/34/vv9/QX9/v4FCPsKBQAA+Aj8CAUF/AD8AQH/7v8E+/QB+An//QX2AAQG8fgF"
 ---
 
 I recently participated in an [interesting series of debugging sessions](https://github.com/sciencehistory/scihist_digicoll/issues/2449) tracking down the source of a large increase in memory when upgrading a Rails application. We ultimately tracked down the cause using John Hawthorn’s [Sheap heap analyzer](https://github.com/jhawthorn/sheap) and successfully submitted a [patch to Rails](https://github.com/rails/rails/pull/50298). I thought it was interesting enough to write up because maybe the general approach to debugging memory issues would be helpful (and this is the kind of stuff that I very quickly forget unless I write it down).

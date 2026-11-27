@@ -7,6 +7,10 @@ tags:
 - webdesign
 - css
 - html
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "922a22fd3747e37e"
+  vector: "9gcG/QP49Aj/CgEKBf4A/gYIAQv9+gH7BQX8AwX3BAUBBPwCC/3z/PMCBgYE+Pf49gH99QH79gED/wP8DgL9CAwCAP0C//70DQUC+gT7+wL9DQAHAgMBCvX8BAcEAvgB/fL3AgAFGP/+/PwE/AMB/PEBAPUCARIGBQP39AQA+AAHCfwFE/sEAPYQBgf7CAj5+gAA/gT8AwAKAgED8f/7/fv6+vUB9AT/9gAB/gUFA/8D9wT8BQf9+P/+BwwD/fn8+PkJAvsBAfgMBv/5Bf35//YGAAIB/f37/gP1+Qj++wAE/PwCBAABBPz9BgkA+wIM/vAE/gUD/QcI/fz9BAv7+Av5BgHvBf8JA/4B/AD+/AL4+QoFBvX/+vz++gUCA/gB/wP19vYE9QH+AwD1C/sJ+AIJAvwHC/kH/AYACQQK/gACCQT58/wQAgYEB//8DAIN9wn59gQH+wMFBPr+Bf/7AwL8AwMB9QL1//r9APz6/QP9///8+v4GBQIFDf8H/QL/"
 ---
 
 A Beautiful Boilerplate for Responsive, Mobile-Friendly Development

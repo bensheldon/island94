@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/millenial-nonprofity-exposition/
 - "?p=797"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d881619a8f22cee2"
+  vector: "Af8BAQX+/gD8BAMGBP36Agf6+/78Av4JBgb7APYABgUGAhARDAQDAAH3AQL58AH/AvsE/Pz69A4DA/j7+/wEBP4D/QUH9QAA/QEOAQgGCv4LA/UJ8vwC+w4C/Pn6+wT3///8CP38+vn//AEDAwMK/f0DBQT8BggFAgT6/vYD/gD7D/0M//4CBvcDAxEFBAX78f0FA/4F+fUJ+/YAAP4FEP78BQMB9v338AcH/hAECvr7Bf/+AfX58f0LAvr9/vz9+wH8BBIDAwL+AQIDAAAB+QoE9QcNBA33CggDAvcG+QAO/gn5A/cC/wD1BQIFCvT8/gT6+QMR+QMB/PwA+vkNCAL6+wn/BPrzAP0B/Pr/AAMCBvD3AwICAwX39QH/BwD7BfUD/vYK/QH98wP7AwXu/vv6/QEDDAICBAMA//wAAgAHCvkFAgD8+P8C8f76/Qf9Bvv5//wA9f/6BP/3Agn8AP77+vf/AAL4A/8QAf8A/wAECAP6+wEI+QAK+QIG9ff8"
 ---
 
 I was recently invited to participate in a [blogging alliance of millennial nonprofity folks](http://entrylevelliving.wordpress.com/2009/10/13/nonprofit-millenial-bloggers/). Which is pretty fitting considering I am of the appropriate age range, employment and that "nonprofit" is the largest tag in the tag cloud in the sidebar of this blog.

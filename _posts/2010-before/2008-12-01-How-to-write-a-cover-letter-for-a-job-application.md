@@ -12,6 +12,10 @@ redirect_from:
 - articles/how-write-cover-letter-job-application
 - 2008/12/how-to-write-a-cover-letter-for-a-job-application/
 - "?p=274"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "71abc32fa5f720e6"
+  vector: "9wQEAgsIBAXt+vQBA/P3Bg37AQD/AQv17wn+/vj+/QcDAgoL8Af9/QL6+gQF9AQGA/n8/QT1+AP7+PP+/wX7AwUG/gL9BP8J9gP9/fr4BQEC8/UIAv4H6v8ID/MAAgMBAQQCAP/8AwD/9gb7/QMDAfkCAvsABAsIAgD7/vv4/QD5D/sH+vcCBv4O+gYGC/cH/AH1Av8A+vPz+v/+9AUFA/4CB/39+QcE9gUF/w0CBAABDAf8Agzz+gMD/wn/A/3//vn+9AQC/wADBQQADgcBAAkA+vIBAgf2AgIAAvn89wAH+BL8/AQBAP3++wYK8/UCAPn8//8N/AT+AAj8Cf4AAwEK+AUOAAIJAAX79gH4/fsCBP0B/gn+/fn5+gYBCgT4APYG/vr58PsA/vkDB/75BfX9+f4HD/37AQAABAMA+AAEAQMA/vX8+v34AATyAAgF/Qf4AwUI9/sGCf37+//+BQf2/wIL+AMIAAMIBQUBAwUBAQP/AAb5BwIFBQYGAPkJ"
 ---
 
 [

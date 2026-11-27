@@ -4,6 +4,10 @@ published: true
 title: 'GoodJob v1.3: Web dashboard and full documentation'
 tags: 
   - GoodJob
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "81b0f3917a62b846"
+  vector: "9Pv/AAAA9gDzCP0IBAICBBD9APr4/wL+Avv39v/49PwAA/sFDAH3BP//9wD+9P/yAAPz9gf/AgX/9///CAMB+gz7+Qj+A/z/+vz9A/4B/fMDA/8O+f8A/gP+BwEGAfz9AQT7DAEBCPb8Bv4M+gEGBfYC/Ab5+wEHDhMGBAT+/QAICAEHBwb8APf/BhD9B/r0+gcCAfv89wYIBwYH/gT8BAT9APv19/729gT4+gEBBQIP/vz6BQz3+QoDBgMBA/v59gEBCgb++gsC/gH7+gL9AgX9/wAG/QsF/wgBCfwHBgAB/QYNBgECBvv+Avn7/wb9+fP4AAAH+QMICfn+9wH++vj/AwD+/wH+DAMJ/PkK/QP2/f8AAwEA+v/8+gb6BwUFAO4ABPoD/P0C+ggFBPn2AfoCCgELCAEJAwj1//QQBQD9Cfr8//f4D/sMCffxAAT9AAX+9AICCv8BAvUE/PUFBAD8CPzxAAUFAg36Av8D9/v69fL2BAMCCwf9BgMG9vcG"
 ---
 [GoodJob](https://github.com/bensheldon/good_job) version 1.3 is released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you're new to GoodJob, read the [introductory blog post](https://island94.org/2020/07/introducing-goodjob-1-0).
 

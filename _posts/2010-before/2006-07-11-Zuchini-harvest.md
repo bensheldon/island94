@@ -14,6 +14,10 @@ redirect_from:
 - articles/zuchini-harvest
 - 2006/07/zuchini-harvest/
 - "?p=67"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "42c88188abd8e8c6"
+  vector: "7gb/BwP6//389w33AP77/Rb+9/39BAj8APsBB/n+/QYE+gIEC+wLAggGBP7/+gADB/j5/wX4+gf2+/wG//r+/QX6/PgBAv4BAQX9+gb7+AX2/f0H+gD6CAQL/wUB/vv7/vD+A/r9CPD7/wMB/AgDCfv59QILAP0C/wj8BfwCAwD9Bf8EBf/2BQAC/voA/QL9/f4IBAD9A/kAAP79/v4GAf33AAoB/P/9+wb/Bvr7+QYG/v7+DQv4Agz+/wECCPcA/gH1APz7/vsE/gT9Af8JAA38AQP3EPz+EQH+8gz9+QD9CP0FCvX0AfT0AfwEAgARAwgE+/sLBAL+BRAK/gED9QLuCA32+ggF/Pz9EfwG/v71AwIG+P0EAQb9+/L2CPkBCQIE//sI/gUE/AMBAQIABP0CAwMGBPMB/wz8AwEQBwAMAPQHAvf8/QT99xX7BfgABQcB//wJAfYD/vwGBP0EBQEC+ATz/AP69wP3B/H8/gcGBPkBBgoEAQL/BwgA/PT+"
 ---
 
 I got my first harvest from the community garden today. Truthfully I've been eating cherry tomatoes off the vine for the past two weeks but this zuchini was my first take-home meal.

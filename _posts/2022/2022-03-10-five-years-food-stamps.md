@@ -3,6 +3,10 @@ title: "Five years on food stamps"
 date: 2022-03-10 16:21 PST
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e0a63e31b1c02116"
+  vector: "AAkB/gUG/wj7/gMKA/0I/wL4+fr5+voH/wD1+AH8AgcDAgUPDQH//v30/AT79QP79/j++AMBBgIDBPn7+fr9BAIC/QD6+wH1AQQF+wQICvsDBPUN8PwC/Af+/An+/wH5+ff4DAQJBfb+9v0HAgf9APwCB/v2Bgr/DAr8AQMDBwD/CgESBvwB/vUAAhAMAg3x8v8E//8CAfwD+/oB/QMABgL5AP4C8Ab69AgAAwcGCvr5AwIDCfn9+f/8/vQJ/PwD/f8AAAn9+/8A/QD9/AEC/f/8/P4QBAYC+gX2/AcJ+wAC+AIBDvkA9QcH+gD+AfX1Cf0D+g4H8ggDCvv8/vYI+v7//AP//ff+Afr8BvsE//rtAAME/gD6AAb5/v0BAPoDBfsIA/f+9/38+vgB/Pn0BPf5/gEDD/8B/wjw/f4GBAAGCvgGBfv4BgMOBQAADQ0AAgD2/wME8Pj//P0N+vr+BvYH+gAAAwYB/w0KCvsA9Aj79wT+/QcJ/gID+gUI/PkE"
 ---
 
 _This reflection of my experience on GetCalFresh is dedicated to the memory of Andrew Hyder who taught me a lot about living out and protecting team values every day._

@@ -3,6 +3,10 @@ title: "Planning badly, more and less"
 date: 2026-07-14 15:43 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ccdb8cb20b4a2c42"
+  vector: "AwcB/AUB+gECBPgB+gcE/AP88QL/9wkF9QUG+v3/BgT+/P4O/AQF/f4A+wQB/AH6+vX4+v/7AwYI/wP19/f9+gEGBQn5DwH9/v8JBwAEAfUJAfkM/fr/AxD/+/wB+wYO+PYCAQYGBvT8+AAE/P8B+QUBBQP9BwELBAIDCP0B/AADAP4K+vsCAwQHBgUBBAnw+gr3AQP9APUMA/v/9f8CCPX//Qb2+wf+9gL9BAYCAPn4AAQCB/T59/7yBAAH/vEJ/QP4CA72/QEA+wQBBgL7/QMH/vwJAQkD9A3+BvoN/QAFAAX7CPz75gP78foA/fP2Cv8H/f8F7Qf7CgH2//379QD7AQX+A/wIAP/7/vv/Bv/2AQQJ+vwDAgX1AQgCDQb6/gQA+wIB9P78/An5+vn6BAL/9wP4CQAJAf74+QAI/wADBAQCBfn5AgMEAwD9CQH8B//4/gAA7/wIAPwICAgD/gAF/fkDAQ4B/wwIDPf98wT49AP8Ag4KBwX8+QgCAfQG"
 ---
 
 The following is some notes I've collected over my twenty years of career, some in tech, some in nonprofit and academia and government, and some as a strategic planning consultant.

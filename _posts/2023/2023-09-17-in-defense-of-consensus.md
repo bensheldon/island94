@@ -3,6 +3,10 @@ title: "In defense of consensus"
 date: 2023-09-17 19:30 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "82f744c6e6e2cd3b"
+  vector: "/f0D/wL9AQUCBPkJCvr+BQP0/QDz+/0K+gUB/PsB+wYFBQAIB/4GAvv6/f73+/v79Pn69wQCBQMBAwj3AvH5AAoHAAf//Qb/CQEE//4CCPkFBvsC/PP8BAkH8wsB9QYDAfgCBwYNAe36+PkCAwH2/PkC/v4GBv7+CPoB/AoL/QAGBfwNAv/4+PIBCwYIAAjx9gb4AAkI/vsD+fsGAgT6Cf8DBQT89AX3+wL7AA0MAfX9+wACCf8B+QL2BfoMBvABAAT3Bgj4BAT6Av8C/An9+/n9AQcF/wQN/grx/QcP+wAB+QIHA/z58wr4/Pz5AwH1C/r9+Av5+gz/BwD2CP3++gYA/wL6+wD9/fr1/fv9Av/w/wED/f79AQv6/wIFDP0DAwEGBwMLAf/4/RH9+vr3A/3//gEDCgEC/QH28fsF+QD9Af8EBfgB/QcIAf75AQIB+wD2/P73+fsHA/kN/AL8APIG/f8EAxMAAAoDBv4D9Af9+gH9AwoJCgYA/wMI//gF"
 ---
 
 There's a style of reactionary meme that takes a photo of like, empty store-shelves or a trash-strewn street, and applies the image macro "This is what Communism looks like". But upon closer inspection (and social media lampooning), it's a photo of America, capitalist America, very much not under communism. We'll come back to this.

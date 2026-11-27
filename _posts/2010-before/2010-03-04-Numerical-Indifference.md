@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/03/numerical-indifference/
 - "?p=1802"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "33b3ab4efe8e0b36"
+  vector: "Agf/AAD+AQsJAPv/Bv/+/Aj/8QED+AUCBfj8+gACAg8KAwAEAwYBAgT8CgD9/QEI/gb5Cfv8/v39Bff/+/4C+gYC/v33CAkEAgYF+fsA/wQN+vwC+foIAQX+/QADBQgK9gP/BAMDBfcD8gMJ/vsDAAAIB/EIA/0FCwsCBP4A+gD+CQYN/wD4CAYKAA0PBwcD+f74+gX6A/3///j8Avz6AgTxA/0F+gL/7wMEBwAPCwL1/wIFBPr++Aj2/foB/AIE/Qv8BwUFCAD4/fkEBv8CBxD5AvcEAQz8CP4D+/748gDtBP0A/AH/9wYD9gIH/PX1Avf0AAUE8AsBC/j1Av399gTw+wAI/Pj8APj1+Pz2A/3/AgMB/w78AvsDAwb7BvkI+fUB/vT8/vsD9PkKAQkCBwT+BP0CAggA+QL7AfkAAAAFBfz///kCBPoHBPryBQf8APP6AwQF+/oFBgAL/P7++vEF/Pz+CAb8//kDDAb58gIA/fwA/gEE8/4I8gYM9/D+"
 ---
 
 I was really proud of myself last week when I made what I felt was a valid and illuminating numerical comparison: I wrote that the [amount of Broadband Stimulus money](http://transmissionproject.org/current/2010/2/btop-applicants-awards-and-poverty-analysis) requested for projects within the state of Alaska---projects serving rural and underserved communities---was on a per-capita basis _about equal to the federal poverty level for a 2-person household_. For those of us who work on access and inclusion (and even those that don't), that's a much more meaningful statement than writing "about $15,000".

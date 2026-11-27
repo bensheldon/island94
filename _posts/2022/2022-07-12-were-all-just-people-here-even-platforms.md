@@ -3,6 +3,10 @@ title: "We're all just people here, even platforms"
 date: 2022-07-12 21:54 PDT
 published: true
 tags: ["thoughts"]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b35e525bb59dbdf3"
+  vector: "+gID+Qj3BAb/+/4G+wEI/gX6+gX8+wQL6gT5+/n//QcH/g0MBf379Qby9gf4/Ajx+/f8+wn2+/4H+v79//r6BwoG/QL4Bv76AwgC+gX8BQEG/fwE+fj/Awv9//8RAA39/vr4Cf0BAvsBAPQABQn++P/8AQX7BQj4AAX/AwMA/gD2Cgn+Bvr/CAEEAwYBCwf8+QYMBgL0AQAC9fsBBv4BBgj+9//3/AX4+gUDBgcBCvz6/wIHBgD78QT+AvYGAgH/AQn/Bv4I+/31+P8E/A0D/QgCAgYACgELDAv+9vwN+AD8+fsFAvz07gsJ+PwE+/n89v/5+P8M/AYFBP/5Bvb2+/b5BAXzCgACAv71/Pb6APkDAP0DCfn4AwMAAf0CAfoC//kDAQUABPr+//4JAfz3AgL4CgYD+wT6AggAAPYFAgAP+gAGB/oA+vwNAwP5BvwT+QD2/wEDAP79AAQCAAMA/vgABvr3/wIF+AUCB/355gL6BgX7BwkHAf0BAAYK9wn7"
 ---
 
 In [my presentation of how my small engineering team helped deliver food stamps to millions of Californians](https://speakerdeck.com/bensheldon/bridging-people-and-benefits-systems), I talked about a common pathology of engineers: a desire to build the equivalent of thousand-year clocks that will run self-contained without human intervention. You see it crop up in different forms, the good ways of "working yourself out of a job" and the bad ways of platinum plating and astronaut architects.

@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/modern-and-post-modern-science/
 - "?p=1656"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "572d4821dbce5798"
+  vector: "Agf8/gT8/QX3B/7//wH0Bf34CAX4CAUAAQX9/PgF9w0E/f0EBP8E/vv5AgIBAAL3/P/3+P/5/fwKC//6Cvj6BQMH+gUCCf8ECwAI+/cBBPwKAvf+9gUA+wT2/PX9AQgC+/YJ/wANAQkF9PsABAgBAPX9BwAECQj7AAD2+g7+/gD/BgMK/QQDBAT0CAcBAgUA/vMJ+P4I//UG+QD69gAAB/4DB/0D+Qr+/gX7/AUHEAUCAfv/Bf38/PUAAvoIDQj/BgH5/wQE8fj1/wIFAPj5+/sC9P8DDAALCwT0+An77QD89fIQCPT2+gQABAH///v/7vr6BQIF9/v/CQb6Af35AQv/BgcJ+Qn5/QT9/Qr39wH6CQMC+PYC/wb98gsC+wIBAv0NE/r+/gX5AQQEBAb/CP4AAQEHAfL5APYA7PwA/AAGAgQGCgQB+/b++QMCB//7+/j0Bgz++gADAAb0/QH7BfgC/PoDAgEDAAH7BwP+Awn8BgMJAwMCB//+8AIMAQMC"
 ---
 
 A question from the [Librarything discussion boards](http://www.librarything.com/topic/58098):

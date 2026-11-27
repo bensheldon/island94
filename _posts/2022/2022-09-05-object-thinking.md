@@ -7,6 +7,10 @@ date: 2022-09-05 13:23 PDT
 published: true
 layout: book
 tags: [software, "Object Oriented Programming"]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "22157f2df6d02269"
+  vector: "Avf++/r2AQQAA/f9BgIHAgEA+wEA/vYD8AgC9AT9/wwDBPsKAgP/9PX8+/8D/AT6+vXv+Pv9AwgL/gLz/QD9CQQH/AwCAQADBQUL/AD8AvICCP8J/AIAAAYJ9v8E+QQCBfUCCP8JCvj79gEBA/74/vH+Bf0FAgAABQYHAA79+QABAvwKDf4AAgEDAA8ACw3+8QH8BAIA/vv/BQL5AQUBBfr+BAYB8wr4/gAA/gYCBgL3AwL/C/bx+wL/AvcG/vsJBQP9/Q3y+QXzBPj8Avz9AfkD9Pz+Awf++wv8+v4K/QD5+PkGB/n69P339/oDBv3zAfv/AAUM+P4GCfb3///9AQX4/wME/AH8/f3z/wMA+gH//gEB/e4AAwv4CAgABPwK/v//BPr5+//z+wD5/P76/AD9BwT9AAAG/P71AvMM9QD7AwgMAgX3AfUG/PsCDw4EBPvvAhL8/gID+fUEBAgCD/8JBvwABQX+AAUIBgkA+QL/BPwG/wkHBwcDAAcGCvsD"
 ---
 
 I'm looking for a book that helps align the practice of software development with the rest of my life, In the sense of a humanistic neural plasticity, an approach that harmonizes rather than hegemonizes (or ignores) the rest of my life.

@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/06/typology-versus-taxonomy/
 - "?p=2095"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e91845d8f2bdd898"
+  vector: "/AH8//8C+wABBwL2+wb7BP8AAgkICwQG+P33BP3//RgHAv4C+wcFBfQB/AX4Bf7/8fz3//gE//wCAPryBPr+AQIB//8CAQUBBwoEAQYM+PP+Cv/7BQH8/fwB/fEN+wn9Af0NAQb/9wD68fP6CQD6A/oD/vb8/g0BAP3++wkJ+AACBPsIA/78AgME+xMABAMF9Qn8//4LBfb8Afz2/gUD+wYBCP0B+QHz/gj+AQ0EBgT+/wH4EP79BfYF+PsCCwb/Cv73AwIAAv72BQT+Cfr4/PIB/PfxBAkBDwL4/fUB/QD4+PkD/v71Af/1AP8G+/729gL+DAj/7wD8DAD7//76Av34/wIJ/v0E9Ar6+wD0+QYFAAr+AvsB/QH39Q0GB/kK//j6/AT8+vz2+wIA//P6Af/8BgUG/f4LBAEE9vgE+wAKBQUD+/r6/voFBAv/Bwn7Av72DAP9+PQH/v//AQD+EPcAAgT+/gH7A//4CQ39+wr+Bv0J/wH9//8C+v0T/wf+"
 ---
 
 From ["Typologies, taxonomies, and the benefits of policy classification"](http://goliath.ecnext.com/coms2/gi_0199-2746294/Typologies-taxonomies-and-the-benefits.html) by Kevin B. Smith (Policy Studies Journal, Sep 2002):

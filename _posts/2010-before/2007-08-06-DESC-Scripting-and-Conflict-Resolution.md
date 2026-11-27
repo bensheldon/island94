@@ -12,6 +12,10 @@ redirect_from:
 - articles/desc-scripting-and-conflict-resolution
 - 2007/08/desc-scripting-and-conflict-resolution/
 - "?p=137"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "65694e2cb9fb5f09"
+  vector: "+AIA/gQEAQX+BPkB/wMC/wMC+QL+Af4E6QID+/r7AQMDBwAQBwUB9v3/APr99/oE7/f5/QH/BAAHCf/9+v/4BAsJAgcDCvz5A/8CAvcFCPMBB/4EAfUE+Q8C/v4S//0G+/0CBgoG+PQD/P338//6BPb3DQAMBQX4Cfj8BQT+9AAB//YMBQT8Bf4ECRMKAPf7+Aj+AgAE/AUE//kABwD+/wMCBwT09/4B9P7//Qv8/fv2AQgEDPgE+v/zBQYP/PcBCPT3BQH5+QYCAQD9+gEC+gQB+/z9/v75+Qr8/wcLCgAH//gE/P8B9Qn6/fYABP35AgD9AAkJ/v/8/gT5/wP3Af4D/gEA9/n8AQL4BQb8/QP/AQP1+vz8/gn18woACP4CA/f4AQkBBvjz9AT5/fX1DP4ABAzzEwENAQX1+v4I+QD6BQEEAv708/wHBQP/AwMBBfn2AQP/+wkA/QAH/AYD/v/+B/4B/gkA+w4CDgQE+/z4/v4A/w4FBgQF/AYIB/v+"
 ---
 
 I've recently come into a major upgrade in duties at my job, which has always been heavy on the Human Resources responsibilities. As it is, not only am I supervising several subordinates locally, I am also the clearing house for supervisory advice and information for our many-dozen affiliates all across the nation; like the surgeon general is to doctors. Because of that, I find myself often intently reading HR manuals, strategic planning frameworks and, like today, conflict resolution.

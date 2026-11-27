@@ -3,6 +3,10 @@ title: "19 sales & marketing strategies in 19 weeks"
 date: 2023-06-11 15:37 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "73cda45e1839a246"
+  vector: "/ff+AAEG/w359gEIAv8HAf7/+fr5+QMB+fwC/P36CgMIAgEH/P8FBgLw9v4J8AYM/Qb4+f8A/Ab6AgP2BPj9//37/g36CP78+gYAAAf9A/z/BfcJ9v8IAv8C/wD8+f8I9fQEBQIGAvn1/voLAQz6BPn/DwD7BQcLBAoL/foC+wD6Dv0N+gMCA/sKABQABgj1/QAB9wX9/wAI9gIB/gADA/37+wXz7wkD7QMB/AIPA/r//gX8Bv39/v3y/f4E+f4A7wIBBAL/AwP89gD++gIBBQIACAIGAQgA/Qz8CfkNAwAABgEGAgX++wD88AL///b4CgAC+wII7wAJA/wE+v/+AQn2/Qn8+QP7BvwH+vYABQD+BAAB/v37BgP9AQX8CwX//+8M+/f4+wcA9/L/+vT6+f0D/AQBCgIEAwD99/0FAgD+/gUGBf7+CQUA/wH1EAv/BAD3/AIG/AIJ+gYKB/j6+/4B+wUEBAEJ+ggMAfcB6gUB/P35CP4FA/4FBQv7+vgG"
 ---
 
 The book [*Traction*](https://www.goodreads.com/pt/book/show/24693635-traction), by Gabriel Weinberg and Justin Mares has an unstated thesis I find compelling:

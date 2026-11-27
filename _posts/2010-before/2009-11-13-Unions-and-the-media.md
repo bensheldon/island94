@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2009/11/unions-and-the-media/
 - "?p=1006"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5d12a1bf93a59ad7"
+  vector: "+w0FCAsSBv77BvoF+v8ABA0F+v///vkM/AQD//T++PkDDgL6BwMC/wH5/fj7Agn4+voK+wwCAf73//4J+/r4BQnz+gj7AgMABPsHA/0BB/UC+fgJAvwG9wj7+P4K/xD9+gP7AgED/wD/9Pn7/AACAPr/Av8A/f3/BwHvBPb2/AD+AvwAB/cB9wYM9gYPAQAB8gEADgIH+f/2//37/AX6DgoAAgD//v30+fkDAw0J+vj5CA4CAfsD+vcGAPn9AQX9/gkBCAb7AQT3AP4DBQgDAQL7DfgJ/QYEDAIC+wYQ/AAE/fX89/8E+AQG/fr1BPX0BP/+/gYI9wMDBPn1BQH+AQEBAAIEBgH3+v0ABAf9Afv0DQT/BQQE/gH2+gUH//kIAfn3AAICAPwD/QADBAn0Fvz2Av8JAAQEAAP59/z7/QAI9/X0Aff19gMIBwT5//8FAQH5AAcF+f8CBAL//wT5BQD3/AwHAgr6+gQL/Qn29Az+Afv/Bv4F+QP4+P0GBP8L"
 ---
 
 I was pointed to Political Scientist Michael Parenti's [7 categories of generalizations about the way the news media create anti-union messaging](http://books.google.com/books?id=6SaQ5IoscCcC&pg=PA10&lpg=PA10&dq=jaundiced+eyes+seven+generalizations+of+labor&source=bl&ots=ILlq_7h8ZT&sig=atHZTLuApdUAiEE4Gm1nxw3lrGw&hl=en&ei=uFb3Sri9FMml8Abd6ZjzCQ&sa=X&oi=book_result&ct=result&resnum=2&ved=0CA8Q6AEwAQ#v=onepage&q=&f=false) by this article analyzing [the media's portrayal of the Philadelphia public transit strike](http://phillylabor.org/wolf-scribes-clothing-septa-strike-and-subterfuge-philadelphias-media-monopoly). I got really steamed about a month ago listening to a local interview/call-in show about Boston charter schools and the Teacher Union that revolved very strongly along these lines:

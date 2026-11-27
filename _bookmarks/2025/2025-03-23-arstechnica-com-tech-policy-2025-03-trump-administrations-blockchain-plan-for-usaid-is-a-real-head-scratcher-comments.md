@@ -4,6 +4,10 @@ date: 2025-03-23 16:36 UTC
 published: true
 title: Trump administration’s blockchain plan for USAID is a real head-scratcher
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "43bf1948b9422f4f"
+  vector: "+QP+Af/++QQHAv4N+wUIAgQD9gH+9/8E+f34/P0ABgADAv8ODAf//f74B/v/+v8H9QEI+Qz//gAFAPz5AP4FAw0AAAj6/Qv5+wIN/AMNC/wKCgL89gD//wX9AQAN+wf6CQT8AgL+/vn9/QT7CAr1AfkA+/bu/QMBBf729wUG+wABBQMDAfv3/f0D+AcIBAX0+gEEBgPyBP8N/fsHB/39AgH7/gr9AQX2+QkECAoEEPv2BQAL+/IH7wH7BfsG+PoJAAgHAQL/AgH4BvL/AgME///6CAj/BgIE+f79/wUJDQD99//6DAUB+AgC+vj8BPr4/vgH+QYI+wUAAPL4Avr7+/UJ/gT+//n1BQT9Av0L+gD7/wL+A/z+DQX5AQD3AvoOAfsA+wEFC/f7/QED/fjx/gL7BPgGBwv0+Qnx8v7+9gAE/gX7//n+AAAF/gn3BAMB/gT4AwIE8vcKAgAO//8BAP0D//3//wL5/AsGBPrw8AL/9wH5Av4P/QsDAQII8QcA"
 ---
 
 Giulio Coppi, a senior humanitarian officer at the nonprofit Access Now who has researched the use of blockchain in humanitarian work, says that blockchain technologies, while sometimes effective, offer no obvious advantages over other tools organizations could use, such as an existing payments system or another database tool. “There’s no proven advantage that it’s cheaper or better,” he says. “The way it’s been presented is this tech solutionist approach that has been proven over and over again to not have any substantial impact in reality.”

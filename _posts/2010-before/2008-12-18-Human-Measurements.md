@@ -8,6 +8,10 @@ redirect_from:
 - observation/human-measurements
 - 2008/12/human-measurements/
 - "?p=277"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e84e53b75f22fa54"
+  vector: "Bwb9A/f4+QcD/P3x/Qf69wMM8gEH/QYK/vr1//76BgcL9/nzDQQFBgL+Bgn6A/gIAwUGBvkDCf4AAfgH+wP8+/359gLzBAIBBQYA/P39BQj0Av7/Bf0HBgP1+v/6/QsB/gH9/QYFBvf//v4PDP0F+f4ECf4C9AD8/QUB/wUJCwDsAf8F+/74AAsL/w4CBQ3xAwwB+PP4Bv0G/f8A/gEJAPv0+fkI///4/wIP/fgJ+gD8/wECCgAE/f/8/AP8CP8C+QH8//0DAPgC/wL+EgIAA/sFAfr++QgB/Pv7/v7+/gD6Cv8GBQUK+Qj69gj+AAgC//MD+QL7+wP7A/vz/vgC6wX69fYGC/wDBvj9/P/9C/sBBgcI+wP9AQAB+wH5Av0K9gf8+/v/9wMQ//r/APoCBfv+BP4C+QQFAwX/BPv1AAD7AwUE+QMCBfwGBwf9BQD4/wL8//4H/P/8//IHAgESDfoGBf3yCwAF9PT+/w0C+Qb/AQIMBf8E+/by9v8D+f3+"
 ---
 
 Great comment from slashdot on [English Units](http://tech.slashdot.org/comments.pl?sid=1066141&cid=26159359):

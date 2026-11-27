@@ -13,6 +13,10 @@ redirect_from:
 - node/102
 - 2006/10/germania-st-3/
 - "?p=102"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "dd4e40480764ec7e"
+  vector: "/vz9/wMEAwsB/gUGA/z7AwLvBQD/AgX/Dgr9+fb18wUA+A/yCvn+AfMBAwcE+wcJAgMC/voGAgEC/QIFAfb+Awn5APL8BvwBBQYCAQr8/fz4+f0J/f/8BQr9AwAIAvf8Cv7+CwABDPMK+AYJ/foA+PT8BPoJAwsFCwMB9Pj9AQD//wIBAfkCA/r//QT2BAQB+QD8AQ0KAvgCBgX3BgH5Bgbz/AX58gYH/wD7/ggGAvwDBfMDBQT5BAv5BgABCAr9+AUEAvgI+fwE7/0D8/75/v35+wUGEAP0/fr7Agb/AQAB9gIH/f7vDvoABAL/AQQDB/H6+wYF/QP+AwMBA/r8+AgEBQQB/wICCAMGEQEA+/oEAP7z+//8A/0BAv70BPj++/0E+vcB/wb+/P8HBwgDAgQE/gUIBAL8/gX/Cf4A9wD+BvwBDfYECgAJCfj9/PwDBgAB9AUCE/X9CAAGAAH+BfkF+vYAA/oABPr8/v/98/sA9/j6/hD+/wAF8hAQ9PUK"
 ---
 
 ![Germania Street #3](/uploads/2006/germania-st-3-1.jpg)

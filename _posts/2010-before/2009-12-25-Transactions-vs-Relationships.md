@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/12/transactions-vs-relationships/
 - "?p=1623"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "92ba4137dfa65f9a"
+  vector: "AfsEAf8F/v8C/AcUBwIB/AL49P71+A0B//z9+AH6/QgEBfoDCggA/Qn0Afr//AcA/Qv7/wX3AgD7BwUHAvv0AfoCAAXuAQ39/gD8/gcH/fMD/QAJ/v377wICAvsC+QL6+v8NBfkL+vz+/PoFBgf2CP4CCPD7BAH+/wgA//n98QADAAAE+Qj1APz++g36/wgL8QQC/AAKBgL/9vgG/gEF8QIABQ348wQBAAT8CP4I/PUFAwYI//3+Bv4E+vsDCwEFAxEDA/UGAgP1+P7//PsKAQT3DP79Ag77BQD2Af4F+gD0/gUF/vz89QX//vwBBwT9DPz6+QcM/Av6A//++/kEAgIC/gn8AP3z+gUB/v8K+AUE/gAH/v75/wcEBAD8AfoF/P4D/QH3CvsABO8I9P/8+wAABfwBEQT2/wAA7fr78wAABwcRBvsEBAILAgP6Cgn//PT+CfwBBf4F//gBCAf+9/r7BPz8/AD9/w8FBwsG/w0CAgAEAvwB8wEB/P4D+Ar9"
 ---
 
 From [John Burne](http://www.c-changemedia.com/2009/12/google-media-biting-hand-that-feeds-you.html) (former editor-in-chief at Businessweek):

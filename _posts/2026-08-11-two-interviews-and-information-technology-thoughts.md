@@ -3,6 +3,10 @@ title: Two interviews and Information Technology thoughts
 date: 2026-08-11 15:27 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "917cd3c719819427"
+  vector: "8gcF/gf3CwcC+/QBC/wEAgz0/f0DAf0B9gUB9//8+xAACfgFAwb++PP2/wb8+Af29vzy+gj5/f8HAfgDAPf8BgkA+AQB/QD+9wIJ9/wFCPsPA/oL/gH9AQP9+vYGBhIA//cCBv0MAvL3+QAGBP78Af39B/j+B/0HAwj6/gL99wABCvwTBf78BQEIBg8DCxP77gUAAgP6/f4KAPwABP/xAgD/BQMA9AYE9wQABAMDCf/1/QAJDAD6/QH1BQT/Av4CAP8C/w4C+wD6+QD++wgBAgL5Af8FCAL7+Qj+APwEBQD8+fkCCvgF+QL8+/4B/vf//Pb+AQMM8PwABPj3BgL+9f7+AAkI/P7/Bv74/AL78wH+/QcE//f5+gb4Awr8AggA/PcFBvX6//b6/AgBA/j0A/3/BwACCPwI/Pj2+vEA9gD9/wT/AP/5A/z/A//5Dg0K+wD3+goF9wECAf3/AgP8B/0MA/MA+wQC9wUBCQP++AD+Av3/AA0RAQX9+gMGAfwH"
 ---
 
 *The following is one of those posts where I share some concrete memories/experiences that I associate with some musings, but otherwise doesn’t really have a strong point other than I want to write it down.*

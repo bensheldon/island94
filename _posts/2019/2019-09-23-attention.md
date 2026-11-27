@@ -2,6 +2,10 @@
 date: '2019-09-23 07:00 -0700'
 published: true
 title: Attention
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "80fc2bc1e2cb936b"
+  vector: "+QEP/Ab9AgIP/wEHBf4G/v308Ar8CQQC+/72+fkABgcCB/b7+QEC9wL5BAX9/wP++/D8BgAE/AIJDwwHAwL+A/wQ/gICCv//BgEDB//2A/4H/QUFAvv7BAj89wUHAfv8+f7xBv0E/gACAv38AQf++fb9B/cDCA8FAP78+gMA+AAADgAB+gH9CQIEBwkEAgr6+f0E+/34/gD+8wUDBP/4BAX+/wH9/gP79Qn9AQQE/vj1APoD/gPyBPr5BPUL9/cGAvkHAfcG+gX9+QAFBP78AAX+CAL++P/2/hX6AgAK8wD8+AX5BPX7A/4H/vwJBPz3C/T19gEEAQcE/gL/Bfv6/gIGBQb5AwL6/wX3/gH6BQX6AQ8BAvr6/hD4A/UGAPUA/f0IBAkJAPr99gID9vTw9QoFDvz8AQkJ+AP5+vEF/gAH9wcABP8IAQgAAvf9CwoMB/n7B/wB+voBA/kABQcF9/z/9/0E8wYEAQIFCvv5/f8B/vz4BgUC+w8C9wEL/f7/"
 ---
 This zine, [Your Attention is Sovereign](https://hwcdn.libsyn.com/p/0/5/7/0573858d24462354/SSRZ_-_001_-_Your_Attention_Is_Sovereign.pdf?c_id=51790010&cs_id=51790010&expiration=1569249139&hwt=a94e3ed611a881118bfe3390567544fc)(PDF) by Jay Springett (via [Phil Gyford](https://www.gyford.com/phil/links/philgyford/ea561ea9a031/)) which is a collection of 6 essays:
 

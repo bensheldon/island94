@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/mount-vernon-port-huron-and-sharon-statements-in-comparison/
 - "?p=1764"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6b734c6fec4b3c05"
+  vector: "/P/+/wcFAwP1Bf8KD/kEA/7+/Qz+A/0IAQQA/f4FAPoKBgILCAH+/v/3+AP8AgL8/Pn8//34AQD8BQX+AfoB/hYA/ADy/P4DCfv+9v0IA/kFAfQE+Pv29Qf8/wD6/f79+PzyBwILB/j66/oF+wQF/gAABf/7/P0D+wIBBQT6/gDzDPwH9P75/P0GBQ0KBwb39/4J/AYP/fcB7gIFAgD/Bv37FPn9/QP6+wEBDAoKAwX+9wYJAP3++vICAPkG/fgD+AT0AgcNBQD/CPsLAQf99/X9BAgM+wgACQICA//8/gD++/UFBwP87QP2/vwFCv////z/AfsI/f0CBO/6AQP8BPwH8gUB9/wC/fcA//YCAvv4BQAI/vv7/QMABgAACPf8CfsEAAf+APT9+/oTBwL1/wX8/Pn9A//y9gP68/8HAwACAfoGBvgE+/oJBwP3BAED+Pz1/gMG9wEBBwUBAggKAPv6AgT6Cwf+AQz6BQQFAAgG//8DBgIKAwEA+f8BCQz9"
 ---
 
 Apparently conservatives have a new statement named for Mount Vernon, George Washington's home. The new [Mount Vernon Statement](http://www.themountvernonstatement.com/) is modeled on the 1960s conservative [_Sharon Statement_](http://www.yaf.com/statement/) (named for William F. Buckley's home), though it's slightly ironic considering the _Sharon Statement_ was quite firm on state's rights and Washington was a Federalist. From comparing the statements, it appears that the conservatives have made their peace with the Federal government:

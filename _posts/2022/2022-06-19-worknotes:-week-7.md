@@ -3,6 +3,10 @@ title: "Worknotes: Week 9"
 date: 2022-07-03 12:07 PDT
 published: true
 tags: ["worknotes"]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f1fe13b3c020fdb6"
+  vector: "+wcH/Qb99wEH/vUEAAAAAwT59v73+gUE+gL/BgD4AP8FA/0HAQEG//z4/AH+9wL39wH5/wH4Agv++Pz2+P35BPj/AA32Af75Bf8PB/4IBvkIAf0F9fUCAAcFAfsB+QwM+fsGCQkPAvL4/AEH+/8HBgIEA/z4CQcICgIFCwUD/wACAwII//4BAvn9/woG/wbw8wf4AwT2/P0HAQH6+AAABPn+9gP5/Aj49gL4BAYIB/77AAP6Cf4F/Qb4+v0GDfT2+Qf+BgT6+wD9/wQC/QX+/AIB/f8E/AoD/hH6/f0QAAAJ+wYGDPf+/Qr99//9Af30AgICAgYN9QQGDgL5/gL+9P37BQP++vcFAQH9/f4DBgLy/vsJ8wP9Awnv/f//AgD//vgI+vsH9vv2/Q0M/fPzBPUA/QX9DQkD//3/8gEJAQAAA/0BAfH+/P4EDvz2AA/+AQr29AIB+AEFAvkD/wADCP7/AvUE+w8C/AT8Bv8B+gL28wT4AwkJBP/8+wIICfoC"
 ---
 Two months! In my last update I wrote about an overwhelming sense of normalcy. That has continued, in a good way.
 

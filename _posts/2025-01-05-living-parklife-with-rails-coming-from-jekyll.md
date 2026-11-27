@@ -5,6 +5,10 @@ published: true
 tags: [meta, jekyll, rails]
 redirect_from:
   - /2025/1/living-parklife-with-rails-coming-from-jekyll
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7bc0b2de5256a518"
+  vector: "/f0BBQz9/QT+BvUQAgIDAwMK+/4AAQYF/vn8Afz7AgD4/gcMCPL8AgQH+v3//AX2/f7/9v32/gD7+wD6Bf78/AH/+AkKAfgF9f7/9QMF+/EE+wMFAPcDAwsEBP8R//cAAf4ACgIEC/kDAgUVAP8EAAX8AwAA/AgGDwkGAwYG+AAGDPYI+wb7+PkEBgr+AP329gQDBfwA+fwF/gIG+P8E/vz//gAE9gH29/71Av4FBQQE+QACCArv/Pj6DggIAPsGAAEJCgMFAAEF/v7z/P/4BQL69AMJ+AjzAP8B/wT7AgAM9/8J//sBAAD1+P///v36/vkC/vIH9AgFCfoF+/0EAvrw/AvzCAL/DwD+Av8J+QUAA/z5+/UE/fsB7Ar8BgP+/vEH/gD+/wcF/QcDCAX5+wAEAgACCO0L/f8A+gIN+wAADv/9/AgHBfsECf76CfkFAgD1AvsDAQQC+/4CBPcHBPwHA/r4CQEC/vsG/fP39PsC+/r9/wwLAgAIBAQI9v0A"
 ---
 
 I recently migrated this blog from Jekyll to [Ben Pickles’s Parklife](https://parklife.dev/) and Ruby on Rails, still hosted as a static website on GitHub Pages. I’m pretty happy with the experience.

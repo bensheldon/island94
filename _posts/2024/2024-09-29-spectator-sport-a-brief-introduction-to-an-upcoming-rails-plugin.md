@@ -3,6 +3,10 @@ title: "Spectator Sport, a brief introduction to an upcoming Rails plugin"
 date: 2024-09-29 05:44 PDT
 published: true
 tags: [rails, spectator_sport]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "239272b29c65d8cf"
+  vector: "+fr7AAoEBAX9BvUEAQUEART3+v/79QQH+vz6AwD2Av8HBP0FAPbx/f/5+gkA+QP9/gH39gr3+/0C+fz8Cv//AQH/+wkFAfkF/AMA+Pz6AAEH+vsG/f4GAgH++AULBPwFA/z+DwYIBvv6//0TBgX+CfoACwj4AwwHDRABBQ/+/QAIDfsI/wT///cBCBEDBgz68wQH/wT1+goD/gAGBAL+9/38Cfj78wP99QLw+voHBQH6/AMCDAb1/QfzBvYH+Pz/9gAGBwv4+wj7+P79/P3/CQf9+QAA/Qf39Q38CP4EBAD6+/8HB/oD/Aj99fn6//n3APb+BAEP+fsFBfz/AP8H///3+QcBBP7/BwH7+/wJ+QP9AQD//fX/+////Ab/CvkBAfoFBfn+/QX8/AQHAAP8//YDD/gHBv0C9gP6B/cFAwD6BPwE/PsGAAQDCPb5DgYB+wDzAAYCAPsD/PcBAfkCBf/+CPj4/gID/AQDBAEB9vX/+/v3AQoLCwgJ/gYI9fYJ"
 ---
 
 **Hi! 👋 I'm Ben Sheldon. I'm the author of GoodJob, an Active Job backend that I'll humbly share is mildly popular and known for its broad features and ease of use. I'm working on a new plugin for Rails: ✨**

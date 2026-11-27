@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/in-the-beginning-god-separated-heaven-and-earth/
 - "?p=807"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "784e6e243bfe58c6"
+  vector: "AAMICQD8CPgMBwL++fgC/vn08gIJCAD9AAz7+wv8Avv8/v8RB//+/QAG9P8ACPX9A/b3+/wABQoF/wH3/A4ABRH0Agb4BgAJ+fsB/PcBBQMLCPwF9vv/9QUE+fYGAQj99AIMBAMD//r++P4CAAf/+PwI/g0CAA0FAfz/BgLyBwAG+f39Bwf5Bf4B9vX6APz7/AD//vwJ/vf3+wL5+wP2AvoJBhIG/foBAgX/+/v++AH3Bf4GEvf8/vsDBAf8CgAQCv//BAP77f4AB/34/vv8/wYAAAf69wgE+gUBAwv4+gAB9wH59/r6//n/+wIFAP/wBv7+/PkAAQP8AgYJ/AP9+P8C9wADAAP0/f/3BgYIAwf4A/wG+fn/AAn9/PYCCgD8D/4DCgv5+Pv+/AP/APL+/AL7AwEH8vj6+gX59/wF+gAIAf4IAv4L/fz7/wb+AwD8/wH8Agb/+vsD/fwA/vcHC/0N+/8DCQftAhACCQD3BwkJ/P8LCP0M/gD8+ggHAgMB"
 ---
 
 [Biblical news](http://www.telegraph.co.uk/news/newstopics/religion/6274502/God-is-not-the-Creator-claims-academic.html) from Academia:

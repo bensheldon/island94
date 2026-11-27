@@ -5,6 +5,10 @@ date: 2016-11-28 20:39 UTC
 tags:
  - criticism
  - Technology of Participation
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "61027696bef0f5b5"
+  vector: "CAYE//YCBAkMBPsCAfr9DAwCAP37BgIF+Ab//QAD9gD9BPoHCQr+APYK+Pr/9AADAPn5/PsB/QQFFwIA+/f5AwkA9gbzDQb9EgUEAgH6/fkECAD9/wAN/wL5//78/xAJ9//7BQQIAvkA9v/+8/38Af4DBwIL+QD6Bvz8CwP2/wADCgMK/wEA//sFAf4QBwQB9fgAAAcCAf769wb69wH3AvX///AIAvz0CP///wcTCvf+AgMB/QoC+/33CPsCBvf+Av/0Af7q9Pz6//f6AwQLAv79Avnz/P/6Cgf6/PwE9wD89gAF+v35BAb///v/CAD0AfgC9wcQ+vj8BQr+AAAFBf/8+gn4BfgD+wQA8Aj7BPz4BQP+BAIA9Qv9BwcI/QH9//38BQwJ+Qj4/gQE/QH8Af/8AwcDCPP+AAX9+gwEBgD29gYEAvsAAAAJ/gT3AfwLCvkC/wz7+wIB+wn7+QH8Cvn6+gD/BgMDAf0K/AL++/v+BgT9//7//fgD8AsLCP0B"
 ---
 
 From the introduction to "The Art of Focused Conversation". There is a number of these kinds of arguments.

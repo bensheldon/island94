@@ -2,6 +2,10 @@
 date: '2019-05-27 15:01 -0700'
 published: true
 title: Core promotion challenges
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "13d5632f7cb6fcd1"
+  vector: "AvwB+A8M9gj8AQEA/wIHAAAD9Pj59/8H+QH3/f30APoKBf0NA/4C/AT1+/kC/wYD9Pv97gH+AwX/AQj6//r/Bf71/Qf5Agf4APwJAAEDBgQLAPkL+PwB9vYABf0C//UB9AADAwcD+fb++wMC/AP8Bfz2BgP8CAIEBv0DAPoP9wD8CPsLAf78AQAE/g8IAgXu9AP/Af8B9QQF+v74/P/9BAP//gkA7gX37wT8/wgKBvLzAwECCwUC+wD2APsF+PcJAAH9AQYF/wL7+//89gAC+/4KD/kNBAX/BgwBAgQRCQACC/0BCAUA/QT59QQABvzyAwcB+AkC+f8CAv0BCfoA+vwG/wj88/8G+v0O+AEJA/j2Afj5/wL/BAb5AQX8Cv8CAAAB/vUF9fv2Afj6/gD6Av0DAPf8GAoD//j49wD9AQD+Av0ECQL6AAgF/P0DBQ8B/gQC//wL/fz9BQIMAAH6CQAD/AT6BQEN/QcMCPQD9wX69wj8AwUGAQIB/AUJ8/UL"
 ---
 From "Your Next Move" by Michael D. Watkins in the section of _Core promotion challenges_:
 

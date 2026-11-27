@@ -15,6 +15,10 @@ redirect_from:
 - articles/radio-ga-ga-discussing-americorp-vista-wuml
 - 2006/09/radio-ga-ga-discussing-americorp-vista-on-wuml/
 - "?p=99"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "96213883083cede1"
+  vector: "9gT7Afr4BPT7+v35//nwAQr3AgX4CP4NDgEBAwcA+v4TCvoAEfz5Av0IDP7y+v78Awb6+gAJ8wgDCAAN/v3/CQEJ9wQF8f8BBP0FBwn3CgQE+vr4CP7x//757Qf7/AAABvgCBwUBAPX59AQJ+wEBBPv5CgT/C/v3/fnz/gcDAgABBf4JCwn5/f8CCAP/8gb+8QDz+vwJ+PkLB/35CgEAAvv9BAn++gAAAwYB/AYF/QEL+PsB+wX8/QIDBgj/CQb8+PX+AwkCAQL//foC/P/7CgD5/wMKAgX8AAYACgAD+wAACAD5/v4CA/n0CfsCCPr2Av8FAgkC+gL9/f0HBgQDBvj3BgkH//rxBwL5B/8A/gD2Av3v+gX+AQH7//36AvrwAgcRA/0HAAAA/f4K+/v1+gH7BAsLCwf9+Qn+Cv/8/QD6BAH1AwID9f0E+P0EBwP/9wIA9fkBDAEABPwIAfz6Bf0E/vj8AgP9/fsBBAQGBvgH/v33BwEJ/wEFAAb9B/IF"
 ---
 
 ![Me at WUML, Lowell](/uploads/2006/radio-ga-ga-discussing-americorpvista-on-wuml-1.jpg) ![Charlotte](/uploads/2006/radio-ga-ga-discussing-americorpvista-on-wuml-2.jpg) ![Felicia](/uploads/2006/radio-ga-ga-discussing-americorpvista-on-wuml-3.jpg)

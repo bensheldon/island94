@@ -10,6 +10,10 @@ redirect_from:
 - observation/what-ask-building-website
 - 2008/08/what-to-ask-before-building-a-website/
 - "?p=239"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e9c69edcd2743dae"
+  vector: "Av78BQX8AQr4+/b+Av8BAgv//PsJAAz99AAHAwLsBf8T/gEDCPT6CPf9+v8G9wX/AQf79vj78QIA9fv5BwT/CAj+/Qf7/QH6/gcE/Qf8BPsFCfcF9gAGBvgFAAD9+QsGAvACBP0BBfrxBgIO/An9/vb4Bfn7AAQE+wkG/wQC9QAECPwH/wgJA/QFCgb9AQn4BwH/+gX9+gsKA/wF9/wG9fj9Avz59Qr87wP+AgEBAfwIB//2BQb7+/n5BAAG9/369v37/BL3/v0KAvgF+/wEBAIGDAED/w0A+wr/CPcAAgACAgj7AgTw+AT6+AEC+vD//fsGBP0J9QAIA/n4/wgF9AgEBP4D/P4MB/wH8vYC+P/7/v///PYEAgP+BP4GCQIFAvYGAvL89f8B+fz9Af0BBvYF/AT/BwX/APvx+v4DAQD9/AcK//0BAAMHBfz7Bg7//Qn99AUC/gAKAwAD/wEE+vz/APn5AwEI/QwNBggJ9gH6/Pr7BAT9BQULCgMBAvkC"
 ---
 
 I'm always curious to see what people spec out for consulting (since I have my own template as well). Found this great listing (pasted below) from [SitePoint](http://www.sitepoint.com/article/site-planner)

@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2010/10/a-deucedly-outrag-wordlist/
 - "?p=2266"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a60f0e895e2072d6"
+  vector: "Afn/APb9DAX9/wT8Ef/wBgUA+wMECQIABQD3BP349wYIAwgD+gQJAvv6+gX++fQD/P3z9gAJ+Pr/9/7+BwQAAfz8AAABDwT9AQz8AwL5Af78/wP6+fgB/wb//PgI+/78//ryCP78/wAC+vr7//j2/wbtCQHy/wQCBwgAB/j7+gAICP7/APnz/vwB/QoBDv78BfwC//4OAf70+/7/BQUC/AMB+/v1/QIB/Pz6BAcLAf0D/gD9Awb6AwIAAwEBAwjvAvP4/QAD+AYDAgL/CPv/APr2+vr4+wT1/gX0BQv48gD+/vYOAAYBDwcF/f8A7wj6Awj8DQMF7wcDCAv3Av8EB/sB/gECAPf+/gUABwL9+/oFBQMG+gkG9/b2+wr8+wMFB/n3B/r/BgLz/Aj//Pz6/Ab9AgMB/wIMBAgE/wYCCQD///39C/cA+/j/CAXzAgQDBA8A+AEN+fv8APj4/wIIBP719A73/AAKBAgGA/71//kI/P4KAQAKAwMG9gET/wgF"
 ---
 
 NPR has a story on an [algorithm created by researchers David Larcker and Anastasia Zakolyukina](http://www.npr.org/templates/story/story.php?storyId=130544236) that can allegedly detect when business leaders are being dishonest about their company's practices or earnings. Unfortunately, they don't publish the complete wordlists used in their [algorithm](http://www.gsb.stanford.edu/news/pdf/larckerzakolyukia.pdf) (pdf) , just these 2 categories:

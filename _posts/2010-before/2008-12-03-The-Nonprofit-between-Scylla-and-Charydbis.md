@@ -13,6 +13,10 @@ redirect_from:
 - articles/nonprofit-between-scylla-and-charydbis
 - 2008/12/the-nonprofit-between-scylla-and-charydbis/
 - "?p=275"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a963f42b67973549"
+  vector: "Bfr3BwIF/PgCAQEC/wMHAAL6/wL+/wAEBAEA/AL3AAEE+QoNAAUCB/oB+/r49/7+9/oE9P7//v4C/f/1CQIBBgP5/Ar57wf2BQQG+wQCCf0LB/cK+Qj5/Qj++Qv/9/7+BfT5B/79BfME//wH9ggD//wBCgD6/g77A/z///397gAEBv4I//z8A/H7ABIKB/73AP4CBAAE/wAG9fv9AgIICfz2Bfz59/389wEHBA0IDvz5AAYEBQkA9QUAAfYDBfz0CgX9BAryBf4EBv8D/f3+A/wAAgEB+Qj//QUCB/YIAwAI+QkDDv749QYHAPb5BwT8Bfj+/wET+/0GBfn39QUC+/z19Qj6+/z2CwMEBwAC+fn/BP/6AfoMBAgH+P0ABvMF//sF+v35+wj5/vcHA//8//30AQAFD/vz/AD9/AEBDgAPCv76Bfj8+gYSAAEC/wkBB/r99AYF8/78/f39/vMGBfr7AQD2/wQCAwQG/f8GBQT78/r5A/8O/gEP/AoG+/0A"
 ---
 
 ![the Nonprofit between Scylla & Chaydbis](/uploads/2008/the-nonprofit-between-scylla-and-charydbis-1.jpg)

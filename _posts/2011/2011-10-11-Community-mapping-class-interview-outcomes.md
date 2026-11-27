@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2011/10/community-mapping-class-interview-outcomes/
 - "?p=2919"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d9f309b77f87b912"
+  vector: "/wMB+Pz6/QL0Bf4LCgMAAwUA/wj/BAL1BgsD+Pn8AgQEBQgNCAoF+/71CQT4AAv6//v3+v/4+AUIBfj5/f/6BQ3//gED9woA//0M+v8FAu0JAwEN8wH8/wr6Bv4D+gP19/3+B/z//vEA+vsF/Ab//fcCA/j5BP/7/wH+/fv9+AAGCv4LCAf++/4DCBEFDwYC+v/++wAGB/0AAP8IBwEABgD6EAj68vv++P3/Af8FCAD6CQ3++Pz5+/36Bv0AAgQH9vQJBwkFBAL3+/v/9f37Bf/6//wFAwf7BAf7AfAG+wDz9vwH+fcD9AH9+f4CA//5/vf4AAcK9gf8A/H5AQMD/v79+BAK/vsD/gIB+fr//wH5DAUGBfkF/gUB+wUA//oLA/4B+fUDA/n+8P4F/w7yAgD2AA0DCAT2AgP5//ML/QD4BvsBCAH/EPwMA/z6BQz8B/b4AwP8+AMC/v0A/P8DBPwA/voFBAcH+AUJBQIE/AD//vL+AAYL+gYC/Qn/AvP4"
 ---
 
 ![](/uploads/2011-10/CIMG3114-600x399.jpg "CIMG3114")

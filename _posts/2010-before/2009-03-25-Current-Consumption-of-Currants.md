@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/03/current-consumption-of-currants/
 - "?p=593"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "29cf89363a6058f8"
+  vector: "APf4BAkM/AX3/QkF//r2CAP6+f4FCAME/wL99vr9+gQF/gX6CPoE/fr6+AX1AQUA+gADAwD2CvX+CwICA/cB8ggE9v8C+/4A+QX8CgMH+wYABQQDAf32BwEIBgMCAfr0BPj/AP8AAAH2APL9CgoCBvX6+QAD+v39/wj9+/oGAwD6+gYI/wn2Bgr3+/j6AgX5/fkHAvgF/wPv+gEBDf4NAAD3/P/89wMGCgQJCAUGAv/6+v0E/wAD/QD+BAECAwX97gX6AvYDBwEA+P0ABAsI+vz8BPv3APkCDQD0APYCAwD/+QcD/v/49PvxAQgIBv8FARP8AfcI/f32/vv8Cv4JAv4G+v77+gAHA/34CP4H+AgKCQoH+QIAAQD89wP3BPn1BgkFCQn1Bv0FAf7///35AfIDA/8A/gX7/gT4A/YMCQADAwIOCfcBDAEJ8AL4/wL+Av8BBfICC/zz+wIACwQLBAL7+vr9BP77+Pf7BPgA8hL+DP8HCAkCAAL5/wAE7wUE"
 ---
 
 While eating a delicious currant scone from one of my [favorite cafes](http://www.ulacafe.com/), I looked it [currants on Wikipedia](http://en.wikipedia.org/wiki/Blackcurrant) and discovered some interesting history of why currants are popular in Britain, but not the United States:

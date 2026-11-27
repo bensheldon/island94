@@ -3,6 +3,10 @@ title: "A bulletproof `wait_for_turbo` test helper"
 date: 2026-03-06 00:18 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f3c34b4f0602197d"
+  vector: "8gT9EAb8+/v39gIJ+PgBAgr7/f0E8/4CAgH7/AX2C/X1/wb/Afz8/Qn+9gYD+v7///z6+Af8/P0JAvwG9vwB/gYMAf78CAT/AwMC7Pz8/Qb58///CAH/BP7++/4DCv4MBgICBAAA+wX0/gQL/vYDAAAD+v//BAT9DwgGAgv5/AABAfcF+Qb+Av4MAAb59Qb4+gT6BAn7/f36BPX99wn/AfgK/Pv69PsE/wP59/f3AgUB/QIIC/n/B/8BDQcL8vv39gABBwL++gT9BQv8BwP69gr6/P8R/ff79wX8A//6AgAN9PoLCQIQAQD/A/wBAQUL/PoHAfoC/AH1APUACAUACf37AQ//BP4NDgH6BgMN//z+CQwCAAoB+f769ggA/wD+Ae/9AQv9APn+AP4E//kKAfoI+vcIBfsFAPcDBwUG+QD+AAMAAQP/CPj2DwQFAgED+wT9Af0E+gf7/QAGDfb5Av768woCBgcBCf/7/f0G+PX8/gH2+Q4H/AL4//8KAAkC"
 ---
 
 I like Hotwired Turbo like I liked UJS (Unobtrusive Javascript): it adds a few small but helpful tricks to my application's toolbox. One problem though with adding any javascript is that because the webpage is more dynamic, writing full-browser system tests becomes harder because we need to make sure the webpage is in *just the right state* to interact with it in tests. It’s annoying to write tests super defensively to avoid flakey tests.

@@ -12,6 +12,10 @@ redirect_from:
 - articles/facebook-phone-trees-nonprofit-technology-everyone
 - 2008/07/facebook-to-phone-trees-nonprofit-technology-for-everyone/
 - "?p=229"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "500e8f423d09b9f1"
+  vector: "/QMD/gn8/wgC+P4JAP0M/AL09AD2AAoE/fv3+gEBCxAIBvoJAgP8APz2/wAD+f4H8wD/9QYE/f79BwH8Aff6A/4D/woB/wICAA4H/AYAAQELAwEB9vz6/vwB9Q3+AwD7/PgBDP4LAfX4/vgGAwz8Af0ACvr+CBIEAgMC/PwF/AAACQARCAb7/fr6AQsNAw758f8F/wP9+gcJ+wUCBv76AAD+CAMD7wT89wj+AAANAvj+Av8C/gT9+Pn7A/cMAgAC/gL/+gL2AAD4+/UD+wUBCAwA/wAG+Qj7/Qz7AQAL/wD9BQIBCf0C+AMC/AD9Af32CPv6/goD7wMJAQL8//0D+wEDAwsD/f/0BQD0/vQH9f7zAQACCvn3/gv7/gT+/vv9AvEDCPcIAwL9/QAE/wPuA/sIAfsJBgAG9QED9P0FAAD6+QIHAgAC/QQL9AX5Cgz5+fL5Awz88/4IAv0E9fz2AfQB+fv6/AYCAAENBAIH9QL7/fz+CP8D/AUOBQgG/vEG"
 ---
 
 I was really excited about this year's [Grassroot's Use of Technology Conference](http://www.organizerscollaborative.org/08submit) because I had submitted and had accepted a great proposal entitled "Facebook to Phone Trees: Multi-Generational Outreach Strategies" that was to be co-presented with Angela Kelly of [Mass Peace Action](http://www.masspeaceaction.org) and Daniel Karp of [International Physicians for the Prevention of Nuclear War](http://www.ippnw.org/) (IPPNW). Unfortunately I was forced to call-off the session because I've been worked to the bone at my [daytime job](http://ctcvista.org "CTC VISTA Project") and ended up running out of preparation time.

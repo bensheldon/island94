@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/06/judging-reality-and-experience/
 - "?p=617"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "650feb9185715eff"
+  vector: "BQH4Bf4HBgAF/P7/APb5DgcC9Az9+gEH+f0B9P8A/wr8C/z+BwoB+vr5+gL99wMI+PH7AQT7/Qj/BAkFA/v8Bv/5CPz//QkIBwP/AgwHBPsG/gEDBPj39/4F+vv99wX9AAYGCAIPAAP78f78APz+9gABAv8GBP73/wD3AwX2AAAD/f78AQj99gICAQMA/AEN6fz9AwcP+f7u+gwA9AT2BAMACvsH/wX5+QMHBfoEBQD5CvcCDQH/BPwIB/v6A/j/AAP6AAT4/An7AvcDCwMD+v4HBQUD/QL3AAcCBQT/+wD+9f0HA/vx+wH0/v0IEPv9A/71BQIQ8wL+Awf4+gQHBPr/A/wI/AMB/AL6+gMICP/8+vkA+xAF7wL2BQIEB/P6AAD+AAAC/PHyAgUC/f77Bvz6//YJCfICCAQA+/j//AAD/vwC/P/9/vULBAL8/AL+Ef39Awb7B/n++/f9+QQCEPX6+QD9CwgC+v/5CAb3BAcABPv6CQMLAAcK+AQJAPz5"
 ---
 
 The Susan Sotamayor confirmation is bringing with it some interesting commentary. While most of the pablum surrounding Sotamayor's scutinized comments---that her Puerto Rican heritage prepares her for this position---are about racism (or reverse racicsm, whatever that is), there have been some comments on the nature of reality and the human experience. In our plural society, there is kerfuffle over two competing ideals (as I see it):

@@ -3,6 +3,10 @@ title: "The Novice Problem"
 date: 2024-09-12 10:26 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "daedc2b01c79a261"
+  vector: "Cf8B/vz2Agr5CAEEAwj+AAX98P/8+f8A9QYA/gn7AgoIAvgJ/gACAPX/+wIC/v76/ffn+gP2CwUFAAbz/Pn1/AMB/vwGCfwC/AgKAPwDAfb9AvsHBfj9CxT9APcC/v8I/ff6AgMI/P//+QEAAvr9/gUCBAL+CQILBgAGAgEC+QD+AfoM+vn6AggJCQf9CQz/9wf1BQH3/vIDBAIDAQH9APgB/wz8AQj49gH7CwUFAPz9APj9Dfn7BQH8+AMGA/EN/QH5Cg0C9wb9/vz5C/4E+gAJAPv9AAkE9gYD/f4K+wD+/AMJBf386wXy9fwCBPv7+wEDAQf+7//8A/367gAC+gb9/P39Bv0L+wT7+gP7A/n5/wIC/Pj8CQT5CQQEBAIC+P79/wL9+vz49QP9/QH3/QMB/Qj2CQEBAQD5//n88gD4Af//CgH3//cJAwT9AgkEDATvBhAA+QEE+fgMAQoGBQn8A/8C/QUBAAEFDP3//AEA/wcD/AcKBgP88AALEPoA"
 ---
 
 Brandon Weaver's ["Beyond Senior - Metric Obsessions"](https://dev.to/baweaver/beyond-senior-metric-obsessions-1j7p) has been stuck in my mind ever since we caught up at a SF Ruby Meetup and chatted about rules-adherence as a general problem:

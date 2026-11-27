@@ -14,6 +14,10 @@ redirect_from:
 - observation/small-government-small-paper
 - 2008/10/small-government-small-paper/
 - "?p=263"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "612fdf6b3393b7be"
+  vector: "9QgAAvkB9Af9BggaBfv4/Pz/9goCAAACBgju+AH/AgYJAAv7CwUI+wH9AAb5APwD9vwGBvr9AfUCBPcF7//7+/0G+vL4+/4HAwn88AMAAPz9AwcL+wD69gYBCfoDBvL2+f4EAAsCDwEG+f/4Av8DAPv//fL5+wQC/gD08vcKAgD8DwALCAn+AgYA/gUFCgkC9AcAA/4AEQAHAff//f4CAAX+/PkF8wIDAgkL/wcKBQwG/gIGAv4B9Qn9CgAFBwgK/QL3////Bfj5BAUABwD+9PUCBvb+/QMFAfz//AQFAAD4+PkBAgQC+wH+A/0JAwH8//0C+gT7/xAI9/fvBQT19wMV/vX4AQQB+/4EB/L69/b/AP4DAgLrC/wBAwz8//n8//8G+v/8Bf0IAf0JAwL/BP3//AH7Bf/59wYD/gsF+wD6/QP/BPgJAvwHCf/5/Qb6/P76Af//+v/9A/0N/vwEBAP+/vwGAgL9AvL7+w4B/AIABAsCBAMD9wH8Af8AAQQA"
 ---
 
 The story of the _slightly smaller_ Government-Letter sized paper (from [Wikipedia](http://en.wikipedia.org/wiki/Paper_size#North_American_paper_sizes)):

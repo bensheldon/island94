@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/07/media-and-radical-technology/
 - "?p=635"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0e19379eeee345b0"
+  vector: "BP7+9goCAwAC+P4CAwUA9wj4+QP/+gQG/v/7/vz7/Q0KBAUECP/7/AP0Aff6/gf89vryAgX9/vQEDQn///v9BgkCBAn5APj/BQb6+wH1AP0R+v0A/fj++gUA7QgKBAb5+/v/EQH/BvL87v4M+QX0BP32Ef/+Av4DC/35AgoD/wD9CPsJAwf6AQX/CQT6AwX9+P7+AwIEAv788wL5CwT9AgP8B/r69AAF+Qb3AQMMDv/0BwYF/foHBQPzB/QGBgEFBAUHA/z+/v8B/PkL+AD/CAEAA/sGAAT9BAf+/AMB/gD++/IFAfz//gUD+vD/BPjvEPf+AwsA9gQABwAEAQP6/f8CAQcH+/b8+wTxAfoB+v37+wgGBvP9/P39AAgB+vX8AP4LAwD/Cfv59P8M/gX9APn7BPwKCwEE+AQB+/wHBAD39QH7CPsD/goEBP4CDgcDAPj4BhD6Avv+Af//AQH7//T7+/kCAgEGAP4IBQUC/wH8/AICBAUL+RAL9RAF//z8"
 ---
 
 ![Radical Technology](/uploads/2009-07-14-Media-and-Radical-Technology/media-radical-technology-500x241.png "Radical Technology")

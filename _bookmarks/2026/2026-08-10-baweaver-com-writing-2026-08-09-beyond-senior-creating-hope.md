@@ -4,6 +4,10 @@ date: 2026-08-10 14:22 UTC
 published: true
 title: Beyond Senior - Creating Hope
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "48421cb4de2efdb1"
+  vector: "/wAL///88gj+B/sMAf8GAv3w+AD6+PYL/AT3/f/8AA4CAgMKAQD7/f38/fv/8w30/PcA+QX6B/4HA/sJ+AD9/QcAAwEABgT69vwHBAH+CPsHAf0I/v4E/Az5/vwNBgUDBfsECAEGBfr6/AIJ/P0AAAL++/78/QIMAgr8Bf4T/AAA/fwEAP8CA/sDBwkF+w71+gj9AAP0//8F9/4DCwMABfwCAAT9/P/59gb3AQwBA/7y+f4J/wQABQX3CP8D/PYCBQgIAgAD/Pz6/AD8AAMF/QIH+v4E/wr6+Ar6BAIIAwD+9Pn+CP389//+Afr8B/H6Ef4FBAsO7f8BBu/1+/35AgEF/gj4//z6/v/7/wgE9PwCAvr+BQD++QH1+wMFAQEABQQH8wH4Av/3AAYL7v3x/AAD/wT7BQQBAQD18fADAQACB/sAB/X9DAQPAwX+DAIF/gH1/QEI//j8+f0EBPz/AAEFAAH+B//8BAwEBAb88gz99gcE/hQIAAP98QQE9P0C"
 ---
 
 In my career I have spent a substantial amount of time around large Rails monoliths spanning from hundreds of thousands to millions of lines of code. I’ve watched companies go from enthusiastic to dejected to deeply fatalistic about monoliths as they evolve.

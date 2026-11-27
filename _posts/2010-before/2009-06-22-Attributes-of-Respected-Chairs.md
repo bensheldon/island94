@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/06/attributes-of-respected-chairs/
 - "?p=614"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a95315eb9803d1d0"
+  vector: "AgP/A/oC/Pn6AgX8DPz5BgUE+gL4/wME9Pz/+P7yAfkKAv4VCwAFBPj7CPv7/f/9/AH2+wIBBAf///3+/AX6BP7//Pv5/Pz6Afz9/wH7DQAGDgQLAPsC/vkEBwP//P4J+wL8CPoE/vv0+wH//AL//u/7Dgj4AgP5AQAG/f/9AwD/Cf4P+AIBBv0CCw0F+/78+AT5AwQG//4J/QcC/gQD+/j6AwD4/AL79gEKBgAKDvf+CfcACvv+8wgI+fMDA/cC/fXz+BT6AgMDA/YAAfcDAvkGAQUK9gn+AA3//QgH9wAO/gUDDAD8/AL4+wIAAQL3/fv5AAoQAwoBAAb7AgP8+wID8///+PgQCQD//AH0+fn5/fr4/gIIAgL7BwMDCf4K//v5A/IM+/MF/wL2APr9APb2AfkECAf6///9AP4CAQD/+wID/fP/+f0HBf/8+Q/+/An3/P34+/38AwED/gkABPz2/Aj39QkO+wYECP4DBBIFAQH7/f7+DBEH+gMKAP0A"
 ---
 
 I found the following on the photocopier (after a few days, I assume its orphaned). Sourced from a SurveyMonkey print-out, it's part of a "BYU Chair Study" which through context I assume is polling what training resources the owner of this printout requires.

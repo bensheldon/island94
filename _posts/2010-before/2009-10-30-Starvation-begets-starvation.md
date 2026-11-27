@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/starvation-begets-starvation/
 - "?p=931"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6ad560b072dbc8a6"
+  vector: "B/z6CQf9AP0JAAAEA/z+8/v++Qj99wEIBPv4+PgD/v8OBAkQBwH4BwD4/vz1+Pz++gD6+AL8/QkI+vn8AwEEBBMGAgTz/wn2AgEF/QYRCvYK/v0H8wMC+g0E9AX++v8C/Pn8AvwCBvYA+P8HAAoCCAYCCf3z/gsFCAX+/f0D9AD+AQj5/f73AfwDAgYKBwH0/gcG/QUC/fUN8/QC/P8KAwP3A/r/Bv8A+AMKBfwDCAD6BggEAvwB9gj5+PEL/Pn8+gn/CAQH/QX2Bfv+A/0JAQb+AQX/BwgB/f4H//oE/AD7/Af9Bfv28wkB+P78Bff1B/oB7goH/v8AAv0D/PkJAv7/9wf2Avn4BgH8/gEEBPQCBvj3Awn+CAD9Bf0BCPwO+/kB+/7+Bf3z+fAL/P/3AQP6Av38BQr5/goC8wMBAwAICvj8DPQE9/8KBQP5/gj6/gL4AwEE9fkC/gADAwD9Bfz7/wP4AwAAAP4EBQAB8wYG7QoC/QIG//4L9/gE+AX+"
 ---
 
 [![np-starvation-cycle](/uploads/2009-10-30-Starvation-begets-starvation/np-starvation-cycle-500x504.png "np-starvation-cycle") ](/uploads/2009-10-30-Starvation-begets-starvation/np-starvation-cycle.png)

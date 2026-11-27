@@ -3,6 +3,10 @@ title: "Rails Strict Locals, undefined `local_assigns`, and reserved keywords"
 date: 2024-06-19 15:21 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3249e4159e73e0ff"
+  vector: "BAL/CwgLB/79/QoA/gUGBw32/gYEBwEJBPYCAAj5AwQEBggIAfj6AQUB9wH+BQT/9fsK/f33/Pz/+P8GAAP+9/r++QMADwIBAAYB/QT5+/nr+wD2BQD7+gv/BPUBBgb9AP/+A/wDBggB/f35/P8EAP/+Af0G+AMDBAQCB/v39wAKAO4I+ggB+gAEAwUGCQEGAggFCAUE/fn7BwL//wAG+BEHBgYFCfb5CAP6A/v6BAz99vcBAQX//P0GAu4FAQUBAP0LAwz5/Ab9B//3/QACBf3+8Aj7+gn8+AMA+P/6AgAN+vwGAP0NAP0A+vz9AQ798QAIAvEI+gYBBvUA9vj6BvUC7AP2AQD+DAb2CfgFCPkA+gH1+QX/////AQT/Af368vn++gv9AgQD/PoNAQgC//z7+wUK/P0R+f8G+/sE9AD4CPz9+voNAvoJAv799//8/gv4Af8GBP8C//gHCvoTCAIHAQP7AgIF9/P2/fYA+Pz/Avj/+Av+/QX7A/38+fYB"
 ---
 
 **Update: This has been mostly fixed upstream in Rails (Rails 8.0, I think) and [documented in the Rails Guides](https://github.com/rails/rails/pull/52209).**

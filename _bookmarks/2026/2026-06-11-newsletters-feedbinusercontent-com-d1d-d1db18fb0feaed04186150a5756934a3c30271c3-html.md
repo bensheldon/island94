@@ -4,6 +4,10 @@ date: 2026-06-11 15:41 UTC
 published: true
 title: Money Stuff
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b030585a272052e1"
+  vector: "B/n3+/gBCAgG+/f9/QMA/gT8AAD88QD5AvoDBfL5+AwGAAP//gQHAP/5AvwBAwAN+wwAAAX+/Qr6/vz8AwQB+//+9wn4/Qjt7foABAgCA/78/fj7/foIAwcBAwAD8wcI/QEHCA0AAP///QED/vX7C/8G/gb4BwYHBxb7A/QL9wD9BfoB/AEEA/gO/QYDB/4D+QAD/fj+AgAD+/DzCP8B/gf7AAj09wT68Qb1+/4T/AX3AP/5/gP+9//7AAMC9vMG9Qf+BQn0/gQJBP8ECQn/AwcHAAAHBQj2BP36//z+CgD9/Qb+/gIA+AYD+Qr++fzwBQAJ/wgE/gv5AvP19AP/+QX+/fwE+wME/f3+/QL8/QAGAfwI+vr7Awr5AQD7EAQNAvn9//f59P8FAwIB/voFAvv+DQIJAf77A/r89QQCAgD8/gL//fv5CwX+AQDr/wQH/gD5Bf0K/PkG9wAO//0HAA/8BQMDA/4D9vz+/AgC9P0F+gEEEP8FBvwDCfoE+v0C"
 ---
 
 The first thing that you learn in investment banking is that, if you are going to pitch a client on some sort of deal, your bank is No. 1 in the league table for that sort of deal. If you are going to pitch a Ruritanian widget company on acquiring a Freedonian sprocket company for $1 billion, you are the top bank for that sort of deal. But what sort of deal? Depends! Maybe you are the No. 1 bank in global mergers and acquisitions year-to-date, or in the last 12 months, or in 2025, or in the 2020s. Or maybe you are the No. 1 bank in Ruritanian cross-border M&A. Maybe you are the No. 1 bank in Freedonian sprocket equity transactions. Maybe you are the No. 1 bank in asset sales between $850 million and $2 billion, or between $500 million and $1.1 billion. Excludes companies with controlling shareholders. Excludes financial sponsor transactions. Ranked by number of transactions. Ranked by equity value. Ranked by enterprise value. Ranked by target revenue. 

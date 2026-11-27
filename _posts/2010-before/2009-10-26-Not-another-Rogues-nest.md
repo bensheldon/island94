@@ -13,6 +13,10 @@ redirect_from:
 - 2009/10/a-crow-but-not-a-rogues-nest/
 - 2009/10/not-another-rogues-nest/
 - "?p=890"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8114c2215752c253"
+  vector: "BgP++QL3AP0ABgf+Avv/B/r6/ggGBQL/+wUCBfj5AgXzAAEACAYKA/3/AQX3Avr5DPv7+PoD+gf5+AT/DAcBAwX8+QT7/gEEAvoB8QwCBPv3BgT/+AAA+Az9AvzzBg/79/v6DwsCBPgDAwcIBwT//AYGAP8D+/YGBwIBAQAG/QAA/wX3Gfjz/vQJ9uz4/AX8Avr/+fcBAfQBBgD//gb1BAX9/wIA9P8BB/cBCwX+BgD6/f4A+P/++fkGAQcB/gP8AQH/BQP9+fgB//v6BAMLBfv/+Q769gv2AwDx/fz2AwD9Af4B+PcLBPP77gMI/AcGEwICAA7++wILBg8D9/j/+gn9+AQG9/f6CgADAfoIBAf8+wMAAgsC//4DAvzzA/kAEAICAgT7+AL58wEMA/f7/fz0BAEF/gkKAwAH/fX++AABBQH8BwQRAvkH/f8E/wb9+wL4//sIAQb0/AQEAvj9C/0C/fwACv8A/PoIAgAG/wYD9QcHCAkD/fj/+QYD+/3/"
 ---
 
 [![navigator-p161](/uploads/2009-10-26-Not-another-Rogues-nest/navigator-p161-500x851.jpg "navigator-p161") ](/uploads/2009-10-26-Not-another-Rogues-nest/navigator-p161.jpeg)

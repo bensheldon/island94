@@ -1,6 +1,10 @@
 ---
 title: High school app advisor
 date: 2017-04-18 07:22 PDT
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4c47880ae15531cc"
+  vector: "/QMF9f3/AA8AAff7APsCAQ37+vgC/wYCAQYGAgUBBwICAgMBAQAF+/sA8wYH9QEHBgb++v717wX//gb/BAADAgAF+AUG+gL9/fv5/AIGAPwBBPYP+P4JBwAF/wX++QoL+fP9/v79Cvf6/gD5BAsB+wAIDAf8/QMNAwj+9voE+AD9FQIO/vULCfwIBAn+CAX5/voH/vXx+/wCBwMG/f0DBfn8+f0A9wYH8wT+/ggEBfoCAvr6AQD0+APvBfz/9vYO9QL/AAf5/v8K/f4HAQP7CAP+AwECCQsC8wz4CfoGAQAC/wX6Dv37AAf+9f0CAPn9Bv0M/P0F+Pz9/Pf6/P3/8goD9v//+Ab9BvsC9QD7//3++wYP+/X8Bxb4AQEABgT+/vsJ/fr/9QX+APUIAPwC+AQB/v4B/vr2/AfwBgEFAgAD+wX++v38Aw/79fjvDwUHCQYA/AAE/gAI/QEE/gcCAwj9//cDAQsC/QQD+gH9+PEECQMEBPgECgL9AgUEBvgE"
 ---
 
 My brother organizes an entrepreneurship academy at the high school he principals. I play the role of technical advisor to teams that want to build apps. Last year's team I advised [won first place](https://www.noozhawk.com/article/san_marcos_entrepreneurship_academy_students_win_high_school_division_of_ne). This is the initial advice I've given:

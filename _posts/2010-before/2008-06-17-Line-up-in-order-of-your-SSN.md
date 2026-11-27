@@ -10,6 +10,10 @@ redirect_from:
 - node/225
 - 2008/06/line-up-in-order-of-your-ssn/
 - "?p=225"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bd20435ba619be17"
+  vector: "9vv//wIFAfwB+AgTAfn0+/76AwcFBP38AQT9+P4CEAH4BgLzCgMJA/zz/gsGAwD/+gj7/gMN/v8EAvcG+//3+PwEAv8J+AEE//j4+AMFAfX9//0HAP37DQIFBwIB/voCA/4EBQIF9/0K/vsGA/kH+wcA+vz/Agf/Bw37+PkFAQD9B/z6+PwBBAMH7/j8B/T6+AgHEA3rAf8KAPYG+f4FBQ3+BwEIAQb9CggGCAIABgsPAfsF//v4/AP6//UI9fzy/QIBCwECAwD/9wgBBgUFAAQAAQYFEAYB+fYD/Aj8AQD4APYC+vr9Ev0JA/0L/vn8AAUK/QYEAQgPAf/6Awr88P4IAfz/AQQC/wH6CfoJ+w/4AvwCAwIDAwj8AAL0+AL//vEE+gb9///+9AP8/wj0Af8G+/r8/wb/AAIDBQQB8QAJ/gP/B/8D/fvyDAP69wP9A/H7+vr+AAH8AP8QBfkDAvgA8gL//gEJA/r5Avr09/cA/wL0AAEG9AP+BgQDAv38"
 ---
 
 The IRS is using the last two digits of your Social Security Number to determine [when you'll receive your Economic Stimulus](http://www.irs.gov/irs/article/0,,id=180250,00.html) (e.g. free money i.e. your children's money).

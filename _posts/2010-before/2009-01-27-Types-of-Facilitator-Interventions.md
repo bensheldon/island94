@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/01/types-of-facilitator-interventions/
 - "?p=369"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "bd3c4eccfc24951c"
+  vector: "Av39Bvv+BgcC+/sF+v/+/wP9+fz+/QUI8//69gf/AAUGAvcWBg0B+/gEA/4C9P799/v3+vsDAwMF+/38//j0AfcHAgYD/Pz8BwII//36BPcGEQcEAf8B/AQI+gb3/P/+A/sGBgoJ//bt9/gD+wTz+vn8A/7/AwwHCAMLAAoA/QAAA/0TAP/+AAACCwcFBfv58QbwAfwEAQcA+wEAAAL6//j7/goF9wr6/f0CAAMDA/n3Bfn6Cfn/AAEBA/kLBPYD/fv6AAr17ggKBv749vr+B/38AAT8+v4B+wL7BAELAAANAv7+Df/98g348v0CB/X3+QQGAwIDBAAF/QX/BgUG+gf88wUF/vkBBQQB+gAIAvjyAAH8/voC/w/y+fsEBf8FAPv+AAAF+f799wv/9vL0/v35BAX9B/8S/Pv6/gEC+wD/AwP/CP77BP8J/vsA/Ar5CQD4+gv49QAHAfkI9/f/CQAC9wH//wsG/woGBP0E+f/8AwYABQoGDgcJ//4FDvYC"
 ---
 
 Flipping through _[The Facilitator's Fieldbook (Second Edition)](http://www.amazon.com/Facilitators-Fieldbook-2nd-Tom-Justice/dp/0814473148/ref=sr_1_1?ie=UTF8&s=books&qid=1233072760&sr=1-1)_ I really liked their listing/categorization of the different Types of Process Consultation. It's a straighforward breaking apart of the different methods one might use to facilitate an interaction (_normal-speak translation_: talk to people)

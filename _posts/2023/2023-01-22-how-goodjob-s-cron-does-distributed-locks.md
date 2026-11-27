@@ -3,6 +3,10 @@ title: "How GoodJob's Cron does distributed locks"
 date: 2023-01-22 10:18 PST
 published: true
 tags: [GoodJob]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1f335d0ecf9f0ded"
+  vector: "6AD+AfsIAPYAAgMIAf72+QL/+fr8/wYI9vUBAfoB9P4ABvgHAgD/+wD/9wH59wD++//8//8MDA0C+wUAAwP9+wf69/z//wX++f/7BP39+vr8+wX9BPgG/A8BBQMI+AUBAhT9AQkGAf4GBwAE+fgFEggE/Az3BQMGBwAE+gL9BAD+/gD0+QD0Bff6Af76/vv7/QYFCQIA9f/6/AEBAgT8DQYMBAj8//32/wb1/gn/AQP/BwgDCAH9ARECCw4BAfsCAAUHAwYAAgf++f/1AwT3AQMBA/38+QQHAAQM/gMJ/wAA7wQLAwP/+vjyAfkAAwb7Av76CAcC+hMGB+4A9QH78wEHAvr5/AIJCwQBAfkI9wL3APv79v4L/Pr6+wkBBgIKCP8E/f//BAIBA////vbxCu7/Bwr1BAT8AQL++vYHBgADBf7+BusEAAMJBvP8AwX8AgD8/wYICAH7CAEEBwYA9QcC/gb4/AP9CAb8AAMF+gD9/P4DBwAKBwjwDf4I/fkD"
 ---
 
 [GoodJob](https://github.com/bensheldon/good_job) is a multithreaded, Postgres-based, Active Job backend for Ruby on Rails. GoodJob has many features that take it beyond Active Job. One such feature is [cron-like functionality](https://github.com/bensheldon/good_job/blob/994ecff5323bf0337e10464841128fda100750e6/README.md#cron-style-repeatingrecurring-jobs) that allows scheduling repeated jobs on a fixed schedule.

@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2012/02/methodological-belief/
 - "?p=2996"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3faf8fa08a5191de"
+  vector: "A/72/AEDCw4ICvoCCvv6+AD9+Qb9Bv0A8v3/AP8EAAz7BgEIAAYI+voB+/kA/QEE9/nw+QD++f0GBwAA//0DBwcBAAPxDgQFCP0I/v71APgICgAE+/kFAAf//vX+/g4L+vf8AwEEAPMI+P8A/wT3/fwACgwCBAD7BAYDAwT9AQD+AQYE9/z++wAIAQQECAQA8/f7AAT8A/j5+AIE+wDyBPoN+/3//AP6CwMBBwsBCfbxBAIID/vyAf8DA/X++fj8/gzy/v/7+fsC+gL//QgB/AP+/fz99wcEBv3/Af4A9QD58vkV//r9/QD4+ff/BgHv/AUBAQwC8/oBDQn9/QQIAf0C/QIIBPgD+AAB+fkABQX9AgIA+QUF/Pv9BAwNBfj+Av/7AAMG+/739wMI/v8AAQXvAQf99fYMAvr+9wH+/gAD/gUFEP0J9P8FA/T9/QH/CAL8Bw369v4CAwEA/v/7BP38+gwCCQMBA/8D//3++Av9Av8LAgYCBv8F6wQVBQIC"
 ---
 
 From Peter Elbow's ["The Believing Game"](http://works.bepress.com/cgi/viewcontent.cgi?article=1019&context=peter_elbow):

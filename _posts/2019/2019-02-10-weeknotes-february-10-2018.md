@@ -4,6 +4,10 @@ published: true
 title: 'Weeknotes - February 10, 2018'
 redirect_from:
 - "2019/02/weeknotes-february-11-2018"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "acc1f8f7a047ed6a"
+  vector: "/wID/gn9/wL//PgGAgEC//35+QP5+/kI+gD5//n3AQwBBAcIBwj9A/v8+wj79gvz+P379wP5BAwDA/n7/vz8AAACAQH+/gL0AwkJDAL/Ef0BBvsJ+fcD+QsCBQMS/AMH+v72CfYFAvUC+AAG/P4BBf3+DQn5CgYHCAYHAPwB9wD+EfoKAvUABAMHAQwDAgT48gP8/P8CAfX6AwMF/wIAAwX8AgT++QT57wUBAAYHCvf+/gABEAX7+P35B/wCAfIEAgP8AAX2/wP+9/v2Bwn7/f4GAPwI+wr//hT7+gEO/AAC9QD8Cv0A/Qb6/f/5A/r0AfQB+woL4wP6CwH8+/0I+v72A/36A/cG/P71/Ab+B/ABBQH89/4E/gMBAwsB/gL9A/0A/PYH9//5+vwD/vzy/v32AAoHCwMK/wb99gAF/gABDP0FAP3++wEKDP/7BAgG9wP1/gIA9vsA+fsJAAX+BgMCA/b+AQkI/QQHBwL/9wv7/gX/+gUJ/gYH+QIF9vwC"
 ---
 I'm trying out week notes in the spirit of [Phil Gyford](https://www.gyford.com/phil/writing/2018/05/13/modern-desperation/) :
 

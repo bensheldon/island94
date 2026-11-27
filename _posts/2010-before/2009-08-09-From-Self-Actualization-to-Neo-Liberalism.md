@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2009/08/from-self-actualization-to-neo-liberalism/
 - "?p=665"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "399f3f0ebad1df56"
+  vector: "/f70AwwICQT+BQUJBPgEAfr99Avz/PoF+gQE+P0FCgMDBAgBDPz++QHy9fz7/QAC/fL8//z8AP8HCfkBA/UBAw4D/gz4Af77Af8G9v8DBAALBAEF9f36+xMC9QL6+gz5/P/9C/sAAgIC8PgD+wL2+wQADPkAAQL+BQT7Cv8G9gD4BgQC/f/7//8EAgsBBQf17/0N/QYOAPb//P7/BgMDC/j+Cv76+gH5/goGAgAKBvwBAvwHAPb59vgE/vEC/wH+/AH7//0DBQH8//0E/wP09f0DAvkF/gP+B/3//AT97gD89fQID/309wYDAQAKDPz0Cfr8+/8N9//9BgT+AgIECfwABwb7Avv4//r4A/8C+PsEAPoKA//5+wP7/gT6AfkFBvn+AAL2//35//oE/gX7Afn3AgH9AfoA+wEC9wEMAQAC+AUQAv8F+vkR9QcCDf/+Avv6BxABAfMACfr4AgcDA/X9+gH+CAH8BQ0IBAgA/AYJBAYLBQYH9gEO9gcEAAH/"
 ---
 
 I am continuing to enjoy Douglas Rushkoff's _Life, Inc._ Adding to my enjoyment is its parallelism with Fred Turner's _From Counterculture to Cyberculture_ from which I [have](http://www.island94.org/2007/11/understanding-academia-and-legitimacy-exchange/) [quoted](http://www.island94.org/2007/11/close-to-the-machine/) [before](http://www.island94.org/2007/12/destructive-rhetoric/).

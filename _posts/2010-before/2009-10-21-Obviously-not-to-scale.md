@@ -17,6 +17,10 @@ redirect_from:
 - 2009/10/growing-toward-the-omega-point/
 - 2009/10/obviously-not-to-scale/
 - "?p=850"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c26d2cae3d89b416"
+  vector: "/wEABwAAAQcR/P749v4I/fb9/QT7//v8/AL8+BH7AAEL+/UKB//8/QQH+gn/+/YA+f/w/fr//QgA+Pv4A/8GBxL+/gD5/gT+Bv4J9/X2AwwABfkJBf35/PQJ+QX5/wQP9v8CBQoHBwcJ/PgEAQIC8/3/CPz+AvoBAfwD/gH+AgAEAgcEBQYB+/8E+gf7EQD5+wX3AgoG/Pf+/AIB8//yAfYB/wD5+v/6Cwb8/fwHDwX2+/8CAP8DBAAK9Aj4/QUNA/r69gUJAQEDAgb7AgL3BvgH/f36Awz//vkEARDz7wD57wD+AwPxCPn5BwcK+QP/AQb+8xH/+gQEBAD4Ag3+Bvv8BAUACfoE+v//AAL+APz+B/79//v3A/z4AwEB//0G+/8CAfX99//+BAD/CfsC+vz8//4C/PwB/gn0Aez8/QD/BQEJAgb7+P0KAAf7CQkH/P3+AwUJ//H8AvoM/AEIB/sEBv/4AvsDBQgBCAwA/Q4CBPsGAfIABP0G+v0K+gX3"
 ---
 
 ![OmegaPoint](/uploads/2009-10-21-Obviously-not-to-scale/OmegaPoint-500x783.png "OmegaPoint")

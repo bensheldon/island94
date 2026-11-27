@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/twenty-four-dollars/
 - "?p=887"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "93acfb40b11bf27c"
+  vector: "/An6/P30BAX/BAH8/wHxAvv7+RQI/gMBDAYC9f4B/gIE/gYEDP76+AL4Avz7AwQF9goH//8AAf0F+QEAAQD//gUGCf7qCQr2/gH9AgkB+/kE/ADy+v7/+hD+BP0E+wIH/wP7CA4LA/j+APoC///3/QH9AAP8/QT/DAztCPz6+AAAAgH/9wH6CPb+AQADAP4B+/gV/gT/Dv78AP75CQEABgH4+gMH/f0ABA4FBQECCgX9BP36/Pz6/PUF+vYD+wQO7g/4DfcA+voDB/4DDwEC//UAAwkFCAT3C/r99wP5+wAC/PwFAP3zA/z/+v8LCQH4DAEA/f8GAAL5Bv76+wEBBfn4+f0J//wCAAP3Afz6BAAH+wf7AwL2BAr8AwD0C/8CAQAAAwH9Avj2/QkS//0D/AL9Bf0H+QH7+wD2+wYFAwD9B/UFAPwCBPkCBAD++/gDAPj3AwoHAvT9/AYI/Pr1A/b5/v4BAwD+Av72BAj+7wAK+fsFCgIH9PsJ9v4O8Pz4"
 ---
 
 This weekend was Boston's first book festival. I purchased _The Little Money Book_ by David Boyle ("What is money? What is it really worth? Who decides?"). The following is from the opening chapter ("Why publish this book?") and is a speech delivered to European heads of state by a representative of South American indigenous communities:

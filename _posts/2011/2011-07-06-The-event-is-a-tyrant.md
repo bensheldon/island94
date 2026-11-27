@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/07/the-event-is-a-tyrant/
 - "?p=2749"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7c5e75143028c177"
+  vector: "/gECBQwK/gAMBvwK+QP/9wL89gf//QIH/foA+gAEAf3+/Qn9BAEF/wr0/wD9+/4J+AP1/wz1Cvr4Bf77+wH2/P8KAQMHAgIHCQUC9gUBAAIH+AX7B/f9//oC7fcIAgcH/gILBQMG+v4I9PD49QT/BA32BP/xAvkAAgn+BAYBBwAFBfgJAAny9xAA/wMC+gQC+wf7+/77Av0FAwX/+gT4AgP5Afr79P8E9v/0BAQH/wL/+wUDA/0BCAjvBP8JBfsA+wX7AAH+BwT79PsKCv0DCgn1CvkD/gMC/QL5/wIC9QD0/PID+/v1+gT48vcFAPsABvn4BwsA8AMG/wb+/v73A/3//xAK9v4DBgH++vUC+AcDAvkDAxD/AfH4/Q39A/sCBfb8+AIFCwH0/QAN+Ab7Bf4BAvwJDQT7+v8B+/4J/wD8//z7B/QC9P//BP7zAwb/AP36+gYB+gEHA/8DBATw/vkB/QkKBgH/B/8CDQP/AP8E/gD7CQYFCwUFAAMCCPwE"
 ---
 
 Charles Seife on journalism, news pegs and polls in _Proofiness: The dark arts of mathematical deception_:

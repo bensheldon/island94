@@ -12,6 +12,10 @@ redirect_from:
 - understanding-academia-and-legitimacy-exchange
 - 2007/11/understanding-academia-and-legitimacy-exchange/
 - "?p=165"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "501fce973d91fd80"
+  vector: "/vf9+AfzBgME+/79AgH9APn7/P3//f8DAP7+APr/AAQA/wEDAwkEBAH0A/n9AgUD/P359f4F/QEGAP37Cvv6CA8C/Qf8+wX4/QUH/P//DvwOCwD79/v7BAwE9f0L/wD8AvoHBvgB/vEC/PUCBAn5/fYGDAgGDf739wEE+AL3+gD5B/8G/wL3APsBABILAwMB+wQIBAn//wP99fYCAwIBAQb5DgMG8wMF+QD/AwIN/voFBQD/Cv0EAvgDA/QFCvYEAf7+//79//72APf88wf6C/T8+/oCAQcIDAP6+/YJ+QD59/cPBwAB/wIJ9vwG/gXv/QH2BQ379/8BBQj8/Af+CwX/+goE+AH7+wb3/PD9+QP+9AMHCfoCBv0FAAsGAPcOBf/9BPQFCPf4+v4BAgD4AwL9DgQO/PgD+v8F8PYDAgD5/w4GAAME8gUH+/f7AwoJ/f/6AQn5APgHBP8I+wL1/PsA/QYB/AX98gEBAQUF+QkCA//7BQD+/vwK+ggG/gz5"
 ---
 
 According to Fred Turner in [From Counterculture to Cyberculture](http://books.google.com/books?id=2SNFpgX_WigC&pg=PA25&lpg=PA25&dq=%22legitimacy+exchange%22&source=web&ots=tqu371QGrs&sig=yz1OyR3sa61eMBohnjh9RlqR68g) **legitimacy exchange** is...

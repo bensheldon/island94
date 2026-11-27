@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2012/04/a-commonplace-book/
 - "?p=3009"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "99aecc256bb89473"
+  vector: "/wECAf0EAwUGCgIPAPr7APL9+gUFCQgB/AL/9QcA/gwK/vwEBAcK9/oD+gr9AQH9+fv5/fXz/gX8AwD2Avv7AQMCAgX7BvsCAwYC//v59/71BwYI+wL9+QYB/+0CAQgGAgQDCAcNAQIF8/j2Avv5Av/+AvcFAgkJBAX/B/3//QADCf0PAv4A/AAEBAwBCP4F9fwK9/8BCPP6BQP6+QQCBfr4/PsG8AoCAQkK/QYKAQj+CPz7C/z9+voFBf8ICAYLAwn3//v9+ALx9ff7AP35+QL/+vz7/gv6BAQC/Pz0+QD/8/gI//n18/r38v4GAv33Af4BAP8B8vQJCfsA9Pr/BAb/8wQBBf/++gEC9vsA+gAAAwcG/vX+BQD5AAIFBPYFBvr9Av379Pf+9wUVA/b4/vT4/AcA//oI/AH/+wEKBAD6Av4OBgICA/QH/v7+CAoCCvnyBg0I//X8CgEDAAsCCP//+f/7AgT8B/3/CgoCBAgCBwQGDgIGAQsH9/0IBPn6"
 ---
 
 From Steven Johnson's _Where Good Ideas Come From: The Natural History of Innovation_:

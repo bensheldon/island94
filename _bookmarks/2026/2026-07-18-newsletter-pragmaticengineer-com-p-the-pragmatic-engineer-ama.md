@@ -4,6 +4,10 @@ date: 2026-07-18 14:05 UTC
 published: true
 title: The Pragmatic Engineer AMA
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "211a905cd1545d61"
+  vector: "9P0F+gr7/QT7A/UD+/wFAQn0BQD3/AX6+wUG8wD+/A0KBAgC/gH5/vz5+/YE9Qb39vzy9gn6AP/8AgMCAPn6BhAJ//4G+/73+gYLBQQBEfwF//4J9v/7BAf8/wP7AhEG+P38AQQL9v349wn8DwX5BwT7Bvj6CgsBAAD5+QkI9QABCQMCAQIB/gj+/AX6BgT9/AMIAQEIA/8LBQL7EAb6/voC/wb08AII9QcHAAD+//z7/AMLBPUE+wP3/wT+BgIBBgj1CAIHB/zy+QP8/wEL//wEA/4H+AADCgYC+P8N+AD4/vMH/vgE+Aj+BfsI/gL2/f4AAg8E7gYC//cBAvf8BPkFDQv9CPsEAfzx/gEA/QIBA/gDBPL5Af8C/gf9/Q0A/wUICfP2Cfv/B/kEAP4A9/kBBgQGDQH//wL9+/kI9wABAQf+CPr5/wMKAv/7Ag0MBff6+AMA+wH//vsB/wn2AQEBBvsB/gP3+QcC/gj69AD8BPz9/gMQAwL59gb+Af3/"
 ---
 
 Opinion #1: I believe LeetCode-style interviews will stay because they self-select tolerance of corporate nonsense. The existence of data structures and algorithm (DSA) interviews is a bit of a head scratcher because these skills are rarely used at work. However, a candidate who’s willing to grind for weeks or months to prepare for an interview which bears little resemblance to the job, is likely to be someone who understands that sometimes it’s necessary to do pointless work.

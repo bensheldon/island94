@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2011/04/social-media-community-architect-and-manager/
 - "?p=2261"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "db364069656fbcfe"
+  vector: "+/b8//75BgH1+gUABAgFBwb8CPf5BwYCAQL7/QEACQ4FAPoF+wb++vf1//77+Pz2+gn07QUA+gL9CQD6BPf9BwgD+wwE+wD1AgQC+wT6/QAIBPL++Qj39vr/9wYC/QX+/Pf+A/0DAfb//QYNBgn8/vj5DQn7DBANAgcAAP8C+QALDP0OD/7/APP4BQ7/CAPx+AYG9v8IAAQNAQMACwP0C/v6CAH17gL/+QX9/PwDAgELAQT+BQYC/v8BCP4EDAACAv4JAAv//fwE/v0C7vz6CP0BAf8DAwT/+wb6BQMN/AD++Qb+B/wB+wMBCQL8/Pz8BfIFCQoB9QQEAAT9Awb7AQL6Awr68/34CQD7A/8C8QXx+Qf//+/9BQb7+QMB+wMA9gEIAvEBBgb/9Pv+Af37+PsGAf8OAvYG+gAG9/wF/wD5/QD7BwYC/AQJ+QH7EQz8/QH7+goC/wAGBfr8Af7+//j8/wMC+v4E+gIKAfsE//4D9f8CBPoO/gcD/AIKAfsE"
 ---
 
 Exploring the recesses of my email I came across some bad ideas I gave to a good friend, neighbor and excellent "Social Media Community Architect and Manager" as we were exploring possible resume headers for him:

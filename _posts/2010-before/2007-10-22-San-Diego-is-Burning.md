@@ -8,6 +8,10 @@ redirect_from:
 - san-diego-burning
 - 2007/10/san-diego-is-burning/
 - "?p=163"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8532cdb9b6579ca3"
+  vector: "Af8IBRH8A/b+/QQDBP8HB/z19wMAAwIGCQj3CPoFBAD2AA0FC/wC//7/CP3wAgPyB/gDBAH9Ag0H+AX+BQL2BgH+/PgN9AYHDPf7/wsDBvz/9gcA/Aj6AAEG/f0ACwH8+//0B/sJA/MC+f0F8wD9/wMEBAYGA/X+AggCBAX+AwAKEfz/Ffz4AgQJAPgC9P//AP/2/QIA+P7zAgQM/ATxAwn5AwD/+fr6/QP+CwH+CAME/f0A/QD8CQL3CgMN/wL1+vUE/gD+//sFAPwA/wIABAP6CAQB8AH88w36/wn4+gD+BPT1APf9AQb29wAD+P0CDwD+/v8C7QIFBAYJ/fz6+QQN/AcH+vf7DwT8CPsGAgD2CP/89gYD/wb69/7/B/kI/Pn/8QQG/f7x+P4GAAP5+gIA+AQN/gX9Av/4Avr++wAHA/z7Bf8JB/gIAwUE/fr/B/f2+/0BAgkJAfYJAAn7/vX+/QELAvsD//gCAwT9//sL//749QoE/fr7BQcEAff9"
 ---
 
 I got an email from my mom this morning that the wildfires in Southern California county were strongly encroaching on my hometown of Poway and the surrounding communities. A couple of my friends started an email list and we've been sending around information about what's happening.

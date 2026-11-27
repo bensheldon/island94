@@ -16,6 +16,10 @@ redirect_from:
 - articles/geekout-video-maps-cable-access-tv
 - 2007/08/geekout-video-on-maps-for-cable-access-tv/
 - "?p=136"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "2ec915c16cfdadd5"
+  vector: "DwEH+Q0M/Qb4Agb9BP7/CP3++vr5+P3+/wYBCwH5CPkGAQUF/fT5/f/1/wL9Afv/+/75+fcA+wD2AgYB+foL/QsE9PgFBfwBAPz4+vj+/voMBvoAA/z8///+9QL0DAf7+fMDBggJ/vX78PgI+f7/CPb9+QQIAAAFCwH3/fv2AwAF+AEIBwf7CfP6BAH6C/oGAAL6/P8EAAQGCPgH+/oE+gH+CgD0/vkFAv7//P38/gH89AgI+fIG+PX+/PoFAAkBAfwKAAX7/wgJAvX5+fkEDPj5CPsC9//6/vr8CPv4AwAH/f0B/gAPCAMF9/b9+wIA9wH+BfsQBgkD/QT99wL///wGDPwLC/cL/wT5+AEABQMEAAH4/f4P/fX/BAAC8gD8BQT9BPcHAgELAwQKBw4F+/7/AgUBDQUE+f7+Dv4IAAD5+/YD+PwTBwb8Bf4J+//3+gIBB/oIBP0C//4E//0HAAEC9/kB+/oICAIC+QkBDwgCB/gA/gEM+ggN+gX4A//8"
 ---
 
 ![](/uploads/2007-08/mediamap-600x448.jpg "mediamap")

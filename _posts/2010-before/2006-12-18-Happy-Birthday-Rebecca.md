@@ -18,6 +18,10 @@ redirect_from:
 - articles/happy-birthday-rebecca
 - 2006/12/happy-birthday-rebecca/
 - "?p=112"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ce036221ac39c9e6"
+  vector: "AQYH/An/DfwECAH9BPoACwMC/P/9CP4N/gT7//f/+gkGAvn8A/YDCvsBAwH1A/z7/gD++/r5AgP+AgsFB/f++wD3/Qf8//cGBQoABwL99gP7AAT6+vgDC/X87fr9//X6+fH7CAEJCv8F/vIKC/wA/fwMA/0I/f4GDgP4BvsBBwAFBAUGFf30+vwJ+/oAAwoI8vsABfsM+vME+Qf7Bf0F/Ab9+wL9+AL/+wAFCfoJ/QgF//sDAgj7AgMABvsN/Ab2AQQE+gUH/v8I8vkBDf38BAP6/fz+9wL4+AfzAwH5/QAJAwwGBv35CPj0AQP+BQb7/wwA+/UQ/AIDAAP8/vcA+Pjz/AH59PgJ/f79//v/9w0BBgYG/gsF+wIB/wH2A/f3+/38+P0L9QD1/gMCAPv1/voH/xEM/AAJAQEECP8D/gAABvL7CAYJAPUCAQP7AwX7CAEBBwD/CgP1AgkC+wYFDP0EAf/4BPn6/vkCBvj8Df78CfwCAAQC+/8ABQIN+vr7"
 ---
 
 My friend and coworker [Rebecca](http://circuitous.org/rebecca/) made an extensive list of things she'd like for her [birthday](http://circuitous.org/rebecca/2006/12/12/birthday-list/). I really like her rationale:

@@ -2,6 +2,10 @@
 title: To test god
 date: 2017-12-31 18:25 PST
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d5ca0fc95cd11222"
+  vector: "/Ab4BAb9CAMI/QP++/r+/vsC+/8C/QP49wv//PsDBvgGAPgMDAQA9gUE9/8C+Pz/Avf5/fv9+QAE/AX9/v4LBQH4CPvzCgMBB/jx9wT2/f7/Af8F/fUL9gYDA//1CQYF+wP1CAAF/f4D/vT6+wQB/AH+AQn5/fUGBAkJDgP/+wAG+wH+//4ADv0A+/kFAfQA+PsLAPoD//X++v//BQTwAwAIBAIB+PT1AAQDBP/9+AL+Bv4DEPX5B/8HAQj/+QEH8fr+/vv/8//7Av0ABQf+9AX/9v4A+wLx+PYID/vy+AD//fMR/gD6Bf74Av3+/vf9/gf5+QQOAfX5BAMB+wEMA/UJBwwDB/8C/QMACf4EAwgF//77Awb9+/z7+wYGAAQPBQT/CAMR/f71AgUM/vz4+gT6AQUD9gMFAwED+QP3/QD7/fwBCwYB8PMG/Qj5BwUC/fYDAQMF//cHAvcEAQMO/Pv8/Az2AQj9AwoDAAUA/gYCCQEIAv/99vYI/QASCPz7"
 ---
 
 From Steven Erikson's "Toll the Hounds":

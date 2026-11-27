@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/12/like-wikipedia-but-before/
 - "?p=1611"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "767363f537f61d02"
+  vector: "+/z6AP7+AwUBAwoMBgT+Bvz++PsH+wL++wUA+wb3Bgv+BPn/AgIBA/32/gT9APz+9gTu/AL7//39/Pn+APkAAgn5/gQE+/8A+QoF8wEE9v8JCAcHAf4B/f74/fUG/ggEBf4IAwAF/v/7+v4NCP/1AP38/Pf7BggLAAIFAQL4/AAFBQADCP76+v/9ARACCQoF+v4H9gj5CP38//wMBgIFAPb/BgME8v4B+gECBPYD/wL9BfoFA/39A/f6+wQB/QUG/gQF+wr/9wL9+PkD9PkCAAL0APwA/wH3+gP+AP0GBwD7/v4FBAIE9P4FAgD//v4GCvf9BAIA7v0HBQL4/wcH+QD59Q4G/wH/AwMC+PwF6gf9/w4IBvH8Bf78+gf8APgLAvX5BvH7A/z+9gL6AwP5//gGCfgHAf0D/fj9+ukH/AD4/f4NDgEDEPgOAhD6EA4IAPP9AA/2+QMKA/cG+QL9+vsIAfv59/b7BQYFCAgF8wL8Cf35C/8L+wcD/wkMAP0A"
 ---
 
 This is how the emerging internet is described in _The Axemaker's Gift_, published in 1995. Interesting sections to me highlighted by me:

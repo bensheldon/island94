@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2010/03/a-rhetoric-for-writing-in-the-post-digital-era/
 - "?p=1846"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "27b718f293b0a0d6"
+  vector: "/QH9+QcIBQYMAvUFAAELBgP8AgAHAgIF9wAAAQEB/Af/+wQKBRAIAQf7BP8D+/0K+wLqBPkAAP4ECADzA//2BwUDAw/4CQAFBQb9+//6/fUCCAME+vgA//8FA/oCABIE+vMMAwYEAfcE9/z99wP/A/YFE/4D/QD8+f//BgD4/gACC/4W9QL1/P37BQYGAv769f3+/AX8Afv5+/709AD+/v/7///++AX///0BBAUG/fr/BgT8A/QBAPv0AvgHBfoB+wbz+wn+/PkAAfoB8AIBCgL9/gAD9Qb+AgAA+/z++wD5Af0Q/QT5+wz/9f4E//v4/fz8AAD89/0JBAD4/vz6/wT99wcJ+vz9CQP+9/P9AAX8AwH7BPn5+Qv8+wMBCvQCBuf7/PsC/fz++f8CBP76AAMAAAUFB/oE/Ab++v4F+wD3/AsN/gUE9wED//b6AQT+B/f8AAoA9P0LDAn+/wL6CPz+/QUHCQoI/gsB/gUF+Av0Cv34DwEABQIJAQIOFAAC"
 ---
 
 I love this rhetoric from Georgetown University's [Martin Irvine](http://www9.georgetown.edu/faculty/irvinem/) entitled " [Writing to be Read: A rhetoric for writing in the post-digital era](http://www9.georgetown.edu/faculty/irvinem/articles/WritingtobeRead.html)". It's written for academic writing, but I appreciate any approach that pushes the [dialogic](http://en.wikipedia.org/wiki/Dialogism). An excerpt:

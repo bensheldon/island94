@@ -3,6 +3,10 @@ title: "Reflections on GoodJob for Solid Queue"
 date: 2023-10-10 09:05 PDT
 published: true
 tags: [GoodJob, Ruby]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "fcaa0364d00c992f"
+  vector: "7/wAAvoCAvcBBvoIAP/++hn8+v76/QID8/j5+fnz+AAAAv4IAv37AQT++Ab88QX0+//9+AMGCQkH+PoC/P78+gr9/Aj/B///+AP/BAAA+PYB/AQJ//v9/Av3CAoK/QgGAQX/AAsDCPz/AvwH+vgBCAgDBAf5+wIE/wkG+wYAAwABA/3/AQD//gD++wH7Av/1+goEBf/59AEHAAUAAQT8CAAF+wb0/wHx+AjyAwH8A/wCAQX+EQb6/RAEAAoD/vX+BgMBBAn5/gcC/gP9/P/6/gQC+/oC+g0E/Qz8BAUMBgAD8AENCf/99wH69/v//AHz+vMDBQb+9A8CC/L59v/88gYFBfz9CQECCQEA+PkJ9vvyAPr/+gYBAAH7/g7/BAn9AvcH+v4A/gT8CQL9A/P2BvMBBQn8CQr/A/j69/cD/gD9BAP/AvD9DAAFDfr8/g3/BQL4/AoKA//9BQICCP8A/QUDAf77+QcFBwL6Agn+8gL4+vf9AwYGAwn5AwgK+PwH"
 ---
 
 <a href="/uploads/2023-10/rails_world_solid_queue.jpg"><img src="/uploads/2023-10/rails_world_solid_queue.jpg" alt="Rails World presents Solid Queue and Mission Control"></a>

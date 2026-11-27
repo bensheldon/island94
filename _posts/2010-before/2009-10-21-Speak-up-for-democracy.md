@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/10/speak-up-for-democracy/
 - "?p=858"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "56f2dc64785f2862"
+  vector: "AAL++AwHBgP+Af4IAP4MAgb4+gMBBwQC/wP59gAAAgANAgYDBvYAAAP08vsB+wgC9/n4/Ab6A/j9BwL9AvfxAwIF/wP2A/oLDQoD9wkDC/oHAPwD9vb69gb98QQLBv/5/fn+A/gD/fT/7/oJ/g/7AgMADv36BAUA+AH4AAb+AwD1CvwLBQv5/fkGBAUCCw398QIDAP8C//sF9AL5CQH4Awb8Bfz7/f0E9AH5AgsLB/f7AwUL/v0A9/j4/+8I/wH+/QT9AQP5BAHx+/gK/wME/gADCvsH/gMCBwrz/vgHAgD5/f0F+P769wv/+Pn/BPr1Avj+/wUD8QcG/fQBCfv7+wUE/wAFAP0BB/r8Afj7Afj4BQb7B/33BQj8BAYFCfj8BfkEAgL+Bvn2+PoJAgv2CQUECPkGAgXx9wP9/P0C/wAA9PwFA/8F9P4HAgD6BwkC/PP5CQsDAAYB/gX9Awb6BfUF+/gABwIDBAEHAQb++wQGBf37DP0G+AEF9w//BQIC"
 ---
 
 At the Grassroots Use of Technology Conference / National Writers Union Digital Media Conference I got to hear a lot of people bemoan how hard it is to make a buck as a creator in the digital age.

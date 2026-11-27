@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2009/09/my-use-of-the-comma/
 - "?p=735"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b652abe30061d1c2"
+  vector: "AAYE+gIC/wkIBP8E/f4L/f/+/AMGBwQC+v3/APsD+gQBAfb8BQgH/gEEAw7//P35+AD1Avz6/AX2AwP+A/75BQr+Af/5D/sCAAT5/Pz/AvYAAv8B+Pb88wP8DO8IAQYI+vn6AQcAAfz57/v+/AEDA/z6BwkE/QsLAvwJDwTv+wAFDvoO+QL8/AP//QgCD/8NAQL5+wQFA/v8/P4B8wb8/gT2Cwf1Af//+gICCQYLBQD6CgIGCv4J/f38/QAECfwC+Av3Av0B9f31/vf/CAUB+gH+Bvnt+g0DBAUJAP0A+wDz9/kF8/v8AAv28wD//gf4/P77AA0H+fwEB/vz+fn+/f/1/QT5AwX+AwIJ9vn1BwEED/UC/wT+AP3+/wD5Bfz6BfQB/wn9+O32+vcGCPz2BQL9AwMBBvX//wkD+gL/AgD9//wE/AQA+/cJDwT2+/8E/Pr3BgT//foBEP4G+gIBBv4G+wMCCAIE/PYJEAr+BAUB/vj7BQQCAwAH9wMLAfv7"
 ---
 
 I have been reflecting on [self-deceptions](http://www.island94.org/2009/03/pratfalls-to-writing-authentically/) in my writing. A fine analysis can be found in Noah Lukeman's excellent [_A Dash of Style: The art and mastery of punctuation_](http://www.amazon.com/Dash-Style-Art-Mastery-Punctuation/dp/039306087X) under the subheading "What your use of the comma reveals about you":

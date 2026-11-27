@@ -8,6 +8,10 @@ wp:post_type: post
 redirect_from:
 - 2010/08/p-np-and-panlexicon/
 - "?p=2142"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f34bbd23caba86a8"
+  vector: "+f8A/QP7BQAI//4CCwYBAQAA+vH8/ggBB//7+AEH/A8B/vgI7goH+QD4/gQJAvsE9wT2/fwD+vz8/gL/Afv+/wj8AwoCCgIU/A0CBwf4/wECAwwDCwABCP/9+vsJ/v36/fj7Bv8CCPf9BQEABf/6BgL3AwP/BQ0IAgQF+/0FAwAFEQMLB/79//T4+AADCgv1/AAG+gH//QH+9wv8/gP+BQACCAAD9AH3+wgH+P0EBAT+Av8A+wUBAAH8EwsO/ggDBQf6+wMHBf/2+AD6C/gA/gb3DPH09gX78vz8/Af/+wDw9foJ/vYA/gIC/AD9+QH5BwICCfsA7v8DDQX//ATw//X/+QMD/gQCC/8C+P397PsCDAgGAAMC9Pr7/Pf5/AIMBvPzBP3//wb2+fb9BQT8AAUCCP35AgYGBAcDAf8CAgD79/YBBQEB+wABDAL7A/wF+vn7+f4O+gECCfkCBPv2+PX5ABD4+/wFBQAEAQsB/fgA//wI//0FBf8BBgAH//8E"
 ---
 
 This week I updated [Panlexicon](http://panlexicon.com)'s Word of the Day for Twitter's new authentication API requirements, squeaking in just under the August 30 deadline. Panlexicon has been updated [tweeting a unique word every day](http://twitter.com/panlexicon) for nearly a year and a half now.

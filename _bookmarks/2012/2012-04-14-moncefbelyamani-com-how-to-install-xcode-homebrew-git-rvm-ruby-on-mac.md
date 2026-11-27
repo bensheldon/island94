@@ -7,6 +7,10 @@ title: How to install Xcode, Homebrew, Git, RVM, & Ruby 1.9.3 on Snow Leopard & 
 tags:
 - rails
 - development
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ca670b522660c2a5"
+  vector: "AfT//gL4+AXzBQTz9AEKBv/6BwD+AQb8BAT+/wH/BP0F/gADEvz1/foGAgL79wL7/v/+9fv9Cf8B+QkFBAL3Bvv7AQQD/P349f32/xP//Qf5BgQO/P8CBwYICv3+Bvz6EQD4BPX2DvsABwQK/wQF9fUJBgQB/AID/xEBAAcBAwAKBvX+BfkIBgAHCwT1CgT3/f0CAP///P4D/wgFAwAA+gMIAgH8+/r9/AP69wv4+/gIAvMABxD8AQX9A/76AwUCCvsB/gID8/sK+wL5/wf9BAAHCQYLBgcO9gUBAgH2+gD99/8E+gj4//zzAQMG+QH7/fsG/AcI//0A8QgA/QMEBwH5////EPcDB/b58/8M/AX+AgMB+/r9+wn9AgH5/gb1+vbyBP4D9wUI+AAA+fwC/wsSDQMDAAD//v8B/wIC+wAIA/UGAgkA/ggICgzxC/YD+QMD/AP5AAAIAPoEAfn9AfgHDvf4/v/7AQIF+Pb/9wD++AP9/v0JDv/0+QME+vsA"
 ---
 
 After following many outdated and incomplete instructions for setting up a web development environment on a Mac, and spending a lot of time finding solutions to the problems I encountered along the way, I decided to put together detailed tutorials for both Snow Leopard and Lion.

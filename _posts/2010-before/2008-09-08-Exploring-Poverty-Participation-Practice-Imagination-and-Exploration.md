@@ -13,6 +13,10 @@ redirect_from:
 - articles/exploring-poverty-participation-practice-imagination-and-exploration
 - 2008/09/exploring-poverty-participation-practice-imagination-and-exploration/
 - "?p=254"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "da782ea7821c9c66"
+  vector: "CQb+BP4KAgQBAAX7Bf4HAgEC+gH+9/4H/wAA+AIHAgoCBAEABQsA9Pn5+vgA+f4D/vD7/f8AAP7/APr1/v4DAgAAAAf3DfwDAQQF+AABAPkH/vkIA/79+gH57Ar/ABUB//7/EPwIA/b98/n++wD8+f4J//kGA/4EAAP/CA0DBQAC/QAQ/QL8//8FBgMGBAn+8vgFAQAI+vcA/gfyAAH6BAL5/fsG/fz59QEJ/woNEvv3D/8DA/b78PcA+/MD/AABAwTv+QkDAfj4BwQABf4F+BH1/v0HAQj4BPsA/P/+9gD2+AAGAf0E8Qz7/PsSB/n4+wcDCP8R9/8AB///+Pn8/gLy+ggD/Pj29fv4//0E+gL+/gL+AwUH+wH2/gz/BPoBBfn/CAUCCPnz+QcFAQn8/QH4//n6//kF/wn5Af3+AAALBf0BBQD8+f4GAQMDBgMIAwL4BQwF/Pj+BP4C+/z+A/MB+gL3BQP7CAP/BAb8/gX+Bf0IAQIG/gAM+f4VCPH8"
 ---
 
 In my last [post exploring poverty](http://island94.org/node/235/), I defined poverty as "the inability to fully participate in or benefit from society". This definition sought to move beyond a simple definition of poverty as an economic floor, and towards a broader conception of poverty and a goal for society in general.

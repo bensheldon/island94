@@ -3,6 +3,10 @@ title: "GoodJob, Solid Queue, Sidekiq, Active Job, in 2026"
 date: 2026-01-16 15:26 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "4492227108a26a80"
+  vector: "+fn/Av/7AwX9BPIK//oABA/2+fny9/0C9gH9/Pb3/AkDBPsPAwEA+wL69gEB8wP1APn39AL/BQwDAv77AP37/QX8/wgCAv4A9gIE/wX+APkG/vUJ/PkB/g39BgIH/AoGAwL/BwYCCPz7//0GAPz9AAEBBAP4BAMI/w8BAQUA+wADCgMI/gL9BAAJ/wwB/gz38wICAQUA8v4F+wb9/QT9Bv4F/wfx9wPy8QjzBQcHCfn8AwP/Dg72/An8CgUD//MGAwUABQv//QEB+QL9+QD8/QQE9v4MAAwCAxD3AwMLAwAA8v0LBgH99AD4+QAF//35+fj6BfkH7AsFB/v6+Pz7/AEA+v/5Av4DAv379fYE+Pz4/gMBAf8D/AMB/A0FCgwDA/cHAfj7+gL4AgYC/Pf0AvoABQYADwED/ff79fIB/QD/AQMCBvb5DgAIC/n9BhAJAvz0/wkG/P8AAv4EBQUC+gIAA/kA/QEE/wUEBPz++QH7/gD7BQkKBQIA+gcL9fkL"
 ---
 
 Hey, I’m Ben, the author of GoodJob. Last year at RailsConf I hosted a panel discussion between myself, Solid Queue’s Rosa Gutiérrez, Sidekiq’s Mike Perham, and Karafka and Shoryuken’s Maciej Mensfield called “The Past Present and Future of Background Jobs”. You can [watch that video here](https://www.rubyevents.org/talks/panel-the-past-present-and-future-of-background-jobs).

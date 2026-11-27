@@ -7,6 +7,10 @@ tags:
 - nonprofits
 - poverty
 - book
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7447bf1b9ffd8c4b"
+  vector: "AQD5APsK/foKAQIH/vkM/fUE/wP9+/wK/f0B+QH6/P4LBQoGAv71//31+Pr6AgQA/PsK+f7+9f4C+P/5AvkIAgMKBgT49AD+DQL+8gMBCP0LCvoN8wkA+gwE8QcB+gD2//sHAwcEAfP++gIG/A7+AQIEBvn7BQb/AwL///cF/AD8B/0ECgACBPcDBQAJAP/3/P4I+fsL/wAA8fH49gEHAvv6Gf/+BAEA8QEK+QcJAAIABAgE/PUF+vUH/PQECP0A/AH4AgD+BQj5BfEC//4G//wJC/8C/g0AAQb9BfP9/wAH9f/7AwL2/Aj8/f7/B/v5/v78AAML/gH9AvwDBwYDAf8C9fgDBQDu9wQA/v0GBfMEBfr7BgH+Bv/2/gL9BfcKBQAB/f74/ff48fsDAQfw/wv4AAf/DQv9/wUD/AULCwABAvkDBwID7/kK9v77CQL8AgD+CQAA+v0BBAD2BAb/DvcB+v/6CAQC/g8D/v//+wUCAAoABwcDAwcH+fwH+AT6"
 ---
 
 Preview this book

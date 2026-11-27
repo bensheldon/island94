@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/the-poor-the-dead-and-god-are-easily-forgotten/
 - "?p=1681"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0dc196b4a954ebe1"
+  vector: "Ag/5B/wEBAH/+wgABfr/+fwF9wT7/gMBAP4B+P8EAf4D/gMLDwH8+AYD9f/9/AYC/PUEAQL8+wUE/ff3/f0JAQH5CgTxBQL3Bfr49/z08v0KAvoF+gIK7gv/Af35/RD+Bvz6DgEFCQIE+fMC9wD7//8ABPz/9PoCAv76DAIE+wD//QD9/fv8Avz9A/0DA/v6+PYLBPwJBPr++wr/BQIEBQf5AgH+/gL2AAgS/QUGCf32CwICAvz29PsK9vkD9wMBAwX/B/YB/Qf9B/8JA/n/9wUA+wQCAwgBA/0EBwL58QAE/f8IAwDz+wIM9/wHAfv7AQL7/wcNBPkACf/98/MHA/b6BAQFBff//gP3BwIB9wII+f37CgwD/wL6AQH2+voIAfoCBP0DAPb69v8H+gb9+w3y+/0D/AMF/wH8+wz6AwAEAPsDA/IFCPwR9QcBBwEIAPP8Awz8/vcA+/n/+gIIAvX4+Qb6Agb/Av8GAgv6+wwF+/wLCgL+8QYNAP0SBPj7"
 ---
 
 Peter Brown's ["Remembering the Poor and the Aesthetic of Society"](http://muse.jhu.edu/login?uri=/journals/journal_of_interdisciplinary_history/v035/35.3brown.html) (_Journal of Interdisciplinary History_) presents a wonderful analysis of charity through a lens of history and society:

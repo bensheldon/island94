@@ -3,6 +3,10 @@ title: Generic advice for managers
 date: 2021-05-26 08:15 PDT
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c0a589ee30748934"
+  vector: "BwEECAD4Bf/+APr4/wH8/AgI+QP7Af0D7f33Bff2+v76A/wK/wgE/AUICfz6/AP79Pn5AgP3BA4CCwH9BPz++/wK+QT3CwPwCQb8AgD/AQsIBP0D/fUC+gUEBAQA+QgN/v7/BQoE+/0HAf4I+/sBBfj9Bf/3AfsNAvkCCfgJAwD8Cf8GBAD9BggH/v0A+gUF9Pz7Af0C+vD+/vz+/QD+AAb8Afz2A//4+P76BwQIBPPzCQQCDhH6+Qz/CgADB+/8B/7/AgP1+AAB/Az5/wD1+gcGAfn9+wcFDxIEAgYK+QD//Qj7+vz1AAD4/PwD//r5AvP28wEIAAj1DAr2BAIFAwf9CP74A/sE9wIF8wP7A/X6Avb+9Qr/+wH6Bwb1/AD5/wAE+Q0M9QD9Awf7+wD7AAEGCAH9Af8F+/YN+v8CCgD99AcG/Pn6/gr/Bfv29QgB/wv+Bv4A9P4G////+QcHAwYH+AIF+wgC/AMBBvP+B//8+ggBAAD/AP/+9gYFBP0F"
 ---
 
 From Allison Green's [Ask a Manager: "I Got a Terrible Review on Glassdoor, and I’m Spiraling"](https://www.thecut.com/article/ask-a-boss-glassdoor-negative-review.html):

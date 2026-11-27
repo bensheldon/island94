@@ -3,6 +3,10 @@ title: "How GoodJob's mountable Rails Engine delivers Javascript importmaps and 
 date: 2023-03-20 08:27 PDT
 published: true
 tags: [GoodJob]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "19b97bb948317675"
+  vector: "8P/7BQsA+gb2AP8KBgAFBgoD//4A/gn+/fkA/v70Bvz1/gAQBvP7/wQK9Pn/7wT1/gD6/v/2+P/99QANAgQE+Qb/+An+CPz++fn69wAD/fH39gILBAL9/g0A+/kLCAEDAgf4Cvz8DAACAwAL+/sGBv0AAQEF+AQJExENBQj6/QAEBf0M/AP8/vYLARL7BQH8/QMO/f3++AcGCAIF+AIHBQQEBQH2APn+Av76AP/8AgUD+/kFDwb6+f//CvgD+fcC+fwDCwT/+gwHBAPz+gf+Af749gIH/wIBAgn////7AQAL/P8NBP0KAQH+/P0G+AUC9QAD+/UN/QUGBer/8QX8BP32+gH0BwL9Cf39BP4G/vr8/f76+/cC+wH9+AkC/AX4+/D6Bgv7/P0JAQYCCf0B/fr8/gICA/gGAP7+BAIA/QD+Bvr9/wEABwEDBwH2APX//hD6+v4KBQkC//33Bv3+/f8E+P/+AQUAAAf4/Pj+9vz8Avf8/AgD/wn4AP0E8gD+"
 ---
 
 [GoodJob](https://github.com/bensheldon/good_job) is a multithreaded, Postgres-based ActiveJob backend for Ruby on Rails.

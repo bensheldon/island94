@@ -16,6 +16,10 @@ wp:post_type: post
 redirect_from:
 - 2009/07/moving-day/
 - "?p=631"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "eea6b71dac1dfd66"
+  vector: "AwgBAwYFAvL+9fwC//j3CgL//Qz7+wEFAwYB+/8H/P8ABQkICAQG+//8/AL6/AAB+AAEAfbyA/z//AIC/PsEBwH9+AP4+wECAf8H/AL9+vYG/gEB/v/3+wQA+/r5AQ75AAL/BQf+B/YB9fMD9fT+AQIKAfv58wMG/gj8/Pfr+wADAwICDQL6+/0CDQEBEgAL+PkI//sJ//rxBPn//QX2BgD1BgAE9vkC/QP7BAcRCQr5DgADAfn/9f8BAO/+Cf4D+Qr4BP0DAP//Af8LCQMG+/YC//oDBQ/5Agf6APj38QAC+/wFAvr7AAcCBP7+DQfuBwT5Af8K/v/zDPz7/AIB+/4BAgYK+/wF//T6Cfr/+gT8BPgB/gL7/gP8AhD4CPD6BPj6//4DAfv3AAEGCwUE/vjzAwYKCfH8BAAEBP8B+wD5Af/7AgAB//oQBfz9/QAACPH7/gH9BPb5AwP++wv8CfsBAvT6AP3/APsCBgwCBwj9DPT6BgoG8gUIBAEKBPr8"
 ---
 
 ![norman rockwell - moving day](/uploads/2009-07-12-Moving-Day/norman-rockwell-moving-day-500x311.png "norman rockwell - moving day")

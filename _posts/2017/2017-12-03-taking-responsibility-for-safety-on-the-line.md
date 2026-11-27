@@ -2,6 +2,10 @@
 layout: post
 title: Taking responsibility for safety on the line
 date: 2017-12-03 21:08 -0800
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9d1ec6bea99b7b2b"
+  vector: "AAT++v/8BgH8Bf0G/wD9+/n+9AIA+wMH7gP/+/30/vcA/wQLA/8F/Pjx+fz9AAb2AvP/+wP6B/kJAP78AAHyBQQEAQH/BPvzAAAD//4CA/IMAgIKBAMBAxYC9v8K/wMHAwICAgIBBv/+Afv8/AH2BP4AB/rzAgEFAf8HAAQC/wAC+/0K+v35AAgKBv0A/gv9+AP7Av72/gIPAAH9AgQCAv8A/QP++gD59f8EBAoGAAD3APoJDvkB+gf4/wH+BvMLBgMDBQj58v/9+fcA/gD9/gIEBfwE/gIB/BL6/gAP/wD+/fv/BQL56QUE7/j9A/byAAP8/wUM9gf4B/D0/fwE+AUI+QEA/gP6BgT++/79+PXx/gQC+PkHAhD0AggHBP0O/QMA/QcB/P72/AL7/fv4Bwb5BAn4DwX/APrx/PQFAQD/CAoA/vX//foFBv4FDQj+AA3z/QwDAAEG/fYHAQ0D/v4G+vwH/wcE/QgHDAMG8gH9+wT8CQwDBAUBAgQDBPwD"
 ---
 
 From Sidney Dekker's _The Field Guide to Understanding 'Human Error'_:

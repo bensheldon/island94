@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/10/professional-writing-sample/
 - "?p=2252"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "618c6678e7804af6"
+  vector: "//sAAQUG/wD8Av4HBgUE/wzw+QQD/wX+APr2+wAA/QoFBAMIB/3+/QXt/v79+gUA9PoBAAcG/PwDBAH+Afv7BA0F/wz79wH7AAcH+wgKBPoNA/wD8wH2Af78+AoEBgP4+vH8CQAGAu/29P0PAAgCAvoAA/3zBg7/Av73/AP3/gADEP4OBAP+AvX6AA0ACgT28wUIAgf6AP8K+fn/CAL8CATwCPr89/4A+AX5AQEED/j7CQoD+vgEAgD3B/IJ//4CBgMHBAv6/vz9/PsD+QEGDP/7A/0KBgf9/QL/BvkF/gD5AvgCAvUA/AsFA/f7AvP1Avb9AgX//QIHA/f9AP//+/kCAQgOA/r+CAr2APMA/fr2BAwAB/sCAgj7/AMCAvX/CPYIBfUFCPj/7/X+AgjzA/kCAfsHBQb5+QTx/P4FAQD8APH/BQH//AgBBPz8Bwf+//r3/w0A/QECAP/8Afn6A/UB/wIBBAMFBAgFBgf/9gn/+fsB/wYI+AoH/AYHAP0B"
 ---
 
 I quote a lot on this blog from other places, so I wanted to post something I've written. I'm Program Director of the [Transmission Project'](http://transmissionproject.org)s [Digital Arts Service Corps](http://digitalartscorps.org): we recruit and place yearlong, full-time, stipended volunteers in support of capacity-building projects at nonprofit organizations that use media and technology to strengthen communities. We've placed more than 400 Corps members at 170 organizations in 30 states. _We're kind've awesome._

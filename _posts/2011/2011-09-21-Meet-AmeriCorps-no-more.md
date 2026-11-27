@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2011/09/meet-americorps-no-more/
 - "?p=2888"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "fc2adfec261f8c26"
+  vector: "+P3/BgH5//8AAvkCBAYABQv7/P/1/QIFAP73/P4CBgkLC/8QDgX5/vj2BQH+//0E//sC9wUE+wr4/PwAA/r/Bv8E+AgE9QAAAQcIBQP/DP4HBgAA/f4A+/0B+AUF8/n8BP72CvkC//f1/PwPCAkA/PX8BQICBRIF/f3+9QwI/gAEFAAMAgL6+/n6AxQLAgf2+/wA+/z+/wgL/vkFEP7+CvsEAAcD7v709Qn7AAgIBf0FAv8D+wP/+PwCCP0A/fwFAPj+BgcBBgP+BPsFAQEEBAUB+ggK/Qr1Agv9AgIN+QAC+wACA/sH/AD5AP0FCvz6Bv79/wQN9/8CAfn5//oCA/36AQ77A/n5BgPx/PYA9wLz/fby/PT8BQD+9QH+/vwFCfYGBvgJA/P8+QL6A/7z+fsCAv0ICwUIAQv7/foJ/AD/BvwDBQUB+/wT+wL4AwkE//j3/vn++P8BAPYA/gL5A/4DBfvy/AP+AwoECf0E+AH6/fj3AQII9wcLCQL8+vb+"
 ---
 
 [![](/uploads/2011-09/Home-Meet-AmeriCorps.png "Home")](/uploads/2011-09/Home-Meet-AmeriCorps.png)

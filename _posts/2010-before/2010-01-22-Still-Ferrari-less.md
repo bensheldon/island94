@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2010/01/still-ferrari-less/
 - "?p=1724"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c0d8c664b7f2e13a"
+  vector: "Bfr9Bf0HAgIABgAHAv37/gH6+QT6+gcNBQP8BPoD/f0KAwIJAQn9AAHz9/oC+QMI+Pj+AQb3+gcI/P8ABfr/BgkH+wbu/BP0Av4G/AYFA/4H/v4K+gYF+QQH+fwGAfgB/Pn7BQII//QG/AYB/wD8BgUBBfv3AwgCEv71Avf68QD9Awb+BAH+APr7BQoJBf8E8gMF/AkC/QQI9vb7AQIBBgf4A/n9APwB9wkI/PwGCwH/BgQCBv0D9QH7APUAAf39+w/3B/wCCAL3/vEF+AIO/gsCCAAEDgT8CAD6/QT79QD5/AT+AgL2+AgJ9wIAA/v4AvH48QkOAQL+BvoEBPwC//sA/QoH+vn6APj//QYE+PoGBPn7AhL5AgMEA/75BfoO+vcAAf/y/f377/wY+//6Bwj8B/0B/QX49gcA8gYACQAHAP/8CfgC+QIOBv38Av74Af39ABAH9vwB+/379gAAAgD5AvsBA/38BQD7AgMD9wAH+Qf/CPsB/QEH+fwJ8wYA"
 ---
 
 > After all, there's nothing quite like driving your Ferrari home to your 6,000 square foot mansion after a long, hard day of fighting for the cause.

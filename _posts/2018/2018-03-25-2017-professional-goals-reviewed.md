@@ -1,6 +1,10 @@
 ---
 title: 2017 Professional Goals Reviewed
 published: true
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3c2318f9ab1a0cb8"
+  vector: "/QMCAAn8/AD7+vsC/wT+Avv79/j5+QAC/gb5/AH2AgQG/QEOBwQE/f/3+wIC9Qn29Pv4+Ab5/wUFBP349vr8+vsBAAH6BQX9AgARBwALDv0G/vcO+f75/gP+AwIBAgUA/vkFBv4KBPr7+gEJAQQDAP8HBQLtBAcMBwv/Bf4KAAABBf4K/vr+BP78/gsF/g/z8gn/AgX++vkKAv4A+QMBCPz7+gL+8QkC9gH+//4EA/jzB/0DCfD/+wP/AwMB//cP/AEABhD++/z++wf8AgH8/gAJ/voT/QUC/Af9/wAO/AABAgX7EfoF7wgBAPz9Be74AP4B+QoL8wUACfv9APv9/wT5CQT3/P0EAP0EAAYFA/T6AAcE/AD+BQj1/AP//gIEBf0J+/r/9wMDBAH89fvyA/YBAP/9DwED/v32+PQFAQACCfoEC/XyAgcB/P4CBxD+AAL2+AUH9v/++fYK//sEAf4B//wC/wcG/woJCPv88wn89wYA/wEKBwH98QUN+PoH"
 ---
 
 I changed jobs in March, 2017. It was a tough decision. I went into the job with some very specific goals to accomplish.

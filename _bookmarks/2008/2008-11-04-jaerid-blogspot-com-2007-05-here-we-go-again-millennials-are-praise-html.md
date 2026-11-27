@@ -5,6 +5,10 @@ published: true
 title: 'Life''s Lessons: Here we go again – Millennials are praise junkies'
 tags:
 - millennials
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9c0582a1bd58dacb"
+  vector: "AAsDBwP+BgYE+wH7Cv77AP36BPz4CgwF+fv78/UI/Qv4APwF/g8A+gP1BAH+8P73+/7z9wrzAAEJBf8ECfnzAAgCAP30AwD7CggLBvv/APsJAQcB+vkF/f/9APn8BAT+9f4EAgMQ/gb89f0EAwT6B/4ACv7/AwAIBgD+AggC+AADCAML/gL/BQn7/ggAEQAD+f3+AAEABPf3+/z++wb7/AEB/gIEAgj0/gUDAvsHCPf6CQUFCgP9BPT2//IGDv75AQoA+fkEBQPy+f/+BP0G+BD8AvkBAQIFDAIF+AIE7wD8+wH8APf2+P4AAwAABPr0Afvu9woL+f//BQj9AQH+DAn6CgcDCPv3/AX09AP7BQAHBgL7BgL7/wL6+wYAA/oA/fICCP4C/AH87/sH+vv39wv5CwD8/f8H8f3/9vD/AAAJ/v4FBP37AgUAAP79BAIDBP35/ggCAf0BAPwAAPoAA/UCBvkFAwQF+/0IDPr3+g38CP4B//8CAgcE7wMS/gX8"
 ---
 
 Friday, May 4, 2007

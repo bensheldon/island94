@@ -7,6 +7,10 @@ date: 2023-04-29 20:29 PDT
 published: true
 layout: book
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "7aba8f30bacf9672"
+  vector: "DP8IAAUBBf0DBgED+P8A/gL59wwA/xAB8fcA/vb//v0B/AEDCAEJAf7w9fwC/AED+Pf5B/75+QH/BwD2//wDAwIAAAb/BgX2CAL7/Pz+B/4FBwYB9PYD/QMC+PkJBQn4AAT2DgMH/vcL+fP8/fv5/QP/DQQE+AQCCgH9EgIG+gADAgIDBwH5+wADAv39AfkH7/0Q//8CAPr3+QP++wUCCQHz/Pb/+QMD/gIB/QcFA/71CQYHDAP++QH/AfMG+fr5BP/2/fH9+wAD9vQD/gEC+wQE9vT6+gv5CgUCAgH69gACAfUQ/f7++gb/9fkPAAf7CPoA+AIG+gMJCAf9APcEBwH7B/0CAfv2/vb5BAH8AfwBAAP4A/sK/P8B/v37CPsBA/78/AcIAwD89RALAwb3AP31CgP+B/kP+xAB+fwBCwAC+vwKBv8G/vgHCAYLCQgGB/f3BvwGAPr8+vz6+AD7//YDAfr/BQf+AQQOAwX7+AQAAvkEAAv+Af0O9QoOA/zz"
 ---
 
 An "Event" has caused rabbits to become anthropomophic. This exchange is the book in a walnut-shell:

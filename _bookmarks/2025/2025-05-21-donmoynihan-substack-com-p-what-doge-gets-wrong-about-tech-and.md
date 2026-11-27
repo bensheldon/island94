@@ -4,6 +4,10 @@ date: 2025-05-21 05:15 UTC
 published: true
 title: Just a moment...
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1c15bdcfc1493540"
+  vector: "AfwF/gf9BAP/BwQDAvMA+/j5+v31/vsGAQQB8P/8/f0HBQAHBgMF9Qfy/vv3+gvz/Or8+Qj8/fYDCv/8/vn8/wcHAPz29v0BA/z/8/4OCfoOAfgT+f/3+gX4AwcA/wP9CAAEB/kKA/39/wABAAL++QIAC/n4A/8AAwH3+AgF/gD/DvoM/P8B+gQBBwoCBA3/8P4DBgT+AfkI/QEACQAHCwYBBvsA9Qr//wEBAgMHAwH6BggSAPwH+QT5/fsGBv4I/QP2DAkA+/3x//wA+/4A+PsBBP4R/wAEBAcA+/0K+gD/+/gDCQH6+RAF/fsCBwD5A////gYI9Qr8AfD6BfsDAP8D9wYA/PoA+ff39vUA/Pr0AAgDCAH+/wkCBAYBA/4G/vkEA/38Bu75/wEO+AL9BAP7//cADAP4+Pv47/4KBQABAPf8A/b7/PkBBPwCBwgO8wP9AwH78/oCAf4C/g4AAQUB/gcH/Ab6BAX+APz8/gcA+AT8AwAJ/ggO+QP+AgUE"
 ---
 
 One reason that transparency did not solve problems is that government employees don’t want code or data: they want solutions that work and fit into the constraints of their world. Government needs permanent internal tech capacity, not short termers who build some tools and walk away (as much of DOGE will in the coming months). It needs people who can build, integrate and manage these tools in response to feedback in a public setting.

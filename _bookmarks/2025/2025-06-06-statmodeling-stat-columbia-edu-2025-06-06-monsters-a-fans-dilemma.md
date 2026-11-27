@@ -4,6 +4,10 @@ date: 2025-06-06 15:27 UTC
 published: true
 title: Just a moment...
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3041cc5d8b705a69"
+  vector: "+/YDAAsCFf8L/gMCBvsI+v75/fwEDAUCA/z5/P4FAAgCAPcEBBUKAvX4/Qz9/Pj++AD39/zyBQf1B/8G/vkCAf/8Bvr0EAMA9gn/AQQDAgT6//0H/Pn8+v4GBO8MAgED+v72CwUBBfgH9vn++/j6//4AAQAC/AEGBQj0C/0FAAANDgEM+Qj1+/8CAQX/BP8G8f8E+gAGA/r3Agr1AQL8Awb8/vUC7QEB/QX9A/kXAAj+/QMDDAz9Bf/5BP8FBwwBBADwBf/7BAP7/P38BAH9Afv8/vb6/AD5/gX5/P357gDz+fsL/AEM//769QMA9wr2/wICAQP5+/4HAgL78/kDAwD//v4BAPT/Bfv7BgT98vwFAv/++wj4/vr/AQL9Aff6CPcCBAL4Afr4+AYLAvvz/wX7/gwABfwLAwT/BQAL/QD/A/v7Af4A//kBAfz1/wUD/Qv9AwgC+QP1AgIJAv4AAAUDBAT1ABAL+/kIBv0A/f8DAwQC/gwD/wAE9QQJB/sE"
 ---
 
 I don’t know any of the people involved, but I suspect that Skerry was not intentionally writing in jargon; it’s just hard to write clearly. Harder than many readers realize, and maybe harder than you, as a professional writer, realize. My guess is that Skerry was trying his best but he just doesn’t know any better.

@@ -5,6 +5,10 @@ date: 2016-12-02 18:31 UTC
 tags:
 - inspiration
 - purpose
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "24642a00bf4d1fbb"
+  vector: "/ggFAAEKCfcJA/cG/wIAAvT5+Ab8BggI9P/+APv/BvoF/wENCf4F+wX8AQQB/wP7//n6Av7z/wsGCQP2+gEGAALuCATuBf0DBP34Av/5/v/+AvwJ+gEE/gT9+fP1Ef4F/vz3CQn+AvYHAPYA//38+v8G/v/39fgLBAYCBv7/EAAF/AoJBgL5BPz3+PsBAwD49/oF/vb+/fYE+gUBAAT7DP/7+QHx/vYBAgP+BAT6BQb0Awf+BvQBBAcIBPQA+AYAAgP+//gC/gcG/P0FAAQM9PoE9/kO9Afw9wMBAP73+QAEBQQHAP39/QIN9gAIAPjuCQUK9gP/+gIACAX+/PgI9OwEBQMEAf/5/vH9A/37BQr4AAUE/AgDAvX0BgX7CvYOAPb4Bf0L/vv7+wX+BvX/BQf2+wf/+wENAQf+AwX+/gD+B/0F//wF/QAHA//7CAYF/vb6/ggA//f8/vwD8AgGA/oI/P4MBQkEBAcH/gEFAAr6+wD+BgX+AQUHAgEC9wID"
 ---
 
 From "All Clear" by Connie Willis:

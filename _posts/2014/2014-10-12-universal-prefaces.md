@@ -2,6 +2,10 @@
 title: Universal prefaces
 date: 2014-10-12 17:02 UTC
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d821ded7aefd52a0"
+  vector: "+AIB/vn//QH5AfoI//77CAUAAfz7BAEA9wQE/AL7+gX5+v0KAQYIAvkH/v4G+/z5/e/0/AH2/vgF+gP1+/3zAQUCAAv1CfcECgsDAf36/O8BAAUC+/v++gMICvwFAgkD+Pr5BAEG+/AF+AP4Bf76AvD/CQMNAQn/AQYBCwL6+wD+Cv4FAf0B/AEFEAb/AwAE//38+wQE//n3/wMHBQP6//sCBgb6+wn9AQL9/g8KAfj7CwEEBv79+/sGBvgACff9+QrvBQT09Av9AfzyBP0B9f8L/QL3+A0MCwz++AUD9AAH+gMFAPzy/Qb4A///+hHz8gD++QUM/fr/BfgBBQEHAgL8/wIBCwMAAf73+QD8AgH6/fr++/b7Agv8CAv9AvsFBPb8AQIB7v/wAAEECPr3/AX1AgYEB/j3+QAB+Qv8AwAA+wsLA//6BPkMA/z9AfsFBPv6Bwf8//wECQIGAQkGCQUBAPn9Af8AAfwGAgUCBwH7C/z8Bv4GDPkC8wMOBfoC"
 ---
 
 From Sandi Metz's ["The Shape at the Bottom of All Things"](http://www.sandimetz.com/blog/2014/9/9/shape-at-the-bottom-of-all-things):

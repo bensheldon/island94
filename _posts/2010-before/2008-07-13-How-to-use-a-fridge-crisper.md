@@ -10,6 +10,10 @@ redirect_from:
 - observation/how-use-fridge-crisper
 - 2008/07/how-to-use-a-fridge-crisper/
 - "?p=232"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "b501246e9a668498"
+  vector: "/vcHBgH9+/oG/QL8CfAFBAcG+PoG/wL/AfkB//YDBAIA/AH8Dv7+/PsB/gD6B/wJBfj5Cf/2AgkA+gP7BfED+wf4+AcIAfAJAgYACv/7/AQF+vb//gAI/QcJDQEDA/oAB/39A/f6CP3//f7+/AEDAvn8AAEEBAYE/An5AQD8AAAABQIABPP4BxEF/fwAA/v59f8CB/f+AgD/9Av6AAAK/wEA/wICBfsBAAYCBAL8/g3+BwT6/wAA+gv0+/f9CQP0+AD+AQQDBf0EBvv8+AD69g0J+ALyAfcPBQYC/g8E9wAF//sMAP8A/f3v+QAGBP0LAv7+//T7Agv9AAYH//4C9woBCfz1/ggDAf/7+QEPAPsE/gf39QIAD/n7AwUB+f76+wX//gH39/0F9QAAC/b0CewH9gIIAff3CA4EAw4AAgAD9wII+/4G+gcCAgT1BQ7+Bgr5+/3//PwUAQEABgUA/gL5/AT8AQT+//vz/fz2/wj0FQIDCgn6/Aj7AAMAC/j9"
 ---
 
 ![](/uploads/2008-07-13-How-to-use-a-fridge-crisper/fridge-500x453.png "fridge")

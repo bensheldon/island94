@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/04/quotes-on-self/
 - "?p=1872"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ac3a99487900843a"
+  vector: "+wMEDAX/BgUIAv76+/gEAP4A9Q0CAv7+Af//AgL7AAgEBQEIBwb//AD++vsC/gQE/ffv/vX8BgAFBfsDDvkJBgEDAgP9A//4/P3+9f34/gQADfkA7/UC+f0F/fr5AAH8+wf7CAQLAQr+/vkB8gPx7v3zBwX/BAcHBP4IA/kA/gAD/QAK/QAE/wkCCAkC/wD+7vQSCQEO+/X8AgP+9QH6DAHwBv/+AAXu+gD6/gAGAf7vAwIFBvr6BP8F/foI//4CBfz+9/cB9QH5+gL3/P/2+AD//wQDAAn3BAsK/gcB+AAD/vgKAvf+BQb69v8PDfT8BP79+v4S+fsBBgz2+vkFCfwG/v38//38+v/+//z7BAD/CfsE//8K/Ab5AwIBAP0BBP/4BQAAAvP4+QX88v31AvP9AgT5AQIKAAACAvQG9wD7+AMBDgUC+/gLAwn/CAUCBvUB+wP/+fj/Av77+QADCwT8//8AAwP/BQgFCvr6AgT9AQUJBAsIAwAX+wMMA/3/"
 ---
 
 _Tales of the Hasidim_ by Martin Buber:

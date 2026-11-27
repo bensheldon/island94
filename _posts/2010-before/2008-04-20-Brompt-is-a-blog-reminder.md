@@ -14,6 +14,10 @@ redirect_from:
 - articles/brompt-blog-reminder
 - 2008/04/brompt-is-a-blog-reminder/
 - "?p=216"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "cfb6e47ff2176a6f"
+  vector: "+PP4AwkCAf0C+fwEEAID9wr2Af72/wAIAwD8APsABQADBP0AC/4CAP34AAEE//wF9QH87gkHAQP9/Pr3A/v7/v0E/RAQBvwF9hIC/gDy+/70/vsCBwAQBAACAAAM+voH/v35A/8J+vkHAPgNA/75CAP4BAALAgAHCw0D/ggFAQAHCAMDAfn0/gb8BA4AAQcA+gcR/Pr8/gMC/AoICgEJA/f7+/j89AAF/gL2//sAAvgF+g/6BwP+AwTyBf4H8gz1/vkCBfoIBP75+QD7/Pv/Bgj6CQP+/gP89AX/CAMB/wDw//wK9//3BgsE+fz5Af3+/vD2Af0C+f8JCPsKAfgG/gf8/QQFBfz/AAn/+PYFAAkAAwD6AP8C+fQD/QD5AfoCAvkI+fr9DgcC+wwCB/z0+fj9APYA/voEBwH/Av0FCgD+/fsF/AIC+gQABPYDAwb2BPj6+wIJCfgM/f4H//wC/AD+BAf3//kIDPn+BgP/AvsC/QD2EAT/BAb3DAEFBfUI"
 ---
 
 [![Brompt.com logo](/uploads/2008-04-20-Brompt-is-a-blog-reminder/brompt-logo.jpg) ](http://brompt.com "a blog reminder service")

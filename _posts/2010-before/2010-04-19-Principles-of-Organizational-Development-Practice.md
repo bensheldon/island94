@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/04/principles-of-organizational-development-practice/
 - "?p=1891"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a9c7c206bfd7b062"
+  vector: "/gP3Af/9AgQIAP4L/gUGBAQB/f/8//4G7/0C8wf8DAYJ+/sRDgT/A/b6/gMB/P/7+vz39/kB/wcE/fv1AwQBBgIE/An28f75A/4D//j8DP8KDvwH9gMD/gAD+AP38wP9AfcDBAEHA/f++/8HBQn2+Pr5Dvv8BQH9BgEJ/gcFBgABAwQQAP0B/Pz+BgsHAQX1+gH/Af7+AwcJAP8H//8EBfb8+QP99Qnz9AMB/wQGBf/5AwABCwP7/AL6/f0I/fYEBPf//g/5+gQEAPf3+vsACvcF/QAMAQIF9Ab+Av4NBwAD+fkEEv34+QL+/Pj/BPf89gEBAAELAAIKBf34CPwB/v8F+v8H+vsHB/z6/vwG//329gr8//0J/xD6/v0GAQAPAP4IB/f++fr+9gj1/PL4+vfzAgj6AgQF/QjwCfID/AD1/gcFAQL/BQIM/wAAAAv/Bwf6/Qj/9v0B9v0H//wFBAX/+f0GAAYH8xACBff/9wr2+vr9BgT/CAoBBwMHA/4G"
 ---
 
 From the [Organizational Development Network](http://www.odnetwork.org/aboutod/principles.php):

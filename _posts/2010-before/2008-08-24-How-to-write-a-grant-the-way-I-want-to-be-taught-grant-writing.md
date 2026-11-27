@@ -12,6 +12,10 @@ redirect_from:
 - articles/how-write-grant-way-i-want-be-taught-grant-writing
 - 2008/08/how-to-write-a-grant-the-way-i-want-to-be-taught-grant-writing/
 - "?p=245"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "13cb831b77f1d226"
+  vector: "+QQDAPsE//4HBPEC/QL4CAQA9/sG/QQA/f329QMD/wX//AYM/wIG+/j4BwUE9AAB/AIL/AX/9wMD/Pv3+gf4AQD/+Qv7+gEBBvkJBgAHBPACCgAL/v8K/QoKA/sC/AUFAPH5CwAABO8IAAEACAMEBAMKAf76/Qz/AgUD+Ab5/QD+Df8S//4GBev8BQkJCfgA/gICCQb8AfwI8vUDAwIA/QX3/fwG9wXz/f8C+wMHBAEDBQEB+v75+P39BvoKBv4C+vn7Ag/09f76/Pb2CgYDBwb8AQL7/wf9Afj7AAT6/wACAAgEAgD08w4B+QYB/PTz/vsFAwAR+QEGBfgB8wb9/vn89fwL+voICP4J+vj++gECCvz7AQYEAQn5CgD6CfsD/+wKAv0D/gYE/QoJC/jz/QH+AwT+AAf2/gX1/Az+AAAE/vf///Xy//78Cf308wL7Av7x9/0B+vsGAAb7+gICAQQEAQH9AwsLAAcD/PkC+/7/AAP7/wQJBAACBwADCPv+"
 ---
 
 ![Grant Apple](/uploads/2008-08-24-How-to-write-a-grant-the-way-I-want-to-be-taught-grant-writing/grant-apple.png)

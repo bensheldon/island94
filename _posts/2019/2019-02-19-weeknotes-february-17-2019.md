@@ -2,6 +2,10 @@
 date: '2019-02-19 07:32 -0800'
 published: true
 title: 'Weeknotes February 17, 2019'
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d37767984ff6619a"
+  vector: "AQkB/wYEAQAHAvAD+wUB+wj89QD2+vkF8gP4+gH7/f8F/gIICgAA+wf2/QAC8Av48/7/+gP/BQgJAv/6/Pz4BwD7Bw37/fj5Bv0K+gD8B/cMAwAK9PwBBAn+9gQE+QcGAf8GBgMKBff/9/oF+wj8A/z3Dgb5BQYHAAcG/AADAgAECP0LDAAFAv3/Bwz/BA757wT//Pr2/v0DAf8C/f/+A//0/gH5+Qf77wH7AAIKD/L5/wT8Dvz9+wbxBwD//fcLAQv8AQX6Af7++AQH/v/+Af4FAwAI+gEF/g38AQIJ/wD+/fr+APj27gwE9fwCA+/1BPgC/QwI6wMABwD4/vn5+AH6AgL8BfsBAwL4/gAF/vr9BgL5/AD+AQYB/wYACP4IBPwHAfr++/369QAG/vr7AvkACP7/DQP9/wD1/PoH/QD+/gEAAPv8AQUKA/YECQsFCQHx9wgAAP0D+AEIBP38BvcDAvcEAAgL/QAFBvn/7Qn8+wP3DAEGBAkKAAUIAf0F"
 ---
 This week I created a [Dockerized development environment for Panlexicon](https://github.com/bensheldon/panlexicon-rails/pull/212). I find it’s forever a struggle to bridge the Docker-for-development and Docker-for-production workflows and configuration, but this is Docker-for-development.
 

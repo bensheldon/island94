@@ -2,6 +2,10 @@
 date: '2020-07-12 18:42 -0700'
 published: true
 title: Engineering Operations is not the same as Development
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c6f6140d2b0eb48d"
+  vector: "+gIEAwD1AgQA/P8FBQEF/g748wAA//sG9QH29gD5AP8EAQMGCv4B+fXw9wv+9gX2/AH6/gP+/QIKBfgC/fz9BQIJ/fn+/fwB+QcCAP3/A/gB+vkJ/v8CAw3/Af0MAQsBBPj4BgIBAvYF9/r++/sAAv/4/gD5/AQGCAoB+AwCCgD+A/oIBfcB/wT5AAgH/A/+/g4IAwXr/gIFAvwJBAIC//wH/Qb59Af/8AH6CAMB//36/AMHDgD3/QbyAAMB/fcB+/cIAQP7AAIE/AD+Cf3//Qn6/v8GAQAC8w38AP4IBgD68PkJBPz99Qb57QD+/fD9/fwE/wEJ8gf+B+76APj8+gED/wQCBgQJCgD6A/4I+vv2BAUE//wAAwfy9g3/AAkHA/4EAfoDBPz5+AH+APvyA/4CAgX4BAUAAgDuBvQOAQABBAECCf8ABgUBCPv7BQcGAAHz/wgBAQAK+wMQCgb8/wAH+/oCAQEFAAcEBAEB7AMH+/77AxIFBQb5DwsAAAIF"
 ---
 _I wrote this memo several years ago when I joined GetCalFresh as the first outside engineering hire. An early focus of mine was helping the team move more confidently into an operational mindset: this memo reframes the teams existing values that drive development as values that also support operations. This also overlaps greatly with a talk I gave at Code for America's 2018 Summit ["Keeping Users at the Forefront While Scaling Services"](https://speakerdeck.com/bensheldon/keeping-users-at-the-forefront-while-scaling-services)._
 

@@ -12,6 +12,10 @@ failed_files:
 redirect_from:
 - 2011/01/the-benefits-of-age/
 - "?p=2434"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "33b5eb36e36ebbce"
+  vector: "BgkB/QMD/wj4BQcIC/YBAf35/vj1/wAEA//y9/0FBwwN+/f8BA4EAgH3/P8C+f799//5/gL0AAUAAQP++/YA+v7/Bv/1AAf7BAIC9wMDAv0HAfgH9vcEAwT+/QrwBgv79gX6Af0FDP7//AIF/gT7BP0DBvP7BgP9CgT7CPgA+wD8AvsS+//8A/wBAv8B/gEF7v75AQL88vQF+Qf/AgADAgj5/vkCBPz78AMGCQcKDvvxCvYJAgn7+Pv/9fkH//v5Awv/CgQRDvz0/f8DBAMF8RD8/P8KBQgFDgkC8wcE9gABCgYBBf8E/QAD/wX9Avr4APj18wAM/gYAC/b2/fv8AAn1AAH69/v89AEA+AECBPf+//4GAQb7+goAAwP9+/37//YGBPwI+f72+v/9/wn7+wQCAvr5/QL5+AL99vb/+wAICfwBAf37DAQHAQEECAz/+/z/BBAK/AT4/QUL9/sAAvv/BQP8BP4JAPoACggA/QT4AwQIBv8A/P4C+/0O//cA"
 ---
 
 [![](/uploads/2011-01-22-The-benefits-of-age/boom1-500x241.jpg "boom1") ](/uploads/2011-01-22-The-benefits-of-age/boom1.jpeg)

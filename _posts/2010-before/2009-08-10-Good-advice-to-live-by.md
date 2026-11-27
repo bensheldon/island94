@@ -14,6 +14,10 @@ wp:post_type: post
 redirect_from:
 - 2009/08/good-advice-to-live-by/
 - "?p=668"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "5b35802f7e85d47b"
+  vector: "A/0C/A8EAwH/+wEI+P7/BPkA/Qr3AgUO+AQA/fr8CgUDAgwMAvsA/Qfz/PwAAAIDBPv79QHs//4CAQH+Af3/BwsA/gv1AAP+BQMA+gMABf4O//0B+PwA+wz78AAAA//9+fkBB/4GBvT78QAOBAb7Av4AC/r6/wb//Af9AQD++QD7DgYH/wH5+wEDCg4JEAD19/YH/wcBAPr5+PwFAgEAAvf9A/v/+AX88wH6BgYRCQAABgL+/vr7+vb3/ucI/PkC/QUD/gT8Bf77//oB/AEGAwABB/wVAgz7BAr7/vwD9QAF/gME//77/gQE9wIGBvjzDQD3+AUN8gX7AwIBA/wBAgAB/wz9+vgA9/X1+PUC/f/2BP4HAPb/AwX+AAX/A/r9AfYGBPoE//719O4EBQb/+wX3A/8FBfv+9gYB/PkHAgD9//8NAv0B+wUG/gL+CwT//P75BAQD//YBAAL9//v7BfME/P8ACQP+/wQQAvUC+hAFAfwABQMH/P0O+w4F9PgC"
 ---
 
 Douglas Rushkoff wraps up _Life, Inc. _with the clearest conception of "act local, think global" I've read (and usually seems to be misinterpreted).

@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2011/01/authenticity-and-such/
 - "?p=2452"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "35bd17a87eb3b5cc"
+  vector: "+AD8+gv6Av0I/v4HB/n9+gQD/f74AgIBBPoD/AD3AQf++gMLDwUE9gP4+Pv5Av0CAAL4AwH6AP8BBAH4BwH9Bw79AwH6+wP7BAH59/ny/gAHAQAF8/v/+QUB+vkAAgj9/QEICPoFAvoI8vT+BQH5/fv7EQgFAvn7AAkACP/8BQD5CQIM+QX6AfgDBRH4CP8G9PUK+/sCAP35/QcFAQP4AwP8BAUD9Aj8/Af+Af8KBwD8DAAFA/fx/PUABPMGBAAE/Qn8+v4I+/35AAf/AwAGAPwF/P7//gz3AgUF/QH/8wD+8f8P/PTwAgcDAvcH/v32BAb8CQ4I7PwADAH+/AAJC/38/AUIBgD6+v36+fz7/wMBAgUCAv3/BfgH/g4GBfkHBf0CDPcE+vj6+vsEAvz+Av72/wYL//AA+gf/9fj8AwD9/AIEBgoI8voD+wH9AAAH//T8CQoKA+r7BQH7AwgCBPz8+AL7Cfr7Bwf9BP79Agf/CQX8CwIE+v4P+gAQ+gf+"
 ---
 
 I read several books on _authenticity_ last autumn. Below is from Andrew Potter's _The Authenticity Hoax: How We Get Lost Finding Ourselves_, which is representative of the book as a whole---thought provoking stuff with the occasional reactionary junk:

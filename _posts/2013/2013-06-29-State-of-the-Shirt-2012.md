@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2013/06/state-of-the-shirt-2012/
 - "?p=3093"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "58001a2a69e7680c"
+  vector: "+AgBBBD+/v34+AQIBAAIAAD3/Pz0+AME/vb8/f//AgoCAv4EBfz/BP/x9QUA/QYM+goD+QP4+AoBAP77Bvv8AQT++gj5/wYA+hEI+wn+AQT6Af0E+AP7DAP//QgJ/vsA+AQEDfoGAvwA//kQBgL+CAL7APv/ChAGERcB/vv7AQAEDQYEBP7/+P0CAggACQT5//sI/gL4AAX9CAgOBf4N/wUA/v4C9gP8BAP8AfkJDv4JAAH7Af/19fnxB/cJ+goB9f4H/Pr8BAgA+P///gEABgYFBQIG/QX6AAL+A/7/BQAB/wUDAfj6C/0DBQLu+/8EDf739PYI+PgCBwMH/vz3+QIGCgn6/gH3BPv/A/j89PgBAf0ABvP9BgMJ/QH7BPz8/fgB/vkAAQX5+PD8Cgv0APQA/gYDAfX//gj5A/kRBQD/BfkECAYF+v8G/v4ACfz2+Pv5+v0DBPwC+vYQ/wD9Afv3/Pj3+QL/AgMIBgP19vkG+f/8/wX9/v8CBgcA7fT/"
 ---
 
 [![dayoftheshirt-2012](/uploads/2013-06/dayoftheshirt-2012.png) ](http://dayoftheshirt.com)

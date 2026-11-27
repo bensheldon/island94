@@ -12,6 +12,10 @@ wp:post_type: post
 redirect_from:
 - 2011/05/apps-off-the-approved-vendor-list/
 - "?p=2642"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "0003ad39bfe0a52c"
+  vector: "//8E+AQI/AH8AvoAAfwCBQj1/wAC/QECA/72/QcCAQUECQkDAvj4+QHx9gUC+wYB+wEF+g38+f//BP//BP71C/799wYB7gr+AgEMBPgDCvsI+wIJAAD8/gj+9wUFAvz9AP0ECvYFAPME/Pv7CAv8/A4HBgH0BAf6/QT78QIB9wAAAAEM+/0FAvQCAQ8FCBT98v8GAQP4BP8J/v8DBAL9AAMBAwUC9AIH7wD9BgAGB/QBCQYJ+f/+/Pnw//gD/fwD+AUF+Qj6Cv39+ff+AggD+Qr2BgAIAQfy/wX2BvwI+wD9+Pn9CAH89A7/9/4JBP/1Cfz//ggK9vcC+vn1Av0H+/IC/QYH8AP4Avv5A/sH9fsD/QEG/wL9BQf+/AL/BPgGBvwK/vsE/wL5+PMMAw37+gEHB/kIB//49A78AAEGBwAGBvH+/QD6CgcAAwXyBgD+/gL4BAAI+fv+AP0B/QP/BP78Bvv7BQMB/wkJ/v8C+/8OAPr5/PkR//8AAwUB+P4I"
 ---
 
 I ran across a year-old article I had bookmarked from GovTech entitled ["Do Apps for Democracy and Other Contests Create Sustainable Applications?"](http://www.govtech.com/e-government/Do-Apps-for-Democracy-and-Other.html?id=765522&story_pg=1&full=1) ( [via Justin Massa](http://www.justinmassa.com/))

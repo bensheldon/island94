@@ -12,6 +12,10 @@ redirect_from:
 - node/265
 - 2008/10/community-organizer-equals-community-outreach-minister/
 - "?p=265"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f9da605e08e37f67"
+  vector: "Bv76D/r8//n/Agn+AgYFBv4F/QD4/gEI/gL6/wEHCAUKCQwSBQz//AIF/PcB//sF9u0G/QkE+Qz6Bv77Bfv8CQD9+wgG8gj6AgMA/gIHAvoCAgL//QP2/gb88gwJ9f8DBPf/C/r7BPkF+fIA/AcDAv0CA/4CCf8L/P77BAgF/AD8/fsLCv/6/wUBDAoLBwT98QP+AQEGAAL/+gH/DAT9Awv6BQQB9fr68QAFAgECDP0ADgT5BAUB+AcGCfUCAv4HCvMCCwj/CgX4C//99wP6Agn7+v8HAgUEBfYDBgAN+wD9+//+Bvz86wX78PwDCv79AP/+Afv7+wUD//b9//77Bf339wr9+P32AP4A/vkCAPz1//L7/gQGAgD+8wIG+vcL/PoB+fkCBfz29vgGBwL/9/ryAv0F+AAK/QsF9wECBQD+Bvf4D/n5+AQJ/wD2AgQEAv/7/wT9/fwC/e8HBPb5BfgF/wX4AAj6/vkEAf8LAgYB+/35APkF9gEFDfn3A/f5"
 ---
 
 While wasting time on the political blogs, I ran across this [interesting comment](http://mnpublius.com/2008/10/mr-positive-hanging-out-with-team-smear/#comment-27022) in the comments of an anti-community organizing article: _Community Organizers_ are the same thing as _Community Outreach Ministers_ :

@@ -3,6 +3,10 @@ title: Behaving like the character in a story
 date: 2021-10-11 12:14 PDT
 published: true
 tags:
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "95ba897eec7f5494"
+  vector: "/AwGBgEEAQMM/f0DAvn4BAUC9AwCAgb/APoAAfcD+wT+/wMEAw0F+gj5BAf4+QMB8/z0AQD0AAMFCfwCAP76BAj+/Q78/gv/B//8/f0CA/4AA/4F+QAB/AIC+/QK/AQH/QP1BvwFCPkK8/zz9/8J//sDEQED9/j3/Qb+FPr4AgAFC/oPCgL9/wELAgYCAPEK9fwFAhAB/AH1+f/0+wH6Awv1AQD5/P4KAQL4Af8KBvb0BAT8CAb1AQD2BwEHAP0EAf76+//5/fr8+voF/f76AwUG9wH1/wf5/AUL/v/5/AD8+AT6AvX4AAT29fkDAwj9/f73+f4D+fsICAb+/fkDDQL8+gcDAP74Avf1Avf1A/wKBv76/wcC/ggB/wH+BfYE/vAB/AH/9PkA+QMG/ff2APf8BQwJAgQDAgUGAAEE/gD++wAIBAT/BfsPBP36AAf8Cvf6BAIE+vf9BPj4+wYDDAIN+/oNBfkDBAQLCgL+AP8KDP0CBwb8/gIV+f8FBPz3"
 ---
 
 I enjoyed reading Robert Kolker's ["Who Is the Bad Art Friend?"](https://www.nytimes.com/2021/10/05/magazine/dorland-v-larson.html), specifically about the non-symmetric relationships of fiction and inspiration.

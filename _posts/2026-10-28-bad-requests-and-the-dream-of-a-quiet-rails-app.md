@@ -3,6 +3,10 @@ title: "Bad requests and the dream of a quiet Rails app"
 date: 2026-10-28 15:00 UTC
 published: true
 tags: [Ruby on Rails, Ruby]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "18a715ddb5b5dfbc"
+  vector: "/wP8AQX3BgcBCvwECf36Agv6+wP+Cv8L7/L6/fn4A/72AgkDCfn5+gb/+Qj69gX+/PgCCAkB/PH4/f4HBf78+AEBAgEJB/3+6wIECAHy+P77+gEHDAD9Awz9APoEEAQCBff6Cwb7BfoE+gUIAPQAAgUDCv4DAP//BQ4HAgn8/QACDP0G/QP5/ggDAPoG/gb+/wYLBvv4/gADCf8DAQT/Awb/B/z+Bfj28wTxBQD3/QAC/PwHEwv0/AX5B/0L9/r6B/oFB/4A9wEIA/3xAQQB/gTz/AD0BwX9+AwAA/sBBQD++P0FAvYEBQP5+/39Af73+/oAA/wG+/v4CPf9+vYFBAUE/fz+C/7/EQj/BgUF/QD+BgD9BAIHAQL++Qf7Avj9B/0C+wr/BQD3+wsB9fv6APb6AwYG//cFAPwBA/kG+wD6AvcABAMDA/wBAfr1/QP3/AL1+foC/wL9/AAKAvYE+wIC9xL3/QYABAEIAv0E8v8K+vUCABH+Agf0AQAU/PQE"
 ---
 I've kept a notebook page since, oh, 2013, of common exceptions I've encountered ever since I started building production Rails applications. It's a big one.
 

@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/12/axemaker-conclusions/
 - "?p=1609"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a51f8b8abaa46431"
+  vector: "+v/9+QL5AAL/CP4MBf7+//j0+gH/AAL++wP8+QH4BAv9AfoIC/sD+AH5+gb8AwD58f7z+wj0/f4CBPj7/fj6AQr9Bgn0/P77BwUE+gP4Bf8PBf8D+QD8AQP3/vwKCQQA/gD8DAEJAvj69/0G//3zA/oBBfz/BQn8AgMECAkB+gD/Cv8GCP78+/4C/A0ACgv7+/sK+gcDAvYE+/8DBgL4B/f5AwH78AL3/wv8/P8KCwL9/foIDPkK//sEC/v9/QEMAQgC//kC+Pz7+P0CAv79+Pz++wAOAg0CBwkA+gUA8wD28vUEAPv7//j9Bf0HAPr1A/gC/QsK8/0CBP8C+gAC+v7/AggHA/gA/QLx/vv/9wH9/gUDCe0AAgX5Agv7+/gECPwFD/wDA/r4+wMM/QD3+/77BvsJAwQBAPj/8fgH/wD6A/sEBP8D/fkMCQL9EA8K/wH3AhP/BfcCAvP+/Aj5AgD/AAD3BwL+/wD+DAL9+AMCAAQDDQIQ/QAM+gQR9AH8"
 ---
 
 The following is from the conclusion of the _[Axemaker's Gift](http://www.amazon.com/Axemakers-Gift-Robert-Ornstein/dp/0874778565)_ by James Burke and Robert Ornstein:

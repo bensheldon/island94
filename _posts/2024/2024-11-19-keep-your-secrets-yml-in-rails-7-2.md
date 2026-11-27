@@ -3,6 +3,10 @@ title: "Keep your secrets.yml in Rails 7.2+"
 date: 2024-11-19 16:13 PST
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9b4344014aeb3402"
+  vector: "+AL6/wH6/QYBAwAFAwILCgQEA/wI/AkIAvMDCPUCBv77AgAEBwP/+wAB9gT2AgX9+/4DAfkD9gIBAgEGCgYD//UF+QUM+/8D+PD5Afr1+f7+/AAH/gAD9wMCCvEGAQYF/wDy/f33BPgPBwX5BgcDBAIGBhD3DAEOCQgHBvr5/gAECPwK9wMK+f8E9/79+/kF+gsRBAgB/vwG/gMD/AIEAAgGBv8KBfv3A/7++gP/BAMOAvb6+/j99Aj9Ae77/f75APwA/gIG9Qb8/vL5AgYDBQgF7hL7CQUD/wgMAAX89AD/9gIHBQIDBP/6+QMA9Ar7/QL8/ewA+AUL//cE/vwACvL+7fX4AgT7DP/7/P7+B/b+BQT1//cGBfwIA/4HBgMG9gT4DAAC//oG+wb19fv6CgMB+v8K/P4J/gT9APsDCAADBQQC+QUCAv8BA/r6B/n7+/0B9/3/+AIFBf0GBgYC9QAB9wj8/QEC//0FAff7CwEA/vr9/AsHBv/+Afj++/n5"
 ---
 
 Ruby on [Rails v7.1 deprecated and v7.2 removed](https://www.shakacode.com/blog/rails-7-1-removes-secret-setup-command-and-deprecates-secret-show-edit-commands/) support for `Rails.application.secrets` and `config/secrets.yml` in favor of Encrypted Credentials. You don't have to go along with that! I like Secrets functionality because it allows for consolidating and normalizing `ENV` values in a single configuration file with ERB (Encrypted Credentials [doesn't](https://github.com/rails/rails/pull/46508)).

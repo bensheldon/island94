@@ -12,6 +12,10 @@ redirect_from:
 - articles/about-dorchester
 - 2006/08/about-in-dorchester/
 - "?p=90"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8594c55f85cbf5a7"
+  vector: "AQMMAP8B+fz5AQL8/Pj7BgsG/gn5/f8FAwgHDfwFBQAEAwgJCv0Q/gL+DAD0BAL7/fkD/vv7/ADyBwD8AQEEAv0H8/sG/QIACPYD9/cJ/vcBAQQI+vr/AggAAQDz/wH37wb7APUMBvcD9gIF//4GAAUF/v358P4DAvz3+fQHAQD8CAMKA/X59f3/DvX4BQj/APv7+/79A/r7+QMGBQX/BQIBAQUC+v8C8wABBQkACP8G9Az8+gj+/PgA/QUBAwP/AP4JBPkACf8IA/oDAv4DAQr79fwI/Aj3/gb8+/r++gD+//v68P4D8wf88gEHBAD/B/z/+Av/9v76Eu0M/wT+BwX9+QoFAQX+Ae8GAwMCAf75BfkN9QX+Bv779vv+CvwLBgb88P4J9v79+gMO/wbyBPz8Av7+/QD/+gD8APUB+gAFCP4B//oDDvwG8gT9Bf32BO31+v7+AgL9AgIE+QwIA/8HAfv/BgD6BAD6Bg8H/woHBPsB/wz+A/0HB//9APcE"
 ---
 
 Last weekend I took part in a fantastic community exploration walk of Dorchester organized by Boston Cares. About 15 other people and myself met at the Codman Square Health Center with it's Executive Director Bill Walczak, our guide, and Tiffany, a Boston Cares' volunteer and the coordinator of the walk; the walks themselves were Tiffany's original idea, too.

@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/04/corporate-social-distractibility/
 - "?p=1901"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f47f58fbba72ef4f"
+  vector: "BgT4/f4CBfYB+Q4HAPwE/f/89QL8+/8N+wED/v36/QgI/wQPBgcABP/1APn8/AIB+/j9/AP9APsEBPgBB/0EAwYC/QDv/QfyCQD3/P0FBf0OBQgL7/8C+QoJ+P8C+fwC/wH6AwL/CfX//fYAAQT6EfsBCf76BAb3DwYG//z98wAAAvn/BvkAAQEECQMG9/4A7f0A+QUJBAD89P77/wUNBQbxAQH2/fr49wX/BQMIEPwCDvz9Avr+9gb/+PAB+Pz7+QYACPUBBfz9/vcKAPoG/AAIAv0DCgz7AQ39AAT9+gAH9v78Cvz8//4B/P0ADvzzDf32+AIIAAH/Dfb7BP4CBP0H/Af+9/r5/f32Bfr/9/X9AP7/Awb2BgX7/gP6BPoK+f4CBf78/QH4+vkKAP74/Az7APwDCgALAgX69/oOCwD4/QD/BPcFA/gK/gf2EPz8/gL//Q/3/AEDBvYAAgAFBgAA+wP+BP8AAgQABQT/+A8D+wH8BQn7+QUO+/oG+wv9"
 ---
 
 From Marianne M. Jennings' _The Seven Signs of Ethical Collapse: How to Spot Moral Meltdowns in Companies... Before It's Too Late_:

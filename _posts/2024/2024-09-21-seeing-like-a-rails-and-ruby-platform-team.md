@@ -3,6 +3,10 @@ title: "Seeing like a Rails and Ruby platform team"
 date: 2024-09-21 08:17 PDT
 published: true
 tags: [Rails, Ruby]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e2fab41df1592967"
+  vector: "9Pj9Awn9+gr5AvYM//8GAQ/+9wIC+v8J+f39+//1/goDBvcGB/v6//r/9AL7+wz6+vkA/v/7A/4O9f0AAQf3/wX7/QkF///++gT//wQC/Pr7AwAJ/wAGBAoEA/sPAAUEBvn+Bf8ECvsAAf4HAfwGBP/8BfwFAwkLBg8IAAEI9QD/BfMH+gH9/AIFCg8ABQ7+9wcFC//59wMFAAT/+gECBQQEAfz4+f/2Av7yBgv+BQf+9AUGEA37+ATzB/8B/PwIBP4BBwYB8gf2BPzzAgD+Af4K/gT9/wv+9Aj9/QEBBQAG9AEJA/j99P/39PwB+wH5+fUD/PwN+PwD/uj7//cCBwX39gf5AwQCCv/4+/8F9f/9AgMA+/gFAAL/AQgBBQX89fkG+wT7//77/wAC//j0+vQAAgf+CPwGA//6+vIC+AAECgAGAgACCAALBwL5CgcI/QHy/gAC+gT5+P0EB/8LBP8FAfz6/wgEAgEABvn08/72/vkF9g0JCQH2AQIB8v3/"
 ---
 
 When I’m not hacking on GoodJob, I work at GitHub, where I’m the engineering manager of the “Ruby Architecture” team, which is filled with fantastic rubyists. Our team mission is to:

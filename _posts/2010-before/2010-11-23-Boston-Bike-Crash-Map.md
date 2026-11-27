@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/11/boston-bike-crash-map/
 - "?p=2305"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ba268e48529f5580"
+  vector: "Bf8F/AAH9gH1Af//BPn4CQcD/Aj6BPsDAgYG//z/Af4IBQb5BgQFAfv//wgFBwT/AgH8/woC/Pr0/AAF/QIEBQgK9gII9gIC/vv+DfMB/PT+9gIQBvoACPwA/QIN/QAG/PwKA/oKA/37+gL/AAENBvz5+fr0AgoK//78+wEC+gAH/wYCAvnr+AAF/AwGAAID/APyBvr0AAAICwAMCwP7BvoEBQP4//wA/Pf2+wL+//8D/QUA9P36//z7CA0ADAMA+/sCA//7AwoI/v7+/gL6/QXsAP4F/fwB9AT2/fgF/wD89wf7/fUM/AIG9PsCBwMCBvr2/f8E9wEBDPv9/gHz/AAA+gcG/gD7/AH1/AsD/gz7AwIK+/4LAgb28/j69wELAvsD8fkHAgD//AEKAAD3BAX3Bw8IB/zzAQXtCPAJ9gACBvcEBvr+Cvz/CP/zAQX8Bfn7CPoGAgUL+v0F//kC/f/8AfT+BQb9AgL8BQ3+/wAF+vf4/xIIBwD7A//6Bfb+"
 ---
 
 [![](/uploads/2010-11-23-Boston-Bike-Crash-Map/bcu-crashmap.png "bcu-crashmap") ](/uploads/2010-11-23-Boston-Bike-Crash-Map/bcu-crashmap.png)

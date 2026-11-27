@@ -11,6 +11,10 @@ redirect_from:
 - observation/popco-cake-recipe
 - 2008/10/popco-cake-recipe/
 - "?p=257"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "f09918e339718938"
+  vector: "Af8E/gAAAvcA///1+PcH/xL4//4E9wAB+QACAfv6AQoC+/v6BQYJ9QAD/gAGCgb8/QUIB/76/QD4BAEI+wMAAAH3+AYA+wIMAfn+AgQD9wP6DwMF+fwGCgL7CgP5CAUBAPUEBPwBCPr9BAUCDQIFAQT6+vX7AgL8CP3/Bfz7BQACAwoLCgAB/foHAfn5CvoI+vgGA/j89QL8Dfz/+/4OBAADAP0CBAEJ/f4AB/X//RAEBf/+BwX/BPf6C/4F/vsB8f/yBAL9AAEM+P7/D/kKCA779Pb4APYE/Af4AAcG9AAI//sAD/4CAfr49vYCBfoKBwkEB/wL9/z1BgQF/fv49QgD/wkD/P4L+f35/Qb/9/4ECQn59/8F+/f7AAH3/QsFAQoFBQIH8Pv//Q72B/wA//0EA/oAAf/6AQf6DRAGAQAJ9P8DAf4I9vr2BAP7BAD7AQD+9/kIBfYA/wP8+AbyBfgB9/z7APT3+AL+9gX0/AP9DwcI/AUG+wECBv/6BwD1"
 ---
 
 featured in "PopCo" by Alice Butler (via Angelina):

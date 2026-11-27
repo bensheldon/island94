@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2011/05/describe-the-basis-for-your-approach-to-this-project-how-did-you-determine-the-need-for-this-project-now-and-who-was-included-in-its-design/
 - "?p=2679"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8a675367ae62c411"
+  vector: "AgME9/8ADQP4AfX9AQMA/QHv/gYGBAsE9AQH+fcH+Ar+AgYBAQT2AfTw/P4E9QD5+v709AH/+f8G/gUABfj8BwYI/QT++fj9AQsC/AP9A/YLAf8H/wj9Bvv9/v72+hMI+/H/AgsBB/PzAgAEBwX8BP8CA/77CwX//AME/QX69gD+DgcJ+wD+CgQBBgj/Bwj9/wD9APz/AAMM+PcEAP/5Avz6CwUC/wb49wYFCQICCfr7BgQBAvkB+gP2Av0G/P8A+wQGBQv6+/0A+wAL9Qj9/QADAP0E/gsCAPwAA/AJBQAE+wAGBvL68Q4AAvr2+vn9/fMB/v0Q9Pf4EPv4Af0C7gYJAQEJ9gD/CAf7Avn1AAL9/gMABfT5Cv4DBQIHCgAB//sJBvv69f799v3+Cvn6/gb8/Af6BwT/+v/+/Pz//AAFCv4G//f6//3//f36CQn6AgT2+wv/+Q0BDP79/A0EAvsCBPr9/Ar99wMECPrz/P/4/Pf7BQUDAwsI9AYH+/sB"
 ---
 
 From the Gilbert Center in an excellent article entitled ["Asking the Wrong Questions: Challenging Technocentrism in Nonprofit Technology Planning"](http://news.gilbert.org/WrongQuestions):

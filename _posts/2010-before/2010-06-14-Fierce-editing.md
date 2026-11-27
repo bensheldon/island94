@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/06/fierce-editing/
 - "?p=2092"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "76fcbfc8c64e0c7e"
+  vector: "Av4KBfv+AAAIB/oDA/3+/gMF8gEFBQMB/QH19gP3+P0I/wEO/wwG+fr8+f4H8gD6/f/z+PcB/QAGCf/8/QP7AQMABwj0CwT9/wEBA/z3AQQHAv8I9voJ+AYF/vgE/Af99gP4CgQBAvgF9/v58/78B/gCDAMBAwURAAb5DvoDBQANEP0MA//5+/sCCfwFCwL7+vgEBvn+/fn2//j59gD1AAP6+PoB9QT5+gf8+gkUA/v8BwsJDAT9/wX2B/4GC/4J/wLzBgP18Pf3Afv8AfIB/v8GAvb/9Af/Cg79/gEB+AAC+vsH9P/5Bgv3+v8B/AHxAwv/+gQBAQAAA/wE+vv5BAQB+wb/A/wAAAYDBP39//v9Cf8D//0C+gzx+wX3CPsDDPb8BP8F+gMA/gH+/vr39P0CAPz4E/wH/gT9AQkFAAD7+QQJB/0F/QMBCvv6AwEBBwb6/AMB+v0HAAUA9g0AB/8F/P8MAv0N/gILA/79Bf4G/QsGCP/+BgER+f0HAv/8"
 ---
 
 Peter Elbow on the editorial act, from _Writing without teachers_ (1973):

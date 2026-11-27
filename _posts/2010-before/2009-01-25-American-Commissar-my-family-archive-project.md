@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2009/01/american-commissar-my-family-archive-project/
 - "?p=354"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "d0e42affe9085baa"
+  vector: "+//0/v4NAAbz+wYVCvX5BfsC/gD4+wsF/wD+/v0B/f3+BQj7DAUE/gL+AQgHAP38/AYCAQQABAkFBfv3/Pj4/f/6BAP8//gKAwr8+P8A/fsKCf//9/4C/AwC/wED/f78Bvz5BgT//vX89f4I9gL/+v0ACvwHAgQECAz8DvjzBQAEBfIUBAQC+vUE/Qb+Cvf+7fsK/gEK//cIAfgB+f78DPj6Bf//+QL6/AIC/QkGDQAG//gA+/70+/cHBfcNAAAC/gHuAQUE//X/9v4D/gf98f4FAwb5BQv9+wkB/wb/+AAC9gABBPnuCf/+AgEBDfn6Af3/AvkO/foJAAr+AP7+Awb9/AIC+/z4BQD9+f4B/Pr6CP0ACQQG/wHvAQTyC/EDBfj8/wUI9/YB+QUCAQz5BP34/AoCBfkCAwUE9gYCAwAAA/0E9wII+fIO/v0DAff1B/z7BAb+Bf0DDvr9/gL5Cvr5+gMGAgD4BwAJAAT6BwAGBQkHBgX//wYN+wAHA/j8"
 ---
 
 ![Sandor Voros](/uploads/2009/american-commissar-my-family-archive-project-1.jpg)

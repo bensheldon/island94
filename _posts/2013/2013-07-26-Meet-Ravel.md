@@ -6,6 +6,10 @@ wp:post_type: post
 redirect_from:
 - 2013/07/meet-ravel/
 - "?p=3098"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e35946abc5fa207a"
+  vector: "+Pn7BAP9AQv8CwEIBQEJBgfx+P31/QgHBv79AAL1CQgDB/v+AfH8+PwB8g7+/AgE/gH7AAL7/v4B+wQKBQL4Bvz9+QoF9/77+QP8+wj3+/cB+/sM/f0DB/wAAAgA/gH/APjyCP4HBAD8/QYKBAoB//4HCvv8CBIMCA7+/fkC/QAACfkM9gD+Avf8CQX7DQr6+AYGBP329wcACAkDCgIFC/36Bf789gD/+AT3//kEAgEC+/oCBRD7/P3tBvwCBvr9+QEF/vwK9wb7+/z8AQP6AP/+/v7+/wX68hP+AQMC+gD8+QECB/ICAwIB9wACAf76BvID/vgK/foHBPUBAvYKAQD2+wj+BPv3DgD3AgQJ+AL8AwQC/fQA+wr8//3+/wL6+vkMA/sBCAX2/vYK/fz39vkRBQMEBf0A+wP4Avf7+wAAAwIFAgAGDQ4MAAL0Cwr/AQT+/wUFAPv8+QH+/vgIAgn9BPv7/wX+AQgIAPv7+/sCAPb+AAII/wD1AQUO9fMG"
 ---
 
 [![ravel-screens](/uploads/2013-07/ravel-screens.png)](/uploads/2013-07/ravel-screens.png)

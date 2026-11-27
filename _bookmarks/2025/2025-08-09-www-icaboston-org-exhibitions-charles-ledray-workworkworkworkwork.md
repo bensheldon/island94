@@ -4,6 +4,10 @@ date: 2025-08-09 16:20 UTC
 published: true
 title: 'Charles LeDray: workworkworkworkwork'
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "afde56e9a214c672"
+  vector: "/Ar6Af0BAAPwAvQFAwH+AgP/BQcL+Pz8/Ar/Af75/gb6BQQD/gL+Bfn+9wsCAAwC+/r9+Ab9BPX29gH3Bgf7/gsC+gH5/wMD/gIH/QT5+v0BAgQK/gL1Cvz7AQP1+wf+/wj+BQf1CgT8+QUK/f/9AfX79f79BPv9EAsLAfbx+gAHCQYJCgELBQAMBQsEDgH9B//59Pb3AwL/DQEAAAT/BQUH9gD69gb5CAkGB/0IBAEDAgYF/f0F+/8ABgEICfkN+wb/DfwD8gUC9AYEAAb4APf/+Pb2BAP++f0A9fz++gD7/QAAD/r//v8JBQD+AgIBCPr6/AsPAvP1AQb6AQf69gEH/f31AAj6B/P9DQH79QQEAf8E9/oB+Pv6AwX/Bf77BgH/+/wLCvr+A/YBBgQBAf/1CQMKCAAB9wf/CAcJAwD6Bv/0+/sD/wIABfMH/wT0AP748v78DfX1A/3z+wMEDgf9+vj8/gj6Af0ACAT8AP0A/wD7AgACAQEEAgQI8/gM"
 ---
 
 Charles LeDray: workworkworkworkwork

@@ -11,6 +11,10 @@ redirect_from:
 - observation/when-good-better-best
 - 2008/11/when-good-is-better-than-best/
 - "?p=267"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "517e09e84122c219"
+  vector: "Awj+/gMI/Qv7+PYHAwb79wr5/f37+wn9A/ryAv//+wwM+uz2AvwA//4C9Af2AQUA+AD4AwP3A/v9Af/+Bfn6/g79AQLwBv79/gsFBf/y9AYA+v0EBfAA+gIB/P/9+wsKAv79AQUJ/PYI/wAHAwP3CAL6A/v4BwEGAAUOAf4GBgD4APgA/gH6AQEDAAP9AxII/gD5/QEABPn6/QgK/fz//AL7AQL7/wn1/Q0HCwcOAvzwBfoC/wv3+gX68/QEAwL5+woA+/wFAgDz+QUCBv0O9QAA/PwA/wD1CgT/+QcCAwAF+AcR/vvu9v8B/QIFAgX7Bf0D8gcM+gP9A/f3/vkD+wMCAAEH+fwNBQD7/gEA/vwIAwcF/Af8/v7/AgoBDfsA+v4BBvz6+/T3CPj+AwX9AP0D+ggG/wXx+AIHAf7+/wAB/P0G/v/0B/wFDgH2/QgFA/76BQgHA/3xAwMBAgoEBQQDBQX0AwMG/vf2BwD9AAD6BwcFCwP/Bvv7+/8V9vz/"
 ---
 
 I ran across this interesting quote from Bruce Schneier on a competition for choosing a [new general secure hash function](http://www.schneier.com/blog/archives/2008/10/the_skein_hash.html):

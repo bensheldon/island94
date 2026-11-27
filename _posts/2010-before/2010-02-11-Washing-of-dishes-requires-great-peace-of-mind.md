@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2010/02/washing-of-dishes-requires-great-peace-of-mind/
 - "?p=1752"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "19abceebdd1c65c4"
+  vector: "BAMJAgX7BfMEA/79/gn+8/0A9wkE+wn4+gkB9/4GBQPz+vgEBf8F+QD6/Ab9BwIAAfHzCAD+CAMF/PgD/v3+AgYFBA72CPoBCAYK9gP3+QD/BQcL9/0BAAz+//f7+gkI9gr3B/sGAwQEAvn/BAD4Af0D8v39AwEDBf/9/wH7CgAL/A35Bvv9/wkJBvf6/wED9QAFAgD6Afr3/AUEAgX5Bfr+9/z5Agb5+wgGCPT8Awf6Cw0CAP73/gT8+AH+9/UG/wf7/gL6+/z6/wgABvn7/QoD7wr3BwT5/wMDAg/28QAG+fUBAvv6//oA/P/2BPMBDAf4+QoLBwH9AwoN+/z++//4CAj7APkBAv/9BQEE+gD1BgL/AfQGAgL0BQABD/sDAAL+AQcE9P//9QL++/z4+Pz+Avz5+wP+Awr7AAIIAgAM9AILBPwCAgEECwIIBQUGEfXy/gj6/ggD/QAH/AUB/vUJ/Pv7+AP89wQAEQP7+QoBAAICBgn+BAQB/wYLDfX8"
 ---
 
 From Thicht Nhat Hanh's _The Miracle of Mindfulness:_

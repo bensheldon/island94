@@ -13,6 +13,10 @@ wp:post_type: post
 redirect_from:
 - 2010/11/a-difference-of-a-map/
 - "?p=2288"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "6b4ec84dd6a209c5"
+  vector: "CAb+Cgn8/wAACg78AAUHAwjx+//+AwcF/wn+/QMC+woHBgUNDQD/9AT6Bvn59/75/gIC9vz4+QP+8gP4Av7+CwX6+wUC9QAACwQBAgYAB/YJBwUAAPsE+vz3/QEIAQT3AfgACf//Bfzx9vkD/gXy/PwGA/4HCf4DBvgD+Ar5/AAJCAECEvkI/fsCAQ0GCQgA8gb+Cgf8BQIFBPz+AgIB/vfyAAII7AL++P8B+wgCCf/+Dff79/f++wMBCPgH+PX9+/8VBAfzAPf4APoC+f4D/wAD+/0GAv/9AAX+A/gD+QAE+f4CAvsD9QT+9AMIAP76BgkB9AcE+f0LB/fy+fr4//0D+gX+A/QOBQL9AfQE/gH+BAcH/P7/BgH9/fz//vQOA/39B/r+/Pr87/oG+/z7Avv0BP4BBgkCAAL3+fYAAQD/BvwGAv4EBwcX///+AgsCCwn6/gYCAP39+foD/wD4///8/Pj7AwUA/gEDBwML8wn2+/f3BAIFBQEBBQsE/vv9"
 ---
 
 From ["Assessment Overview of One Laptop per Child Projects"](http://www.olpcnews.com/implementation/evaluations/offical_review_of_olpc_monitor.html), an evaluation of One Laptop Per Child deployments: "Figure 1 : The current global distribution of XO laptops across the world."

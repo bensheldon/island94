@@ -2,6 +2,10 @@
 date: '2019-01-23 07:45 -0800'
 published: true
 title: The work of product management
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "692d5ae645552fde"
+  vector: "Avv/9/8CCwcA/v0FCAEJAgIB9/j9/P4I8QMA+gD1AfkSBPwE/Pb/AQT48/8G/gwFAALzA/r6/g4J/QP5Afz4Agfu/Qj4BQv9+wb4AAb7/gQACf0I+v4DCv8F/fr6/PsJAPoA///9BPb6AfkHAwr3/PUGC/33AP39AwQQ//4OAwD3BfwM+wgBB/wFAgH/BQb79fwEBP0DAQkF/QIEBQEH/v37+QTv+AYE/Pf6Bv7+/v8AA/36CvsAAALs/v76/wAJ9QQN/Qj5+fwE/P4A/AcDB/4CBwH/+vsC/woFBPkQBAD++gMEBfrz+P/89f7+BvQACfMB8/0J+wT7AQT7BPkI7gH9/gL+AAcHDAMD+/0FBfMDAgIGBPb6/gv9DAACCAsF9wAJAPv3+/z8AfwE8fr88QP6AQn8BAL9/vj3BvEDCQD29w4EAgL8AgkIAfr0CAwB/gr9+QoJB/8B/P8EAQIGAAEJCP0JA/8A8g0FA/kF9wP9AAL+AP/8AQb5Av75/QIL"
 ---
 From _[Escaping the Build Trap](https://web.archive.org/web/20190327231139/https://www.amazon.com/Escaping-Build-Trap-Effective-Management/dp/149197379X)_ by Melissa Perri:
 

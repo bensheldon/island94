@@ -6,6 +6,10 @@ tags:
   - language
   - writing
   - plan language
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1f021c48e4a9eff4"
+  vector: "/QUA+f0LCgoHBwUFAgMO/gMC9QcFEP4FAgD2/Af++QkGDAUAAP4A+v39+gQB/PsM9gDy/foH+fv6B//7+P4BCPv+BgDzCfoD+wf6AAb/AOv8AP79/Pz+/wf/AvMR/Qb8/QMIBgoHA/f9/AD2/v77Af/4/gMABA/7AAj//v73AAD5//MLBgL/BfoFAwAABP4C/QH7CQQHBQX1/gH1AQD+/woFBgL8+QEA9P8G/AQF+AMF/wQCBf8GBfUG+gX/CwcA+wLxAgn5/gLyCv/8Av8B+/YDBAn8+Qj6CAMF+vr8BgD7/fQK8gAE+gf1+vj8+gH7AP8JCQj69wX/APf9/QP7APgA+PcH//r4AwAABf72+PYDAAH+AP7zAgP1//0JCAH9CPn+//32/+/29QgHB/Py+Qb+/A0CCPz+BA0GBPwL+AD3Cff/AfcB9PkD/P759fwJ/QT5DfwK9Pz9CAEJBgUADf/5/v3/AwADAgACARMB9AQG+wIABAMDAwkE/v0KBgv/"
 ---
 
 From the paper ["What did I sign? A study of the impenetrability of legalese in contracts"](https://mollicaf.github.io/publication/martinez-2021-what/) via [Assaf Arkin's Labnotes](https://labnotes.org/weekend-reading-any-desk-is-a-standing-desk-if-youre-short-enough/).

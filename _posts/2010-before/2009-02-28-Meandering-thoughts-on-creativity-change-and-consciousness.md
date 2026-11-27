@@ -11,6 +11,10 @@ wp:post_type: post
 redirect_from:
 - 2009/02/meandering-thoughts-on-creativity-change-and-consciousness/
 - "?p=506"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "78d32a7ea8b40a43"
+  vector: "AAAFCgkACQMN//sAAPf/BPoC+Qr7//3+/gX//AP7CgD6AAUL/QsE/P4A+f4D+v/+/PPy+fj9AwgHDv0D/f0C/QUFBwIBCQL4/AEL/v37BAIIEfkB9/sGAwwE9Pr6/woA+v8BAv4CAQIE+/7++QT99/0CBwf5BgUNBwEFBfP9AgAE/QAN/vv6/gQGCAEABQH68/cK/vkF/PL9+wAA9gH6D/v4+f8A+wP99AX+BAIBC/zqA/wECff39QH9//oK/vMLCAD89wUA9fv6+/75/f70/wUJ9gAM/gL3+QgE+woE9gAF9gMCBvj9AP76+QAKCfvz+wj5/P0N9Pr/CAcF/vn+AgP8/gf8+fv79/8FAQD1AAT+BAMJAPkI/QP2/wP/AfsBBf37BPsFAwL29gb1/QP6/fn7/wH8BvUFBfwA/PIC+AAF/v8NCv8A+/kF/AEPCgIBCfv9+wMB/fr6+f/+8AQABwAH+v4HAQIBCQQNC/b7CAX9BQcGBwMMCAIR9QsQBPr5"
 ---
 
 > "The most effective way to manage change is to create it." ---Peter Drucker

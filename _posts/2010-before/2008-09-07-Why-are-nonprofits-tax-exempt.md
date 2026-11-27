@@ -12,6 +12,10 @@ redirect_from:
 - articles/why-are-nonprofits-tax-exempt
 - 2008/09/why-are-nonprofits-tax-exempt/
 - "?p=253"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e6c93bed066d92b2"
+  vector: "+/0B/QoFBf0CAwz8/gMN+AAB+gcC9f4IBfr6/f//AP0DBg4F/wHyB/77+vr39wX6/fkNAQEB+fkE/vr2+fkH/QsC/gLw9v/5BwEC8wgMAPwGCv8K9gb+9QoA9wL9+gb8Bvn/BQQAAPkE/AMH/QT/BgUDA/n9/AjzBfwBAQAI+gD+BwT4APr9A/wD/wYHAAT//PsKAwIFBQD69vL7/AMLBwP6CAX8AQD29wEQ/wICCQX9BxAEAfUB9QD//PkI9f0A/gUBAAT8BAb3B/4G/QAN//////j8AwgAAvsJAff/AQAM/AP3AwP+9P4G+vsBAvj8+wID/AwUAQf/Au3/Af4DCPz1/gMABvzz+AAAAgQG+QAHBP35DQX+Cvz+A/0ABPAO/fsF+gT1APX46/IKBQX4/QT2BgL4Bgz6/gL++QEMDgAOBfMDAPf79f0H/wP6AgQC+wr8Cwb79f0CA/37Cv4EAfUA+gf3AwH9BAMB/vwD9QD+/QIAAwEA/AUJ+f4O+QT7"
 ---
 
 In my last post about [nonprofit structure](http://island94.org/articles/what-nonprofit-structural-definition), some interesting and important aspects of tax-exemption weren't fully explored. Specifically, I glossed over _why_ tax-exemption exists in the first place. Let's rectify that.

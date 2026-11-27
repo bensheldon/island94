@@ -3,6 +3,10 @@ title: "Introducing GoodJob Bulk and Batch"
 date: 2023-02-05 14:37 PST
 published: true
 tags: [GoodJob]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "30b20a2155c56fa2"
+  vector: "8f76B/0B//zxAQQGAP4LAhEC9PUA/AMD8vv88/r4/AH/BAQG/wL/+AwA8wP/9P36//7+/AQGAAYK9/oC/fj8+wX2+gQEBAEA9QP5/wn+7/b8+QT6/vz5+QoDAQEC//8ABQkGAQYCCPz/Af4C+/oDCQoAAgAEAQECCAsC/f7+/gAJ9voGBAcAAPr9/gX8CPj3+ggFCAED9AkBBgj8+wX+CfwGAwr2/QX1+Qb5/fD6/AUIBgb8CQH9/QQICAgB/fQF/v0CBwUA/REA/wj2Bvv3BQb+7/0DBQAABf77AwQIAwAM/wAKBQEH+/P48wAD/gMA/Pr6A/sB9wsHAez+//38/wEB/gQDCAMCBgECAfwM+v3wCvz78gYE7AL09gT7Bgn++/oIAPv8AvwABv8C//D3Dvr9CQf/DgII/AP8/vwOBAD8AAIF/vL8EAP8B/sAAQUBBwAAA/8GAQj/CPoGCPID/gMF/v7++wH/AP/8AgQB9P79/Pb8Bg4BBQb7DgMG9fkA"
 ---
 
 GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. I recently released two new features:

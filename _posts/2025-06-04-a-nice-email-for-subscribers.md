@@ -3,6 +3,10 @@ title: "A nice email for subscribers"
 date: 2025-06-04 20:13 UTC
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "a325ff5a2ae37d9b"
+  vector: "9PwJAQn7BQb7+/wMCP35BwH97/70AQIF+vn59/f2AgQDBQr//AEA+QTz+gT6+gn+//759wb//wMG+/z4DP//AwD3AQn7APn+BAwL/Pv6Bgb/APsF+/4H/wb+AAcO+vz+A/8BDf0HBPsDAwAN/P7+Cf79D//9CAoECwwABQT8/QAJFQALAgP4BfkABAcMAff7+PsDAgX9/AT7+wABCAL9BAP+9/j99wP69gb8BQMMEf4E+wP8BwsC+v7zDfgEBPz7/fUF+wABAgP1+fMA+PsGAQz///0B/wn7AhH+AgYDAQD+//8F+P3zAQYF9AD+/fz5Cfjy/QMS8vsIBgAH/fn8A/79BQL3APr/BP/++fr7APf9Bv75B/4ABwL/CQL4/v3/A/MMAvsCCf/68ggG/vr1APsFBgAEAgIE//wA+gH9AgAB/fkGB/n8BP0PBvcABRYAAgH19gQKBPj7AQD8/fn5AP8AAgL++PwE/wENBv32/PoA+AH4Bwr+/AUH+gQGA/ED"
 ---
 
 I got this nice email from Defector, an online publication I pay for (along with [De Programmatica Ipsum](https://deprogrammaticaipsum.com/issues), [Garbage Day](https://www.garbageday.email/), and [Today in Tabs](https://www.todayintabs.com/). I think that's it, though I guess I can include [Rubyland.news](https://rubyland.news/) and [Short Ruby Newsletter](https://newsletter.shortruby.com/) too). I yearn to share something like this for everyone who actively, if not always monetarily, supports my own work. The feeling is there, though not words this nice.

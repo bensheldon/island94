@@ -5,6 +5,10 @@ published: true
 title: Making the Hook Model actionable
 tags:
 - product
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1ce1477fb10f970c"
+  vector: "/fv/AQgFCwT9BPf5/gcJ/wH8+AEM9wsC9AACAgD/AQEJ+/sG///1Av/3CP4D/gD59gMH+v/4//kMAwT2B/r6Bv8DAP4F/gH1/PICAQQHAv74/vwD/AT/+gYA+wbyAO8F+/b2BQARBAQH9fsBAPj1+Qr8DgT9AAACBPwEA/r78wADBhAMBvADAwAE/QsGDwsA+PgBCAP7AP0CCQEE8P8K//3zAPcI/wD5//8BBAkIBPb8DAz+Efv5/fsBAgQA9wcD/QgCAf0B+Qn09QMCAO4JAv38A/z9///u/wv9BQEOAgAH+vP7CQP47gIJ/f39DAP6/f//BQYK9Pf/Cf8CCf7+APwC/AoJC/3/AQACAP8DB/v0AQj8+QX7BAL5APz/AAEFAQAG+v/6+/gAAf/7//b9+fj9Afj5AP0LAfr9C/0J+gD/BAMJAwj7+wb9Dwn/CQL/A//9/gMG8/4F+QAQBwADBPwEBAEB+QAHBgb8BPkL9vkCC/j8/AL6/gUD+wAE//sC"
 ---
 
 <blockquote>Motivating toward a behavior

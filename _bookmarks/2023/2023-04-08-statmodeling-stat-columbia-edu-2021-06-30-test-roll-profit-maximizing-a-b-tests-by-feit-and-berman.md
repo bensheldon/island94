@@ -5,6 +5,10 @@ published: true
 title: "“Test & Roll: Profit-Maximizing A/B Tests” by Feit and Berman | Statistical
   Modeling, Causal Inference, and Social Science"
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "9cb3038baaf5d155"
+  vector: "AP8B/wUC+wgJB/8D/QL//gP3Avrv+QoEBPv89/r9/AgC+gr2AAn/A/73/QH3/Qn8+AL1+wT8/foH/wEO//X8/A0J+gjzBwX6+AUKAQEICP8B8/gDAQD//QMA+/v3/QgI+QAEAAUBA/n69gb9EQEEBgEB+vL2BwIBBQX/9wUF8AAFCgcF+v75CgUC/gEA/ggE+vv7/gUA//v99PkCAQIBBP0G+wH4/f8H9gH9BAgA//77/fwJCvkFAv71/gAABv0B9xIDAgD+CgH39AH/+AYP+Q/1BgABBgMDAv4DAfcIBAD8AQEFBQIM6gME/f79APn1A/gA+wgI/wL6//kC///4BAD+AAoCAfwB/AT79wT//v0KAQMFBALz/f3+/Q4AB/8L+v0JAwH0Av37/AEQ/vj0/QL4Cfr+Bf/+/v339/sE/wAG+AoGA/b/AQMG+QL2DQEF9/78+wUEAAEBCP0CCwMGAAH7AP0HDwH88//8BgP17gj8BhAAAvwEAgkB6wAS9QT/"
 ---
 
 One of the comments:

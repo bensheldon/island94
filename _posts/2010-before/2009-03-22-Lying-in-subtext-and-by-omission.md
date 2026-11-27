@@ -10,6 +10,10 @@ wp:post_type: post
 redirect_from:
 - 2009/03/lying-in-subtext-and-by-omission/
 - "?p=573"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "1b843a9b7c13426a"
+  vector: "+wMCBf0G/fwHA/4JCP39AfwA/wAHBwf7/P3/8/MD/gb6+gYCCQoIAAP5/wb7AAgA+fz+Bgb6AP/4DfsDBQD//gcBBwX6BQABAv/88Qr+CPgJBQUE+/P/+gQIBOwCAwb9+Ar+/AQC/PoK9fsB9v8ABPv/EgMGAvIH/QgDFPbxBQAHA/QE+AX7AwcI/f7/A/QG8gEE8wEGA/j//wT79gH5/QT8BP77+gcK+QYA+QcGAQL/BwgEBv78Av/6CAALBfMA+wn1Afb++vv5/fcG/Qb4BAT+A/b6BAX8/gIB/QT7/AD6+Pz9+Pr8/v707/0DBfr/+/fzAwAD8wAE/gj8AgMBAQUB/gMF/fr+CwDz+PT++P0EB/gA/wr5Afj/Af/2BwD9BvYE/wH/+/H79gQM/PzuCQL0CwgHCwL+/wMC8wkD/AD6+v4H/wUB/vMIB//3/QT9AfcB/gb6+wUIDP/9AQUBCAQF/gINCPkDAAYIBg/8BAMGAwgEBQwJAfsE+gUEAgH1"
 ---
 
 Previously posting on [writing authentically](http://www.island94.org/2009/03/pratfalls-to-writing-authentically/), I wanted to find some other criticisms/observations on the topic. The following is from [_Can't You Get Along with Anyone_](http://www.amazon.com/Cant-You-Get-Along-Anyone/dp/0979711703) by Allan C. Weisbecker, one of my favorite how-to books on writing that is not explicitly a how-to book on writing [Part 1, Ch. 12: p. 64]:

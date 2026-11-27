@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2010/08/social-media-strategy-and-the-dodo-bird-effect/
 - "?p=2140"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8a8f4ee486b4a554"
+  vector: "/Qf5AAIICP8I/PoRAgIKCAECBAbw+QAK7v76+fr+Bg78BPwI+QP+AQH3A//+/AANAPnq+wH9/QIEB/oEAvn8CA4D9Ab7/Ab6Av4E+AD4Cf79CgUB+/39+P8C/Pns+gkF8/f7CAEA/fwK+fj7AgX2/AMHBwLzA/3+CPwKAff/AQABAw0LAwD5+f78+AoLCf747wb9/AkI/QH6AQMC9gn5BPv8AQP78Qn8/wT9Bv4JB/D3DAIECvgD//wHCfIM/PvzBP/78QAAAAv1/fr8+/8BAwQA/QT//wT++gMGCAgGAgD99QIABfn68wgL/AABBfT2Av/6/w0J+AUPAQn4BPsD/PoD/QP/BP78Cfz3+AH6/QH8AgEEAPr/9P75+gMDBvYFAP0ACwIGAwb8/AgF/Pr7/vn4DAQBA/0D+wMB+PwB/QD/9wgFAgMB8/oJAAD/Bgn8BP77AQcE//oDBvoA+f//AfQD/AT+Agr5AQ4IAv0CAf35+gUFBwYCBgkA+fwICgH/"
 ---
 
 This month's _Harper's Magazine_ had an article on the smorgasbord of cognitive behavioral therapies: "The War on Unhappiness: Goodbye Freud, Hello Positive Thinking" by Gary Greenberg:

@@ -10,6 +10,10 @@ redirect_from:
 - observation/conference-notes-managing-nonprofit-technology-projects
 - 2008/06/conference-notes-managing-nonprofit-technology-projects/
 - "?p=223"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "de0fc2f6f35180e9"
+  vector: "AQUAAQf9AQUI/vcBAAEKBAT3/QMB/P8H9wT79QAD/wkEAwYMBQMA//P6/AAD9QL/9v/+8vz//P8EAP///v37/wIHAgb+AgD8//wE/AMHBvoICvwI/AEIAwIE/PoD/gUAAvoCCP7+C+/3/gAE/gn4/vz4D/z8BAUK/gQGAAQK+wACDPMOBAIHA/z9CwMI/QXq/wQF+fnzAgcN/QEJ9gH9Av/9/wL69Qr+8wT3AggHA/n7/wMHCAf/9ATsAPsL+fX//wX7BQz0+QEB/PQA/QYIAv8FCgQA/AcE8AYABfwKDAD++/n/Bfr99w0B+fn2APb8A/UK/gUE9vwCAPr0CPX++wAB+v74/fwBEgf+//YGBAD6+gL+Bvn//wvzAP8BBf8FBPn/BPkD+v359QD8+/f5+/4F/wD+DAAB/QTu+f4LAwD5Bv/9Dv36BwkJ/f72Dwb//wP5+f3++PwJ+P0OAP34BPz9/gP/AAoH/AwJBf7/9AD69f7+BAwDDAYBAgUDBf4E"
 ---
 
 Notes from Rebecca below on managing nonprofit technology projects

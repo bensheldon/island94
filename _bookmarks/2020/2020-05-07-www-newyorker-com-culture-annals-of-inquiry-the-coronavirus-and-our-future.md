@@ -4,6 +4,10 @@ date: 2020-05-07 18:23 UTC
 published: true
 title: The Coronavirus Is Rewriting Our Imaginations
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "245c7676adf46280"
+  vector: "/gf8Aw8DBP8EBQMGAQP8APr1+g36B/8B+gf8+fsJBfwIBPoFEP0KA/z1/AAACPv+APP++v0ACQX6AgH9//gDDgoAAQH9AvsFAv/7Agr7AQAFBQQD/fv49gQI9fsHBwIHAP76B/f+B/oJ+/v+CQH3AQEHCfoC8wD/BvcBBQX8/QD9CQ0E9gb0/gIA/wEJB/8G8fwB/wb8//n++wP7Cf8BDQv9APsB+vj5AgoABQoM/v/u+/8KAwD8+/4B+PMA/AMIAQf7Afn+CQPzAf4DCv//+vcBBfkPAv/8BgUAAgf88QD2/P8AAgf6+AIE/QIGBAT/BvX6/fkJ+Qf7Cvr9APkAAvYA/AoB8P0B+v/p+/4DAgP5Bf75+/v6/wUC/f8GBvED/AEHDAT5APju+gEHBfoAAv/2CvkEAP77+QXw9/37AAAFB/7/A/8DAP4Q/wcDC/0J+vj0AwQC9/sC+gcI//34/PUK/P4LAxACBwgFCP8FAAX/+AL7BgED8wAR/PsJ8wT9"
 ---
 
 Margaret Thatcher said that “there is no such thing as society,” and Ronald Reagan said that “government is not the solution to our problem; government is the problem.” These stupid slogans marked the turn away from the postwar period of reconstruction and underpin much of the bullshit of the past forty years.

@@ -7,6 +7,10 @@ date: 2023-04-29 19:56 PDT
 published: true
 layout: book
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3e476bb35a2d17bb"
+  vector: "AQb//wYB+/X8CwEA/v4B/Pf6/wj8+ggD/QMK9wAGAgcD//4DC/4F9QP5//73CAT48/oAAwH8AfgEAgT7A/wAAQT5/wr8Av8BCQME+fj28/cPAwYE9/v4+Qz9+fwD/BEC/AMEBP4G/P4F9ff++wb3AvoIC/n/+v4BAf/6AgsB/wD9/fsJAgD4+gEICQEFBwL/8/YM/QAEAfj4+v37//8BA/b9CAMI9gT8+QL8/QoIB//uCP4JB/T//fsD+vYH9wICBwEA/wT+/gLzAAEHDf32+vn/+gAK/Ar/CAMA+P4A8gD78/kDBvnz/v4AAPsNBQPyAQH/BQIH+Pr/CPoA+AYCAwf9AwMLAgP49Qb1/fgG+QX7BQoGB/EG/gH4AQv+CvUHAv/9BwAC/vzy/QIDBf0B/f31BPz9CvgMAfsA7vb//AD+AAUJBQgCAvoJ+gQKDwQBCPL1Awr+//j7A/T9/goFAfQB/Pb4AAX6BP8IBgL+/wz/BP4DCgIJAQMQ/P8OBff6"
 ---
 
 <blockquote markdown="1">

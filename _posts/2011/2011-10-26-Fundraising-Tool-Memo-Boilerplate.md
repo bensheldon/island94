@@ -9,6 +9,10 @@ wp:post_type: post
 redirect_from:
 - 2011/10/fundraising-tool-memo-boilerplate/
 - "?p=2810"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "8e53c71f02e37c80"
+  vector: "/gH4AAYCAf8IAv79/PgF/QT29gP77goG+vgD+wIFCf8DAQkKAwXw//f2/QH7+QcF8vwC8wYB+gb+/fz/AwT4A/8DARAA+gv5AvsAAQIMDPgKAgcH9gz/AQMF+wQA+AAH//z9BP8BC/ACAfkICAr+BQQJC/r0/QP8/wIG/AL57wD6BQH++gABBPUFCwYKBwHz9gMAAAT9AAAM8/sFAgD5/gb4/wD5+P33/QEEBwAHBvz8/QMC/QD8+Pz5/fED+QAF+P7+Bf77AQD5//8AAwkLCQX5BwYCAgcBBQH8/O8DBAAF+gQEDwf37xH+9QD6//3w/fgH+AEK/PwCAfkC/AYC+vwB8wMJ+f38BQH7/vcB+wAB/vn7Bgb9CgL/BwH3BvwIAPcOAvX/A/v4//wMAvT19gkBBgAEAwr+/wQA9AEJAQABC/cECPz2AQEEBgP1B/z5+/r2+AEF+f8CAvwM/P3+CPgEAwH2BAMC/QsE/vkC9AEA+vn7BAQKA/4QBP4B9QL+"
 ---
 
 Sent this off after some wild, though not misplaced, enthusiasm for Kickstarter, Indiegogo and a few other newish online fundraising services; the soft lead-in and enthusiastic closing paragraph are not included.

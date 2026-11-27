@@ -12,6 +12,10 @@ redirect_from:
 - node/243
 - 2008/08/nonprofit-board-management-governance-and-advice/
 - "?p=243"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "caabd9fd7a6eb76b"
+  vector: "BPf8/P0DAf8B/fYG9wX9AQj+/Af//v3+8vr3+vn/CP8MAwQMBgL9//4AAAn7AgX6/f/67gX89QQA9/3z/QYBAwUF+gP6/wb7/voDCPwOEfQBBwIE+gABA/4DAAwI//kJ/gL5B/wIAPL3/AIB/gH4B/wBCvv4BQj3CQgIBv4G/AD+Cf0CBwH//f8NAwML+fz4+v79BAMDBgYP+fsEBgD9+wD2AgH7/gP98v0BAQQHDQf//gH7CPz98QQEAPQNBPgI9QAAAwvz/gP/APH9/vYHA/0DBAEO+gwG/AgA/gAMBgAE+QL6BQD27w33/QD6Afj3/wEB8QkS/AT+BAIFAwD9+/3+9wID+QMEDP/+AvwD/P32APb0/f4GDgr8Bv78Bv4IBfr9/v8E+fjv//0L/v78APcAAAMMCAcBAwMC8ggGBAAAAv74BfIA+foKDgDzAQn8AAn1+gD8+Qb/+AQIAAL/BwH7/v72BAsF9QYABAAE8goB9P4DAAQBCQEKAfoC/Pn7"
 ---
 
 Last weekend I was in NYC for the Craigslist Foundation's [Nonprofit Bootcamp](http://craigslistfoundation.org/index.php?page=ny2008). As a one-day conference, I've really enjoyed it as having a wide variety of informative sessions. This is my second time going and for 2 out of 3 of the sessions, I attended the Board Governance track. The following are my combined notes from 2 sessions: Board Governance 101 by Michael Davidson (Governance Matters), and Managing a Board by John Brothers (Cuidui Consulting) and David LaGreca (Volunteer Consulting Group).

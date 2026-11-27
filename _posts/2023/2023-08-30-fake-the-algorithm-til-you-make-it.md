@@ -3,6 +3,10 @@ title: "Fake the algorithm til you make it"
 date: 2023-08-30 15:50 PDT
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "c926c1422bfc3da3"
+  vector: "+P8AAwT/Cgf4/AD9Ef0CAw34++32+wcB/vsB/f8ABAoEBfX++vj/Afz5/QX/Af0M/gbz+QH9AQL9/PsAAPD9Agf9+wwH/AsD8xQCAQH4+QDv/QAEAvYG/AMA+wkD+gUMAfkAC/kE/foE//8HB//4BgABBPoFBAEGBBEH+v8J/QAFBQgE/P78AvwFABMACBD+AAMC+Qb5/f39BP8EDQH/Bvr5AwL6+QUJAQX//vcNAv76AgL6Bw74+AH2Bf8F+P4F+f4D+Q0CBQ/6+wD3BQb5/AYA9gH1AgP79AT0AAYGAQD3+w3/FfH/8gEA9/gN+gcBCf38AP4I8AAEBgD5+gH++/34+wT6Av8BBAT7APgF+/j0AwEC/vf++v8DAgf7CQEH+/f9BfYA+QIB//f+/QD9/vwBC/0BAf4A/Az5+/8D+wD7/AAVCAT8BwICAwT+CAUE+/n0A/sJ/PgHAwEGCAj9+P8CC/75/Pv8/gUGAwT6/vcEBwDxAAEHAwAACgEE+voH"
 ---
 
 Almost exactly a decade ago I worked at OkCupid Labs where small teams (~2 engineers, a designer, and a fractional PM) would build zero-to-one applications. It was great fun and I worked mainly on [Ravel!](https://island94.org/2013/07/Meet-Ravel.html) though bopped around quite a bit too.

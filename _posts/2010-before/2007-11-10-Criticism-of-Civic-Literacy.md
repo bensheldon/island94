@@ -11,6 +11,10 @@ redirect_from:
 - criticism-civic-literacy
 - 2007/11/criticism-of-civic-literacy/
 - "?p=171"
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "573006f7b014a262"
+  vector: "Bfv6BgAGAgD1CQQL/PYEBQEB//7zBwILAQP/9vwFBAL+AAYEEQEC9wf5Av79/f/2+/cF9wwF+AD8DP79/Pr6Bv0E+v7/8/sFDP8D9v/+BvkICf4J+wH9/v78/wQI/QMEBPb9BfUJAfMD9/b/+gEB/P4EDv0JBQAD/vr5/Ar7/QD9CAEU/wAB/fwADwsKCwb38QH/CgEDAfIF+QABBgEEC/v+DPkJAQL2A/sGAQkMB/8DBgEB9wH/9v3+/vEHB//7AwbvAwn0APvyBf8AAfwAAAP8DPgK+wL+CP79//oI9gAE+vwMCgH+/Qv+Avj8CQX0BvQA/f4H9wQD/vT6AgL//wkG8QkH9vn+A/n28/YCAAT1CPz7+wUJAgr8AgIFDPYABe0DAQH/A/sB8f0FBgT8/Qj0/v8CEPwE+gr+/AAACQAE/PID//kAAPsK/QT9+vr8/gD6BAz59fsAAvv///oAAPz99//+BAv7A/0F/P0EBAoCA/7+Bf4J/f8L/wH/B/0E"
 ---
 
 I've been reading up on Civic Literacy and so far I'm kind've disappointed with what I'm seeing and my own involvement in it as well:

@@ -7,6 +7,10 @@ title: 'My proposal is to place criticism within the scientific, or social-scien
   something that is tacked on at the end. « Statistical Modeling, Causal Inference,
   and Social '
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "36239b2356dca43c"
+  vector: "AwcDBQIDBgsJAvkAAQr+BAEIAwb1AAQC7/z+APkA+wcAAv0B/hAFAQL//vwB+gr+/Pv5/gn6AQEJBvgDBfP3/BAB/AX2Ffv/CggQAfv+BfUG//0F/vgABAIA9fkL+QUI+PkDCQIIBv8J+PX7/v77A/wHAvz+AAD8//r8Bwn/9wAFBwYE/AH0+wH8Bf8OCgIF+QT7AQT+/PL79AH6//73Bf8DCPUC+AL4AAUBAwMMCfryBQMHE/wD+vf3A/cCCfr2BQT5Bgf8/Qn6+//8/vz//QX3/Pf//AT/AgX0//wK9wD2+AABAP387wAF+v0F/gH39wL2+QUN/QEECAcBAAD6Cf3zBwP6Afz7/AT79AX7/AH5Af///v//9BD2BAn+A/YJ/PEBBAQG/AT89wcLAwH/APzzEAT//vMN+wD9+QL9/AAB+gcM/f3+Av0K/wAABQQECQH1BAgB9wcE+gL7/vwAB/QFBP0ABwYG+gH8BgP9/QP6BQL9Bf4CCQAC8A0PAvr+"
 ---
 
 A psychology professor whom I’ve never met once wrote to me a mini-manifesto, disparaging my efforts as a critic. He wrote:

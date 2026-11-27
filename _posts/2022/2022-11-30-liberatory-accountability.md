@@ -3,6 +3,10 @@ title: "Liberatory accountability"
 date: 2022-11-30 17:50 PST
 published: true
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "3d039e2ce9ecf506"
+  vector: "AwQBAwgEBgAG/wf5///6AP4F8g8IAgYG7QIA/v/8/u8CBfgHAgP89wL9+f0B+gYC8/D//v7+9gAGDAAC/P//BP4IBQH8BwH5DPv8AgACBgQLBgQI+vX+/QwEAAgP/Ab+/wD2AgUD+PoG+vf78gAABPv6EQb5AAr6Av0DDwcA+gAFBvz5Avr4/wMNCwIG/f4M8QP/Af0CBgL4+QIA/gAEAQj7Af79/Pr4/wwCAAb9+fz2BggHCP34Bf8B/voI+fwEBPb3///19/8IAPn/AfsA/P0AAP3/+/v/BAgE/gIF7AAJ+vsGBfr2+QoA7/8HBgX7BPvy9QUNBgL9/Qv5BPoKAwP9/foB+/j69wT0/gX2/voBAPv0CAkJ/RD4/f/9AfYFBQH49AcEAvz3+gL/+gDz+gT3CwX3/hID/wf++wD+/AACBvoKAf39AfcDCgEGAwYABP33A/v/+QEG+/MI/P0CAgMB+QMC/wcCAggPBwAA9gIDB/v++AsFAQUH+wENB/rw"
 ---
 
 From Lee Shevek's ["Is Punishment 'Carceral Logic'?"](https://theanarchistlibrary.org/library/lee-shevek-is-punishment-carceral-logic):

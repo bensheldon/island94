@@ -3,6 +3,10 @@ title: "Adding custom Thor commands to your Rails app"
 date: 2026-10-12 19:06 UTC
 published: true
 tags: [Ruby on Rails, Ruby]
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "e91f3da129851f92"
+  vector: "9PsABAMD+wH/CP8EAwAJCQ76/Aj/DQEH8fH++AH2DgcD/QAJBf37AggE/QL5+wb9/QAE+/33//sB/QQEAQn/+wD8//0DAgAB//n6+gcB+vTw+wEGAQME8w8DBfMCAgMDCAX3AwAAAgAFBfsA+/0M/QT+DAIO+wMGAQkOCAAC/gAF/fkK+gL9+wX//woAB//8+QAEAwD/+P8DBQv+BQADBwUHAAEABfb3CgT1+wb5/AP++QIHDAP79/r7C/cK/AARBPQFBAUG/AD+/wf1/wD6Bvr5+voI/Af3/vYD/voBAwAN+wYJA/cE9vXx+AH6/wX6//wCB/cD+gMF/Pn++/z+Dvv36gf4BwT8EP75AvcDAvv9AQX+AAYF/fUG/AQDBgTs9PwCAAcC/AsFAQQGAvX0/PX8/QP/AvwI/gEEAfcB+AACA/j9AAgC/vwA/gT5CP8A+gH9+vQG/wv7Avj1BPkLBf0EBQUA/gr//wcB+vP59Pr0AfsH/QYECwbv/AQE7///"
 ---
 Thor is a really nice command-line runner, with much nicer support for arguments than Rake imo. The Rails framework supports both, but [since](https://github.com/rails/rails/pull/22457) [Rails 5.1](https://github.com/rails/rails/pull/26414) most Rails' built-in commands (like `bin/rails generate`) use Thor, and it's very simple to add custom Thor-based commands to gems and engines too, which Rails will auto-discover when placed in the engine's `lib/commands` directory.
 

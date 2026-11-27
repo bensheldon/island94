@@ -4,6 +4,10 @@ date: 2026-08-13 00:57 UTC
 published: true
 title: Poor Deming never stood a chance
 tags: []
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "31fb31cbf08a404a"
+  vector: "AQMJBvb9+RECAvwFBP0F/QgH8P30/PkE9//9/QD0Av4C/QMMAgT//wL3//f09v8B9fX+/wr8BQYLBgH+/v/0/gj8CAX2BwX1/QEK/PoLDwAPBAoN9/oB/Av3/gj8AQECBAAABQUDAfQH+AoGAPwAAgQIBfj8Avj/A/r/A/4K/AAF/gIC+wD3AwcCCP/6/Q/79P35/QT9/voEAQUHAP8FBAMF/fz5Afj79QH//gYHBvL0AP0KAQH9A//6AgIBA/4BDP0DAAH+/AP4AgP0Bgr79gkCCPwF/QUK+Qn++voK/QD5/wELCQH49gf69ggGBvb9/vX2/AkI/P/3AvsB8/8H/f0GAfICBPcC+v/3+Q4H/vP7A/7+/Av8+RD7/w/yAAMFBAL++gr/A/v3/wQG+Pv1+P72CfYACAf5BAH6+fv+BgAFBfsGBP34CQAPAfv7Awj7AQn5AQgCAv0L/voC/gYKCf4E/wUAAAf6AQsDCvv8/gYG8wb+AgEK+gYC7wMB//X9"
 ---
 
 > Deming faced a similar challenge to Calvin

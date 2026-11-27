@@ -2,6 +2,10 @@
 date: '2018-11-03 11:45 -0700'
 published: true
 title: Asymmetry of happiness and misery
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
+  digest: "ae96ba4f9c6eb02b"
+  vector: "BgcGFQEABAoK9wQGBgb9/P/+/Aj99wD+9gX+BAL+Av0F/wAF9v36+AQB//kFAQL3BQEAAvj8AAMFBPQJ/vz9AQUBBPj/CvX9BfoAAP39/QUC/v8H9v4J/AMB/fv/AwgC+wz4AgMC+AYJ++/zAv7zAAYDAP77AwUFB/cEAgMAAwAE9QH5BwP7Agb+AAQI/vgC6AYBCvv/BQP1Av0ABf36Bf35AQkK//74AAkC/v8E/vr9+f0JEPz8AwUB+QX9/wb6BAP8/fr6/gX98vj8BAL59Ab3+QP8AQDs9QgD/QwE/gD9+/QICvoA/vsFBPv+Cfb/AwD6+gMQAgEACAvv9fUECf78BwsCCfj9Bgb2AgcG//YCCAEA8/oE7/7xAf31/fkC+AL8+/cA9wH5/gUJ9f74/vT+BwryBf4N+QcA////AwAA/AAD/wAAD/YEAAwEEf8KDwACBf3+A/b4/vgB+wAE//0CCPsG/QMG+gkBBQT9/AIBCwQF/QII/v0A9gcLDPT/"
 ---
 From Michael Lewis' _The Undoing Project_ on how happiness and misery is experienced differently:
 
