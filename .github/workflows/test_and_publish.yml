@@ -41,6 +41,13 @@ jobs:
         with:
           name: screenshots
           path: tmp/capybara/
+      - name: "Embeddings: Cache model"
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/informers
+          key: informers-all-MiniLM-L6-v2-1110a243
+      - name: "Embeddings: Update stale embeddings"
+        run: bin/rails embeddings:update
       - name: Build website
         run: bin/parklife build
       - name: Publish

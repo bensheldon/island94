@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class Bookmark < ApplicationModel
   include Markdownable
+  include Embeddable
 
   attribute :filepath, :string
   attribute :frontmatter, default: -> { {} }
@@ -100,6 +101,10 @@ class Bookmark < ApplicationModel
 
   def content
     render_markdown(body)
+  end
+
+  def related_bookmarks
+    @_related_bookmarks ||= semantically_related || []
   end
 
   def published?

@@ -37,6 +37,13 @@ jobs:
           POST_TITLE: ${{ github.event.inputs.post_title }}
           POST_BODY: ${{ github.event.inputs.post_body }}
         run: bundle exec rake new_post
+      - name: "Embeddings: Cache model"
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/informers
+          key: informers-all-MiniLM-L6-v2-1110a243
+      - name: "Embeddings: Update stale embeddings"
+        run: bin/rails embeddings:update
       - name: Create commit
         run: |
           git config user.name $GITHUB_ACTOR

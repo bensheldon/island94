@@ -40,3 +40,7 @@ group :development, :test do
   gem "rubocop-rspec", require: false
   gem "rubocop-rspec_rails", require: false
 end
+
+gem "informers", "~> 1.3", require: false # on-device text embeddings for related posts
+
+gem "numo-narray", "~> 0.9.2"
