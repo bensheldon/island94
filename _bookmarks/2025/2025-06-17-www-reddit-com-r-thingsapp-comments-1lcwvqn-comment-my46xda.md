@@ -6,8 +6,8 @@ title:
 tags: []
 embedding:
   model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
-  digest: "e23a2367dcde1cfc"
-  vector: "+gYDAPz6BPwHBAgAAP8K/fv8+RH8+gH88wH++AD/EAsDA/z//gUB+gAHBAH1+gkABPv/+ff+CQL6//4E+gMGCRAB/gvxAvoH+wn/AP76/Ar4AQUBBv//9/YA7/0K/vsFAwT7BPQLAwv9//r++vn69QgFAPUF+gYE/PcGA/v2AAD9AgX++wj7AwMEAQMCAgsA9Ab+/wYC+QH+/g4CBv37CAr+//0E/wL+Af71/fwGDAbw+/oJ/vn9+v37Afz+/QH3BgIL+/sFAQDy+wP+BQAD9/kABAEDAQj7/QYI/gX/BQD09/0GDQIF8P0QAO8DA/oE//4NAAQO9wj7B/r0+wP8+vT2CPz5BgMF+ff3AAb9CPgIBP77/PH/Ag0ECgwIAwAFAgcCBPwFAfL/AAEF+fsA/gAACP8A+wQHAAb7A/z5AAAC+vn9Af8M/wEK+w4AEAEA/Pn8BwkA/fX4BwD2BAP/9QILB/r1BgX6AQQBCf3/+f/zBv//AfcG+QUMBfUPBP4A"
+  digest: "6ad0176d34d1a9b4"
+  vector: "7wMFAwH2B/8CAQUCBAEGBf749Qn6/AQD9QX6/PkBCwcEBfr+AwcB/AECCAT1BAf8Bv4D/fb9CQT5AwIEAwUICAn/+Q7v+PwI+Q0AAP/8+wXyAAD/CAED/Pz99v0M/PkEAf/5BfcIBwkBA/QA+/v3+v8DAPQE/AYH//QC/v72+wAFAAf+/wb6BQAJ+wn9BAP99gAI/QIF9wACBQ39CgD1DQj6/PoD+wYABv3y//gHDwj6//z+//z29v3+APr8/f31AfwJ+f4K/wD39f8BAgH9+Pr6CAAC/wf7+QMK/wj5AwD29QANEQEE+v8RAfsJ/vwKBQMDAPsK/Af3CALyAPn6/vL0BQD7AwL9/fv7Af//AvcLAf32Avb8AA0FDgkEBvgF/wEC/fYGA/EB+wQFAv/7AgUDAQMD+gAKAgH4BPkCAAAG+/gDAP0PAgIK/Q32DQgA/f3/AwkAA/b7Afn9BAMC9gUFBwD3BgX8AgABDPsF+vj4BwD6/voA/woEC/cOCf4L"
 ---
 
 > The problem is that each person has that one thing they would love to have, but hardly any have the same thing.

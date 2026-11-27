@@ -6,8 +6,8 @@ title:
 tags: []
 embedding:
   model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
-  digest: "18cf950b799e22d7"
-  vector: "AgAE/fj9Cgv/AgH+/wQABQ0N+f8A+PgAAvr+BgL/BfcQ/foJ+AAD9gUA+vn3+wYCA/37Cf77/wz8/AX9+PsEAw38/wLnDAf2APwFAQIAAwgFBPn//gAD+woD+v8D/v8B+gD4A/r/Afb+7vwA/fn6Bfb8+wICAgn/Bfn7DvwDAADuBAX1AAD//v4B+woECP/8+wH+9wgA/Pz99fv3C/8EBAL99//6DAID7wUCAP8EC/77/QMABfr09Qb6Avz8AQX1/wgA/PsEBg0C9AAGBgcN9wACEP4MBPkCBQkHAwQH/gD9BQT/AgL99AEL/QMG/gT7/v78+AYW+Q3/BP8JAQLy/ATxAf/0AP4NAP37/Qr9BfIFBQMC/gnzAQL6B/77/QYL/gAC9v76APkD7/8O/QoGBwELC/8AAP///fv58wD+BAD/9f8GAv78/QAI/gMBAQABAQj9AAkFA/sDAv/9BAAA+QIFBwL7CvgDAwL/AvoD+AADAQwCAvgF8v4C5/8D//YE"
+  digest: "bd1d0de583b403f6"
+  vector: "/wEB/Pf/Bwz+Av//AAYCBA4M+QAD+PgCAfn/Av79BvsS+vsJ+gAE9f/++vr5/Qn/BPz5CwD9AQv+/AH7+vsCAg4C/wHsCwX5//oIBAEABAYIBPkBAAD+9wwC/AEE/QIB+//7A/kBBfX97vwF//j8Afn9/AAFAAsABvj7Dv4H/QDrAwb4//3+/v0D+wwDCQL5+gEB9wgB//j+9fr4CP8EBgL9+AP+CQH+8AYBAwMECf/8AAACBff09Ab6Av/6AAXyAAr/+f0HBw8C9/8DBgIH9wAADAAMAvsCAwUFAQQJAAD9BQIDAgD78gQM/wMGAAH7APn7+gYX+Q3/Bf8H/QHy/QTyAQD0//8L//z5+wz9A/MGBAcB/AfzAQP6CP/5/gML/f0C9wD4AfcD8/4M/wsECAAID//7//z+/Pz39f3+AwD/9v0JAQD//PwIAQQEAQEAAgv5AAwHA/kBAf7+BwcA+QMEBv/7C/gDAgH+AvwC+QIFBAwFAfkF7/8C5wIGAPUD"
 ---
 
 Ultimately, I have the same problem here as I do with the "Rawlsian" utility function of "maximize the utility of the worse off person": it allows - and indeed encourages - trading literally everyone else's utility for that one person. Do you really want a CEO to trade half of this years earnings for a 0.01% boost in consumer satisfaction? I think not.

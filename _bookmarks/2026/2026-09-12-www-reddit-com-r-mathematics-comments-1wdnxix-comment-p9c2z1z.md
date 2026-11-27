@@ -6,8 +6,8 @@ title:
 tags: []
 embedding:
   model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
-  digest: "3be7c86dda119a6b"
-  vector: "8AQCBgMB+AUHCQH6AwgDA/oLA/b49wMBCQMG9/4G9QT68fsFBwgCBwH7//v8BvsB/Pz8//T/AvsHA//7DQH5AQgIAAH2CQYFAgkEBAoG/QUA/vv5Bvf89vf7C/75BAP/9gQB/f//BAD/+wT7Df4JAQIN+v/+Af71AQQKBAb/+QAB/gMIA/759xQDAgMH/fwNBv/5+wvt//z8BwX/A/4B+wMF/QEH+vwD+wH5Awv+/Pv7+AEEAvkLA/j/BQP8A/sD6AX2CgAIAQj1AxH0AP8CAhb/AAQB/PsEAfz+AgkBBQD2AP4A+AX/9QX7BgP0+Pj5+v79Af4B+fsE/vwBBQkG//7x+wEOA/oDAvv++f/1CQEGBgX2BP8FAPsE/wP7BvwD+vj4Dgj8/P/zAgQEAwME+Qz7BPT/AAj6AQD7+vYH/AAGDgr3+wP/AwD3/QT3BQL9A/T+AAIF/AMDBAkD+fH2+gcDDgAJBv71+AED/v4ACfvwBvf4BPwKBf39+f8DBgQC"
+  digest: "0fd3507f03ba1351"
+  vector: "7gIBCAUB+AgECAH8BAj/BfgKA/f49gUDCgQH9/4I9QT88f0ECAkDCQH6/Pz8CPkD+/n5/vX9AfkIBAD8EQD4AAcIAAL1BwcIAgoFBAsH/AP8//v3Bfb99/f9C/33BAIA9gQB/QACBQH9/gL8DAAI/wAN+AD9AQDzAgEGAwb9+wAG/gMHBf759xMHAAIH/fgJA//9+w7y//39CQj+BQD+/AQI/QEI+fwD/AL4BAj++vv89wAEA/gJBPT/BQP+BfkD6QL3CQEKAQr2AxH1//7/AhL/AwH/+/oEAPv+AAsBBgD4/v0D+AT9+wT8CAb4+ff3/QH5Af4A+/kDAvwBBQgE//71/QMOBPoCAfv++//1CQIGAwT2Bf4E//kEAQT7B/gI+vf3DQgB+f70AAgGAwMB+Q38AvUB/wj+/gL6+PUH/QAHDgj5/wEBAv/7/gX4BQL+Afj//QEG/wQDAwgE+fD4+gYCDQIKBv3z9wAC/v7/B/zvCPn4BPkIBvz9+/8FCQUE"
 ---
 
 > the reason to bother with proofs is to be sure you are actually correct. Math is not an inductive science where truth is assumed until a counterexample is found. The proof is what establishes the truth and what promotes a statement from a conjecture to a theorem.

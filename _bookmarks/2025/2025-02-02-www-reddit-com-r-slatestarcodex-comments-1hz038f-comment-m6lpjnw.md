@@ -6,8 +6,8 @@ title:
 tags: []
 embedding:
   model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
-  digest: "4c35acff93c8db09"
-  vector: "AwH7+P8IBQf9CvoM/AQG/A768gP1Av7+8f37AP3//QwC//sBA/T8+f33Af4E9f/+/fb69AoBCgL++/3+AQH9/wr9/Pv6+gH+//gBAQUDCgAE/fz/CwP8/v0A+AIQAwQM+fv8BQIMAv0DAwIOBf/y/gIE/QEBAfj/BgELAgL++QD7/AsIAPz88wD4/gv8BQX9+wMACxD+/fwEEf///QP///b5/wH2AAT9+QbzBAH/BvL1AAX+A/T5AAAD+/gE9f/7BRj/AQD+Awn7+wb/Afz//Anz8gEHAwj9/QH7CfYC/gD5/PAA/f3+9voGAgH5Bf/zA/P/AwUB7/4BDvbz/v0C/gMDBAT++AIB+wD0B/kICgf9AAQHAAT8Bvj7/gb9B/r9Afz+/QnxAQH3A/8F+/8BCvD6B/gG+QMC//gACQAD+QAA/wEE+wP8/PsI/vz4AwsBDQL4CwQC+wH+BAL9+wINCggHDQMOBAT8BQf5DAgF//b5/QMH/gABBwMD9vsS//sM"
+  digest: "66c9b16b3fdea776"
+  vector: "AQL6+P8IAwf8CvsN/AQF/hD78QT5Af7/8//9AP4B/gkC/vr+Avb8+P72Af8C+f7+APT58wYBCgH9+v0CAgH//gj//fz7+QEBAPf//wT/CAED/vwBCQL+/v4C9gARAAEM9fz6BgIKAv0DAwEOAv7z/gEG/QEBAvr/CfwJAgH8+gD9/AoFBf398wH6/Aj7BwT6+QT/Cw/8/PwFEP4B/wL8Aff4AQL3/gb9+QXzBf//BPT0AAgBAvT3/gAE+/kB+f/5Bhf+AQD+BAn/+gQA//z9+Qjx8gAHBAn9+QD8C/YB/wD5/O////79+foHAwP3Bv3yBvP9AgID7/7+D/n2AP0B/QIDAgcA+AEA/v/1B/cLDQj9AgQJAQT5BPr5/gX9Bvn8BPv/+QnzAQL5AwID/f8AC/H6BfcI+gEEAPj/Cv0B+QAA//8G+wL/+/kHAfz5BQkBDQD3CgT/+wf8BAMA/AMOCgkIDAQNBQX8AwT6DQkF//X7/QIH/wAABwQD9/0UAPsN"
 ---
 
 > All models are wrong, but some are useful — maybe the question should not be 'is it a status game?' (almost anything has downstream effects on status) but 'is it useful to think about it as a status game?'

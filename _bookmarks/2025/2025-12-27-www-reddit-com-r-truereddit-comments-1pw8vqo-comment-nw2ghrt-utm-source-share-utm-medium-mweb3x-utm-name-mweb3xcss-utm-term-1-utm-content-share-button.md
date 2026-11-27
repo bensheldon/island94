@@ -6,8 +6,8 @@ title:
 tags: []
 embedding:
   model: "sentence-transformers/all-MiniLM-L6-v2@1110a243:v3"
-  digest: "cc5b6ad9c78520c2"
-  vector: "A/n++Q0FAAABAQIIAPgFAwL4AQT9AAP9AgUD9Pn+BgUHBQf///4TAwL0AvkICfb5BQPz/AX2Afn9Bf0ABvkFAggB9P/6/wwD/f8A+gIGDgID/vsE/v398woB+P4D/RAD+/oCBPYF/vj7/f0BBQf9AAP9Cv4JAgYM+/b7BwL59ADxBf0H//z5/f3+/Q0GDg73AQUEAQkEAvoA+/0CDf8FAfj+/QgDBPsH9gz/AgEJB/YG+fMHCPAL+/gD9/UEAv4C+gT8CA4FCv34/fYL9fYA+gD4B/gBBgP+Dgb5/PcE9QD8+vQHAQT/+QEE//v+CAT7CQL5BQUA/fkCA/f//f3++QAGAAwF+v8BB/L7/P759wT9/v/5//n3/gQC9g3+Avb49fwC/gH5AgD5CvAJDAYE/AH5+/UHBv79+AP7/f8B9gD/+AkL/QIH8gAK/fz7AgUI/PsC/wsC/QL/BwD9+AX0Bv/7CP8J/wMBAf38+Q0D/AEMCQP/BAQI/QD8+woMBAH9"
+  digest: "64039ef3dbf96369"
+  vector: "Bfn6+w4H/v4BAQULAfoFBAL6AgUAAQX+BAUD8/cBCAUIBAj+A/4SAgHzBPsHDff3BALz/Qj3/vv8Bf0BCPoE/gcA9Pz8AAsE/P8B/QAFDAIC/v8CAf3+8wgB+v8C/hAC9/kBAPUI/fX7/P0EBQf/AwD9CQAJAQYK/fb7CAL48gDyBvwHAPz5/f4B/woGDxD2/wYDAwsGAvz9/P0ED/4EAPj+/ggDB/gF+A0AAwEIBPYD+PEGCPEK+vcD9/MDA/8A+gP9CgsGC//3/PgH8/j/+AX4B/cBBQT+DgT7+/kE8gD9/PYGAQP+/QIFA/z9CQL6Cv/3BQcE/fwBA/f//f/7/AEF/wwC/f3/CPL3+v/7+wT///73//r6/AQA9Qr9A/L69foA/gL6Av//BvIIDQcC/P/2+/UKAf379wT5+/8E+gD/+QUK+wEK8v4J/v/6AwAH/fwDAAwB/AMBBv4A+AP1Bf//Bf4KAQQBAvv6+wsB/AcMDAX/AwIF/QD9+wgMBAH/"
 ---
 
 Just once I'd appreciate someone writing an article in a mainstream pub that details both the political economy of AI and the more complex and nuanced usages on college campuses.
