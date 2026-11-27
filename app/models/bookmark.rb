@@ -106,6 +106,6 @@ class Bookmark < ApplicationModel
   end
 
   def published?
-    frontmatter.published != false
+    frontmatter.published
   end
 end

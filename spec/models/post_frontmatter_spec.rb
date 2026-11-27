@@ -34,4 +34,9 @@ RSpec.describe PostFrontmatter do
   it 'deserializes empty YAML' do
     expect(described_class.from_yaml("")).to eq(described_class.new)
   end
+
+  it 'treats a blank published key as unpublished' do
+    expect(described_class.from_yaml("published:\n").published).to be(false)
+    expect(described_class.from_yaml("title: Hi\n").published).to be(true)
+  end
 end

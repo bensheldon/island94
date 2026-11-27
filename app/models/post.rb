@@ -97,7 +97,7 @@ class Post < ApplicationModel
   end
 
   def published?
-    frontmatter.published != false
+    frontmatter.published
   end
 
   def tags

@@ -9,6 +9,11 @@ class PostFrontmatter < BaseFrontmatter
 
   validates :title, presence: true
 
+  # An explicit blank `published:` means unpublished; a missing key defaults to true.
+  def published=(value)
+    super(value.nil? ? false : value)
+  end
+
   def tags=(value)
     super(Array(value))
   end
