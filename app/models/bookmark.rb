@@ -4,7 +4,7 @@ class Bookmark < ApplicationModel
   include Embeddable
 
   attribute :filepath, :string
-  attribute :frontmatter, default: -> { {} }
+  attribute :frontmatter, BookmarkFrontmatter.type, default: -> { BookmarkFrontmatter.new }
   attribute :body, :string
 
   def self.all
@@ -14,7 +14,7 @@ class Bookmark < ApplicationModel
   end
 
   def self.from_file(path)
-    parsed = FrontMatterParser::Parser.parse_file(path)
+    parsed = FrontMatterParser::Parser.parse_file(path, loader: BookmarkFrontmatter.method(:from_yaml))
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 
@@ -35,13 +35,13 @@ class Bookmark < ApplicationModel
     if File.exist?(path)
       File.write(path, "#{File.read(path).rstrip}\n\n---\n\n#{notes}\n")
     else
-      frontmatter = {
-        "link" => link,
-        "date" => date.strftime('%Y-%m-%d %H:%M %Z'),
-        "published" => true,
-        "title" => title,
-        "tags" => Array(tags),
-      }
+      frontmatter = BookmarkFrontmatter.new(
+        link: link,
+        date: date.strftime('%Y-%m-%d %H:%M %Z'),
+        title: title,
+        tags: tags
+      )
+      frontmatter.validate!
       write_frontmatter_file(path, frontmatter: frontmatter, body: notes.to_s)
     end
 
@@ -74,16 +74,14 @@ class Bookmark < ApplicationModel
   end
 
   def title
-    frontmatter.fetch("title", link)
+    frontmatter.title.presence || link
   end
 
   def link
-    frontmatter.fetch("link", "")
+    frontmatter.link.to_s
   end
 
-  def tags
-    frontmatter["tags"] || []
-  end
+  delegate :tags, to: :frontmatter
 
   def link_host
     URI.parse(link).host
@@ -92,8 +90,8 @@ class Bookmark < ApplicationModel
   end
 
   def date
-    if frontmatter["date"]
-      Time.zone.parse(frontmatter["date"])
+    if frontmatter.date
+      Time.zone.parse(frontmatter.date.to_s)
     else
       File.mtime(filepath)
     end
@@ -108,6 +106,6 @@ class Bookmark < ApplicationModel
   end
 
   def published?
-    frontmatter["published"] != false
+    frontmatter.published
   end
 end

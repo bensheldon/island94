@@ -1,0 +1,39 @@
+<% provide :title, "Drafts" %>
+
+<h1>Drafts</h1>
+<p class="text-body-secondary">Unpublished posts and bookmarks. Only available locally.</p>
+
+<h2>Posts <span class="badge text-bg-secondary"><%= @posts.size %></span></h2>
+<% if @posts.empty? %>
+  <p>No unpublished posts.</p>
+<% else %>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <%= link_to post.title.presence || post.filename, post_path(post) %>
+        <small class="text-body-secondary">
+          <%= post.published_at.to_date %> · <%= post.body.to_s.split.size %> words · <code><%= post.project_filepath %></code>
+          <% if defined?(Editor::Engine) %>
+            · <%= link_to "Edit", editor.document_path(post.filename) %>
+          <% end %>
+        </small>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>Bookmarks <span class="badge text-bg-secondary"><%= @bookmarks.size %></span></h2>
+<% if @bookmarks.empty? %>
+  <p>No unpublished bookmarks.</p>
+<% else %>
+  <ul>
+    <% @bookmarks.each do |bookmark| %>
+      <li>
+        <%= link_to bookmark.title, bookmark_path(bookmark) %>
+        <small class="text-body-secondary">
+          <%= bookmark.date.to_date %> · <code><%= bookmark.project_filepath %></code>
+        </small>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

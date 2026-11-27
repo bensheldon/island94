@@ -35,7 +35,7 @@ class Embeddings
   # Decoded int8 bytes for a record's stored vector, or nil if missing, invalid,
   # or produced by a different model/revision/format.
   def self.stored_vector(record)
-    entry = record.frontmatter[KEY]
+    entry = record.frontmatter.embedding
     return unless entry.is_a?(Hash)
     return unless entry["model"] == MODEL_ID
 
@@ -51,7 +51,7 @@ class Embeddings
     stale = records.filter_map do |record|
       text = record.embedding_text.squish
       digest = digest_for(text)
-      next if record.frontmatter.dig(KEY, "digest") == digest && stored_vector(record)
+      next if record.frontmatter.embedding.try(:dig, "digest") == digest && stored_vector(record)
 
       [record, text, digest]
     end

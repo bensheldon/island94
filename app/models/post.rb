@@ -6,7 +6,7 @@ class Post < ApplicationModel
   MEDIA_URL_ATTRIBUTES = %w[src href].freeze
 
   attribute :filepath, :string
-  attribute :frontmatter, default: -> { {} }
+  attribute :frontmatter, PostFrontmatter.type, default: -> { PostFrontmatter.new }
   attribute :body, :string
 
   def self.all
@@ -33,7 +33,7 @@ class Post < ApplicationModel
   end
 
   def self.from_file(path)
-    parsed = FrontMatterParser::Parser.parse_file(path)
+    parsed = FrontMatterParser::Parser.parse_file(path, loader: PostFrontmatter.method(:from_yaml))
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 
@@ -43,12 +43,12 @@ class Post < ApplicationModel
     raise ArgumentError, "title is required" if title.empty?
 
     path = filepath_for(title: title, date: date)
-    frontmatter = {
-      "title" => title,
-      "date" => date.strftime('%Y-%m-%d %H:%M %Z'),
-      "published" => true,
-      "tags" => [],
-    }.merge(extra_frontmatter.stringify_keys)
+    frontmatter = PostFrontmatter.new(
+      title: title,
+      date: date.strftime('%Y-%m-%d %H:%M %Z'),
+      **extra_frontmatter
+    )
+    frontmatter.validate!
     body = <<~MARKDOWN.strip
       #{body}
 
@@ -82,7 +82,7 @@ class Post < ApplicationModel
   end
 
   def title
-    frontmatter.fetch("title", "")
+    frontmatter.title.to_s
   end
 
   def content(base_url: nil)
@@ -93,15 +93,15 @@ class Post < ApplicationModel
   end
 
   def published_at
-    @_published_at ||= Time.zone.parse(frontmatter["date"] || filename.split("-", 3).join("-"))
+    @_published_at ||= Time.zone.parse(frontmatter.date&.to_s || filename.split("-", 3).join("-"))
   end
 
   def published?
-    frontmatter["published"] != false
+    frontmatter.published
   end
 
   def tags
-    Array(frontmatter["tags"]).uniq(&:parameterize)
+    frontmatter.tags.uniq(&:parameterize)
   end
 
   def tag_slugs
@@ -109,7 +109,7 @@ class Post < ApplicationModel
   end
 
   def redirects
-    frontmatter.fetch("redirect_from", []).tap do |redirects|
+    frontmatter.redirect_from.dup.tap do |redirects|
       redirects << RouteHelper.post_path(self, slug: raw_slug, only_path: true) if raw_slug != slug
     end
   end
