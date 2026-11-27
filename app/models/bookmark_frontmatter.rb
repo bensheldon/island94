@@ -5,6 +5,7 @@ class BookmarkFrontmatter < BaseFrontmatter
   attribute :published, :boolean, default: true
   attribute :title, :string
   attribute :tags, default: -> { [] }
+  attribute :embedding # managed by Embeddings
 
   validates :link, presence: true
 
