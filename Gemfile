@@ -12,9 +12,11 @@ gem "rails", "~> 8.1.1"
 gem "bootsnap", require: false
 gem "bootstrap"
 gem "front_matter_parser"
+gem "informers", require: false # on-device embeddings for related content
 gem "kramdown"
 gem "kramdown-parser-gfm"
 gem "metainspector", "~> 5.17" # for fetching bookmarks
+gem "numo-narray-alt", require: "numo/narray" # vector math for related content
 gem "puma"
 gem "rake"
 gem "rouge"
@@ -40,7 +42,3 @@ group :development, :test do
   gem "rubocop-rspec", require: false
   gem "rubocop-rspec_rails", require: false
 end
-
-gem "informers", "~> 1.3", require: false # on-device text embeddings for related posts
-
-gem "numo-narray-alt", require: "numo/narray" # fast vector math for related posts
