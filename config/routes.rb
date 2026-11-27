@@ -34,6 +34,9 @@ Rails.application.routes.draw do
   get 'robots', to: 'robots#robots', as: :robots, format: :txt, defaults: { format: :txt }
   get 'sitemap', to: 'robots#sitemap', as: :sitemap, format: :xml, defaults: { format: :xml }
 
+  # Unpublished posts and bookmarks. Local only, never part of the published site.
+  get "drafts", to: "drafts#index" if Rails.env.local?
+
   mount Editor::Engine, at: "/editor" if defined?(Editor::Engine)
 
   get "*path", to: redirect { |_params, request| Redirect.path(request.fullpath) }, constraints: ->(req) { Redirect.path?(req.fullpath) }
