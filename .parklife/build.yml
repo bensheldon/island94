@@ -10,7 +10,7 @@ paths:
     etag: W/"4fe5d3fdef8d0c691792c301c8123b12"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"3c14667407cb412451ad80128d48f447"
+    etag: W/"220a24741c471eeee9e43c3babbabdf9"
   "/search":
     build_path: search.html
     etag: W/"aeafb5d7db6eab3c795eff06ce62f32d"
@@ -3704,6 +3704,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/11/supergood-software-statements-and-expressions":
+    build_path: bookmarks/2026/11/supergood-software-statements-and-expressions.html
+    etag: W/"ffff186358527241469678eb33b29446"
   "/bookmarks/2026/11/x-com-jabaluck-status-1295034264476672001-a-ltrttlgd43phfcfuk2k-s-20":
     build_path: bookmarks/2026/11/x-com-jabaluck-status-1295034264476672001-a-ltrttlgd43phfcfuk2k-s-20.html
     etag: W/"b6eb2d6fc74128929fdb2622a12431b3"
@@ -3736,7 +3739,7 @@ paths:
     etag: W/"984505f2559c498e250de26a1128f91e"
   "/bookmarks/2026/11/www-alumni-caltech-edu-techer-stories-richard-feynman-and-the-math-of-menu-choices":
     build_path: bookmarks/2026/11/www-alumni-caltech-edu-techer-stories-richard-feynman-and-the-math-of-menu-choices.html
-    etag: W/"52deb2b1991d77897966e8c37c1c7517"
+    etag: W/"fa2f0c03e754d12c9c3f21cd97072b8b"
   "/bookmarks/2026/11/www-filfre-net-tag-spector-order-asc":
     build_path: bookmarks/2026/11/www-filfre-net-tag-spector-order-asc.html
     etag: W/"cf3506435d6d96e2d4f81faba6827945"
@@ -3940,7 +3943,7 @@ paths:
     etag: W/"74555451cff58bed5c6e3601ed10ebb9"
   ? "/bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-09-02-yale-med-school-prof-tells-his-postdocs-work-extra-hours-at-my-command-or-youre-no-better-than-the-guy-who-c"
   : build_path: bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-09-02-yale-med-school-prof-tells-his-postdocs-work-extra-hours-at-my-command-or-youre-no-better-than-the-guy-who-c.html
-    etag: W/"e481a803f00f82d986c9121d82003e2f"
+    etag: W/"2644443886ce07bea0cf60aab9b87107"
   "/bookmarks/2026/08/www-wheresyoured-at-the-ai-haters-manifesto":
     build_path: bookmarks/2026/08/www-wheresyoured-at-the-ai-haters-manifesto.html
     etag: W/"4ade4f82dcb545dcc93c565f5da23a50"
@@ -4021,7 +4024,7 @@ paths:
     etag: W/"e10ec9b6e771e2bfab20581772fbbe57"
   "/bookmarks/2026/08/rubyinside-com-rbenv-a-simple-new-ruby-version-management-tool-5302-html":
     build_path: bookmarks/2026/08/rubyinside-com-rbenv-a-simple-new-ruby-version-management-tool-5302-html.html
-    etag: W/"14ca1092cd39956cc6a9aa46cddcb2c5"
+    etag: W/"177bbcbd4b40dc85208ea10713aa9619"
   "/bookmarks/2026/08/www-jonloomer-com-15-years-facebook-meta-advertising":
     build_path: bookmarks/2026/08/www-jonloomer-com-15-years-facebook-meta-advertising.html
     etag: W/"fedd38a1705664688ee2b0e062454f1e"
@@ -4033,7 +4036,7 @@ paths:
     etag: W/"f00b6304eb9bd964bdd1395bb004525e"
   "/bookmarks/2026/07/dannykatch-substack-com-p-we-used-to-be-able-to-buy-things":
     build_path: bookmarks/2026/07/dannykatch-substack-com-p-we-used-to-be-able-to-buy-things.html
-    etag: W/"d340a0d46a3b25d2d6aab74a099db3a4"
+    etag: W/"f041bd4f66b02619e52544d12f246afb"
   "/bookmarks/2026/07/www-hamiltonnolan-com-p-i-dont-know-how-you-can-look-at-minneapolis":
     build_path: bookmarks/2026/07/www-hamiltonnolan-com-p-i-dont-know-how-you-can-look-at-minneapolis.html
     etag: W/"e013088e0df22bfe8e7c914122b2248b"
@@ -4150,7 +4153,7 @@ paths:
     etag: W/"c2498f646ed7faf5bdcdd8802f5b5879"
   ? "/bookmarks/2026/04/www-theatlantic-com-magazine-2026-05-billionaire-consequence-free-reality-686588-utm-source-www-garbageday-email-utm-medium-newsletter-utm-campaign-the"
   : build_path: bookmarks/2026/04/www-theatlantic-com-magazine-2026-05-billionaire-consequence-free-reality-686588-utm-source-www-garbageday-email-utm-medium-newsletter-utm-campaign-the.html
-    etag: W/"1c07337f8b335ddb14488a6f99cdb5f2"
+    etag: W/"d9f35123357c14ad2f2fdafb3d782e48"
   "/bookmarks/2026/04/www-philschmid-de-agent-skills-tips-ref-labnotes-org":
     build_path: bookmarks/2026/04/www-philschmid-de-agent-skills-tips-ref-labnotes-org.html
     etag: W/"76d628b612ae053c28867545c509ed5d"
@@ -4300,7 +4303,7 @@ paths:
     etag: W/"64f6e084509be9595c7d3a63f3c43ff4"
   "/bookmarks/2026/02/railsnotes-xyz-blog-ferrum-stealth-browsing-setting-up-ferrum-browser-headers-hide-automationcontrolled":
     build_path: bookmarks/2026/02/railsnotes-xyz-blog-ferrum-stealth-browsing-setting-up-ferrum-browser-headers-hide-automationcontrolled.html
-    etag: W/"4521b0021bc11a5db6ddfce943605984"
+    etag: W/"a3b93d255d5e1e1afb73959c1ab8f9ef"
   "/bookmarks/2026/02/cutlefish-substack-com-p-tbm-406-seeing-everything-understanding":
     build_path: bookmarks/2026/02/cutlefish-substack-com-p-tbm-406-seeing-everything-understanding.html
     etag: W/"28012395f4d639633181be490f917913"
@@ -4318,7 +4321,7 @@ paths:
     etag: W/"cea28b2a4f765a497b19fcf09ea4721d"
   "/bookmarks/2026/02/sketchplanations-com-front-load-key-words-ref-labnotes-org":
     build_path: bookmarks/2026/02/sketchplanations-com-front-load-key-words-ref-labnotes-org.html
-    etag: W/"41133f08fa27fb6e8cbeadf3eb9fbca1"
+    etag: W/"d9e861fd5068c5f2b581051619b74783"
   "/bookmarks/2026/01/www-thebignewsletter-com-p-the-boomcession-why-everyone-but":
     build_path: bookmarks/2026/01/www-thebignewsletter-com-p-the-boomcession-why-everyone-but.html
     etag: W/"80d600ce577f06c8e90d5178bcadaeec"
@@ -4513,7 +4516,7 @@ paths:
     etag: W/"d2f6a141da336fa86d7a04fe9bb54ff0"
   "/bookmarks/2025/09/cutlefish-substack-com-p-tbm-380-but-we-have-to-try-something":
     build_path: bookmarks/2025/09/cutlefish-substack-com-p-tbm-380-but-we-have-to-try-something.html
-    etag: W/"3efe44aaa16b9802ddafeb355665777c"
+    etag: W/"23062dd8998afdb1b8fb517fd4c4f0f3"
   "/bookmarks/2025/09/www-lukew-com-ff-entry-asp-2125":
     build_path: bookmarks/2025/09/www-lukew-com-ff-entry-asp-2125.html
     etag: W/"e5e82e19ede84cc2b5b1683711b9f680"
@@ -5050,7 +5053,7 @@ paths:
     etag: W/"840e807733c1bea0cb8e69bf626c7a84"
   "/bookmarks/2025/02/www-reddit-com-r-simcity4-comments-1ig7jxe-after-17-years-i-fulfilled-one-bat-request-from":
     build_path: bookmarks/2025/02/www-reddit-com-r-simcity4-comments-1ig7jxe-after-17-years-i-fulfilled-one-bat-request-from.html
-    etag: W/"13cc47692f8d57bf238904bd3129d184"
+    etag: W/"d887cc232313bf2eb76919ca34faf6f5"
   "/bookmarks/2025/02/simonwillison-net-2025-feb-6-the-future-belongs-to-idea-guys-who-can-just-do-things-atom-everything":
     build_path: bookmarks/2025/02/simonwillison-net-2025-feb-6-the-future-belongs-to-idea-guys-who-can-just-do-things-atom-everything.html
     etag: W/"e57ef848f9e6fbf2049aa8ee29694bd5"
@@ -5068,7 +5071,7 @@ paths:
     etag: W/"9c9e30ceaf7e4d58691f1709e23e18e4"
   ? "/bookmarks/2025/02/lethain-com-is-engineering-strategy-useful-aid-rec1tqx15dp7uue2j-bhlid-eb2d6168e605a176cce1f1e799c27c8aadb27c26"
   : build_path: bookmarks/2025/02/lethain-com-is-engineering-strategy-useful-aid-rec1tqx15dp7uue2j-bhlid-eb2d6168e605a176cce1f1e799c27c8aadb27c26.html
-    etag: W/"f6c83544da52cdc33a830b49126e8752"
+    etag: W/"a78705b2b578c706269ffd3fd989543d"
   "/bookmarks/2025/02/www-reddit-com-r-slatestarcodex-comments-1hz038f-comment-m6lpjnw":
     build_path: bookmarks/2025/02/www-reddit-com-r-slatestarcodex-comments-1hz038f-comment-m6lpjnw.html
     etag: W/"d90f23db5005deaa0695ed8d01c3d0be"
@@ -5173,7 +5176,7 @@ paths:
     etag: W/"e6e67874e83b6e8a06d363f5eaefb1a7"
   "/bookmarks/2024/10/third-bit-com-talks-writing-book-slide-0":
     build_path: bookmarks/2024/10/third-bit-com-talks-writing-book-slide-0.html
-    etag: W/"3206f0609c86c90dc373da9d1a667f2b"
+    etag: W/"0cde8d63dc315e10de148903606526bd"
   "/bookmarks/2024/10/statmodeling-stat-columbia-edu-2024-10-04-22-revision-prompts-from-matthew-salesses":
     build_path: bookmarks/2024/10/statmodeling-stat-columbia-edu-2024-10-04-22-revision-prompts-from-matthew-salesses.html
     etag: W/"533c6cca04b21522cb76a16a57cbfa7b"
@@ -5233,7 +5236,7 @@ paths:
     etag: W/"001746f935827c835246bca465b7c67e"
   "/bookmarks/2024/08/blog-hubspot-com-marketing-copywriting-insights-ref-labnotes-org":
     build_path: bookmarks/2024/08/blog-hubspot-com-marketing-copywriting-insights-ref-labnotes-org.html
-    etag: W/"9a8b3f64950c0082bdf1b31a49aebb42"
+    etag: W/"1d0bb1b277ca7008ab8ca7f909791ca4"
   "/bookmarks/2024/08/nts-strzibny-name-minitest-mocks":
     build_path: bookmarks/2024/08/nts-strzibny-name-minitest-mocks.html
     etag: W/"00be91258a403c535f026158708bd00d"
@@ -5329,7 +5332,7 @@ paths:
     etag: W/"89cfaef411ea1cc549de606118e3288b"
   "/bookmarks/2024/05/www-alexmurrell-co-uk-articles-the-age-of-average-encore":
     build_path: bookmarks/2024/05/www-alexmurrell-co-uk-articles-the-age-of-average-encore.html
-    etag: W/"b5f6e0b231e7a7498adaefa0b576240c"
+    etag: W/"9386aaf89acc5db59499ab8944fbdb92"
   "/bookmarks/2024/05/vikramoberoi-com-posts-how-citymeetings-nyc-uses-ai-to-make-it-easy-to-navigate-city-council-meetings":
     build_path: bookmarks/2024/05/vikramoberoi-com-posts-how-citymeetings-nyc-uses-ai-to-make-it-easy-to-navigate-city-council-meetings.html
     etag: W/"ac0d469d9478a9ffbfa0bb932d2839a0"
@@ -5347,7 +5350,7 @@ paths:
     etag: W/"19f7103a38a7bd5edada6b8f7b82385f"
   "/bookmarks/2024/05/kottke-org-24-05-0044590-some-tips-for-long-walks":
     build_path: bookmarks/2024/05/kottke-org-24-05-0044590-some-tips-for-long-walks.html
-    etag: W/"54157f24ec3e40542deefe0152168eed"
+    etag: W/"7518911e34c95b9771df7bcb4dd91394"
   "/bookmarks/2024/05/naildrivin5-com-blog-2024-05-10-estimates-are-fine-html":
     build_path: bookmarks/2024/05/naildrivin5-com-blog-2024-05-10-estimates-are-fine-html.html
     etag: W/"bf72a07063c88d47983a2dd5e51f25fc"
@@ -5479,7 +5482,7 @@ paths:
     etag: W/"05180559f75c0cbefcbdbfcccdad4758"
   "/bookmarks/2024/03/www-youtube-com-watch-v-w8zeoq9ltqu":
     build_path: bookmarks/2024/03/www-youtube-com-watch-v-w8zeoq9ltqu.html
-    etag: W/"3bf15956b02c4d11f7172fe48c165497"
+    etag: W/"6954e87e7f1080fb4d15298cfc647ad8"
   "/bookmarks/2024/03/alexharri-com-blog-jsdoc-as-an-alternative-typescript-syntax":
     build_path: bookmarks/2024/03/alexharri-com-blog-jsdoc-as-an-alternative-typescript-syntax.html
     etag: W/"ba61f7553049ff4bff55b117ea7d346c"
@@ -5665,7 +5668,7 @@ paths:
     etag: W/"22a90f347b51a7b118de3a9062adb5a8"
   "/bookmarks/2023/12/component-gallery-components":
     build_path: bookmarks/2023/12/component-gallery-components.html
-    etag: W/"a7c3759689477167e566be508d6cd2a1"
+    etag: W/"73c54228c4f2884ba0ec89621f0dd699"
   "/bookmarks/2023/12/www-rollingstone-com-politics-politics-news-henry-kissinger-war-criminal-dead-1234804748":
     build_path: bookmarks/2023/12/www-rollingstone-com-politics-politics-news-henry-kissinger-war-criminal-dead-1234804748.html
     etag: W/"88ade570ab05aefe9dcf0705e84b6487"
@@ -5791,7 +5794,7 @@ paths:
     etag: W/"3ca02292ecf59577f31aee829250fea8"
   "/bookmarks/2023/07/maheshba-bitbucket-io-blog-2023-07-12-design-html-utm-source-programmingdigest-utm-medium-utm-campaign-1688":
     build_path: bookmarks/2023/07/maheshba-bitbucket-io-blog-2023-07-12-design-html-utm-source-programmingdigest-utm-medium-utm-campaign-1688.html
-    etag: W/"2425e0e81d1fcbd6c8a9779bea0c89c9"
+    etag: W/"4115f91092725d20e4fe0e513ae6fb86"
   "/bookmarks/2023/07/blog-testdouble-com-talks-2023-07-24-forecasting-the-future":
     build_path: bookmarks/2023/07/blog-testdouble-com-talks-2023-07-24-forecasting-the-future.html
     etag: W/"d5b1820ab71e0208938d8958bba74364"
@@ -6043,7 +6046,7 @@ paths:
     etag: W/"fb00f4b30f4264977140536d00f55df8"
   "/bookmarks/2022/12/st0012-dev-from-byebug-to-ruby-debug":
     build_path: bookmarks/2022/12/st0012-dev-from-byebug-to-ruby-debug.html
-    etag: W/"9e00483c0d685bf436740019b3a16684"
+    etag: W/"a0e817c1f2901c5fd359d42c518c11e9"
   ? "/bookmarks/2022/12/manny-codes-this-week-in-rails-wrapped-an-overview-of-rails-7-1-features-part-i-20-validity-check-for-postgresql-indexes-added"
   : build_path: bookmarks/2022/12/manny-codes-this-week-in-rails-wrapped-an-overview-of-rails-7-1-features-part-i-20-validity-check-for-postgresql-indexes-added.html
     etag: W/"a36861b09bfa115a6760666f98e0a4c4"
@@ -6130,7 +6133,7 @@ paths:
     etag: W/"0a4d2ad5178d124d900f707f3b04c728"
   "/bookmarks/2022/10/component-gallery":
     build_path: bookmarks/2022/10/component-gallery.html
-    etag: W/"d654eff49859279004caaf13495cb026"
+    etag: W/"3d0dfa0611adf44f063099a909aa374b"
   "/bookmarks/2022/10/interconnected-org-home-2022-10-18-shopping":
     build_path: bookmarks/2022/10/interconnected-org-home-2022-10-18-shopping.html
     etag: W/"e21becbfbc3edb8dad415a78c5248ad0"
@@ -6208,7 +6211,7 @@ paths:
     etag: W/"5b862fa6613e1a935099fd1602496657"
   "/bookmarks/2022/08/leaddev-com-career-paths-progression-promotion-secret-getting-staff-level-leverage":
     build_path: bookmarks/2022/08/leaddev-com-career-paths-progression-promotion-secret-getting-staff-level-leverage.html
-    etag: W/"fc606e2f9a5935176f341f456603061b"
+    etag: W/"6f9d6d3df8bd5d3d915a98cc8982ae01"
   "/bookmarks/2022/08/blog-blether-chat-2022-08-03-gdpr-for-developers-by-example":
     build_path: bookmarks/2022/08/blog-blether-chat-2022-08-03-gdpr-for-developers-by-example.html
     etag: W/"8230adcc721d6ee89a3428cef57cee0f"
@@ -6223,7 +6226,7 @@ paths:
     etag: W/"52fc551748de3f474e8ccc502d04b20f"
   "/bookmarks/2022/07/www-gamesindustry-biz-articles-2022-07-08-the-diablo-is-in-the-details-this-week-in-business":
     build_path: bookmarks/2022/07/www-gamesindustry-biz-articles-2022-07-08-the-diablo-is-in-the-details-this-week-in-business.html
-    etag: W/"25db5a435baef2a42f5dc0011e6fdbdc"
+    etag: W/"5354bef719eccec47be93898da9dbaa4"
   "/bookmarks/2022/07/cate-blog-2022-07-18-from-visibility-to-representation-rethinking-dei":
     build_path: bookmarks/2022/07/cate-blog-2022-07-18-from-visibility-to-representation-rethinking-dei.html
     etag: W/"3d670337c260297aab140de8d110af42"
@@ -6412,7 +6415,7 @@ paths:
     etag: W/"7211aae72c42701ed2a05a3037d0827e"
   "/bookmarks/2022/01/copyconstruct-medium-com-know-how-your-org-works-or-how-to-become-a-more-effective-engineer-1a3287d1f58d":
     build_path: bookmarks/2022/01/copyconstruct-medium-com-know-how-your-org-works-or-how-to-become-a-more-effective-engineer-1a3287d1f58d.html
-    etag: W/"b77bf499da7170ec6f840269a31a2b21"
+    etag: W/"d41f4b241e697797f7743cd75ec891d9"
   "/bookmarks/2022/01/www-nybooks-com-daily-2022-01-08-late-romanticism":
     build_path: bookmarks/2022/01/www-nybooks-com-daily-2022-01-08-late-romanticism.html
     etag: W/"ccd3defa7462dc4d211c4025d6b82a14"
@@ -6886,7 +6889,7 @@ paths:
     etag: W/"201d29dc4d9f8fecc48a86b7655a7530"
   "/bookmarks/2020/07/evilmartians-com-chronicles-system-of-a-test-setting-up-end-to-end-rails-testing":
     build_path: bookmarks/2020/07/evilmartians-com-chronicles-system-of-a-test-setting-up-end-to-end-rails-testing.html
-    etag: W/"c47ec79760cc0c1a8062e470b1704de3"
+    etag: W/"f2e7f95e872687e4c3a81a2ae2d085c3"
   "/bookmarks/2020/07/donaldclarkplanb-blogspot-com-2020-07-bogus-pyramids-learning-methods-maslow-html-m-1":
     build_path: bookmarks/2020/07/donaldclarkplanb-blogspot-com-2020-07-bogus-pyramids-learning-methods-maslow-html-m-1.html
     etag: W/"fffcbcedffad6d278988817bef59466a"
@@ -7069,7 +7072,7 @@ paths:
     etag: W/"c8bc15fea02a5258d8627afacb617062"
   "/bookmarks/2020/01/fvsch-com-body-copy-sizes-fnref1-3":
     build_path: bookmarks/2020/01/fvsch-com-body-copy-sizes-fnref1-3.html
-    etag: W/"46c0e5936814991cd5bb244ed0a72ec1"
+    etag: W/"3ade09354580ca3f2d93890951ecc24b"
   "/bookmarks/2020/01/www-cio-co-uk-it-strategy-simon-wardleys-100-day-corporate-get-fit-plan-3623506":
     build_path: bookmarks/2020/01/www-cio-co-uk-it-strategy-simon-wardleys-100-day-corporate-get-fit-plan-3623506.html
     etag: W/"9cbc15e3fadb84620d05eab36a95968b"
@@ -7090,7 +7093,7 @@ paths:
     etag: W/"a00bfa53965bb9a3470388bcb3206819"
   "/bookmarks/2019/12/www-theforcingfunction-com-blog-service-business":
     build_path: bookmarks/2019/12/www-theforcingfunction-com-blog-service-business.html
-    etag: W/"b8c368a965460c106f756b2fe51ac4f6"
+    etag: W/"bac0be2b852bbe18080a6c25f387cb9b"
   "/bookmarks/2019/12/gomakethings-com-how-i-structure-my-vanilla-js-projects":
     build_path: bookmarks/2019/12/gomakethings-com-how-i-structure-my-vanilla-js-projects.html
     etag: W/"f2d13e2d44efca946dba6a2d739eebfb"
@@ -7702,7 +7705,7 @@ paths:
     etag: W/"bafecf5e517228472520dd536b627975"
   "/bookmarks/2019/03/fs-blog-mental-models":
     build_path: bookmarks/2019/03/fs-blog-mental-models.html
-    etag: W/"c50a7892506074d966615ae5cfe6fb65"
+    etag: W/"452a66d93e37a4232a38113ab396f67d"
   "/bookmarks/2019/03/timkadlec-com-remembers-2019-03-07-performance-budgets-that-stick":
     build_path: bookmarks/2019/03/timkadlec-com-remembers-2019-03-07-performance-budgets-that-stick.html
     etag: W/"233f3780aecec0aa84e7ceb73a56c374"
@@ -7816,7 +7819,7 @@ paths:
     etag: W/"3a071298790d31dbf4b2da3352a3427b"
   "/bookmarks/2019/01/devtomanager-com":
     build_path: bookmarks/2019/01/devtomanager-com.html
-    etag: W/"7d8433c50a4cf235f9c82bbd61c8f9ee"
+    etag: W/"69167eeae16e66344deefa524a99f272"
   "/bookmarks/2019/01/planetruby-github-io-calendar-2019-html":
     build_path: bookmarks/2019/01/planetruby-github-io-calendar-2019-html.html
     etag: W/"cbcbd33fab1102ef8810c3650e7be110"
@@ -7864,7 +7867,7 @@ paths:
     etag: W/"c294e56efea947d5ffacb94d040934c5"
   "/bookmarks/2018/12/stackingthebricks-com-6-landing-page-mistakes":
     build_path: bookmarks/2018/12/stackingthebricks-com-6-landing-page-mistakes.html
-    etag: W/"c56783abf0ac3c5258c90f3c4b659e23"
+    etag: W/"4793f92fdf6847ccc2777be6afc1b272"
   "/bookmarks/2018/12/24ways-org-2018-build-up-your-leadership-toolbox":
     build_path: bookmarks/2018/12/24ways-org-2018-build-up-your-leadership-toolbox.html
     etag: W/"f8a580da6d190222ce8be042802dfb30"
@@ -8185,7 +8188,7 @@ paths:
     etag: W/"7af68f5c63405b3c44c8a010dea08598"
   "/bookmarks/2018/04/github-com-ankane-the-ultimate-guide-to-ruby-timeouts-mariadb":
     build_path: bookmarks/2018/04/github-com-ankane-the-ultimate-guide-to-ruby-timeouts-mariadb.html
-    etag: W/"8db4c010fb0049b9f555cb202b9f7444"
+    etag: W/"291f71b33e54666ece5858e2ec00201a"
   "/bookmarks/2018/04/medium-learningbyshipping-com-performance-of-performance-reviews-cd7494eeaef8":
     build_path: bookmarks/2018/04/medium-learningbyshipping-com-performance-of-performance-reviews-cd7494eeaef8.html
     etag: W/"74239a67692f05655de108044edf9c27"
@@ -8602,7 +8605,7 @@ paths:
     etag: W/"23aa58aae5a18f3abf4fd0c2f2c0fc8c"
   "/bookmarks/2017/10/blog-pragmaticengineer-com-things-ive-learned-transitioning-from-engineer-to-engineering-manager":
     build_path: bookmarks/2017/10/blog-pragmaticengineer-com-things-ive-learned-transitioning-from-engineer-to-engineering-manager.html
-    etag: W/"74a74a548a69b24b9d3a9cdb492ce2fc"
+    etag: W/"4b16c96e2e95206b073b21448f2abf55"
   "/bookmarks/2017/09/stackingthebricks-com-nobody-reading-posts-16-steps-best-post":
     build_path: bookmarks/2017/09/stackingthebricks-com-nobody-reading-posts-16-steps-best-post.html
     etag: W/"93654b0156c37954fe51f9603011c4e8"
@@ -8683,7 +8686,7 @@ paths:
     etag: W/"40db4120d9c32fb58c50ba82d50a36d9"
   "/bookmarks/2017/08/blog-percy-io-share-rubocop-rules-across-all-of-your-repos-f3281fbd71f8":
     build_path: bookmarks/2017/08/blog-percy-io-share-rubocop-rules-across-all-of-your-repos-f3281fbd71f8.html
-    etag: W/"ba4bfda97941a70eba099f9aa2165fe4"
+    etag: W/"988c0e099e55c14b13a7c730074014f6"
   "/bookmarks/2017/08/gender-stanford-edu-news-2014-why-does-john-get-stem-job-rather-jennifer":
     build_path: bookmarks/2017/08/gender-stanford-edu-news-2014-why-does-john-get-stem-job-rather-jennifer.html
     etag: W/"f03b7309acc7a34d60453e6968cb6510"
@@ -9181,7 +9184,7 @@ paths:
     etag: W/"cbf5d40f91106ce95533d3ae0c0bb4d8"
   "/bookmarks/2016/04/blacklane-github-io-2016-04-23-lessons-learned-from-some-of-the-best-ruby-codebases-part-1":
     build_path: bookmarks/2016/04/blacklane-github-io-2016-04-23-lessons-learned-from-some-of-the-best-ruby-codebases-part-1.html
-    etag: W/"4627998991d3ef1a7f5b90d22684986f"
+    etag: W/"efcf27153ceb020c62bd7224b6a9f02f"
   "/bookmarks/2016/04/bl-ocks-org-abernier-3070589":
     build_path: bookmarks/2016/04/bl-ocks-org-abernier-3070589.html
     etag: W/"7749be9b641b87aaef88f279a57c8d10"
@@ -9259,7 +9262,7 @@ paths:
     etag: W/"ea4892dc91cb4f8ae2b81d0ff1dd2b81"
   "/bookmarks/2015/11/rscss-io":
     build_path: bookmarks/2015/11/rscss-io.html
-    etag: W/"d929e7ccfbd650ead8802cf9a6ea1442"
+    etag: W/"1e73c1a0c0ffc28c4c2e1c449b3fa577"
   "/bookmarks/2015/11/blog-mrmeyer-com-2015-if-math-is-the-aspirin-then-how-do-you-create-the-headache":
     build_path: bookmarks/2015/11/blog-mrmeyer-com-2015-if-math-is-the-aspirin-then-how-do-you-create-the-headache.html
     etag: W/"0e79880ecbca4e0290b596a8d2773771"
@@ -9289,7 +9292,7 @@ paths:
     etag: W/"0cadeeb26cc69b54584c3eb744adad1f"
   "/bookmarks/2015/09/www-be9-io-2015-09-21-memory-leak":
     build_path: bookmarks/2015/09/www-be9-io-2015-09-21-memory-leak.html
-    etag: W/"6fb90bf557504569c3e49249d92e5923"
+    etag: W/"65e4d199276f8cd5fab36b66010ad087"
   "/bookmarks/2015/09/www-get-click-com":
     build_path: bookmarks/2015/09/www-get-click-com.html
     etag: W/"3cf3bf4d34fcdfd8c34e4c0192b2284e"
@@ -9358,7 +9361,7 @@ paths:
     etag: W/"99cdf6d3f0bd6ca928124299d235e17d"
   "/bookmarks/2015/07/rain-today":
     build_path: bookmarks/2015/07/rain-today.html
-    etag: W/"f40d694200699b3691cc99a3fa422d3e"
+    etag: W/"6e3f46e97e591543722126b02cec70bc"
   "/bookmarks/2015/07/www-rockpapershotgun-com-2015-07-23-vlambeer-success":
     build_path: bookmarks/2015/07/www-rockpapershotgun-com-2015-07-23-vlambeer-success.html
     etag: W/"c7ff719d16f9412a8f226f31a4a2f8bc"
@@ -9550,7 +9553,7 @@ paths:
     etag: W/"801ae98504dfcee14dae92bb489d3798"
   "/bookmarks/2015/03/www-askr-me-ruby":
     build_path: bookmarks/2015/03/www-askr-me-ruby.html
-    etag: W/"d2fafe5737f72c88a9d0fefacb07853e"
+    etag: W/"4c8e84e153ca635b4862a3228c945b04"
   "/bookmarks/2015/03/www-failbettergames-com-sunless-sea-sales-and-funding-deep-dive-part-iii-early-access-and-final-release":
     build_path: bookmarks/2015/03/www-failbettergames-com-sunless-sea-sales-and-funding-deep-dive-part-iii-early-access-and-final-release.html
     etag: W/"930bf4f70c1742e1cba3023ed321bdcf"
@@ -10129,7 +10132,7 @@ paths:
     etag: W/"c98b50992249be5c5126c06eaebe775b"
   "/bookmarks/2014/10/startbootstrap-com-templates-clean-blog-index-html":
     build_path: bookmarks/2014/10/startbootstrap-com-templates-clean-blog-index-html.html
-    etag: W/"51e4d9ce3359697f25293ae2812a8abc"
+    etag: W/"5473503fe041dae9fa0719e620e20123"
   "/bookmarks/2014/10/benediktdeicke-com-2013-01-custom-rspec-example-groups":
     build_path: bookmarks/2014/10/benediktdeicke-com-2013-01-custom-rspec-example-groups.html
     etag: W/"846ee8db0d30823d25d752776ab57806"
@@ -10534,7 +10537,7 @@ paths:
     etag: W/"fd5043b6d22486f40ea69fe886d53382"
   "/bookmarks/2014/07/www-amberbit-com-blog-2013-12-20-similar-images-detection-in-ruby-with-phash":
     build_path: bookmarks/2014/07/www-amberbit-com-blog-2013-12-20-similar-images-detection-in-ruby-with-phash.html
-    etag: W/"4d4df86eec2959798cfe5a499ae3aba2"
+    etag: W/"f0fb31a0e914e6bb53535dc1d079dadd"
   "/bookmarks/2014/07/www-newyorker-com-reporting-2013-05-27-130527fa-fact-packer":
     build_path: bookmarks/2014/07/www-newyorker-com-reporting-2013-05-27-130527fa-fact-packer.html
     etag: W/"cecfd0a32e0bbb8d5fe3044c6e69cd5d"
@@ -10795,7 +10798,7 @@ paths:
     etag: W/"53f5e231f91c1e2ec6c6345282d97996"
   "/bookmarks/2014/05/www-sitepoint-com-12-little-known-css-facts":
     build_path: bookmarks/2014/05/www-sitepoint-com-12-little-known-css-facts.html
-    etag: W/"88955c17edbd344d2d4318598b54fa72"
+    etag: W/"05a3a88c4fb2710bd2544112b9d1b0f8"
   "/bookmarks/2014/05/brewhouse-io-blog-2014-04-30-gourmet-service-objects-html":
     build_path: bookmarks/2014/05/brewhouse-io-blog-2014-04-30-gourmet-service-objects-html.html
     etag: W/"dc71490ccc13ca567ec1b31c37b6f390"
@@ -10804,7 +10807,7 @@ paths:
     etag: W/"93712db35110bd76731f6e854ac448d6"
   "/bookmarks/2014/04/www-gamasutra-com-view-feature-132160-atari-the-golden-years-a-php-page-1":
     build_path: bookmarks/2014/04/www-gamasutra-com-view-feature-132160-atari-the-golden-years-a-php-page-1.html
-    etag: W/"6154d7af69eb3bfc91de55d0e2fc0d20"
+    etag: W/"316edae22ef8d34643cb2c113a779dd2"
   "/bookmarks/2014/04/www-theatlantic-com-technology-archive-2014-04-silvercar-luxury-361001":
     build_path: bookmarks/2014/04/www-theatlantic-com-technology-archive-2014-04-silvercar-luxury-361001.html
     etag: W/"25144c3685ec45b93da4d9046b130aae"
@@ -10918,7 +10921,7 @@ paths:
     etag: W/"c0632aa563da8b52325217378ab9fe5a"
   "/bookmarks/2014/01/solnic-eu-2014-01-22-common-pitfalls-of-code-metrics-html":
     build_path: bookmarks/2014/01/solnic-eu-2014-01-22-common-pitfalls-of-code-metrics-html.html
-    etag: W/"441c12225874188fc330125ae2f10058"
+    etag: W/"23ad973a9a228a9ce7e6c9b0b94ffdad"
   ? "/bookmarks/2014/01/pando-com-2014-01-23-the-techtopus-how-silicon-valleys-most-celebrated-ceos-conspired-to-drive-down-100000-tech-engineers-wages"
   : build_path: bookmarks/2014/01/pando-com-2014-01-23-the-techtopus-how-silicon-valleys-most-celebrated-ceos-conspired-to-drive-down-100000-tech-engineers-wages.html
     etag: W/"d188dcb17364defbd7c23482e87be600"
@@ -11095,7 +11098,7 @@ paths:
     etag: W/"4ed4a8daf72700b383849041c869fff3"
   "/bookmarks/2013/10/commons-wikimedia-org-wiki-category-3aimages":
     build_path: bookmarks/2013/10/commons-wikimedia-org-wiki-category-3aimages.html
-    etag: W/"8adc2c529839e9dbdf5b534dabcd4eaf"
+    etag: W/"cb3d0ad2c47a01c4197ad34d0b4680d2"
   "/bookmarks/2013/10/arstechnica-com-tech-policy-2013-10-europe-wont-save-you-why-e-mail-is-probably-safer-in-the-us":
     build_path: bookmarks/2013/10/arstechnica-com-tech-policy-2013-10-europe-wont-save-you-why-e-mail-is-probably-safer-in-the-us.html
     etag: W/"907736e714439c2a6fb9c5dbd0fa9d3b"
@@ -11167,7 +11170,7 @@ paths:
     etag: W/"7ccbdb25fd3dc733d6fc29f28c490dac"
   "/bookmarks/2013/09/practicaltypography-com":
     build_path: bookmarks/2013/09/practicaltypography-com.html
-    etag: W/"c0e9e2dbb11b1a596b2e4b75bd5d6a35"
+    etag: W/"3f9e8a37cd32411c89290d5ba8283cac"
   "/bookmarks/2013/08/blog-bandzarewicz-com-slides-krug-the-perfect-rspec-1":
     build_path: bookmarks/2013/08/blog-bandzarewicz-com-slides-krug-the-perfect-rspec-1.html
     etag: W/"71e0c2ba4fe52d48ff9e30e2e6ef2a69"
@@ -11452,7 +11455,7 @@ paths:
     etag: W/"276dd70f7a06c72ccb4d57d1ce2dd1c4"
   "/bookmarks/2013/03/www-newyorker-com-online-blogs-culture-2013-03-christoph-niemann-petting-zoo-app-html":
     build_path: bookmarks/2013/03/www-newyorker-com-online-blogs-culture-2013-03-christoph-niemann-petting-zoo-app-html.html
-    etag: W/"6bac905bd0c20f95ea7ee0e9d510c871"
+    etag: W/"e65e3ff5308cc9a06de1a7ad54475950"
   "/bookmarks/2013/03/thephoenix-com-boston-news-152325-trials-of-nadia-naffe":
     build_path: bookmarks/2013/03/thephoenix-com-boston-news-152325-trials-of-nadia-naffe.html
     etag: W/"95b0850979d9331ce51b812a8e39fdf0"
@@ -11608,7 +11611,7 @@ paths:
     etag: W/"327e9b270261e8b5c1812c69b3a95b35"
   "/bookmarks/2013/01/www-theverge-com-2013-1-16-3740422-the-life-and-death-of-the-american-arcade-for-amusement-only":
     build_path: bookmarks/2013/01/www-theverge-com-2013-1-16-3740422-the-life-and-death-of-the-american-arcade-for-amusement-only.html
-    etag: W/"6ef60dbadeaddbe5eec59d0909f49d1d"
+    etag: W/"33a66d1294531940d786a44c49ed6e91"
   "/bookmarks/2013/01/tech-slashdot-org-comments-pl-sid-3367991-cid-42528961":
     build_path: bookmarks/2013/01/tech-slashdot-org-comments-pl-sid-3367991-cid-42528961.html
     etag: W/"d74f020aeddd8d28af2ad13e5e3bf1a4"
@@ -11833,7 +11836,7 @@ paths:
     etag: W/"a4bccfe2dfbca2406dd19201ae101e0d"
   "/bookmarks/2012/10/arstechnica-com-gaming-2012-09-masterpiece-super-mario-world-2-yoshis-island":
     build_path: bookmarks/2012/10/arstechnica-com-gaming-2012-09-masterpiece-super-mario-world-2-yoshis-island.html
-    etag: W/"e6546ae9b3fd3d7d84317eb50afcc14c"
+    etag: W/"b746fb5077af6e95e219c4e10080a9b4"
   "/bookmarks/2012/09/www-bookslut-com-features-2012-09-019363-php":
     build_path: bookmarks/2012/09/www-bookslut-com-features-2012-09-019363-php.html
     etag: W/"538ef07d8a4ca62d49ad019a714a8434"
@@ -11926,7 +11929,7 @@ paths:
     etag: W/"e0f9797a5e8d7a5a6778b94d6feb92e9"
   "/bookmarks/2012/09/www-webmonkey-com-2010-08-write-your-readme-before-your-code":
     build_path: bookmarks/2012/09/www-webmonkey-com-2010-08-write-your-readme-before-your-code.html
-    etag: W/"b5987f150aa47c39f6ca7e67adae5976"
+    etag: W/"1f7b4396ac2718a5f3785617bf349f3f"
   "/bookmarks/2012/09/www-businessinsider-com-michael-lewis-vanity-fair-profile-how-obama-made-the-decision-on-libya-2012-9":
     build_path: bookmarks/2012/09/www-businessinsider-com-michael-lewis-vanity-fair-profile-how-obama-made-the-decision-on-libya-2012-9.html
     etag: W/"2c7d0658ea3810f1884e5554ebb488c5"
@@ -11974,7 +11977,7 @@ paths:
     etag: W/"ff8aa618d9c432bfc70909f53faf68a0"
   "/bookmarks/2012/08/www-whatmakesaman-net-wordpress-2008-09-21-10-classic-english-shoemakers-part-1-introduction":
     build_path: bookmarks/2012/08/www-whatmakesaman-net-wordpress-2008-09-21-10-classic-english-shoemakers-part-1-introduction.html
-    etag: W/"99cb89944bebfd7e6c4049ac2a7e0bb6"
+    etag: W/"6906ff220724533fb220dcd41bea06af"
   "/bookmarks/2012/08/www-scientificamerican-com-article-cfm-id-how-hollywood-encouraging-onine-piracy":
     build_path: bookmarks/2012/08/www-scientificamerican-com-article-cfm-id-how-hollywood-encouraging-onine-piracy.html
     etag: W/"924102f9a1e6adac77e5f5dbf0e0b0ac"
@@ -12013,7 +12016,7 @@ paths:
     etag: W/"a4166110bae9cf715c1c4eaa9cf35064"
   "/bookmarks/2012/08/www-techdirt-com-articles-20120813-10323120007-if-i-were-mpaa-how-i-would-deal-with-my-car-break-in-shtml":
     build_path: bookmarks/2012/08/www-techdirt-com-articles-20120813-10323120007-if-i-were-mpaa-how-i-would-deal-with-my-car-break-in-shtml.html
-    etag: W/"8886587d0015da5101eddc6af0a2b153"
+    etag: W/"08cc2cc5d1505d269a08414da2b904e3"
   "/bookmarks/2012/08/www-guardian-co-uk-business-2012-aug-10-illinois-workers-bain-outsourcing":
     build_path: bookmarks/2012/08/www-guardian-co-uk-business-2012-aug-10-illinois-workers-bain-outsourcing.html
     etag: W/"16de8e53842ba86545687e93f4fc59f2"
@@ -12127,7 +12130,7 @@ paths:
     etag: W/"8319e35efec31a683e22798ad0bbd6e5"
   "/bookmarks/2012/08/arstechnica-com-staff-2012-08-ars-staffers-exposed-our-home-office-setups":
     build_path: bookmarks/2012/08/arstechnica-com-staff-2012-08-ars-staffers-exposed-our-home-office-setups.html
-    etag: W/"02b744d005b8f50614f93dd6880f2683"
+    etag: W/"381d0ed5dfbff134c13f0427233a7a33"
   "/bookmarks/2012/08/arstechnica-com-information-technology-2012-08-ive-inherited-200k-lines-of-spaghetti-codewhat-now":
     build_path: bookmarks/2012/08/arstechnica-com-information-technology-2012-08-ive-inherited-200k-lines-of-spaghetti-codewhat-now.html
     etag: W/"053b10dbfedca8a8be4985bce408847d"
@@ -12205,7 +12208,7 @@ paths:
     etag: W/"6d498a3e16c169ce58647273c6d7bbc4"
   "/bookmarks/2012/07/boingboing-net-2012-07-26-pbs-remixes-bob-ross-html":
     build_path: bookmarks/2012/07/boingboing-net-2012-07-26-pbs-remixes-bob-ross-html.html
-    etag: W/"c076ca7fc8e4da8af7ccf667cdaa09df"
+    etag: W/"542f6e45187ed47377f13c727341b6e1"
   "/bookmarks/2012/07/laphamsquarterly-org-essays-very-superstitious-php-page-all":
     build_path: bookmarks/2012/07/laphamsquarterly-org-essays-very-superstitious-php-page-all.html
     etag: W/"a6b25fcd7629968ba18df12150c7b6f8"
@@ -12307,7 +12310,7 @@ paths:
     etag: W/"b7865cf0f119bc58cc71ab60d6360bf6"
   ? "/bookmarks/2012/07/www-billboard-com-news-def-leppard-recording-forgeries-of-old-hits-1007484752-story-23-news-def-leppard-recording-forgeries-of-old-hits-1007"
   : build_path: bookmarks/2012/07/www-billboard-com-news-def-leppard-recording-forgeries-of-old-hits-1007484752-story-23-news-def-leppard-recording-forgeries-of-old-hits-1007.html
-    etag: W/"0fe29f55d1e5cb53c514175db87d8c23"
+    etag: W/"10d536e2c0d70aad7bb5e49140eb49c5"
   "/bookmarks/2012/07/gigaom-com-2012-07-05-patent-troll-stalks-travel-site-hipmunk":
     build_path: bookmarks/2012/07/gigaom-com-2012-07-05-patent-troll-stalks-travel-site-hipmunk.html
     etag: W/"d229c19b0c7d1508adda73b09f745cd2"
@@ -12331,7 +12334,7 @@ paths:
     etag: W/"ca469600a359d02f02f52269c0813902"
   "/bookmarks/2012/07/www-telegraph-co-uk-news-obituaries-9365640-count-robert-de-la-rochefoucauld-html":
     build_path: bookmarks/2012/07/www-telegraph-co-uk-news-obituaries-9365640-count-robert-de-la-rochefoucauld-html.html
-    etag: W/"3c5557805a538ee20ec55a48b202ab1d"
+    etag: W/"2c04d7b97bf4437fd17451ac84d320e0"
   "/bookmarks/2012/07/blog-torproject-org-blog-security-vulnerability-found-cyberoam-dpi-devices-cve-2012-3372":
     build_path: bookmarks/2012/07/blog-torproject-org-blog-security-vulnerability-found-cyberoam-dpi-devices-cve-2012-3372.html
     etag: W/"f30d79d91b986495b71617f88e4038b1"
@@ -12379,7 +12382,7 @@ paths:
     etag: W/"35a3bdd76ed668e76b962bbf5b8f8a44"
   "/bookmarks/2012/06/touch-theawl-com-theawl-escaped-fragment-2fentry-2f4fea25597af68a84dccbeb06":
     build_path: bookmarks/2012/06/touch-theawl-com-theawl-escaped-fragment-2fentry-2f4fea25597af68a84dccbeb06.html
-    etag: W/"cc0233069afb92b11f62597406f9e0c0"
+    etag: W/"dd36dc0d0897f49a6309604546266e54"
   "/bookmarks/2012/06/www-popularmechanics-com-technology-gadgets-news-why-product-recalls-make-you-less-safe-8347658":
     build_path: bookmarks/2012/06/www-popularmechanics-com-technology-gadgets-news-why-product-recalls-make-you-less-safe-8347658.html
     etag: W/"d28538d0bafc4f3613c97b1904b84c92"
@@ -12418,7 +12421,7 @@ paths:
     etag: W/"5467649ec3cc90e466eb6a118ff83a47"
   "/bookmarks/2012/06/github-com-necolas-idiomatic-css":
     build_path: bookmarks/2012/06/github-com-necolas-idiomatic-css.html
-    etag: W/"560d3104150d98f79502038fcf37a735"
+    etag: W/"aebe211678ef4f7f0ab40a47d72b5b1b"
   "/bookmarks/2012/06/nplusonemag-com-brothel-washington":
     build_path: bookmarks/2012/06/nplusonemag-com-brothel-washington.html
     etag: W/"02c2fca5af2e910d017a1aa0a4a7bb79"
@@ -12430,7 +12433,7 @@ paths:
     etag: W/"a87ff20fa5c8a00e20d1cce0cffbbd6a"
   "/bookmarks/2012/06/m-theatlantic-com-magazine-archive-2012-06-the-perfected-self-8970":
     build_path: bookmarks/2012/06/m-theatlantic-com-magazine-archive-2012-06-the-perfected-self-8970.html
-    etag: W/"e338b77322ef49455b20a147ef98ec7f"
+    etag: W/"6efcd375889dd5f24a557940cb715cf1"
   "/bookmarks/2012/06/www-thedailybeast-com-newsweek-2012-05-13-ted-sarandos-high-stakes-gamble-to-save-netflix-html":
     build_path: bookmarks/2012/06/www-thedailybeast-com-newsweek-2012-05-13-ted-sarandos-high-stakes-gamble-to-save-netflix-html.html
     etag: W/"99aecd988cb22a1c237d1c30d615ef93"
@@ -12937,7 +12940,7 @@ paths:
     etag: W/"552f7178e475d0d84777a4b9cf8a9770"
   "/bookmarks/2011/10/billybrown-tumblr-com-post-11796262809":
     build_path: bookmarks/2011/10/billybrown-tumblr-com-post-11796262809.html
-    etag: W/"45728bb5cb142161c156c33d6a138eee"
+    etag: W/"58e4824f057d9e7ecc325a3356ff527d"
   "/bookmarks/2011/10/www-universalhub-com-2011-sketchy-nights-occupy-boston":
     build_path: bookmarks/2011/10/www-universalhub-com-2011-sketchy-nights-occupy-boston.html
     etag: W/"84d16a1403eadfc5bbfa07479ced3c42"
@@ -13102,7 +13105,7 @@ paths:
     etag: W/"c091956025798c7294f38f59f045b106"
   "/bookmarks/2011/10/gridchicago-com-2011-grid-shots-shopping-without-a-car":
     build_path: bookmarks/2011/10/gridchicago-com-2011-grid-shots-shopping-without-a-car.html
-    etag: W/"27b6289d1eedb6b93af617341a1e7e04"
+    etag: W/"90e01dcd393999b61a9e7e480a846a63"
   "/bookmarks/2011/10/i-imgur-com-audyq-jpg":
     build_path: bookmarks/2011/10/i-imgur-com-audyq-jpg.html
     etag: W/"1dedaeb5aafa89df3e309cf9a23ed4be"
@@ -13252,7 +13255,7 @@ paths:
     etag: W/"940fa4e7b3917e529175f9d22fbbf52c"
   "/bookmarks/2011/09/www-flickr-com-photos-angelinapaz-6164809698":
     build_path: bookmarks/2011/09/www-flickr-com-photos-angelinapaz-6164809698.html
-    etag: W/"bf76394b1a8993e3d720175162abec4a"
+    etag: W/"7ec055c3d947cd06d490420a97e1a70b"
   "/bookmarks/2011/09/littlebigdetails-com-post-10403066996":
     build_path: bookmarks/2011/09/littlebigdetails-com-post-10403066996.html
     etag: W/"f42591298b707e62c3fa59bbe87be23c"
@@ -13654,7 +13657,7 @@ paths:
     etag: W/"594dbe508c2b2f507e0bf0cb7cb08b9c"
   "/bookmarks/2011/08/css-tricks-com-examples-shapesofcss-derp":
     build_path: bookmarks/2011/08/css-tricks-com-examples-shapesofcss-derp.html
-    etag: W/"6be1b39a7658c757f5a12ee5ad844237"
+    etag: W/"3a57f02979503169398a73a44e09d200"
   "/bookmarks/2011/08/www-minecraftwiki-net-wiki-server":
     build_path: bookmarks/2011/08/www-minecraftwiki-net-wiki-server.html
     etag: W/"507f18a924f68565d2e92e644a83ae53"
@@ -13720,10 +13723,10 @@ paths:
     etag: W/"5b3a7e6694bfa6cc2c0a37efb1fd489e"
   "/bookmarks/2011/08/littlebigdetails-com-post-8537670143":
     build_path: bookmarks/2011/08/littlebigdetails-com-post-8537670143.html
-    etag: W/"3e6bc42690596df070997cb4f10c6826"
+    etag: W/"96fa4b791c7ddf03cbb85664e5e91fae"
   "/bookmarks/2011/08/littlebigdetails-com-post-8537670143-threadless-the-shopping-cart-face-turns-from-sad":
     build_path: bookmarks/2011/08/littlebigdetails-com-post-8537670143-threadless-the-shopping-cart-face-turns-from-sad.html
-    etag: W/"b8c5b9d2adcebbf23a047b3ed9b31bd7"
+    etag: W/"9ca75f6d4783702023a9a55bdc9756f7"
   "/bookmarks/2011/08/www-minnpost-com-donshelby-2011-08-02-30497-rush-limbaugh-global-warming-and-our-weather":
     build_path: bookmarks/2011/08/www-minnpost-com-donshelby-2011-08-02-30497-rush-limbaugh-global-warming-and-our-weather.html
     etag: W/"e38db2024a05aac44dbeb4caf5f5fd2c"
@@ -13873,7 +13876,7 @@ paths:
     etag: W/"3045e53dfb948a1e523762d8eb937992"
   "/bookmarks/2011/07/www-futilitycloset-com-2011-07-27-a-personal-touch":
     build_path: bookmarks/2011/07/www-futilitycloset-com-2011-07-27-a-personal-touch.html
-    etag: W/"f534e9fe6cd2d6f2ced2dd424da15489"
+    etag: W/"b9e7520dfd01b1b7b1688c888f50efd4"
   "/bookmarks/2011/07/bcudesign-tumblr-com-post-8114776461":
     build_path: bookmarks/2011/07/bcudesign-tumblr-com-post-8114776461.html
     etag: W/"9c1694b113c8b3dc8a85123691f2af4c"
@@ -13960,7 +13963,7 @@ paths:
     etag: W/"c3c2b53075910dca571053f44f8caa52"
   "/bookmarks/2011/07/www-gifthub-org-2011-07-mandatory-drug-tests-for-drug-dealers-html":
     build_path: bookmarks/2011/07/www-gifthub-org-2011-07-mandatory-drug-tests-for-drug-dealers-html.html
-    etag: W/"295a5fa280d771151b55e02f93e19a4b"
+    etag: W/"0b5b354b133f5518200f111c322e4a59"
   "/bookmarks/2011/07/billybrown-tumblr-com-post-7930189491":
     build_path: bookmarks/2011/07/billybrown-tumblr-com-post-7930189491.html
     etag: W/"13739f68264ec381245be01854f40be6"
@@ -14035,10 +14038,10 @@ paths:
     etag: W/"425e1420e850eef3e4a02133e169a0ec"
   "/bookmarks/2011/07/littlebigdetails-com-post-7765654241":
     build_path: bookmarks/2011/07/littlebigdetails-com-post-7765654241.html
-    etag: W/"17ccbae6288174562fb0fdb48a2ae6a3"
+    etag: W/"df99dbf4db1b0e212349fe515e2c1749"
   "/bookmarks/2011/07/littlebigdetails-com-post-7765654241-microsoft-office-when-editing-rotated-text":
     build_path: bookmarks/2011/07/littlebigdetails-com-post-7765654241-microsoft-office-when-editing-rotated-text.html
-    etag: W/"22b99215c7272e06529471fbf79f3ff3"
+    etag: W/"b1c2717ebeaa7324e5a72a81f619d1b7"
   "/bookmarks/2011/07/www-richardhowe-com-2011-07-13-this-is-interesting-the-start-up-of-you":
     build_path: bookmarks/2011/07/www-richardhowe-com-2011-07-13-this-is-interesting-the-start-up-of-you.html
     etag: W/"7e17601c9a4edf2671f11c5e9df54278"
@@ -14104,7 +14107,7 @@ paths:
     etag: W/"4c3245e752bd38c712c4b4fa3a5b4cec"
   "/bookmarks/2011/07/i-lovebeingblack-tumblr-com-post-7582619028":
     build_path: bookmarks/2011/07/i-lovebeingblack-tumblr-com-post-7582619028.html
-    etag: W/"48c9aed2b9845686f3885d435dd64d5c"
+    etag: W/"da342f71f422094c21f35504d6f97876"
   "/bookmarks/2011/07/www-feverbee-com-2011-07-startups-html":
     build_path: bookmarks/2011/07/www-feverbee-com-2011-07-startups-html.html
     etag: W/"57d9830de190460807c97b2dcd7c8bc8"
@@ -14155,7 +14158,7 @@ paths:
     etag: W/"a888bf15b1410543ff8994884fee6359"
   "/bookmarks/2011/07/links-evilmadscientist-com-post-7397774952":
     build_path: bookmarks/2011/07/links-evilmadscientist-com-post-7397774952.html
-    etag: W/"ba6aa4b69bb0cf40596bab8a2d93c822"
+    etag: W/"b8b4a6cc94f514466ea3f11ac8114a74"
   "/bookmarks/2011/07/owni-eu-2011-01-25-fred-wilson-e2-80-99s-10-golden-principles-of-successful-web-apps":
     build_path: bookmarks/2011/07/owni-eu-2011-01-25-fred-wilson-e2-80-99s-10-golden-principles-of-successful-web-apps.html
     etag: W/"654c28418a3304e9532096ef790b8ff1"
@@ -14167,7 +14170,7 @@ paths:
     etag: W/"5abfa4133594aeb06b006ff2ceb35067"
   "/bookmarks/2011/07/flowingdata-com-2011-07-08-expanded-rules-for-rock-paper-scissors":
     build_path: bookmarks/2011/07/flowingdata-com-2011-07-08-expanded-rules-for-rock-paper-scissors.html
-    etag: W/"878f190e351e29880de3249028960723"
+    etag: W/"7382ad971f9572445d61e381e512a51b"
   "/bookmarks/2011/07/www-unwrongest-com-blog-color-theme-espresso-libre-for-espresso":
     build_path: bookmarks/2011/07/www-unwrongest-com-blog-color-theme-espresso-libre-for-espresso.html
     etag: W/"0a5392a54e807c60522cb895d2daf349"
@@ -14422,7 +14425,7 @@ paths:
     etag: W/"62d4a8e330ead8ab906302a3bc67ebab"
   ? "/bookmarks/2011/06/www-nytimes-com-2011-06-26-magazine-my-life-as-an-undocumented-immigrant-html-r-2-ref-magazine-pagewanted-print"
   : build_path: bookmarks/2011/06/www-nytimes-com-2011-06-26-magazine-my-life-as-an-undocumented-immigrant-html-r-2-ref-magazine-pagewanted-print.html
-    etag: W/"8ba11acd00dfd466ee17789ff8d8f3cf"
+    etag: W/"87109bf785f951827e3e247e5f92a68a"
   "/bookmarks/2011/06/www-nataliedee-com-062311":
     build_path: bookmarks/2011/06/www-nataliedee-com-062311.html
     etag: W/"d108e7a9659a4df57f76fdc0e3f88e8c"
@@ -14446,16 +14449,16 @@ paths:
     etag: W/"33463e19854da40a1ae51980f851a78a"
   "/bookmarks/2011/06/arstechnica-com-gaming-reviews-2011-06-history-of-sim-gamespart-2-ars-4":
     build_path: bookmarks/2011/06/arstechnica-com-gaming-reviews-2011-06-history-of-sim-gamespart-2-ars-4.html
-    etag: W/"d0c4228942c7dd64874ffc4cc21bcd7a"
+    etag: W/"2f1444119f962b09858c92ab8f8d93f4"
   "/bookmarks/2011/06/arstechnica-com-gaming-reviews-2011-06-history-of-sim-gamespart-2-ars-3":
     build_path: bookmarks/2011/06/arstechnica-com-gaming-reviews-2011-06-history-of-sim-gamespart-2-ars-3.html
     etag: W/"d1d08239c284a276094693cffd207879"
   "/bookmarks/2011/06/arstechnica-com-gaming-reviews-2011-06-history-of-sim-gamespart-2-ars-2":
     build_path: bookmarks/2011/06/arstechnica-com-gaming-reviews-2011-06-history-of-sim-gamespart-2-ars-2.html
-    etag: W/"b9d463d7e223368201eb3a6ff1eb38bb"
+    etag: W/"89da6d278d5880a3e56b36cf3bae18ab"
   "/bookmarks/2011/06/arstechnica-com-gaming-reviews-2011-06-history-of-sim-gamespart-2-ars":
     build_path: bookmarks/2011/06/arstechnica-com-gaming-reviews-2011-06-history-of-sim-gamespart-2-ars.html
-    etag: W/"af2a7bf34f9a888b6334d78177731192"
+    etag: W/"b17be60facac656a97345557b3bcf881"
   "/bookmarks/2011/06/feeds-boingboing-net-r-boingboing-ibag-3-gtxv13fitry-the-history-of-fallo-html":
     build_path: bookmarks/2011/06/feeds-boingboing-net-r-boingboing-ibag-3-gtxv13fitry-the-history-of-fallo-html.html
     etag: W/"cb4084f2cb2e2d7cb6adea18b45362ed"
@@ -14527,7 +14530,7 @@ paths:
     etag: W/"0e3d078aee2df6a5c792e971b9684d25"
   "/bookmarks/2011/06/www-gyford-com":
     build_path: bookmarks/2011/06/www-gyford-com.html
-    etag: W/"e366d4ca8953be05ca46fba95629490d"
+    etag: W/"8b1de0ce604ecacea1b8f5405f54e8a1"
   "/bookmarks/2011/06/codeforamerica-org-2011-06-16-recapping-cfa-summer-open-house-2":
     build_path: bookmarks/2011/06/codeforamerica-org-2011-06-16-recapping-cfa-summer-open-house-2.html
     etag: W/"3740cea9f54585ccb537bb5337d9176e"
@@ -14632,7 +14635,7 @@ paths:
     etag: W/"6cdf2a010c94b9d967d1a967f8805863"
   "/bookmarks/2011/06/www-gyford-com-phil-writing-2011-06-10-web-hyphenation-php":
     build_path: bookmarks/2011/06/www-gyford-com-phil-writing-2011-06-10-web-hyphenation-php.html
-    etag: W/"738bdccaa579f0776d5ce28f092226e2"
+    etag: W/"0e88b0fde6eafeb9d5f8d0f09a1794ed"
   ? "/bookmarks/2011/06/www-independent-co-uk-opinion-commentators-johann-hari-johann-hari-its-not-just-dominique-strausskahn-the-imf-itself-should-be-on-trial-2292"
   : build_path: bookmarks/2011/06/www-independent-co-uk-opinion-commentators-johann-hari-johann-hari-its-not-just-dominique-strausskahn-the-imf-itself-should-be-on-trial-2292.html
     etag: W/"dd78851170f92fb88094d9b70ba42a1f"
@@ -14725,7 +14728,7 @@ paths:
     etag: W/"f336ee9163bfdcd1bb55dd9921c0ab1f"
   "/bookmarks/2011/06/transmissionproject-org-current-2011-6-show-me-your-publics-and-i-e2-80-99ll-show-you-mine":
     build_path: bookmarks/2011/06/transmissionproject-org-current-2011-6-show-me-your-publics-and-i-e2-80-99ll-show-you-mine.html
-    etag: W/"4a521201c507fa4b2f7334dcd7ab661b"
+    etag: W/"fd199171335bb7df43ab5ff9e937c210"
   "/bookmarks/2011/06/laptopburns-wordpress-com-2011-05-03-why-apps-cant-transform-society":
     build_path: bookmarks/2011/06/laptopburns-wordpress-com-2011-05-03-why-apps-cant-transform-society.html
     etag: W/"0f18410322b49cc90cd1c10a20048a9e"
@@ -14794,7 +14797,7 @@ paths:
     etag: W/"cf529a06f12220f56a9c84d5a56e4a05"
   "/bookmarks/2011/05/thomallen-com-ive-found-wal-marts-weakness":
     build_path: bookmarks/2011/05/thomallen-com-ive-found-wal-marts-weakness.html
-    etag: W/"58de8ce89a7bb6b033cb97b3cce2cf23"
+    etag: W/"e380ab72aace3a028c65e91dbc36b115"
   "/bookmarks/2011/05/methodandcraft-com-videos-creating-harmonious-color-schemes":
     build_path: bookmarks/2011/05/methodandcraft-com-videos-creating-harmonious-color-schemes.html
     etag: W/"ea47c11bb13a92415fe53ab8d1b18a43"
@@ -14992,7 +14995,7 @@ paths:
     etag: W/"d95461fdcbaca7081dacb3b8548322e2"
   ? "/bookmarks/2011/05/venturebeat-com-2011-05-11-location-based-gaming-coming-to-location-near-you-utm-source-pulsenews-utm-medium-referral-utm-campaign-feed-3a-v"
   : build_path: bookmarks/2011/05/venturebeat-com-2011-05-11-location-based-gaming-coming-to-location-near-you-utm-source-pulsenews-utm-medium-referral-utm-campaign-feed-3a-v.html
-    etag: W/"3e0074bd37f2d1998e2160dfd2856b13"
+    etag: W/"6a899de07a1996b54045a7bf0aef11d5"
   ? "/bookmarks/2011/05/venturebeat-com-2011-05-11-location-based-gaming-coming-to-location-near-you-utm-source-feedburner-utm-medium-feed-utm-campaign-feed-3a-vent"
   : build_path: bookmarks/2011/05/venturebeat-com-2011-05-11-location-based-gaming-coming-to-location-near-you-utm-source-feedburner-utm-medium-feed-utm-campaign-feed-3a-vent.html
     etag: W/"38a7277f68a898c598ff623138d8f791"
@@ -15205,7 +15208,7 @@ paths:
     etag: W/"0e12768e53d4a8499628628b2b49f590"
   "/bookmarks/2011/04/nprfreshair-tumblr-com-post-4931415362-nobody-tells-this-to-people-who-are-beginners-i":
     build_path: bookmarks/2011/04/nprfreshair-tumblr-com-post-4931415362-nobody-tells-this-to-people-who-are-beginners-i.html
-    etag: W/"01016916845a824104cf00c94f4c6d1b"
+    etag: W/"5e58714fec0e338d2009427662a2a748"
   "/bookmarks/2011/04/hoitycoity-com-post-4992991920":
     build_path: bookmarks/2011/04/hoitycoity-com-post-4992991920.html
     etag: W/"af75517f2f56ed19f3c7ce407704c83f"
@@ -15454,7 +15457,7 @@ paths:
     etag: W/"f82ef86dc32c6c64ed22f9b76c9e5029"
   "/bookmarks/2011/04/i-imgur-com-cgjsl-png":
     build_path: bookmarks/2011/04/i-imgur-com-cgjsl-png.html
-    etag: W/"19fba9fa637b43de708c466f00df761c"
+    etag: W/"436b9732338b8ee031d66066e6d05b46"
   "/bookmarks/2011/04/www-flickr-com-photos-mary-mary-5604615046":
     build_path: bookmarks/2011/04/www-flickr-com-photos-mary-mary-5604615046.html
     etag: W/"58d1ebc6826f13d5ae9083105390db7b"
@@ -15610,7 +15613,7 @@ paths:
     etag: W/"f714c5b30dd34beec628d1cc42789b94"
   "/bookmarks/2011/03/www-flickr-com-photos-joseduarteq-5559812386-in-pool-95477519-n00":
     build_path: bookmarks/2011/03/www-flickr-com-photos-joseduarteq-5559812386-in-pool-95477519-n00.html
-    etag: W/"7b40c8e80502d8c2b809ec6c9d70d941"
+    etag: W/"46b927e1619a128e2abf492d94b1f2e6"
   "/bookmarks/2011/03/feedproxy-google-com-r-bigfatblog-3-kwm8jhkc0la":
     build_path: bookmarks/2011/03/feedproxy-google-com-r-bigfatblog-3-kwm8jhkc0la.html
     etag: W/"323e66265f240109a09ec14254004b68"
@@ -15916,7 +15919,7 @@ paths:
     etag: W/"23d370a7f567a22ce9f4726635c7ee13"
   "/bookmarks/2011/02/furnished-tumblr-com-post-3357330261":
     build_path: bookmarks/2011/02/furnished-tumblr-com-post-3357330261.html
-    etag: W/"46e505670b0fa1a220952ce1b06cf556"
+    etag: W/"15bf637ac111b3f910b553e7e947dbdd"
   "/bookmarks/2011/02/alanstorm-com-drupal-module-hooks":
     build_path: bookmarks/2011/02/alanstorm-com-drupal-module-hooks.html
     etag: W/"7ca2e27d47cb3588b4aeea2180cd550b"
@@ -16012,7 +16015,7 @@ paths:
     etag: W/"c8f60c5c2c303c5790f39d79eaee5766"
   "/bookmarks/2011/02/mytechnologyworld9-blogspot-com-2011-02-whered-moon-come-from-html":
     build_path: bookmarks/2011/02/mytechnologyworld9-blogspot-com-2011-02-whered-moon-come-from-html.html
-    etag: W/"21c86bcaabd5a6573bc774036fcffbdb"
+    etag: W/"2e7290c5ce4b92806611c632eb7795e3"
   "/bookmarks/2011/02/feeds-boingboing-net-r-boingboing-ibag-3-gmrninctv3s-why-kids-call-homele-html":
     build_path: bookmarks/2011/02/feeds-boingboing-net-r-boingboing-ibag-3-gmrninctv3s-why-kids-call-homele-html.html
     etag: W/"63e3ae2898e5e2bd6c272b31c9b3f865"
@@ -16099,7 +16102,7 @@ paths:
     etag: W/"1f7fe1a80b2c3d989fd1c2ae4f2846ae"
   "/bookmarks/2011/02/feedproxy-google-com-r-nicewebtype-3-uoffqrply4c-3089771501":
     build_path: bookmarks/2011/02/feedproxy-google-com-r-nicewebtype-3-uoffqrply4c-3089771501.html
-    etag: W/"133e1f89357d091fb9f425234d6bebee"
+    etag: W/"58cc080c7fe55d387d7c4531ddb380f3"
   "/bookmarks/2011/02/i-imgur-com-ellmo-jpg":
     build_path: bookmarks/2011/02/i-imgur-com-ellmo-jpg.html
     etag: W/"770be9b37829dc63b0ee6916e2056375"
@@ -16171,7 +16174,7 @@ paths:
     etag: W/"2c0f8b9688d5caed9fc55a701ae9358e"
   "/bookmarks/2011/01/mentalflossr-tumblr-com-post-3002100500":
     build_path: bookmarks/2011/01/mentalflossr-tumblr-com-post-3002100500.html
-    etag: W/"3ffd5ce64014abb698b615b3d82b683f"
+    etag: W/"8ca2d0a4cbd6e43884c895df79975025"
   "/bookmarks/2011/01/feeds-boingboing-net-r-boingboing-ibag-3-4g1bdnnaeu8-rickshaws-mini-commu-html":
     build_path: bookmarks/2011/01/feeds-boingboing-net-r-boingboing-ibag-3-4g1bdnnaeu8-rickshaws-mini-commu-html.html
     etag: W/"658576833536ff4be6bbd99e9323908d"
@@ -16435,7 +16438,7 @@ paths:
     etag: W/"87b0b0b08924588c333a44d369ab5165"
   "/bookmarks/2011/01/fukung-net-v-36377-792c148b83ac81f9145ce81da2686873-jpg":
     build_path: bookmarks/2011/01/fukung-net-v-36377-792c148b83ac81f9145ce81da2686873-jpg.html
-    etag: W/"028162420766acec79d975b03157c3a7"
+    etag: W/"3a65f07dbc07a9eb6be68a21e8ae8b01"
   "/bookmarks/2011/01/sepwww-stanford-edu-data-media-public-sep-jeff-csf-htm":
     build_path: bookmarks/2011/01/sepwww-stanford-edu-data-media-public-sep-jeff-csf-htm.html
     etag: W/"1f39d0ff68bbd831aad06e76b633d309"
@@ -16543,7 +16546,7 @@ paths:
     etag: W/"246776b9bc426ad049cda69eea45f67f"
   "/bookmarks/2011/01/debuggable-com-posts-requestaction-considered-harmful-48abb514-1f9c-4443-b91c-6d0f4834cda3":
     build_path: bookmarks/2011/01/debuggable-com-posts-requestaction-considered-harmful-48abb514-1f9c-4443-b91c-6d0f4834cda3.html
-    etag: W/"ea230091faabdc184ddbcabcb3c00c2a"
+    etag: W/"67428e5349d82b9a448b5ce232a41562"
   "/bookmarks/2011/01/www-marriedtothesea-com-010511":
     build_path: bookmarks/2011/01/www-marriedtothesea-com-010511.html
     etag: W/"a833e86dc6ad939ef7e941ce8c4f772e"
@@ -16798,7 +16801,7 @@ paths:
     etag: W/"2d2a9584f925b9c8b570478fb44d1f87"
   "/bookmarks/2010/12/www-bunniestudios-com-blog-p-1472":
     build_path: bookmarks/2010/12/www-bunniestudios-com-blog-p-1472.html
-    etag: W/"815a7ef6f4bb99d54dd796248b52ea77"
+    etag: W/"c3026795242d578377188322d073e1a1"
   "/bookmarks/2010/12/home-comcast-net-jpittman2-pacman-pacmandossier-html":
     build_path: bookmarks/2010/12/home-comcast-net-jpittman2-pacman-pacmandossier-html.html
     etag: W/"8b0d4e7b58809f19b757ae1336743ee7"
@@ -16966,7 +16969,7 @@ paths:
     etag: W/"cc449e0db3d8cf780e961265555bce5b"
   "/bookmarks/2010/06/redditgifts-com-gallery-gift-arbitrary-stuff":
     build_path: bookmarks/2010/06/redditgifts-com-gallery-gift-arbitrary-stuff.html
-    etag: W/"f5d125ca2159c65fb8eaaa84a92eb02d"
+    etag: W/"a4e082044789a1aaf1c4514c5e251092"
   "/bookmarks/2010/06/mrgan-com-gb":
     build_path: bookmarks/2010/06/mrgan-com-gb.html
     etag: W/"b62486760dddc68413cbc98436fbace7"
@@ -17011,7 +17014,7 @@ paths:
     etag: W/"f8919e42d2d95333f3ef03872924dee7"
   "/bookmarks/2010/03/www-mactricksandtips-com-2008-09-32-coda-tips-and-tricks-html":
     build_path: bookmarks/2010/03/www-mactricksandtips-com-2008-09-32-coda-tips-and-tricks-html.html
-    etag: W/"9328a70fc193963bdc44fec69a7415c1"
+    etag: W/"debe7f5b579beaad8c7e47b414a89992"
   "/bookmarks/2010/03/danielwang-wordpress-com-2009-11-03-css-font-size-conversion-chart":
     build_path: bookmarks/2010/03/danielwang-wordpress-com-2009-11-03-css-font-size-conversion-chart.html
     etag: W/"60d265c4ffad5172e509e06ae966377d"
@@ -17095,7 +17098,7 @@ paths:
     etag: W/"c0adb597f2159a22249de4889771dd0f"
   "/bookmarks/2009/06/feeds-feedburner-com-blackcover":
     build_path: bookmarks/2009/06/feeds-feedburner-com-blackcover.html
-    etag: W/"ad2c649c9426b88bb9bb6be486152209"
+    etag: W/"1ae7f82254696b27a06684f0912b6955"
   "/bookmarks/2009/05/www-chadwickwood-com-2008-12-crucial-drupal-modules-that-im-just-finding-out-about":
     build_path: bookmarks/2009/05/www-chadwickwood-com-2008-12-crucial-drupal-modules-that-im-just-finding-out-about.html
     etag: W/"10c6ad68c8a197233a07020e855cefa0"
@@ -17257,7 +17260,7 @@ paths:
     etag: W/"dcb2c1045bd0b89b6a1e024d11563f88"
   "/bookmarks/2008/08/podcasts-sesamestreet-org-sesamestreetpodcast":
     build_path: bookmarks/2008/08/podcasts-sesamestreet-org-sesamestreetpodcast.html
-    etag: W/"a01919808bf18f19fe056ad09fe1339c"
+    etag: W/"9b1a5c2db859a182b71be5f928fe8e2e"
   "/bookmarks/2008/08/www-vcn-bc-ca-citizens-handbook-welcome-html":
     build_path: bookmarks/2008/08/www-vcn-bc-ca-citizens-handbook-welcome-html.html
     etag: W/"2aeaca70c74d7cc947b28cbbe9a60de7"
@@ -17740,7 +17743,7 @@ paths:
     etag: W/"d5cc52925e538cd6b09e3858c415bfb2"
   "/bookmarks/2007/08/www-willpower-demon-co-uk-thesbibl-htm":
     build_path: bookmarks/2007/08/www-willpower-demon-co-uk-thesbibl-htm.html
-    etag: W/"df1807899b49eb9a66497150b25badbf"
+    etag: W/"8ad9d4c98db8aad1afc6e5a8f7b53f05"
   "/bookmarks/2007/08/20bits-com-2007-07-31-graph-theory-part-i-introduction":
     build_path: bookmarks/2007/08/20bits-com-2007-07-31-graph-theory-part-i-introduction.html
     etag: W/"c32523300ebaccba1e967381de638ab0"
@@ -18028,7 +18031,7 @@ paths:
     etag: W/"db0e73bb6d7fdaffc7c3717aa3698a63"
   "/bookmarks/2007/01/www-noenemies-com-archives-241":
     build_path: bookmarks/2007/01/www-noenemies-com-archives-241.html
-    etag: W/"6814b6d20cb949c6651d4c71b201e830"
+    etag: W/"e70a3c8e68e52e52fa0578a3e1796114"
   "/bookmarks/2007/01/www-netbusinessblog-com-2007-01-09-building-a-niche-minisite":
     build_path: bookmarks/2007/01/www-netbusinessblog-com-2007-01-09-building-a-niche-minisite.html
     etag: W/"7af806c14fa1a0b82a6d4a31858a95ce"
@@ -18070,7 +18073,7 @@ paths:
     etag: W/"d3d47090f372b57a2c59fca63667f07d"
   "/bookmarks/2006/11/www-smashingmagazine-com-2006-11-11-css-based-forms-modern-solutions":
     build_path: bookmarks/2006/11/www-smashingmagazine-com-2006-11-11-css-based-forms-modern-solutions.html
-    etag: W/"040055a8cd320f5f88931691d5877466"
+    etag: W/"44a5521ce118a3112637b681c34a0fb9"
   "/bookmarks/2006/11/www-psconclave-com-wiki-main-page":
     build_path: bookmarks/2006/11/www-psconclave-com-wiki-main-page.html
     etag: W/"adaaa260384959e199ffed5cd719e5c4"
@@ -18079,7 +18082,7 @@ paths:
     etag: W/"7d5e056b4350dfb02ab01b7de9d7a5a3"
   "/bookmarks/2006/11/www-markboulton-co-uk-journal-comments-five-simple-steps-to-better-typography":
     build_path: bookmarks/2006/11/www-markboulton-co-uk-journal-comments-five-simple-steps-to-better-typography.html
-    etag: W/"69afac4095e91d9ecc1c020f562a31fb"
+    etag: W/"5de39973d5d42adb8c80cfd04cb60783"
   "/bookmarks/2006/11/particletree-com-notebook-a-guide-to-email-roundup":
     build_path: bookmarks/2006/11/particletree-com-notebook-a-guide-to-email-roundup.html
     etag: W/"89f59dfdf7514861547e36b3e0d16af6"
@@ -18256,7 +18259,7 @@ paths:
     etag: W/"ca5e99c0a400013a431da487fe7eb6bb"
   "/bookmarks/2006/04/21stcenturylit-com-category-lit-radio-podcast":
     build_path: bookmarks/2006/04/21stcenturylit-com-category-lit-radio-podcast.html
-    etag: W/"3df2b5126fa8bb2939dbc74f6ac002fe"
+    etag: W/"09933293724c953eae54e829fc5d78eb"
   "/bookmarks/2006/04/www-easyrgb-com-harmonies-php":
     build_path: bookmarks/2006/04/www-easyrgb-com-harmonies-php.html
     etag: W/"fc1bcfa243d5329bd661c1b1b574ec79"
@@ -18322,7 +18325,7 @@ paths:
     etag: W/"29422e7da9f942f0ff2bd9ba06d46445"
   "/bookmarks/2006/01/www-campaignmonitor-com-blog-archives-2005-02-using-style-she-html":
     build_path: bookmarks/2006/01/www-campaignmonitor-com-blog-archives-2005-02-using-style-she-html.html
-    etag: W/"7b8e22aa8767675f48608e5802fdbfe8"
+    etag: W/"250c2c38d090275488894f17b41aa583"
   "/bookmarks/2006/01/digitalbicycle-grouphub-com-projects-62795-msg-all":
     build_path: bookmarks/2006/01/digitalbicycle-grouphub-com-projects-62795-msg-all.html
     etag: W/"4fe88a5ec59c66ef49372b1ee33dc99d"
@@ -18376,10 +18379,10 @@ paths:
     etag: W/"02e25396cb29c30043a214314dc5981a"
   "/bookmarks/2005/12/www-developersdigest-org-wiki-index-php-intro-to-css":
     build_path: bookmarks/2005/12/www-developersdigest-org-wiki-index-php-intro-to-css.html
-    etag: W/"d853cbc43dfd56e0cee920299b033dd3"
+    etag: W/"41323f53d3f509432bf8c7f03d84b922"
   "/bookmarks/2005/12/typographi-com":
     build_path: bookmarks/2005/12/typographi-com.html
-    etag: W/"2112c8089391b1c6cbdb38c3b091dbb4"
+    etag: W/"14bfb3dcfd6f3b1f38c5030cc0deed0e"
   "/bookmarks/2005/12/www-finetuneyou-com-bananas-html":
     build_path: bookmarks/2005/12/www-finetuneyou-com-bananas-html.html
     etag: W/"3956ec7801175ca49bdf0d4a8d8aa810"
@@ -18469,7 +18472,7 @@ paths:
     etag: W/"66604310bf17f54d4d29796a357c076e"
   "/bookmarks/2005/07/www-krages-com-phoright-htm":
     build_path: bookmarks/2005/07/www-krages-com-phoright-htm.html
-    etag: W/"350d36ff31ac23cab8661593432547bd"
+    etag: W/"134beafd5f93a48e41ea31de507a446b"
   "/bookmarks/2005/07/overheardintheuk-com":
     build_path: bookmarks/2005/07/overheardintheuk-com.html
     etag: W/"71c5a6040675eed5084c8898e828baad"
@@ -18550,7 +18553,7 @@ paths:
     etag: W/"e990516677d930fc12d8fee2a855330d"
   "/bookmarks/2005/05/www-comcast-ne-com-contact-html":
     build_path: bookmarks/2005/05/www-comcast-ne-com-contact-html.html
-    etag: W/"e2d91e8e7b7ce4ff2754fa87fe17a74b"
+    etag: W/"6fd306791b439b7f05b1c149d4f25b39"
   "/bookmarks/2005/05/ask-slashdot-org-askslashdot-05-05-13-0253232-shtml-tid-215-tid-95-tid-4":
     build_path: bookmarks/2005/05/ask-slashdot-org-askslashdot-05-05-13-0253232-shtml-tid-215-tid-95-tid-4.html
     etag: W/"59edc7216b76d27e820f94036660596c"
@@ -18598,7 +18601,7 @@ paths:
     etag: W/"df427cbd5d23721599896fdfcfce4023"
   "/bookmarks/2005/04/www-pixies-ca-archives-2005-03-05-active-css-navigation-bar-formatting":
     build_path: bookmarks/2005/04/www-pixies-ca-archives-2005-03-05-active-css-navigation-bar-formatting.html
-    etag: W/"c9d798b163ce4c8d108dc79041f02ca2"
+    etag: W/"fc10c43dee2e2f307826442bfdca0b24"
   "/bookmarks/2005/04/tracker-piratbyran-org-frame-html":
     build_path: bookmarks/2005/04/tracker-piratbyran-org-frame-html.html
     etag: W/"77cd094c0a2a41ebd759d60c0376b2fa"
@@ -18619,7 +18622,7 @@ paths:
     etag: W/"6ee9f88491bdefbbd19fb661ae30011a"
   "/bookmarks/2005/04/www-bbc-co-uk-radio4-hitchhikers-game-nolan-shtml":
     build_path: bookmarks/2005/04/www-bbc-co-uk-radio4-hitchhikers-game-nolan-shtml.html
-    etag: W/"eea389079a108064c27a6cd5c0f37b98"
+    etag: W/"8b7524d59b9b188f9abde2aa68a92f67"
   "/bookmarks/2005/04/blog-atomicworkshop-org":
     build_path: bookmarks/2005/04/blog-atomicworkshop-org.html
     etag: W/"390bfe806d79abc28ddf1c3d5db226f5"
